@@ -1,0 +1,20 @@
+global-styling:
+  css:
+    component:
+      css/styles.css: {}
+
+dropdown:
+  js:
+    js/bootstrap-dropdown.js: {}
+    dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+dropdown-menu:
+  js:
+    js/custom-menu.js: {}
+    dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

@@ -1,0 +1,30 @@
+name: OCHA Basic base theme
+type: theme
+description: OCHA Basic base theme with Common header and footer. Use as a base theme, and extend
+core: 8.x
+# Defines the base theme
+base theme: classy
+
+# Defines libraries group in which we can add css/js.
+libraries:
+- core/drupal
+- core/jquery
+- ocha_basic/global-styling
+- ocha_basic/dropdown
+- ocha_basic/dropdown-menu
+
+# Regions
+regions:
+  header_top: Header top
+  header_search: Header search
+  header_logo: Header logo
+  header_navigation: Header navigation
+  content: Content
+  sidebar_first: First sidebar
+  footer_navigation: Footer navigation
+
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/menu.css: false

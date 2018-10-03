@@ -1,0 +1,8 @@
+{
+    "name": "unocha/ocha_basic_d8",
+    "type": "drupal-theme",
+    "license": "GPL-2.0-only",
+    "require": {
+        "composer/installers": "^1.2"
+    }
+}

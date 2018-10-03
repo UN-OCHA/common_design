@@ -1,0 +1,54 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Drupal dropdowns for nested menus
+//——————————————————————————————————————————————————————————————————————————————
+.menu--main {
+  .menu-item--expanded {
+
+    // Hide child nav.
+    > ul {
+      display: none;
+    }
+
+    // Add down arrow.
+    > a {
+      position: relative;
+      &:after {
+        position: relative;
+        content: "";
+        height: 12px;
+        width: 12px;
+        margin-left: 4px;
+        background-image: url(../img/icons/arrow-down--highlight-red.svg);
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        background-size: 12px 12px;
+      }
+    }
+    // IE11 specific styles.
+    @media all and (-ms-high-contrast:none) {
+      > a {
+        padding-right: 24px;
+        &:after {
+          position: absolute;
+          right: 10px;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &.open {
+
+      > ul {
+        display: block;
+        @include z-index(dropdown);
+      }
+
+      // Change to up arrow.
+      > a {
+        &:after {
+          background-image: url(../img/icons/arrow-up--highlight-red.svg);
+        }
+      }
+    }
+  }
+}

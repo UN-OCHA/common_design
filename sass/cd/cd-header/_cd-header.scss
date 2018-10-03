@@ -1,0 +1,125 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Header
+//——————————————————————————————————————————————————————————————————————————————
+
+//
+// Global Header.
+// Top header bar, contains Sites Menu ('OCHA Services') and User Menu.
+//
+.cd-global-header {
+  background: $cd-primary-bg-color;
+  background-image: linear-gradient(-180deg, $cd-primary-bg-color 67%, $cd-dark-primary-bg-color 97%);
+  color: $cd-white-text-color;
+  height: $cd-global-header-height;
+  position: relative;
+
+  button {
+    border: 0;
+  }
+}
+
+//
+// Site Header.
+// Bottom header bar, contains Logo, Search and Navigation.
+//
+.cd-site-header {
+  border-bottom: 3px solid $cd-border-color;
+  color: $cd-default-text-color;
+}
+
+.cd-site-header__inner {
+  height: $cd-site-header-height;
+
+  @supports(display: flex) {
+
+  }
+
+  @supports(display: grid) {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: $cd-site-header-height;
+    grid-column-gap: 1em;
+
+    @include tablet {
+      grid-template-columns: 186px 1fr;
+    }
+  }
+}
+
+.cd-site-logo {
+
+  @supports(display: grid) {
+    grid-column: 1 / 1;
+  }
+}
+
+.cd-site-header__actions {
+  float: right;
+
+  @supports(display: flex) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+  }
+
+  @supports(display: grid) {
+    float: none;
+    grid-column: 2 / 2;
+  }
+
+
+    @include desktop {
+
+      @supports(display: flex) {
+        .cd-search {
+          flex: 0 0 auto;
+        }
+      .cd-site-header__nav-holder {
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+
+.cd-site-header__nav-holder nav > ul {
+
+  @supports(display: flex) {
+    display: block;
+  }
+
+    @include desktop {
+
+      @supports(display: flex) {
+        float: none;
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    > li,
+    > .cd-nav__item {
+
+      @supports(display: flex) {
+        flex: 1 0 100%;
+      }
+
+      @include desktop {
+        max-width: 112px;
+
+        @supports(display: flex) {
+          flex: 1 1 auto;
+        }
+      }
+
+      @include xlarge {
+        max-width: 160px;
+
+        @supports(display: flex) {
+          flex: 1 1 auto;
+        }
+      }
+
+  }
+}
