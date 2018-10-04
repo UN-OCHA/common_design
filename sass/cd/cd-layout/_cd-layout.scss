@@ -27,10 +27,10 @@ body {
   padding: 0;
 
   // helper for @support testing
-  background: rgba(255, 0, 0, 0.1);
+  //background: rgba(255, 0, 0, 0.1);
 
   @supports (display: flex) {
-    background: rgba(0, 255, 0, 0.1);
+    //background: rgba(0, 255, 0, 0.1);
     @include tablet {
       display: flex;
     }
@@ -38,7 +38,7 @@ body {
 
   // Grid is used to fix the footer to the bottom of the screen, regardless of page min-height.
   @supports (display: grid) {
-    background: rgba(0, 0, 255, 0.1);
+    //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
       grid-template-rows: 95px 1fr auto; // Height of header.

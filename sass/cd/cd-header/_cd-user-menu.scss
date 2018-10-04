@@ -184,7 +184,7 @@
 
   // If there's no language switcher in the Global Header, uncomment this line
   // to apply special treatment to the last link in the list.
-  // @extend .cd-user-menu--no-language-switcher;
+  @extend .cd-user-menu--no-language-switcher;
 }
 
 .region-header-top .menu > li a {
@@ -197,6 +197,6 @@
 }
 
 // Add content menu item as first item in user menu
-.logged-in .region-header-top .menu > li:first-child {
-  @extend .cd-user-menu__icon-plus;
-}
+//.logged-in .region-header-top .menu > li:first-child {
+//  @extend .cd-user-menu__icon-plus;
+//}

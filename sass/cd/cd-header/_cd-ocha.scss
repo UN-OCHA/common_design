@@ -33,9 +33,9 @@
     }
   }
 
-  .arrow-down {
+  .icon--arrow-down {
     @include tablet {
-      margin-left: 2px;
+      margin-left: 4px;
     }
   }
 }
