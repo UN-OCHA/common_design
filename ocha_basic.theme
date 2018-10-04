@@ -103,7 +103,7 @@ function ocha_basic_preprocess_html(&$vars) {
 
   // SVG sprite
   // Get the contents of the SVG sprite.
-  $icons = file_get_contents( '/themes/contrib/ocha_basic/img/icons/icons-sprite.svg');
+  $icons = file_get_contents( 'themes/contrib/ocha_basic_d8/img/icons/icons-sprite.svg');
 
   // Add a new render array to page_bottom so the icons
   // get added to the page.
