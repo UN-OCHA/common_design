@@ -2,7 +2,7 @@
   "name": "unocha-basic-d8",
   "version": "1.0.0",
   "description": "OCHA Basic base theme for Drupal 8",
-  "repository": "git@github.com:UN-OCHA/ocha_basic.git",
+  "repository": "git@github.com:UN-OCHA/ocha_basic_d8.git",
   "author": "UN OCHA",
   "license": "GPL-2.0",
   "dependencies": {

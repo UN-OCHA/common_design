@@ -8,7 +8,7 @@
 ///**
 // * Implements hook_form_alter().
 // */
-//function ocha_basic_form_alter(&$form, &$form_state, $form_id) {
+//function ocha_basic_d8_form_alter(&$form, &$form_state, $form_id) {
 //
 //  // This is for Drupal core search block.
 //  if ($form_id == 'search_block_form') {
@@ -41,14 +41,14 @@
 ///**
 // * Implements hook_preprocess_search_block_form().
 // */
-//function ocha_basic_preprocess_search_block_form(&$vars) {
+//function ocha_basic_d8_preprocess_search_block_form(&$vars) {
 //  $vars['search_form'] = str_replace('type="text"', 'type="search"', $vars['search_form']);
 //}
 
 /**
  * Implements hook_preprocess_html().
  */
-function ocha_basic_preprocess_html(&$vars) {
+function ocha_basic_d8_preprocess_html(&$vars) {
 //  $viewport = array(
 //    '#tag' => 'meta',
 //    '#attributes' => array(
@@ -116,7 +116,7 @@ function ocha_basic_preprocess_html(&$vars) {
 ///**
 // * Implements template_preprocess_page().
 // */
-function ocha_basic_preprocess_page(&$vars) {
+function ocha_basic_d8_preprocess_page(&$vars) {
   // Bail out if function is not available.
   if (!function_exists('language_negotiation_get_switch_links')) {
     return;
@@ -170,7 +170,7 @@ function ocha_basic_preprocess_page(&$vars) {
 ///**
 // * Implements hook_pwa_manifest_alter().
 // */
-function ocha_basic_pwa_manifest_alter(&$manifest) {
+function ocha_basic_d8_pwa_manifest_alter(&$manifest) {
   // Hard-code a theme-color into the manifest.
   $manifest['theme_color'] = '#026CB6';
 
@@ -181,12 +181,12 @@ function ocha_basic_pwa_manifest_alter(&$manifest) {
   // to your heart's content.
   $manifest['icons'] = [
     [
-      'src' => url(drupal_get_path('theme', 'ocha_basic') . '/img/android-chrome-512x512.png'),
+      'src' => url(drupal_get_path('theme', 'ocha_basic_d8') . '/img/android-chrome-512x512.png'),
       'sizes' => '512x512',
       'type' => 'image/png',
     ],
     [
-      'src' => url(drupal_get_path('theme', 'ocha_basic') . '/img/android-chrome-192x192.png'),
+      'src' => url(drupal_get_path('theme', 'ocha_basic_d8') . '/img/android-chrome-192x192.png'),
       'sizes' => '192x192',
       'type' => 'image/png',
     ],

@@ -9,9 +9,9 @@ base theme: classy
 libraries:
 - core/drupal
 - core/jquery
-- ocha_basic/global-styling
-- ocha_basic/dropdown
-- ocha_basic/dropdown-menu
+- ocha_basic_d8/global-styling
+- ocha_basic_d8/dropdown
+- ocha_basic_d8/dropdown-menu
 
 # Regions
 regions:
