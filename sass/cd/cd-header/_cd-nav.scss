@@ -73,7 +73,7 @@
     right: 0;
     left: 0;
     top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-    width: 100vw;
+    //width: 100vw;
     @include z-index(dropdown-menu); // arbitrary high zindex, may need adjusting depending on other site content.
 
     @include desktop {

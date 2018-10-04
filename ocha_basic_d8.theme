@@ -5,6 +5,17 @@
  * Template overrides, preprocess, and alter hooks for the OCHA Basic theme.
  */
 
+function ocha_basic_d8_preprocess(&$variables, $hook) {
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+  // Ensure the cache varies correctly.
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+}
+
 ///**
 // * Implements hook_form_alter().
 // */

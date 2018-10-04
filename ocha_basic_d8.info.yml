@@ -4,6 +4,7 @@ description: OCHA Basic base theme with Common header and footer. Use as a base 
 core: 8.x
 # Defines the base theme
 base theme: classy
+logo: 'img/logos/ocha-lockup-blue.svg'
 
 # Defines libraries group in which we can add css/js.
 libraries:
