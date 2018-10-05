@@ -9,36 +9,10 @@
       display: none;
     }
 
-    // Add down arrow.
-    > a {
-      position: relative;
-      &:after {
-        position: relative;
-        content: "";
-        height: 10px;
-        width: 10px;
-        margin-left: 4px;
-        top: 3px;
-        background-image: url(../img/icons/arrow-down--highlighted.svg);
-        background-repeat: no-repeat;
-        background-position: 0 50%;
-        background-size: 10px 10px;
-
-        @include desktop {
-          top: -2px;
-        }
-      }
-    }
-    // IE11 specific styles.
-    @media all and (-ms-high-contrast:none) {
-      > a {
-        padding-right: 24px;
-        &:after {
-          position: absolute;
-          right: 10px;
-          margin-left: 0;
-        }
-      }
+    .icon--arrow-down {
+      fill: $cd-highlight-red;
+      margin-left: 4px;
+      margin-top: -3px;
     }
 
     &.open {
@@ -48,20 +22,18 @@
         @include z-index(dropdown);
       }
 
-      // Change to up arrow.
       > a {
-        &:after {
-          background-image: url(../img/icons/arrow-up--highlighted.svg);
+        > .icon--arrow-down {
+          transform: rotate(180deg);
         }
       }
-    }
 
-    // Second level.
-    .menu-item--expanded {
-      // Add down arrow.
-      > a:after {
-        top: 3px;
+
+      // Second level.
+      .menu .icon--arrow-down {
+        margin-top: 2px;
       }
+
     }
   }
 }
