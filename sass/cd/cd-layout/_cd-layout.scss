@@ -52,6 +52,7 @@ body {
   box-sizing: border-box;
   padding: 0 $cd-container-padding;
   margin: 0 auto;
+  width: 100%;
   max-width: $cd-max-width;
 
   @include tablet {
