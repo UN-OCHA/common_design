@@ -12,7 +12,10 @@
     .icon--arrow-down {
       fill: $cd-highlight-red;
       margin-left: 4px;
-      margin-top: -3px;
+      margin-top: 2px;
+      @include desktop {
+        margin-top: -3px;
+      }
     }
 
     &.open {
@@ -28,10 +31,11 @@
         }
       }
 
-
       // Second level.
       .menu .icon--arrow-down {
-        margin-top: 2px;
+        @include desktop {
+          margin-top: 2px;
+        }
       }
 
     }
