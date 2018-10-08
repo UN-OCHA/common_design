@@ -22,6 +22,7 @@ regions:
   header_navigation: Header navigation
   content: Content
   sidebar_first: First sidebar
+  footer_soft: Soft footer
   footer_navigation: Footer navigation
 
 libraries-override:
