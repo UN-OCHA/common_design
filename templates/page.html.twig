@@ -81,7 +81,9 @@
 
   </main>
 
-  {{ page.footer_soft }}
+  {% block footer_soft %}
+    {{ page.footer_soft }}
+  {% endblock %}
 
   {% block footer %}
     {% include '@ocha_basic_d8/cd/cd-footer/cd-footer.html.twig' %}
