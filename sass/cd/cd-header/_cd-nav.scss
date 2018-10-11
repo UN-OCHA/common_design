@@ -107,6 +107,12 @@
         outline: none; // default browser outline is replaced by background colour change.
       }
     }
+
+    // First level.
+    > .menu > .menu-item > a {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
   }
 
   .menu-item {
@@ -114,17 +120,13 @@
       background: $cd-white-bg-color;
     }
 
-    > a {
-      font-weight: bold;
-      text-transform: uppercase;
-      &:before {
-        background: $cd-highlight-red;
-      }
+    > a:before {
+      background: $cd-highlight-red;
     }
   }
 
   // Second level.
-  .menu .menu {
+  .cd-nav > .menu > li > .menu {
     background: $cd-white-bg-color;
 
     @include desktop {
@@ -137,7 +139,9 @@
       top: calc(#{$cd-site-header-height} + 3px); // border-bottom height
       position: absolute;
     }
+  }
 
+  .menu .menu {
     a {
       display: flex;
       color: $cd-dark-text-color;
@@ -149,7 +153,15 @@
     }
   }
 
+  // Third level.
+  .menu .menu .menu {
+    a {
+      font-weight: 200;
+      padding: 10px 30px;
+    }
+  }
 
+  
   // Active trail for mobile menu.
   @include max-width(lg) {
 

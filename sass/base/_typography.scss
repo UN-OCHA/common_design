@@ -8,7 +8,7 @@ h1, h2 ,h3 ,h4 ,h5 {
 }
 
 h1 {
-  @include font-size($cd-font-size-medium);
+  //@include font-size($cd-font-size-medium);
   color: $cd-ocha-blue;
   font-weight: normal;
 }
@@ -36,7 +36,7 @@ h1.page-title {
 }
 
 h2, h3 {
-  text-transform: uppercase
+  //text-transform: uppercase
 }
 
 a {
@@ -83,16 +83,16 @@ dd {
 }
 
 @include min-width(sm) {
-  h1 {
-    @include font-size($cd-font-size-xlarge);
-  }
-
-  ol, dl {
-    @include font-size($cd-font-size-base);
-  }
+  //h1 {
+  //  @include font-size($cd-font-size-xlarge);
+  //}
+  //
+  //ol, dl {
+  //  @include font-size($cd-font-size-base);
+  //}
 
   h2 {
-    @include font-size($cd-font-size-medium);
+    //@include font-size($cd-font-size-medium);
     font-weight: normal;
   }
 
