@@ -4,7 +4,9 @@
 
 <header class="cd-header" role="banner">
 
-  {% include '@ocha_basic_d8/cd/cd-header/cd-global-header.html.twig' %}
-  {% include '@ocha_basic_d8/cd/cd-header/cd-site-header.html.twig' %}
+  {% block header_content %}
+    {% include '@ocha_basic_d8/cd/cd-header/cd-global-header.html.twig' %}
+    {% include '@ocha_basic_d8/cd/cd-header/cd-site-header.html.twig' %}
+  {% endblock %}
 
 </header>
