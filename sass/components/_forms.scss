@@ -17,6 +17,9 @@ textarea {
   width: 100%;
   max-width: 100%;
   color: $cd-dark-grey;
+  @include tablet {
+    width: auto;
+  }
 }
 
 label {
