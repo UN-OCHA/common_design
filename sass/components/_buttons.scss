@@ -13,6 +13,7 @@ button, input[type="submit"] {
 }
 
 .btn-primary, .form-actions input[type="submit"] {
+  display: inline-block;
   border-radius: 4px;
   background: $cd-ocha-blue;
   text-transform: uppercase;
@@ -26,4 +27,9 @@ button, input[type="submit"] {
     background: darken($cd-ocha-blue, 10%);
     color: $cd-white;
   }
+}
+
+.btn-primary {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }

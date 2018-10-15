@@ -35,6 +35,16 @@ h1.page-title {
   font-weight: 300;
 }
 
+h1.page-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: $cd-default-text-color;
+
+  @include sm {
+    font-size: 2.5rem;
+  }
+}
+
 h2, h3 {
   //text-transform: uppercase
 }
