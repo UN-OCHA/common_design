@@ -44,12 +44,9 @@
 #}
 <div class="cd-layout-container">
 
-  <header role="banner">
-    {% block header %}
-      {% include '@ocha_basic_d8/cd/cd-header/cd-header.html.twig' %}
-    {% endblock %}
-
-  </header>
+  {% block header %}
+    {% include '@ocha_basic_d8/cd/cd-header/cd-header.html.twig' %}
+  {% endblock %}
 
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
