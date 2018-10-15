@@ -5,6 +5,8 @@ const c = require('chalk');
 const plumber = require('gulp-plumber');
 const spawn = require('child_process').spawn;
 const gulpif = require('gulp-if');
+const svgSprite = require('gulp-svg-sprite');
+
 
 // Development Tools
 const bs = require('browser-sync');
@@ -81,6 +83,33 @@ gulp.task('dev:sass', () => {
     .pipe(gulp.dest('css/'))
     .pipe(reload({stream: true}));
 });
+
+//——————————————————————————————————————————————————————————————————————————————
+// SVG Sprite generation
+//——————————————————————————————————————————————————————————————————————————————
+
+// SVG Config
+var SVGconfig = {
+  mode: {
+    symbol: { // symbol mode to build the SVG
+      dest: 'img/icons', // destination folder
+      sprite: 'icons-sprite.svg', //sprite name
+      example: true // Build sample page
+    }
+  },
+  svg: {
+    xmlDeclaration: false, // strip out the XML attribute
+    doctypeDeclaration: false // don't include the !DOCTYPE declaration
+  }
+};
+
+gulp.task('sprite-page', function() {
+  return gulp.src('img/icons/*.svg')
+    .pipe(svgSprite(SVGconfig))
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('sprites', ['sprite-page']);
 
 //——————————————————————————————————————————————————————————————————————————————
 // JS Linting
