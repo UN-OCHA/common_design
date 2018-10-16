@@ -66,20 +66,52 @@
   max-width: $cd-max-width;
 
   @include tablet {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 12px;
     margin: 0 auto;
     padding: 0 $cd-container-padding-tablet;
   }
+
   @include xlarge {
-    grid-gap: 100px;
     padding: 0 $cd-container-padding-xlarge;
   }
+
+  @supports (display: grid) {
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 12px;
+    }
+    @include xlarge {
+      grid-gap: 100px;
+    }
+  }
+
 }
 
 .cd-ocha-dropdown__section {
   @include clearfix;
+
+  //
+  // Grid not supported, fall back to floats on desktop
+  //
+  @include desktop {
+    float: left;
+    width: 21.25%;
+    margin-right: 5%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @supports (display: grid) {
+
+    @include desktop {
+      float: none;
+      width: unset;
+      margin-right: 0;
+    }
+
+  }
 
   // On mobile the link sections need space.
   margin-bottom: $cd-base-unit*3;
@@ -99,20 +131,6 @@
   &:nth-child(2) {
     @include max-width(md) {
       margin-bottom: 0;
-    }
-  }
-
-  //
-  // Grid not supported, fall back to floats on desktop
-  //
-  @include desktop {
-    .no-cssgrid & {
-      float: left;
-      width: 21.25%;
-      margin-right: 5%;
-    }
-    .no-cssgrid &:last-child {
-      margin-right: 0;
     }
   }
 }

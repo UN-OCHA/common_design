@@ -30,10 +30,6 @@
 .cd-site-header__inner {
   height: $cd-site-header-height;
 
-  @supports(display: flex) {
-
-  }
-
   @supports(display: grid) {
     display: grid;
     grid-template-columns: 52px 1fr;
@@ -46,24 +42,17 @@
   }
 }
 
-.cd-site-logo {
-
-  @supports(display: grid) {
-    grid-column: 1 / 1;
-  }
-}
-
 .cd-site-header__actions {
   float: right;
 
   @supports(display: flex) {
+    float: none;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
   }
 
   @supports(display: grid) {
-    float: none;
     grid-column: 2 / 2;
   }
 
@@ -83,12 +72,7 @@
 
 .cd-site-header__nav-holder nav > ul {
 
-  @supports(display: flex) {
-    display: block;
-  }
-
     @include desktop {
-
       @supports(display: flex) {
         float: none;
         flex: 0 0 auto;
@@ -100,6 +84,10 @@
 
     > li,
     > .cd-nav__item {
+
+      @include desktop {
+        float: left;
+      }
 
       @supports(display: flex) {
         flex: 1 0 100%;

@@ -14,7 +14,7 @@
   display: block;
   width: 149px;
   height: 37px;
-  margin: 0 auto 16px;
+  margin: 0 auto auto;
   background: url('../img/logos/ocha-lockup-white.svg') 0 center no-repeat;
 
   .no-svg & {
@@ -24,7 +24,7 @@
   @include desktop {
     box-sizing: content-box;
     float: left;
-    margin: -4px $cd-container-padding 0 auto;
+    margin: -4px $cd-container-padding 1rem auto;
     padding-right: $cd-container-padding;
     border-right: 1px solid $cd-border-color;
   }

@@ -96,9 +96,13 @@
 
     a {
       color: $cd-default-text-color;
-      display: flex;
       padding: 15px 30px;
       text-decoration: none;
+      display: block;
+      
+      @supports (display: flex) {
+        display: flex;
+      }
 
       &:hover,
       &:focus {

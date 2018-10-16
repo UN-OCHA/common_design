@@ -54,3 +54,12 @@
     }
   }
 }
+
+
+.cd-site-logo {
+  float: left;
+
+  @supports(display: grid) {
+    grid-column: 1 / 1;
+  }
+}

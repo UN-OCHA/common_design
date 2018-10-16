@@ -56,16 +56,13 @@
 }
 
 
-// no supports
-
-//* reset from above boo
-  .cd-footer__section {
-    float: none;
-    width: 100%;
-  }
+.cd-footer__section {
+  float: none;
+  width: 100%;
+}
 
 .cd-footer__section--menu {
-  @include tablet {
+  @include desktop {
     text-align: left;
     float: left;
     width: 70%;
@@ -96,13 +93,11 @@
 }
 
 
-
 @supports (display: flex) {
 
   //* reset from above boo
   .cd-footer__section {
     float: none;
-    width: auto;
   }
 
   .cd-footer__section--menu {
