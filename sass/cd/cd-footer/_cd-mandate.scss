@@ -14,9 +14,10 @@
   display: block;
   width: 149px;
   height: 37px;
-  margin: 0 auto auto;
+  margin: 0 auto 16px;
   background: url('../img/logos/ocha-lockup-white.svg') 0 center no-repeat;
 
+  // this doesn't work since we don't have modernizr.
   .no-svg & {
     background: url('../img/logos/ocha-lockup-white@149x37.png') 0 center no-repeat;
   }

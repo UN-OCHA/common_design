@@ -75,12 +75,12 @@
   }
 
   @supports (display: grid) {
-
     @include tablet {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 12px;
     }
+
     @include xlarge {
       grid-gap: 100px;
     }
@@ -91,40 +91,29 @@
 .cd-ocha-dropdown__section {
   @include clearfix;
 
-  //
-  // Grid not supported, fall back to floats on desktop
-  //
-  @include desktop {
-    float: left;
-    width: 21.25%;
-    margin-right: 5%;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  @supports (display: grid) {
-
-    @include desktop {
-      float: none;
-      width: unset;
-      margin-right: 0;
-    }
-
-  }
-
   // On mobile the link sections need space.
   margin-bottom: $cd-base-unit*3;
 
   // For the see-all link
   position: relative;
 
+  //
+  // Grid not supported, fall back to floats on desktop
+  //
   @include tablet {
+    float: left;
+    width: 21.25%;
+    margin-right: 5%;
+
     // remove space between sections
     margin-bottom: 0;
 
     // ensure a min-height for IE11
     min-height: 120px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   // on mobile, the two middle columns should look like one list.
@@ -133,6 +122,15 @@
       margin-bottom: 0;
     }
   }
+
+  @supports (display: grid) {
+    @include tablet {
+      float: none;
+      width: unset;
+      margin-right: 0;
+    }
+  }
+
 }
 
 .cd-ocha-dropdown__heading {
