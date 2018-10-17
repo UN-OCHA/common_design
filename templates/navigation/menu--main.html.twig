@@ -43,17 +43,16 @@
           item.in_active_trail ? 'menu-item--active-trail',
         ]
       %}
+
       <li{{ item.attributes.addClass(classes) }}>
 
         {% if item.is_expanded %}
 
-          {% set title %}
-            {{ item.title }}
+          <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }}
             <svg class="icon icon--arrow-down">
               <use xlink:href="#arrow-down"></use>
             </svg>
-          {% endset %}
-          {{ link(title, item.url) }}
+          </a>
 
         {% else %}
 
@@ -64,7 +63,9 @@
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
+
       </li>
+
     {% endfor %}
     </ul>
   {% endif %}
