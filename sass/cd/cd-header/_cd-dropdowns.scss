@@ -16,7 +16,7 @@
 }
 
 .open {
-  [data-toggle="dropdown"] > .icon--arrow-down {
+  > [data-toggle="dropdown"] > .icon--arrow-down {
     transform: rotate(180deg);
   }
 }
