@@ -7,14 +7,12 @@ dropdown:
   js:
     js/bootstrap-dropdown.js: {}
     dependencies:
-    - core/drupal
     - core/jquery
+    - core/drupal
     - core/jquery.once
 
 dropdown-menu:
   js:
     js/custom-menu.js: {}
     dependencies:
-    - core/drupal
-    - core/jquery
-    - core/jquery.once
+    - ocha_basic_d8/dropdown
