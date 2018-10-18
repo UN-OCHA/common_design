@@ -31,13 +31,14 @@
 
 // Logo for mobile.
 @include max-width(md) {
-  background-image: url('../img/logos/ocha-logo-blue.svg');
-  background-position: center no-repeat;
+  .cd-site-logo {
+    background: url('../img/logos/ocha-logo-blue.svg') center no-repeat;
+  }
 }
 
 @include tablet {
   .cd-site-logo {
-    background-image: none;
+    background: none;
     width: 186px; // width may need to be adjusted depending on logo width.
     padding-top: 0;
 
