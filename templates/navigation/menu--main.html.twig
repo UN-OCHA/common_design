@@ -29,11 +29,9 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
-    {% else %}
-      <ul class="menu">
-    {% endif %}
+
+    <ul{{ attributes.addClass('menu') }}>
+
     {% for item in items %}
       {%
         set classes = [
@@ -48,7 +46,7 @@
 
         {% if item.is_expanded %}
 
-          <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }}
+          <a href="{{ item.url }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}
             <svg class="icon icon--arrow-down">
               <use xlink:href="#arrow-down"></use>
             </svg>
