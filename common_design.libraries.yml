@@ -15,4 +15,4 @@ dropdown-menu:
   js:
     js/custom-menu.js: {}
     dependencies:
-    - ocha_basic_d8/dropdown
+    - common_design/dropdown

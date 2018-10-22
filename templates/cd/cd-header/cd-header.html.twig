@@ -1,12 +1,12 @@
 {# Displays the site header #}
 
-{{ attach_library('ocha_basic_d8/dropdown') }}
+{{ attach_library('common_design/dropdown') }}
 
 <header class="cd-header">
 
   {% block header_content %}
-    {% include '@ocha_basic_d8/cd/cd-header/cd-global-header.html.twig' %}
-    {% include '@ocha_basic_d8/cd/cd-header/cd-site-header.html.twig' %}
+    {% include '@common_design/cd/cd-header/cd-global-header.html.twig' %}
+    {% include '@common_design/cd/cd-header/cd-site-header.html.twig' %}
   {% endblock %}
 
 </header>

@@ -1,6 +1,6 @@
-# OCHA Basic base theme for Drupal 8  
+# OCHA Common Design base theme for Drupal 8  
 
-A base theme of the ocha_basic Common Design Drupal theme for Drupal 8. 
+A base theme of the OCHA Common Design for Drupal 8. 
 
 Extend as needed.
 
