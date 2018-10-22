@@ -1,4 +1,4 @@
-name: OCHA Common Design Drupal base theme
+name: OCHA Common Design
 type: theme
 description: OCHA Common Design drupal theme. Use as a base theme, and extend.
 core: 8.x
