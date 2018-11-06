@@ -4,7 +4,7 @@
 
 .cd-search {
   float: left;
-  @include z-index(dropdown);
+  @include z-index(search);
 
   .cssgrid.flexbox & {
     float: none;
@@ -101,7 +101,7 @@
   }
 }
 
-.cd-search__form-inner {
+.cd-search__form form {
   padding: 8px $cd-container-padding;
 }
 
@@ -116,6 +116,7 @@
   height: calc(#{$cd-site-header-height} - 16px); //Padding.
   padding: 0 45px 0 25px;
   width: 100%;
+  box-sizing: border-box;
 
   &:focus {
     outline: 0;
@@ -176,7 +177,7 @@
 }
 
 @include tablet {
-  .cd-search__form-inner {
+  .cd-search__form form {
     margin: 0 auto;
     max-width: $cd-max-width;
     padding: 8px $cd-container-padding-tablet;
@@ -211,7 +212,7 @@
     right: 8px;
   }
 
-  .cd-search__form-inner {
+  .cd-search__form form {
     padding: 8px $cd-container-padding-xlarge;
   }
 

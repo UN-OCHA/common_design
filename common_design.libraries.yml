@@ -11,8 +11,14 @@ dropdown:
     - core/drupal
     - core/jquery.once
 
-dropdown-menu:
+custom-menu:
   js:
     js/custom-menu.js: {}
+    dependencies:
+    - common_design/dropdown
+
+search:
+  js:
+    js/custom-search.js: {}
     dependencies:
     - common_design/dropdown
