@@ -16,39 +16,37 @@ function common_design_preprocess(&$variables, $hook) {
   $variables['#cache']['contexts'][] = 'url.path.is_front';
 }
 
-///**
-// * Implements hook_form_alter().
-// */
-//function common_design_form_alter(&$form, &$form_state, $form_id) {
-//
-//  // This is for Drupal core search block.
-//  if ($form_id == 'search_block_form') {
-//    $form['#attributes']['role'] = 'search';
-//    $form['#attributes']['class'][] = 'cd-search__form';
-//    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
-//    $form['search_block_form']['#attributes']['placeholder'] = t('What are you looking for?');
-//    $form['search_block_form']['#attributes']['autocomplete'][] = 'off';
-//    $form['search_block_form']['#attributes']['class'][] = 'cd-search__input';
-//    $form['search_block_form']['#attributes']['id'][] = 'cd-search';
-//    $form['actions']['submit'] = [
-//      '#type' => 'submit',
-//      '#prefix' => '<button type="submit" name="op" class="cd-search__submit form-submit"><svg class="icon icon--search"><use xlink:href="#search"></use></svg><span class="element-invisible">Search</span>',
-//      '#suffix' => '</button>',
-//      '#markup' => '',
-//      '#weight' => 1000,
-//    ];
-//    $form['actions']['submit']['#attributes']['class'][] = 'element-invisible';
-//  }
-//
-//  // This is for a Views exposed form search block.
-//  if ($form_id == 'views_exposed_form') {
-//    $form['#attributes']['role'] = 'search';
-//    $form['#attributes']['class'][] = 'cd-search--inline__form';
-//    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
-//    $form['#info']['filter-search_api_views_fulltext']['label'] = t('What are you looking for?');
-//  }
-//}
-//
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function common_design_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function common_design_form_alter(&$form, &$form_state, $form_id) {
+
+  // This is for Drupal core search block.
+  if ($form_id == 'search_block_form') {
+
+    $form['#attributes']['class'][] = 'cd-search__form';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
+    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+    $form['keys']['#attributes']['class'][] = 'cd-search__input';
+    $form['keys']['#attributes']['id'][] = 'cd-search';
+    // Theme suggestion for submit element.
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
+  }
+}
+
 ///**
 // * Implements hook_preprocess_search_block_form().
 // */
