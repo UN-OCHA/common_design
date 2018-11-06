@@ -15,9 +15,9 @@
       });
 
       $('.cd-search__input').on('focus', function (e) {
-        $(this).parents('.cd-search__form-inner').find('.cd-search__submit').addClass('js-has-focus');
+        $(this).parents('.cd-search__form').find('.cd-search__submit').addClass('js-has-focus');
       }).on('blur', function (e) {
-        $(this).parents('.cd-search__form-inner').find('.cd-search__submit').removeClass('js-has-focus');
+        $(this).parents('.cd-search__form').find('.cd-search__submit').removeClass('js-has-focus');
       });
 
     }
