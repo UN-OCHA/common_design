@@ -15,9 +15,6 @@ custom-menu:
   js:
     js/custom-menu.js: {}
     dependencies:
-    - core/jquery
-    - core/drupal
-    - core/jquery.once
     - common_design/dropdown
 
 search:
