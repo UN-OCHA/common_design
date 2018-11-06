@@ -4,7 +4,7 @@
 
 .cd-search {
   float: left;
-  @include z-index(dropdown);
+  @include z-index(search);
 
   .cssgrid.flexbox & {
     float: none;

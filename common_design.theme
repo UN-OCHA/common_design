@@ -47,13 +47,6 @@ function common_design_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-///**
-// * Implements hook_preprocess_search_block_form().
-// */
-//function common_design_preprocess_search_block_form(&$vars) {
-//  $vars['search_form'] = str_replace('type="text"', 'type="search"', $vars['search_form']);
-//}
-
 /**
  * Implements hook_preprocess_html().
  */
