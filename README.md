@@ -5,7 +5,7 @@ A base theme of the OCHA Common Design for Drupal 8.
 Extend as needed.
 
 
-# @todo Update below for D8
+# @WIP Update below for D8
 
 
 ## This theme contains
@@ -30,25 +30,23 @@ Extend as needed.
   * Autoprefixer
   * JS linting
 
-## Integrations with other Drupal modules
-
-* [jquery_update](https://www.drupal.org/project/jquery_update) — supports out Bootstrap library
-* [Modernizr](https://www.drupal.org/project/modernizr) — centralized D7 API for modular Modernizr builds
-* [PWA](https://www.drupal.org/project/pwa) — basic offline support and centralized API for manifest.json files
-
 ## Getting started
 
-1. Copy this theme into your `sites/all/themes/custom` folder
+1. Clone this repo to themes/contrib or install using Composer (todo)
 2. If you want to renamne the theme, change the folder name, the filename of the .info file and find and replace for `ocha_basic` in the theme folder.
 3. In the Drupal Admin, go to Appearance, find 'OCHA Basic Starter Theme' (or whatever you've renamed it to), and select **Enable and set default**
 
-**To contribute to `ocha_basic` development:**
+**To contribute to `common_design` development:**
 
-1. Install the dependencies: `npm install`
-2. Copy `localConfig.example.json` to `localConfig.json` and specify the URL of your local Drupal environment.
-3. Run the simple gulp task to build the CSS and watch for new changes: `gulp dev`
-4. When you make commits, it will automatically run a "production" Sass build that excludes Sourcemaps
+1. Run `nvm use` to ensure the correct node version.
+2. Install the dependencies: `npm install`
+3. Copy `localConfig.example.json` to `localConfig.json` and specify the URL of your local Drupal environment.
+4. Run the simple gulp task to build the CSS and watch for new changes: `gulp dev`
+5. When you make commits, it will automatically run a "production" Sass build that excludes Sourcemaps
+6. For twig debug and local development see [Disable Drupal 8 caching during development
+](https://www.drupal.org/node/2598914)
 
+Drupal 8 core has helper classes for accessibility [Hide content properly](https://www.drupal.org/docs/8/accessibility/hide-content-properly)
 
 ## CSS
 
@@ -102,10 +100,9 @@ brew install rename
 ```
 
 
-
 ## Browser support
 
-See https://un-ocha.github.io/styleguide/common-design/
+Progressive enhancement approach to layout, using Feature Queries to detect support for flexbox and grid.
 
 
 ## Favicons
@@ -115,24 +112,9 @@ OCHA default favicons are provided. Update these with your logo.
 http://realfavicongenerator.net/ is a good tool for generating favicons.
 
 
-## Modernizr
-
-We support the [Modernizr Drupal module](https://www.drupal.org/project/modernizr) and the `ocha_basic.info` file contains the Modernizr tests we require.
-
-After enabling the theme, go to `admin/configuration/development/modernizr` to rebuild Modernizr including the theme's feature detects: `svg`, `cssgrid`, `cssgridlegacy` and `mediaqueries`.
-
-
 ## Add to Homescreen / manifest.json
 
 We support the [PWA Drupal module](https://www.drupal.org/project/pwa) instead of providing our own manifest.json file. The `hook_pwa_manifest_alter()` hook is implemented in `template.php` with our default colors/icons, which can be overridden using the normal PWA admin UI.
-
-
-## Using with panels
-
-Use with the Omega base theme to enable panels:
-
-* Add `base theme = omega` to ocha_basic.info
-* Create your layouts using page.tpl.php as a basis
 
 
 ## Styleguide
