@@ -48,6 +48,10 @@
     &:focus {
       background: $cd-white-bg-color;
     }
+
+    .icon--arrow-down {
+      transform: rotate(180deg);
+    }
   }
 
   &:hover,
@@ -61,10 +65,6 @@
 .cd-site-header__nav-holder {
   float: left;
 
-  @supports (display: flex) {
-    //float: none;
-  }
-
   .cd-nav {
     background: $cd-white;
     height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
@@ -73,8 +73,8 @@
     right: 0;
     left: 0;
     top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-    //width: 100vw;
-    @include z-index(dropdown-menu); // arbitrary high zindex, may need adjusting depending on other site content.
+    z-index: 101; // zindex may need adjusting depending on other site content.
+    display: none;
 
     @include desktop {
       display: block;
@@ -85,7 +85,13 @@
       right: auto;
       top: auto;
       width: auto;
-      @include z-index(dropdown-menu);
+    }
+
+    > ul {
+      background: $cd-white;
+      @include desktop {
+        background: transparent;
+      }
     }
 
     ul {
@@ -117,6 +123,11 @@
       font-weight: bold;
       text-transform: uppercase;
     }
+  }
+
+  // Toggle mobile menu.
+  &.open .cd-nav {
+    display: block;
   }
 
   .menu-item {
