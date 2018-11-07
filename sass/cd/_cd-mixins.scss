@@ -18,33 +18,16 @@
 }
 
 //
-// Hide content offscreen accessibly.
+// from Drupal v8.6.2 see _cd-extends.scss
 //
-// @TODO: remove and replace all uses with `@extend .element-invisible`
-//
-@mixin hide {
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
+@mixin visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
-  padding: 0;
-  position: absolute;
+  height: 1px;
   width: 1px;
+  word-wrap: normal;
 }
-
-//
-// Un-hide content.
-//
-// @TODO: just remove this outright, it shouldn't even exist. If something should
-//        be hidden at only a certain breakpoint, just write a more specific MQ.
-//
-@mixin unhide {
-  height: auto;
-  margin: 0;
-  position: static;
-  width: auto;
-}
-
 
 //——————————————————————————————————————————————————————————————————————————————
 // Breakpoints
