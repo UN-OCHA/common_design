@@ -52,7 +52,7 @@
 
 .cd-ocha-btn__label {
   @include max-width(md) {
-    @include hide;
+    @include visually-hidden;
   }
 }
 
@@ -142,7 +142,7 @@
   // column 2/3 in line with each other. it's hidden on mobile.
   .cd-ocha-dropdown__section:nth-child(3) & {
     @include max-width(md) {
-      @include hide;
+      display: none;
       margin: 0;
       padding: 0;
     }
@@ -161,6 +161,7 @@
   padding: 0;
 
   a {
+    color: $cd-white;
     border-bottom: 1px solid transparent;
     text-decoration: none;
 
@@ -176,8 +177,7 @@
   }
 }
 
-// @TODO: remove generic `a` selector that requires the tag-based override.
-a.cd-ocha-dropdown__see-all {
+.cd-ocha-dropdown__see-all {
   display: block;
   width: 100%;
   @include font-size($cd-font-size-small);
