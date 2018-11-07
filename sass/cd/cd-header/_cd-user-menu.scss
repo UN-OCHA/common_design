@@ -176,7 +176,7 @@
 // Hide default block titles
 .region-header-top .block-locale h2,
 .region-header-top .block-menu h2 {
-  @extend .element-invisible;
+  @extend .visually-hidden;
 }
 
 .region-header-top .menu {
