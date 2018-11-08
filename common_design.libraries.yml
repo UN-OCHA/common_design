@@ -1,7 +1,8 @@
 global-styling:
   css:
-    component:
+    theme:
       css/styles.css: {}
+      css/cd/cd-ie.css: { browsers: { IE: 'lte IE 8', '!IE': false } }
 
 dropdown:
   js:
