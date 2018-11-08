@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "git-hooks": "^1.1.10",
+    "gulp-sass-lint": "^1.4.0",
     "gulp-svg-sprite": "^1.5.0"
   }
 }
