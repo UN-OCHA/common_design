@@ -15,26 +15,14 @@
   width: 52px;
   height: $cd-site-header-height;
 
-  @supports (display: flex) {
-    float: none;
-  }
-
-  // Hides logo set in info.yml on mobile, in favour of background image.
-  img {
-    display: none;
-  }
-}
-
-// Logo for mobile.
-@include max-width(md) {
-  .cd-site-logo {
+  // Logo for mobile.
+  // sass-lint:disable no-duplicate-properties
+  @include max-width(md) {
     background: url('../img/logos/ocha-logo-blue@53x37.png') center no-repeat;
-    background: linear-gradient(transparent, transparent),url('../img/logos/ocha-logo-blue.svg') center no-repeat;
+    background: linear-gradient(transparent, transparent), url('../img/logos/ocha-logo-blue.svg') center no-repeat;
   }
-}
 
-@include tablet {
-  .cd-site-logo {
+  @include tablet {
     width: 186px; // width may need to be adjusted depending on logo width.
     padding-top: 0;
     background: none;
@@ -46,19 +34,19 @@
       align-items: flex-start;
     }
 
-    // Displays logo set in info.yml on larger viewports.
-    img {
-      display: block;
-      width: 100%;
+    @supports(display: grid) {
+      grid-column: 1 / 1;
     }
   }
 }
 
+// Hides logo set in info.yml on mobile, in favour of background image.
+.cd-site-logo img {
+  display: none;
 
-.cd-site-logo {
-  float: left;
-
-  @supports(display: grid) {
-    grid-column: 1 / 1;
+  @include tablet {
+    // Displays logo set in info.yml on larger viewports.
+    display: block;
+    width: 100%;
   }
 }

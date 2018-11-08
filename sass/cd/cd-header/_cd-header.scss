@@ -56,13 +56,12 @@
     grid-column: 2 / 2;
   }
 
+  @include desktop {
+    @supports(display: flex) {
+      .cd-search {
+        flex: 0 0 auto;
+      }
 
-    @include desktop {
-
-      @supports(display: flex) {
-        .cd-search {
-          flex: 0 0 auto;
-        }
       .cd-site-header__nav-holder {
         flex: 0 0 auto;
       }
@@ -72,42 +71,41 @@
 
 .cd-site-header__nav-holder nav > ul {
 
+  @include desktop {
+    @supports(display: flex) {
+      float: none;
+      flex: 0 0 auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+    }
+  }
+
+  > li,
+  > .cd-nav__item {
+
     @include desktop {
+      float: left;
+    }
+
+    @supports(display: flex) {
+      flex: 1 0 100%;
+    }
+
+    @include desktop {
+      max-width: 112px;
+
       @supports(display: flex) {
-        float: none;
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-end;
+        flex: 1 1 auto;
       }
     }
 
-    > li,
-    > .cd-nav__item {
-
-      @include desktop {
-        float: left;
-      }
+    @include xlarge {
+      max-width: 160px;
 
       @supports(display: flex) {
-        flex: 1 0 100%;
+        flex: 1 1 auto;
       }
-
-      @include desktop {
-        max-width: 112px;
-
-        @supports(display: flex) {
-          flex: 1 1 auto;
-        }
-      }
-
-      @include xlarge {
-        max-width: 160px;
-
-        @supports(display: flex) {
-          flex: 1 1 auto;
-        }
-      }
-
+    }
   }
 }

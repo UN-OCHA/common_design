@@ -92,7 +92,7 @@
   @include clearfix;
 
   // On mobile the link sections need space.
-  margin-bottom: $cd-base-unit*3;
+  margin-bottom: $cd-base-unit * 3;
 
   // For the see-all link
   position: relative;
@@ -135,7 +135,7 @@
 
 .cd-ocha-dropdown__heading {
   color: $cd-lighter-blue;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   padding-bottom: 2px;
 
   // there's an invisible heading in the third column to keep the links inside
@@ -157,7 +157,7 @@
 .cd-ocha-dropdown__link {
   display: block;
   font-weight: 600;
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
   padding: 0;
 
   a {
