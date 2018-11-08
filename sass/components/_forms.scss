@@ -2,18 +2,18 @@
 // Form styles
 //——————————————————————————————————————————————————————————————————————————————
 
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
-input[type="date"],
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='date'],
 textarea {
   @include font-size($cd-font-size-base);
   padding: $cd-base-unit;
-  border: 1px solid #ccc;
+  border: 1px solid $cd-mid-light-grey;
   width: 100%;
   max-width: 100%;
   color: $cd-dark-grey;

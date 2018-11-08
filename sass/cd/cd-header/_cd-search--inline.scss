@@ -51,13 +51,13 @@
     color: $cd-highlight-red;
     position: relative;
 
-    &:before {
-      content: "";
+    &::before {
+      content: '';
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 0 6px 6px 6px;
-      border-color: transparent transparent $cd-border-color transparent;
+      border-width: 0 6px 6px;
+      border-color: transparent transparent $cd-border-color;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -104,7 +104,7 @@
   padding: 8px $cd-container-padding;
 }
 
-.cd-search--inline__input[type=search]  {
+.cd-search--inline__input[type='search']  {
   -webkit-appearance: none;
   background: $cd-white-bg-color;
   border: 0;
@@ -126,14 +126,17 @@
   color: $cd-dark-grey;
   font-style: italic;
 }
+
 .cd-search--inline__input::-moz-placeholder {
   color: $cd-dark-grey;
   font-style: italic;
 }
+
 .cd-search--inline__input:-ms-input-placeholder {
   color: $cd-dark-grey;
   font-style: italic;
 }
+
 .cd-search--inline__input:-moz-placeholder {
   color: $cd-dark-grey;
   font-style: italic;
@@ -198,6 +201,7 @@
 
   .cd-search--inline__form-inner {
     padding: 0;
+
     &::before {
       bottom: -3px;
       content: '';
@@ -217,7 +221,7 @@
     }
   }
 
-  .cd-search--inline__input[type=search]  {
+  .cd-search--inline__input[type='search']  {
     -webkit-appearance: none;
     background: $cd-white-bg-color;
     border: 0;
@@ -240,18 +244,22 @@
     position: relative;
     right: -10px;
   }
+
   .cd-search--inline__input::-webkit-input-placeholder {
     color: $cd-mid-grey;
     font-style: italic;
   }
+
   .cd-search--inline__input::-moz-placeholder {
     color: $cd-mid-grey;
     font-style: italic;
   }
+
   .cd-search--inline__input:-ms-input-placeholder {
     color: $cd-mid-grey;
     font-style: italic;
   }
+
   .cd-search--inline__input:-moz-placeholder {
     color: $cd-mid-grey;
     font-style: italic;
@@ -270,7 +278,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
     cursor: pointer;
 
     svg {
@@ -311,11 +319,11 @@
       }
     }
   }
-  @media all and (-ms-high-contrast:none) {
+  @media all and (-ms-high-contrast: none) {
 
     // Removes search cancel x on IE 11 only.
-    input[type=search]::-ms-clear,
-    input[type=search]::-ms-reveal {
+    input[type='search']::-ms-clear,
+    input[type='search']::-ms-reveal {
       display: none;
       width: 0;
       height: 0;
