@@ -5,14 +5,7 @@
       {% include '@common_design/cd/cd-header/cd-ocha.html.twig' %}
     {% endblock %}
 
-    {% if page.language_switcher %}
-      <div class="cd-global-header__language-switcher">
-        {{ page.language_switcher }}
-      </div>
-    {% endif %}
+    {{ page.header_top }}
 
-    <div class="cd-global-header__user-menu">
-      {{ page.header_top }}
-    </div>
   </div>
 </div>
