@@ -35,7 +35,6 @@ function common_design_form_alter(&$form, &$form_state, $form_id) {
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
-
     $form['#attributes']['class'][] = 'cd-search__form';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
@@ -44,6 +43,14 @@ function common_design_form_alter(&$form, &$form_state, $form_id) {
     // Theme suggestion for submit element.
     $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
     $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
+  }
+
+  // This is for a Views exposed form search block.
+  if ($form_id == 'views_exposed_form') {
+    $form['#attributes']['role'] = 'search';
+    $form['#attributes']['class'][] = 'cd-search--inline__form';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
+    $form['#info']['filter-search_api_views_fulltext']['label'] = t('What are you looking for?');
   }
 }
 
@@ -120,12 +127,13 @@ function common_design_preprocess_html(&$vars) {
 // */
 function common_design_preprocess_page(&$vars) {
 
-//  // Set variable based on path alias to include inline-search.
-//  $path = drupal_get_path_alias();
-//  if ($path == 'inline-search') {
-//    $inline_search = TRUE;
-//    $vars['inline_search'] = $inline_search;
-//  }
+  $current_uri = \Drupal::request()->getRequestUri();
+
+  // Set variable based on path alias to include inline-search.
+  if ($current_uri == '/inline-search') {
+    $inline_search = TRUE;
+    $vars['inline_search'] = $inline_search;
+  }
 
 }
 

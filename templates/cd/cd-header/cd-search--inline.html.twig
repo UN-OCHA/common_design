@@ -1,4 +1,3 @@
-<?php if($page['header_search']): ?>
   <div class="cd-search--inline">
     <button type="button" class="cd-search--inline_btn" data-toggle="dropdown" id="cd-search-btn">
       <svg class="icon icon--search">
@@ -7,6 +6,7 @@
       <span class="cd-search_btn-text">Search</span>
     </button>
 
-    <?php print render($page['header_search']); ?>
+    {{ page.header_search }}
+
   </div>
-<?php endif; ?>
+
