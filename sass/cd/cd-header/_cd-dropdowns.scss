@@ -4,6 +4,7 @@
 
 .cd-dropdown {
   display: none;
+
   .open > & {
     display: block;
   }
@@ -16,7 +17,7 @@
 }
 
 .open {
-  > [data-toggle="dropdown"] > .icon--arrow-down {
+  > [data-toggle='dropdown'] > .icon--arrow-down {
     transform: rotate(180deg);
   }
 }
@@ -26,25 +27,22 @@
  */
 .cd-global-header__dropdown {
   background: $cd-primary-bg-color;
-  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.30);
+  box-shadow: 0 3px 6px 0 rgba(0, 0 , 0, 0.3);
   left: 0;
   position: absolute;
+  color: $cd-white-text-color;
   @include z-index(dropdown);
-
-  a {
-    color: $cd-white-text-color;
-  }
 }
 
 .cd-global-header__dropdown-btn {
   .open & {
-    &:before {
-      content: "";
+    &::before {
+      content: '';
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 0 6px 6px 6px;
-      border-color: transparent transparent $cd-primary-bg-color transparent;
+      border-width: 0 6px 6px;
+      border-color: transparent transparent $cd-primary-bg-color;
       position: absolute;
       bottom: 0;
       left: 50%;

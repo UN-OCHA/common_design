@@ -40,7 +40,7 @@
 
 @include tablet {
   // Override container layout so flexbox justify-content works.
-  .cd-soft-footer .cd-container:after {
+  .cd-soft-footer .cd-container::after {
     content: none;
   }
 

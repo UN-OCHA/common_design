@@ -16,10 +16,10 @@
   }
 
   &--no-language-switcher {
-    li.last a {
+    li:last-child a {
       padding-right: 0;
 
-      &:after {
+      &::after {
         content: none;
       }
     }
@@ -46,7 +46,7 @@
     padding: 0 20px;
   }
 
-  &:after {
+  &::after {
     color: $cd-light-blue-border-color;
     content: '|';
     position: absolute;
@@ -70,9 +70,10 @@
       padding-left: 34px;
     }
   }
-  &:before {
+
+  &::before {
     position: absolute;
-    content: "";
+    content: '';
     height: $cd-global-header-height;
     width: 14px;
     left: 7px;
@@ -89,8 +90,9 @@
 // Menu item with plus icon
 .cd-user-menu__icon-plus {
   @extend .cd-user-menu__icon;
-  &:before {
-    background-image: url(../img/icons/add--white.svg);
+
+  &::before {
+    background-image: url('../img/icons/add--white.svg');
     background-size: 12px 12px;
     height: 33px;
     left: 15px;
@@ -100,74 +102,11 @@
 // Menu item with user icon
 .cd-user-menu__icon-login {
   @extend .cd-user-menu__icon;
-  &:before {
-    background-image: url(../img/icons/user--white.svg);
+
+  &::before {
+    background-image: url('../img/icons/user--white.svg');
   }
 }
-
-.cd-user-menu__label {
-  .cd-user-menu__item--small & {
-    max-width: 60px;
-  }
-}
-
-.cd-user-menu__label {
-  border-bottom: 1px solid transparent;
-}
-
-.cd-user-menu__dropdown {
-  list-style: none;
-  margin: 0;
-  width: 125px;
-  padding: 12px 24px;
-  left: auto;
-
-  li {
-    display: block;
-    float: none;
-  }
-
-  .cd-user-menu__item--small + & {
-    &:before {
-      left: 55px;
-    }
-  }
-}
-
-.cd-user-menu__dropdown-link {
-  display: block;
-  padding: 12px 0;
-  text-decoration: none;
-
-  &.active {
-    font-weight: bold;
-    padding-right: 12px;
-    position: relative;
-
-    &:after {
-      position: absolute;
-      right: 0;
-      content: "";
-      width: 14px;
-      height: 14px;
-      background-image: url(../img/icons/selected--highlighted.svg);
-      background-repeat: no-repeat;
-      background-position: 0 50%;
-      background-size: 14px 14px;
-    }
-  }
-}
-
-@include tablet {
-  .cd-user-menu__item--small {
-    max-width: 70px;
-
-    .cd-user-menu__dropdown {
-      left: 30px;
-    }
-  }
-}
-
 
 //——————————————————————————————————————————————————————————————————————————————
 // Drupal selectors
@@ -176,7 +115,7 @@
 // Hide default block titles
 .region-header-top .block-locale h2,
 .region-header-top .block-menu h2 {
-  @extend .element-invisible;
+  @extend .visually-hidden;
 }
 
 .region-header-top .menu {
@@ -184,7 +123,7 @@
 
   // If there's no language switcher in the Global Header, uncomment this line
   // to apply special treatment to the last link in the list.
-  @extend .cd-user-menu--no-language-switcher;
+  //@extend .cd-user-menu--no-language-switcher;
 }
 
 .region-header-top .menu > li a {
@@ -197,6 +136,6 @@
 }
 
 // Add content menu item as first item in user menu
-//.logged-in .region-header-top .menu > li:first-child {
-//  @extend .cd-user-menu__icon-plus;
-//}
+.user-logged-in .region-header-top .menu > li:first-child {
+  @extend .cd-user-menu__icon-plus;
+}

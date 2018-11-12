@@ -23,6 +23,7 @@ const uglify = require('gulp-uglify');
 const taskListing = require('gulp-task-listing');
 const changed = require('gulp-changed');
 const concat = require('gulp-concat');
+const sassLint = require('gulp-sass-lint');
 
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -63,15 +64,15 @@ gulp.task('dev:bs', () => {
 
 
 //——————————————————————————————————————————————————————————————————————————————
-// Sass
+// Sass compile
 //——————————————————————————————————————————————————————————————————————————————
-gulp.task('dev:sass', () => {
+gulp.task('dev:sass-compile', () => {
   bs.notify(`Compiling Sass...`);
 
-  return gulp.src(['sass/styles.scss'])
+  return gulp.src(['sass/**/*.scss'])
     .pipe(plumber())
     .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.init()))
-    .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
       prefix({
         browsers: ['>1%', 'iOS 9'],
@@ -82,7 +83,25 @@ gulp.task('dev:sass', () => {
     .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.write('./')))
     .pipe(gulp.dest('css/'))
     .pipe(reload({stream: true}));
+
 });
+
+//——————————————————————————————————————————————————————————————————————————————
+// Sass Linting
+//——————————————————————————————————————————————————————————————————————————————
+gulp.task('dev:sass-lint', function () {
+  return gulp.src('sass/**/*.s+(a|c)ss')
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+});
+
+
+//——————————————————————————————————————————————————————————————————————————————
+// Sass
+//——————————————————————————————————————————————————————————————————————————————
+gulp.task('dev:sass', ['dev:sass-compile','dev:sass-lint']);
+
 
 //——————————————————————————————————————————————————————————————————————————————
 // SVG Sprite generation
@@ -114,11 +133,14 @@ gulp.task('sprites', ['sprite-page']);
 //——————————————————————————————————————————————————————————————————————————————
 // JS Linting
 //——————————————————————————————————————————————————————————————————————————————
-// gulp.task('dev:js-lint', () => {
-//   return gulp.src('js/*.js')
-//     .pipe(jshint())
-//     .pipe(jshint.reporter(stylish));
-// });
+gulp.task('dev:js-lint', () => {
+  return gulp.src([
+    'js/*.js',
+    '!js/bootstrap-dropdown.js'
+  ])
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
+});
 
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -137,28 +159,28 @@ gulp.task('sprites', ['sprite-page']);
 //——————————————————————————————————————————————————————————————————————————————
 // JS Lint + Bundle
 //——————————————————————————————————————————————————————————————————————————————
-// gulp.task('dev:js', ['dev:js-lint', 'dev:js-bundle']);
+gulp.task('dev:js', ['dev:js-lint', /*'dev:js-bundle'*/]);
 
 
 //——————————————————————————————————————————————————————————————————————————————
 // Build assets and start Browser-Sync
 //——————————————————————————————————————————————————————————————————————————————
-gulp.task('dev', ['dev:sass', /*'dev:js',*/ 'dev:bs', 'watch']);
+gulp.task('dev', ['dev:sass', 'dev:js', 'dev:bs', 'watch']);
 
 
 //——————————————————————————————————————————————————————————————————————————————
 // Watch Files For Changes
 //——————————————————————————————————————————————————————————————————————————————
 gulp.task('watch', () => {
-  // gulp.watch(['js/*.js'], ['dev:js']);
-  gulp.watch(['sass/**/*.scss'], ['dev:sass']);
+  gulp.watch(['js/*.js'], ['dev:js']);
+  gulp.watch(['sass/**/*.scss'], ['dev:sass-compile']);
 });
 
 
 //——————————————————————————————————————————————————————————————————————————————
 // Build all assets in the theme
 //——————————————————————————————————————————————————————————————————————————————
-gulp.task('build', ['dev:sass', /*'dev:js'*/]);
+gulp.task('build', ['dev:sass', 'dev:js']);
 
 
 //——————————————————————————————————————————————————————————————————————————————

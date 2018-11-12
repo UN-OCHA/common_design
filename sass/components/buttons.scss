@@ -2,24 +2,29 @@
 // Button styles
 //——————————————————————————————————————————————————————————————————————————————
 
-button, input[type="submit"] {
+@import '../cd/_cd-variables';
+@import '../cd/_cd-mixins';
+
+button,
+input[type='submit'] {
   -webkit-appearance: none;
   @include font-size($cd-font-size-base);
   color: $cd-dark-grey;
   background: none;
-  border: none;
+  border: 0 none;
   box-shadow: none;
   font-family: $cd-font;
 }
 
-.btn-primary, .form-actions input[type="submit"] {
+.btn-primary,
+.form-actions input[type='submit'] {
   display: inline-block;
   border-radius: 4px;
   background: $cd-ocha-blue;
   text-transform: uppercase;
   text-decoration: none;
   color: $cd-white;
-  padding: $cd-base-unit*1.5;
+  padding: $cd-base-unit * 1.5;
   transition: background 0.3s ease;
 
   &:hover,

@@ -1,7 +1,8 @@
 global-styling:
   css:
-    component:
+    theme:
       css/styles.css: {}
+      css/cd/cd-ie.css: { browsers: { IE: 'lte IE 8', '!IE': false } }
 
 dropdown:
   js:
@@ -20,5 +21,11 @@ custom-menu:
 search:
   js:
     js/custom-search.js: {}
+    dependencies:
+    - common_design/dropdown
+
+search--inline:
+  js:
+    js/custom-search--inline.js: {}
     dependencies:
     - common_design/dropdown

@@ -3,11 +3,10 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer {
-  grid-row: 4/4; // Position footer so visible on short pages.
-
+  grid-row: 4 / 4; // Position footer so visible on short pages.
   background: $cd-primary-bg-color;
   color: $cd-white-text-color;
-  padding: 48px 0 0 0;
+  padding: 48px 0 0;
   text-align: center;
   line-height: 1.5;
 
@@ -27,6 +26,8 @@
 .cd-footer__section {
   margin: 0 auto;
   padding-bottom: 48px;
+  float: none;
+  width: 100%;
 
   // When we know a section contains no content, we can set an empty variant
   // to collapse it to zero-height which helps especially on mobile, without
@@ -53,12 +54,6 @@
     }
   }
 
-}
-
-
-.cd-footer__section {
-  float: none;
-  width: 100%;
 }
 
 .cd-footer__section--menu {
@@ -96,7 +91,6 @@
 
 @supports (display: flex) {
 
-  //* reset from above boo
   .cd-footer__section {
     float: none;
   }
