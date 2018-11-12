@@ -4,9 +4,19 @@ A base theme of the OCHA Common Design for Drupal 8.
 
 Extend as needed.
 
+**Releases**
+
+Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) for latest updates. We use [npm-version](https://docs.npmjs.com/cli/version) and [sematantic versioning](https://semver.org/)
+
 
 # @WIP Update below for D8
 
+## To do:
+
+* Grid for Views with view mode override
+* Logo as picture element for PNG fallback
+* Remove modernizr classes and replace with feature queries
+* Test Aggregation versus sass compilation to a single css file
 
 ## This theme contains
 
