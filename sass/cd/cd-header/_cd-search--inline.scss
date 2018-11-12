@@ -4,8 +4,9 @@
 
 .cd-search--inline {
   float: left;
+  @include z-index(search);
 
-  .cssgrid.flexbox & {
+  @supports (display: flex) {
     float: none;
   }
 }
@@ -93,18 +94,17 @@
   left: 0;
   position: absolute;
   right: 0;
-  z-index: map-get($zindex, sidebar);
 
   .open & {
     display: block;
   }
 }
 
-.cd-search--inline__form-inner {
+.cd-search--inline__form form {
   padding: 8px $cd-container-padding;
 }
 
-.cd-search--inline__input[type='search']  {
+.cd-search--inline__input {
   -webkit-appearance: none;
   background: $cd-white-bg-color;
   border: 0;
@@ -199,7 +199,7 @@
     position: relative;
   }
 
-  .cd-search--inline__form-inner {
+  .cd-search--inline__form form {
     padding: 0;
 
     &::before {
@@ -215,13 +215,13 @@
     }
   }
 
-  .cd-search--inline__form-inner.js-has-focus {
+  .cd-search--inline__form form.js-has-focus {
     &::before {
       background: $cd-highlight-red;
     }
   }
 
-  .cd-search--inline__input[type='search']  {
+  .cd-search--inline__input {
     -webkit-appearance: none;
     background: $cd-white-bg-color;
     border: 0;
@@ -303,7 +303,7 @@
   }
 
   // Submit button treatment for modern browsers.
-  .cssgrid.flexbox {
+  @supports (display: flex) {
 
     .cd-search--inline__submit {
       align-items: center;
