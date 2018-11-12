@@ -8,7 +8,8 @@
   box-sizing: border-box;
 }
 
-html, input {
+html,
+input {
   // Font size should be set at the correct percentage to match the base-font-size
   // 16px = 100%
   // 18px = 112.5%
@@ -17,8 +18,8 @@ html, input {
 }
 
 body {
-  font-family: $cd-font;
   @include font-size($cd-font-size-base);
+  font-family: $cd-font;
   color: $cd-dark-grey;
   line-height: 1.5;
 
@@ -37,6 +38,6 @@ img {
 
 @media print {
   #toolbar {
-    display: none!important;
+    display: none !important;
   }
 }

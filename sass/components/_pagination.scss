@@ -20,12 +20,14 @@
       background-color: $cd-white-bg-color;
       border: 1px solid $cd-site-bg-color;
       border-radius: 4px;
+
       &:hover,
       &:focus {
         color: $cd-ocha-blue;
         background-color: $cd-site-bg-color;
       }
     }
+
     &.is-active a {
       color: $cd-white-bg-color;
       background-color: $cd-ocha-blue;

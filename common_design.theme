@@ -5,6 +5,8 @@
  * Template overrides, preprocess, and alter hooks for the OCHA Basic theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 function common_design_preprocess(&$variables, $hook) {
   try {
     $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
@@ -28,14 +30,18 @@ function common_design_theme_suggestions_input_alter(&$suggestions, array $varia
   }
 }
 
+function common_design_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'form__'.$variables['element']['#id'];
+}
+
+
 /**
  * Implements hook_form_alter().
  */
-function common_design_form_alter(&$form, &$form_state, $form_id) {
+function common_design_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
-
     $form['#attributes']['class'][] = 'cd-search__form';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
@@ -44,6 +50,14 @@ function common_design_form_alter(&$form, &$form_state, $form_id) {
     // Theme suggestion for submit element.
     $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
     $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
+  }
+
+  // This is for a Views exposed form search block.
+  if ($form_id == 'views_exposed_form') {
+    $form['#attributes']['class'][] = 'cd-search--inline__form';
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
   }
 }
 
@@ -119,53 +133,14 @@ function common_design_preprocess_html(&$vars) {
 // * Implements template_preprocess_page().
 // */
 function common_design_preprocess_page(&$vars) {
-  // Bail out if function is not available.
-  if (!function_exists('language_negotiation_get_switch_links')) {
-    return;
+
+  $current_uri = \Drupal::request()->getRequestUri();
+
+  // Set variable based on path alias to include inline-search.
+  if ($current_uri == '/inline-search') {
+    $inline_search = TRUE;
+    $vars['inline_search'] = $inline_search;
   }
-
-  // Add language links.
-  global $language;
-  $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
-  $links = language_negotiation_get_switch_links('language', $path);
-
-  // Bail out if links is not enumerable.
-  if (!$links) {
-    return;
-  }
-
-  $render = array(
-    'links' => $links->links,
-    'attributes' => array(
-      'class' => [
-        'cd-global-header__dropdown',
-        'cd-dropdown',
-        'cd-user-menu__dropdown',
-      ],
-      'role' => 'menu',
-      'id' => 'cd-language',
-      'aria-labelledby' => 'cd-language-toggle',
-    ),
-  );
-
-  $output = '';
-  $output .= '<div class="cd-language-switcher">';
-  $output .= '<button type="button" class="cd-user-menu__item cd-user-menu__item--small cd-global-header__dropdown-btn" data-toggle="dropdown" id="cd-language-toggle">';
-  $output .= $language->language;
-  $output .= '<svg class="icon icon--arrow-down"><use xlink:href="#arrow-down"></use></svg>';
-  $output .= '</button>';
-  $output .= theme('links__locale_block', $render);
-  $output .= '</div>';
-
-  $vars['page']['language_switcher'] = $output;
-
-
-//  // Set variable based on path alias to include inline-search.
-//  $path = drupal_get_path_alias();
-//  if ($path == 'inline-search') {
-//    $inline_search = TRUE;
-//    $vars['inline_search'] = $inline_search;
-//  }
 
 }
 
@@ -193,4 +168,13 @@ function common_design_pwa_manifest_alter(&$manifest) {
       'type' => 'image/png',
     ],
   ];
+}
+
+///**
+// * Implements hook_links__language_block().
+// */
+function common_design_preprocess_links__language_block(&$vars) {
+  // Current language available in template override.
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $vars['language'] = $language;
 }

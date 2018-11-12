@@ -2,40 +2,41 @@
 // Typography
 //——————————————————————————————————————————————————————————————————————————————
 
-h1, h2 ,h3 ,h4 ,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   line-height: 1.2;
   font-weight: bold;
+  color: $cd-ocha-blue;
 }
 
 h1 {
-  //@include font-size($cd-font-size-medium);
   color: $cd-ocha-blue;
   font-weight: normal;
 }
 
-h1, h2 ,h3 ,h4 ,h5, ol, dl {
+h1,
+h2,
+h3,
+h4,
+h5,
+ol,
+dl {
   margin-bottom: $cd-base-unit;
 }
 
-//p, ul {
-//  margin-bottom: $cd-base-unit;
-//}
 
-h4, h5 {
+h4,
+h5 {
   font-weight: 400;
 }
 
-h1, h2 ,h3 ,h4 ,h5 {
-  color: $cd-ocha-blue;
-}
-
-h1.page-title {
-  padding-bottom: $cd-base-unit*1.5;
+.page-title {
+  padding-bottom: $cd-base-unit * 1.5;
   border-bottom: 1px solid $cd-mid-bluey-grey;
   font-weight: 300;
-}
-
-h1.page-title {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: $cd-default-text-color;
@@ -45,31 +46,19 @@ h1.page-title {
   }
 }
 
-h2, h3 {
-  //text-transform: uppercase
-}
-
 a {
   color: $cd-dark-blue;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $cd-ocha-blue;
     text-decoration: none;
   }
 }
 
-//ol, ul {
-//  list-style: initial;
-//  margin-left: $cd-base-unit*3;
-//}
-
 ol {
   list-style: decimal;
 }
-
-//li {
-//  margin-bottom: $cd-base-unit/4;
-//}
 
 strong {
   font-weight: 400;
@@ -93,20 +82,18 @@ dd {
 }
 
 @include min-width(sm) {
-  //h1 {
-  //  @include font-size($cd-font-size-xlarge);
-  //}
-  //
-  //ol, dl {
-  //  @include font-size($cd-font-size-base);
-  //}
 
   h2 {
-    //@include font-size($cd-font-size-medium);
     font-weight: normal;
   }
 
-  h1, h2 ,h3 ,h4 ,h5, ol, dl {
-    margin-bottom: $cd-base-unit*2;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  ol,
+  dl {
+    margin-bottom: $cd-base-unit * 2;
   }
 }

@@ -6,7 +6,7 @@
   float: left;
   @include z-index(search);
 
-  .cssgrid.flexbox & {
+  @supports (display: flex) {
     float: none;
   }
 }
@@ -51,13 +51,13 @@
     color: $cd-highlight-red;
     position: relative;
 
-    &:before {
-      content: "";
+    &::before {
+      content: '';
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 0 6px 6px 6px;
-      border-color: transparent transparent $cd-border-color transparent;
+      border-width: 0 6px 6px;
+      border-color: transparent transparent $cd-border-color;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -105,7 +105,7 @@
   padding: 8px $cd-container-padding;
 }
 
-.cd-search__input[type=search] {
+.cd-search__input[type='search'] {
   -webkit-appearance: none;
   background: $cd-white-bg-color;
   border: 0;
@@ -128,14 +128,17 @@
   color: $cd-dark-grey;
   font-style: italic;
 }
+
 .cd-search__input::-moz-placeholder {
   color: $cd-dark-grey;
   font-style: italic;
 }
+
 .cd-search__input:-ms-input-placeholder {
   color: $cd-dark-grey;
   font-style: italic;
 }
+
 .cd-search__input:-moz-placeholder {
   color: $cd-dark-grey;
   font-style: italic;

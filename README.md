@@ -17,6 +17,13 @@ Extend as needed.
 * Mixins for clearfix, REM font sizes and media queries
 * Bootstrap dropdowns (requires jQuery 1.9.1 or higher)
 
+**Drupal components:**
+
+* Normalise is in core
+* jQuery is in core but isn't loaded globally. We include it as a library when we need it.
+* hidden.module.css for display-related utility classes
+
+
 **Optional components:**
 
 * Grid (simplified version of Bootstrap v4 grid, https://v4-alpha.getbootstrap.com/layout/overview/)

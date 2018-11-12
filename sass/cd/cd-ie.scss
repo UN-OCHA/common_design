@@ -2,8 +2,7 @@
 // Specific styles for IE
 //——————————————————————————————————————————————————————————————————————————————
 
-@include tablet {
-  .cd-site-logo {
-    background: url('../img/logos/ocha-lockup-blue@186x60.png') center no-repeat;
-  }
+.cd-site-logo {
+  background: url('../../img/logos/ocha-lockup-blue@186x60.png') center no-repeat;
+  width: 186px;
 }

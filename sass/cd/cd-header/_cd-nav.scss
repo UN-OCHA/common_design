@@ -33,7 +33,7 @@
     z-index: 101;
     color: $cd-dark-text-color;
 
-    &:before {
+    &::before {
       bottom: -3px;
       content: '';
       background: $cd-highlight-red;
@@ -68,7 +68,7 @@
   .cd-nav {
     background: $cd-white;
     height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
-    padding: 20px 0 36px 0;
+    padding: 20px 0 36px;
     position: absolute;
     right: 0;
     left: 0;
@@ -105,7 +105,6 @@
       padding: 15px 30px;
       text-decoration: none;
       display: block;
-      
       @supports (display: flex) {
         display: flex;
       }
@@ -135,7 +134,7 @@
       background: $cd-white-bg-color;
     }
 
-    > a:before {
+    > a::before {
       background: $cd-highlight-red;
     }
   }
@@ -176,7 +175,6 @@
     }
   }
 
-  
   // Active trail for mobile menu.
   @include max-width(lg) {
 
@@ -184,7 +182,8 @@
 
       a {
         position: relative;
-        &:before {
+
+        &::before {
           position: absolute;
           content: '';
           width: 3px;
@@ -195,7 +194,7 @@
         }
       }
 
-      > a.is-active:before {
+      > a.is-active::before {
         background: $cd-highlight-red;
       }
 
@@ -203,7 +202,7 @@
       // Classes based on Drupal menu item configuration.
       &.menu-item--collapsed,
       &.menu-item--expanded {
-        > a.is-active:before {
+        > a.is-active::before {
           background: rgba($cd-highlight-red, 0.2);
         }
       }
@@ -212,7 +211,8 @@
 
         a {
           position: relative;
-          &:before {
+
+          &::before {
             position: absolute;
             content: '';
             width: 3px;
@@ -222,7 +222,7 @@
             background: rgba($cd-highlight-red, 0.2);
           }
 
-          a.is-active:before {
+          a.is-active::before {
             background: $cd-highlight-red;
           }
         }
@@ -230,11 +230,11 @@
 
       > ul > li.menu-item--active-trail {
 
-        a:before {
+        a::before {
           background: rgba($cd-highlight-red, 0.6);
         }
 
-        a.is-active:before {
+        a.is-active::before {
           background: $cd-highlight-red;
         }
       }
@@ -242,8 +242,8 @@
     }
 
     // Grandchild items have different top/bottom padding and therefore height.
-    .cd-nav > ul > li.menu-item--active-trail > ul > li > ul > li a:before,
-    .cd-nav > ul > li > ul > li.menu-item--active-trail > ul > li a:before {
+    .cd-nav > ul > li.menu-item--active-trail > ul > li > ul > li a::before,
+    .cd-nav > ul > li > ul > li.menu-item--active-trail > ul > li a::before {
       height: 38px; // Height of menu item.
     }
   }
@@ -276,7 +276,7 @@
 
           > a {
 
-            &:before {
+            &::before {
               background: $cd-highlight-red;
             }
 
@@ -285,7 +285,7 @@
             }
 
             &:focus {
-              &:before {
+              &::before {
                 background: $cd-highlight-red;
               }
             }
@@ -301,7 +301,7 @@
           position: relative;
           transition: background 0.3s ease;
 
-          &:before {
+          &::before {
             bottom: -3px;
             content: '';
             background: transparent;
@@ -323,7 +323,7 @@
 
           &.is-active,
           &:focus {
-            &:before {
+            &::before {
               background: $cd-highlight-red;
             }
           }
