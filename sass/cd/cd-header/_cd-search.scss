@@ -6,7 +6,7 @@
   float: left;
   @include z-index(search);
 
-  .cssgrid.flexbox & {
+  @supports (display: flex) {
     float: none;
   }
 }
