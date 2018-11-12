@@ -5,6 +5,8 @@
  * Template overrides, preprocess, and alter hooks for the OCHA Basic theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 function common_design_preprocess(&$variables, $hook) {
   try {
     $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
@@ -28,10 +30,15 @@ function common_design_theme_suggestions_input_alter(&$suggestions, array $varia
   }
 }
 
+function common_design_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'form__'.$variables['element']['#id'];
+}
+
+
 /**
  * Implements hook_form_alter().
  */
-function common_design_form_alter(&$form, &$form_state, $form_id) {
+function common_design_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
@@ -47,10 +54,10 @@ function common_design_form_alter(&$form, &$form_state, $form_id) {
 
   // This is for a Views exposed form search block.
   if ($form_id == 'views_exposed_form') {
-    $form['#attributes']['role'] = 'search';
     $form['#attributes']['class'][] = 'cd-search--inline__form';
-    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
-    $form['#info']['filter-search_api_views_fulltext']['label'] = t('What are you looking for?');
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
   }
 }
 
