@@ -23,3 +23,9 @@ search:
     js/custom-search.js: {}
     dependencies:
     - common_design/dropdown
+
+search--inline:
+  js:
+    js/custom-search--inline.js: {}
+    dependencies:
+    - common_design/dropdown
