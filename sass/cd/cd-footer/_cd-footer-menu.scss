@@ -29,12 +29,7 @@
 // Drupal selectors
 //——————————————————————————————————————————————————————————————————————————————
 
-// Apply menu  styles to Drupal Menu items
-.menu--footer .menu {
-  @extend .cd-footer-menu;
-}
-
 // Apply menu item styles to Drupal Menu items
-.menu--footer .menu > li {
+.cd-footer-menu > li {
   @extend .cd-footer-menu__item;
 }
