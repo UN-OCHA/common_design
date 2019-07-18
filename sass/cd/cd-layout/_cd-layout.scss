@@ -64,4 +64,11 @@ body {
   }
 }
 
+.cd-container[role='main'] {
+  padding-bottom: 2rem;
+
+  @include desktop {
+    padding-bottom: 4rem;
+  }
+}
 
