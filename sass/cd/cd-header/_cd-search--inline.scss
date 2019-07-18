@@ -147,6 +147,11 @@
   right: 10px;
 }
 
+// Safari fix.
+.cd-search--inline__input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .cd-search--inline__submit {
   align-items: center;
   background: $cd-dark-grey;
@@ -172,10 +177,10 @@
     margin: 0 auto;
   }
 
-  &.js-has-focus {
+  &.js-has-focus,
+  &:focus {
     background-color: $cd-highlight-red;
   }
-
 }
 
 // Start inline search for desktop only.
@@ -188,7 +193,7 @@
   .cd-search--inline {
     float: left;
     border-left: 1px solid $cd-border-color;
-    border-right: 1px solid $cd-border-color;
+    //border-right: 1px solid $cd-border-color;
     flex: 0 1 400px;
     margin-left: 30px;
   }
@@ -265,6 +270,11 @@
     font-style: italic;
   }
 
+  // Safari fix.
+  .cd-search--inline__input::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
   .cd-search--inline__submit {
     background: $cd-white-bg-color;
     border: 0;
@@ -283,8 +293,8 @@
 
     svg {
       box-sizing: content-box;
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       fill: $cd-mid-grey;
       padding: 0 16px;
     }
