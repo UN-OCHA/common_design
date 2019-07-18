@@ -50,6 +50,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     // Theme suggestion for submit element.
     $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
     $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
+    $form['actions']['submit']['#attributes']['value'][] = 'Search';
   }
 
   // This is for a Views exposed form search block.
