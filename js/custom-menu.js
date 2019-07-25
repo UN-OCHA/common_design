@@ -23,11 +23,17 @@
           // Toggle mobile menu.
           $('.cd-site-header__nav-toggle', context).once('cdMenu').on('click', function() {
             $('.cd-site-header__nav-holder').toggleClass('open');
+            if ($('.cd-site-header__nav-holder').hasClass('open')) {
+              $(this).attr('aria-expanded','true');
+            } else {
+              $(this).attr('aria-expanded','false');
+            }
           });
 
           // When bootstrap dropdown elements are clicked, close mobile menu.
           $('.cd-global-header__dropdown-btn, .cd-search_btn, .cd-search--inline_btn').on('click.bs.dropdown', function(e) {
             $('.cd-site-header__nav-holder').removeClass('open');
+            $(this).attr('aria-expanded','false');
           });
 
         } else {

@@ -149,6 +149,11 @@
   right: 10px;
 }
 
+// Safari fix.
+.cd-search__input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .cd-search__submit {
   align-items: center;
   background: $cd-dark-grey;
@@ -174,7 +179,8 @@
     margin: 0 auto;
   }
 
-  &.js-has-focus {
+  &.js-has-focus,
+  &:focus {
     background-color: $cd-highlight-red;
   }
 }
@@ -197,7 +203,6 @@
 }
 
 @include desktop {
-
   .cd-search_btn svg {
     width: 22px;
     height: 22px;

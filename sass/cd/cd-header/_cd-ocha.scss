@@ -17,10 +17,6 @@
   position: relative;
   transition: background 0.3s ease;
 
-  &:focus {
-    outline: 0; // outline is replaced by bright underline.
-  }
-
   @include tablet {
     display: flex;
     width: auto;
@@ -34,6 +30,8 @@
   }
 
   .icon--arrow-down {
+    margin: auto; // Center vertically in macOS 10
+
     @include tablet {
       margin-left: 4px;
     }
@@ -41,7 +39,7 @@
 }
 
 .cd-ocha-btn__logo {
-  background: url('../img/logos/ocha-logo-white.svg') center no-repeat;
+  background: url('../img/logos/ocha-logo.svg') center no-repeat;
   background-size: contain;
   display: inline-block;
   flex-shrink: 0;
@@ -161,14 +159,13 @@
   padding: 0;
 
   a {
-    color: $cd-white;
-    border-bottom: 1px solid transparent;
+    color: $cd-white-text-color;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      border-color: $cd-bright-blue;
       color: $cd-white-text-color;
+      text-decoration: underline;
     }
   }
 
