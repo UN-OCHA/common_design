@@ -16,11 +16,11 @@
 
       // Add class on submit button when input has focus, remove on blur.
       $('.cd-search--inline .cd-search--inline__input').on('focus', function(e) {
-        $(this).parents('.cd-search--inline__form').find('.cd-search--inline__submit').addClass('js-has-focus');
-        $(this).parents('.cd-search--inline__form').find('form').addClass('js-has-focus');
+        $(this).parent().find('.cd-search--inline__submit').addClass('js-has-focus');
+        $(this).parent().addClass('js-has-focus');
       }).on('blur', function(e) {
-        $(this).parents('.cd-search--inline__form').find('.cd-search--inline__submit').removeClass('js-has-focus');
-        $(this).parents('.cd-search--inline__form').find('form').removeClass('js-has-focus');
+        $(this).parent().find('.cd-search--inline__submit').removeClass('js-has-focus');
+        $(this).parent().removeClass('js-has-focus');
       });
 
     }
