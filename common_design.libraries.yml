@@ -4,28 +4,37 @@ global-styling:
       css/styles.css: {}
       css/cd/cd-ie.css: { browsers: { IE: 'lte IE 8', '!IE': false } }
 
+#dropdown:
+#  js:
+#    js/bootstrap-dropdown.js: {}
+#    dependencies:
+#    - core/jquery
+#    - core/drupal
+#    - core/jquery.once
+
+#custom-menu:
+#  js:
+#    js/custom-menu.js: {}
+#    dependencies:
+#    - common_design/dropdown
+
+#search--inline:
+#  js:
+#    js/custom-search--inline.js: {}
+#    dependencies:
+#    - common_design/dropdown
+
+# This doesn't work due to the cd-
+# I'm puzzled
+cd-dropdown:
+  js:
+    js/cd-dropdown.js: {}
+
+# When I omit the cd- preffix it works. WTF.
 dropdown:
   js:
-    js/bootstrap-dropdown.js: {}
-    dependencies:
-    - core/jquery
-    - core/drupal
-    - core/jquery.once
-
-custom-menu:
-  js:
-    js/custom-menu.js: {}
-    dependencies:
-    - common_design/dropdown
+    js/cd-dropdown.js: {}
 
 search:
   js:
     js/custom-search.js: {}
-    dependencies:
-    - common_design/dropdown
-
-search--inline:
-  js:
-    js/custom-search--inline.js: {}
-    dependencies:
-    - common_design/dropdown
