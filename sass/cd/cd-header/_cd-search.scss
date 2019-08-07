@@ -96,6 +96,10 @@
   position: absolute;
   right: 0;
 
+  label {
+    @extend .visually-hidden;
+  }
+
   .open & {
     display: block;
   }
@@ -105,7 +109,8 @@
   padding: 8px $cd-container-padding;
 }
 
-.cd-search__input[type='search'] {
+.cd-search__input[type='search'],
+.cd-search__input[type='text']  {
   -webkit-appearance: none;
   background: $cd-white-bg-color;
   border: 0;
