@@ -50,6 +50,7 @@
   .open & {
     color: $cd-highlight-red;
     position: relative;
+    display: flex;
 
     &::before {
       content: '';
