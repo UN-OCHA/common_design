@@ -1,5 +1,7 @@
 {% if inline_search %}
 
+  {{ attach_library('common_design/search--inline') }}
+
   <div class="cd-search--inline">
     <button type="button" id="cd-search-btn" class="cd-search_btn cd-dropdown" aria-expanded="false" aria-label="Search">
       <svg class="icon icon--search">
@@ -12,7 +14,9 @@
 
   </div>
 
-  {% else %}
+{% else %}
+
+  {{ attach_library('common_design/search') }}
 
   <div class="cd-search">
     <button type="button" class="cd-search_btn cd-dropdown" id="cd-search-btn">
@@ -22,9 +26,11 @@
       <span class="cd-search_btn-text">{% trans %}Search{% endtrans %}</span>
     </button>
 
-  {{ page.header_search }}
+    {{ page.header_search }}
 
   </div>
 
 {% endif %}
+
+
 
