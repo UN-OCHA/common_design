@@ -28,6 +28,7 @@ libraries-override:
   classy/base:
     css:
       component:
+        css/components/button.css: false
         css/components/inline-form.css: false
         css/components/links.css: false
         css/components/menu.css: false
