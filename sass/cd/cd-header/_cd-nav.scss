@@ -222,7 +222,7 @@
             background: rgba($cd-highlight-red, 0.2);
           }
 
-          a.is-active::before {
+          &.is-active::before {
             background: $cd-highlight-red;
           }
         }
