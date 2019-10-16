@@ -42,7 +42,7 @@ body {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 95px 1fr auto; // Height of header.
+      grid-template-rows: 98px 1fr auto; // Height of header.
     }
   }
 }
