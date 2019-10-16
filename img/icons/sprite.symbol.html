@@ -29,6 +29,7 @@ They might well be outsourced to an external stylesheet of course.
 	.svg-arrow-up--highlighted-dims { width: 48px; height: 48px; }
 	.svg-creative-commons-dims { width: 32px; height: 32px; }
 	.svg-help-dims { width: 28px; height: 48px; }
+	.svg-icons-sprite-dims { width: 0px; height: 0px; }
 	.svg-search-dims { width: 48px; height: 48px; }
 	.svg-selected-dims { width: 48px; height: 48px; }
 	.svg-selected--highlighted-dims { width: 48px; height: 48px; }
@@ -80,6 +81,7 @@ for further details on how to create this embeddable sprite variant.
 		<symbol viewBox="0 0 48 48" id="arrow-up--highlighted" xmlns="http://www.w3.org/2000/svg"><path fill="#EB5C6D" d="M0 34a4 4 0 0 1 1.17-2.83l20-20a4 4 0 0 1 5.66 0l20 20a4 4 0 1 1-5.66 5.66L24 19.66 6.83 36.83A4 4 0 0 1 0 34z"/></symbol>
 		<symbol viewBox="0 0 32 32" id="creative-commons" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M15.886 28.968c-7.159.009-12.857-5.804-12.884-12.802C2.975 9.069 8.849 3.104 15.904 3.285c6.356-.152 12.793 4.975 12.829 12.839.035 7.721-6.201 12.836-12.847 12.844zM15.907.254C6.554.198.034 8.091 0 16.082-.036 24.585 6.961 32.009 15.827 32c8.53-.009 15.954-6.753 15.885-15.803.111-8.79-6.935-15.89-15.805-15.943z"/><path fill="#fff" d="M25.263 18.406c-.958 1.921-3.394 2.767-5.132 2.632-4.489-.347-5.501-3.918-4.747-6.567.701-2.462 3.115-3.831 6.002-3.466 1.667.21 2.961.886 3.863 2.334l-2.382 1.157c-.165-.166-.288-.268-.381-.388-.535-.7-1.25-.982-2.19-.822-.93.158-1.479.714-1.589 1.482a8.264 8.264 0 0 0 .039 2.482c.126.777.707 1.336 1.62 1.462.99.137 1.856-.059 2.38-.931.065-.108.161-.201.309-.382l2.208 1.007z"/><path fill="#fff" d="M16.842 13.347l-2.391 1.138c-.156-.15-.304-.262-.412-.4-.545-.698-1.269-.964-2.203-.797-.888.159-1.44.687-1.541 1.432a8.907 8.907 0 0 0 .03 2.557c.122.784.725 1.323 1.637 1.444.956.126 1.8-.056 2.326-.887.081-.128.193-.241.346-.43l2.206 1.014c-.357.81-.978 1.311-1.659 1.759-2.518 1.661-6.749.909-7.962-1.851-1.013-2.305-.422-5.145 1.656-6.505 2.136-1.398 5.664-1.088 7.33.691.212.226.376.49.636.834z"/></symbol>
 		<symbol viewBox="0 0 28 48" id="help" xmlns="http://www.w3.org/2000/svg"><circle class="ajcls-1" cx="14" cy="44" r="4"/><path class="ajcls-1" d="M28 14a14 14 0 0 0-28 0 4 4 0 0 0 8 0 6 6 0 1 1 6 6 4 4 0 0 0-4 4v9a4 4 0 0 0 8 0v-5.59A14.02 14.02 0 0 0 28 14z"/></symbol>
+		<symbol class="akicons-sprite" viewBox="0 0 0 0" id="icons-sprite" xmlns="http://www.w3.org/2000/svg"/>
 		<symbol viewBox="0 0 48 48" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M46.829 41.172L38.4 32.744a21.018 21.018 0 1 0-5.657 5.657l8.427 8.427a4 4 0 0 0 5.658-5.656zM8 21a13 13 0 1 1 22.325 9.046c-.05.045-.106.078-.154.126s-.08.104-.125.154A12.992 12.992 0 0 1 8 21z"/></symbol>
 		<symbol viewBox="0 0 48 48" id="selected" xmlns="http://www.w3.org/2000/svg"><path d="M18.5 39.75a4 4 0 0 1-2.83-1.17l-12.5-12.5a4 4 0 0 1 5.66-5.66l9.67 9.67L39.17 9.42a4 4 0 0 1 5.66 5.66l-23.5 23.5a4 4 0 0 1-2.83 1.17z"/></symbol>
 		<symbol viewBox="0 0 48 48" id="selected--highlighted" xmlns="http://www.w3.org/2000/svg"><path fill="#80CBFF" d="M18.5 39.75a4 4 0 0 1-2.83-1.17l-12.5-12.5a4 4 0 0 1 5.66-5.66l9.67 9.67L39.17 9.42a4 4 0 0 1 5.66 5.66l-23.5 23.5a4 4 0 0 1-2.83 1.17z"/></symbol>
@@ -237,6 +239,17 @@ embedded above. They may be styled via CSS.
 						
 					</div>
 					<h2>help</h2>
+				</li>
+				<li title="icons-sprite">
+					<div class="icon-box">
+						
+						<!-- icons-sprite -->
+						<svg class="svg-icons-sprite-dims">
+							<use xlink:href="#icons-sprite"></use>
+						</svg>
+						
+					</div>
+					<h2>icons-sprite</h2>
 				</li>
 				<li title="search">
 					<div class="icon-box">
@@ -578,6 +591,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 					</div>
 					<h2>help</h2>
 				</li>
+				<li title="icons-sprite">
+					<div class="icon-box">
+						
+						<!-- icons-sprite -->
+						<svg class="svg-icons-sprite-dims">
+							<use xlink:href="icons-sprite.svg#icons-sprite"></use>
+						</svg>
+						
+					</div>
+					<h2>icons-sprite</h2>
+				</li>
 				<li title="search">
 					<div class="icon-box">
 						
@@ -795,7 +819,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Wed, 16 Oct 2019 16:00:11 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Wed, 16 Oct 2019 16:02:30 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>
