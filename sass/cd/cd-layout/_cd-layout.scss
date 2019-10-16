@@ -83,18 +83,18 @@ body {
   }
 }
 
-.cd-layout-container main.cd-container .layout-sidebar-first {
+.cd-layout-container main.cd-container .cd-layout-sidebar-first {
   flex-basis: 285px;
   flex-grow: 1;
 }
 
-.cd-layout-container main.cd-container .layout-content {
+.cd-layout-container main.cd-container .cd-layout-content {
   flex-basis: 0;
   flex-grow: 999;
   min-width: 50%;
 }
 
-.layout-with-sidebar .layout-content {
+.cd-layout-with-sidebar .cd-layout-content {
   @include tablet {
     margin-right: 3rem;
   }
