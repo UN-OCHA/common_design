@@ -42,7 +42,7 @@ body {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 95px 1fr auto; // Height of header.
+      grid-template-rows: 98px 1fr auto; // Height of header.
     }
   }
 }
@@ -83,18 +83,18 @@ body {
   }
 }
 
-.cd-layout-container main.cd-container .layout-sidebar-first {
+.cd-layout-container main.cd-container .cd-layout-sidebar-first {
   flex-basis: 285px;
   flex-grow: 1;
 }
 
-.cd-layout-container main.cd-container .layout-content {
+.cd-layout-container main.cd-container .cd-layout-content {
   flex-basis: 0;
   flex-grow: 999;
   min-width: 50%;
 }
 
-.layout-with-sidebar .layout-content {
+.cd-layout-with-sidebar .cd-layout-content {
   @include tablet {
     margin-right: 3rem;
   }

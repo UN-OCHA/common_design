@@ -19,6 +19,11 @@
       color: $cd-white;
       text-decoration: underline;
     }
+
+    &:focus {
+      outline: 3px solid $cd-bright-blue;
+      outline-offset: 8px;
+    }
   }
 }
 

@@ -222,7 +222,7 @@
             background: rgba($cd-highlight-red, 0.2);
           }
 
-          a.is-active::before {
+          &.is-active::before {
             background: $cd-highlight-red;
           }
         }
@@ -269,6 +269,10 @@
             left: auto;
             right: -1px;
           }
+        }
+
+        &.menu-item--active-trail a::before {
+          background: $cd-highlight-red;
         }
 
         &.open {
@@ -337,22 +341,13 @@
             background: $cd-mid-bg-color;
           }
 
-          &.menu-item--active-trail {
-            border-left: 3px solid rgba($cd-highlight-red, 0.6);
-            padding-left: 27px; // Anchor padding - width of border.
-          }
-
-          &.is-active {
-            border-left: 3px solid rgba($cd-highlight-red, 0.2);
-          }
-        }
-
-        > li.menu-item--active-trail a {
-          border-left: 3px solid rgba($cd-highlight-red, 0.2);
-
           &.is-active {
             border-left: 3px solid $cd-highlight-red;
           }
+        }
+
+        > li.menu-item--active-trail .is-active {
+          border-left: 3px solid $cd-highlight-red;
         }
       }
 

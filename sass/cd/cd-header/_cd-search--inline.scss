@@ -102,6 +102,10 @@
 
 .cd-search--inline__form form {
   padding: 8px $cd-container-padding;
+
+  label {
+    @extend .visually-hidden;
+  }
 }
 
 .cd-search--inline__input {

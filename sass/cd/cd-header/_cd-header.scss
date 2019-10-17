@@ -2,6 +2,11 @@
 // Common Design: Header
 //——————————————————————————————————————————————————————————————————————————————
 
+// We want uniform focus styles on the whole Header
+.cd-header button:focus {
+  outline: 3px solid $cd-bright-blue;
+}
+
 //
 // Global Header.
 // Top header bar, contains Sites Menu ('OCHA Services') and User Menu.
