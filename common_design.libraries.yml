@@ -7,7 +7,7 @@ global-styling:
 dropdown:
   js:
     js/bootstrap-dropdown.js: {}
-    dependencies:
+  dependencies:
     - core/jquery
     - core/drupal
     - core/jquery.once
@@ -15,17 +15,17 @@ dropdown:
 custom-menu:
   js:
     js/custom-menu.js: {}
-    dependencies:
+  dependencies:
     - common_design/dropdown
 
 search:
   js:
     js/custom-search.js: {}
-    dependencies:
+  dependencies:
     - common_design/dropdown
 
 search--inline:
   js:
     js/custom-search--inline.js: {}
-    dependencies:
+  dependencies:
     - common_design/dropdown
