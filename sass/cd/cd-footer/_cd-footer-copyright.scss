@@ -19,6 +19,11 @@
 }
 
 .cd-footer-copyright__text {
+  a {
+    &:focus {
+      outline-offset: 1px;
+    }
+  }
   @include desktop {
     // Force the text to wrap in IE10.
     display: inline-block;
@@ -43,5 +48,9 @@ a.cd-footer-copyright__link {
   &:hover {
     opacity: .8;
     transition: opacity .1666s ease-in-out;
+  }
+
+  &:focus {
+    outline-offset: 0;
   }
 }

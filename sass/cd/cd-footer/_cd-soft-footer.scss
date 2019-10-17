@@ -13,6 +13,15 @@
 
   a {
     color: $cd-white-text-color;
+
+    &:hover,
+    &:focus {
+      color: $cd-white-text-color;
+    }
+
+    &:focus {
+      outline: 3px solid $cd-bright-blue;
+    }
   }
 }
 

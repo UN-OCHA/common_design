@@ -33,6 +33,10 @@
     top: -1px;
     min-height: 100%; // IE11 fix.
   }
+
+  &:focus {
+    outline: 3px solid $cd-bright-blue;
+  }
 }
 
 .cd-user-menu__dropdown {
@@ -55,6 +59,12 @@
     &:hover,
     &:focus {
       color: $cd-bright-blue;
+    }
+
+    &:focus {
+      color: $cd-white;
+      text-decoration: underline;
+      outline: 3px solid $cd-bright-blue;
     }
   }
 }
