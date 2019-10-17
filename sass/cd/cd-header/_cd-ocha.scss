@@ -167,6 +167,11 @@
       color: $cd-white-text-color;
       text-decoration: underline;
     }
+
+    &:focus {
+      outline: 3px solid $cd-bright-blue;
+      outline-offset: 8px;
+    }
   }
 
   @include xlarge {
@@ -185,6 +190,10 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:focus {
+    outline: 3px $cd-black solid;
+  }
 
   @include tablet {
     position: absolute;

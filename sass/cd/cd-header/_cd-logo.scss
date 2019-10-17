@@ -15,6 +15,10 @@
   width: 52px;
   height: $cd-site-header-height;
 
+  &:focus {
+    outline: 3px solid $cd-bright-blue;
+  }
+
   // Logo for mobile.
   // sass-lint:disable no-duplicate-properties
   @include max-width(md) {

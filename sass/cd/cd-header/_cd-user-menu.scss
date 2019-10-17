@@ -57,7 +57,11 @@
   &:hover,
   &:focus {
     text-decoration: underline;
-    outline: 0; // outline is replaced by text-decoration
+  }
+
+  &:focus {
+    outline: 3px solid $cd-bright-blue;
+    outline-offset: -2px;
   }
 }
 
