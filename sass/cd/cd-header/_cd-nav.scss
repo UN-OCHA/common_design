@@ -265,7 +265,7 @@
         }
 
         &:last-child {
-          ul.cd-nav__child-nav {
+          > ul.menu {
             left: auto;
             right: -1px;
           }
