@@ -53,6 +53,8 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['actions']['submit']['#attributes']['value'][] = 'Search';
   }
 
+  // To use this for Views exposed forms, copy the form alter hook into your
+  // subtheme and add the relevant Views IDs to this array in your subtheme.
   $includeView = [];
 
   // If in array above, add search--inline attributes.
