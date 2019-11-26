@@ -53,10 +53,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['actions']['submit']['#attributes']['value'][] = 'Search';
   }
 
-  $includeView = [
-    'search-content-search',
-    'views-exposed-form-search-content-search'
-  ];
+  $includeView = [];
 
   // If in array above, add search--inline attributes.
   if (in_array($form['#id'], $includeView)) {
