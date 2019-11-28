@@ -8,9 +8,9 @@ cd-dropdown:
   js:
     js/cd-dropdown.js: {}
 
-custom-menu:
+cd-menu:
   js:
-    js/custom-menu.js: {}
+    js/cd-menu.js: {}
   dependencies:
     - common_design/cd-dropdown
 

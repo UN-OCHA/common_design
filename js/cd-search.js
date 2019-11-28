@@ -1,8 +1,3 @@
-/**
- * @file
- * Bootstrap dropdown on search.
- */
-
 (function (Drupal) {
   Drupal.behaviors.cdSearch = {
     attach: function (context, settings) {
