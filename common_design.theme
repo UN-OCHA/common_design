@@ -42,7 +42,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
-    $form['#attributes']['class'][] = 'cd-search__form';
+    $form['#attributes']['class'][] = 'cd-search__form cd-dropdown';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
@@ -54,7 +54,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
   }
   // This is for a Views exposed form search block.
   if ($form_id == 'views_exposed_form') {
-    $form['#attributes']['class'][] = 'cd-search__form';
+    $form['#attributes']['class'][] = 'cd-search__form cd-dropdown';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
