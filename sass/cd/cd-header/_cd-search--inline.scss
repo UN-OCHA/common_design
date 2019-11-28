@@ -48,7 +48,7 @@
     }
   }
 
-  .open & {
+  .js-open & {
     color: $cd-highlight-red;
     position: relative;
 
@@ -82,7 +82,7 @@
   text-transform: uppercase;
   display: none;
 
-  .open & {
+  .js-open & {
     color: $cd-highlight-red;
   }
 }
@@ -95,7 +95,7 @@
   position: absolute;
   right: 0;
 
-  .open & {
+  .js-open & {
     display: block;
   }
 }

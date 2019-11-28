@@ -28,7 +28,7 @@
     fill: $cd-highlight-red;
   }
 
-  .open & {
+  .js-open & {
     position: relative;
     z-index: 101;
     color: $cd-dark-text-color;
@@ -125,12 +125,12 @@
   }
 
   // Toggle mobile menu.
-  &.open .cd-nav {
+  &.js-open .cd-nav {
     display: block;
   }
 
   .menu-item {
-    &.open {
+    &.js-open {
       background: $cd-white-bg-color;
     }
 
@@ -271,7 +271,7 @@
           }
         }
 
-        &.open {
+        &.js-open {
           position: relative;
 
           > a {
@@ -357,7 +357,7 @@
       }
 
       > li > ul > li {
-        &.open {
+        &.js-open {
           background: $cd-white-bg-color;
         }
       }
