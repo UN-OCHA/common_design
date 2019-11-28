@@ -52,11 +52,16 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
     $form['actions']['submit']['#attributes']['value'][] = 'Search';
   }
-  // This is for a Views exposed form search block.
-  if ($form_id == 'views_exposed_form') {
+
+  // To use this for Views exposed forms, copy the form alter hook into your
+  // subtheme and add the relevant Views IDs to this array in your subtheme.
+  $includeView = [];
+
+  // If in array above, add search--inline attributes.
+  if (in_array($form['#id'], $includeView)) {
     $form['#attributes']['class'][] = 'cd-search__form cd-dropdown';
-    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
-    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+    $form['#attributes']['aria-labelledby'][] = 'cd-search_btn';
+    $form['keys']['#attributes']['placeholder'] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
     $form['keys']['#attributes']['type'][] = 'search';
     $form['keys']['#attributes']['id'][] = 'cd-search';
@@ -64,6 +69,24 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
     $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
     $form['actions']['submit']['#attributes']['value'][] = 'Search';
+
+//    // This is for a Views exposed form INLINE search block.
+//    // There are templates needed for this. Replace cd-search.html.twig
+//    // with cd-search--inline.html.twig in cd-site-header.html.twig.
+//    // Attach the library in block--views-exposed-filter-block.html.twig
+//    if ($form_id == 'views_exposed_form') {
+//      $form['#attributes']['class'][] = 'cd-search--inline__form';
+//      $form['#attributes']['aria-labelledby'][] = 'cd-search--inline_btn';
+//      $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+//      $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
+//      $form['keys']['#attributes']['type'][] = 'search';
+//      $form['keys']['#attributes']['id'][] = 'cd-search--inline';
+//      $form['keys']['#attributes']['autocomplete'][] = 'off';
+//      // Theme suggestion for submit element.
+//      $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+//      $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+//      $form['actions']['submit']['#attributes']['value'][] = 'Search';
+//    }
   }
 }
 
@@ -125,7 +148,7 @@ function common_design_preprocess_html(&$vars) {
 
   // SVG sprite
   // Get the contents of the SVG sprite.
-  $icons = file_get_contents( drupal_get_path('theme', 'common_design') . '/img/icons/icons-sprite.svg');
+  $icons = file_get_contents( drupal_get_path('theme', 'common_design') . '/img/icons/cd-icons-sprite.svg');
 
   // Add a new render array to page_bottom so the icons
   // get added to the page.

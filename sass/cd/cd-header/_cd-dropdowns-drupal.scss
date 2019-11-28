@@ -9,7 +9,7 @@
       display: none;
     }
 
-    .icon--arrow-down {
+    .cd-icon--arrow-down {
       fill: $cd-highlight-red;
       margin-left: 4px;
       margin-top: 4px;
@@ -26,13 +26,13 @@
       }
 
       > a {
-        > .icon--arrow-down {
+        > .cd-icon--arrow-down {
           transform: rotate(180deg);
         }
       }
 
       // Second level.
-      .menu .icon--arrow-down {
+      .menu .cd-icon--arrow-down {
         margin-top: 4px;
       }
 
