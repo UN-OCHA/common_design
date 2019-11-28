@@ -31,7 +31,7 @@
           });
 
           // When bootstrap dropdown elements are clicked, close mobile menu.
-          $('.cd-global-header__dropdown-btn, .cd-search_btn, .cd-search--inline_btn').on('click.bs.dropdown', function(e) {
+          $('.cd-global-header__dropdown-btn, .cd-search__btn, .cd-search--inline_btn').on('click.bs.dropdown', function(e) {
             $('.cd-site-header__nav-holder').removeClass('open');
             $(this).attr('aria-expanded','false');
           });
