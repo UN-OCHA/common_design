@@ -1,16 +1,33 @@
-Drupal.behaviors.cdDropdown = {
-  attach: function (context, settings) {
+(function (Drupal) {
+  Drupal.behaviors.cdDropdown = {
+    attach: function (context, settings) {
 
-    console.log('cdDropdown');
-    const dropdowns = document.querySelectorAll('.cd-dropdown');
+      const dropdowns = context.querySelectorAll('[data-toggle="cd-dropdown"]');
 
-    // This emulates what jquery dropdown did - Adds class 'open' to parent of element with 'cd-dropdown' selector.
-    function toggleOpen() {
-      console.log('toggleOpen');
-      this.closest('div').classList.toggle('open');
+      function toggleDropdown(e) {
+        let expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        // Add class to parent div for styling.
+        this.closest('div').classList.toggle('js-open');
+      }
+
+      dropdowns.forEach(dropdown => dropdown.addEventListener('click', toggleDropdown));
+
+      context.addEventListener('click', function(e) {
+        collapseAll(e)
+      });
+
+      //When clicking outside the dropdown element, close it.
+      function collapseAll(e) {
+        var dropdownOpen = context.querySelector('.js-open').contains(e.target);
+        console.log(e.target);
+
+        if (!dropdownOpen) {
+          context.querySelector('.js-open').classList.remove('js-open');
+          console.log('click outside');
+        }
+      }
+
     }
-
-    dropdowns.forEach(dropdown => dropdown.addEventListener('click', toggleOpen));
-
-  }
-};
+  };
+})(Drupal);
