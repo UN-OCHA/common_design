@@ -11,7 +11,7 @@
   }
 }
 
-.cd-search_btn {
+.cd-search__btn {
   align-items: center;
   background: transparent;
   border: 0;
@@ -21,6 +21,10 @@
   height: $cd-site-header-height;
   padding: 0 20px;
   transition: background 0.3s ease;
+
+  > * {
+    pointer-events: none;
+  }
 
   svg {
     width: 26px;
@@ -47,7 +51,7 @@
     }
   }
 
-  .open & {
+  .js-open & {
     color: $cd-highlight-red;
     position: relative;
     display: flex;
@@ -78,20 +82,19 @@
   }
 }
 
-.cd-search_btn-text {
+.cd-search__btn-text {
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   display: none;
 
-  .open & {
+  .js-open & {
     color: $cd-highlight-red;
   }
 }
 
 .cd-search__form {
   background: $cd-mid-bluey-grey;
-  display: none;
   height: $cd-site-header-height;
   left: 0;
   position: absolute;
@@ -99,10 +102,6 @@
 
   label {
     @extend .visually-hidden;
-  }
-
-  .open & {
-    display: block;
   }
 }
 
@@ -191,6 +190,17 @@
   }
 }
 
+/* So we don't need JS for this */
+.cd-search__input:focus + .cd-search__submit,
+/* This is problematic where other divs wrap the input and button (Drupal) */
+.cd-search__input:focus + .form-wrapper .cd-search__submit {
+  background-color: var(--cd-highlight-red);
+}
+
+.cd-search__submit:focus {
+  background-color: var(--cd-highlight-red);
+}
+
 @include tablet {
   .cd-search__form form {
     margin: 0 auto;
@@ -209,13 +219,13 @@
 }
 
 @include desktop {
-  .cd-search_btn svg {
+  .cd-search__btn svg {
     width: 22px;
     height: 22px;
     padding: 0 4px 0 0;
   }
 
-  .cd-search_btn-text {
+  .cd-search__btn-text {
     display: block;
   }
 }
