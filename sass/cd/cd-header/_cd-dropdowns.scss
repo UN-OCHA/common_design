@@ -10,14 +10,14 @@
   }
 }
 
-.icon--arrow-down {
+.cd-icon--arrow-down {
   fill: $cd-white;
   width: 9px;
   height: 9px;
 }
 
 .open {
-  > [data-toggle='dropdown'] > .icon--arrow-down {
+  > [data-toggle='dropdown'] > .cd-icon--arrow-down {
     transform: rotate(180deg);
   }
 }
