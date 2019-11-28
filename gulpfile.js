@@ -25,6 +25,7 @@ const changed = require('gulp-changed');
 const concat = require('gulp-concat');
 const sassLint = require('gulp-sass-lint');
 
+var path = require('path');
 
 //——————————————————————————————————————————————————————————————————————————————
 // Load local environment config
@@ -111,17 +112,29 @@ exports.sass = sassTask;
 
 // SVG Config
 const SVGconfig = {
+  shape: {
+    id: {
+      generator: function(name, file) {
+        return "cd-icon--" + path.basename(name.replace(/\s+/g, this.whitespace), '.svg');
+      }
+    }
+  },
   mode: {
+    css: false,
+    view: false,
+    defs: false,
+    stack: false,
     symbol: { // symbol mode to build the SVG
       dest: 'img/icons', // destination folder
-      sprite: 'icons-sprite.svg', //sprite name
-      example: true // Build sample page
+      sprite: 'cd-icons-sprite.svg', //sprite name
+      example: true, // Build sample page
+      prefix: '%s'
     }
   },
   svg: {
     xmlDeclaration: false, // strip out the XML attribute
     doctypeDeclaration: false, // don't include the !DOCTYPE declaration
-    rootAttributes: { "class": "icons-sprite" }
+    rootAttributes: { "class": "cd-icons-sprite" }
   }
 };
 
