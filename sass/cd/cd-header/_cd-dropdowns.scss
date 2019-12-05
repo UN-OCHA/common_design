@@ -16,6 +16,10 @@
   height: 9px;
 }
 
+[data-toggle='cd-dropdown'] > * {
+  pointer-events: none;
+}
+
 .js-open {
   > [data-toggle='cd-dropdown'] > .cd-icon--arrow-down {
     transform: rotate(180deg);
