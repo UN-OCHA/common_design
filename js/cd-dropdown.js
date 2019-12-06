@@ -18,7 +18,12 @@
         dropdown.parentElement.classList.toggle('js-open');
       }
 
-      dropdownButtons.forEach(dropdownButton => dropdownButton.addEventListener('click', toggleDropdown));
+      // IE11 safe, replaces fat arrow function
+      // dropdownButtons.forEach(dropdownButton => dropdownButton.addEventListener('click', toggleDropdown));
+      var forEach = Array.prototype.forEach;
+      forEach.call(dropdownButtons, function(dropdownButton) {
+        dropdownButton.addEventListener('click', toggleDropdown);
+      });
 
       context.addEventListener('click', function(e) {
         collapseAll(e)
