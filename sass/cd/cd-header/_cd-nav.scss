@@ -3,7 +3,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 
-.cd-site-header__nav-toggle {
+.cd-nav__btn {
   background: transparent;
   border: 0 none $cd-border-color;
   border-left: 1px solid $cd-border-color;
@@ -19,7 +19,7 @@
     display: none;
   }
 
-  .cd-site-header__nav-label {
+  .cd-nav__btn-label {
     font-weight: 600;
   }
 
@@ -28,7 +28,7 @@
     fill: $cd-highlight-red;
   }
 
-  .open & {
+  .js-open & {
     position: relative;
     z-index: 101;
     color: $cd-dark-text-color;
@@ -62,22 +62,30 @@
   }
 }
 
+[hidden] {
+  display: none;
+}
+
 .cd-site-header__nav-holder {
   float: left;
 
   .cd-nav {
-    background: $cd-white;
-    height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
-    padding: 20px 0 36px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-    z-index: 101; // zindex may need adjusting depending on other site content.
-    display: none;
+    &[data-hidden="false"] {
+      background: $cd-white;
+      height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
+      padding: 20px 0 36px;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
+      z-index: 101; // zindex may need adjusting depending on other site content.
+    }
+
+    &[data-hidden="false"] > ul {
+      display: block;
+    }
 
     @include desktop {
-      display: block;
       height: $cd-site-header-height;
       max-width: none;
       padding: 0;
@@ -88,10 +96,16 @@
     }
 
     > ul {
+      display: none;
       background: $cd-white;
       @include desktop {
         background: transparent;
+        display: block;
       }
+    }
+
+    > ul[data-hidden="false"] {
+      display: block;
     }
 
     ul {
@@ -124,13 +138,8 @@
     }
   }
 
-  // Toggle mobile menu.
-  &.open .cd-nav {
-    display: block;
-  }
-
   .menu-item {
-    &.open {
+    &.js-open {
       background: $cd-white-bg-color;
     }
 
@@ -275,7 +284,7 @@
           background: $cd-highlight-red;
         }
 
-        &.open {
+        &.js-open {
           position: relative;
 
           > a {
@@ -352,7 +361,7 @@
       }
 
       > li > ul > li {
-        &.open {
+        &.js-open {
           background: $cd-white-bg-color;
         }
       }
