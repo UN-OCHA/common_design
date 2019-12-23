@@ -1,11 +1,13 @@
+{{ attach_library('common_design/cd-search') }}
+
 {% if inline_search %}
 
   <div class="cd-search--inline">
-    <button type="button" id="cd-search-btn" class="cd-search_btn" data-toggle="dropdown" aria-expanded="false" aria-label="Search">
+    <button type="button" id="cd-search-btn" class="cd-search__btn" data-toggle="dropdown" aria-expanded="false" aria-label="Search">
       <svg class="cd-icon cd-icon--search">
         <use xlink:href="#cd-icon--search"></use>
       </svg>
-      <span class="cd-search_btn-text">{% trans %}Search{% endtrans %}</span>
+      <span class="cd-search__btn-label">{% trans %}Search{% endtrans %}</span>
     </button>
 
     {{ page.header_search }}
@@ -15,12 +17,8 @@
   {% else %}
 
   <div class="cd-search">
-    <button type="button" class="cd-search_btn" data-toggle="dropdown" id="cd-search-btn">
-      <svg class="cd-icon cd-icon--search">
-        <use xlink:href="#cd-icon--search"></use>
-      </svg>
-      <span class="cd-search_btn-text">{% trans %}Search{% endtrans %}</span>
-    </button>
+
+    {# Search toggle button is added with Javascript #}
 
   {{ page.header_search }}
 
