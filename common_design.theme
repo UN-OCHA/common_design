@@ -42,8 +42,24 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
+
+    //dpm($form); // Print out before change.
+    // The 'created' was my form element, yours would be which checkbox you wanted to change.
+    //$form['created']['#id'] = drupal_html_id('my-new-id');
+    //dpm($form); // Print out after change.
+
+    //$form['attributes']['id'][] = 'another-id ';
+
+    //dpm($form); // Print out after change.
+    //$form['#attributes']['id'][] = 'cd-search__form';
+    //dpm($form);
     $form['#attributes']['class'][] = 'cd-search__form';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
+    $form['#attributes']['data-toggable'][] = 'Search';
+    $form['#attributes']['data-hidden'][] = 'true';
+    $form['#attributes']['data-icon'][] = '';
+    $form['#attributes']['data-component'][] = 'cd-search';
+    $form['#attributes']['data-logo'][] = 'search';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
     $form['keys']['#attributes']['id'][] = 'cd-search';
@@ -61,6 +77,11 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
   if (in_array($form['#id'], $includeView)) {
     $form['#attributes']['class'][] = 'cd-search__form';
     $form['#attributes']['aria-labelledby'][] = 'cd-search_btn';
+    $form['#attributes']['data-toggable'][] = 'Search';
+    $form['#attributes']['data-hidden'][] = 'true';
+    $form['#attributes']['data-icon'][] = '';
+    $form['#attributes']['data-component'][] = 'cd-search';
+    $form['#attributes']['data-logo'][] = 'search';
     $form['keys']['#attributes']['placeholder'] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
     $form['keys']['#attributes']['type'][] = 'search';
