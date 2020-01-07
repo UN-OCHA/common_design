@@ -48,7 +48,7 @@
   }
 
   .js-open &,
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     color: $cd-highlight-red;
     position: relative;
 
@@ -100,7 +100,7 @@
     @extend .visually-hidden;
   }
 
-  &[data-hidden="false"],
+  &[data-hidden='false'],
   .js-open & {
     display: block;
   }
@@ -111,7 +111,7 @@
 }
 
 .cd-search__input[type='search'],
-.cd-search__input[type='text']  {
+.cd-search__input[type='text'] {
   -webkit-appearance: none;
   background: $cd-white-bg-color;
   border: 0;

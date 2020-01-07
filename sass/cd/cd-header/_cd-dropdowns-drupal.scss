@@ -5,11 +5,11 @@
   .menu-item--expanded {
 
     // Hide child nav.
-    > a[aria-expanded="false"] + ul  {
+    > a[aria-expanded='false'] + ul  {
       display: none;
     }
 
-    > a[aria-expanded="true"] + ul {
+    > a[aria-expanded='true'] + ul {
       display: block;
     }
 
