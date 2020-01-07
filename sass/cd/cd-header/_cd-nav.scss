@@ -70,19 +70,21 @@
   float: left;
 
   .cd-nav {
-    &[data-hidden="false"] {
-      background: $cd-white;
-      height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
-      padding: 20px 0 36px;
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-      z-index: 101; // zindex may need adjusting depending on other site content.
-    }
+    @include max-width(lg) {
+      &[data-hidden='false'] {
+        background: $cd-white;
+        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
+        padding: 20px 0 36px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
+        z-index: 101; // zindex may need adjusting depending on other site content.
+      }
 
-    &[data-hidden="false"] > ul {
-      display: block;
+      &[data-hidden='false'] > ul {
+        display: block;
+      }
     }
 
     @include desktop {
@@ -90,6 +92,7 @@
       max-width: none;
       padding: 0;
       position: relative;
+      left: 0;
       right: auto;
       top: auto;
       width: auto;
@@ -100,12 +103,8 @@
       background: $cd-white;
       @include desktop {
         background: transparent;
-        display: block;
+        display: flex;
       }
-    }
-
-    > ul[data-hidden="false"] {
-      display: block;
     }
 
     ul {
@@ -154,7 +153,7 @@
 
     @include desktop {
       box-shadow: 0 1px 8px rgba($cd-dark-bluey-grey, 0.8);
-      left: -1px;
+      //left: -1px;
       margin: 0;
       max-width: 300px;
       min-width: 200px;

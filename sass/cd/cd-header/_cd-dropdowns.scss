@@ -6,7 +6,7 @@
   display: none;
 
   .js-open > &,
-  &[data-hidden="false"] {
+  &[data-hidden='false'] {
     display: block;
   }
 }
