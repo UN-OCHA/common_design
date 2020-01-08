@@ -48,9 +48,13 @@
        * Collapse all dropdowns.
        */
       function collapseAll(exception) {
+
+        console.log("collapseAll");
         var elements = context.querySelectorAll('[aria-expanded="true"]');
+        console.log(elements);
         for (var i = 0, l = elements.length; i < l; i++) {
           var element = elements[i];
+          console.log(element);
           if (element !== exception && !element.hasAttribute('data-toggable-keep')) {
             toggle(elements[i], true);
           }
@@ -74,8 +78,12 @@
       /**
        * Handle global clicks outside of toggable elements, close them in this case.
        */
-      function handleGlobalClick(event) {
+      function clickAway(event) {
+
+        console.log("clickAway");
         var target = event.target;
+        console.log(target);
+        console.log(target.nodeName);
         if (target) {
           if (target.nodeName === 'A') {
             collapseAll();
@@ -194,13 +202,13 @@
 
       /**
        * Main logic.
+       * If Drupal object exists, javascript is enabled.
        */
-      if (context.documentElement.classList.contains('js')) {
-
+      if (Drupal) {
         // Collapse popups when clicking outside of the toggable target.
-        context.addEventListener('click', handleGlobalClick);
+        context.addEventListener('click', clickAway);
 
-        // Initialize toggable menus and listboxes.
+        // Initialize toggable dropdown.
         initializeToggables();
       }
 
