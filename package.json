@@ -1,6 +1,6 @@
 {
   "name": "common-design",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "OCHA Common Design base theme for Drupal 8",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
@@ -21,7 +21,9 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
     "jshint": "^2.10.2",
@@ -36,9 +38,7 @@
     "build": "gulp build"
   },
   "devDependencies": {
-    "git-hooks": "^1.1.10",
-    "gulp-sass-lint": "^1.4.0",
-    "gulp-svg-sprite": "^1.5.0",
-    "eslint": ">=4.18.2"
+    "eslint": ">=4.18.2",
+    "git-hooks": "^1.1.10"
   }
 }
