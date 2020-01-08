@@ -205,6 +205,13 @@
        * If Drupal object exists, javascript is enabled.
        */
       if (Drupal) {
+
+        if (!document.documentElement.classList.contains('js')) {
+          document.documentElement.classList.add('no-js');
+        } else {
+          document.documentElement.classList.remove('no-js');
+        }
+
         // Collapse popups when clicking outside of the toggable target.
         context.addEventListener('click', clickAway);
 
