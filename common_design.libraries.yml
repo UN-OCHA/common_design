@@ -7,6 +7,8 @@ global-styling:
 cd-dropdown:
   js:
     js/cd-dropdown.js: {}
+  dependencies:
+    - common_design/cd-polyfill
 
 cd-menu:
   js:
@@ -19,3 +21,7 @@ cd-search:
     js/cd-search.js: {}
   dependencies:
     - common_design/cd-dropdown
+
+cd-polyfill:
+  js:
+    js/cd-polyfill.js: { browsers: { '!IE': false } }
