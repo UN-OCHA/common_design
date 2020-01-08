@@ -9,6 +9,11 @@
   &[data-hidden='false'] {
     display: block;
   }
+
+  .no-js & {
+    display: block;
+    position: relative;
+  }
 }
 
 .cd-icon--arrow-down {

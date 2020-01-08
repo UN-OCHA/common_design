@@ -18,6 +18,10 @@
   height: $cd-global-header-height;
   position: relative;
 
+  .no-js & {
+    height: auto;
+  }
+
   button {
     border: 0;
   }
@@ -45,10 +49,27 @@
       grid-template-columns: 186px 1fr;
     }
   }
+
+  .no-js & {
+    display: block;
+    @include tablet {
+      display: grid;
+    }
+  }
 }
 
 .cd-site-header__actions {
   float: right;
+
+  .no-js & {
+    display: block;
+    clear: both;
+
+    @include desktop {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
 
   @supports(display: flex) {
     float: none;
@@ -111,6 +132,10 @@
       @supports(display: flex) {
         flex: 1 1 auto;
       }
+    }
+
+    .no-js & {
+      max-width: unset;
     }
   }
 }
