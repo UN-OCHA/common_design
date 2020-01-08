@@ -4,6 +4,10 @@
 
 .cd-ocha {
   float: left;
+
+  .no-js & {
+    float: none;
+  }
 }
 
 .cd-ocha__btn {

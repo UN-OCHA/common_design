@@ -104,6 +104,11 @@
   .js-open & {
     display: block;
   }
+
+  .no-js & {
+    display: block;
+    position: relative;
+  }
 }
 
 .cd-search__form form {

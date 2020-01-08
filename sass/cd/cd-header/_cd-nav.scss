@@ -105,6 +105,10 @@
         background: transparent;
         display: flex;
       }
+
+      .no-js & {
+        display: block;
+      }
     }
 
     ul {
@@ -380,4 +384,29 @@
 
   }
 
+}
+
+.no-js .cd-site-header__nav-holder {
+  float: left;
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav[data-hidden='false'] {
+  background: $cd-white;
+  height: auto;
+  padding: 20px 0 36px;
+  position: relative;
+  right: 0;
+  left: 0;
+  top: auto;
+  z-index: 101; // zindex may need adjusting depending on other site content.
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+  box-shadow: unset;
+  margin: 0;
+  max-width: unset;
+  min-width: unset;
+  padding: 0;
+  top: 0;
+  position: relative;
 }
