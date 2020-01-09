@@ -3,153 +3,198 @@
     attach: function (context, settings) {
 
       /**
-       * Get the toggle button's next element sibling.
+       * Toggle the visibility of a toggable element.
        */
-      function getNextElementSibling(element) {
-        var sibling = element.nextSibling;
-        while (sibling) {
-          if (sibling.nodeType === 1) {
-            return sibling;
+      function toggle(toggler, collapse) {
+        var element = toggler.nextElementSibling;
+        if (element) {
+          var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
+
+          // Switch the expanded/collapsed states.
+          toggler.setAttribute('aria-expanded', !expanded);
+          element.setAttribute('data-hidden', expanded);
+
+          // Switch the labels.
+          var labelWrapper = toggler.querySelector('[data-label-switch]');
+          if (labelWrapper) {
+            var label = labelWrapper.getAttribute('data-label-switch');
+            labelWrapper.setAttribute('data-label-switch', labelWrapper.textContent);
+            labelWrapper.textContent = label;
           }
-          sibling = sibling.nextSibling;
-        }
-        return null;
-      }
 
-      /**
-       * Toggle the visibility of a dropdown.
-       */
-      function toggle(button, collapse) {
-        var element = getNextElementSibling(button);
-        var expanded = collapse || button.getAttribute('aria-expanded') === 'true';
-
-        // Switch the expanded/collapsed states.
-        button.setAttribute('aria-expanded', !expanded);
-        element.setAttribute('data-hidden', expanded);
-
-        // Switch the labels.
-        if (button.hasAttribute('data-label-switch')) {
-          var span = button.querySelector('span');
-          var label = button.getAttribute('data-label-switch');
-          button.setAttribute('data-label-switch', span.firstChild.nodeValue);
-          span.firstChild.nodeValue = label;
-        }
-
-        // Change the focus when expanded if a target is specified.
-        if (element.hasAttribute('data-focus-target') && !expanded) {
-          var target = context.getElementById(element.getAttribute('data-focus-target'));
-          if (target) {
-            target.focus();
+          // Change the focus when expanded if a target is specified.
+          if (element.hasAttribute('data-focus-target') && !expanded) {
+            var target = context.getElementById(element.getAttribute('data-focus-target'));
+            if (target) {
+              target.focus();
+            }
           }
         }
       }
 
       /**
-       * Collapse all dropdowns.
+       * Collapse all toggable elements.
        */
-      function collapseAll(exception) {
-
-        console.log("collapseAll");
+      function collapseAll(exceptions) {
         var elements = context.querySelectorAll('[aria-expanded="true"]');
-        console.log(elements);
-        for (var i = 0, l = elements.length; i < l; i++) {
+        check: for (var i = 0, l = elements.length; i < l; i++) {
           var element = elements[i];
-          console.log(element);
-          if (element !== exception && !element.hasAttribute('data-toggable-keep')) {
-            toggle(elements[i], true);
+          // Do not collapse if marked as so.
+          if (element.hasAttribute('data-toggable-keep')) {
+            continue;
           }
+          // Do not collapse if in the exceptions.
+          else if (exceptions) {
+            for (var j = 0, m = exceptions.length; j < m; j++) {
+              if (exceptions[j] === element) {
+                continue check;
+              }
+            }
+          }
+          // Otherwise collpase.
+          toggle(element, true);
         }
       }
 
       /**
-       * Handle toggling of dropdowns.
+       * Get the togglable parents of the toggler element.
+       */
+      function getToggableParents(element) {
+        var elements = [];
+        while (element && element !== context) {
+          if (element.hasAttribute && element.hasAttribute('data-toggable')) {
+            element = element.previousElementSibling;
+          }
+          // Store the toggling button of the togglable parent so that it can
+          // be ignored when collapsing the opened toggables.
+          if (element.hasAttribute && element.hasAttribute('data-toggler')) {
+            elements.push(element);
+          }
+          element = element.parentNode;
+        }
+        return elements;
+      }
+
+      /**
+       * Handle toggling of toggable elements.
        */
       function handleToggle(event) {
-        var target = event.target;
-        while (target && target.nodeName !== 'BUTTON') {
-          target = target.parentNode;
-        }
+        var target = event.currentTarget;
         if (target) {
-          collapseAll(target);
+          collapseAll(getToggableParents(target));
           toggle(target);
+        }
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      /**
+       * Handle togglable element visibility when pressing escape.
+       *
+       * Hide a toggable element when escape is pressed and the focus is on it
+       * or on its toggler.
+       *
+       * This is to meet the WCAG 2.1 1.4.13: Content on Hover or Focus
+       * criterion.
+       *
+       * @see https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html
+       */
+      function handleEscape(event) {
+        var key = event.which || event.keyCode;
+        // Escape.
+        if (key === 27) {
+          var target = event.currentTarget;
+          // Toggable element, get the toggling button.
+          if (!target.hasAttribute('data-toggler')) {
+            target = target.previousElementSibling;
+          }
+          // Focus the button and hide the content.
+          if (target && target.hasAttribute('data-toggler')) {
+            target.focus();
+            toggle(target, true);
+          }
         }
       }
 
       /**
-       * Handle global clicks outside of toggable elements, close them in this case.
+       * Handle global clicks outside of toggable elements, close them in this
+       * case.
        */
       function clickAway(event) {
-
-        console.log("clickAway");
         var target = event.target;
-        console.log(target);
-        console.log(target.nodeName);
         if (target) {
-          if (target.nodeName === 'A') {
+          if (target.nodeName === 'A' && !target.hasAttribute('data-toggler')) {
             collapseAll();
           }
-          else if (target.hasAttribute) {
-            var body = document.body;
-            while (target && target.hasAttribute && !target.hasAttribute('aria-expanded') && !target.hasAttribute('data-hidden') && target !== body) {
+          else {
+            // Loop until we find a parent which is a toggable or toggler element
+            // or we reach the "context" element.
+            while (target && target !== context) {
+              if (target.hasAttribute) {
+                // Skip if the clicked element belong to a toggler or a toggable
+                // element.
+                if (target.hasAttribute('data-toggler') || target.hasAttribute('data-toggable')) {
+                  return;
+                }
+              }
               target = target.parentNode;
             }
-            if (target && target.hasAttribute && !target.hasAttribute('aria-expanded') && !target.hasAttribute('data-hidden')) {
-              collapseAll();
-            }
           }
+          collapseAll();
         }
+      }
+
+      /**
+       * Create a svg icon.
+       */
+      function createIcon(name, component, wrap) {
+        var svgElem = context.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        var useElem = context.createElementNS('http://www.w3.org/2000/svg', 'use');
+        useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + name);
+        svgElem.setAttribute('class', 'cd-icon cd-icon--' + name);
+        svgElem.appendChild(useElem);
+
+        if (component && wrap) {
+          var wrapper = context.createElement('span');
+          wrapper.setAttribute('class', component + '__logo');
+          wrapper.appendChild(svgElem);
+          return wrapper;
+        }
+        return svgElem;
       }
 
       /**
        * Create a button to toggle a dropdown.
        */
-      function createButton(element, label, expand, icon, component, logo) {
-        var id = element.getAttribute('id');
+      function createButton(element) {
+        var label = element.getAttribute('data-toggable');
+        var logo = element.getAttribute('data-logo');
+        var icon = element.getAttribute('data-icon');
+        var component = element.getAttribute('data-component');
 
+        // Create the button.
         var button = context.createElement('button');
         button.setAttribute('type', 'button');
-        button.setAttribute('id', id + '-toggle');
-        button.setAttribute('aria-expanded', expand !== false);
-        button.setAttribute('aria-haspopup', true);
-        button.setAttribute('aria-owns', id);
-        button.setAttribute('value', label);
 
+        // Pre-label logo.
+        if (logo) {
+          button.appendChild(createIcon(logo, component, true));
+        }
+
+        // Button label.
         var labelWrapper = context.createElement('span');
         labelWrapper.appendChild(context.createTextNode(label));
         button.appendChild(labelWrapper);
 
-        // SVG arrow icon.
-        if (element.hasAttribute('data-icon')) {
-          var svgElem = context.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-            useElem = context.createElementNS('http://www.w3.org/2000/svg', 'use');
-          useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + icon);
-          svgElem.setAttribute('class', 'cd-icon cd-icon--' + icon);
-          svgElem.appendChild(useElem);
-          button.appendChild(svgElem);
-        }
-
-        // SVG logo icon.
-        if (element.hasAttribute('data-logo')) {
-          var svgLogoElem = context.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-            useLogoElem = context.createElementNS('http://www.w3.org/2000/svg', 'use');
-          useLogoElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + logo);
-          svgLogoElem.setAttribute('class', 'cd-icon--' + logo);
-          svgLogoElem.appendChild(useLogoElem);
-          var logoWrapper = document.createElement("span");
-          logoWrapper.setAttribute('class', component + '__logo');
-          logoWrapper.appendChild(svgLogoElem);
-          button.prepend(logoWrapper);
+        // Post-label icon.
+        if (icon) {
+          button.appendChild(createIcon(icon));
         }
 
         // BEM for class selectors.
-        if (element.hasAttribute('data-component')) {
+        if (component) {
           button.setAttribute('class', component + '__btn');
           labelWrapper.setAttribute('class', component + '__btn-label');
-        }
-
-        // Extra labelling.
-        if (element.hasAttribute('aria-labelledby')) {
-          button.setAttribute('aria-labelledby', element.getAttribute('aria-labelledby'));
         }
 
         // Do not collapse the dropdown when clicking outside.
@@ -159,39 +204,68 @@
 
         // Alternate label for when the button is expanded.
         if (element.hasAttribute('data-toggable-expanded')) {
-          button.setAttribute('data-label-switch', element.getAttribute('data-toggable-expanded'));
+          labelWrapper.setAttribute('data-label-switch', element.getAttribute('data-toggable-expanded'));
         }
 
-        // Add toggling function.
-        button.addEventListener('click', handleToggle);
         return button;
-
       }
 
       /**
        * Transform the element into a dropdown menu.
        */
-      function setToggable(element) {
-        if (!element.hasAttribute('id')) {
-          return;
+      function setToggable(element, toggler) {
+        var expand = element.hasAttribute('data-toggable-expand') || false;
+
+        // Create a button to toggle the element.
+        if (!toggler) {
+          toggler = createButton(element);
+        }
+          // Or ensure the toggler has the "button" role.
+          //
+        // @todo ensure that `space` and `enter` trigger the toggling?
+        else if (toggler.nodeName !== 'BUTTON') {
+          toggler.setAttribute('role', 'button');
         }
 
-        var label = element.getAttribute('data-toggable');
-        var expand = element.hasAttribute('data-toggable-expand') || false;
-        var icon = element.getAttribute('data-icon');
-        var component = element.getAttribute('data-component');
-        var logo = element.getAttribute('data-logo');
-        var button = createButton(element, label, expand, icon, component, logo);
+        // Set the toggling attributes of the toggler.
+        toggler.setAttribute('data-toggler', '');
+        toggler.setAttribute('aria-expanded', expand !== false);
+        toggler.setAttribute('aria-haspopup', true);
+
+        // For better conformance with the aria specs though it doesn't do
+        // much in most screen reader right now (2020/01), we had the
+        // `aria-controls` attribute.
+        //
+        // @todo generate an id for the toggable element if it has none?
+        if (element.hasAttribute('id')) {
+          toggler.setAttribute('aria-controls', element.getAttribute('id'));
+        }
+
+        // Add toggling function.
+        toggler.addEventListener('click', handleToggle);
+
+        // Collapse when pressing scape.
+        toggler.addEventListener('keydown', handleEscape);
+        element.addEventListener('keydown', handleEscape);
+
+        // Mark the element as toggable so that it can be handled properly
+        // by the global click handler.
+        if (!element.hasAttribute('data-toggable')) {
+          element.setAttribute('data-toggable', '');
+        }
 
         // Hide the element.
         element.setAttribute('data-hidden', expand === false);
 
-        // Add the button before the toggable element.
-        element.parentNode.insertBefore(button, element);
+        // Add the toggler before the toggable element id not already.
+        if (element.previousElementSibling !== toggler) {
+          element.parentNode.insertBefore(toggler, element);
+        }
       }
 
       /**
-       * Initialize the toggable menus, adding a toggle button and event handling.
+       * Initialize the toggable menus, adding a toggle button and event
+       * handling.
        */
       function initializeToggables() {
         var elements = context.querySelectorAll('[data-toggable]');
@@ -201,22 +275,27 @@
       }
 
       /**
-       * Main logic.
-       * If Drupal object exists, javascript is enabled.
+       * Update Drupal toggable nested menus.
        */
-      if (Drupal) {
-
-        if (!document.documentElement.classList.contains('js')) {
-          document.documentElement.classList.add('no-js');
-        } else {
-          document.documentElement.classList.remove('no-js');
+      function updateDrupalTogglableMenus() {
+        var elements = context.querySelectorAll('.cd-nav .menu a + .menu');
+        for (var i = 0, l = elements.length; i < l; i++) {
+          var element = elements[i];
+          setToggable(element, element.previousElementSibling);
         }
+      }
+
+      if (Drupal) {
+        document.documentElement.classList.remove('no-js');
 
         // Collapse popups when clicking outside of the toggable target.
         context.addEventListener('click', clickAway);
 
         // Initialize toggable dropdown.
         initializeToggables();
+
+        // Update nested Drupal menus in the header.
+        updateDrupalTogglableMenus();
       }
 
     }

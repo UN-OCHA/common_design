@@ -2,20 +2,19 @@
   Drupal.behaviors.cdMenu = {
     attach: function (context, settings) {
 
-      var dropdownMenus = document.querySelectorAll('.menu-item--expanded a');
-
-      dropdownMenus.forEach(dropdown => dropdown.addEventListener('click', menuLinks));
-
-      function menuLinks(event) {
-        let menuExpanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !menuExpanded);
-
-        let dropdownMenu = this.nextElementSibling;
-        dropdownMenu.setAttribute('data-hidden', menuExpanded);
-
-        event.preventDefault();
-        event.stopPropagation();
+      /**
+       * Update Drupal toggable nested menus.
+       */
+      function updateDrupalTogglableMenus() {
+        var elements = context.querySelectorAll('.cd-nav .menu a + .menu');
+        for (var i = 0, l = elements.length; i < l; i++) {
+          var element = elements[i];
+          setToggable(element, element.previousElementSibling);
+        }
       }
+
+        // Update nested Drupal menus in the header.
+        updateDrupalTogglableMenus();
     }
   };
 }(Drupal));
