@@ -4,9 +4,13 @@
 
 .cd-ocha {
   float: left;
+
+  .no-js & {
+    float: none;
+  }
 }
 
-.cd-ocha-btn {
+.cd-ocha__btn {
   align-items: center;
   background: transparent;
   color: $cd-white-text-color;
@@ -23,7 +27,7 @@
 
     &:hover,
     &:focus {
-      .cd-ocha-btn__label {
+      .cd-ocha__btn-label {
         text-decoration: underline;
       }
     }
@@ -38,17 +42,20 @@
   }
 }
 
-.cd-ocha-btn__logo {
-  background: url('../img/logos/ocha-logo.svg') center no-repeat;
-  background-size: contain;
+.cd-ocha__logo {
   display: inline-block;
   flex-shrink: 0;
-  height: 18px;
+  height: 21px;
   margin-right: 4px;
   width: 21px;
+
+  svg {
+    width: 21px;
+    height: 21px;
+  }
 }
 
-.cd-ocha-btn__label {
+.cd-ocha__btn-label {
   @include max-width(md) {
     @include visually-hidden;
   }

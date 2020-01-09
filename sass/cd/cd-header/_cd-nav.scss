@@ -3,7 +3,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 
-.cd-site-header__nav-toggle {
+.cd-nav__btn {
   background: transparent;
   border: 0 none $cd-border-color;
   border-left: 1px solid $cd-border-color;
@@ -19,7 +19,7 @@
     display: none;
   }
 
-  .cd-site-header__nav-label {
+  .cd-nav__btn-label {
     font-weight: 600;
   }
 
@@ -28,7 +28,7 @@
     fill: $cd-highlight-red;
   }
 
-  .open & {
+  .js-open & {
     position: relative;
     z-index: 101;
     color: $cd-dark-text-color;
@@ -62,35 +62,52 @@
   }
 }
 
+[hidden] {
+  display: none;
+}
+
 .cd-site-header__nav-holder {
   float: left;
 
   .cd-nav {
-    background: $cd-white;
-    height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
-    padding: 20px 0 36px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-    z-index: 101; // zindex may need adjusting depending on other site content.
-    display: none;
+    @include max-width(lg) {
+      &[data-hidden='false'] {
+        background: $cd-white;
+        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
+        padding: 20px 0 36px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
+        z-index: 101; // zindex may need adjusting depending on other site content.
+      }
+
+      &[data-hidden='false'] > ul {
+        display: block;
+      }
+    }
 
     @include desktop {
-      display: block;
       height: $cd-site-header-height;
       max-width: none;
       padding: 0;
       position: relative;
+      left: 0;
       right: auto;
       top: auto;
       width: auto;
     }
 
     > ul {
+      display: none;
       background: $cd-white;
       @include desktop {
         background: transparent;
+        display: flex;
+      }
+
+      .no-js & {
+        display: block;
       }
     }
 
@@ -124,13 +141,8 @@
     }
   }
 
-  // Toggle mobile menu.
-  &.open .cd-nav {
-    display: block;
-  }
-
   .menu-item {
-    &.open {
+    &.js-open {
       background: $cd-white-bg-color;
     }
 
@@ -145,7 +157,7 @@
 
     @include desktop {
       box-shadow: 0 1px 8px rgba($cd-dark-bluey-grey, 0.8);
-      left: -1px;
+      //left: -1px;
       margin: 0;
       max-width: 300px;
       min-width: 200px;
@@ -275,7 +287,7 @@
           background: $cd-highlight-red;
         }
 
-        &.open {
+        &.js-open {
           position: relative;
 
           > a {
@@ -352,7 +364,7 @@
       }
 
       > li > ul > li {
-        &.open {
+        &.js-open {
           background: $cd-white-bg-color;
         }
       }
@@ -372,4 +384,29 @@
 
   }
 
+}
+
+.no-js .cd-site-header__nav-holder {
+  float: left;
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav[data-hidden='false'] {
+  background: $cd-white;
+  height: auto;
+  padding: 20px 0 36px;
+  position: relative;
+  right: 0;
+  left: 0;
+  top: auto;
+  z-index: 101; // zindex may need adjusting depending on other site content.
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+  box-shadow: unset;
+  margin: 0;
+  max-width: unset;
+  min-width: unset;
+  padding: 0;
+  top: 0;
+  position: relative;
 }

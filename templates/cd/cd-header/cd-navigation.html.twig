@@ -1,13 +1,9 @@
-{{ attach_library('common_design/custom-menu') }}
+{{ attach_library('common_design/cd-menu') }}
 
 <div class="cd-site-header__nav-holder">
   {% if page.header_navigation %}
-  <button type="button" id="cd-nav-toggle" class="cd-site-header__nav-toggle" aria-expanded="false">
-      <span class="cd-site-header__nav-label">Menu</span>
-    <svg class="cd-icon cd-icon--arrow-down">
-      <use xlink:href="#cd-icon--arrow-down"></use>
-    </svg>
-    </button>
+
+    {# Menu dropdown toggle is created with javascript #}
 
     {{ page.header_navigation }}
 

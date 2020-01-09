@@ -5,8 +5,14 @@
 .cd-dropdown {
   display: none;
 
-  .open > & {
+  .js-open > &,
+  &[data-hidden='false'] {
     display: block;
+  }
+
+  .no-js & {
+    display: block;
+    position: relative;
   }
 }
 
@@ -16,7 +22,7 @@
   height: 9px;
 }
 
-.open {
+.js-open {
   > [data-toggle='dropdown'] > .cd-icon--arrow-down {
     transform: rotate(180deg);
   }
@@ -35,7 +41,7 @@
 }
 
 .cd-global-header__dropdown-btn {
-  .open & {
+  .js-open & {
     &::before {
       content: '';
       width: 0;

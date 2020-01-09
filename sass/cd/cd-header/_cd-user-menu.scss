@@ -46,12 +46,16 @@
     padding: 0 20px;
   }
 
+  // Separator.
   &::after {
-    color: $cd-light-blue-border-color;
-    content: '|';
+    background: $cd-light-blue-border-color;
+    height: calc(#{$cd-global-header-height}/3);
+    width: 2px;
+    content: '';
     position: absolute;
     right: -1px;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &:hover,
