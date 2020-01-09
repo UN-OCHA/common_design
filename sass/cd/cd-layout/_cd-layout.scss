@@ -43,7 +43,15 @@ body {
     @include tablet {
       display: grid;
       grid-template-rows: 98px 1fr auto; // Height of header.
+
+      .no-js & {
+        grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
+      }
     }
+  }
+
+  .no-js & {
+    display: block;
   }
 }
 

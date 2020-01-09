@@ -11,11 +11,11 @@
   }
 }
 
-.cd-search_btn {
+.cd-search__btn {
   align-items: center;
   background: transparent;
   border: 0;
-  color: $cd-blue-text-color;
+  color: $cd-ocha-blue;
   display: flex;
   font-size: 24px;
   height: $cd-site-header-height;
@@ -25,17 +25,17 @@
   svg {
     width: 26px;
     height: 26px;
-    fill: $cd-blue-text-color;
+    fill: $cd-ocha-blue;
   }
 
   &:hover,
   &:focus {
     background: $cd-white-bg-color;
     outline: none;
-    color: $cd-bright-blue-text-color;
+    color: $cd-dark-blue;
 
     svg {
-      fill: $cd-bright-blue-text-color;
+      fill: $cd-dark-blue;
     }
   }
 
@@ -47,7 +47,8 @@
     }
   }
 
-  .open & {
+  .js-open &,
+  &[aria-expanded='true'] {
     color: $cd-highlight-red;
     position: relative;
 
@@ -72,18 +73,17 @@
     &:focus {
       background: $cd-white-bg-color;
       outline: none;
-      color: $cd-bright-blue-text-color;
     }
   }
 }
 
-.cd-search_btn-text {
+.cd-search__btn-label {
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   display: none;
 
-  .open & {
+  .js-open & {
     color: $cd-highlight-red;
   }
 }
@@ -100,8 +100,14 @@
     @extend .visually-hidden;
   }
 
-  .open & {
+  &[data-hidden='false'],
+  .js-open & {
     display: block;
+  }
+
+  .no-js & {
+    display: block;
+    position: relative;
   }
 }
 
@@ -110,7 +116,7 @@
 }
 
 .cd-search__input[type='search'],
-.cd-search__input[type='text']  {
+.cd-search__input[type='text'] {
   -webkit-appearance: none;
   background: $cd-white-bg-color;
   border: 0;
@@ -208,13 +214,13 @@
 }
 
 @include desktop {
-  .cd-search_btn svg {
+  .cd-search__btn svg {
     width: 22px;
     height: 22px;
     padding: 0 4px 0 0;
   }
 
-  .cd-search_btn-text {
+  .cd-search__btn-label {
     display: block;
   }
 }

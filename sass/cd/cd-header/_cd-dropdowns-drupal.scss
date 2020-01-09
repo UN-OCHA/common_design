@@ -5,8 +5,12 @@
   .menu-item--expanded {
 
     // Hide child nav.
-    > ul {
+    > a[aria-expanded='false'] + ul  {
       display: none;
+    }
+
+    > a[aria-expanded='true'] + ul {
+      display: block;
     }
 
     .cd-icon--arrow-down {
@@ -18,7 +22,7 @@
       }
     }
 
-    &.open {
+    &.js-open {
 
       > ul {
         display: block;
@@ -38,4 +42,8 @@
 
     }
   }
+}
+
+.no-js .menu-item--expanded> a[aria-expanded="false"] + ul {
+  display: block;
 }
