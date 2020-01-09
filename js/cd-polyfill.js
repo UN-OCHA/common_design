@@ -181,9 +181,3 @@ if (!"".trim) String.prototype.trim = function(){ return this.replace(/^[\s﻿]+
 if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
-
-
-// Placeholder for js check
-function hasClass(element, className) {
-  return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
-}
