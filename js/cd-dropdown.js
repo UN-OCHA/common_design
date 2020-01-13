@@ -231,8 +231,8 @@
       if (!toggler) {
         toggler = this.createButton(element);
       }
-        // Or ensure the toggler has the "button" role.
-        //
+      // Or ensure the toggler has the "button" role.
+      //
       // @todo ensure that `space` and `enter` trigger the toggling?
       else if (toggler.nodeName !== 'BUTTON') {
         toggler.setAttribute('role', 'button');
