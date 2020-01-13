@@ -131,7 +131,7 @@
      * Handle global clicks outside of toggable elements, close them in this
      * case.
      */
-    clickAway: function(event) {
+    handleClickAway: function(event) {
       var target = event.target;
       if (target) {
         if (target.nodeName === 'A' && !target.hasAttribute('data-toggler')) {
@@ -280,7 +280,7 @@
      */
     initializeToggables: function() {
       // Collapse dropdowns when clicking outside of the toggable target.
-      this.context.addEventListener('click', this.clickAway);
+      this.context.addEventListener('click', this.handleClickAway);
 
       // Initialize each toggable target
       var elements = this.context.querySelectorAll('[data-toggable]');

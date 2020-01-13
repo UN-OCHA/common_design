@@ -1,6 +1,6 @@
-# OCHA Common Design base theme for Drupal 8  
+# OCHA Common Design base theme for Drupal 8
 
-A base theme of the OCHA Common Design for Drupal 8. 
+A base theme of the OCHA Common Design for Drupal 8.
 
 Extend as needed.
 
@@ -80,6 +80,50 @@ Preferably use Jenkins to run the Gulp task on build to generate the CSS. If thi
 
 Javascript files should be added to `js/` and to the scripts section of `ocha_basic.info`
 
+Instead of grouping all JS in one file, each component has its own JS file associated with it. They have been built to be reused, allowing you to mix and match any combination of JS files and use each as a dependency without altering the original file. The general pattern to reference the method of a behavior is:
+
+```js
+// Use a method called "methodName" inside the same Behavior file
+this.methodName()
+
+// Use a method called "methodName" defined in cd-dropdown.js
+Drupal.behaviors.cdDropdown.methodName();
+```
+
+Using `this` works for most functions except ones which are assigned to event listners. For those, we have prefixed all of them with the word `handle` — and despite being contained within the same Behavior, you'll need to reference internal functions using the full Behavior name (see second example above, as if it were outside your Behavior)
+
+```js
+(function (Drupal) {
+  Drupal.behaviors.exampleBehavior = {
+    attach: function (context, settings) {
+      // Assign handleClick as an event listener. When assigning the handler
+      // it is correct to prefix the method name with `this`
+      document.addEventListener('click', this.handleClick);
+    },
+
+    handleClick: function(ev) {
+      // ❌ WRONG:
+      //
+      // Inside this event listener handler, we do not have access to the
+      // Behavior object as `this` — so this.sendAlert() will not be defined
+      // and the following error will occur:
+      //
+      // Uncaught TypeError: this.sendAlert is not a function
+      this.sendAlert(ev.target);
+
+      // ✅ CORRECT:
+      //
+      // Referencing the Behavior as defined in Drupal object will work.
+      Drupal.behaviors.exampleBehavior.sendAlert(ev.target);
+    },
+
+    sendAlert: function(message) {
+      window.alert(message);
+    },
+  }
+})(Drupal);
+```
+
 
 ## Gulp
 
@@ -99,7 +143,7 @@ There are two techniques used, depending on context.
 1. SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG file. We use this technique when using technique 2 isn't possible.
 The icons are black by default. If you need another color, it's best to copy the icon and manually adjust the fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
 
-2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.tpl.php` before the closing body tag. Each icon within the sprite can be referenced by its ID eg. 
+2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.tpl.php` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
 ```
 <svg class="icon icon--arrow-down">
   <use xlink:href="#arrow-down"></use>
