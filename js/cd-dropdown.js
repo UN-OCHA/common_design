@@ -140,7 +140,7 @@
         else {
           // Loop until we find a parent which is a toggable or toggler element
           // or we reach the "context" element.
-          while (target && target !== this.context) {
+          while (target && target !== Drupal.behaviors.cdDropdown.context) {
             if (target.hasAttribute) {
               // Skip if the clicked element belong to a toggler or a toggable
               // element.
