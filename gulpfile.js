@@ -172,7 +172,7 @@ function jsBundleTask() {
 //——————————————————————————————————————————————————————————————————————————————
 // JS Lint + Bundle
 //——————————————————————————————————————————————————————————————————————————————
-const jsTask = gulp.series(jsLintTask, jsBundleTask);
+const jsTask = gulp.series(jsLintTask/*, jsBundleTask*/);
 exports.js = jsTask;
 
 
