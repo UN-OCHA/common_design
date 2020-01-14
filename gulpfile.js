@@ -71,19 +71,19 @@ function sassCompileTask() {
   browserSync.notify(`Compiling Sass...`);
 
   return gulp.src(['sass/styles.scss'])
-      .pipe(plumber())
-      .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.init()))
-      .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
-      .pipe(postcss([
-        prefix({
-          browsers: ['>1%', 'iOS 9'],
-          cascade: false,
-        }),
-        cssnano(),
-      ]))
-      .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.write('./')))
-      .pipe(gulp.dest('css/'))
-      .pipe(reload({stream: true}));
+    .pipe(plumber())
+    .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.init()))
+    .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
+    .pipe(postcss([
+      prefix({
+        browsers: ['>1%', 'iOS 9'],
+        cascade: false,
+      }),
+      cssnano(),
+    ]))
+    .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.write('./')))
+    .pipe(gulp.dest('css/'))
+    .pipe(reload({stream: true}));
 };
 
 
@@ -92,9 +92,9 @@ function sassCompileTask() {
 //——————————————————————————————————————————————————————————————————————————————
 function sassLintTask() {
   return gulp.src('sass/**/*.s+(a|c)ss')
-      .pipe(sassLint())
-      .pipe(sassLint.format())
-      .pipe(sassLint.failOnError());
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
 };
 
 
@@ -139,8 +139,8 @@ const SVGconfig = {
 
 function buildSvgSprite() {
   return gulp.src('img/icons/*.svg')
-      .pipe(svgSprite(SVGconfig))
-      .pipe(gulp.dest('.'));
+    .pipe(svgSprite(SVGconfig))
+    .pipe(gulp.dest('.'));
 };
 exports.sprites = buildSvgSprite;
 
@@ -160,12 +160,12 @@ function jsLintTask() {
 //——————————————————————————————————————————————————————————————————————————————
 function jsBundleTask() {
   return gulp.src([
-    'js/*.js',
-  ])
-      .pipe(concat('ocha_bundle.js'))
-      .pipe(gulpif(process.env.NODE_ENV === 'production', uglify()))
-      .pipe(gulp.dest('js'))
-      .pipe(reload({stream: true}));
+      'js/*.js',
+    ])
+    .pipe(concat('ocha_bundle.js'))
+    .pipe(gulpif(process.env.NODE_ENV === 'production', uglify()))
+    .pipe(gulp.dest('js'))
+    .pipe(reload({stream: true}));
 };
 
 
@@ -180,12 +180,8 @@ exports.js = jsTask;
 // Watch Files For Changes
 //——————————————————————————————————————————————————————————————————————————————
 function watchTask() {
-  // gulp.watch([
-  //     'js/*.js'
-  // ], ['dev:js']);
-  gulp.watch([
-    'sass/**/*.scss'
-  ], sassTask);
+  gulp.watch(['js/cd-*.js'], jsTask);
+  gulp.watch(['sass/**/*.scss'], sassTask);
 };
 exports.watch = watchTask;
 
