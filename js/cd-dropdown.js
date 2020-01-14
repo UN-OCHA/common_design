@@ -39,23 +39,17 @@
        */
       function collapseAll(exceptions) {
         var elements = context.querySelectorAll('[aria-expanded="true"]');
-        check: for (var i = 0, l = elements.length; i < l; i++) {
-          var element = elements[i];
-          // Do not collapse if marked as so.
-          if (element.hasAttribute('data-toggable-keep')) {
-            continue;
+
+        elements.forEach(function (element) {
+          // Elements can be directed to stay open in two ways:
+          //  * We can apply an attribute directly in DOM
+          //  * We can mark it as an exception when calling this function
+          //
+          // If neither apply, then close the element.
+          if (!element.hasAttribute('data-toggable-keep') && exceptions.indexOf(element) === -1) {
+            toggle(element, true);
           }
-          // Do not collapse if in the exceptions.
-          else if (exceptions) {
-            for (var j = 0, m = exceptions.length; j < m; j++) {
-              if (exceptions[j] === element) {
-                continue check;
-              }
-            }
-          }
-          // Otherwise collpase.
-          toggle(element, true);
-        }
+        });
       }
 
       /**
