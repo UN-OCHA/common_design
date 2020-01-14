@@ -101,14 +101,15 @@
     > ul {
       display: none;
       background: $cd-white;
+
       @include desktop {
         background: transparent;
         display: flex;
       }
+    }
 
-      .no-js & {
-        display: block;
-      }
+    .no-js & > ul {
+      display: block;
     }
 
     ul {
