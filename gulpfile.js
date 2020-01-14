@@ -18,8 +18,7 @@ const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
 const prefix = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
-const jshint = require('gulp-jshint');
-const stylish = require('jshint-stylish');
+const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const changed = require('gulp-changed');
 const concat = require('gulp-concat');
@@ -150,9 +149,9 @@ exports.sprites = buildSvgSprite;
 // JS Linting
 //——————————————————————————————————————————————————————————————————————————————
 function jsLintTask() {
-  return gulp.src('js/*.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter(stylish));
+  return gulp.src(['js/cd-*.js', '!js/cd-polyfill.js'])
+    .pipe(eslint())
+    .pipe(eslint.format());
 };
 
 
@@ -202,5 +201,5 @@ exports.default = defaultTask;
 //——————————————————————————————————————————————————————————————————————————————
 // Build all assets in the theme
 //——————————————————————————————————————————————————————————————————————————————
-const buildTask = gulp.parallel(sassTask/*, jsTask*/);
+const buildTask = gulp.parallel(sassTask, jsTask);
 exports.build = buildTask;
