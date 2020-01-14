@@ -106,10 +106,10 @@
         background: transparent;
         display: flex;
       }
+    }
 
-      .no-js & {
-        display: block;
-      }
+    .no-js & > ul {
+      display: block;
     }
 
     ul {
