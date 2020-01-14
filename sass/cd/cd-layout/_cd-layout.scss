@@ -14,12 +14,12 @@ body {
   background: $cd-site-bg-color;
   min-height: 100%;
 
-  &:not(.user-logged-in) {
-    //@supports (display: grid) {
-    //  display: grid;
-    //  grid-template-rows: 1fr auto;
-    //}
-  }
+  // &:not(.user-logged-in) {
+  //   @supports (display: grid) {
+  //     display: grid;
+  //     grid-template-rows: 1fr auto;
+  //   }
+  // }
 }
 
 .cd-layout-container {
