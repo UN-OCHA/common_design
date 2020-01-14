@@ -1,4 +1,6 @@
 (function (Drupal) {
+  'use strict';
+
   Drupal.behaviors.cdDropdown = {
     attach: function (context, settings) {
 
@@ -220,8 +222,8 @@
         if (!toggler) {
           toggler = createButton(element);
         }
-          // Or ensure the toggler has the "button" role.
-          //
+        // Or ensure the toggler has the "button" role.
+        //
         // @todo ensure that `space` and `enter` trigger the toggling?
         else if (toggler.nodeName !== 'BUTTON') {
           toggler.setAttribute('role', 'button');
