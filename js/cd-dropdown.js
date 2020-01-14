@@ -159,14 +159,14 @@
      * Create a svg icon.
      */
     createIcon: function(name, component, wrap) {
-      var svgElem = context.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      var useElem = context.createElementNS('http://www.w3.org/2000/svg', 'use');
+      var svgElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      var useElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'use');
       useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + name);
       svgElem.setAttribute('class', 'cd-icon cd-icon--' + name);
       svgElem.appendChild(useElem);
 
       if (component && wrap) {
-        var wrapper = context.createElement('span');
+        var wrapper = this.context.createElement('span');
         wrapper.setAttribute('class', component + '__logo');
         wrapper.appendChild(svgElem);
         return wrapper;
