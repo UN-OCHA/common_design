@@ -1,4 +1,6 @@
 (function (Drupal) {
+  'use strict';
+
   Drupal.behaviors.cdDropdown = {
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
@@ -16,7 +18,7 @@
     /**
      * Toggle the visibility of a toggable element.
      */
-    toggle: function(toggler, collapse) {
+    toggle: function (toggler, collapse) {
       var element = toggler.nextElementSibling;
       if (element) {
         var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
@@ -35,7 +37,7 @@
 
         // Change the focus when expanded if a target is specified.
         if (element.hasAttribute('data-focus-target') && !expanded) {
-          var target = context.getElementById(element.getAttribute('data-focus-target'));
+          var target = this.context.getElementById(element.getAttribute('data-focus-target'));
           if (target) {
             target.focus();
           }
@@ -46,31 +48,25 @@
     /**
      * Collapse all toggable elements.
      */
-    collapseAll: function(exceptions) {
+    collapseAll: function (exceptions) {
       var elements = this.context.querySelectorAll('[aria-expanded="true"]');
-      check: for (var i = 0, l = elements.length; i < l; i++) {
-        var element = elements[i];
-        // Do not collapse if marked as so.
-        if (element.hasAttribute('data-toggable-keep')) {
-          continue;
+
+      elements.forEach(function (element) {
+        // Elements can be directed to stay open in two ways:
+        //  * We can apply an attribute directly in DOM
+        //  * We can mark it as an exception when calling this function
+        //
+        // If neither apply, then close the element.
+        if (!element.hasAttribute('data-toggable-keep') && exceptions.indexOf(element) === -1) {
+          this.toggle(element, true);
         }
-        // Do not collapse if in the exceptions.
-        else if (exceptions) {
-          for (var j = 0, m = exceptions.length; j < m; j++) {
-            if (exceptions[j] === element) {
-              continue check;
-            }
-          }
-        }
-        // Otherwise collpase.
-        this.toggle(element, true);
-      }
+      });
     },
 
     /**
      * Get the togglable parents of the toggler element.
      */
-    getToggableParents: function(element) {
+    getToggableParents: function (element) {
       var elements = [];
       while (element && element !== this.context) {
         if (element.hasAttribute && element.hasAttribute('data-toggable')) {
@@ -89,7 +85,7 @@
     /**
      * Handle toggling of toggable elements.
      */
-    handleToggle: function(event) {
+    handleToggle: function (event) {
       var target = event.currentTarget;
       if (target) {
         Drupal.behaviors.cdDropdown.collapseAll(Drupal.behaviors.cdDropdown.getToggableParents(target));
@@ -110,7 +106,7 @@
      *
      * @see https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html
      */
-    handleEscape: function(event) {
+    handleEscape: function (event) {
       var key = event.which || event.keyCode;
       // Escape.
       if (key === 27) {
@@ -131,7 +127,7 @@
      * Handle global clicks outside of toggable elements, close them in this
      * case.
      */
-    handleClickAway: function(event) {
+    handleClickAway: function (event) {
       var target = event.target;
       if (target) {
         if (target.nodeName === 'A' && !target.hasAttribute('data-toggler')) {
@@ -158,7 +154,7 @@
     /**
      * Create a svg icon.
      */
-    createIcon: function(name, component, wrap) {
+    createIcon: function (name, component, wrap) {
       var svgElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'svg');
       var useElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'use');
       useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + name);
@@ -177,7 +173,7 @@
     /**
      * Create a button to toggle a dropdown.
      */
-    createButton: function(element) {
+    createButton: function (element) {
       var label = element.getAttribute('data-toggable');
       var logo = element.getAttribute('data-logo');
       var icon = element.getAttribute('data-icon');
@@ -224,7 +220,7 @@
     /**
      * Transform the element into a dropdown menu.
      */
-    setToggable: function(element, toggler) {
+    setToggable: function (element, toggler) {
       var expand = element.hasAttribute('data-toggable-expand') || false;
 
       // Create a button to toggle the element.
@@ -278,7 +274,7 @@
      * Initialize the toggable menus, adding a toggle button and event
      * handling.
      */
-    initializeToggables: function() {
+    initializeToggables: function () {
       // Collapse dropdowns when clicking outside of the toggable target.
       this.context.addEventListener('click', this.handleClickAway);
 
@@ -292,15 +288,15 @@
     /**
      * Update Drupal toggable nested menus.
      */
-    updateDrupalTogglableMenus: function(selector) {
+    updateDrupalTogglableMenus: function (selector) {
       // If selector wasn't supplied, set the default.
-      selector = (typeof selector !== 'undefined') ? selector : '.cd-nav .menu a + .menu';
+      selector = typeof selector !== 'undefined' ? selector : '.cd-nav .menu a + .menu';
 
       var elements = this.context.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
         var element = elements[i];
         this.setToggable(element, element.previousElementSibling);
       }
-    },
+    }
   };
 })(Drupal);

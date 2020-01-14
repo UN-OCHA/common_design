@@ -1,8 +1,10 @@
 (function (Drupal) {
+  'use strict';
+
   Drupal.behaviors.cdMenu = {
     attach: function (context, settings) {
       // Update nested Drupal menus in the header.
-      Drupal.behaviors.cdDropdown.updateDrupalTogglableMenus('.cd-header .cd-ocha-btn + .cd-dropdown');
+      Drupal.behaviors.cdDropdown.updateDrupalTogglableMenus('.cd-nav .menu a + .menu');
     }
   };
-}(Drupal));
+})(Drupal);
