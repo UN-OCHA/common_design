@@ -101,6 +101,7 @@
     > ul {
       display: none;
       background: $cd-white;
+
       @include desktop {
         background: transparent;
         display: flex;
