@@ -50,6 +50,8 @@
      */
     collapseAll: function (exceptions) {
       var elements = this.context.querySelectorAll('[aria-expanded="true"]');
+      exceptions = exceptions || [];
+      var cdDropdown = this;
 
       elements.forEach(function (element) {
         // Elements can be directed to stay open in two ways:
@@ -58,7 +60,7 @@
         //
         // If neither apply, then close the element.
         if (!element.hasAttribute('data-toggable-keep') && exceptions.indexOf(element) === -1) {
-          this.toggle(element, true);
+          cdDropdown.toggle(element, true);
         }
       });
     },
