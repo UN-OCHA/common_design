@@ -66,6 +66,11 @@
   display: none;
 }
 
+// Hide default block titles
+.cd-site-header__nav-holder .block-menu h2 {
+  @extend .visually-hidden;
+}
+
 .cd-site-header__nav-holder {
   float: left;
 
