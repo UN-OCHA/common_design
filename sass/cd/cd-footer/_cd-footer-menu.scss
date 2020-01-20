@@ -24,10 +24,14 @@
   }
 }
 
-
 //——————————————————————————————————————————————————————————————————————————————
 // Drupal selectors
 //——————————————————————————————————————————————————————————————————————————————
+
+// Hide default block titles
+.menu--footer h2 {
+  @extend .visually-hidden;
+}
 
 // Apply menu  styles to Drupal Menu items
 .menu--footer .menu {
