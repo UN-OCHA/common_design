@@ -48,6 +48,20 @@ $cd-site-header-height: 60px;
 //——————————————————————————————————————————————————————————————————————————————
 // Colours
 //——————————————————————————————————————————————————————————————————————————————
+:root {
+  /* Color palette */
+  --cd-ocha-blue: #026cb6;
+  --cd-dark-blue: #025995;
+  --cd-bright-blue: #80cbff;
+  --cd-highlight-red: #eb5c6d;
+  --cd-white: #ffffff;
+  --cd-light-grey: #f2f2f2;
+  --cd-mid-grey: #595959;
+  --cd-dark-grey: #4a4a4a;
+  --cd-black: #000000;
+  --cd-site-bg-color: #e6ecf1;
+  --cd-site-bg-color--light: #ebf0f4;
+}
 
 // Colour palette
 $cd-ocha-blue: #026cb6;
