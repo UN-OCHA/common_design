@@ -55,6 +55,8 @@
 
   {{ page.highlighted }}
 
+  {% include '@common_design/components/cd-hero/cd-hero.html.twig' %}
+
   {{ page.help }}
 
   <main role="main" class="cd-container">
@@ -62,7 +64,9 @@
 
     <div class="cd-layout-content">
 
-      {% include '@common_design/components/cd-hero.html.twig' %}
+      {% include '@common_design/components/cd-teaser/cd-teaser.html.twig' %}
+
+      {{ page.content }}
 
     </div>{# /.layout-content #}
 
