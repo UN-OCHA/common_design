@@ -53,9 +53,19 @@
 
   {{ page.breadcrumb }}
 
-  {{ page.highlighted }}
+  {% block hero %}
+    <div class="cd-layout-hero cd-container">
+      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+    </div>
+  {% endblock %}
 
-  {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+  {% if page.highlighted %}
+    {% block highlighted %}
+      <div class="cd-layout-highlighted cd-container">
+        {{ page.highlighted }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
   {{ page.help }}
 
@@ -63,6 +73,8 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="cd-layout-content">
+
+      {% include '@cd-components/cd-search/cd-search.html.twig' %}
 
       {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
 
