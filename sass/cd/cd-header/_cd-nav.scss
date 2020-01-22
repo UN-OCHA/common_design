@@ -70,6 +70,8 @@
   float: left;
 
   .cd-nav {
+    @include z-index(main-menu); // zindex may need adjusting depending on other site content.
+
     @include max-width(lg) {
       &[data-hidden='false'] {
         background: $cd-white;
@@ -79,7 +81,6 @@
         right: 0;
         left: 0;
         top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-        z-index: 101; // zindex may need adjusting depending on other site content.
       }
 
       &[data-hidden='false'] > ul {
