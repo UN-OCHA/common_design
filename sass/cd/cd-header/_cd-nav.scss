@@ -375,7 +375,6 @@
   right: 0;
   left: 0;
   top: auto;
-  z-index: 101; // zindex may need adjusting depending on other site content.
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
@@ -390,4 +389,16 @@
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > li.menu-item--expanded button {
   display: none;
+}
+
+// Style all menu items the same, regardless of their level.
+.no-js .menu-item--expanded li {
+  @include desktop {
+    height: $cd-site-header-height;
+    a {
+      padding: 0 14px;
+      height: $cd-site-header-height;
+      align-items: center;
+    }
+  }
 }
