@@ -20,11 +20,12 @@ cd-menu:
     - common_design/cd-dropdown
 
 cd-search:
-#  css:
-#    theme:
-#      css/cd-search/cd-search.css: {}
+  css:
+    theme:
+      components/cd-search/cd-search.css: {}
   js:
     components/cd-search/cd-search.js: {}
+    js/cd-search.js: {}
   dependencies:
     - common_design/cd-dropdown
 
