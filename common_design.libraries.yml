@@ -8,6 +8,48 @@ cd-dropdown:
   js:
     js/cd-dropdown.js: {}
 
+cd-menu:
+  js:
+    js/cd-menu.js: {}
+  dependencies:
+  - common_design/cd-dropdown
+
+cd-search:
+  #  css:
+  #    theme:
+  #      components/cd-search/cd-search.css: {}
+  js:
+    components/cd-search/cd-search.js: {}
+    js/cd-search.js: {}
+  dependencies:
+  - common_design/cd-dropdown
+
+# CD components
+cd-alert:
+  css:
+    theme:
+      components/cd-alert/cd-alert.css: {}
+
+cd-article-teaser:
+  css:
+    theme:
+      components/cd-article-teaser/cd-article-teaser.css: {}
+
+cd-bullet-list:
+  css:
+    theme:
+      components/cd-bullet-list/cd-bullet-list.css: {}
+
+cd-button:
+  css:
+    theme:
+      components/cd-button/cd-button.css: {}
+
+cd-date:
+  css:
+    theme:
+      components/cd-date/cd-date.css: {}
+
 cd-grid:
   css:
     theme:
@@ -18,26 +60,27 @@ cd-hero:
     theme:
       components/cd-hero/cd-hero.css: {}
 
-cd-menu:
-  js:
-    js/cd-menu.js: {}
-  dependencies:
-    - common_design/cd-dropdown
+cd-image-grid:
+  css:
+    theme:
+      components/cd-image-grid/cd-image-grid.css: {}
 
-cd-search:
-#  css:
-#    theme:
-#      components/cd-search/cd-search.css: {}
-  js:
-    components/cd-search/cd-search.js: {}
-    js/cd-search.js: {}
-  dependencies:
-    - common_design/cd-dropdown
+cd-list:
+  css:
+    theme:
+      components/cd-list/cd-list.css: {}
 
 cd-teaser:
   css:
     theme:
       components/cd-teaser/cd-teaser.css: {}
+
+cd-user-list:
+  css:
+    theme:
+      components/cd-user-list/cd-user-list.css: {}
+
+
 
 #This doesn't work for IE11 support, due to conditionals being dropped in IE10
 cd-polyfill:
