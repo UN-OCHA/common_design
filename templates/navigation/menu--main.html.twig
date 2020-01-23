@@ -46,11 +46,11 @@
 
         {% if item.is_expanded %}
 
-          <a href="{{ item.url }}">{{ item.title }}
+          <button{{ attributes.addAttribute('data-toggable', 'true') }}>{{ item.title }}
             <svg class="cd-icon cd-icon--arrow-down">
               <use xlink:href="#cd-icon--arrow-down"></use>
             </svg>
-          </a>
+          </button>
 
         {% else %}
 

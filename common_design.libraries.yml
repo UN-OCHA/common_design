@@ -8,6 +8,11 @@ cd-dropdown:
   js:
     js/cd-dropdown.js: {}
 
+cd-grid:
+  css:
+    theme:
+      components/cd-grid/cd-grid.css: {}
+
 cd-hero:
   css:
     theme:
@@ -20,9 +25,9 @@ cd-menu:
     - common_design/cd-dropdown
 
 cd-search:
-  css:
-    theme:
-      components/cd-search/cd-search.css: {}
+#  css:
+#    theme:
+#      components/cd-search/cd-search.css: {}
   js:
     components/cd-search/cd-search.js: {}
     js/cd-search.js: {}
