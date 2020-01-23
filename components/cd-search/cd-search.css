@@ -94,7 +94,7 @@
 
 .cd-search__form {
   background: var(--cd-site-bg-color);
-  display: none;
+  /*display: none;*/
   height: var(--cd-site-header-height);
   left: 0;
   position: absolute;
@@ -105,9 +105,9 @@
   display: none;
 }
 
-[aria-expanded="true"] .cd-search__form {
-  display: block;
-}
+/*[aria-expanded="true"] .cd-search__form {*/
+  /*display: block;*/
+/*}*/
 
 .cd-search__form form {
   padding: 8px var(--cd-container-padding);
