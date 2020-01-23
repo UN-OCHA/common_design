@@ -1,0 +1,47 @@
+.cd-button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  width: auto;
+}
+
+.cd-button:hover,
+.cd-button:focus {
+  background-color: rbga(0, 0 ,0, 0.1);
+}
+
+.cd-button:focus {
+  outline: 3px solid var(--cd-ocha-blue);
+}
+
+.cd-button--style {
+  text-transform: uppercase;
+  background: var(--cd-ocha-blue);
+  color: var(--cd-white);
+}
+
+.cd-button--style:hover,
+.cd-button--style:focus {
+  background: var(--cd-dark-blue);
+  color: var(--cd-white);
+}
+
+/* Some buttons have SVG icons */
+.cd-button svg {
+  fill: var(--cd-white);
+  width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem 0 0;
+}
+
+.cd-button:hover svg,
+.cd-button:focus svg {
+  fill: var(--cd-white);
+}
