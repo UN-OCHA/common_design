@@ -400,6 +400,7 @@
 .no-js .menu-item--expanded li {
   @include desktop {
     height: $cd-site-header-height;
+
     a {
       padding: 0 14px;
       height: $cd-site-header-height;
