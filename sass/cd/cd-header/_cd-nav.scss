@@ -101,6 +101,11 @@
       right: auto;
       top: auto;
       width: auto;
+
+      // Always display on desktop.
+      &[data-hidden='true'] {
+        display: block;
+      }
     }
 
     > ul {
