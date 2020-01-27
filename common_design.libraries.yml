@@ -28,7 +28,7 @@ cd-search:
 cd-alert:
   css:
     theme:
-      components/cd-alert/cd-alert.css: {}
+      components/cd-alert/cd-alert.css: { preprocess:false }
 
 cd-article-teaser:
   css:
@@ -69,6 +69,11 @@ cd-list:
   css:
     theme:
       components/cd-list/cd-list.css: {}
+
+cd-pagination:
+  css:
+    theme:
+      components/cd-pagination/cd-pagination.css: {}
 
 cd-teaser:
   css:
