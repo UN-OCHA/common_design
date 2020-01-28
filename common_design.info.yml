@@ -9,8 +9,8 @@ logo: 'img/logos/ocha-lockup-blue.svg'
 # Defines libraries group in which we can add css/js.
 libraries:
 - core/drupal
-- core/jquery
-- core/jquery.once
+#- core/jquery
+#- core/jquery.once
 - common_design/global-styling
 
 # Regions
