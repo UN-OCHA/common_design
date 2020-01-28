@@ -53,9 +53,19 @@
 
   {{ page.breadcrumb }}
 
-  {{ page.highlighted }}
+  {#{% block hero %}#}
+    {#<div class="cd-layout-hero cd-container">#}
+      {#{% include '@cd-components/cd-hero/cd-hero.html.twig' %}#}
+    {#</div>#}
+  {#{% endblock %}#}
 
-  {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+  {% if page.highlighted %}
+    {% block highlighted %}
+      <div class="cd-layout-highlighted cd-container">
+        {{ page.highlighted }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
   {{ page.help }}
 
@@ -64,13 +74,47 @@
 
     <div class="cd-layout-content">
 
+      <h1>Components</h1>
+
+      <h2>User interface</h2>
+
+      {% include '@cd-components/cd-button/cd-button.html.twig' %}
+
+      {% include '@cd-components/cd-date/cd-date.html.twig' %}
+
+      {% include '@cd-components/cd-search/cd-search.html.twig' %}
+
+      {% include '@cd-components/cd-pagination/cd-pagination.html.twig' %}
+
+
+      <h2>Layouts</h2>
+
+      {% include '@cd-components/cd-grid/cd-grid.html.twig' %}
+
+      {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
+
+
+      <h2>Content</h2>
+
+      {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
+
+      {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
+
+      {% include '@cd-components/cd-list/cd-list.html.twig' %}
+
       {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
+
+      {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
+
+      {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
+
+      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
 
       {{ page.content }}
 
     </div>{# /.layout-content #}
 
-    {% if page.sidebar_first %}
+    {% if page.sidebar_first|render %}
       <aside class="cd-layout-sidebar-first" role="complementary">
         {{ page.sidebar_first }}
       </aside>

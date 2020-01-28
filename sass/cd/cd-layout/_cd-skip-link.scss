@@ -9,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  z-index: 50;
+  @include z-index(skip-link);
   transform: translateX(-50%);
 }
 

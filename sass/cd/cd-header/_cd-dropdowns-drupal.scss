@@ -1,15 +1,19 @@
 //——————————————————————————————————————————————————————————————————————————————
 // Common Design: Drupal dropdowns for nested menus
 //——————————————————————————————————————————————————————————————————————————————
+
+[hidden] {
+  display: none;
+}
+
 .menu--main {
   .menu-item--expanded {
-
     // Hide child nav.
-    > a[aria-expanded='false'] + ul  {
+    [aria-expanded='false'] + ul {
       display: none;
     }
 
-    > a[aria-expanded='true'] + ul {
+    [aria-expanded='true'] + ul {
       display: block;
     }
 
@@ -21,29 +25,18 @@
         margin-top: -2px;
       }
     }
+  }
 
-    &.js-open {
+  ul[data-hidden='true'] > ul {
+    display: block;
+    @include z-index(dropdown);
+  }
 
-      > ul {
-        display: block;
-        @include z-index(dropdown);
-      }
-
-      > a {
-        > .cd-icon--arrow-down {
-          transform: rotate(180deg);
-        }
-      }
-
-      // Second level.
-      .menu .cd-icon--arrow-down {
-        margin-top: 4px;
-      }
-
-    }
+  [aria-expanded='true'] > .cd-icon--arrow-down {
+    transform: rotate(180deg);
   }
 }
 
-.no-js .menu-item--expanded> a[aria-expanded='false'] + ul {
+.no-js .menu-item--expanded> [aria-expanded='false'] + ul {
   display: block;
 }
