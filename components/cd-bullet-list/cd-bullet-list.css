@@ -1,0 +1,19 @@
+.cd-bullet-list {
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.cd-bullet-list li {
+  padding-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  /* border-bottom: 1px solid var(--cd-site-bg-color); */
+}
+
+.cd-bullet-list svg {
+  fill: var(--cd-highlight-red);
+  width: 0.5rem;
+  height: 0.5rem;
+  display: inline-block;
+  margin-right: 1rem;
+}

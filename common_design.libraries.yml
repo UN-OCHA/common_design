@@ -8,6 +8,11 @@ cd-dropdown:
   js:
     js/cd-dropdown.js: {}
 
+cd-hero:
+  css:
+    theme:
+      components/cd-hero/cd-hero.css: {}
+
 cd-menu:
   js:
     js/cd-menu.js: {}
@@ -19,6 +24,11 @@ cd-search:
     js/cd-search.js: {}
   dependencies:
     - common_design/cd-dropdown
+
+cd-teaser:
+  css:
+    theme:
+      components/cd-teaser/cd-teaser.css: {}
 
 #This doesn't work for IE11 support, due to conditionals being dropped in IE10
 cd-polyfill:

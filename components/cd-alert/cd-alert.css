@@ -1,0 +1,31 @@
+.cd-alert {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.cd-alert__title {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.cd-alert svg {
+  margin-right: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.cd-alert {
+  border: 1px solid var(--cd-site-bg-color);
+  border-left: 6px solid var(--cd-site-bg-color);
+}
+
+.cd-alert--attn {
+  border: 1px solid var(--cd-bright-blue);
+  border-left: 6px solid var(--cd-bright-blue);
+}
+
+.cd-alert--attn svg {
+  fill: var(--cd-bright-blue);
+}
