@@ -79,7 +79,7 @@
   @media (min-width: 576px) {
     .cd-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
       grid-gap: 1rem;
     }
 
@@ -92,31 +92,31 @@
 
   @media (min-width: 768px) {
     .cd-grid {
-      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
       max-width: unset;
     }
 
     .cd-grid-2-col {
       display: grid;
       grid-gap: 1rem;
-      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
     }
   }
 
   @media (min-width: 1024px) {
     .cd-grid {
-      grid-template-columns: repeat(4, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
       max-width: unset;
     }
 
     .cd-grid-2-col {
       display: grid;
       grid-gap: 1rem;
-      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
     }
 
     .cd-grid-3-col {
-      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
     }
   }
 }
