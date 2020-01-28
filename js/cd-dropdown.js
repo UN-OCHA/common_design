@@ -49,7 +49,7 @@
      * Collapse all toggable elements.
      */
     collapseAll: function (exceptions) {
-      var elements = this.context.querySelectorAll('[aria-expanded="true"]');
+      var elements = document.querySelectorAll('[aria-expanded="true"]');
       exceptions = exceptions || [];
       var cdDropdown = this;
 
