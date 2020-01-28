@@ -2,7 +2,6 @@
 // Common Design: Main Navigation
 //——————————————————————————————————————————————————————————————————————————————
 
-
 .cd-nav__btn {
   background: transparent;
   border: 0 none $cd-border-color;
@@ -24,11 +23,11 @@
   }
 
   .cd-icon--arrow-down {
-    margin-left: 2px;
+    margin-left: 4px;
     fill: $cd-highlight-red;
   }
 
-  .js-open & {
+  &[aria-expanded='true'] {
     position: relative;
     z-index: 101;
     color: $cd-dark-text-color;
@@ -62,10 +61,6 @@
   }
 }
 
-[hidden] {
-  display: none;
-}
-
 // Hide default block titles
 .cd-site-header__nav-holder .block-menu h2 {
   @extend .visually-hidden;
@@ -75,6 +70,8 @@
   float: left;
 
   .cd-nav {
+    @include z-index(main-menu); // zindex may need adjusting depending on other site content.
+
     @include max-width(lg) {
       &[data-hidden='false'] {
         background: $cd-white;
@@ -84,7 +81,6 @@
         right: 0;
         left: 0;
         top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
-        z-index: 101; // zindex may need adjusting depending on other site content.
       }
 
       &[data-hidden='false'] > ul {
@@ -101,6 +97,11 @@
       right: auto;
       top: auto;
       width: auto;
+
+      // Always display on desktop.
+      &[data-hidden='true'] {
+        display: block;
+      }
     }
 
     > ul {
@@ -123,10 +124,12 @@
       padding: 0;
     }
 
-    a {
+    a,
+    button {
       color: $cd-default-text-color;
       padding: 15px 30px;
       text-decoration: none;
+      text-align: left;
       display: block;
       @supports (display: flex) {
         display: flex;
@@ -140,19 +143,23 @@
       }
     }
 
+    button {
+      border: 0 none;
+      width: 100%;
+      background: transparent;
+    }
+
     // First level.
-    > .menu > .menu-item > a {
+    > .menu > .menu-item > a,
+    > .menu > .menu-item > button {
       font-weight: bold;
       text-transform: uppercase;
     }
   }
 
   .menu-item {
-    &.js-open {
-      background: $cd-white-bg-color;
-    }
-
-    > a::before {
+    > a::before,
+    > button::before {
       background: $cd-highlight-red;
     }
   }
@@ -185,20 +192,12 @@
     }
   }
 
-  // Third level.
-  .menu .menu .menu {
-    a {
-      font-weight: 200;
-      padding: 10px 30px;
-    }
-  }
-
   // Active trail for mobile menu.
   @include max-width(lg) {
-
     .cd-nav > ul > li {
 
-      a {
+      a,
+      button {
         position: relative;
 
         &::before {
@@ -212,7 +211,8 @@
         }
       }
 
-      > a.is-active::before {
+      > a.is-active::before,
+      > button.is-active::before {
         background: $cd-highlight-red;
       }
 
@@ -220,14 +220,15 @@
       // Classes based on Drupal menu item configuration.
       &.menu-item--collapsed,
       &.menu-item--expanded {
-        > a.is-active::before {
+        > a.is-active::before,
+        > button.is-active::before {
           background: rgba($cd-highlight-red, 0.2);
         }
       }
 
       &.menu-item--active-trail {
-
-        a {
+        a,
+        button {
           position: relative;
 
           &::before {
@@ -247,30 +248,22 @@
       }
 
       > ul > li.menu-item--active-trail {
-
-        a::before {
+        a::before,
+        button::before {
           background: rgba($cd-highlight-red, 0.6);
         }
 
-        a.is-active::before {
+        a.is-active::before,
+        button.is-active::before {
           background: $cd-highlight-red;
         }
       }
 
     }
-
-    // Grandchild items have different top/bottom padding and therefore height.
-    .cd-nav > ul > li.menu-item--active-trail > ul > li > ul > li a::before,
-    .cd-nav > ul > li > ul > li.menu-item--active-trail > ul > li a::before {
-      height: 38px; // Height of menu item.
-    }
   }
 
-
   @include desktop {
-
     .cd-nav > .menu {
-
       @supports (display: flex) {
         flex: 1 0 auto;
       }
@@ -289,32 +282,35 @@
           }
         }
 
-        &.menu-item--active-trail a::before {
+        &.menu-item--active-trail a::before,
+        &.menu-item--active-trail button::before {
           background: $cd-highlight-red;
         }
 
-        &.js-open {
-          position: relative;
+        //&.js-open {
+        //  position: relative;
+        //
+        //  > a,
+        //  button {
+        //
+        //    &::before {
+        //      background: $cd-highlight-red;
+        //    }
+        //
+        //    &:hover {
+        //      background: $cd-mid-bg-color;
+        //    }
+        //
+        //    &:focus {
+        //      &::before {
+        //        background: $cd-highlight-red;
+        //      }
+        //    }
+        //  }
+        //}
 
-          > a {
-
-            &::before {
-              background: $cd-highlight-red;
-            }
-
-            &:hover {
-              background: $cd-mid-bg-color;
-            }
-
-            &:focus {
-              &::before {
-                background: $cd-highlight-red;
-              }
-            }
-          }
-        }
-
-        > a {
+        > a,
+        button {
           align-items: center;
           background: transparent;
           display: flex;
@@ -353,8 +349,8 @@
       }
 
       > li > ul {
-
-        a {
+        a,
+        button {
           &:hover {
             background: $cd-mid-bg-color;
           }
@@ -368,28 +364,8 @@
           border-left: 3px solid $cd-highlight-red;
         }
       }
-
-      > li > ul > li {
-        &.js-open {
-          background: $cd-white-bg-color;
-        }
-      }
-
-      > li > ul > li > ul {
-        padding-bottom: 0;
-
-        a {
-          &:hover,
-          &:focus {
-            background: $cd-mid-bg-color;
-          }
-        }
-      }
-
     }
-
   }
-
 }
 
 .no-js .cd-site-header__nav-holder {
@@ -404,7 +380,6 @@
   right: 0;
   left: 0;
   top: auto;
-  z-index: 101; // zindex may need adjusting depending on other site content.
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
@@ -415,4 +390,21 @@
   padding: 0;
   top: 0;
   position: relative;
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu > li.menu-item--expanded button {
+  display: none;
+}
+
+// Style all menu items the same, regardless of their level.
+.no-js .menu-item--expanded li {
+  @include desktop {
+    height: $cd-site-header-height;
+
+    a {
+      padding: 0 14px;
+      height: $cd-site-header-height;
+      align-items: center;
+    }
+  }
 }

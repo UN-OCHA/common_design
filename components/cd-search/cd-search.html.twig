@@ -1,0 +1,21 @@
+{{ attach_library('common_design/cd-search') }}
+
+<div class="cd-search">
+  <div id="block-searchform" class="cd-search__form cd-dropdown" aria-labelledby="cd-search-btn" data-toggable="Search" data-hidden="true" data-component="cd-search" data-logo="search" role="search">
+    <h2 class="visually-hidden">Search Content</h2>
+
+    <form action="/search/content" method="get">
+
+      <label for="edit-keys">Search</label>
+      <input placeholder="What are you looking for?" class="cd-search__input" type="text" id="cd-search">
+
+      <button class="cd-search__submit button" value="Search" type="submit">
+        <svg class="cd-icon cd-icon--search">
+          <use xlink:href="#cd-icon--search"></use>
+        </svg>
+        <span class="visually-hidden">Search</span>
+      </button>
+
+    </form>
+  </div>
+</div>
