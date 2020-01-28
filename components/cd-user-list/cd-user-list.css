@@ -1,0 +1,46 @@
+.cd-user-list {
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.cd-user-list li {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  /* border-bottom: 1px solid var(--cd-site-bg-color); */
+}
+
+.cd-user-list__image {
+  float: left;
+  width: 6rem;
+  max-height: 6rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.cd-user-list__image img {
+  border-radius: 0.5rem;
+}
+
+.cd-user-list__image svg {
+  max-width: 6rem;
+  max-height: 6rem;
+  fill: var(--cd-ocha-blue);
+}
+
+.cd-user-list__name {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.cd-user-list__position {
+  margin: 0 0 0.5rem;
+  font-style: italic;
+}
+
+.cd-user-list__organization {
+  padding: 0 0 0.5rem;
+  font-weight: 600;
+}
