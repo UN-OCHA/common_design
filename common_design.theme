@@ -42,6 +42,17 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
+
+    //dpm($form); // Print out before change.
+    // The 'created' was my form element, yours would be which checkbox you wanted to change.
+    //$form['created']['#id'] = drupal_html_id('my-new-id');
+    //dpm($form); // Print out after change.
+
+    //$form['attributes']['id'][] = 'another-id ';
+
+    //dpm($form); // Print out after change.
+    //$form['#attributes']['id'][] = 'cd-search__form';
+    //dpm($form);
     $form['#attributes']['class'][] = 'cd-search__form';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
     $form['#attributes']['data-toggable'][] = 'Search';
@@ -180,7 +191,18 @@ function common_design_preprocess_page(&$vars) {
     $inline_search = TRUE;
     $vars['inline_search'] = $inline_search;
   }
+}
 
+///**
+/// * Implements hook_theme_suggestions_HOOK_alter().
+// */
+
+function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+  $current_uri = \Drupal::request()->getRequestUri();
+  // Set variable based on path alias to include Component demo page.
+  if ($current_uri == '/demo') {
+    $suggestions[] = $hook . '__' . 'demo';
+  }
 }
 
 ///**
