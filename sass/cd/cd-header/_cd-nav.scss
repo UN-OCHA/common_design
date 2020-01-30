@@ -287,28 +287,6 @@
           background: $cd-highlight-red;
         }
 
-        //&.js-open {
-        //  position: relative;
-        //
-        //  > a,
-        //  button {
-        //
-        //    &::before {
-        //      background: $cd-highlight-red;
-        //    }
-        //
-        //    &:hover {
-        //      background: $cd-mid-bg-color;
-        //    }
-        //
-        //    &:focus {
-        //      &::before {
-        //        background: $cd-highlight-red;
-        //      }
-        //    }
-        //  }
-        //}
-
         > a,
         button {
           align-items: center;
@@ -367,6 +345,7 @@
     }
   }
 }
+
 
 .no-js .cd-site-header__nav-holder {
   float: left;
