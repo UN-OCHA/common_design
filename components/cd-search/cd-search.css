@@ -1,0 +1,252 @@
+.cd-search {
+  float: left;
+}
+
+.cd-search__btn {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--cd-ocha-blue);
+  display: flex;
+  font-size: 24px;
+  height: var(--cd-site-header-height);
+  padding: 0 20px;
+  transition: background 0.3s ease;
+}
+
+.cd-search__btn svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--cd-ocha-blue);
+}
+
+.cd-search__btn:hover,
+.cd-search__btn:focus {
+  background: white;
+  outline: none;
+  color: var(--cd-dark-blue);
+}
+
+.cd-search__btn:hover svg,
+.cd-search__btn:focus svg {
+  fill: var(--cd-dark-blue);
+}
+
+.cd-search__btn:focus {
+  color: var(--cd-highlight-red);
+}
+
+.cd-search__btn:focus svg {
+  fill: var(--cd-highlight-red);
+}
+
+.cd-search__btn[aria-expanded="true"] {
+  background: white;
+  color: var(--cd-highlight-red);
+  position: relative;
+}
+
+.cd-search__btn[aria-expanded="true"]::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 6px;
+  border-color: transparent transparent var(--cd-site-bg-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6px;
+}
+
+.cd-search__btn[aria-expanded="true"] svg {
+  fill: var(--cd-highlight-red);
+}
+
+.cd-search__btn[aria-expanded="true"]:hover,
+.cd-search__btn[aria-expanded="true"]:focus {
+  background: white;
+  outline: none;
+  color: var(--cd-dark-blue);
+}
+
+.cd-search__btn[aria-expanded="true"]:hover svg,
+.cd-search__btn[aria-expanded="true"]:focus svg {
+  fill: var(--cd-dark-blue);
+}
+
+.cd-search__btn-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: none;
+}
+
+[aria-expanded="true"] .cd-search__btn--label {
+  color: var(--cd-highlight-red);
+}
+
+[aria-expanded="true"] .cd-search__btn svg,
+[aria-expanded="true"] .cd-search__btn:hover svg,
+[aria-expanded="true"] .cd-search__btn:focus svg {
+  fill: var(--cd-highlight-red);
+}
+
+.cd-search__form {
+  background: var(--cd-site-bg-color);
+  /*display: none;*/
+  height: var(--cd-site-header-height);
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.cd-search__form label {
+  display: none;
+}
+
+/*[aria-expanded="true"] .cd-search__form {*/
+  /*display: block;*/
+/*}*/
+
+.cd-search__form form {
+  padding: 8px var(--cd-container-padding);
+}
+
+.cd-search__input[type='search'],
+.cd-search__input[type='text'] {
+  -webkit-appearance: none;
+  background: white;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--cd-dark-grey);
+  font-size: 1rem;
+  height: calc(var(--cd-site-header-height) - 16px); /* Padding */
+  padding: 0 45px 0 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cd-search__input[type='search']:focus,
+.cd-search__input[type='text']:focus {
+  outline: 0;
+  /* RGBA and custom properties? */
+  box-shadow: 0 0 4px rgba(var(--cd-mid-grey), 0.7);
+  /* Test colour. Commnent out IRL. */
+  box-shadow: 0 0 4px var(--cd-highlight-red);
+}
+
+/* Placeholder rules */
+.cd-search__input::-webkit-input-placeholder {
+  color: var(--cd-dark-grey);
+  font-style: italic;
+}
+
+.cd-search__input::-moz-placeholder {
+  color: var(--cd-dark-grey);
+  font-style: italic;
+}
+
+.cd-search__input:-ms-input-placeholder {
+  color: var(--cd-dark-grey);
+  font-style: italic;
+}
+
+.cd-search__input:-moz-placeholder {
+  color: var(--cd-dark-grey);
+  font-style: italic;
+}
+
+.cd-search__input::-webkit-search-cancel-button {
+  position: relative;
+  right: 10px;
+}
+
+/* Safari fix */
+.cd-search__input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+
+.cd-search__submit {
+  align-items: center;
+  background: var(--cd-dark-grey);
+  border: 0;
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: calc(var(--cd-site-header-height) - 16px); /* Padding */
+  width: 46px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: var(--cd-container-padding);
+  text-transform: uppercase;
+  top: 8px;
+}
+
+.cd-search__submit svg {
+  box-sizing: content-box;
+  width: 26px;
+  height: 26px;
+  fill: white;
+  margin: 0 auto;
+}
+
+/* So we don't need JS for this */
+/* But this is problematic where other div wrap the input and button (Drupal) */
+.cd-search__input:focus + .cd-search__submit,
+.cd-search__input:focus .cd-search__submit {
+  background-color: var(--cd-highlight-red);
+}
+
+.cd-search__submit:focus {
+  background-color: var(--cd-highlight-red);
+}
+
+@media (min-width: 768px) {
+  .cd-search__form form {
+    margin: 0 auto;
+    max-width: var(--cd-max-width);
+    padding: 8px var(--cd-container-padding-tablet);
+    position: relative;
+  }
+
+  .cd-search__input {
+    padding: 0 44px 0 30px;
+  }
+
+  .cd-search__submit {
+    right: var(--cd-container-padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-search__btn svg {
+    width: 22px;
+    height: 22px;
+    padding: 0 4px 0 0;
+  }
+
+  .cd-search__btn-label {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cd-search__form {
+    left: 8px;
+    right: 8px;
+  }
+
+  .cd-search__form form {
+    padding: 8px var(--cd-container-padding-xlarge);
+  }
+
+  .cd-search__submit {
+    right: var(--cd-container-padding-xlarge);
+  }
+}
