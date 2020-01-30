@@ -78,7 +78,7 @@ Preferably use Jenkins to run the Gulp task on build to generate the CSS. If thi
 
 ## JS
 
-Javascript files should be added to `js/` and to the scripts section of `ocha_basic.info`
+Javascript files should be added to `js/` and defined as a library in `common_design.ibraries.yml`
 
 Instead of grouping all JS in one file, each component has its own JS file associated with it. They have been built to be reused, allowing you to mix and match any combination of JS files and use each as a dependency without altering the original file. The general pattern to reference the method of a behavior is:
 
@@ -90,7 +90,7 @@ this.methodName();
 Drupal.behaviors.cdDropdown.methodName();
 ```
 
-Using `this` works for most functions except ones which are assigned to event listners. For those, we have prefixed all of them with the word `handle` — and despite being contained within the same Behavior, you'll need to reference internal functions using the full Behavior name (see second example above, as if it were outside your Behavior)
+Using `this` works for most functions except ones which are assigned to event listeners. For those, we have prefixed all of them with the word `handle` — and despite being contained within the same Behavior, you'll need to reference internal functions using the full Behavior name (see second example above, as if it were outside your Behavior)
 
 ```js
 (function (Drupal) {
