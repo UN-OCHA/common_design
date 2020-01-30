@@ -53,11 +53,11 @@
 
   {{ page.breadcrumb }}
 
-  {#{% block hero %}#}
-    {#<div class="cd-layout-hero cd-container">#}
-      {#{% include '@cd-components/cd-hero/cd-hero.html.twig' %}#}
-    {#</div>#}
-  {#{% endblock %}#}
+  {% block hero %}
+    <div class="cd-layout-hero cd-container">
+      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+    </div>
+  {% endblock %}
 
   {% if page.highlighted %}
     {% block highlighted %}
@@ -108,7 +108,7 @@
 
       {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
 
-      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+{#      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}#}
 
       {{ page.content }}
 
