@@ -2,10 +2,6 @@
 // Common Design: Drupal main menu dropdown display rules for nested menus
 //——————————————————————————————————————————————————————————————————————————————
 
-[hidden] {
-  display: none;
-}
-
 .menu--main {
   .menu-item--expanded {
     // Hide child nav.
