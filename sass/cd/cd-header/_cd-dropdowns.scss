@@ -2,18 +2,18 @@
 // Common Design: Dropdowns for nested menus
 //——————————————————————————————————————————————————————————————————————————————
 
-[data-hidden='false'] {
+[data-cd-hidden='false'] {
   display: block;
 }
 
-[data-hidden='true'] {
+[data-cd-hidden='true'] {
   display: none;
 }
 
 .cd-dropdown {
   display: none;
 
-  &[data-hidden='false'] {
+  &[data-cd-hidden='false'] {
     display: block;
   }
 

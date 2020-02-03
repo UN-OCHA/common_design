@@ -17,7 +17,8 @@
  * from a user. The effect of this class can be toggled with the jQuery show()
  * and hide() functions.
  */
-.hidden {
+.hidden,
+[hidden] {
   display: none;
 }
 
