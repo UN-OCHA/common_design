@@ -191,7 +191,18 @@ function common_design_preprocess_page(&$vars) {
     $inline_search = TRUE;
     $vars['inline_search'] = $inline_search;
   }
+}
 
+///**
+/// * Implements hook_theme_suggestions_HOOK_alter().
+// */
+
+function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+  $current_uri = \Drupal::request()->getRequestUri();
+  // Set variable based on path alias to include Component demo page.
+  if ($current_uri == '/demo') {
+    $suggestions[] = $hook . '__' . 'demo';
+  }
 }
 
 ///**

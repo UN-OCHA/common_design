@@ -27,5 +27,6 @@
     font-family: $cd-font;
     @include font-size($cd-font-size-tiny);
     font-weight: 300;
+    background-color: transparent;
   }
 }

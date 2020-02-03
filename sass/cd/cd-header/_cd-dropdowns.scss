@@ -13,7 +13,6 @@
 .cd-dropdown {
   display: none;
 
-  .js-open > &,
   &[data-hidden='false'] {
     display: block;
   }
@@ -28,12 +27,6 @@
   fill: $cd-white;
   width: 9px;
   height: 9px;
-}
-
-.js-open {
-  > [data-toggle='dropdown'] > .cd-icon--arrow-down {
-    transform: rotate(180deg);
-  }
 }
 
 /**
