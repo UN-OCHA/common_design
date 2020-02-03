@@ -5,6 +5,9 @@
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
 
+      // Store context where all our private functions can access it.
+      this.context = context;
+
       // Initialize toggable dropdown.
       this.initializeToggables();
 
@@ -278,7 +281,7 @@
       document.addEventListener('click', this.handleClickAway);
 
       // Initialize each toggable target
-      var elements = document.querySelectorAll('[data-toggable]');
+      var elements = this.context.querySelectorAll('[data-toggable]');
       for (var i = 0, l = elements.length; i < l; i++) {
         this.setToggable(elements[i]);
       }
