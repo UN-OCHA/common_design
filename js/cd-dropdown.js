@@ -176,6 +176,7 @@
      * Create a button to toggle a dropdown.
      */
     createButton: function (element) {
+      var id = element.getAttribute('id');
       var label = element.getAttribute('data-cd-toggable');
       var logo = element.getAttribute('data-cd-logo');
       var icon = element.getAttribute('data-cd-icon');
@@ -185,18 +186,24 @@
       var button = document.createElement('button');
       button.setAttribute('type', 'button');
 
-      // Pre-label logo.
-      if (logo) {
-        button.appendChild(this.createIcon(logo, component, true));
-      }
+      // ID.
+      button.setAttribute('id', id + '-toggler');
 
       // Button label.
       var labelWrapper = document.createElement('span');
       labelWrapper.appendChild(document.createTextNode(label));
       button.appendChild(labelWrapper);
 
-      // Post-label icon.
+      // @todo rename logo/icon to be more inclusive if needed.
+      //  Eg. prefix/suffix or pre/post
+      // Pre-label SVG icon.
+      if (logo) {
+        button.appendChild(this.createIcon(logo, component, true));
+      }
+
+      // Post-label SVG icon.
       if (icon) {
+        // @todo This could default to dropdown arrow icon.
         button.appendChild(this.createIcon(icon));
       }
 
