@@ -23,7 +23,7 @@
     }
   }
 
-  ul[data-hidden='true'] > ul {
+  ul[data-cd-hidden='true'] > ul {
     display: block;
     @include z-index(dropdown);
   }
