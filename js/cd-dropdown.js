@@ -37,7 +37,7 @@
 
         // Change the focus when expanded if a target is specified.
         if (element.hasAttribute('data-focus-target') && !expanded) {
-          var target = this.context.getElementById(element.getAttribute('data-focus-target'));
+          var target = document.getElementById(element.getAttribute('data-focus-target'));
           if (target) {
             target.focus();
           }
@@ -70,7 +70,7 @@
      */
     getToggableParents: function (element) {
       var elements = [];
-      while (element && element !== this.context) {
+      while (element && element !== document) {
         if (element.hasAttribute && element.hasAttribute('data-toggable')) {
           element = element.previousElementSibling;
         }
@@ -138,7 +138,7 @@
         else {
           // Loop until we find a parent which is a toggable or toggler element
           // or we reach the "context" element.
-          while (target && target !== Drupal.behaviors.cdDropdown.context) {
+          while (target && target !== document) {
             if (target.hasAttribute) {
               // Skip if the clicked element belong to a toggler or a toggable
               // element.
@@ -157,14 +157,14 @@
      * Create a svg icon.
      */
     createIcon: function (name, component, wrap) {
-      var svgElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      var useElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'use');
+      var svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      var useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
       useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + name);
       svgElem.setAttribute('class', 'cd-icon cd-icon--' + name);
       svgElem.appendChild(useElem);
 
       if (component && wrap) {
-        var wrapper = this.context.createElement('span');
+        var wrapper = document.createElement('span');
         wrapper.setAttribute('class', component + '__logo');
         wrapper.appendChild(svgElem);
         return wrapper;
@@ -182,7 +182,7 @@
       var component = element.getAttribute('data-component');
 
       // Create the button.
-      var button = this.context.createElement('button');
+      var button = document.createElement('button');
       button.setAttribute('type', 'button');
 
       // Pre-label logo.
@@ -191,8 +191,8 @@
       }
 
       // Button label.
-      var labelWrapper = this.context.createElement('span');
-      labelWrapper.appendChild(this.context.createTextNode(label));
+      var labelWrapper = document.createElement('span');
+      labelWrapper.appendChild(document.createTextNode(label));
       button.appendChild(labelWrapper);
 
       // Post-label icon.
@@ -278,7 +278,7 @@
      */
     initializeToggables: function () {
       // Collapse dropdowns when clicking outside of the toggable target.
-      this.context.addEventListener('click', this.handleClickAway);
+      document.addEventListener('click', this.handleClickAway);
 
       // Initialize each toggable target
       var elements = this.context.querySelectorAll('[data-toggable]');
@@ -294,7 +294,7 @@
       // If selector wasn't supplied, set the default.
       selector = typeof selector !== 'undefined' ? selector : '.cd-nav .menu a + .menu';
 
-      var elements = this.context.querySelectorAll(selector);
+      var elements = document.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
         var element = elements[i];
         this.setToggable(element, element.previousElementSibling);
