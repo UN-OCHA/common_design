@@ -10,6 +10,14 @@
   margin: 0;
   padding: 0;
 
+  svg {
+    width: 14px;
+    height: $cd-global-header-height;
+    fill: #fff;
+    float: left;
+    position: relative;
+  }
+
   li {
     float: left;
     position: relative;
@@ -40,6 +48,10 @@
   text-overflow: ellipsis;
   transition: background 0.3s ease;
   white-space: nowrap;
+
+  &:first-child {
+    padding-left: 10px;
+  }
 
   @include tablet {
     max-width: none;
@@ -108,13 +120,13 @@
 }
 
 // Menu item with user icon
-.cd-user-menu__icon-login {
-  @extend .cd-user-menu__icon;
-
-  &::before {
-    background-image: url('../img/icons/user--white.svg');
-  }
-}
+//.cd-user-menu__icon-login {
+//  @extend .cd-user-menu__icon;
+//
+//  &::before {
+//    background-image: url('../img/icons/user--white.svg');
+//  }
+//}
 
 //——————————————————————————————————————————————————————————————————————————————
 // Drupal selectors
@@ -139,11 +151,11 @@
 }
 
 // Login/Logout item as last item in user menu
-.region-header-top .menu > li:last-child {
-  @extend .cd-user-menu__icon-login;
-}
+//.region-header-top .menu > li:last-child {
+//  @extend .cd-user-menu__icon-login;
+//}
 
 // Add content menu item as first item in user menu
-.user-logged-in .region-header-top .menu > li:first-child {
-  @extend .cd-user-menu__icon-plus;
-}
+//.user-logged-in .region-header-top .menu > li:first-child {
+//  @extend .cd-user-menu__icon-plus;
+//}
