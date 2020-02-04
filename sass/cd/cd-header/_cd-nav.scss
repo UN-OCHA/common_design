@@ -127,6 +127,7 @@
       text-decoration: none;
       text-align: left;
       display: block;
+
       @supports (display: flex) {
         display: flex;
       }
@@ -342,15 +343,10 @@
   }
 }
 
-
-.no-js .cd-site-header__nav-holder {
-  float: left;
-}
-
-.no-js .cd-site-header__nav-holder .cd-nav[data-cd-hidden='false'] {
+.no-js .cd-site-header__nav-holder .cd-nav {
+  display: block;
   background: $cd-white;
-  height: auto;
-  padding: 20px 0 36px;
+  padding: 0;
   position: relative;
   right: 0;
   left: 0;
