@@ -3,8 +3,8 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-search {
-  float: left;
   @include z-index(search);
+  float: left;
 
   @supports (display: flex) {
     float: none;
@@ -47,7 +47,6 @@
     }
   }
 
-  .js-open &,
   &[aria-expanded='true'] {
     color: $cd-highlight-red;
     position: relative;
@@ -82,15 +81,10 @@
   font-weight: bold;
   text-transform: uppercase;
   display: none;
-
-  .js-open & {
-    color: $cd-highlight-red;
-  }
 }
 
 .cd-search__form {
   background: $cd-mid-bluey-grey;
-  //display: none;
   height: $cd-site-header-height;
   left: 0;
   position: absolute;
@@ -99,11 +93,6 @@
   label {
     @extend .visually-hidden;
   }
-
-  //&[data-cd-hidden='false'],
-  //.js-open & {
-  //  display: block;
-  //}
 
   .no-js & {
     display: block;
@@ -190,7 +179,6 @@
     margin: 0 auto;
   }
 
-  &.js-has-focus,
   &:focus {
     background-color: $cd-highlight-red;
   }
