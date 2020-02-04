@@ -50,7 +50,7 @@
       <li{{ item.attributes.addClass(classes) }}>
         {% if(item.title  == 'My account') %}
           {{ link('username', item.url) }}
-          {{ link(username, item.url) }}
+{#          {{ link(username, item.url) }}#}
         {% else %}
           {{ link(item.title, item.url) }}
         {% endif %}
