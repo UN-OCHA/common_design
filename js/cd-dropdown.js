@@ -189,17 +189,17 @@
       // ID.
       button.setAttribute('id', id + '-toggler');
 
-      // Button label.
-      var labelWrapper = document.createElement('span');
-      labelWrapper.appendChild(document.createTextNode(label));
-      button.appendChild(labelWrapper);
-
       // @todo rename logo/icon to be more inclusive if needed.
       //  Eg. prefix/suffix or pre/post
       // Pre-label SVG icon.
       if (logo) {
         button.appendChild(this.createIcon(logo, component, true));
       }
+
+      // Button label.
+      var labelWrapper = document.createElement('span');
+      labelWrapper.appendChild(document.createTextNode(label));
+      button.appendChild(labelWrapper);
 
       // Post-label SVG icon.
       if (icon) {
