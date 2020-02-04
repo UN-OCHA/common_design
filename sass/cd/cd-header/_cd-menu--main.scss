@@ -1,10 +1,6 @@
 //——————————————————————————————————————————————————————————————————————————————
-// Common Design: Drupal dropdowns for nested menus
+// Common Design: Drupal main menu dropdown display rules for nested menus
 //——————————————————————————————————————————————————————————————————————————————
-
-[hidden] {
-  display: none;
-}
 
 .menu--main {
   .menu-item--expanded {
@@ -27,7 +23,7 @@
     }
   }
 
-  ul[data-hidden='true'] > ul {
+  ul[data-cd-hidden='true'] > ul {
     display: block;
     @include z-index(dropdown);
   }

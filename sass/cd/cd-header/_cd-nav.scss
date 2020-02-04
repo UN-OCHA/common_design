@@ -47,10 +47,6 @@
     &:focus {
       background: $cd-white-bg-color;
     }
-
-    .cd-icon--arrow-down {
-      transform: rotate(180deg);
-    }
   }
 
   &:hover,
@@ -73,7 +69,7 @@
     @include z-index(main-menu); // zindex may need adjusting depending on other site content.
 
     @include max-width(lg) {
-      &[data-hidden='false'] {
+      &[data-cd-hidden='false'] {
         background: $cd-white;
         height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
         padding: 20px 0 36px;
@@ -83,7 +79,7 @@
         top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
       }
 
-      &[data-hidden='false'] > ul {
+      &[data-cd-hidden='false'] > ul {
         display: block;
       }
     }
@@ -99,7 +95,7 @@
       width: auto;
 
       // Always display on desktop.
-      &[data-hidden='true'] {
+      &[data-cd-hidden='true'] {
         display: block;
       }
     }
@@ -131,6 +127,7 @@
       text-decoration: none;
       text-align: left;
       display: block;
+
       @supports (display: flex) {
         display: flex;
       }
@@ -287,28 +284,6 @@
           background: $cd-highlight-red;
         }
 
-        //&.js-open {
-        //  position: relative;
-        //
-        //  > a,
-        //  button {
-        //
-        //    &::before {
-        //      background: $cd-highlight-red;
-        //    }
-        //
-        //    &:hover {
-        //      background: $cd-mid-bg-color;
-        //    }
-        //
-        //    &:focus {
-        //      &::before {
-        //        background: $cd-highlight-red;
-        //      }
-        //    }
-        //  }
-        //}
-
         > a,
         button {
           align-items: center;
@@ -368,14 +343,10 @@
   }
 }
 
-.no-js .cd-site-header__nav-holder {
-  float: left;
-}
-
-.no-js .cd-site-header__nav-holder .cd-nav[data-hidden='false'] {
+.no-js .cd-site-header__nav-holder .cd-nav {
+  display: block;
   background: $cd-white;
-  height: auto;
-  padding: 20px 0 36px;
+  padding: 0;
   position: relative;
   right: 0;
   left: 0;

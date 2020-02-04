@@ -1,20 +1,19 @@
 //——————————————————————————————————————————————————————————————————————————————
-// Common Design: Dropdowns for nested menus
+// Common Design: Dropdowns
 //——————————————————————————————————————————————————————————————————————————————
 
-[data-hidden='false'] {
+[data-cd-hidden='false'] {
   display: block;
 }
 
-[data-hidden='true'] {
+[data-cd-hidden='true'] {
   display: none;
 }
 
 .cd-dropdown {
   display: none;
 
-  .js-open > &,
-  &[data-hidden='false'] {
+  &[data-cd-hidden='false'] {
     display: block;
   }
 
@@ -28,10 +27,8 @@
   fill: $cd-white;
   width: 9px;
   height: 9px;
-}
 
-.js-open {
-  > [data-toggle='dropdown'] > .cd-icon--arrow-down {
+  button[aria-expanded='true'] & {
     transform: rotate(180deg);
   }
 }
@@ -40,27 +37,28 @@
  * Global header specific dropdown styles.
  */
 .cd-global-header__dropdown {
+  @include z-index(dropdown);
   background: $cd-primary-bg-color;
-  box-shadow: 0 3px 6px 0 rgba(0, 0 , 0, 0.3);
   left: 0;
   position: absolute;
   color: $cd-white-text-color;
-  @include z-index(dropdown);
+
+  .js & {
+    box-shadow: 0 3px 6px 0 rgba(0, 0 , 0, 0.3);
+  }
 }
 
-.cd-global-header__dropdown-btn {
-  .js-open & {
-    &::before {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 6px 6px;
-      border-color: transparent transparent $cd-primary-bg-color;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      margin-left: -6px;
-    }
+.cd-global-header button[aria-expanded='true'] {
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 6px;
+    border-color: transparent transparent $cd-primary-bg-color;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -6px;
   }
 }
