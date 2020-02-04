@@ -86,3 +86,26 @@
     }
   }
 }
+
+.no-js .cd-user-menu__dropdown {
+  width: unset;
+  padding: 0;
+  margin-left: 12px;
+
+  li {
+    display: inline-block;
+    padding: 0 12px;
+  }
+
+  a {
+    height: $cd-global-header-height;
+    line-height: $cd-global-header-height;
+    padding: 0;
+  }
+
+  // Reposition checkmark icon.
+  .is-active::after {
+    top: 9px;
+    right: -6px;
+  }
+}

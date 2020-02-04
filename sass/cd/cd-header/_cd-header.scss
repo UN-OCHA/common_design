@@ -52,9 +52,7 @@
 
   .no-js & {
     display: block;
-    @include tablet {
-      display: grid;
-    }
+    height: unset;
   }
 }
 
@@ -63,12 +61,7 @@
 
   .no-js & {
     display: block;
-    clear: both;
-
-    @include desktop {
-      display: flex;
-      justify-content: flex-start;
-    }
+    float: left;
   }
 
   @supports(display: flex) {
@@ -136,6 +129,21 @@
 
     .no-js & {
       max-width: unset;
+      float: left;
     }
   }
+}
+
+// Second level menu.
+.no-js .cd-site-header__nav-holder .cd-nav > .menu {
+  display: block;
+}
+
+.no-js .cd-site-header__nav-holder li li {
+  max-width: unset;
+  float: left;
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item li:first-child {
+  border-right: 1px solid #e6ecf1;
 }
