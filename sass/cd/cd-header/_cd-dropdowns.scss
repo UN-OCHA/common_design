@@ -1,5 +1,5 @@
 //——————————————————————————————————————————————————————————————————————————————
-// Common Design: Dropdowns for nested menus
+// Common Design: Dropdowns
 //——————————————————————————————————————————————————————————————————————————————
 
 [data-cd-hidden='false'] {
@@ -27,6 +27,10 @@
   fill: $cd-white;
   width: 9px;
   height: 9px;
+
+  button[aria-expanded='true'] & {
+    transform: rotate(180deg);
+  }
 }
 
 /**
