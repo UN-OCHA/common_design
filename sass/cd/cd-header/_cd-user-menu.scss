@@ -12,11 +12,10 @@
 
   svg {
     width: 14px;
-    height: 14px;
+    height: $cd-global-header-height;
     fill: #fff;
     float: left;
     position: relative;
-    height: $cd-global-header-height;
   }
 
   li {
@@ -49,6 +48,10 @@
   text-overflow: ellipsis;
   transition: background 0.3s ease;
   white-space: nowrap;
+
+  &:first-child {
+    padding-left: 10px;
+  }
 
   @include tablet {
     max-width: none;
