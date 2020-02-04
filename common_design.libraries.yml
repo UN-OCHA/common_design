@@ -7,6 +7,8 @@ global-styling:
 cd-dropdown:
   js:
     js/cd-dropdown.js: {}
+  dependencies:
+  - common_design/cd-polyfill
 
 cd-menu:
   js:
@@ -19,7 +21,7 @@ cd-search:
   #    theme:
   #      components/cd-search/cd-search.css: {}
   js:
-    components/cd-search/cd-search.js: {}
+    #components/cd-search/cd-search.js: {}
     js/cd-search.js: {}
   dependencies:
   - common_design/cd-dropdown
@@ -86,8 +88,8 @@ cd-user-list:
       components/cd-user-list/cd-user-list.css: {}
 
 
-
-#This doesn't work for IE11 support, due to conditionals being dropped in IE10
+# The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
+# Also deferring the file so it loads after everything else.
 cd-polyfill:
   js:
-    js/cd-polyfill.js: { browsers: { '!IE': false } }
+    js/cd-polyfill.js: { attributes: { nomodule: true, defer: true } }
