@@ -1,15 +1,8 @@
 <div class="cd-ocha">
 
-{#  <button type="button" class="cd-ocha-btn cd-global-header__dropdown-btn" data-toggle="dropdown" id="cd-ocha-dropdown-toggle" aria-expanded="false" aria-label="OCHA Services">#}
-{#    <span class="cd-ocha-btn__logo" aria-hidden="true"></span>#}
-{#    <span class="cd-ocha-btn__label">OCHA Services</span>#}
-{#    <svg class="cd-icon cd-icon--arrow-down">#}
-{#      <use xlink:href="#cd-icon--arrow-down"></use>#}
-{#    </svg>#}
-{#  </button>#}
+  {# Dropdown toggle is created with javascript #}
 
-
-  <div class="cd-global-header__dropdown cd-ocha-dropdown cd-dropdown" role="menu" id="cd-ocha-dropdown" aria-labelledby="cd-ocha-dropdown-toggle" data-toggable="OCHA Services" data-hidden="true" data-icon="arrow-down" data-logo="ocha-logo" data-component="cd-ocha">
+  <div class="cd-global-header__dropdown cd-ocha-dropdown cd-dropdown" role="menu" id="cd-ocha-dropdown" aria-labelledby="cd-ocha-dropdown-toggle" data-cd-toggable="OCHA Services" data-cd-hidden="true" data-cd-icon="arrow-down" data-cd-logo="ocha-logo" data-cd-component="cd-ocha">
     <div class="cd-ocha-dropdown__inner">
       <div class="cd-ocha-dropdown__section">
         <p class="cd-ocha-dropdown__heading">Related Platforms</p>
@@ -25,19 +18,23 @@
       <div class="cd-ocha-dropdown__section">
         <p class="cd-ocha-dropdown__heading">Other OCHA Services</p>
         <ul class="cd-ocha-dropdown__list">
+          {% block other_services_first %}
           <li class="cd-ocha-dropdown__link"><a href="https://fts.unocha.org/">Financial Tracking Service</a></li>
           <li class="cd-ocha-dropdown__link"><a href="https://data.humdata.org/">Humanitarian Data Exchange</a></li>
           <li class="cd-ocha-dropdown__link"><a href="https://humanitarian.id/">Humanitarian ID</a></li>
           <li class="cd-ocha-dropdown__link"><a href="https://humanitarianresponse.info/">Humanitarian Response</a></li>
+          {% endblock %}
         </ul>
       </div>
       <div class="cd-ocha-dropdown__section">
         <p class="cd-ocha-dropdown__heading" aria-hidden="true">&nbsp;</p>
         <ul class="cd-ocha-dropdown__list">
+          {% block other_services_second %}
           <li class="cd-ocha-dropdown__link"><a href="https://interagencystandingcommittee.org">Inter-Agency Standing Committee</a></li>
           <li class="cd-ocha-dropdown__link"><a href="https://unocha.org/">OCHA website</a></li>
           <li class="cd-ocha-dropdown__link"><a href="https://reliefweb.int/">ReliefWeb</a></li>
           <li class="cd-ocha-dropdown__link"><a href="https://vosocc.unocha.org/">Virtual OSOCC</a></li>
+          {% endblock %}
         </ul>
       </div>
       <div class="cd-ocha-dropdown__section">

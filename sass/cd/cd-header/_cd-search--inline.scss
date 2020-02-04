@@ -3,15 +3,15 @@
  */
 
 .cd-search--inline {
-  float: left;
   @include z-index(search);
+  float: left;
 
   @supports (display: flex) {
     float: none;
   }
 }
 
-.cd-search--inline_btn {
+.cd-search--inline__btn {
   align-items: center;
   background: transparent;
   border: 0;
@@ -23,7 +23,6 @@
   transition: background 0.3s ease;
 
   svg {
-    box-sizing: content-box;
     width: 26px;
     height: 26px;
     fill: $cd-ocha-blue;
@@ -48,7 +47,7 @@
     }
   }
 
-  .js-open & {
+  &[aria-expanded='true'] {
     color: $cd-highlight-red;
     position: relative;
 
@@ -71,20 +70,17 @@
 
     &:hover,
     &:focus {
-      color: $cd-highlight-red;
+      background: $cd-white-bg-color;
+      outline: none;
     }
   }
 }
 
-.cd-search--inline_btn-text {
+.cd-search--inline_btn-label {
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   display: none;
-
-  .js-open & {
-    color: $cd-highlight-red;
-  }
 }
 
 .cd-search--inline__form {
@@ -95,17 +91,18 @@
   position: absolute;
   right: 0;
 
-  .js-open & {
+  label {
+    @extend .visually-hidden;
+  }
+
+  .no-js & {
     display: block;
+    position: relative;
   }
 }
 
 .cd-search--inline__form form {
   padding: 8px $cd-container-padding;
-
-  label {
-    @extend .visually-hidden;
-  }
 }
 
 .cd-search--inline__input {
@@ -115,7 +112,7 @@
   border-radius: 0;
   box-shadow: none;
   color: $cd-default-text-color;
-  @include font-size(16);
+  @include font-size($cd-font-size-base);
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   padding: 0 45px 0 25px;
   width: 100%;
@@ -181,7 +178,6 @@
     margin: 0 auto;
   }
 
-  &.js-has-focus,
   &:focus {
     background-color: $cd-highlight-red;
   }
@@ -190,7 +186,7 @@
 // Start inline search for desktop only.
 @include desktop {
 
-  .cd-search--inline_btn {
+  .cd-search--inline__btn {
     display: none;
   }
 
@@ -221,12 +217,6 @@
       right: -1px;
       transition: background 0.3s ease;
       width: calc(100% + 1px);
-    }
-  }
-
-  .cd-search--inline__form form.js-has-focus {
-    &::before {
-      background: $cd-highlight-red;
     }
   }
 
@@ -303,7 +293,6 @@
       padding: 0 16px;
     }
 
-    &.js-has-focus,
     &:hover,
     &:focus {
       background-color: $cd-mid-bluey-grey;
@@ -318,7 +307,6 @@
 
   // Submit button treatment for modern browsers.
   @supports (display: flex) {
-
     .cd-search--inline__submit {
       align-items: center;
       border: 0;
@@ -333,8 +321,8 @@
       }
     }
   }
-  @media all and (-ms-high-contrast: none) {
 
+  @media all and (-ms-high-contrast: none) {
     // Removes search cancel x on IE 11 only.
     input[type='search']::-ms-clear,
     input[type='search']::-ms-reveal {

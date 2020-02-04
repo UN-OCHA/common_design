@@ -25,19 +25,19 @@
 
         // Switch the expanded/collapsed states.
         toggler.setAttribute('aria-expanded', !expanded);
-        element.setAttribute('data-hidden', expanded);
+        element.setAttribute('data-cd-hidden', expanded);
 
         // Switch the labels.
-        var labelWrapper = toggler.querySelector('[data-label-switch]');
+        var labelWrapper = toggler.querySelector('[data-cd-label-switch]');
         if (labelWrapper) {
-          var label = labelWrapper.getAttribute('data-label-switch');
-          labelWrapper.setAttribute('data-label-switch', labelWrapper.textContent);
+          var label = labelWrapper.getAttribute('data-cd-label-switch');
+          labelWrapper.setAttribute('data-cd-label-switch', labelWrapper.textContent);
           labelWrapper.textContent = label;
         }
 
         // Change the focus when expanded if a target is specified.
-        if (element.hasAttribute('data-focus-target') && !expanded) {
-          var target = this.context.getElementById(element.getAttribute('data-focus-target'));
+        if (element.hasAttribute('data-cd-focus-target') && !expanded) {
+          var target = document.getElementById(element.getAttribute('data-cd-focus-target'));
           if (target) {
             target.focus();
           }
@@ -59,7 +59,7 @@
         //  * We can mark it as an exception when calling this function
         //
         // If neither apply, then close the element.
-        if (!element.hasAttribute('data-toggable-keep') && exceptions.indexOf(element) === -1) {
+        if (!element.hasAttribute('data-cd-toggable-keep') && exceptions.indexOf(element) === -1) {
           cdDropdown.toggle(element, true);
         }
       });
@@ -70,13 +70,13 @@
      */
     getToggableParents: function (element) {
       var elements = [];
-      while (element && element !== this.context) {
-        if (element.hasAttribute && element.hasAttribute('data-toggable')) {
+      while (element && element !== document) {
+        if (element.hasAttribute && element.hasAttribute('data-cd-toggable')) {
           element = element.previousElementSibling;
         }
         // Store the toggling button of the togglable parent so that it can
         // be ignored when collapsing the opened toggables.
-        if (element.hasAttribute && element.hasAttribute('data-toggler')) {
+        if (element.hasAttribute && element.hasAttribute('data-cd-toggler')) {
           elements.push(element);
         }
         element = element.parentNode;
@@ -114,11 +114,11 @@
       if (key === 27) {
         var target = event.currentTarget;
         // Toggable element, get the toggling button.
-        if (!target.hasAttribute('data-toggler')) {
+        if (!target.hasAttribute('data-cd-toggler')) {
           target = target.previousElementSibling;
         }
         // Focus the button and hide the content.
-        if (target && target.hasAttribute('data-toggler')) {
+        if (target && target.hasAttribute('data-cd-toggler')) {
           target.focus();
           Drupal.behaviors.cdDropdown.toggle(target, true);
         }
@@ -132,17 +132,17 @@
     handleClickAway: function (event) {
       var target = event.target;
       if (target) {
-        if (target.nodeName === 'A' && !target.hasAttribute('data-toggler')) {
+        if (target.nodeName === 'A' && !target.hasAttribute('data-cd-toggler')) {
           Drupal.behaviors.cdDropdown.collapseAll();
         }
         else {
           // Loop until we find a parent which is a toggable or toggler element
           // or we reach the "context" element.
-          while (target && target !== Drupal.behaviors.cdDropdown.context) {
+          while (target && target !== document) {
             if (target.hasAttribute) {
               // Skip if the clicked element belong to a toggler or a toggable
               // element.
-              if (target.hasAttribute('data-toggler') || target.hasAttribute('data-toggable')) {
+              if (target.hasAttribute('data-cd-toggler') || target.hasAttribute('data-cd-toggable')) {
                 return;
               }
             }
@@ -157,14 +157,14 @@
      * Create a svg icon.
      */
     createIcon: function (name, component, wrap) {
-      var svgElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      var useElem = this.context.createElementNS('http://www.w3.org/2000/svg', 'use');
+      var svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      var useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
       useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + name);
       svgElem.setAttribute('class', 'cd-icon cd-icon--' + name);
       svgElem.appendChild(useElem);
 
       if (component && wrap) {
-        var wrapper = this.context.createElement('span');
+        var wrapper = document.createElement('span');
         wrapper.setAttribute('class', component + '__logo');
         wrapper.appendChild(svgElem);
         return wrapper;
@@ -176,27 +176,34 @@
      * Create a button to toggle a dropdown.
      */
     createButton: function (element) {
-      var label = element.getAttribute('data-toggable');
-      var logo = element.getAttribute('data-logo');
-      var icon = element.getAttribute('data-icon');
-      var component = element.getAttribute('data-component');
+      var id = element.getAttribute('id');
+      var label = element.getAttribute('data-cd-toggable');
+      var logo = element.getAttribute('data-cd-logo');
+      var icon = element.getAttribute('data-cd-icon');
+      var component = element.getAttribute('data-cd-component');
 
       // Create the button.
-      var button = this.context.createElement('button');
+      var button = document.createElement('button');
       button.setAttribute('type', 'button');
 
-      // Pre-label logo.
+      // ID.
+      button.setAttribute('id', id + '-toggler');
+
+      // @todo rename logo/icon to be more inclusive if needed.
+      //  Eg. prefix/suffix or pre/post
+      // Pre-label SVG icon.
       if (logo) {
         button.appendChild(this.createIcon(logo, component, true));
       }
 
       // Button label.
-      var labelWrapper = this.context.createElement('span');
-      labelWrapper.appendChild(this.context.createTextNode(label));
+      var labelWrapper = document.createElement('span');
+      labelWrapper.appendChild(document.createTextNode(label));
       button.appendChild(labelWrapper);
 
-      // Post-label icon.
+      // Post-label SVG icon.
       if (icon) {
+        // @todo This could default to dropdown arrow icon.
         button.appendChild(this.createIcon(icon));
       }
 
@@ -207,13 +214,13 @@
       }
 
       // Do not collapse the dropdown when clicking outside.
-      if (element.hasAttribute('data-toggable-keep')) {
-        button.setAttribute('data-toggable-keep', '');
+      if (element.hasAttribute('data-cd-toggable-keep')) {
+        button.setAttribute('data-cd-toggable-keep', '');
       }
 
       // Alternate label for when the button is expanded.
-      if (element.hasAttribute('data-toggable-expanded')) {
-        labelWrapper.setAttribute('data-label-switch', element.getAttribute('data-toggable-expanded'));
+      if (element.hasAttribute('data-cd-toggable-expanded')) {
+        labelWrapper.setAttribute('data-cd-label-switch', element.getAttribute('data-cd-toggable-expanded'));
       }
 
       return button;
@@ -223,7 +230,7 @@
      * Transform the element into a dropdown menu.
      */
     setToggable: function (element, toggler) {
-      var expand = element.hasAttribute('data-toggable-expand') || false;
+      var expand = element.hasAttribute('data-cd-toggable-expand') || false;
 
       // Create a button to toggle the element.
       if (!toggler) {
@@ -237,7 +244,7 @@
       }
 
       // Set the toggling attributes of the toggler.
-      toggler.setAttribute('data-toggler', '');
+      toggler.setAttribute('data-cd-toggler', '');
       toggler.setAttribute('aria-expanded', expand !== false);
       toggler.setAttribute('aria-haspopup', true);
 
@@ -259,12 +266,12 @@
 
       // Mark the element as toggable so that it can be handled properly
       // by the global click handler.
-      if (!element.hasAttribute('data-toggable')) {
-        element.setAttribute('data-toggable', '');
+      if (!element.hasAttribute('data-cd-toggable')) {
+        element.setAttribute('data-cd-toggable', '');
       }
 
       // Hide the element.
-      element.setAttribute('data-hidden', expand === false);
+      element.setAttribute('data-cd-hidden', expand === false);
 
       // Add the toggler before the toggable element id not already.
       if (element.previousElementSibling !== toggler) {
@@ -278,10 +285,10 @@
      */
     initializeToggables: function () {
       // Collapse dropdowns when clicking outside of the toggable target.
-      this.context.addEventListener('click', this.handleClickAway);
+      document.addEventListener('click', this.handleClickAway);
 
       // Initialize each toggable target
-      var elements = this.context.querySelectorAll('[data-toggable]');
+      var elements = this.context.querySelectorAll('[data-cd-toggable]');
       for (var i = 0, l = elements.length; i < l; i++) {
         this.setToggable(elements[i]);
       }
@@ -294,7 +301,7 @@
       // If selector wasn't supplied, set the default.
       selector = typeof selector !== 'undefined' ? selector : '.cd-nav .menu a + .menu';
 
-      var elements = this.context.querySelectorAll(selector);
+      var elements = document.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
         var element = elements[i];
         this.setToggable(element, element.previousElementSibling);
