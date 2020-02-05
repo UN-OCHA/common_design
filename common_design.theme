@@ -16,6 +16,10 @@ function common_design_preprocess(&$variables, $hook) {
   }
   // Ensure the cache varies correctly.
   $variables['#cache']['contexts'][] = 'url.path.is_front';
+
+  // Add username.
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['username'] = $user->getUsername();
 }
 
 /**
