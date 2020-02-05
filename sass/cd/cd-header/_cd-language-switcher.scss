@@ -14,7 +14,6 @@
   align-items: center;
   box-sizing: content-box;
   height: $cd-global-header-height;
-  background-color: transparent;
 
   // Language switcher is always on the far edge of the global header.
   // Cancel the border that we render for other elements.
@@ -34,12 +33,15 @@
 }
 
 .cd-user-menu__dropdown {
-  right: 0;
   list-style: none;
   margin: 0;
-  width: 125px;
   padding: 12px 24px;
-  left: auto;
+
+  .cd-language-switcher & {
+    width: 125px;
+    left: auto;
+    right: 0;
+  }
 
   li {
     display: block;
