@@ -37,10 +37,11 @@
     'block-menu',
     'navigation',
     'menu--' ~ derivative_plugin_id|clean_class,
-    'cd-global-header__user-menu',
+    'cd-global-header__user-menu'
   ]
 %}
 
+{{ attach_library('common_design/cd-user-menu') }}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
