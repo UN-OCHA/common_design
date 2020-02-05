@@ -25,8 +25,6 @@
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0, username) }}
-{% set username = user.displayname %}
-{{ dpm(username) }}
 {% macro menu_links(items, attributes, menu_level, username) %}
   {% import _self as menus %}
   {% if items %}
@@ -56,20 +54,27 @@
       %}
       <li{{ item.attributes.addClass(classes) }}>
 
-          {% if item.is_expanded %}
+        {% if item.is_expanded %}
 
-          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>{{ item.title }}
+          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>
+
+            {% if (item.title  == 'My account') %}
+              {{ username }}
+            {% else %}
+              {{ item.title }}
+            {% endif %}
             <svg class="cd-icon cd-icon--arrow-down">
               <use xlink:href="#cd-icon--arrow-down"></use>
             </svg>
           </button>
 
-        {% elseif(item.title  == 'My account') %}
-          {{ link('username', item.url) }}
-{#          {{ link(username, item.url) }}#}
         {% else %}
 
-          {{ link(item.title, item.url) }}
+          {% if (item.title  == 'My account') %}
+            {{ link(username, item.url) }}
+          {% else %}
+            {{ link(item.title, item.url) }}
+          {% endif %}
 
         {% endif %}
 
