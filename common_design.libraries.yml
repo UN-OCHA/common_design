@@ -16,6 +16,12 @@ cd-menu:
   dependencies:
   - common_design/cd-dropdown
 
+cd-user-menu:
+  js:
+    js/cd-user-menu.js: {}
+  dependencies:
+  - common_design/cd-dropdown
+
 cd-search:
   #  css:
   #    theme:

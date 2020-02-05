@@ -36,7 +36,14 @@
           <use xlink:href="#cd-icon--user"></use>
         </svg>
     {% else %}
-      <ul class="menu">
+      {%
+        set secondLevelClasses = [
+        'menu',
+        'cd-global-header__dropdown',
+        'cd-user-menu__dropdown'
+      ]
+      %}
+      <ul {{attributes.addClass(secondLevelClasses)}}>
     {% endif %}
     {% for item in items %}
       {%
@@ -48,16 +55,30 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-        {% if(item.title  == 'My account') %}
+
+          {% if item.is_expanded %}
+
+          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>{{ item.title }}
+            <svg class="cd-icon cd-icon--arrow-down">
+              <use xlink:href="#cd-icon--arrow-down"></use>
+            </svg>
+          </button>
+
+        {% elseif(item.title  == 'My account') %}
           {{ link('username', item.url) }}
 {#          {{ link(username, item.url) }}#}
         {% else %}
+
           {{ link(item.title, item.url) }}
+
         {% endif %}
+
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
+
       </li>
+
     {% endfor %}
     </ul>
   {% endif %}
