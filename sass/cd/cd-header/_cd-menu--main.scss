@@ -2,7 +2,8 @@
 // Common Design: Drupal main menu dropdown display rules for nested menus
 //——————————————————————————————————————————————————————————————————————————————
 
-.menu--main {
+.menu--main,
+.menu--account {
   .menu-item--expanded {
     // Hide child nav.
     [aria-expanded='false'] + ul {
@@ -30,6 +31,14 @@
 
   [aria-expanded='true'] > .cd-icon--arrow-down {
     transform: rotate(180deg);
+  }
+}
+
+.menu--account {
+  .menu-item--expanded {
+    .cd-icon--arrow-down {
+      fill: $cd-white;
+    }
   }
 }
 
