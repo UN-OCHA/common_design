@@ -3,11 +3,15 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-global-header {
-  &__language-switcher {
+  .cd-global-header__actions {
     float: right;
   }
 
+  &__language-switcher {
+    float: left;
+  }
+
   &__user-menu {
-    float: right;
+    float: left;
   }
 }
