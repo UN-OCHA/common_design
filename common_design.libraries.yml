@@ -2,7 +2,6 @@ global-styling:
   css:
     theme:
       css/styles.css: {}
-      css/cd/cd-ie.css: { browsers: { IE: 'lte IE 8', '!IE': false } }
 
 cd-dropdown:
   js:
@@ -95,7 +94,6 @@ cd-user-list:
 
 
 # The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
-# Also deferring the file so it loads after everything else.
 cd-polyfill:
   js:
-    js/cd-polyfill.js: { attributes: { nomodule: true, defer: true } }
+    js/cd-polyfill.js: { attributes: { nomodule: true } }
