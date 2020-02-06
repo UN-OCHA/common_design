@@ -56,13 +56,14 @@
 
         {% if item.is_expanded %}
 
-          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>
-
-            {% if (item.title  == 'My account') %}
-              {{ username }}
-            {% else %}
-              {{ item.title }}
-            {% endif %}
+          <button{{ attributes.addClass('cd-user-menu__btn').addAttribute('data-cd-toggable', 'true') }}>
+            <span class="cd-user-menu__btn-label">
+              {% if (item.title  == 'My account') %}
+                {{ username }}
+              {% else %}
+                {{ item.title }}
+              {% endif %}
+            </span>
             <svg class="cd-icon cd-icon--arrow-down">
               <use xlink:href="#cd-icon--arrow-down"></use>
             </svg>
@@ -70,11 +71,13 @@
 
         {% else %}
 
-          {% if (item.title  == 'My account') %}
-            {{ link(username, item.url) }}
-          {% else %}
-            {{ link(item.title, item.url) }}
-          {% endif %}
+          <span class="cd-user-menu__btn-label">
+            {% if (item.title  == 'My account') %}
+              {{ link(username, item.url) }}
+            {% else %}
+              {{ link(item.title, item.url) }}
+            {% endif %}
+          </span>
 
         {% endif %}
 
