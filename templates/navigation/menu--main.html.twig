@@ -46,7 +46,8 @@
 
         {% if item.is_expanded %}
 
-          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>{{ item.title }}
+          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>
+            <span class="cd-main-menu__btn-label">{{ item.title }}</span>
             <svg class="cd-icon cd-icon--arrow-down">
               <use xlink:href="#cd-icon--arrow-down"></use>
             </svg>

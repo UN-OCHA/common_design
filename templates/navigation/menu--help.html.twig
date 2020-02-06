@@ -30,9 +30,6 @@
   {% if items %}
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('menu') }}>
-        <svg class="cd-icon cd-icon--user">
-          <use xlink:href="#cd-icon--user"></use>
-        </svg>
     {% else %}
       {%
         set secondLevelClasses = [
@@ -56,14 +53,11 @@
 
         {% if item.is_expanded %}
 
-          <button{{ attributes.addClass('cd-user-menu__btn').addAttribute('data-cd-toggable', 'true') }}>
-            <span class="cd-user-menu__btn-label">
-              {% if (item.title  == 'My account') %}
-                {{ username }}
-              {% else %}
-                {{ item.title }}
-              {% endif %}
-            </span>
+          <button{{ attributes.addAttribute('data-cd-toggable', 'true') }}>
+            <svg class="cd-icon cd-icon--help">
+              <use xlink:href="#cd-icon--help"></use>
+            </svg>
+            <span class="cd-user-menu__btn-label visually-hidden">{{ item.title }}</span>
             <svg class="cd-icon cd-icon--arrow-down">
               <use xlink:href="#cd-icon--arrow-down"></use>
             </svg>
@@ -71,13 +65,7 @@
 
         {% else %}
 
-          <span class="cd-user-menu__btn-label">
-            {% if (item.title  == 'My account') %}
-              {{ link(username, item.url) }}
-            {% else %}
-              {{ link(item.title, item.url) }}
-            {% endif %}
-          </span>
+          {{ link(item.title, item.url) }}
 
         {% endif %}
 

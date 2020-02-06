@@ -2,34 +2,28 @@
 // Common Design: Drupal main menu dropdown display rules for nested menus
 //——————————————————————————————————————————————————————————————————————————————
 
-.menu--main {
-  .menu-item--expanded {
-    // Hide child nav.
-    [aria-expanded='false'] + ul {
-      display: none;
-    }
-
-    [aria-expanded='true'] + ul {
-      display: block;
-    }
-
-    .cd-icon--arrow-down {
-      fill: $cd-highlight-red;
-      margin-left: 4px;
-      margin-top: 4px;
-      @include desktop {
-        margin-top: -2px;
-      }
-    }
+.menu-item--expanded {
+  // Hide child nav.
+  [aria-expanded='false'] + ul {
+    display: none;
   }
 
-  ul[data-cd-hidden='true'] > ul {
+  [aria-expanded='true'] + ul {
     display: block;
-    @include z-index(dropdown);
   }
+}
 
-  [aria-expanded='true'] > .cd-icon--arrow-down {
-    transform: rotate(180deg);
+ul[data-cd-hidden='true'] > ul {
+  display: block;
+  @include z-index(dropdown);
+}
+
+.menu--main button[aria-expanded] .cd-icon--arrow-down {
+  fill: $cd-highlight-red;
+  margin-left: 4px;
+  margin-top: 4px;
+  @include desktop {
+    margin-top: -2px;
   }
 }
 

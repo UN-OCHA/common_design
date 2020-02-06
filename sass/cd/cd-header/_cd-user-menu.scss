@@ -8,14 +8,34 @@
 .cd-user-menu {
   list-style: none;
   margin: 0;
-  padding: 0;
 
   svg {
+    fill: $cd-white;
+  }
+
+  .cd-icon--user {
     width: 14px;
     height: $cd-global-header-height;
-    fill: #fff;
     float: left;
     position: relative;
+  }
+
+  .cd-icon--arrow-down {
+    min-height: 100%; // IE11 fix.
+    margin-top: auto; // Center vertically in macOS 10
+    margin-bottom: auto; // Center vertically in macOS 10
+  }
+
+  // Other icons.
+  button .cd-icon:not(.cd-icon--arrow-down) {
+    width: 14px;
+    height: 14px;
+    margin-top: auto; // Center vertically in macOS 10
+    margin-bottom: auto; // Center vertically in macOS 10
+    // IE11 vertically align.
+    @media all and (-ms-high-contrast: none) {
+      min-height: 100%;
+    }
   }
 
   li {
@@ -24,7 +44,8 @@
   }
 
   &--no-language-switcher {
-    li:last-child a {
+    li:last-child a,
+    li:last-child button {
       padding-right: 0;
 
       &::after {
@@ -37,20 +58,18 @@
 .cd-user-menu__item {
   background: transparent;
   color: $cd-white-text-color;
-  display: block;
   height: $cd-global-header-height;
   line-height: $cd-global-header-height;
-  max-width: 90px;
-  overflow: hidden;
   padding: 0 20px;
   position: relative;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  transition: background 0.3s ease;
   white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: block;
 
-  &:first-child {
-    padding-left: 10px;
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
   }
 
   @include tablet {
@@ -79,83 +98,64 @@
     outline: 3px solid $cd-bright-blue;
     outline-offset: -2px;
   }
-}
 
-// Menu list item with icon
-.cd-user-menu__icon {
-  a {
-    padding-left: 26px;
-
-    @include tablet {
-      padding-left: 34px;
-    }
-  }
-
-  &::before {
-    position: absolute;
-    content: '';
-    height: $cd-global-header-height;
-    width: 14px;
-    left: 7px;
-    background-repeat: no-repeat;
-    background-position: 0 46%;
-    background-size: 14px 14px;
+  .cd-user-menu__btn-label {
+    max-width: 90px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    display: block;
 
     @include tablet {
-      left: 11px;
+      max-width: unset;
     }
   }
 }
-
-// Menu item with plus icon
-.cd-user-menu__icon-plus {
-  @extend .cd-user-menu__icon;
-
-  &::before {
-    background-image: url('../img/icons/add--white.svg');
-    background-size: 12px 12px;
-    height: 33px;
-    left: 15px;
-  }
-}
-
-// Menu item with user icon
-//.cd-user-menu__icon-login {
-//  @extend .cd-user-menu__icon;
-//
-//  &::before {
-//    background-image: url('../img/icons/user--white.svg');
-//  }
-//}
 
 //——————————————————————————————————————————————————————————————————————————————
 // Drupal selectors
 //——————————————————————————————————————————————————————————————————————————————
 
 // Hide default block titles
-.region-header-top .block-locale h2,
-.region-header-top .block-menu h2 {
+.cd-global-header .block-locale h2,
+.cd-global-header .block-menu h2 {
   @extend .visually-hidden;
 }
 
-.region-header-top .menu {
+.cd-global-header .menu {
   @extend .cd-user-menu;
 
   // If there's no language switcher in the Global Header, uncomment this line
   // to apply special treatment to the last link in the list.
-  @extend .cd-user-menu--no-language-switcher;
+  //@extend .cd-user-menu--no-language-switcher;
 }
 
-.region-header-top .menu > li a {
+.cd-global-header__user-menu > .menu {
+  padding-left: 0;
+}
+
+.cd-global-header .menu > li a,
+.cd-global-header .menu > li button {
   @extend .cd-user-menu__item;
 }
 
-// Login/Logout item as last item in user menu
-//.region-header-top .menu > li:last-child {
-//  @extend .cd-user-menu__icon-login;
-//}
+// First item following the SVG icon should have less left padding.
+.cd-global-header__user-menu .menu svg + li a,
+.cd-global-header__user-menu .menu svg + li button {
+  padding-left: 10px;
+}
 
-// Add content menu item as first item in user menu
-//.user-logged-in .region-header-top .menu > li:first-child {
-//  @extend .cd-user-menu__icon-plus;
-//}
+// Second level reset.
+.cd-global-header .menu > li li a,
+.cd-global-header .menu > li li button {
+  padding: 0 !important;
+}
+
+.cd-global-header .menu > li li a::after {
+  content: none;
+}
+
+.cd-global-header .menu > .menu-item:last-child > ul.menu {
+  left: auto;
+  right: -1px;
+}

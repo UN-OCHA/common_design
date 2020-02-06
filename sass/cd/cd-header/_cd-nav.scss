@@ -22,7 +22,7 @@
     font-weight: 600;
   }
 
-  .cd-icon--arrow-down {
+  &[aria-expanded] .cd-icon--arrow-down {
     margin-left: 4px;
     fill: $cd-highlight-red;
   }
