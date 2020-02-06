@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   box-sizing: content-box;
+  line-height: $cd-global-header-height;
   height: $cd-global-header-height;
 
   // Language switcher is always on the far edge of the global header.
@@ -23,8 +24,8 @@
 
   // Place toggle indicator on edge of Global Header
   .cd-icon--arrow-down {
-    margin-left: 4px;
     min-height: 100%; // IE11 fix.
+    margin: auto; // Center vertically in macOS 10
   }
 
   &:focus {

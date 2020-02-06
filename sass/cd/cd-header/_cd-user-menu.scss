@@ -9,10 +9,6 @@
   list-style: none;
   margin: 0;
 
-  &ul {
-    padding: 0;
-  }
-
   svg {
     fill: $cd-white;
   }
@@ -22,6 +18,24 @@
     height: $cd-global-header-height;
     float: left;
     position: relative;
+  }
+
+  .cd-icon--arrow-down {
+    min-height: 100%; // IE11 fix.
+    margin-top: auto; // Center vertically in macOS 10
+    margin-bottom: auto; // Center vertically in macOS 10
+  }
+
+  // Other icons.
+  button .cd-icon:not(.cd-icon--arrow-down) {
+    width: 14px;
+    height: 14px;
+    margin-top: auto; // Center vertically in macOS 10
+    margin-bottom: auto; // Center vertically in macOS 10
+    // IE11 vertically align.
+    @media all and (-ms-high-contrast: none) {
+      min-height: 100%;
+    }
   }
 
   li {
@@ -46,14 +60,11 @@
   color: $cd-white-text-color;
   height: $cd-global-header-height;
   line-height: $cd-global-header-height;
-  max-width: 90px;
-  overflow: hidden;
   padding: 0 20px;
   position: relative;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  transition: background 0.3s ease;
   white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.3s ease;
   display: block;
 
   @supports (display: flex) {
@@ -87,6 +98,18 @@
     outline: 3px solid $cd-bright-blue;
     outline-offset: -2px;
   }
+
+  .cd-user-menu__btn-label {
+    max-width: 90px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    display: block;
+
+    @include tablet {
+      max-width: unset;
+    }
+  }
 }
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -94,12 +117,12 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 // Hide default block titles
-.region-header-top .block-locale h2,
-.region-header-top .block-menu h2 {
+.cd-global-header .block-locale h2,
+.cd-global-header .block-menu h2 {
   @extend .visually-hidden;
 }
 
-.region-header-top .menu {
+.cd-global-header .menu {
   @extend .cd-user-menu;
 
   // If there's no language switcher in the Global Header, uncomment this line
@@ -107,30 +130,32 @@
   //@extend .cd-user-menu--no-language-switcher;
 }
 
-.region-header-top .menu > li a,
-.region-header-top .menu > li button {
+.cd-global-header__user-menu > .menu {
+  padding-left: 0;
+}
+
+.cd-global-header .menu > li a,
+.cd-global-header .menu > li button {
   @extend .cd-user-menu__item;
 }
 
+// First item following the SVG icon should have less left padding.
 .cd-global-header__user-menu .menu svg + li a,
 .cd-global-header__user-menu .menu svg + li button {
-  @include tablet {
-    padding-left: 10px; // Nearer the user icon.
-
-  }
+  padding-left: 10px;
 }
 
 // Second level reset.
-.region-header-top .menu > li li a,
-.region-header-top .menu > li li button {
+.cd-global-header .menu > li li a,
+.cd-global-header .menu > li li button {
   padding: 0 !important;
 }
 
-.region-header-top .menu > li li a::after {
+.cd-global-header .menu > li li a::after {
   content: none;
 }
 
-.region-header-top .menu > .menu-item:last-child > ul.menu {
+.cd-global-header .menu > .menu-item:last-child > ul.menu {
   left: auto;
   right: -1px;
 }
