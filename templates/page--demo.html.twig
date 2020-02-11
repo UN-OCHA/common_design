@@ -42,6 +42,7 @@
  * @see html.html.twig
  */
 #}
+
 <div class="cd-layout-container">
 
   {% block header %}
@@ -55,7 +56,9 @@
 
   {% block hero %}
     <div class="cd-layout-hero cd-container">
-      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+      {% if componentsModule %}
+        {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
+      {% endif %}
     </div>
   {% endblock %}
 
@@ -74,41 +77,45 @@
 
     <div class="cd-layout-content">
 
-      <h2>Components</h2>
+      {% if componentsModule %}
 
-      <h3>User interface</h3>
+        <h2>Components</h2>
 
-      {% include '@cd-components/cd-button/cd-button.html.twig' %}
+        <h3>User interface</h3>
 
-      {% include '@cd-components/cd-date/cd-date.html.twig' %}
+        {% include '@cd-components/cd-button/cd-button.html.twig' %}
 
-      {% include '@cd-components/cd-search/cd-search.html.twig' %}
+        {% include '@cd-components/cd-date/cd-date.html.twig' %}
 
-      {% include '@cd-components/cd-pagination/cd-pagination.html.twig' %}
+        {% include '@cd-components/cd-search/cd-search.html.twig' %}
 
-
-      <h3>Layouts</h3>
-
-      {% include '@cd-components/cd-grid/cd-grid.html.twig' %}
-
-      {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
+        {% include '@cd-components/cd-pagination/cd-pagination.html.twig' %}
 
 
-      <h3>Content</h3>
+        <h3>Layouts</h3>
 
-      {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
+        {% include '@cd-components/cd-grid/cd-grid.html.twig' %}
 
-      {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
+        {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
 
-      {% include '@cd-components/cd-list/cd-list.html.twig' %}
 
-      {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
+        <h3>Content</h3>
 
-      {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
+        {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
 
-      {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
+        {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
 
-{#      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}#}
+        {% include '@cd-components/cd-list/cd-list.html.twig' %}
+
+        {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
+
+        {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
+
+        {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
+
+  {#      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}#}
+
+      {% endif %}
 
       {{ page.content }}
 
