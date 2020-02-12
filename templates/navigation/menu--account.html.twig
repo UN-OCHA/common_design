@@ -54,36 +54,34 @@
       %}
       <li{{ item.attributes.addClass(classes) }}>
 
-        {% if item.is_expanded %}
+      {% if not (item.is_expanded) and (item.title  == 'username') %}
 
-          <button{{ attributes.addClass('cd-user-menu__btn').addAttribute('data-cd-toggable', 'true') }}>
-            <span class="cd-user-menu__btn-label">
-              {% if (item.title  == 'My account') %}
-                {{ username }}
-              {% else %}
-                {{ item.title }}
-              {% endif %}
-            </span>
-            <svg class="cd-icon cd-icon--arrow-down">
-              <use xlink:href="#cd-icon--arrow-down"></use>
-            </svg>
-          </button>
-
-        {% else %}
-
+        <a href="{{ item.url }}">
           <span class="cd-user-menu__btn-label">
-            {% if (item.title  == 'My account') %}
-              {{ link(username, item.url) }}
-            {% else %}
-              {{ link(item.title, item.url) }}
-            {% endif %}
+            {{ username }}
           </span>
+        </a>
 
-        {% endif %}
+      {% elseif item.is_expanded %}
 
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
+        <button{{ attributes.addClass('cd-user-menu__btn').addAttribute('data-cd-toggable', 'true') }}>
+          <span class="cd-user-menu__btn-label">
+            {{ username }}
+          </span>
+          <svg class="cd-icon cd-icon--arrow-down">
+            <use xlink:href="#cd-icon--arrow-down"></use>
+          </svg>
+        </button>
+
+      {% else %}
+
+          {{ link(item.title, item.url) }}
+
+      {% endif %}
+
+      {% if item.below %}
+        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+      {% endif %}
 
       </li>
 
