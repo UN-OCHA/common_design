@@ -9,12 +9,16 @@
 // Language switcher button
 .cd-language-switcher__btn {
   font-weight: 600;
-  padding: 0 14px 0 20px;
+  padding: 0 0 0 15px;
   display: flex;
   align-items: center;
   box-sizing: content-box;
   line-height: $cd-global-header-height;
   height: $cd-global-header-height;
+
+  @include tablet {
+    padding: 0 0 0 20px;
+  }
 
   // Language switcher is always on the far edge of the global header.
   // Cancel the border that we render for other elements.

@@ -60,12 +60,16 @@
   color: $cd-white-text-color;
   height: $cd-global-header-height;
   line-height: $cd-global-header-height;
-  padding: 0 20px;
+  padding: 0 15px;
   position: relative;
   white-space: nowrap;
   text-decoration: none;
   transition: background 0.3s ease;
   display: block;
+
+  @include tablet {
+    padding: 0 20px;
+  }
 
   @supports (display: flex) {
     display: flex;
@@ -100,7 +104,7 @@
   }
 
   .cd-user-menu__btn-label {
-    max-width: 90px;
+    max-width: 60px;
     overflow: hidden;
     position: relative;
     text-overflow: ellipsis;
@@ -122,6 +126,10 @@
   @extend .visually-hidden;
 }
 
+.cd-global-header__user-menu > .menu {
+  padding-left: 0;
+}
+
 .cd-global-header .menu {
   @extend .cd-user-menu;
 
@@ -130,9 +138,18 @@
   //@extend .cd-user-menu--no-language-switcher;
 }
 
-.cd-global-header__user-menu > .menu {
-  padding-left: 0;
-}
+// If there's a second menu in the Global Header and no language switcher,
+// uncomment this rule to apply special treatment to the last link in the list.
+//.cd-global-header__user-menu + .cd-global-header__user-menu {
+//  li:last-child a,
+//  li:last-child button {
+//    padding-right: 0;
+//
+//    &::after {
+//      content: none;
+//    }
+//  }
+//}
 
 .cd-global-header .menu > li a,
 .cd-global-header .menu > li button {
@@ -143,6 +160,13 @@
 .cd-global-header__user-menu .menu svg + li a,
 .cd-global-header__user-menu .menu svg + li button {
   padding-left: 10px;
+}
+
+// Hides log out menu item when it is beside the expanded menu item.
+// When there are more than 3 menu items, the log out should also be in the dropdown.
+// This is content-specific. See CD-98 for specs.
+.cd-global-header__user-menu .menu-item--expanded + .menu-item {
+  display: none;
 }
 
 // Second level reset.
