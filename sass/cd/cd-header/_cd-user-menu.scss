@@ -138,6 +138,19 @@
   //@extend .cd-user-menu--no-language-switcher;
 }
 
+// If there's only the expanded user menu in the Global Header uncomment this rule
+// to apply special treatment to the expanded link in the list.
+//.cd-global-header .menu:only-of-type {
+//  .menu-item--expanded a,
+//  .menu-item--expanded button {
+//    padding-right: 0;
+//
+//    &::after {
+//      content: none;
+//    }
+//  }
+//}
+
 // If there's a second menu in the Global Header and no language switcher,
 // uncomment this rule to apply special treatment to the last link in the list.
 //.cd-global-header__user-menu + .cd-global-header__user-menu {
