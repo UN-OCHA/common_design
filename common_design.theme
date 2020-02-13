@@ -114,58 +114,6 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
  * Implements hook_preprocess_html().
  */
 function common_design_preprocess_html(&$vars) {
-//  $viewport = array(
-//    '#tag' => 'meta',
-//    '#attributes' => array(
-//      'name' => 'viewport',
-//      'content' => 'width=device-width, initial-scale=1.0',
-//    ),
-//  );
-//
-//  $apple = array(
-//    '#tag' => 'link',
-//    '#attributes' => array(
-//      'href' => base_path() . drupal_get_path() . '/img/apple-touch-icon.png',
-//      'rel' => 'apple-touch-icon',
-//      'sizes' => '180x180',
-//    ),
-//  );
-//
-//  $fav_32 = array(
-//    '#tag' => 'link',
-//    '#attributes' => array(
-//      'href' => base_path() . drupal_get_path() . '/img/favicon-32x32.png',
-//      'rel' => 'icon',
-//      'sizes' => '32x32',
-//      'type' => 'image/png',
-//    ),
-//  );
-//
-//  $fav_16 = array(
-//    '#tag' => 'link',
-//    '#attributes' => array(
-//      'href' => base_path() . drupal_get_path() . '/img/favicon-16x16.png',
-//      'rel' => 'icon',
-//      'sizes' => '16x16',
-//      'type' => 'image/png',
-//    ),
-//  );
-//
-//  $safari_pinned_tab = array(
-//    '#tag' => 'link',
-//    '#attributes' => array(
-//      'href' => base_path() . drupal_get_path() . '/img/safari-pinned-tab.svg',
-//      'rel' => 'mask-icon',
-//      'color' => '#5bbad5',
-//    ),
-//  );
-
-//  drupal_add_html_head($viewport, 'viewport');
-//  drupal_add_html_head($apple, 'apple-touch-icon');
-//  drupal_add_html_head($fav_32, 'favicon-32x32');
-//  drupal_add_html_head($fav_16, 'favicon-16x16');
-//  drupal_add_html_head($safari_pinned_tab, 'safari_pinned_tab');
-
   // SVG sprite
   // Get the contents of the SVG sprite.
   $icons = file_get_contents( drupal_get_path('theme', 'common_design') . '/img/icons/cd-icons-sprite.svg');
@@ -205,30 +153,28 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
 }
 
 ///**
-// * Implements hook_pwa_manifest_alter().
+// * Implements hook_pwa_manifest_alter() for PWA module.
 // */
-function common_design_pwa_manifest_alter(&$manifest) {
-  // Hard-code a theme-color into the manifest.
-  $manifest['theme_color'] = '#026CB6';
-
-  // Override the PWA default icons with OCHA defaults.
-  //
-  // If you are using this theme as a starterkit feel free to manually adjust
-  // this code block, otherwise copy this hook into your subtheme and customize
-  // to your heart's content.
-  $manifest['icons'] = [
-    [
-      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-512x512.png'),
-      'sizes' => '512x512',
-      'type' => 'image/png',
-    ],
-    [
-      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-192x192.png'),
-      'sizes' => '192x192',
-      'type' => 'image/png',
-    ],
-  ];
-}
+//function common_design_pwa_manifest_alter(&$manifest) {
+//  // Hard-code a theme-color into the manifest.
+//  $manifest['theme_color'] = '#026CB6';
+//
+//  // Override the PWA default icons with OCHA defaults.
+//  //
+//  // Copy this hook into your subtheme and customize to your heart's content.
+//  $manifest['icons'] = [
+//    [
+//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-512x512.png'),
+//      'sizes' => '512x512',
+//      'type' => 'image/png',
+//    ],
+//    [
+//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-192x192.png'),
+//      'sizes' => '192x192',
+//      'type' => 'image/png',
+//    ],
+//  ];
+//}
 
 ///**
 // * Implements hook_links__language_block().
