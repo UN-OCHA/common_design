@@ -150,6 +150,14 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
   if ($current_uri == '/demo') {
     $suggestions[] = $hook . '__' . 'demo';
   }
+
+  /**
+   * error page template suggestions.
+   */
+  if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
+    $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
+    $suggestions[] = 'page__' . (string) $status_code;
+  }
 }
 
 ///**
