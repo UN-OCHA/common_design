@@ -1,0 +1,41 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Search
+//——————————————————————————————————————————————————————————————————————————————
+.cd-search__btn {
+  color: $implementation-primary;
+
+  svg {
+    fill: $implementation-primary;
+  }
+
+  &:hover,
+  &:focus {
+    color: $implementation-primary-dark;
+
+    svg {
+      fill: $implementation-primary-dark;
+    }
+  }
+
+  &:focus {
+    color: $implementation-highlight;
+
+    svg {
+      fill: $implementation-highlight;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    color: $implementation-highlight;
+
+    svg {
+      fill: $implementation-highlight;
+    }
+  }
+}
+
+.cd-search__submit {
+  &:focus {
+    background-color: $implementation-highlight;
+  }
+}

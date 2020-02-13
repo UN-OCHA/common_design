@@ -1,0 +1,17 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Dropdowns
+//——————————————————————————————————————————————————————————————————————————————
+
+/**
+ * Global header specific dropdown styles.
+ */
+.cd-global-header__dropdown {
+  background: $implementation-primary;
+}
+
+// Triangle on toggle when active.
+.cd-global-header button[aria-expanded='true'] {
+  &::before {
+    border-color: transparent transparent $implementation-primary;
+  }
+}
