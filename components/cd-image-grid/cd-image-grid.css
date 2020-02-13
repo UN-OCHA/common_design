@@ -12,6 +12,11 @@
   flex: 0 0 4rem;
 }
 
+/* Prevent img stretching in IE11 */
+.cd-image-grid  > * img {
+  flex-shrink: 0;
+}
+
 .cd-image-grid svg {
   max-width: 4rem;
   max-height: 4rem;
@@ -19,8 +24,8 @@
 
 @supports (display: grid) {
   .cd-image-grid {
-		display: grid;
+    display: grid;
     grid-gap: 1rem;
-		grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr) );
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr) );
   }
 }
