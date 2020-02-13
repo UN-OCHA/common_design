@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Template overrides, preprocess, and alter hooks for the OCHA Basic theme.
+ * Template overrides, preprocess, and alter hooks for the OCHA Common Design theme.
  */
 
 use Drupal\Core\Form\FormStateInterface;
