@@ -57,26 +57,28 @@
 
   {{ page.help }}
 
-  <main role="main" class="cd-container">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  {% block main %}
+    <main role="main" class="cd-container">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="cd-layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+      <div class="cd-layout-content">
+        {{ page.content }}
+      </div>{# /.layout-content #}
 
-    {% if page.sidebar_first %}
-      <aside class="cd-layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
+      {% if page.sidebar_first %}
+        <aside class="cd-layout-sidebar-first" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
 
-    {% if page.sidebar_second %}
-      <aside class="cd-layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
+      {% if page.sidebar_second %}
+        <aside class="cd-layout-sidebar-second" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
 
-  </main>
+    </main>
+  {% endblock %}
 
   {% block footer_soft %}
     {{ page.footer_soft }}
