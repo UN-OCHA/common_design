@@ -1,0 +1,18 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Header
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-global-header {
+  background: $implementation-primary;
+  background-image: linear-gradient(-180deg, $implementation-primary 67%, $implementation-primary-dark 97%);
+}
+
+.cd-site-header__inner {
+  @supports(display: grid) {
+    grid-template-columns: 52px 1fr;
+
+    @include tablet {
+      grid-template-columns: 186px 1fr;
+    }
+  }
+}

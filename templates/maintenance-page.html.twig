@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+<div class="cd-layout-container">
+
+  <header class="cd-header">
+
+    <div class="cd-global-header">
+      <div class="cd-container cd-global-header__inner">
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="cd-site-header">
+      <div class="cd-container cd-site-header__inner">
+
+        <div class="region region-header-logo">
+          <h1>
+            <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
+              <span class="visually-hidden">{{ site_name }}</span>
+              <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+            </a>
+          </h1>
+        </div>
+
+        <div class="cd-site-header__actions">
+          &nbsp;
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main role="main" class="cd-container">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    <div class="cd-layout-content">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+
+    {{ page.highlighted }}
+
+    {{ page.content }}
+    </div>{# /.layout-content #}
+  </main>
+
+  <footer class="cd-footer" role="contentinfo">
+    <div class="cd-container cd-footer__inner">
+
+      {% block mandate %}
+        {% include '@common_design/cd/cd-footer/cd-mandate.html.twig' %}
+      {% endblock %}
+      {% block copyright %}
+        {% include '@common_design/cd/cd-footer/cd-copyright.html.twig' %}
+      {% endblock %}
+
+    </div>
+  </footer>
+
+</div>{# /.layout-container #}

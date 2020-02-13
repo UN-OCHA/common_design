@@ -1,22 +1,8 @@
 # OCHA Common Design base theme for Drupal 8
 
-A base theme of the OCHA Common Design for Drupal 8.
-
-Extend as needed.
-
 **Releases**
 
 Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) for latest updates. We use [npm-version](https://docs.npmjs.com/cli/version) and [sematantic versioning](https://semver.org/)
-
-
-# @WIP Update below for D8
-
-## To do:
-
-* Grid for Views with view mode override
-* Logo as picture element for PNG fallback
-* Remove modernizr classes and replace with feature queries
-* Test Aggregation versus sass compilation to a single css file
 
 ## This theme contains
 
@@ -25,35 +11,39 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Common SVG Icons
 * Variables for breakpoints, colours, font-sizes, fonts, measurements and z-index
 * Mixins for clearfix, REM font sizes and media queries
-* Bootstrap dropdowns (requires jQuery 1.9.1 or higher)
+* Custom javascript for dropdowns
+* An example sub theme
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Copy the subtheme_common_design directory to /themes/custom/ and rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design/blob/master/subtheme_common_design/README.md)
 
 **Drupal components:**
 
 * Normalise is in core
-* jQuery is in core but isn't loaded globally. We include it as a library when we need it.
+* jQuery is in core but isn't loaded globally. We include it as a library only when we need it.
 * hidden.module.css for display-related utility classes
-
 
 **Optional components:**
 
-* Grid (simplified version of Bootstrap v4 grid, https://v4-alpha.getbootstrap.com/layout/overview/)
 * Typography
 * Basic table styles
 * Basic form styles
+* Component library
+   * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials, or used with `@extend` Sass rule.
+   * Requires Drupal [Components module](https://www.drupal.org/project/components)
+   * See [Common Design demo](https://commondesign.demo.ahconu.org/demo) for Component examples.
 * Favicons
 * gulp.js workflow for frontend development
   * Sass
   * Sourcemaps (see which specific Sass file contains styles during local development)
   * Autoprefixer
-  * JS linting
+  * Sass and JS linting
 
 ## Getting started
 
-1. Clone this repo to themes/contrib or install using Composer (todo)
-2. If you want to renamne the theme, change the folder name, the filename of the .info file and find and replace for `ocha_basic` in the theme folder.
-3. In the Drupal Admin, go to Appearance, find 'OCHA Basic Starter Theme' (or whatever you've renamed it to), and select **Enable and set default**
+1. Clone this repo to /themes/contrib/ or install using Composer
+2. Copy the subtheme_common_design folder to /themes/custom/
+3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' (or whatever you've renamed it to), and select **Enable and set default**
 
-**To contribute to `common_design` development:**
+**To contribute to `common_design` base theme development and/or to customise the sub theme**
 
 1. Run `nvm use` to ensure the correct node version.
 2. Install the dependencies: `npm install`
@@ -147,11 +137,11 @@ The icons are black by default. If you need another color, it's best to copy the
 
 2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.tpl.php` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
 ```
-<svg class="icon icon--arrow-down">
-  <use xlink:href="#arrow-down"></use>
+<svg class="cd-icon cd-icon--arrow-down">
+  <use xlink:href="#cd-icon--arrow-down"></use>
 </svg>
 ```
-Each icon should have the class `icon` and a BEM selector if needed eg. `icon--arrow-down`. We can create associated CSS rules to control dimension and fill. We're using https://github.com/jkphl/gulp-svg-sprite. See https://una.im/svg-icons for more details.
+Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-icon--arrow-down`. We can create associated CSS rules to control dimension and fill. We're using https://github.com/jkphl/gulp-svg-sprite. See https://una.im/svg-icons for more details.
 
 ### Generating the icons sprite
 As defined in the gulp task, all new icons should be placed in the `img/icons` directory.
@@ -189,8 +179,3 @@ http://realfavicongenerator.net/ is a good tool for generating favicons.
 ## Add to Homescreen / manifest.json
 
 We support the [PWA Drupal module](https://www.drupal.org/project/pwa) instead of providing our own manifest.json file. The `hook_pwa_manifest_alter()` hook is implemented in `template.php` with our default colors/icons, which can be overridden using the normal PWA admin UI.
-
-
-## Styleguide
-
-See https://un-ocha.github.io/styleguide/ocha/ for documentation and examples of the styles used.

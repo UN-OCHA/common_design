@@ -1,0 +1,14 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Main Navigation
+//——————————————————————————————————————————————————————————————————————————————
+.cd-nav__btn {
+  &[aria-expanded] .cd-icon--arrow-down {
+    fill: $implementation-highlight;
+  }
+
+  &[aria-expanded='true']  {
+    &::before {
+      background: $implementation-highlight;
+    }
+  }
+}

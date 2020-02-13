@@ -1,0 +1,29 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Typography
+//——————————————————————————————————————————————————————————————————————————————
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $cd-ocha-blue;
+}
+
+h1 {
+  color: $cd-ocha-blue;
+}
+
+.page-title {
+  border-bottom: 1px solid $cd-mid-bluey-grey;
+  color: $cd-default-text-color;
+}
+
+a {
+  color: $cd-dark-blue;
+
+  &:hover,
+  &:focus {
+    color: $cd-ocha-blue;
+  }
+}
