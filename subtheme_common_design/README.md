@@ -2,10 +2,12 @@
 
 A sub theme, extending [common_design](https://github.com/UN-OCHA/common_design) base theme.
 
-This can be used as a starting point for implementations. Add components, override and extend base theme as needed.
+This can be used as a starting point for implementations. Add components, override and extend base theme as needed. Refer to [Drupal 8 Theming documentation](https://www.drupal.org/docs/8/theming) for more.
 
 Copy this directory to /themes/custom/ and rename the subtheme folder and associated theme files from
 `subtheme_common_design` to your theme name.
+
+*!Note:* `subtheme_common_design.info` needs the `.yml` extension added. We omit it to prevent Drupal registering the subtheme as a theme, until we want to use it. Rename `subtheme_common_design.info` to `subtheme_common_design.info.yml`, clear the cache and the subtheme will be available in the list of Themes to install at `/admin/appearance`.
 
 ### Customise the logo
 - Set the logo `logo: 'img/logos/logo.svg'` in the `subtheme_common_design.info.yml` file, and in the `sass/cd-header/_cd-logo.scss` partial override file.
