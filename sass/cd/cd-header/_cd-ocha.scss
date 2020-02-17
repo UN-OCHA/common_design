@@ -46,8 +46,11 @@
   display: inline-block;
   flex-shrink: 0;
   height: 21px;
-  margin-right: 4px;
   width: 21px;
+
+  @include tablet {
+    margin-right: 4px;
+  }
 
   svg {
     width: 21px;
