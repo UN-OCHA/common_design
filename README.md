@@ -12,8 +12,9 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Variables for breakpoints, colours, font-sizes, fonts, measurements and z-index
 * Mixins for clearfix, REM font sizes and media queries
 * Custom javascript for dropdowns
-* An example sub theme
-   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Copy the subtheme_common_design directory to /themes/custom/ and rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design/blob/master/subtheme_common_design/README.md)
+
+There is a sub theme available [sub theme](https://github.com/UN-OCHA/common_design_subtheme)
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/README.md)
 
 **Drupal components:**
 
@@ -40,7 +41,7 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 ## Getting started
 
 1. Clone this repo to /themes/contrib/ or install using Composer
-2. Copy the subtheme_common_design folder to /themes/custom/
+2. Clone the common_design_subtheme repo to /themes/custom/
 3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' (or whatever you've renamed it to), and select **Enable and set default**
 
 **To contribute to `common_design` base theme development and/or to customise the sub theme**
