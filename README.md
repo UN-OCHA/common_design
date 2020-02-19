@@ -1,6 +1,6 @@
 # OCHA Common Design base theme for Drupal 8
 
-**Releases**
+## Releases
 
 Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) for latest updates. We use [npm-version](https://docs.npmjs.com/cli/version) and [sematantic versioning](https://semver.org/)
 
