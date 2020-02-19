@@ -8,19 +8,19 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 
 * Common Header
 * Common Footer
-* Common SVG Icons
-* Variables for breakpoints, colours, font-sizes, fonts, measurements and z-index
+* Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://thenounproject.com/ochavisual/))
+* Variables for breakpoints, colours, font sizes, fonts, measurements and z-index
 * Mixins for clearfix, REM font sizes and media queries
-* Custom javascript for dropdowns
+* Custom javascript for dropdown behaviour
 
-There is a sub theme available [sub theme](https://github.com/UN-OCHA/common_design_subtheme)
-   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/README.md)
+There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) available
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/master/README.md)
 
 **Drupal components:**
 
-* Normalise is in core
-* jQuery is in core but isn't loaded globally. We include it as a library only when we need it.
-* hidden.module.css for display-related utility classes
+* normalize-css library is included in [Drupal core](https://github.com/UN-OCHA/common-design-site/tree/develop/html/core/assets/vendor/normalize-css)
+* jQuery is [included in Drupal core](https://github.com/UN-OCHA/common-design-site/blob/develop/html/core/core.libraries.yml#L362) but is not loaded globally. We include it as a library only when we need it.
+* [hidden.module.css](https://github.com/UN-OCHA/common-design-site/blob/develop/html/core/modules/system/css/components/hidden.module.css) is included in Drupal core for display-related utility classes
 
 **Optional components:**
 
@@ -40,13 +40,13 @@ There is a sub theme available [sub theme](https://github.com/UN-OCHA/common_des
 
 ## Getting started
 
-1. Clone this repo to /themes/contrib/ or install using Composer
-2. Clone the common_design_subtheme repo to /themes/custom/
+1. Clone this repo to `/themes/contrib/` or install using Composer
+2. Clone the [common_design_subtheme](https://github.com/UN-OCHA/common_design_subtheme) repo to `/themes/custom/`
 3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' (or whatever you've renamed it to), and select **Enable and set default**
 
 **To contribute to `common_design` base theme development and/or to customise the sub theme**
 
-1. Run `nvm use` to ensure the correct node version.
+1. Run `nvm use` in theme folder to ensure the correct node version.
 2. Install the dependencies: `npm install`
 3. Copy `localConfig.example.json` to `localConfig.json` and specify the URL of your local Drupal environment.
 4. Run the simple gulp task to build the CSS and watch for new changes: `gulp dev`
@@ -122,7 +122,7 @@ Using `this` works for most functions except ones which are assigned to event li
 
 This project uses [Gulp 4](https://github.com/gulpjs/gulp#whats-new-in-40)
 
-If you'd like to see a task listing, run the following command:
+To see a task listing, run the following command:
 
 `gulp --tasks`
 
@@ -133,7 +133,7 @@ The available icons can be found in `img/icons`
 
 There are two techniques used, depending on context.
 
-1. SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG file. We use this technique when using technique 2 isn't possible.
+1. SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG file. We use this technique only when using technique 2 isn't possible.
 The icons are black by default. If you need another color, it's best to copy the icon and manually adjust the fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
 
 2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.tpl.php` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
@@ -175,8 +175,3 @@ Progressive enhancement approach to layout, using Feature Queries to detect supp
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
-
-
-## Add to Homescreen / manifest.json
-
-We support the [PWA Drupal module](https://www.drupal.org/project/pwa) instead of providing our own manifest.json file. The `hook_pwa_manifest_alter()` hook is implemented in `template.php` with our default colors/icons, which can be overridden using the normal PWA admin UI.
