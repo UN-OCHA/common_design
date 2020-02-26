@@ -54,7 +54,7 @@
       %}
       <li{{ item.attributes.addClass(classes) }}>
 
-      {% if not (item.is_expanded) and (item.title  == 'username') %}
+      {% if not (item.is_expanded) and (item.title  == '%username%') %}
 
         <a href="{{ item.url }}">
           <span class="cd-user-menu__btn-label">
