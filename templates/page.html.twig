@@ -42,6 +42,14 @@
  * @see html.html.twig
  */
 #}
+
+{%
+  set layout_classes = [
+  'cd-container',
+  page.sidebar_first|render ? 'cd-layout-with-region-sidebar cd-layout-with-sidebar',
+]
+%}
+
 <div class="cd-layout-container">
 
   {% block header %}
@@ -58,14 +66,14 @@
   {{ page.help }}
 
   {% block main %}
-    <main role="main" class="cd-container">
+    <main role="main" {{ attributes.addClass(layout_classes) }}>
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
       <div class="cd-layout-content">
         {{ page.content }}
       </div>{# /.cd-layout-content #}
 
-      {% if page.sidebar_first %}
+      {% if page.sidebar_first|render %}
         <aside class="cd-layout-sidebar-first" role="complementary">
           {{ page.sidebar_first }}
         </aside>

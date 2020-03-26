@@ -53,6 +53,12 @@
   background-color: var(--cd-dark-blue);
 }
 
+.cd-hero__caption {
+ text-align: right;
+ font-size: 0.9rem;
+ font-style: italic;
+}
+
 @media (min-width: 576px) {
   .cd-hero__footer {
     display: flex;
