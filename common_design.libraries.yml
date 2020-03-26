@@ -83,6 +83,13 @@ cd-pagination:
     theme:
       components/cd-pagination/cd-pagination.css: {}
 
+cd-table:
+  css:
+    theme:
+      components/cd-table/cd-table.css: {}
+  js:
+    components/cd-table/cd-table.js: {}
+
 cd-teaser:
   css:
     theme:
