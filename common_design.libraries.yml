@@ -38,6 +38,11 @@ cd-article-teaser:
     theme:
       components/cd-article-teaser/cd-article-teaser.css: {}
 
+cd-banner:
+  css:
+    theme:
+      components/cd-banner/cd-banner.css: {}
+
 cd-bullet-list:
   css:
     theme:
