@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "git-hooks": "^1.1.10"
+    "git-hooks": "^1.1.10",
+    "minimist": "^1.2.2"
   }
 }
