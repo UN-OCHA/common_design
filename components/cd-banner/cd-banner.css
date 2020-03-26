@@ -1,0 +1,17 @@
+.cd-banner {
+  margin: 0;
+  height: 16rem;
+  width: 100%;
+}
+
+.cd-banner__image {
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.cd-banner__caption {
+  text-align: right;
+  font-size: 0.9rem;
+  font-style: italic;
+}
