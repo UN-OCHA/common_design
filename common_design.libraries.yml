@@ -27,6 +27,12 @@ cd-search:
   dependencies:
   - common_design/cd-dropdown
 
+cd-search--inline:
+  js:
+    js/cd-search--inline.js: {}
+  dependencies:
+  - common_design/cd-dropdown
+
 # CD components
 cd-alert:
   css:
