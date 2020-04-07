@@ -1,12 +1,10 @@
-  <div class="cd-search--inline">
-    <button type="button" id="cd-search-btn" class="cd-search--inline__btn" data-cd-toggle="dropdown" aria-expanded="false" aria-label="Search">
-      <svg class="cd-icon cd-icon--search">
-        <use xlink:href="#cd-icon--search"></use>
-      </svg>
-      <span class="cd-search_btn-text">Search</span>
-    </button>
+{{ attach_library('common_design/cd-search--inline') }}
 
-    {{ page.header_search }}
+<div class="cd-search--inline">
 
-  </div>
+  {# Search toggle button is added with Javascript #}
+
+  {{ page.header_search }}
+
+</div>
 
