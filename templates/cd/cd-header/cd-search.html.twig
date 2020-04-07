@@ -1,18 +1,9 @@
 {{ attach_library('common_design/cd-search') }}
 
-{% if inline_search %}
+<div class="cd-search">
 
-  <div class="cd-search--inline">
-
-{% else %}
-
-  <div class="cd-search">
-
-    {# Search toggle button is added with Javascript #}
+  {# Search toggle button is added with Javascript #}
 
   {{ page.header_search }}
 
-  </div>
-
-{% endif %}
-
+</div>
