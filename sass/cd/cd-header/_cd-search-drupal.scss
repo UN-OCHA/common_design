@@ -10,3 +10,10 @@
     margin-bottom: 0;
   }
 }
+
+.cd-search--inline {
+  .form-item,
+  .form-actions {
+    display: flex;
+  }
+}
