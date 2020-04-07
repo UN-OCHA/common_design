@@ -212,6 +212,7 @@
     background: $cd-white-bg-color;
     border: 0;
     border-radius: 0;
+    box-sizing: content-box;
     box-shadow: none;
     color: $cd-default-text-color;
     @include font-size($cd-font-size-small);
