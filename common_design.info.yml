@@ -21,6 +21,7 @@ regions:
   header_navigation: Header navigation
   content: Content
   sidebar_first: First sidebar
+  sidebar_second: Second sidebar
   footer_soft: Soft footer
   footer_navigation: Footer navigation
 
