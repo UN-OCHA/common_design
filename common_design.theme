@@ -52,77 +52,86 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
-//    $form['#attributes']['class'][] = 'cd-search__form';
-//    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
-//    $form['#attributes']['data-cd-toggable'][] = 'Search';
-//    $form['#attributes']['data-cd-hidden'][] = 'true';
-//    $form['#attributes']['data-cd-icon'][] = '';
-//    $form['#attributes']['data-cd-component'][] = 'cd-search';
-//    $form['#attributes']['data-cd-logo'][] = 'search';
-//    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
-//    $form['keys']['#attributes']['class'][] = 'cd-search__input';
-//    $form['keys']['#attributes']['id'][] = 'cd-search';
-//    $form['keys']['#attributes']['autocomplete'][] = 'off';
-//    // Theme suggestion for submit element.
-//    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
-//    $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
-//    $form['actions']['submit']['#attributes']['value'][] = 'Search';
-
-    $form['#attributes']['class'][] = 'cd-search--inline__form';
-    $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
+    $form['#attributes']['class'][] = 'cd-search__form';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
     $form['#attributes']['data-cd-toggable'][] = 'Search';
     $form['#attributes']['data-cd-hidden'][] = 'true';
     $form['#attributes']['data-cd-icon'][] = '';
-    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
+    $form['#attributes']['data-cd-component'][] = 'cd-search';
     $form['#attributes']['data-cd-logo'][] = 'search';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
-    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
-    $form['keys']['#attributes']['type'][] = 'search';
-    $form['keys']['#attributes']['id'][] = 'cd-search--inline';
+    $form['keys']['#attributes']['class'][] = 'cd-search__input';
+    $form['keys']['#attributes']['id'][] = 'cd-search';
     $form['keys']['#attributes']['autocomplete'][] = 'off';
     // Theme suggestion for submit element.
     $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
-    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
     $form['actions']['submit']['#attributes']['value'][] = 'Search';
+
+    // This is for a Drupal core INLINE search block.
+    // There are templates needed for this. Replace cd-search.html.twig
+    // with cd-search--inline.html.twig in cd-site-header.html.twig.
+//    $form['#attributes']['class'][] = 'cd-search--inline__form';
+//    $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
+//    $form['#attributes']['data-cd-toggable'][] = 'Search';
+//    $form['#attributes']['data-cd-hidden'][] = 'true';
+//    $form['#attributes']['data-cd-icon'][] = '';
+//    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
+//    $form['#attributes']['data-cd-logo'][] = 'search';
+//    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+//    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
+//    $form['keys']['#attributes']['type'][] = 'search';
+//    $form['keys']['#attributes']['id'][] = 'cd-search--inline';
+//    $form['keys']['#attributes']['autocomplete'][] = 'off';
+//    // Theme suggestion for submit element.
+//    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+//    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+//    $form['actions']['submit']['#attributes']['value'][] = 'Search';
   }
 
   // To use this for Views exposed forms, copy the form alter hook into your
   // subtheme and add the relevant Views IDs to this array in your subtheme.
   $includeView = [];
 
-  // If in array above, add search--inline attributes.
+  // If in array above, add attributes for styling and behaviour.
+  // Replace $form['keys'] with the appropriate fulltext input eg. $form['search_api_fulltext'].
   if (in_array($form['#id'], $includeView)) {
-//    $form['#attributes']['class'][] = 'cd-search__form';
-//    $form['#attributes']['aria-labelledby'][] = 'cd-search_btn';
-//    $form['#attributes']['data-cd-toggable'][] = 'Search';
-//    $form['#attributes']['data-cd-hidden'][] = 'true';
-//    $form['#attributes']['data-cd-icon'][] = '';
-//    $form['#attributes']['data-cd-component'][] = 'cd-search';
-//    $form['#attributes']['data-cd-logo'][] = 'search';
-//    $form['keys']['#attributes']['placeholder'] = t('What are you looking for?');
-//    $form['keys']['#attributes']['class'][] = 'cd-search__input';
-//    $form['keys']['#attributes']['type'][] = 'search';
-//    $form['keys']['#attributes']['id'][] = 'cd-search';
-//    // Theme suggestion for submit element.
-//    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
-//    $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
-//    $form['actions']['submit']['#attributes']['value'][] = 'Search';
+    $form['#attributes']['class'][] = 'cd-search__form';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search_btn';
+    $form['#attributes']['data-cd-toggable'][] = 'Search';
+    $form['#attributes']['data-cd-hidden'][] = 'true';
+    $form['#attributes']['data-cd-icon'][] = '';
+    $form['#attributes']['data-cd-component'][] = 'cd-search';
+    $form['#attributes']['data-cd-logo'][] = 'search';
+    $form['keys']['#attributes']['placeholder'] = t('What are you looking for?');
+    $form['keys']['#attributes']['class'][] = 'cd-search__input';
+    $form['keys']['#attributes']['type'][] = 'search';
+    $form['keys']['#attributes']['id'][] = 'cd-search';
+    $form['keys']['#attributes']['autocomplete'][] = 'off';
+    // Theme suggestion for submit element.
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search__submit';
+    $form['actions']['submit']['#attributes']['value'][] = 'Search';
 
     // This is for a Views exposed form INLINE search block.
     // There are templates needed for this. Replace cd-search.html.twig
     // with cd-search--inline.html.twig in cd-site-header.html.twig.
-    // Attach the library in block--views-exposed-filter-block.html.twig
-      $form['#attributes']['class'][] = 'cd-search--inline__form';
-      $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
-      $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
-      $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
-      $form['keys']['#attributes']['type'][] = 'search';
-      $form['keys']['#attributes']['id'][] = 'cd-search--inline';
-      $form['keys']['#attributes']['autocomplete'][] = 'off';
-      // Theme suggestion for submit element.
-      $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
-      $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
-      $form['actions']['submit']['#attributes']['value'][] = 'Search';
+//      $form['#attributes']['class'][] = 'cd-search--inline__form';
+//      $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
+//      $form['#attributes']['data-cd-toggable'][] = 'Search';
+//      $form['#attributes']['data-cd-hidden'][] = 'true';
+//      $form['#attributes']['data-cd-icon'][] = '';
+//      $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
+//      $form['#attributes']['data-cd-logo'][] = 'search';
+//      $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+//      $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
+//      $form['keys']['#attributes']['type'][] = 'search';
+//      $form['keys']['#attributes']['id'][] = 'cd-search--inline';
+//      $form['keys']['#attributes']['autocomplete'][] = 'off';
+//      // Theme suggestion for submit element.
+//      $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+//      $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+//      $form['actions']['submit']['#attributes']['value'][] = 'Search';
   }
 }
 
@@ -140,20 +149,6 @@ function common_design_preprocess_html(&$vars) {
     '#type' => 'inline_template',
     '#template' => '<span class="hidden">' . $icons . '</span>',
   );
-}
-
-///**
-// * Implements template_preprocess_page().
-// */
-function common_design_preprocess_page(&$vars) {
-
-  $current_uri = \Drupal::request()->getRequestUri();
-
-  // Set variable based on path alias to include inline-search.
-  if ($current_uri == '/inline-search') {
-    $inline_search = TRUE;
-    $vars['inline_search'] = $inline_search;
-  }
 }
 
 ///**
