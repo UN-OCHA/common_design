@@ -4,17 +4,17 @@
 }
 
 /* Testing Aid */
-.cd-grid-2-col > * {
-  background: lightpink;
-}
+/*.cd-grid-2-col > * {*/
+/*  background: lightpink;*/
+/*}*/
 
-.cd-grid-3-col > *  {
-  background: lightgreen;
-}
+/*.cd-grid-3-col > *  {*/
+/*  background: lightgreen;*/
+/*}*/
 
-.cd-grid-4-col > * {
-  background: lightblue;
-}
+/*.cd-grid-4-col > * {*/
+/*  background: lightblue;*/
+/*}*/
 
 
 @media (min-width: 576px) {
