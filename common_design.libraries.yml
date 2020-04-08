@@ -64,6 +64,13 @@ cd-date:
     theme:
       components/cd-date/cd-date.css: {}
 
+cd-filters:
+  css:
+    theme:
+      components/cd-filters/cd-filters.css: {}
+  js:
+    components/cd-filters/cd-filters.js: {}
+
 cd-grid:
   css:
     theme:
