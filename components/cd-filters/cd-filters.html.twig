@@ -1,0 +1,62 @@
+{{ attach_library('common_design/cd-filters') }}
+{{ attach_library('common_design/cd-button') }}
+
+<div class="cd-filters">
+  <button type="button" class="cd-filters__btn cd-button cd-button--icon cd-dropdown" id="cd-filters-btn" aria-expanded="false">
+    <span class="cd-filters__btn-text">Filter</span>
+    <svg class="cd-icon cd-icon--arrow-down">
+      <use xlink:href="#cd-icon--arrow-down"></use>
+    </svg>
+  </button>
+  <div class="cd-filters__form" aria-labelledby="cd-filters-btn">
+    <h2 class="visually-hidden">Filter results</h2>
+    <form>
+      <div class="cd-filters__group">
+        <label for="published-date-range">Date Range</label>
+        <label class="visually-hidden" for="published-date-start">Start date</label>
+        <input class="cd-filters__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
+        <label class="visually-hidden" for="published-date-end">End date</label>
+        <input class="cd-filters__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
+      </div>
+      <div class="cd-filters__group">
+        <label for="mySelect">Select element</label>
+        <select id="mySelect" name="options">
+          <option value="opt1">Option one</option>
+          <option value="opt2">Option two with a really long option title</option>
+          <option value="opt3">Option three</option>
+        </select>
+        <span class="spinner disabled">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </span>
+      </div>
+      <div class="cd-filters__group">
+        <fieldset>
+          <legend>Title</legend>
+          <ul>
+            <li>
+              <label for="optionOne">
+                <input type="radio" id="optionOne" name="title" value="optionOne">
+                Option one
+              </label>
+            </li>
+            <li>
+              <label for="optionTwo">
+                <input type="radio" id="optionTwo" name="title" value="optionTwo">
+                Option two
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+      <div class="cd-filters__group">
+        <label for="keyword-search">Keyword search</label>
+        <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filters__input" name="keys" value="" size="15" maxlength="128">
+      </div>
+
+      <div class="cd-export">
+        <button id="export-xlsx-" class="cd-button cd-button--export export-xlsx">Export to XLSX</button>
+      </div>
+    </form>
+  </div>
+</div>
