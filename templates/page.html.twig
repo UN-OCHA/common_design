@@ -46,9 +46,9 @@
 {%
   set layout_classes = [
   'cd-container',
-  page.sidebar_first|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
-  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout-with-sidebar-second',
-  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout-with-sidebar-both',
+  page.sidebar_first|render|striptags|trim and not page.sidebar_second|render|striptags|trim ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
+  page.sidebar_second|render|striptags|trim and not page.sidebar_first|render|striptags|trim ? 'cd-layout-with-sidebar-second',
+  page.sidebar_first|render|striptags|trim and page.sidebar_second|render|striptags|trim ? 'cd-layout-with-sidebar-both',
 ]
 %}
 
@@ -71,7 +71,7 @@
     <main role="main" {{ attributes.addClass(layout_classes) }}>
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-      {% if page.sidebar_first|render %}
+      {% if page.sidebar_first|render|striptags|trim is not empty %}
         <aside class="cd-layout-sidebar-first" role="complementary">
           {{ page.sidebar_first }}
         </aside>
@@ -81,7 +81,7 @@
         {{ page.content }}
       </div>{# /.cd-layout-content #}
 
-      {% if page.sidebar_second|render %}
+      {% if page.sidebar_second|render|striptags|trim is not empty %}
         <aside class="cd-layout-sidebar-second" role="complementary">
           {{ page.sidebar_second }}
         </aside>
