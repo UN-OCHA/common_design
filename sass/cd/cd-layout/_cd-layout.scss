@@ -91,6 +91,11 @@ body {
 }
 
 .cd-layout-container main.cd-container aside {
+  // This is to prevent sidebar region wrapper div displaying when region is empty but still renders.
+  &:empty {
+    display: none;
+  }
+
   @include tablet {
     flex-grow: 1;
   }
