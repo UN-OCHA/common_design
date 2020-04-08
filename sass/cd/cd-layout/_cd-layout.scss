@@ -91,6 +91,11 @@ body {
 }
 
 .cd-layout-container main.cd-container aside {
+  // This is to prevent sidebar region wrapper div displaying when region is empty but still renders.
+  &:empty {
+    display: none;
+  }
+
   @include tablet {
     flex-grow: 1;
   }
@@ -112,7 +117,7 @@ body {
 }
 
 .cd-layout-sidebar-first {
-  background: lightblue;
+  //background: lightblue;
   margin-bottom: 1rem;
 
   @include tablet {
@@ -121,7 +126,7 @@ body {
 }
 
 .cd-layout-sidebar-second {
-  background: lightpink;
+  //background: lightpink;
 }
 
 // Both sidebars, individually control.
@@ -149,7 +154,7 @@ body {
 }
 
 .cd-layout-content {
-  background: lightgreen;
+  //background: lightyellow;
 
   @include tablet {
     flex-basis: 0;
@@ -157,9 +162,10 @@ body {
     //min-width: 50%;
   }
 
+  // sass-lint:disable no-duplicate-properties
   .cd-layout-with-sidebar-first &,
   .cd-layout-with-sidebar-second & {
-    min-width: auto;
+    min-width: auto; //IE11 fix.
     min-width: unset;
   }
 
@@ -193,5 +199,3 @@ body {
     }
   }
 }
-
-
