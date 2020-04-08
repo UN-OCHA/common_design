@@ -125,18 +125,6 @@
 
     </div>{# /.layout-content #}
 
-    {% if page.sidebar_first|render %}
-      <aside class="cd-layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="cd-layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
   </main>
 
   {% block footer_soft %}
