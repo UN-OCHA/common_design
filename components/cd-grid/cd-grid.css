@@ -4,18 +4,17 @@
 }
 
 /* Testing Aid */
+.cd-grid-2-col > * {
+  background: lightpink;
+}
 
-/*.cd-grid-2-col > * {*/
-/*  background: lightpink;*/
-/*}*/
+.cd-grid-3-col > *  {
+  background: lightgreen;
+}
 
-/*.cd-grid-3-col > *  {*/
-/*  background: lightgreen;*/
-/*}*/
-
-/*.cd-grid-4-col > * {*/
-/*  background: lightblue;*/
-/*}*/
+.cd-grid-4-col > * {
+  background: lightblue;
+}
 
 
 @media (min-width: 576px) {
@@ -28,6 +27,12 @@
   .cd-grid > * {
     flex: 0 0 48%;
     display: flex;
+  }
+
+  .cd-grid-2-col.cd-grid--grow > *:last-child {
+    flex: 1 0 100%;
+    max-width: 100%;
+    max-width: unset;
   }
 
   .cd-grid-3-col > * {
@@ -47,6 +52,7 @@
   .cd-grid-3-col.cd-grid--grow > *:last-child,
   .cd-grid-4-col.cd-grid--grow > *:last-child {
     flex: 1 0 100%;
+    max-width: 100%;
     max-width: unset;
   }
 }
@@ -70,8 +76,7 @@
     max-width: 32%;
   }
 
-  .cd-grid-4-col > *,
-  .cd-grid-4-col.cd-grid--grow > *:last-child {
+  .cd-grid-4-col > * {
     flex: 0 0 24%;
   }
 }
@@ -86,53 +91,55 @@
   @media (min-width: 576px) {
     .cd-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(100px, 1fr));
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
       grid-gap: 1rem;
+    }
+
+    .cd-grid-2-col.cd-grid--grow > *:last-child {
+      grid-column: -1/1;
     }
 
     .cd-grid-3-col {
       display: grid;
       grid-template-columns: repeat(2, minmax(100px, 1fr));
       grid-gap: 1rem;
+    }
+
+    .cd-grid-4-col.cd-grid--grow > *:last-child,
+    .cd-grid-3-col.cd-grid--grow > *:last-child  {
+      grid-column: -1/1;
     }
   }
 
   @media (min-width: 768px) {
     .cd-grid {
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      max-width: 100%;
       max-width: unset;
     }
 
     .cd-grid-2-col {
       display: grid;
       grid-gap: 1rem;
-      grid-template-columns: repeat(2, minmax(100px, 1fr));
-    }
-
-    .cd-grid-3-col.cd-grid--grow > *:last-child,
-    .cd-grid-4-col.cd-grid--grow > *:last-child {
-      grid-column: -1/1;
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
   }
 
   @media (min-width: 1024px) {
     .cd-grid {
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+      max-width: 100%;
       max-width: unset;
     }
 
     .cd-grid-2-col {
       display: grid;
       grid-gap: 1rem;
-      grid-template-columns: repeat(2, minmax(100px, 1fr));
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
 
     .cd-grid-3-col {
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
-    }
-
-    .cd-grid-4-col.cd-grid--grow > *:last-child {
-      grid-column: auto;
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
     }
   }
 }
