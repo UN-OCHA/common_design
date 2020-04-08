@@ -46,9 +46,9 @@
 {%
   set layout_classes = [
   'cd-container',
-  page.sidebar_first|render|striptags|trim and not page.sidebar_second|render|striptags|trim ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
-  page.sidebar_second|render|striptags|trim and not page.sidebar_first|render|striptags|trim ? 'cd-layout-with-sidebar-second',
-  page.sidebar_first|render|striptags|trim and page.sidebar_second|render|striptags|trim ? 'cd-layout-with-sidebar-both',
+  page.sidebar_first|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
+  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout-with-sidebar-second',
+  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout-with-sidebar-both',
 ]
 %}
 
@@ -71,20 +71,20 @@
     <main role="main" {{ attributes.addClass(layout_classes) }}>
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-      {% if page.sidebar_first|render|striptags|trim is not empty %}
-        <aside class="cd-layout-sidebar-first" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
+      {% if page.sidebar_first %}
+        {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
+          This means we cannot have any white space between tags (as below).
+          Attn: Having the twig debug enabled means the div is no longer empty.
+          See Drupal issues/953034 for description and current status.
+        #}
+        <aside class="cd-layout-sidebar-first" role="complementary">{{ page.sidebar_first }}</aside>
       {% endif %}
 
       <div class="cd-layout-content">
         {{ page.content }}
       </div>{# /.cd-layout-content #}
 
-      {% if page.sidebar_second|render|striptags|trim is not empty %}
-        <aside class="cd-layout-sidebar-second" role="complementary">
-          {{ page.sidebar_second }}
-        </aside>
+      {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
       {% endif %}
 
     </main>
