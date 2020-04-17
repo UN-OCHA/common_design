@@ -288,7 +288,10 @@
       document.addEventListener('click', this.handleClickAway);
 
       // Initialize each toggable target
-      var elements = this.context.querySelectorAll('[data-cd-toggable]');
+      var elements = Array.from(this.context.querySelectorAll('[data-cd-toggable]')) || [];
+      if (typeof this.context == 'object' && typeof this.context.hasAttribute == 'function' && this.context.hasAttribute('data-cd-toggable')) {
+        elements.push(this.context);
+      }
       for (var i = 0, l = elements.length; i < l; i++) {
         this.setToggable(elements[i]);
       }
