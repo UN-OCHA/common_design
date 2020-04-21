@@ -301,7 +301,7 @@
       // If selector wasn't supplied, set the default.
       selector = typeof selector !== 'undefined' ? selector : '.cd-nav .menu a + .menu';
 
-      var elements = document.querySelectorAll(selector);
+      var elements = this.context.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
         var element = elements[i];
         this.setToggable(element, element.previousElementSibling);
