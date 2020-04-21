@@ -80,6 +80,10 @@ body {
   }
 }
 
+//@TODO This element (main) is one of the core layout elements.
+// Using the element as a selector, instead of a unique class
+// means I cannot @extend the rule below, for the inner layout rules.
+// .cd-container is used as a utility class on other divs, for common padding, width control.
 .cd-layout-container main.cd-container {
   padding-top: 2rem;
 
@@ -196,6 +200,40 @@ body {
       margin-left: 0;
       margin-right: 3rem;
       margin-bottom: 0;
+    }
+  }
+}
+
+// Faux sidebar in Node content.
+// Requires markup in node-full.html.twig.
+section.cd-layout-two-col {
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cd-layout-main-content {
+    @extend .cd-layout-content;
+
+    // These override the main layout rules based on which sidebar is enabled.
+    // The status of those sidebars are not important to this inner layout.
+    margin-left: 0 !important;
+
+    @include desktop {
+      margin-right: 2rem !important;
+    }
+  }
+
+  .cd-layout-sidebar-first {
+    @extend .cd-layout-sidebar-first;
+    margin-top: 1rem;
+
+    // I've styled this as a block with padding and bg colour.
+    padding: 1rem;
+    background-color: $cd-light-bluey-grey;
+
+    @include desktop {
+      margin-top: 0;
     }
   }
 }
