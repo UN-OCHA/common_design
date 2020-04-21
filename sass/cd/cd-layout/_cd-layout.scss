@@ -204,7 +204,8 @@ body {
   }
 }
 
-// Faux column in Node content. Requires markup.
+// Faux sidebar in Node content.
+// Requires markup in node-full.html.twig.
 section.cd-layout-two-col {
   @include desktop {
     display: flex;
