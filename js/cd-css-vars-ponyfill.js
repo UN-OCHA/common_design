@@ -1,4 +1,5 @@
+/* global cssVars */
+
 cssVars({
-  // Treat all browsers as legacy
-  onlyLegacy: false
+  onlyLegacy: true
 });
