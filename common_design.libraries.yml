@@ -38,6 +38,8 @@ cd-alert:
   css:
     theme:
       components/cd-alert/cd-alert.css: { preprocess:false }
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-article-teaser:
   css:
@@ -118,3 +120,9 @@ cd-user-list:
 cd-polyfill:
   js:
     js/cd-polyfill.js: { attributes: { nomodule: true } }
+
+# CSS custom properties polyfill for IE11.
+css-vars-ponyfill:
+  js:
+    https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2: { type: external, minified: true }
+    js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
