@@ -213,19 +213,18 @@ section.cd-layout-two-col {
   }
 
   .cd-layout-main-content {
-    @extend .cd-layout-content;
-
     // These override the main layout rules based on which sidebar is enabled.
     // The status of those sidebars are not important to this inner layout.
-    margin-left: 0 !important;
+    margin-left: 0;
 
     @include desktop {
-      margin-right: 2rem !important;
+      margin-right: 2rem;
+      flex-basis: 0;
+      flex-grow: 999;
     }
   }
 
   .cd-layout-sidebar-first {
-    @extend .cd-layout-sidebar-first;
     margin-top: 1rem;
 
     // I've styled this as a block with padding and bg colour.
@@ -233,6 +232,7 @@ section.cd-layout-two-col {
     background-color: $cd-light-bluey-grey;
 
     @include desktop {
+      flex-basis: 285px;
       margin-top: 0;
     }
   }
