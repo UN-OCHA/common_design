@@ -19,7 +19,11 @@ input {
 
 body {
   @include font-size($cd-font-size-base);
-  font-family: $cd-font;
+  font-family: $cd-font--system;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   color: $cd-dark-grey;
   line-height: 1.5;
 
