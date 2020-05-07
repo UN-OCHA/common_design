@@ -3,11 +3,16 @@
   border-radius: 0;
   box-shadow: none;
   border: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
-  font-weight: bold;
   transition: background 0.3s ease;
   width: auto;
+}
+
+.cd-button--small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 .cd-button--icon {
@@ -26,7 +31,6 @@
 }
 
 .cd-button--style {
-  text-transform: uppercase;
   background: var(--cd-ocha-blue);
   color: var(--cd-white);
 }
@@ -35,6 +39,14 @@
 .cd-button--style:focus {
   background: var(--cd-dark-blue);
   color: var(--cd-white);
+}
+
+.cd-button--bold {
+  font-weight: bold;
+}
+
+.cd-button--uppercase {
+  text-transform: uppercase;
 }
 
 /* Some buttons have SVG icons */
