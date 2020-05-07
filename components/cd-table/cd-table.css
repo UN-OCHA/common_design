@@ -4,40 +4,44 @@
   width: 100%;
 }
 
-th,
-td {
+.cd-table th,
+.cd-table td {
   padding: 0.5rem;
   text-align: left;
 }
 
-th {
+.cd-table th {
   color: var(--cd-ocha-blue);
   border-bottom: 1px solid white;
   background: var(--cd-site-bg-color);
 }
 
+.cd-table a {
+  word-break: break-word;
+}
+
 @media (min-width: 576px) {
-  th[data-sort-type="numeric"],
-  .cd-table--amount,
-  .cd-table--amount-total {
+  .cd-table th[data-sort-type="numeric"],
+  .cd-table .cd-table--amount,
+  .cd-table .cd-table--amount-total {
     text-align: right;
   }
 }
 
-tfoot {
+.cd-table tfoot {
   font-weight: bold;
 }
 
 /* Row numbers */
-.row-numbers {
+.cd-table--row-numbers {
   counter-reset: rowNumber;
 }
 
-.row-numbers tbody tr {
+.cd-table--row-numbers tbody tr {
   counter-increment: rowNumber;
 }
 
-.row-numbers tbody tr td.cd-table--row-num:first-child::before {
+.cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
   content: counter(rowNumber);
   min-width: 1em;
   margin-right: 0.5em;
@@ -55,40 +59,41 @@ tfoot {
 
 @media (max-width: 575px) {
   /* Force table to not be like tables anymore */
-  table,
-  thead,
-  tbody,
-  tfoot,
-  th,
-  td,
-  tr {
+  .cd-table--responsive,
+  .cd-table--responsive thead,
+  .cd-table--responsive tbody,
+  .cd-table--responsive tfoot,
+  .cd-table--responsive th,
+  .cd-table--responsive td,
+  .cd-table--responsive tr {
     display: block;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
+  .cd-table--responsive thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  tr {
+  .cd-table--responsive tr {
     border-bottom: 1px solid var(--cd-light-grey);
     padding: 0 !important;
   }
 
-  td {
+  .cd-table--responsive td {
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid var(--cd-site-bg-color);
     position: relative;
     padding: 0.5rem;
     padding-left: 40% !important;
+    min-height: 2rem; /* label should wrap */
     white-space: normal !important;
     text-align: left;
   }
 
-  td:before {
+  .cd-table--responsive td:before {
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
@@ -102,16 +107,16 @@ tfoot {
     content: attr(data-content);
   }
 
-  .row-numbers tbody tr td.cd-table--row-num {
+  .cd-table--responsive tfoot td {
+    border-bottom: 0 none;
+  }
+
+  .cd-table--row-numbers tbody tr td.cd-table--row-num {
     height: 3rem;
   }
 
-  .row-numbers tbody tr td.cd-table--row-num::before {
+  .cd-table--row-numbers tbody tr td.cd-table--row-num::before {
     font-weight: bold;
     font-size: 1.5rem;
-  }
-
-  tfoot td {
-    border-bottom: 0 none;
   }
 }
