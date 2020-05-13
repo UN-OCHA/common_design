@@ -36,83 +36,83 @@ cd-search--inline:
 # CD components
 cd-alert:
   css:
-    theme:
+    component:
       components/cd-alert/cd-alert.css: { preprocess:false }
   dependencies:
     - common_design/css-vars-ponyfill
 
 cd-article-teaser:
   css:
-    theme:
+    component:
       components/cd-article-teaser/cd-article-teaser.css: {}
 
 cd-banner:
   css:
-    theme:
+    component:
       components/cd-banner/cd-banner.css: {}
 
 cd-bullet-list:
   css:
-    theme:
+    component:
       components/cd-bullet-list/cd-bullet-list.css: {}
 
 cd-button:
   css:
-    theme:
+    component:
       components/cd-button/cd-button.css: {}
 
 cd-date:
   css:
-    theme:
+    component:
       components/cd-date/cd-date.css: {}
 
 cd-filters:
   css:
-    theme:
+    component:
       components/cd-filters/cd-filters.css: {}
   js:
     components/cd-filters/cd-filters.js: {}
 
 cd-grid:
   css:
-    theme:
+    component:
       components/cd-grid/cd-grid.css: {}
 
 cd-hero:
   css:
-    theme:
+    component:
       components/cd-hero/cd-hero.css: {}
 
 cd-image-grid:
   css:
-    theme:
+    component:
       components/cd-image-grid/cd-image-grid.css: {}
 
 cd-list:
   css:
-    theme:
+    component:
       components/cd-list/cd-list.css: {}
 
 cd-pagination:
   css:
-    theme:
+    component:
       components/cd-pagination/cd-pagination.css: {}
 
 cd-table:
   css:
-    theme:
+    component:
       components/cd-table/cd-table.css: {}
   js:
     components/cd-table/cd-table.js: {}
 
 cd-teaser:
   css:
-    theme:
+    component:
       components/cd-teaser/cd-teaser.css: {}
 
 cd-user-list:
   css:
-    theme:
+    component:
       components/cd-user-list/cd-user-list.css: {}
 
 
