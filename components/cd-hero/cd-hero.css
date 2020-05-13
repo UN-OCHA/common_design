@@ -10,8 +10,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
+}
+
+@supports (object-fit: cover) {
+  .cd-hero__image {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 }
 
 .cd-hero__container {
@@ -54,9 +59,9 @@
 }
 
 .cd-hero__caption {
- text-align: right;
- font-size: 0.9rem;
- font-style: italic;
+  text-align: right;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 @media (min-width: 576px) {
@@ -74,13 +79,23 @@
 @media (min-width: 768px) {
   .cd-hero {
     height: 16rem;
+    overflow: hidden;
   }
 
   .cd-hero__image {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @supports (object-fit: cover) {
+    .cd-hero__image {
+      transform: none;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
   }
 
   .cd-hero__container {
