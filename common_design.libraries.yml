@@ -55,16 +55,22 @@ cd-bullet-list:
   css:
     component:
       components/cd-bullet-list/cd-bullet-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-button:
   css:
     component:
       components/cd-button/cd-button.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-date:
   css:
     component:
       components/cd-date/cd-date.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-filters:
   css:
@@ -72,6 +78,9 @@ cd-filters:
       components/cd-filters/cd-filters.css: {}
   js:
     components/cd-filters/cd-filters.js: {}
+  dependencies:
+    - common_design/cd-polyfill
+    - common_design/css-vars-ponyfill
 
 cd-grid:
   css:
@@ -82,6 +91,8 @@ cd-hero:
   css:
     component:
       components/cd-hero/cd-hero.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-image-grid:
   css:
@@ -92,11 +103,15 @@ cd-list:
   css:
     component:
       components/cd-list/cd-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-pagination:
   css:
     component:
       components/cd-pagination/cd-pagination.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-table:
   css:
@@ -104,16 +119,22 @@ cd-table:
       components/cd-table/cd-table.css: {}
   js:
     components/cd-table/cd-table.js: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-user-list:
   css:
     component:
       components/cd-user-list/cd-user-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 
 # The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
