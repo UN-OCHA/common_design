@@ -1,6 +1,10 @@
 function cdFiltersToggle() {
   const filtersButton = document.querySelector('.cd-filters__btn');
 
+  if (!filtersButton) {
+    return;
+  }
+
 // Media query event handler.
   if (matchMedia) {
     const mq = window.matchMedia('(max-width: 991px)');
@@ -19,7 +23,6 @@ function cdFiltersToggle() {
   function toggleFilters() {
     this.closest('div').classList.toggle('js-filtersOpen');
   }
-
 };
 
 cdFiltersToggle();
