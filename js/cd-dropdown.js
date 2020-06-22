@@ -20,26 +20,29 @@
      */
     toggle: function (toggler, collapse) {
       var element = toggler.nextElementSibling;
+
       if (element) {
-        var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
+        if (element.hasAttribute('data-cd-toggable')) {
+          var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
 
-        // Switch the expanded/collapsed states.
-        toggler.setAttribute('aria-expanded', !expanded);
-        element.setAttribute('data-cd-hidden', expanded);
+          // Switch the expanded/collapsed states.
+          toggler.setAttribute('aria-expanded', !expanded);
+          element.setAttribute('data-cd-hidden', expanded);
 
-        // Switch the labels.
-        var labelWrapper = toggler.querySelector('[data-cd-label-switch]');
-        if (labelWrapper) {
-          var label = labelWrapper.getAttribute('data-cd-label-switch');
-          labelWrapper.setAttribute('data-cd-label-switch', labelWrapper.textContent);
-          labelWrapper.textContent = label;
-        }
+          // Switch the labels.
+          var labelWrapper = toggler.querySelector('[data-cd-label-switch]');
+          if (labelWrapper) {
+            var label = labelWrapper.getAttribute('data-cd-label-switch');
+            labelWrapper.setAttribute('data-cd-label-switch', labelWrapper.textContent);
+            labelWrapper.textContent = label;
+          }
 
-        // Change the focus when expanded if a target is specified.
-        if (element.hasAttribute('data-cd-focus-target') && !expanded) {
-          var target = document.getElementById(element.getAttribute('data-cd-focus-target'));
-          if (target) {
-            target.focus();
+          // Change the focus when expanded if a target is specified.
+          if (element.hasAttribute('data-cd-focus-target') && !expanded) {
+            var target = document.getElementById(element.getAttribute('data-cd-focus-target'));
+            if (target) {
+              target.focus();
+            }
           }
         }
       }
