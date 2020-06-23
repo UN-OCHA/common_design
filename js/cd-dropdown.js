@@ -5,6 +5,12 @@
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
 
+      // Bind the event handlers so that `this` corresponds to the current object.
+      this.handleClickAway = this.handleClickAway.bind(this);
+      this.handleEscape = this.handleEscape.bind(this);
+      this.handleResize = this.handleResize.bind(this);
+      this.handleToggle = this.handleToggle.bind(this);
+
       // Store context where all our private functions can access it.
       this.context = context;
 
@@ -22,27 +28,25 @@
       var element = toggler.nextElementSibling;
 
       if (element) {
-        if (element.hasAttribute('data-cd-toggable')) {
-          var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
+        var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
 
-          // Switch the expanded/collapsed states.
-          toggler.setAttribute('aria-expanded', !expanded);
-          element.setAttribute('data-cd-hidden', expanded);
+        // Switch the expanded/collapsed states.
+        toggler.setAttribute('aria-expanded', !expanded);
+        element.setAttribute('data-cd-hidden', expanded);
 
-          // Switch the labels.
-          var labelWrapper = toggler.querySelector('[data-cd-label-switch]');
-          if (labelWrapper) {
-            var label = labelWrapper.getAttribute('data-cd-label-switch');
-            labelWrapper.setAttribute('data-cd-label-switch', labelWrapper.textContent);
-            labelWrapper.textContent = label;
-          }
+        // Switch the labels.
+        var labelWrapper = toggler.querySelector('[data-cd-label-switch]');
+        if (labelWrapper) {
+          var label = labelWrapper.getAttribute('data-cd-label-switch');
+          labelWrapper.setAttribute('data-cd-label-switch', labelWrapper.textContent);
+          labelWrapper.textContent = label;
+        }
 
-          // Change the focus when expanded if a target is specified.
-          if (element.hasAttribute('data-cd-focus-target') && !expanded) {
-            var target = document.getElementById(element.getAttribute('data-cd-focus-target'));
-            if (target) {
-              target.focus();
-            }
+        // Change the focus when expanded if a target is specified.
+        if (element.hasAttribute('data-cd-focus-target') && !expanded) {
+          var target = document.getElementById(element.getAttribute('data-cd-focus-target'));
+          if (target) {
+            target.focus();
           }
         }
       }
@@ -157,6 +161,16 @@
     },
 
     /**
+     * Update the toggable elements when the window is resized.
+     */
+    handleResize: function (selector) {
+      var elements = this.context.querySelectorAll('[data-cd-toggable]');
+      for (var i = 0, l = elements.length; i < l; i++) {
+        this.updateToggable(elements[i]);
+      }
+    },
+
+    /**
      * Create a svg icon.
      */
     createIcon: function (name, component, wrap) {
@@ -232,8 +246,13 @@
     /**
      * Transform the element into a dropdown menu.
      */
-    setToggable: function (element, toggler) {
-      var expand = element.hasAttribute('data-cd-toggable-expand') || false;
+    setToggable: function (element, check) {
+      var toggler = element.previousElementSibling;
+
+      // Skip if the toggler has already been created.
+      if (check !== false && toggler && toggler.hasAttribute('data-cd-toggler')) {
+        return;
+      }
 
       // Create a button to toggle the element.
       if (!toggler) {
@@ -245,6 +264,8 @@
       else if (toggler.nodeName !== 'BUTTON') {
         toggler.setAttribute('role', 'button');
       }
+
+      var expand = element.hasAttribute('data-cd-toggable-expand') || false;
 
       // Set the toggling attributes of the toggler.
       toggler.setAttribute('data-cd-toggler', '');
@@ -283,6 +304,35 @@
     },
 
     /**
+     * Remove the element's toggler.
+     */
+    unsetToggable: function (element) {
+      var toggler = element.previousElementSibling;
+      if (toggler && toggler.hasAttribute('data-cd-toggler')) {
+        // Remove toggler button.
+        toggler.parentNode.removeChild(toggler);
+        // Reset attributes on the toggable element.
+        element.removeEventListener('keydown', this.handleEscape);
+        element.removeAttribute('data-cd-hidden');
+      }
+    },
+
+    /**
+     * Update a toggable element, setting or removing the toggling button and
+     * attributes depending on the `dropdown` css custom property. When set to false
+     * we remove the toggler and reset the toggable attributes so that the HTML
+     * markup reflects the current behavior of the element.
+     */
+    updateToggable: function (element) {
+      if (window.getComputedStyle(element, null).getPropertyValue('--dropdown') === 'false') {
+        this.unsetToggable(element);
+      }
+      else {
+        this.setToggable(element);
+      }
+    },
+
+    /**
      * Initialize the toggable menus, adding a toggle button and event
      * handling.
      */
@@ -290,11 +340,12 @@
       // Collapse dropdowns when clicking outside of the toggable target.
       document.addEventListener('click', this.handleClickAway);
 
-      // Initialize each toggable target
-      var elements = this.context.querySelectorAll('[data-cd-toggable]');
-      for (var i = 0, l = elements.length; i < l; i++) {
-        this.setToggable(elements[i]);
-      }
+      // Loop through the toggable elements and set/unset the toggling button
+      // depending on the screen size.
+      window.addEventListener('resize', this.handleResize.bind(this));
+
+      // Initial setup.
+      this.handleResize();
     },
 
     /**
@@ -306,8 +357,7 @@
 
       var elements = this.context.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
-        var element = elements[i];
-        this.setToggable(element, element.previousElementSibling);
+        this.setToggable(elements[i], false);
       }
     }
   };
