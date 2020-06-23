@@ -85,6 +85,7 @@
     }
 
     @include desktop {
+      --dropdown: false;
       height: $cd-site-header-height;
       max-width: none;
       padding: 0;
