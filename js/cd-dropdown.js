@@ -26,7 +26,6 @@
      */
     toggle: function (toggler, collapse) {
       var element = toggler.nextElementSibling;
-
       if (element) {
         var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
 
@@ -81,6 +80,13 @@
         if (element.hasAttribute && element.hasAttribute('data-cd-toggable')) {
           element = element.previousElementSibling;
         }
+
+        // Skip if the there was no previous sibling as that means there is no
+        // toggler for the toggable element.
+        if (!element) {
+          break;
+        }
+
         // Store the toggling button of the togglable parent so that it can
         // be ignored when collapsing the opened toggables.
         if (element.hasAttribute && element.hasAttribute('data-cd-toggler')) {
@@ -265,6 +271,7 @@
         toggler.setAttribute('role', 'button');
       }
 
+      // Flag to indicate that the toggable element is initially expanded.
       var expand = element.hasAttribute('data-cd-toggable-expand') || false;
 
       // Set the toggling attributes of the toggler.
@@ -309,8 +316,9 @@
     unsetToggable: function (element) {
       var toggler = element.previousElementSibling;
       if (toggler && toggler.hasAttribute('data-cd-toggler')) {
-        // Remove toggler button.
+        // Delete toggling button.
         toggler.parentNode.removeChild(toggler);
+
         // Reset attributes on the toggable element.
         element.removeEventListener('keydown', this.handleEscape);
         element.removeAttribute('data-cd-hidden');
@@ -319,7 +327,7 @@
 
     /**
      * Update a toggable element, setting or removing the toggling button and
-     * attributes depending on the `dropdown` css custom property. When set to false
+     * attributes depending on the `dropdown` css property. When set to false
      * we remove the toggler and reset the toggable attributes so that the HTML
      * markup reflects the current behavior of the element.
      */
@@ -342,7 +350,7 @@
 
       // Loop through the toggable elements and set/unset the toggling button
       // depending on the screen size.
-      window.addEventListener('resize', this.handleResize.bind(this));
+      window.addEventListener('resize', this.handleResize);
 
       // Initial setup.
       this.handleResize();
@@ -355,6 +363,7 @@
       // If selector wasn't supplied, set the default.
       selector = typeof selector !== 'undefined' ? selector : '.cd-nav .menu a + .menu';
 
+      // Nested drupal menus are always toggable.
       var elements = this.context.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
         this.setToggable(elements[i], false);
