@@ -14,9 +14,9 @@
   text-transform: uppercase;
   transition: background 0.3s ease;
 
-  @include desktop {
-    display: none;
-  }
+  //@include desktop {
+  //  display: none;
+  //}
 
   .cd-nav__btn-label {
     font-weight: 600;
