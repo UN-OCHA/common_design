@@ -12,7 +12,8 @@
       this.handleToggle = this.handleToggle.bind(this);
 
       // Store context where all our private functions can access it.
-      this.context = context;
+      // Leaving this here for posterity sake.
+      //this.context = context;
 
       // Initialize toggable dropdown.
       this.initializeToggables();
@@ -170,7 +171,7 @@
      * Update the toggable elements when the window is resized.
      */
     handleResize: function (selector) {
-      var elements = this.context.querySelectorAll('[data-cd-toggable]');
+      var elements = document.querySelectorAll('[data-cd-toggable]');
       for (var i = 0, l = elements.length; i < l; i++) {
         this.updateToggable(elements[i]);
       }
@@ -364,7 +365,7 @@
       selector = typeof selector !== 'undefined' ? selector : '.cd-nav .menu a + .menu';
 
       // Nested drupal menus are always toggable.
-      var elements = this.context.querySelectorAll(selector);
+      var elements = document.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
         this.setToggable(elements[i], false);
       }
