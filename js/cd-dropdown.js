@@ -257,20 +257,27 @@
     setToggable: function (element) {
       var toggler = element.previousElementSibling;
 
-      // Skip if the toggler has already been created.
-      if (toggler && toggler.hasAttribute('data-cd-toggler')) {
-        return;
+      // Skip if the toggler is not a button or has already been processed.
+      if (toggler) {
+        // Togglers should be buttons to avoid mis-processing elements
+        // appearing before the toggable element. There is still a risk of
+        // mis-processint if, for whatever reason, there is a button which is
+        // not the toggler before the toggable element.
+        if (toggler.nodeName !== 'BUTTON' || ) {
+          return;
+        }
+        // We assume that if a button has the "data-cd-toggler" attribute then
+        // it has been processed by the "setToggable" function. That means
+        // this attribute should not be used directly in the markup otherwise
+        // the toggable element will not be processed by this script and event
+        // handlers will not be attached.
+        if (toggler.hasAttribute('data-cd-toggler')) {
+          return;
+        }
       }
-
       // Create a button to toggle the element.
-      if (!toggler) {
+      else {
         toggler = this.createButton(element);
-      }
-      // Or ensure the toggler has the "button" role.
-      //
-      // @todo ensure that `space` and `enter` trigger the toggling?
-      else if (toggler.nodeName !== 'BUTTON') {
-        toggler.setAttribute('role', 'button');
       }
 
       // Flag to indicate that the toggable element is initially expanded.
