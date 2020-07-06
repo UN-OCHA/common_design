@@ -313,7 +313,7 @@
       // Hide the element.
       element.setAttribute('data-cd-hidden', expand === false);
 
-      // Add the toggler before the toggable element id not already.
+      // Add the toggler before the toggable element if not already.
       if (element.previousElementSibling !== toggler) {
         element.parentNode.insertBefore(toggler, element);
       }
