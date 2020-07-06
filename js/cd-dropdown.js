@@ -253,11 +253,11 @@
     /**
      * Transform the element into a dropdown menu.
      */
-    setToggable: function (element, check) {
+    setToggable: function (element) {
       var toggler = element.previousElementSibling;
 
       // Skip if the toggler has already been created.
-      if (check !== false && toggler && toggler.hasAttribute('data-cd-toggler')) {
+      if (toggler && toggler.hasAttribute('data-cd-toggler')) {
         return;
       }
 
@@ -367,7 +367,7 @@
       // Nested drupal menus are always toggable.
       var elements = document.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
-        this.setToggable(elements[i], false);
+        this.setToggable(elements[i]);
       }
     }
   };
