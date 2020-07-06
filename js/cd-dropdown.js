@@ -318,6 +318,11 @@
     unsetToggable: function (element) {
       var toggler = element.previousElementSibling;
       if (toggler && toggler.hasAttribute('data-cd-toggler')) {
+        // Remove event handler to avoid leaking.
+        toggler.addEventListener('click', this.handleToggle);
+        toggler.addEventListener('keydown', this.handleEscape);
+        element.addEventListener('keydown', this.handleEscape);
+
         // Delete toggling button.
         toggler.parentNode.removeChild(toggler);
 
