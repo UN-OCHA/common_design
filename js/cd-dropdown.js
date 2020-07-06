@@ -261,7 +261,7 @@
       if (toggler) {
         // Togglers should be buttons to avoid mis-processing elements
         // appearing before the toggable element. There is still a risk of
-        // mis-processint if, for whatever reason, there is a button which is
+        // mis-processing if, for whatever reason, there is a button which is
         // not the toggler before the toggable element.
         if (toggler.nodeName !== 'BUTTON' || ) {
           return;
