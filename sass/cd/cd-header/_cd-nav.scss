@@ -14,6 +14,11 @@
   text-transform: uppercase;
   transition: background 0.3s ease;
 
+  // This is needed for IE11
+  // No support for CSS custom properties means
+  // --dropdown: false; property on nav container is not recognised
+  // so the cd-dropdown.js creates a toggler button on desktop
+  // This hides it when that happens.
   @include desktop {
     display: none;
   }
@@ -85,6 +90,7 @@
     }
 
     @include desktop {
+      --dropdown: false;
       height: $cd-site-header-height;
       max-width: none;
       padding: 0;
@@ -93,11 +99,6 @@
       right: auto;
       top: auto;
       width: auto;
-
-      // Always display on desktop.
-      &[data-cd-hidden='true'] {
-        display: block;
-      }
     }
 
     > ul {
