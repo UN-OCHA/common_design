@@ -14,7 +14,7 @@
 
       // Store context where all our private functions can access it.
       // Leaving this here for posterity sake.
-      //this.context = context;
+      // this.context = context;
 
       // Initialize toggable dropdown.
       this.initializeToggables();
