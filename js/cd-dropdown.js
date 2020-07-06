@@ -5,7 +5,8 @@
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
 
-      // Bind the event handlers so that `this` corresponds to the current object.
+      // Bind the event handlers so that `this` corresponds to the current
+      // object and can be used inside the event handling functions.
       this.handleClickAway = this.handleClickAway.bind(this);
       this.handleEscape = this.handleEscape.bind(this);
       this.handleResize = this.handleResize.bind(this);
@@ -104,8 +105,8 @@
     handleToggle: function (event) {
       var target = event.currentTarget;
       if (target) {
-        Drupal.behaviors.cdDropdown.collapseAll(Drupal.behaviors.cdDropdown.getToggableParents(target));
-        Drupal.behaviors.cdDropdown.toggle(target);
+        this.collapseAll(this.getToggableParents(target));
+        this.toggle(target);
       }
       event.preventDefault();
       event.stopPropagation();
@@ -134,7 +135,7 @@
         // Focus the button and hide the content.
         if (target && target.hasAttribute('data-cd-toggler')) {
           target.focus();
-          Drupal.behaviors.cdDropdown.toggle(target, true);
+          this.toggle(target, true);
         }
       }
     },
@@ -147,7 +148,7 @@
       var target = event.target;
       if (target) {
         if (target.nodeName === 'A' && !target.hasAttribute('data-cd-toggler')) {
-          Drupal.behaviors.cdDropdown.collapseAll();
+          this.collapseAll();
         }
         else {
           // Loop until we find a parent which is a toggable or toggler element
@@ -163,7 +164,7 @@
             target = target.parentNode;
           }
         }
-        Drupal.behaviors.cdDropdown.collapseAll();
+        this.collapseAll();
       }
     },
 
