@@ -1,6 +1,6 @@
 {{ attach_library('common_design/cd-table') }}
 
-<h1>Example table</h1>
+<h1>Example styled table</h1>
 <table class="cd-table row-numbers cd-table--responsive cd-table--striped">
   <thead>
   <tr>
@@ -38,4 +38,27 @@
     <td data-content="Total" class="cd-table--amount-total">2,500,000</td>
   </tr>
   </tfoot>
+</table>
+
+
+<h1>Example simple table</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Paid</th>
+    <th>Pledged</th>
+    <th>Total</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>This Name</td>
+    <td><a href="#">This Type that is also a link</a></td>
+    <td>1,000,000</td>
+    <td>0</td>
+    <td>1,000,000</td>
+  </tr>
+  </tbody>
 </table>
