@@ -1,7 +1,8 @@
 {{ attach_library('common_design/cd-table') }}
 
-<h1>Example table</h1>
-<table class="cd-table row-numbers cd-table--responsive cd-table--striped">
+<h1>Styled table</h1>
+<table class="cd-table cd-table--row-numbers cd-table--responsive cd-table--striped">
+  <caption>This is the table caption</caption>
   <thead>
   <tr>
     <th data-sort-type="disabled" class="cd-table--row-num"></th>
@@ -38,4 +39,23 @@
     <td data-content="Total" class="cd-table--amount-total">2,500,000</td>
   </tr>
   </tfoot>
+</table>
+
+<h1>Simple table</h1>
+<table>
+  <caption>This is the table caption</caption>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Number</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>This Name</td>
+    <td><a href="#">This Type that is also a link</a></td>
+    <td>1,000,000</td>
+  </tr>
+  </tbody>
 </table>
