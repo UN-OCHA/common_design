@@ -4,8 +4,9 @@
 <div class="cd-layout-container">
   <div class="cd-container with-grid">
 
-    <h1>Example table</h1>
-    <table class="cd-table row-numbers cd-table--responsive cd-table--striped">
+    <h1>Styled table</h1>
+    <table class="cd-table cd-table--row-numbers cd-table--responsive cd-table--striped">
+      <caption>This is the table caption</caption>
       <thead>
       <tr>
         <th data-sort-type="disabled" class="cd-table--row-num"></th>
@@ -44,7 +45,26 @@
       </tfoot>
     </table>
 
-    <p>This is here to clear the table but also to say that Javascript can be used to add the data-content attribute to the td element, using the content of the th element.</p>
+    <h1>Simple table</h1>
+    <table>
+      <caption>This is the table caption</caption>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>This Name</td>
+        <td><a href="#">This Type that is also a link</a></td>
+        <td>1,000,000</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p>This is here to clear the table but also to say that Javascript can be used to add the data-content attribute to the td element, using the content of the th element. This is especially handy for responsive table display.</p>
 
   </div>
 </div>
