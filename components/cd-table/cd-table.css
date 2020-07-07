@@ -3,12 +3,13 @@ table {
   margin-bottom: 1rem;
 }
 
-th,
-td {
-  padding: 0.5rem;
+th {
+  text-align: left;
 }
 
-th {
+table caption {
+  margin-top: 0.5rem;
+  caption-side: bottom;
   text-align: left;
 }
 
@@ -16,6 +17,11 @@ th {
   margin: 0 auto 3rem;
   border-collapse: collapse;
   width: 100%;
+}
+
+.cd-table caption {
+  background: var(--cd-site-bg-color);
+  padding: 0.25rem 0.5rem;
 }
 
 .cd-table th,
@@ -80,6 +86,10 @@ th {
   .cd-table--responsive th,
   .cd-table--responsive td,
   .cd-table--responsive tr {
+    display: block;
+  }
+
+  .cd-table--responsive caption {
     display: block;
   }
 
