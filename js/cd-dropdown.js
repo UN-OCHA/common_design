@@ -5,7 +5,8 @@
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
 
-      // Bind the event handlers so that `this` corresponds to the current object.
+      // Bind the event handlers so that `this` corresponds to the current
+      // object and can be used inside the event handling functions.
       this.handleClickAway = this.handleClickAway.bind(this);
       this.handleEscape = this.handleEscape.bind(this);
       this.handleResize = this.handleResize.bind(this);
@@ -13,7 +14,7 @@
 
       // Store context where all our private functions can access it.
       // Leaving this here for posterity sake.
-      //this.context = context;
+      // this.context = context;
 
       // Initialize toggable dropdown.
       this.initializeToggables();
@@ -104,8 +105,8 @@
     handleToggle: function (event) {
       var target = event.currentTarget;
       if (target) {
-        Drupal.behaviors.cdDropdown.collapseAll(Drupal.behaviors.cdDropdown.getToggableParents(target));
-        Drupal.behaviors.cdDropdown.toggle(target);
+        this.collapseAll(this.getToggableParents(target));
+        this.toggle(target);
       }
       event.preventDefault();
       event.stopPropagation();
@@ -134,7 +135,7 @@
         // Focus the button and hide the content.
         if (target && target.hasAttribute('data-cd-toggler')) {
           target.focus();
-          Drupal.behaviors.cdDropdown.toggle(target, true);
+          this.toggle(target, true);
         }
       }
     },
@@ -147,7 +148,7 @@
       var target = event.target;
       if (target) {
         if (target.nodeName === 'A' && !target.hasAttribute('data-cd-toggler')) {
-          Drupal.behaviors.cdDropdown.collapseAll();
+          this.collapseAll();
         }
         else {
           // Loop until we find a parent which is a toggable or toggler element
@@ -163,7 +164,7 @@
             target = target.parentNode;
           }
         }
-        Drupal.behaviors.cdDropdown.collapseAll();
+        this.collapseAll();
       }
     },
 
@@ -253,23 +254,30 @@
     /**
      * Transform the element into a dropdown menu.
      */
-    setToggable: function (element, check) {
+    setToggable: function (element) {
       var toggler = element.previousElementSibling;
 
-      // Skip if the toggler has already been created.
-      if (check !== false && toggler && toggler.hasAttribute('data-cd-toggler')) {
-        return;
+      // Skip if the toggler is not a button or has already been processed.
+      if (toggler) {
+        // Togglers should be buttons to avoid mis-processing elements
+        // appearing before the toggable element. There is still a risk of
+        // mis-processing if, for whatever reason, there is a button which is
+        // not the toggler before the toggable element.
+        if (toggler.nodeName !== 'BUTTON') {
+          return;
+        }
+        // We assume that if a button has the "data-cd-toggler" attribute then
+        // it has been processed by the "setToggable" function. That means
+        // this attribute should not be used directly in the markup otherwise
+        // the toggable element will not be processed by this script and event
+        // handlers will not be attached.
+        if (toggler.hasAttribute('data-cd-toggler')) {
+          return;
+        }
       }
-
       // Create a button to toggle the element.
-      if (!toggler) {
+      else {
         toggler = this.createButton(element);
-      }
-      // Or ensure the toggler has the "button" role.
-      //
-      // @todo ensure that `space` and `enter` trigger the toggling?
-      else if (toggler.nodeName !== 'BUTTON') {
-        toggler.setAttribute('role', 'button');
       }
 
       // Flag to indicate that the toggable element is initially expanded.
@@ -305,7 +313,7 @@
       // Hide the element.
       element.setAttribute('data-cd-hidden', expand === false);
 
-      // Add the toggler before the toggable element id not already.
+      // Add the toggler before the toggable element if not already.
       if (element.previousElementSibling !== toggler) {
         element.parentNode.insertBefore(toggler, element);
       }
@@ -317,6 +325,11 @@
     unsetToggable: function (element) {
       var toggler = element.previousElementSibling;
       if (toggler && toggler.hasAttribute('data-cd-toggler')) {
+        // Remove event handler to avoid leaking.
+        toggler.addEventListener('click', this.handleToggle);
+        toggler.addEventListener('keydown', this.handleEscape);
+        element.addEventListener('keydown', this.handleEscape);
+
         // Delete toggling button.
         toggler.parentNode.removeChild(toggler);
 
@@ -367,7 +380,7 @@
       // Nested drupal menus are always toggable.
       var elements = document.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
-        this.setToggable(elements[i], false);
+        this.setToggable(elements[i]);
       }
     }
   };
