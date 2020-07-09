@@ -76,11 +76,6 @@ cd-filters:
   css:
     component:
       components/cd-filters/cd-filters.css: {}
-  js:
-    components/cd-filters/cd-filters.js: {}
-  dependencies:
-    - common_design/cd-polyfill
-    - common_design/css-vars-ponyfill
 
 cd-grid:
   css:
