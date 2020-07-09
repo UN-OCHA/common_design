@@ -173,6 +173,10 @@
   @extend .cd-user-menu__item;
 }
 
+.no-js .cd-global-header .menu > li button {
+  @extend .visually-hidden;
+}
+
 // First item following the SVG icon should have less left padding.
 .cd-global-header__user-menu .menu svg + li a,
 .cd-global-header__user-menu .menu svg + li button {
@@ -184,6 +188,10 @@
 // This is content-specific. See CD-98 for specs.
 .cd-global-header__user-menu .menu-item--expanded + .menu-item {
   display: none;
+
+  .no-js & {
+    display: block;
+  }
 }
 
 // Second level reset.
