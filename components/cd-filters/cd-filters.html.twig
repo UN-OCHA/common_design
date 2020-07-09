@@ -1,14 +1,8 @@
 {{ attach_library('common_design/cd-filters') }}
 {{ attach_library('common_design/cd-button') }}
 
-<div class="cd-filters">
-  <button type="button" class="cd-filters__btn cd-button cd-button--icon" id="cd-filters-btn" aria-expanded="false">
-    <span class="cd-filters__btn-text">Filter</span>
-    <svg class="cd-icon cd-icon--arrow-down">
-      <use xlink:href="#cd-icon--arrow-down"></use>
-    </svg>
-  </button>
-  <div class="cd-filters__form" aria-labelledby="cd-filters-btn">
+<div id="cd-filters" {{ attributes.setAttribute('aria-labelledby', 'cd-filters-toggle').setAttribute('data-cd-toggable', 'Filters').setAttribute('data-cd-component', 'cd-filters').setAttribute('data-cd-icon', 'arrow-down').setAttribute('data-cd-toggable-keep', 'true').addClass('cd-filters') }}>
+  <div class="cd-filters__form">
     <h2 class="visually-hidden">Filter results</h2>
     <form>
       <div class="cd-filters__group">

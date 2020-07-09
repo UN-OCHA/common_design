@@ -21,30 +21,19 @@
   fill: var(--cd-white);
 }
 
-.cd-filters__btn:focus,
-.js-filtersOpen .cd-filters__btn {
+.cd-filters__btn:focus {
   color: var(--cd-white);
   background: var(--cd-dark-grey);
 }
 
-.js-filtersOpen .cd-filters__btn svg,
 .cd-filters__btn:focus svg {
   fill: var(--cd-white);
 }
 
-.js-filtersOpen .cd-filters__btn .cd-icon--arrow-down {
-  transform: rotate(180deg);
-}
-
 .cd-filters__form {
-  display: none;
   background: var(--cd-light-grey);
   width: 100%;
   padding: 1rem;
-}
-
-.js-filtersOpen .cd-filters__form {
-  display: block;
 }
 
 .cd-filters__form label {
@@ -114,15 +103,18 @@
 }
 
 @media (min-width: 768px) {
+
   .cd-filters {
     margin-bottom: 2rem;
+    --dropdown: false;
   }
 
-  .cd-filters__form {
-    display: block;
-  }
-
-  .cd-filters__btn.cd-button {
+  /*This is needed for IE11
+  No support for CSS custom properties means
+  --dropdown: false; property on filter container is not recognised
+  so the cd-dropdown.js creates a toggler button on desktop
+  This hides it when that happens.*/
+  .cd-filters__btn {
     display: none;
   }
 
@@ -147,11 +139,11 @@
 
   /* If one element */
   .cd-filters__group:only-of-type,
-  /* If two elements */
+    /* If two elements */
   .cd-filters__group:nth-last-child(2):first-child,
   .cd-filters__group:nth-last-child(2):first-child ~ .cd-filters__group,
   .cd-filters__group:nth-last-child(2):first-child ~ .cd-export,
-  /* If three elements */
+    /* If three elements */
   .cd-filters__group:nth-last-child(3):first-child,
   .cd-filters__group:nth-last-child(3):first-child ~ .cd-filters__group,
   .cd-filters__group:nth-last-child(3):first-child ~ .cd-export {
@@ -203,8 +195,4 @@
 
 .no-js .cd-filter__form {
   display: block;
-}
-
-.no-js .cd-filter__btn.cd-button {
-  display: none;
 }
