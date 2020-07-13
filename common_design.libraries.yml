@@ -76,11 +76,6 @@ cd-filters:
   css:
     component:
       components/cd-filters/cd-filters.css: {}
-  js:
-    components/cd-filters/cd-filters.js: {}
-  dependencies:
-    - common_design/cd-polyfill
-    - common_design/css-vars-ponyfill
 
 cd-grid:
   css:
@@ -121,6 +116,7 @@ cd-table:
     components/cd-table/cd-table.js: {}
   dependencies:
     - common_design/css-vars-ponyfill
+    - common_design/array-from-polyfill
 
 cd-teaser:
   css:
@@ -143,7 +139,14 @@ cd-polyfill:
     js/cd-polyfill.js: { attributes: { nomodule: true } }
 
 # CSS custom properties polyfill for IE11.
+# https://jhildenbiddle.github.io/css-vars-ponyfill
 css-vars-ponyfill:
   js:
     https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2: { type: external, minified: true }
     js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
+
+# Array.from polyfill for IE11.
+# https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
+array-from-polyfill:
+  js:
+    js/array-from-polyfill.js: { attributes: { nomodule: true } }
