@@ -76,6 +76,8 @@ cd-filters:
   css:
     component:
       components/cd-filters/cd-filters.css: {}
+  dependencies:
+    - common_design/cd-dropdown
 
 cd-grid:
   css:
