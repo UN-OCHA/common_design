@@ -72,10 +72,10 @@ cd-date:
   dependencies:
     - common_design/css-vars-ponyfill
 
-cd-filters:
+cd-filter:
   css:
     component:
-      components/cd-filters/cd-filters.css: {}
+      components/cd-filter/cd-filter.css: {}
 
 cd-grid:
   css:
