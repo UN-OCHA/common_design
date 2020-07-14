@@ -12,9 +12,10 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Variables for breakpoints, colours, font sizes, fonts, measurements and z-index
 * Mixins for clearfix, REM font sizes and media queries
 * Custom javascript for dropdown behaviour
+* See [common_design implementation notes](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
 
 There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) available
-   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/master/README.md)
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and remove the .git folder (all the implementation specific work should happen in the subtheme). Optionally rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/master/README.md)
 
 **Drupal components:**
 
@@ -22,10 +23,9 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 * jQuery is [included in Drupal core](https://github.com/UN-OCHA/common-design-site/blob/develop/html/core/core.libraries.yml#L362) but is not loaded globally. We include it as a library only when we need it.
 * [hidden.module.css](https://github.com/UN-OCHA/common-design-site/blob/develop/html/core/modules/system/css/components/hidden.module.css) is included in Drupal core for display-related utility classes
 
-**Optional components:**
+**Additional components:**
 
 * Typography
-* Basic table styles
 * Basic form styles
 * Component library
    * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials, or used with `@extend` Sass rule.
