@@ -1,18 +1,19 @@
-{{ attach_library('common_design/cd-filters') }}
+{{ attach_library('common_design/cd-filter') }}
 {{ attach_library('common_design/cd-button') }}
 
-<div id="cd-filters" {{ attributes.setAttribute('aria-labelledby', 'cd-filters-toggle').setAttribute('data-cd-toggable', 'Filters').setAttribute('data-cd-component', 'cd-filters').setAttribute('data-cd-icon', 'arrow-down').setAttribute('data-cd-toggable-keep', 'true').addClass('cd-filters') }}>
-  <div class="cd-filters__form">
+<div class="cd-filter">
+  <div class="cd-filter__form">
     <h2 class="visually-hidden">Filter results</h2>
+    <p>Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
     <form>
-      <div class="cd-filters__group">
+      <div class="cd-filter__group">
         <label for="published-date-range">Date Range</label>
         <label class="visually-hidden" for="published-date-start">Start date</label>
-        <input class="cd-filters__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
+        <input class="cd-filter__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
         <label class="visually-hidden" for="published-date-end">End date</label>
-        <input class="cd-filters__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
+        <input class="cd-filter__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
       </div>
-      <div class="cd-filters__group">
+      <div class="cd-filter__group">
         <label for="mySelect">Select element</label>
         <select id="mySelect" name="options">
           <option value="opt1">Option one</option>
@@ -20,11 +21,11 @@
           <option value="opt3">Option three</option>
         </select>
         <span class="spinner disabled">
-          <div class="double-bounce1"></div>
-          <div class="double-bounce2"></div>
-        </span>
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </span>
       </div>
-      <div class="cd-filters__group">
+      <div class="cd-filter__group">
         <fieldset>
           <legend>Title</legend>
           <ul>
@@ -43,9 +44,9 @@
           </ul>
         </fieldset>
       </div>
-      <div class="cd-filters__group">
+      <div class="cd-filter__group">
         <label for="keyword-search">Keyword search</label>
-        <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filters__input" name="keys" value="" size="15" maxlength="128">
+        <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filter__input" name="keys" value="" size="15" maxlength="128">
       </div>
 
       <div class="cd-export">
