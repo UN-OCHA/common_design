@@ -106,7 +106,6 @@
 
   .cd-filters {
     margin-bottom: 2rem;
-    --dropdown: false;
   }
 
   /*This is needed for IE11
@@ -114,8 +113,10 @@
   --dropdown: false; property on filter container is not recognised
   so the cd-dropdown.js creates a toggler button on desktop
   This hides it when that happens.*/
-  .cd-filters__btn {
-    display: none;
+  @media all and (-ms-high-contrast: none) {
+    .cd-filters__btn {
+      display: none;
+    }
   }
 
   .cd-filters__form form {
