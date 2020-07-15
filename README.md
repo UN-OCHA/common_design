@@ -2,7 +2,7 @@
 
 ## Releases
 
-Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) for latest updates. We use [npm-version](https://docs.npmjs.com/cli/version) and [sematantic versioning](https://semver.org/)
+Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) for latest updates. We use [npm-version](https://docs.npmjs.com/cli/version) and [semantic versioning](https://semver.org/)
 
 ## This theme contains
 
@@ -40,7 +40,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 
 ## Getting started
 
-1. Clone this repo to `/themes/contrib/` or install using Composer
+1. Clone this repo to `/themes/contrib/` or install using `composer require unocha/common_design`
 2. Clone the [common_design_subtheme](https://github.com/UN-OCHA/common_design_subtheme) repo to `/themes/custom/`
 3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' (or whatever you've renamed it to), and select **Enable and set default**
 
