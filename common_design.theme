@@ -73,7 +73,6 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 //    $form['#attributes']['class'][] = 'cd-search--inline__form';
 //    $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
 //    $form['#attributes']['data-cd-toggable'][] = 'Search';
-//    $form['#attributes']['data-cd-hidden'][] = 'true';
 //    $form['#attributes']['data-cd-icon'][] = '';
 //    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
 //    $form['#attributes']['data-cd-logo'][] = 'search';
@@ -117,7 +116,6 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 //      $form['#attributes']['class'][] = 'cd-search--inline__form';
 //      $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
 //      $form['#attributes']['data-cd-toggable'][] = 'Search';
-//      $form['#attributes']['data-cd-hidden'][] = 'true';
 //      $form['#attributes']['data-cd-icon'][] = '';
 //      $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
 //      $form['#attributes']['data-cd-logo'][] = 'search';
