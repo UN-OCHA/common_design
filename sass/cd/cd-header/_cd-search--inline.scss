@@ -211,10 +211,10 @@
 
     // This is needed for IE11
     // No support for CSS custom properties means
-    // --dropdown: false; property on nav container is not recognised
+    // --dropdown: false; property on search container is not recognised
     // so the cd-dropdown.js does not run the updateToggler function
     // which toggles the data-cd-hidden attribute.
-    // This displays the nav regardless of that attribute value.
+    // This displays the search regardless of that attribute value.
     @media all and (-ms-high-contrast: none) {
       &[data-cd-hidden='true'] {
         display: block;
