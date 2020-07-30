@@ -30,9 +30,6 @@
   {% if items %}
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('menu') }}>
-        <svg class="cd-icon cd-icon--user">
-          <use xlink:href="#cd-icon--user"></use>
-        </svg>
     {% else %}
       {%
         set secondLevelClasses = [
@@ -53,6 +50,11 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
+      {% if menu_level == 0 and loop.index == 1 %}
+        <svg class="cd-icon cd-icon--user">
+          <use xlink:href="#cd-icon--user"></use>
+        </svg>
+      {% endif %}
 
       {% if not (item.is_expanded) and (item.title  == '%username%') %}
 
