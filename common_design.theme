@@ -58,6 +58,8 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['#attributes']['data-cd-icon'][] = '';
     $form['#attributes']['data-cd-component'][] = 'cd-search';
     $form['#attributes']['data-cd-logo'][] = 'search';
+    // Focus the input when clicking on the toggler button.
+    $form['#attributes']['data-cd-focus-target'] = 'cd-search';
     $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
     $form['keys']['#attributes']['id'][] = 'cd-search';
@@ -76,6 +78,8 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 //    $form['#attributes']['data-cd-icon'][] = '';
 //    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
 //    $form['#attributes']['data-cd-logo'][] = 'search';
+//    // Focus the input when clicking on the toggler button.
+//    $form['#attributes']['data-cd-focus-target'] = 'cd-search--inline';
 //    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
 //    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
 //    $form['keys']['#attributes']['type'][] = 'search';
@@ -100,6 +104,8 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['#attributes']['data-cd-icon'][] = '';
     $form['#attributes']['data-cd-component'][] = 'cd-search';
     $form['#attributes']['data-cd-logo'][] = 'search';
+    // Focus the input when clicking on the toggler button.
+    $form['#attributes']['data-cd-focus-target'] = 'cd-search';
     $form['keys']['#attributes']['placeholder'] = t('What are you looking for?');
     $form['keys']['#attributes']['class'][] = 'cd-search__input';
     $form['keys']['#attributes']['type'][] = 'search';
@@ -119,6 +125,8 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 //      $form['#attributes']['data-cd-icon'][] = '';
 //      $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
 //      $form['#attributes']['data-cd-logo'][] = 'search';
+//      // Focus the input when clicking on the toggler button.
+//      $form['#attributes']['data-cd-focus-target'] = 'cd-search--inline';
 //      $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
 //      $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
 //      $form['keys']['#attributes']['type'][] = 'search';
