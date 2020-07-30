@@ -43,7 +43,7 @@
 
 {{ attach_library('common_design/cd-user-menu') }}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<nav{{ attributes.setAttribute('aria-labelledby', heading_id).addClass(classes)|without('role') }}>
+<nav role="navigation" {{ attributes.setAttribute('aria-labelledby', heading_id).addClass(classes)|without('role') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
