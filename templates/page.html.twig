@@ -68,8 +68,8 @@
   {{ page.help }}
 
   {% block main %}
-    <main role="main" {{ attributes.addClass(layout_classes) }}>
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {# Link to skip to the main content is in html.html.twig #}
+    <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(layout_classes) }}>
 
       {% if page.sidebar_first %}
         {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
