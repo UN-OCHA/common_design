@@ -7,19 +7,19 @@ cd-dropdown:
   js:
     js/cd-dropdown.js: {}
   dependencies:
-  - common_design/cd-polyfill
+    - common_design/cd-polyfill
 
 cd-menu:
   js:
     js/cd-menu.js: {}
   dependencies:
-  - common_design/cd-dropdown
+    - common_design/cd-dropdown
 
 cd-user-menu:
   js:
     js/cd-user-menu.js: {}
   dependencies:
-  - common_design/cd-dropdown
+    - common_design/cd-dropdown
 
 # CD components
 cd-alert:
