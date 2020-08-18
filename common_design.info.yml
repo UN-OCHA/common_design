@@ -10,6 +10,7 @@ logo: 'img/logos/ocha-lockup-blue.svg'
 libraries:
 - core/drupal
 - common_design/global-styling
+- common_design/cd-dropdown
 
 # Regions
 regions:

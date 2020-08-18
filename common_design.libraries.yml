@@ -21,18 +21,6 @@ cd-user-menu:
   dependencies:
   - common_design/cd-dropdown
 
-cd-search:
-  js:
-    js/cd-search.js: {}
-  dependencies:
-  - common_design/cd-dropdown
-
-cd-search--inline:
-  js:
-    js/cd-search--inline.js: {}
-  dependencies:
-  - common_design/cd-dropdown
-
 # CD components
 cd-alert:
   css:
