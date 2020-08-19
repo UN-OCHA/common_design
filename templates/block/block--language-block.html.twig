@@ -36,18 +36,12 @@
 ]
 %}
 
-{{ attach_library('common_design/cd-language-switcher') }}
-
 <div{{ attributes.addClass(classes) }}>
-
   <div class="cd-language-switcher">
 
     {% block content %}
-
       {{ content }}
-
     {% endblock %}
 
   </div>
-
 </div>

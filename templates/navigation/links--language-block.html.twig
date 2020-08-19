@@ -48,7 +48,7 @@
       <h2{{ heading.attributes }}>{{ heading.text }}</h2>
     {%- endif -%}
   {%- endif -%}
-  <ul{{ attributes.addClass(classes).setAttribute('id', 'cd-language').setAttribute('aria-labelledby', 'cd-language-toggle').setAttribute('role', 'menu').setAttribute('data-cd-toggable', 'en').setAttribute('data-cd-hidden' ,'true').setAttribute('data-cd-icon','arrow-down').setAttribute('data-cd-component', 'cd-language-switcher') }}>
+  <ul{{ attributes.addClass(classes)>
     {%- for item in links -%}
       <li{{ item.attributes }}>
         {%- if item.link -%}
