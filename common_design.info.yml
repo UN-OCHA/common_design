@@ -8,9 +8,9 @@ logo: 'img/logos/ocha-lockup-blue.svg'
 
 # Defines libraries group in which we can add css/js.
 libraries:
-- core/drupal
-- common_design/global-styling
-- common_design/cd-dropdown
+  - core/drupal
+  - common_design/global-styling
+  - common_design/cd-dropdown
 
 # Regions
 regions:
