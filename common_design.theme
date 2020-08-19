@@ -153,6 +153,18 @@ function common_design_preprocess_html(&$vars) {
     '#type' => 'inline_template',
     '#template' => '<span class="hidden">' . $icons . '</span>',
   );
+
+  // Check if current request is an exception to get error type
+  $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
+
+  // add body classes.
+  if ($status_code && $status_code->getStatusCode() == 404) {
+    $vars['attributes']['class'][] = 'path-error path-error--404';
+  }
+
+  if ($status_code && $status_code->getStatusCode() == 403) {
+    $vars['attributes']['class'][] = 'path-error path-error--403';
+  }
 }
 
 ///**
