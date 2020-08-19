@@ -77,6 +77,8 @@
 
     <div class="cd-layout-content">
 
+      {{ page.content }}
+
       {% if componentsModule %}
 
         <h2>Components</h2>
@@ -122,8 +124,6 @@
   {#      {% include '@cd-components/cd-hero/cd-hero.html.twig' %}#}
 
       {% endif %}
-
-      {{ page.content }}
 
     </div>{# /.layout-content #}
 
