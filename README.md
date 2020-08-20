@@ -30,7 +30,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 * Component library
    * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials, or used with `@extend` Sass rule.
    * Requires Drupal [Components module](https://www.drupal.org/project/components)
-   * See [Common Design demo](https://commondesign.demo.ahconu.org/demo) for Component examples.
+   * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples.
 * Favicons
 * gulp.js workflow for frontend development
   * Sass
