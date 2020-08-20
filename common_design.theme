@@ -28,6 +28,16 @@ function common_design_preprocess(&$variables, $hook) {
   }
 }
 
+function common_design_preprocess_page_title(&$vars) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+//  if( $node->getType() == 'basic' ) {
+//    $vars['title'] = "";
+//  }
+  if( $node) {
+    $vars['title'] = "";
+  }
+}
+
 /**
  * @param $suggestions
  * @param array $variables
