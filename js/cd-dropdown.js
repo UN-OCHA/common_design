@@ -186,6 +186,8 @@
       var useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
       useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#cd-icon--' + name);
       svgElem.setAttribute('class', 'cd-icon cd-icon--' + name);
+      svgElem.setAttribute('width', '16');
+      svgElem.setAttribute('height', '16');
       svgElem.appendChild(useElem);
 
       if (component && wrap) {
