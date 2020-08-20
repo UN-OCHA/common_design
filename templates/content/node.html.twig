@@ -78,7 +78,6 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-layout-with-section-sidebar'
   ]
 %}
 {{ attach_library('classy/node') }}
@@ -86,9 +85,15 @@
 
   {{ title_prefix }}
   {% if label %}
-    <h1{{ title_attributes.addClass('page-title') }}>
-      {{ label }}
-    </h1>
+    {% if not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% else %}
+      <h1{{ title_attributes.addClass('page-title') }}>
+        {{ label }}
+      </h1>
+    {% endif %}
   {% endif %}
   {{ title_suffix }}
 
@@ -103,23 +108,7 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
-
     {{ content }}
-
-{#    {% block section %}#}
-{#      <section class="cd-layout-two-col">#}
-
-{#        <div class="cd-layout-main-content">#}
-{#          {{ content }}#}
-{#        </div>#}
-
-{#        <div class="cd-layout-sidebar-first" role="complementary">#}
-{#          Other fields on the node can be printed here to create a faux sidebar layout.#}
-{#        </div>#}
-
-{#      </section>#}
-{#    {% endblock %}#}
-
   </div>
 
 </article>
