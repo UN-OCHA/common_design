@@ -188,6 +188,9 @@
       svgElem.setAttribute('class', 'cd-icon cd-icon--' + name);
       svgElem.setAttribute('width', '16');
       svgElem.setAttribute('height', '16');
+      svgElem.setAttribute('aria-hidden', 'true');
+      svgElem.setAttribute('focusable', 'false');
+
       svgElem.appendChild(useElem);
 
       if (component && wrap) {
