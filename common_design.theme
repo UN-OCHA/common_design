@@ -53,7 +53,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
   // This is for Drupal core search block.
   if ($form_id == 'search_block_form') {
     $form['#attributes']['class'][] = 'cd-search__form';
-    $form['#attributes']['aria-labelledby'][] = 'cd-search-btn';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-form';
     $form['#attributes']['data-cd-toggable'][] = 'Search';
     $form['#attributes']['data-cd-icon'][] = '';
     $form['#attributes']['data-cd-component'][] = 'cd-search';
@@ -73,7 +73,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     // There are templates needed for this. Replace cd-search.html.twig
     // with cd-search--inline.html.twig in cd-site-header.html.twig.
 //    $form['#attributes']['class'][] = 'cd-search--inline__form';
-//    $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
+//    $form['#attributes']['aria-labelledby'][] = 'cd-search-form--inline';
 //    $form['#attributes']['data-cd-toggable'][] = 'Search';
 //    $form['#attributes']['data-cd-icon'][] = '';
 //    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
@@ -99,7 +99,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
   // Replace $form['keys'] with the appropriate fulltext input eg. $form['search_api_fulltext'].
   if (in_array($form['#id'], $includeView)) {
     $form['#attributes']['class'][] = 'cd-search__form';
-    $form['#attributes']['aria-labelledby'][] = 'cd-search_btn';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-form';
     $form['#attributes']['data-cd-toggable'][] = 'Search';
     $form['#attributes']['data-cd-icon'][] = '';
     $form['#attributes']['data-cd-component'][] = 'cd-search';
@@ -120,7 +120,7 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     // There are templates needed for this. Replace cd-search.html.twig
     // with cd-search--inline.html.twig in cd-site-header.html.twig.
 //      $form['#attributes']['class'][] = 'cd-search--inline__form';
-//      $form['#attributes']['aria-labelledby'][] = 'cd-search--inline__btn';
+//      $form['#attributes']['aria-labelledby'][] = 'cd-search-form--inline';
 //      $form['#attributes']['data-cd-toggable'][] = 'Search';
 //      $form['#attributes']['data-cd-icon'][] = '';
 //      $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
