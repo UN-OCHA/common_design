@@ -31,6 +31,7 @@
 // Hide default block titles
 .menu--footer h2 {
   @extend .visually-hidden;
+  color: $cd-white;
 }
 
 // Apply menu  styles to Drupal Menu items
