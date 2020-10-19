@@ -38,6 +38,13 @@
 
 <div{{ attributes.addClass(classes) }}>
   <div class="cd-language-switcher">
+    {# Label. If not displayed, we still provide it for screen readers. #}
+    {% if not configuration.label_display %}
+      {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+    {% endif %}
+    {{ title_prefix }}
+    <h2{{ title_attributes.setAttribute('id', 'cd-language-switcher') }}>{{ configuration.label }}</h2>
+    {{ title_suffix }}
 
     {% block content %}
       {{ content }}
