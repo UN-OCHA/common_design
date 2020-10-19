@@ -51,7 +51,7 @@
       %}
       <li{{ item.attributes.addClass(classes) }}>
       {% if menu_level == 0 and loop.index == 1 %}
-        <svg class="cd-icon cd-icon--user" width="16" height="16">
+        <svg class="cd-icon cd-icon--user" width="16" height="16" aria-hidden="true" focusable="false">
           <use xlink:href="#cd-icon--user"></use>
         </svg>
       {% endif %}
@@ -70,7 +70,7 @@
           <span class="cd-user-menu__btn-label">
             {{ username }}
           </span>
-          <svg class="cd-icon cd-icon--arrow-down" width="16" height="16">
+          <svg class="cd-icon cd-icon--arrow-down" width="16" height="16" aria-hidden="true" focusable="false">
             <use xlink:href="#cd-icon--arrow-down"></use>
           </svg>
         </button>

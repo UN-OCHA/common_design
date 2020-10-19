@@ -138,13 +138,14 @@ The icons are black by default. If you need another color, it's best to copy the
 
 2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.tpl.php` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
 ```
-<svg class="cd-icon cd-icon--arrow-down" width="16" height="16">
+<svg class="cd-icon cd-icon--arrow-down" width="16" height="16" aria-hidden="true" focusable="false">
   <use xlink:href="#cd-icon--arrow-down"></use>
 </svg>
 ```
 Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-icon--arrow-down`. We can create associated CSS rules to control dimension and fill.
 
-Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load.
+Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load. 
+If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
 
 We're using https://github.com/jkphl/gulp-svg-sprite. See https://una.im/svg-icons for more details.
 
