@@ -36,7 +36,7 @@
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass('visually-hidden') }}>{{ label }}</h2>
+    <h2{{ title_attributes.addClass('visually-hidden').setAttribute('id', 'cd-search-form') }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
