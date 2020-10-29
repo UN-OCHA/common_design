@@ -39,6 +39,16 @@ cd-banner:
     component:
       components/cd-banner/cd-banner.css: {}
 
+cd-banner-v2:
+  css:
+    component:
+      components/cd-banner-v2/cd-banner.css: {}
+
+cd-bleed:
+  css:
+    component:
+      components/cd-bleed/cd-bleed.css: {}
+
 cd-bullet-list:
   css:
     component:
@@ -74,6 +84,13 @@ cd-hero:
   css:
     component:
       components/cd-hero/cd-hero.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-hero-v2:
+  css:
+    component:
+      components/cd-hero-v2/cd-hero.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
