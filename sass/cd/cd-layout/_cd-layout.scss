@@ -4,10 +4,6 @@
 
 html {
   height: 100%;
-
-  @include desktop {
-    padding: 0 $cd-site-padding;
-  }
 }
 
 body {
@@ -23,9 +19,9 @@ body {
 }
 
 .cd-layout-container {
-  background: $cd-white;
+  //background: $cd-white;
   margin: 0 auto;
-  max-width: $cd-max-body-width;
+  //max-width: $cd-max-body-width;
   min-height: 100%;
   padding: 0;
 
@@ -42,7 +38,7 @@ body {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 98px 1fr auto; // Height of header.
+      grid-template-rows: 101px 1fr auto; // Height of header.
 
       .no-js & {
         grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
@@ -63,12 +59,24 @@ body {
   width: 100%;
   max-width: $cd-max-width;
 
+  //.cd-site-header & {
+  //  padding: 0 0 0 $cd-container-padding; // aligns menu items flush right.
+  //}
+
   @include tablet {
     padding: 0 $cd-container-padding-tablet;
+
+    //.cd-site-header & {
+    //  padding: 0 0 0 $cd-container-padding-tablet; // aligns menu items flush right.
+    //}
   }
 
   @include xlarge {
-    padding: 0 $cd-container-padding-xlarge;
+    padding: 0;
+
+    //.cd-site-header & {
+    //  padding: 0 0 0 $cd-container-padding-xlarge; // aligns menu items flush right.
+    //}
   }
 }
 
@@ -86,6 +94,7 @@ body {
 // .cd-container is used as a utility class on other divs, for common padding, width control.
 .cd-layout-container main.cd-container {
   padding-top: 2rem;
+  background: $cd-white;
 
   @include tablet {
     padding-top: 3rem;
