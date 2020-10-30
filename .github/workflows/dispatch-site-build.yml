@@ -14,13 +14,7 @@ jobs:
           token: ${{ secrets.UNOCHA_JENKINS_ACCESS_TOKEN }}
           repo: common-design-site
           owner: UN-OCHA
-          event_type: push
-          message: |
-            {
-              "ref": "refs/head/feature/cd-226-design-system",
-              "pusher": "${{ github.actor }}"
-            }
-
+          event_type: dispatch_push
       - name: Flowdock Notify
         uses: docker://unocha/actions:flowdock-notify-v3
         env:
