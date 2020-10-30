@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.UNOCHA_JENKINS_ACCESS_TOKEN }}
           repo: common-design-site
           owner: UN-OCHA
-          event_type: dispatch_push
+          event_type: dispatch-site-build
       - name: Flowdock Notify
         uses: docker://unocha/actions:flowdock-notify-v3
         env:
