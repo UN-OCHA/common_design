@@ -187,3 +187,4 @@ Progressive enhancement approach to layout, using Feature Queries to detect supp
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
+
