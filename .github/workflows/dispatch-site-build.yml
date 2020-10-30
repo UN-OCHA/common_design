@@ -6,27 +6,25 @@ on:
       - cd-226-design-system
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Dispatch to `common-design-site`
-      runs-on: ubuntu-latest
-      steps:
-        - name: Emit a fake push on common-design-site
-          uses: mvasigh/dispatch-action@main
-          with:
-            token: ${{ secrets.UNOCHA_JENKINS_ACCESS_TOKEN }}
-            repo: common-design-site
-            owner: UN-OCHA
-            event_type: push
-            message: |
-              {
-                "ref": "refs/head/feature/cd-226-design-system",
-                "pusher": "${{ github.actor }}"
-              }
+      - name: Emit a fake push on common-design-site
+        uses: mvasigh/dispatch-action@main
+        with:
+          token: ${{ secrets.UNOCHA_JENKINS_ACCESS_TOKEN }}
+          repo: common-design-site
+          owner: UN-OCHA
+          event_type: push
+          message: |
+            {
+              "ref": "refs/head/feature/cd-226-design-system",
+              "pusher": "${{ github.actor }}"
+            }
 
-    - name: Flowdock Notify
-      uses: docker://unocha/actions:flowdock-notify-v3
-      env:
-        FLOWDOCK_TOKEN: ${{ secrets.FLOWDOCK_TOKEN }}
-        FLOWDOCK_ICON: 'mega'
-        FLOWDOCK_MESSAGE: 'Doing a pretend push to `unocha/common-design-site` from ${{ github.ref }} to trigger a build.'
-        FLOWDOCK_TAGS: 'ping,theme,${{ github.actor }}'
+      - name: Flowdock Notify
+        uses: docker://unocha/actions:flowdock-notify-v3
+        env:
+          FLOWDOCK_TOKEN: ${{ secrets.FLOWDOCK_TOKEN }}
+          FLOWDOCK_ICON: 'mega'
+          FLOWDOCK_MESSAGE: 'Doing a pretend push to `unocha/common-design-site` from ${{ github.ref }} to trigger a build.'
+          FLOWDOCK_TAGS: 'ping,theme,${{ github.actor }}'
