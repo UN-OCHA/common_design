@@ -68,6 +68,11 @@
 .cd-ocha-dropdown {
   padding: 22px 0;
   width: 100%;
+
+  @include xlarge {
+    width: $cd-max-width;
+    left: auto;
+  }
 }
 
 .cd-ocha-dropdown__inner {
