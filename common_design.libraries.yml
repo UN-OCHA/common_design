@@ -94,6 +94,27 @@ cd-hero-v2:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-hero--style-one:
+  css:
+    component:
+      components/cd-hero-v2/cd-hero--style-one.css: {}
+  dependencies:
+    - common_design/cd-hero-v2
+
+cd-hero--style-two:
+  css:
+    component:
+      components/cd-hero-v2/cd-hero--style-two.css: {}
+  dependencies:
+    - common_design/cd-hero-v2
+
+cd-hero--style-three:
+  css:
+    component:
+      components/cd-hero-v2/cd-hero--style-three.css: {}
+  dependencies:
+    - common_design/cd-hero-v2
+
 cd-image-grid:
   css:
     component:
