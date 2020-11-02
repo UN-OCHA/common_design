@@ -125,7 +125,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 // Hide default block titles
-.cd-global-header .block-locale h2,
+.cd-global-header .block--language h2,
 .cd-global-header .block-menu h2 {
   @extend .visually-hidden;
 }
