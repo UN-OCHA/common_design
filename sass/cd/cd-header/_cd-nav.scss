@@ -5,8 +5,8 @@
 .cd-nav__btn {
   background: transparent;
   border: 0 none $cd-border-color;
-  border-left: 1px solid $cd-border-color;
-  border-right: 1px solid $cd-border-color;
+  //border-left: 1px solid $cd-border-color;
+  //border-right: 1px solid $cd-border-color;
   @include font-size($cd-font-size-small);
   color: $cd-default-text-color;
   height: $cd-site-header-height;
@@ -40,10 +40,10 @@
     color: $cd-dark-text-color;
 
     &::before {
-      bottom: -3px;
+      bottom: -6px;
       content: '';
       background: $cd-highlight-red;
-      height: 3px;
+      height: 6px;
       left: -1px;
       position: absolute;
       right: -1px;
@@ -78,12 +78,12 @@
     @include max-width(lg) {
       &[data-cd-hidden='false'] {
         background: $cd-white;
-        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 3px));
+        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 6px));
         padding: 20px 0 36px;
         position: absolute;
         right: 0;
         left: 0;
-        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 3px);
+        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 6px);
       }
 
       &[data-cd-hidden='false'] > ul {
@@ -187,7 +187,7 @@
       max-width: 300px;
       min-width: 200px;
       padding: 20px 0;
-      top: calc(#{$cd-site-header-height} + 3px); // border-bottom height
+      top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
       position: absolute;
     }
   }
@@ -215,7 +215,7 @@
         &::before {
           position: absolute;
           content: '';
-          width: 3px;
+          width: 6px;
           top: 0;
           height: 48px; // Height of menu item.
           left: 15px; // Half of the left padding.
@@ -246,7 +246,7 @@
           &::before {
             position: absolute;
             content: '';
-            width: 3px;
+            width: 6px;
             top: 0;
             height: 48px; // Height of menu item.
             left: 15px; // Half of the left padding.
@@ -281,10 +281,10 @@
       }
 
       > .menu-item {
-        border-right: 1px solid $cd-border-color;
+        //border-right: 1px solid $cd-border-color;
 
         &:first-child {
-          border-left: 1px solid $cd-border-color;
+          //border-left: 1px solid $cd-border-color;
         }
 
         &:last-child {
@@ -310,10 +310,10 @@
           transition: background 0.3s ease;
 
           &::before {
-            bottom: -3px;
+            bottom: -6px;
             content: '';
             background: transparent;
-            height: 3px;
+            height: 6px;
             left: -1px;
             position: absolute;
             right: -1px;
@@ -346,12 +346,12 @@
           }
 
           &.is-active {
-            border-left: 3px solid $cd-highlight-red;
+            border-left: 6px solid $cd-highlight-red;
           }
         }
 
         > li.menu-item--active-trail .is-active {
-          border-left: 3px solid $cd-highlight-red;
+          border-left: 6px solid $cd-highlight-red;
         }
       }
     }
