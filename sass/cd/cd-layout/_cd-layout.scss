@@ -3,11 +3,11 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 html {
+  //background: $cd-site-bg-color;
   height: 100%;
 }
 
 body {
-  background: $cd-site-bg-color;
   min-height: 100%;
 
   // &:not(.user-logged-in) {
@@ -59,24 +59,12 @@ body {
   width: 100%;
   max-width: $cd-max-width;
 
-  //.cd-site-header & {
-  //  padding: 0 0 0 $cd-container-padding; // aligns menu items flush right.
-  //}
-
   @include tablet {
     padding: 0 $cd-container-padding-tablet;
-
-    //.cd-site-header & {
-    //  padding: 0 0 0 $cd-container-padding-tablet; // aligns menu items flush right.
-    //}
   }
 
   @include xlarge {
-    padding: 0;
-
-    //.cd-site-header & {
-    //  padding: 0 0 0 $cd-container-padding-xlarge; // aligns menu items flush right.
-    //}
+    padding: 0 $cd-container-padding-xlarge;
   }
 }
 
