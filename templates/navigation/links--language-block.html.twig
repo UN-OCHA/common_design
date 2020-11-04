@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for a set of links.
+ * Theme override for the language switcher links.
  *
  * Available variables:
  * - attributes: Attributes for the UL containing the list of links.
@@ -35,20 +35,12 @@
 {%
   set classes = [
     'cd-global-header__dropdown',
-    'cd-dropdown',
     'cd-user-menu__dropdown'
   ]
 %}
 
 {% if links -%}
-  {%- if heading -%}
-    {%- if heading.level -%}
-      <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
-    {%- else -%}
-      <h2{{ heading.attributes }}>{{ heading.text }}</h2>
-    {%- endif -%}
-  {%- endif -%}
-  <ul{{ attributes.addClass(classes).setAttribute('id', 'cd-language').setAttribute('aria-labelledby', 'cd-language-switcher').setAttribute('data-cd-toggable', "#{language}").setAttribute('data-cd-icon','arrow-down').setAttribute('data-cd-component', 'cd-language-switcher') }}>
+  <ul{{ attributes.addClass(classes) }}>
     {%- for item in links -%}
       <li{{ item.attributes }}>
         {%- if item.link -%}
