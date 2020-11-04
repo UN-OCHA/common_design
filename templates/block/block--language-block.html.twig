@@ -1,9 +1,10 @@
 {#
 /**
  * @file
- * Theme override to display a block.
+ * Theme override to display the language switcher block.
  *
  * Available variables:
+ * - language: current language.
  * - plugin_id: The ID of the block implementation.
  * - label: The configured label of the block if visible.
  * - configuration: A list of the block's configuration values.
@@ -37,7 +38,14 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="cd-language-switcher">
+  <div{{ create_attribute({
+    'class': ['cd-language-switcher', 'cd-dropdown'],
+    'id': 'cd-language',
+    'aria-labelledby': 'cd-language-switcher',
+    'data-cd-toggable': "#{language}",
+    'data-cd-icon': 'arrow-down',
+    'data-cd-component': 'cd-language-switcher',
+  }) }}>
     {# Label. If not displayed, we still provide it for screen readers. #}
     {% if not configuration.label_display %}
       {% set title_attributes = title_attributes.addClass('visually-hidden') %}
