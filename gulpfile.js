@@ -88,6 +88,27 @@ function sassCompileTask() {
 
 
 //——————————————————————————————————————————————————————————————————————————————
+// Tailwind
+//——————————————————————————————————————————————————————————————————————————————
+function tailwind() {
+  browserSync.notify(`Compiling Tailwind...`);
+
+  return gulp.src(['src/tailwind.css'])
+    .pipe(postcss([
+      // ...
+      require('tailwindcss'),
+      require('autoprefixer'),
+      // ...
+      cssnano(),
+    ]))
+    // ...
+    .pipe(gulp.dest('css/'));
+};
+
+const tailwindTask = gulp.series(tailwind);
+exports.tailwind = tailwindTask;
+
+//——————————————————————————————————————————————————————————————————————————————
 // Sass Linting
 //——————————————————————————————————————————————————————————————————————————————
 function sassLintTask() {
