@@ -1,6 +1,7 @@
 global-styling:
   css:
     theme:
+      css/tailwind.css: {}
       css/styles.css: {}
 
 cd-dropdown:
