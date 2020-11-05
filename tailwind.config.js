@@ -8,7 +8,13 @@ module.exports = {
     layers: ['components', 'utilities'],
     content: ['./templates/**/*.html.twig', './components/**/*.html,', './components/**/*.html.twig']
   },
-  theme: {},
+  theme: {
+    extend: {
+      outline: {
+        ocha: ['2px solid var(--cd-bright-blue)', '2px']
+      }
+    }
+  },
   variants: {},
   plugins: [],
 }
