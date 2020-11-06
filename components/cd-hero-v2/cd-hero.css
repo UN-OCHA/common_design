@@ -39,23 +39,23 @@
   color: var(--cd-dark-grey);
 }
 
-.cd-hero__link {
-  display: block;
-  width: auto;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  font-weight: 700;
-  text-decoration: none;
-  color: white;
-  background-color: var(--cd-ocha-blue);
-  transition: background-color 1s ease-out;
-}
+/*.cd-hero__link {*/
+/*  display: block;*/
+/*  width: auto;*/
+/*  padding: 0.5rem 1rem;*/
+/*  text-align: center;*/
+/*  font-weight: 700;*/
+/*  text-decoration: none;*/
+/*  color: white;*/
+/*  background-color: var(--cd-ocha-blue);*/
+/*  transition: background-color 1s ease-out;*/
+/*}*/
 
-.cd-hero__link:hover,
-.cd-hero__link:focus {
-  color: white;
-  background-color: var(--cd-dark-blue);
-}
+/*.cd-hero__link:hover,*/
+/*.cd-hero__link:focus {*/
+/*  color: white;*/
+/*  background-color: var(--cd-dark-blue);*/
+/*}*/
 
 .cd-hero__caption {
   text-align: right;
