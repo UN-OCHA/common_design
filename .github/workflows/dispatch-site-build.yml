@@ -20,7 +20,7 @@ jobs:
               "branch": "${{ github.ref }}"
             }
       - name: Flowdock Notify
-        uses: docker://unocha/actions:flowdock-notify-v3
+        uses: docker://unocha/actions:flowdock-notify-main
         env:
           FLOWDOCK_TOKEN: ${{ secrets.FLOWDOCK_TOKEN }}
           FLOWDOCK_ICON: 'mega'
