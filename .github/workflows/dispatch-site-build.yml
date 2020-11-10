@@ -15,6 +15,10 @@ jobs:
           repo: common-design-site
           owner: UN-OCHA
           event_type: dispatch-site-build
+          message: |
+            {
+              "branch": "${{ github.ref }}"
+            }
       - name: Flowdock Notify
         uses: docker://unocha/actions:flowdock-notify-v3
         env:
