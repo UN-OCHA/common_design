@@ -33,3 +33,10 @@ common_design.xl:
   multipliers:
     - 1x
     - 2x
+common_design.xxl:
+  label: xxlarge
+  mediaQuery: "(min-width: 1400px)"
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
