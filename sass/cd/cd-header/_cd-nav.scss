@@ -280,6 +280,7 @@
         flex: 1 0 auto;
       }
 
+      // sass-lint:disable nesting-depth
       > .menu-item {
         &:last-child {
           > ul.menu {
