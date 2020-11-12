@@ -1,5 +1,7 @@
 {# Displays the site footer #}
 
+{{ attach_library('common_design/cd-ocha-services') }}
+
 <footer class="cd-footer" role="contentinfo">
   <div class="cd-container cd-footer__inner">
 
@@ -16,5 +18,11 @@
       {% include '@common_design/cd/cd-footer/cd-copyright.html.twig' %}
     {% endblock %}
 
+
+    {% block ocha %}
+      {% include '@common_design/cd/cd-header/cd-ocha.html.twig' %}
+    {% endblock %}
+
   </div>
 </footer>
+
