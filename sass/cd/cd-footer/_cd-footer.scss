@@ -3,7 +3,8 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer {
-  //grid-row: 4 / 4; // Position footer so visible on short pages.
+  // Position footer at the bottom of viewport. This might need adjusting based on page layout.
+  grid-row: 4 / 4;
   background: $cd-primary-bg-color;
   color: $cd-white-text-color;
   padding: 48px 0 0;
