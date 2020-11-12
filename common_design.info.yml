@@ -11,6 +11,7 @@ libraries:
   - core/drupal
   - common_design/global-styling
   - common_design/cd-dropdown
+  - common_design/cd-button
 
 # Regions
 regions:
