@@ -74,6 +74,7 @@
 
 /* When it's an anchor styled as a button */
 a.cd-button {
+  display: inline-block;
   text-decoration: none;
   cursor: pointer;
 }
