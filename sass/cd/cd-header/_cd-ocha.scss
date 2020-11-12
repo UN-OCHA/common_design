@@ -191,15 +191,10 @@
 }
 
 .cd-ocha-dropdown__see-all {
-  width: 100%;
   @include font-size($cd-font-size-small);
+  display: inline-block;
+  width: 100%;
   padding: 10px;
-  //background: $cd-bright-blue;
-  //color: $cd-dark-blue;
-
-  //&:focus {
-  //  outline: 3px $cd-black solid;
-  //}
 
   @include tablet {
     position: absolute;
