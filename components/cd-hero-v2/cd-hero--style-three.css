@@ -8,18 +8,20 @@
 
 .cd-hero--style-three .cd-hero__title {
   font-size: 1.125rem; /* 18px */
-  display: inline;
+  margin: 0 0 0.5rem;
 }
 
 .cd-hero--style-three .cd-hero__container {
   text-align: left;
+  padding: 1rem;
 }
 
+/*
 .cd-hero--style-three .cd-hero__date {
   padding-left: 0.5rem;
   margin-left: 0.5rem;
   border-left: 1px solid var(--cd-dark-grey);
-}
+}*/
 
 @media (min-width: 1024px) {
   .cd-hero--style-three .cd-hero__container {
