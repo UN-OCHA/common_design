@@ -10,12 +10,13 @@ html {
 body {
   min-height: 100%;
 
-  // &:not(.user-logged-in) {
-  //   @supports (display: grid) {
-  //     display: grid;
-  //     grid-template-rows: 1fr auto;
-  //   }
-  // }
+  // Position footer at the bottom of viewport. This might need adjusting based on page layout.
+  &:not(.user-logged-in) {
+    @supports (display: grid) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+  }
 }
 
 .cd-layout-container {

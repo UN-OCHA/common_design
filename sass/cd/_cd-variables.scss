@@ -22,7 +22,8 @@ $grid-breakpoints: (
 $cd-breakpoints: (
   tablet: #{map-get($grid-breakpoints, 'md')},
   desktop: #{map-get($grid-breakpoints, 'lg')},
-  xlarge: #{map-get($grid-breakpoints, 'xl')}
+  xlarge: #{map-get($grid-breakpoints, 'xl')},
+  xxlarge: #{map-get($grid-breakpoints, 'xxl')}
 );
 
 

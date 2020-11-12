@@ -218,11 +218,6 @@
 }
 
 @include xlarge {
-  .cd-search__form {
-    left: 8px;
-    right: 8px;
-  }
-
   .cd-search__form form {
     padding: 8px $cd-container-padding-xlarge;
   }

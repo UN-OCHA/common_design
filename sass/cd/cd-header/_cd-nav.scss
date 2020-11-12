@@ -280,13 +280,8 @@
         flex: 1 0 auto;
       }
 
+      // sass-lint:disable nesting-depth
       > .menu-item {
-        //border-right: 1px solid $cd-border-color;
-
-        &:first-child {
-          //border-left: 1px solid $cd-border-color;
-        }
-
         &:last-child {
           > ul.menu {
             left: auto;
