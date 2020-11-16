@@ -32,15 +32,14 @@ $cd-breakpoints: (
 //——————————————————————————————————————————————————————————————————————————————
 
 // @TODO: get rid of this thing
-$cd-base-unit: 8px;
-$cd-site-padding: $cd-base-unit;
+$cd-base-unit: 0.5rem; /* 8px */
 
 $cd-max-body-width: 1400px;
 $cd-max-width: 1220px;
 
-$cd-container-padding: 12px;
-$cd-container-padding-tablet: 24px;
-$cd-container-padding-xlarge: 40px;
+$cd-container-padding: 0.75rem; /* 12px */
+$cd-container-padding-tablet: 1.5rem; /* 24px */
+$cd-container-padding-xlarge: 2.5rem; /* 40px */
 
 $cd-global-header-height: 35px;
 $cd-site-header-height: 60px;
@@ -65,9 +64,10 @@ $cd-site-header-height: 60px;
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
   --cd-max-width: 1220px;
-  --cd-container-padding: 12px;
-  --cd-container-padding-tablet: 24px;
-  --cd-container-padding-xlarge: 40px;
+  --cd-container-padding: 0.75rem; /* 12px */
+  --cd-container-padding-tablet: 1.5rem; /* 24px */
+  --cd-container-padding-xlarge: 2.5rem; /* 40px */
+  --cd-flow-space: 1rem;
 }
 
 // Colour palette
