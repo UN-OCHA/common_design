@@ -49,9 +49,11 @@ cd-banner-v2:
       components/cd-banner-v2/cd-banner.css: {}
 
 cd-bleed:
+  js:
+    components/cd-bleed/cd-bleed.js: {}
   css:
     component:
-      components/cd-bleed/cd-bleed.css: {}
+      components/cd-bleed/cd-bleed.css: { weight: 1 }
 
 cd-bullet-list:
   css:
@@ -66,6 +68,11 @@ cd-button:
       components/cd-button/cd-button.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
+
+cd-caption:
+  css:
+    component:
+      components/cd-caption/cd-caption.css: {}
 
 cd-date:
   css:
