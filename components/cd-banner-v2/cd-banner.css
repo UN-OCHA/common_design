@@ -11,18 +11,13 @@
   height: 23.125rem; /* 370px */
 }
 
-.cd-banner__caption {
-  text-align: right;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-@media (min-width: 1366px) {
+@media (min-width: 1200px) {
   .cd-banner__image {
     object-fit: none;
   }
 
-  .cd-full-width .cd-banner__image {
+  .cd-bleed .cd-banner__image,
+  .cd-bleed--background-only .cd-banner__image {
     object-fit: cover;
   }
 }
