@@ -1,0 +1,3 @@
+.cd-flow > * + * {
+  margin-top: var(--cd-flow-space, 1em);
+}
