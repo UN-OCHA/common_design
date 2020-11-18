@@ -40,7 +40,7 @@ table caption {
   word-break: break-word;
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .cd-table th[data-sort-type="numeric"],
   .cd-table .cd-table--amount,
   .cd-table .cd-table--amount-total {
@@ -77,7 +77,7 @@ table caption {
   background: var(--cd-light-grey);
 }
 
-@media (max-width: 575px) {
+@media screen and (max-width: 575px) {
   /* Force table to not be like tables anymore */
   .cd-table--responsive,
   .cd-table--responsive thead,
