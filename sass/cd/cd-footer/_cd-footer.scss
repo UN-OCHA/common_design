@@ -4,10 +4,10 @@
 
 .cd-footer {
   // Position footer at the bottom of viewport. This might need adjusting based on page layout.
-  grid-row: 4 / 4;
+  grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
   background: $cd-primary-bg-color;
   color: $cd-white-text-color;
-  padding: 48px 0 0;
+  padding: 3rem 0 0;
   text-align: center;
   line-height: 1.5;
 
@@ -30,7 +30,7 @@
 
 .cd-footer__section {
   margin: 0 auto;
-  padding-bottom: 48px;
+  padding-bottom: 3rem;
   float: none;
   width: 100%;
 
