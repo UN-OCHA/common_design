@@ -25,22 +25,6 @@
   }
 }
 
-.cd-soft-footer__button {
-  display: inline-block;
-  background: $cd-highlight-red;
-  color: $cd-white-text-color;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 24px;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
-
-  &:hover,
-  &:focus {
-    background: darken($cd-highlight-red, 5%);
-  }
-}
-
 @include tablet {
   // Override container layout so flexbox justify-content works.
   .cd-soft-footer .cd-container::after {
@@ -56,6 +40,6 @@
 
 @include desktop {
   .cd-soft-footer {
-    padding: 32px 0;
+    padding: 2rem 0;
   }
 }
