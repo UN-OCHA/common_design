@@ -1,24 +1,31 @@
 :root {
   /* Define the Primary colour. */
-  /* Currently, --cd-ocha-blue */
-  /* --cd-primary-color: hsl(205, 98%, 36%); */
+  /* Based on OCHA brand guidelines */
+  /* Page 22 https://www.dropbox.com/s/j6tgps8u4u1ht4j/01_visual_identity.pdf?dl=1 */
+
+
+/* Custom properties for IE.
+/* This is needed due to inability to process calc() functions nested within color functions */
+  --cd-ie-primary-color: #1f69b3;
+  --cd-ie-primary-color--light: #82b5e9;
+  --cd-ie-primary-color--dark: #0b2641;
+  --cd-ie-primary-color--lighter: #a8ccf0;
 
   --cd-primary-color-h: 210;
   --cd-primary-color-s: 70%;
-  --cd-primary-color-l: 56%;
+  --cd-primary-color-l: 41%;
   --cd-primary-color: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), var(--cd-primary-color-l));
 
   /* lighten */
-  --cd-primary-color--light: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) + 15%));
+  --cd-primary-color--light: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) + 30%));
 
   /* darken */
-  --cd-primary-color--dark: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) - 25%));
+  --cd-primary-color--dark: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) - 26%));
 
-  /* cd-button--light */
+  /* For cd-button--light */
   /* Change the lightness. Other values remain the same */
-  --cd-primary-color--lighter: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) + 25%));
+  --cd-primary-color--lighter: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) + 39%));
 }
-
 
 /* Backgrounds */
 .cd-background--dark {
@@ -48,16 +55,42 @@
   background-color: var(--cd-primary-color);
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button {
+    background-color: var(--cd-ie-primary-color);
+  }
+}
+
 .cd-button:hover,
 .cd-button:focus {
   color: var(--cd-white);
   background-color: var(--cd-primary-color--light);
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button:hover,
+  .cd-button:focus {
+    background-color: var(--cd-ie-primary-color--light);
+  }
+}
+
 .cd-button:focus {
   /* We remove the outline because we are adding a border. */
+  /* so the rounded corners look nicer on hover */
   outline: 0 solid var(--cd-primary-color--light);
   border: 2px solid var(--cd-primary-color--dark);
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button:focus {
+    /* We remove the outline because we are adding a border. */
+    /* so the rounded corners look nicer on hover */
+    outline: 0 solid var(--cd-ie-primary-color--light);
+    border: 2px solid var(--cd-ie-primary-color--dark);
+  }
 }
 
 /* For buttons on dark backgrounds */
@@ -66,10 +99,29 @@
   background-color: var(--cd-primary-color--lighter);
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  /* For buttons on dark backgrounds */
+  .cd-button--light {
+    color: var(--cd-ie-primary-color--dark);
+    background-color: var(--cd-ie-primary-color--lighter);
+  }
+
+}
+
 .cd-button--light:hover,
 .cd-button--light:focus {
   color: var(--cd-primary-color--dark);
   background-color: var(--cd-primary-color--light);
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button--light:hover,
+  .cd-button--light:focus {
+    color: var(--cd-ie-primary-color--dark);
+    background-color: var(--cd-ie-primary-color--light);
+  }
 }
 
 /* When it's an anchor styled as a button */
@@ -131,26 +183,42 @@ a.cd-button {
   fill: var(--cd-primary-color--dark);
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button--light svg {
+    fill: var(--cd-ie-primary-color--dark);
+  }
+}
+
 .cd-button--light:hover svg,
 .cd-button--light:focus svg {
   fill: var(--cd-primary-color--dark);
 }
 
-.cd-button--export {
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button--light:hover svg,
+  .cd-button--light:focus svg {
+    fill: var(--cd-ie-primary-color--dark);
+  }
+}
+
+.cd-button--export,
+.cd-button--export:hover,
+.cd-button--export:focus {
   background: var(--cd-mid-grey);
   color: var(--cd-white);
   fill: var(--cd-white);
 }
 
-.cd-button--export svg {
+.cd-button--export svg,
+.cd-button--export:hover svg,
+.cd-button--export:focus svg {
   fill: var(--cd-white);
 }
 
 .cd-button--export:hover,
 .cd-button--export:focus {
   background: var(--cd-dark-grey);
-}
-
-.cd-button--export:focus {
-  outline: 3px solid var(--cd-ocha-blue);
+  fill: var(--cd-white);
 }
