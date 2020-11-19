@@ -68,6 +68,10 @@ $cd-site-header-height: 60px;
   --cd-container-padding-tablet: 1.5rem; /* 24px */
   --cd-container-padding-xlarge: 2.5rem; /* 40px */
   --cd-flow-space: 1rem;
+
+  // Adjust this depending on number of rows in .cd-layout-container.
+  // This ensures the footer is always the last element.
+  --cd-footer-row-number: 5;
 }
 
 // Colour palette
