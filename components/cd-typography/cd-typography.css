@@ -1,0 +1,16 @@
+h1 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.375rem; /* 38px */
+    font-weight: 700;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
