@@ -1,30 +1,153 @@
 {{ attach_library('common_design/cd-grid') }}
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-utilities') }}
+{{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design/cd-button') }}
 {{ attach_library('common_design/cd-teaser') }}
 
-<div class="cd-grid">
-  <article role="article" class="cd-teaser node--view-mode-teaser">
+<div class="cd-grid cd-grid-3-col">
 
-    <div class="cd-teaser__image">
-      <img src="https://via.placeholder.com/320x240" alt="banner image example">
-    </div>
-    <div class="cd-teaser__container">
+  <article role="article" class="cd-teaser node--view-mode-teaser [ cd-flow ]">
+
+    <div class="cd-teaser__container [ cd-flow ]">
+
+      <h2 class="cd-teaser__title">
+        <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
+      </h2>
+
       <div class="cd-teaser__date">
         30 Jul 2019
       </div>
 
-      <h3 class="cd-teaser__title">
-        <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
-      </h3>
-
       <div class="cd-teaser__description node__content">
         <p>Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh (iaculis pretium sem orci aliquet mauris). Nulla auctor eleifend turpis consequat pharetra. Nulla vel magna sit amet dui lobortis commodo vitae vel nulla sit amet ante hendrerit tempus. Donec a congue leo? </p>
       </div>
+
+    </div>
+
+    <div class="cd-teaser__footer">
+      <a href="#" class="cd-teaser__link">
+        Learn more
+        <svg class="cd-icon cd-icon--arrow-right">
+          <use xlink:href="#cd-icon--arrow-right"></use>
+        </svg>
+      </a>
     </div>
 
   </article>
 
 
-  <div>Grid item</div>
-  <div>Grid item</div>
-  <div>Grid item</div>
+  <article role="article" class="cd-teaser node--view-mode-teaser [ cd-flow ]">
+
+    <div class="cd-teaser__image">
+      <img src="https://via.placeholder.com/410x210" alt="teaser image example">
+    </div>
+
+    <div class="cd-teaser__container [ cd-flow ]">
+
+      <h2 class="cd-teaser__title">
+        <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
+      </h2>
+
+      <div class="cd-teaser__date">
+        30 Jul 2019
+      </div>
+
+      <div class="cd-teaser__description node__content">
+        <p>Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh (iaculis pretium sem orci aliquet mauris). Nulla auctor eleifend turpis consequat pharetra. Nulla vel magna sit amet dui lobortis commodo vitae vel nulla sit amet ante hendrerit tempus. Donec a congue leo? </p>
+      </div>
+
+    </div>
+
+    <div class="cd-teaser__footer">
+      <a href="#" class="cd-teaser__link">
+        Learn more
+        <svg class="cd-icon cd-icon--arrow-right">
+          <use xlink:href="#cd-icon--arrow-right"></use>
+        </svg>
+      </a>
+    </div>
+
+  </article>
+
+
+  <article role="article" class="cd-teaser node--view-mode-teaser [ cd-flow ]">
+
+    <div class="cd-teaser__image">
+      <img src="https://via.placeholder.com/410x210" alt="teaser image example">
+    </div>
+
+    <div class="cd-teaser__container cd-center [ cd-flow ]">
+
+      <h2 class="cd-teaser__title">
+        <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
+      </h2>
+
+      <div class="cd-teaser__description node__content">
+        <p>Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh (iaculis pretium sem orci aliquet mauris). Nulla auctor eleifend turpis consequat pharetra. Nulla vel magna sit amet dui lobortis commodo vitae vel nulla sit amet ante hendrerit tempus. Donec a congue leo? </p>
+      </div>
+
+    </div>
+
+    <div class="cd-teaser__footer cd-center">
+      <a href="#" class="cd-button cd-button--bold cd-button--uppercase cd-button--wide">
+        More
+      </a>
+    </div>
+
+  </article>
+
+
+  <article role="article" class="cd-teaser node--view-mode-teaser [ cd-flow ]">
+
+    <div class="cd-teaser__image cd-teaser__image--rounded">
+      <img src="https://via.placeholder.com/205x205" alt="teaser image example">
+    </div>
+
+    <div class="cd-teaser__container cd-center [ cd-flow ]">
+
+      <h2 class="cd-teaser__title">
+        <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing</a>
+      </h2>
+
+      <div class="cd-teaser__description node__content">
+        <p>Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh (iaculis pretium sem orci aliquet mauris). </p>
+      </div>
+
+    </div>
+
+    <div class="cd-teaser__footer cd-center">
+      <a href="#" class="cd-button cd-button--outline cd-button--bold cd-button--uppercase cd-button--wide">
+        More
+      </a>
+    </div>
+
+  </article>
+
+
+  <article role="article" class="cd-teaser node--view-mode-teaser [ cd-flow ]">
+
+    <div class="cd-teaser__container [ cd-flow ]">
+
+      <h2 class="cd-teaser__title">
+        <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
+      </h2>
+
+      <div class="cd-teaser__description node__content">
+        <p>Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh (iaculis pretium sem orci aliquet mauris). Nulla auctor eleifend turpis consequat pharetra. Nulla vel magna sit amet dui lobortis commodo vitae vel nulla sit amet ante hendrerit tempus. Donec a congue leo? </p>
+      </div>
+
+    </div>
+
+    <div class="cd-teaser__footer">
+      <a href="#" class="cd-teaser__link">
+        Learn more
+        <svg class="cd-icon cd-icon--arrow-right">
+          <use xlink:href="#cd-icon--arrow-right"></use>
+        </svg>
+      </a>
+    </div>
+
+  </article>
+
 </div>

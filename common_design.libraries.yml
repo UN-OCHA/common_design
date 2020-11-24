@@ -86,6 +86,11 @@ cd-filter:
     component:
       components/cd-filter/cd-filter.css: {}
 
+cd-flow:
+  css:
+    component:
+      components/cd-flow/cd-flow.css: {}
+
 cd-grid:
   css:
     component:
@@ -166,6 +171,20 @@ cd-user-list:
   css:
     component:
       components/cd-user-list/cd-user-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-typography:
+  css:
+    component:
+      components/cd-typography/cd-typography.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-utilities:
+  css:
+    component:
+      components/cd-utilities/cd-utilities.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
