@@ -14,3 +14,7 @@ h2 {
   font-size: 1.75rem;
   font-weight: bold;
 }
+
+h3 {
+  margin: 0;
+}
