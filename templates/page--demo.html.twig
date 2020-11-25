@@ -43,6 +43,30 @@
  */
 #}
 
+<style>
+  /* This page's styles */
+  *[name*="cd-"] {
+    display: block;
+    padding: 1rem;
+    background-color: var(--cd-site-bg-color);
+  }
+
+  h2.cd-styleguide {
+    font-size: 2.5rem;
+    margin: 4rem 0;
+  }
+
+  h3.cd-styleguide {
+    margin: 4rem 0;
+    font-size: 2rem;
+  }
+
+  h3 a[name*="cd-"] {
+    border: 1px solid var(--cd-bright-blue);
+  }
+
+</style>
+
 <div class="cd-layout-container">
 
   {% block header %}
@@ -53,6 +77,9 @@
   {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}
+
+
+  <h3 class="visually-hidden"><a name="cd-hero">cd-hero</a></h3>
 
   {% block hero %}
     <div class="cd-layout-hero">
@@ -81,45 +108,74 @@
 
       {% if componentsModule %}
 
-        <h2>Components</h2>
+        <h2 class="cd-styleguide"><a name="cd-components--content" class="cd-bleed--background-only">Content components</a></h2>
 
-        <h3>User interface</h3>
+        <h3 class="cd-styleguide"><a name="cd-banner">cd-banner</a></h3>
+
+        {% include '@cd-components/cd-banner-v2/cd-banner.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-article-teaser">cd-article-teaser</a></h3>
+
+        {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-bullet-list">cd-bullet-list</a></h3>
+
+        {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-list">cd-list</a></h3>
+
+        {% include '@cd-components/cd-list/cd-list.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-teaser">cd-teaser</a></h3>
+
+        {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-user-list">cd-user-list</a></h3>
+
+        {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-alert">cd-alert</a></h3>
+
+        {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-table">cd-table</a></h3>
+
+        {% include '@cd-components/cd-table/cd-table.html.twig' %}
+
+
+        <h2 class="cd-styleguide"><a name="cd-components--ui" class="cd-bleed--background-only">UI components</a></h2>
+
+        <h3 class="cd-styleguide"><a name="cd-button">cd-button</a></h3>
 
         {% include '@cd-components/cd-button/cd-button.html.twig' %}
 
+        <h3 class="cd-styleguide"><a name="cd-date">cd-date</a></h3>
+
         {% include '@cd-components/cd-date/cd-date.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-search">cd-search</a></h3>
 
         {% include '@cd-components/cd-search/cd-search.html.twig' %}
 
+        <h3 class="cd-styleguide"><a name="cd-pagination">cd-pagination</a></h3>
+
         {% include '@cd-components/cd-pagination/cd-pagination.html.twig' %}
+
+        <h3 class="cd-styleguide"><a name="cd-filter">cd-filter</a></h3>
 
         {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
 
 
-        <h3>Layouts</h3>
+        <h2 class="cd-styleguide"><a name="cd-components--layout" class="cd-bleed--background-only">Layout components</a></h2>
+
+        <h3 class="cd-styleguide"><a name="cd-grid">cd-grid</a></h3>
 
         {% include '@cd-components/cd-grid/cd-grid.html.twig' %}
 
+        <h3 class="cd-styleguide"><a name="cd-image-grid">cd-image-grid</a></h3>
+
         {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
 
-
-        <h3>Content</h3>
-
-        {% include '@cd-components/cd-banner-v2/cd-banner.html.twig' %}
-
-        {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
-
-        {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
-
-        {% include '@cd-components/cd-list/cd-list.html.twig' %}
-
-        {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
-
-        {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
-
-        {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
-
-        {% include '@cd-components/cd-table/cd-table.html.twig' %}
 
       {% endif %}
 
