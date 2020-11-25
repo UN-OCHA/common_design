@@ -7,3 +7,7 @@
 .cd-flow > * + * {
   margin-top: var(--cd-flow-space, 1em);
 }
+
+.cd-bumper > * + * {
+  padding-left: var(--cd-flow-space, 1em);
+}
