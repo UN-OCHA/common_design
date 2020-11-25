@@ -1,20 +1,21 @@
 .cd-grid > * {
   margin-bottom: 1rem;
-  background: var(--cd-light-grey);
+  /* background: var(--cd-light-grey); */
 }
 
 /* Testing Aid */
-/*.cd-grid-2-col > * {*/
-/*  background: lightpink;*/
-/*}*/
+.cd-grid-2-col > * {
+  /* background: lightpink; */
+}
 
-/*.cd-grid-3-col > *  {*/
-/*  background: lightgreen;*/
-/*}*/
+.cd-grid-3-col > *  {
+  /* background: lightgreen; */
+}
 
-/*.cd-grid-4-col > * {*/
-/*  background: lightblue;*/
-/*}*/
+.cd-grid-4-col > * {
+  /* background: lightblue; */
+}
+
 
 @media (min-width: 576px) {
   .cd-grid {
@@ -25,14 +26,11 @@
 
   .cd-grid > * {
     flex: 0 0 48%;
-    max-width: 48%;
-    max-width: unset;
     display: flex;
+    margin-bottom: 0;
   }
 
-  .cd-grid-2-col.cd-grid--grow > *:last-child,
-  .cd-grid-3-col.cd-grid--grow > *:last-child,
-  .cd-grid-4-col.cd-grid--grow > *:last-child {
+  .cd-grid-2-col.cd-grid--grow > *:last-child {
     flex: 1 0 100%;
     max-width: 100%;
     max-width: unset;
@@ -46,14 +44,10 @@
 @media (min-width: 768px) {
   .cd-grid > * {
     flex: 0 0 32%;
-    max-width: 32%;
-    max-width: unset;
   }
 
   .cd-grid-2-col > * {
     flex: 0 0 48%;
-    max-width: 48%;
-    max-width: unset;
   }
 
   .cd-grid-3-col.cd-grid--grow > *:last-child,
@@ -67,8 +61,6 @@
 @media (min-width: 1024px) {
   .cd-grid > * {
     flex: 0 0 24%;
-    max-width: 24%;
-    max-width: unset;
   }
 
   .cd-grid > *:nth-child(odd) {
@@ -78,14 +70,11 @@
 
   .cd-grid-2-col > * {
     flex: 0 0 48%;
-    max-width: 48%;
-    max-width: unset;
   }
 
   .cd-grid-3-col > *  {
     flex: 0 0 32%;
     max-width: 32%;
-    max-width: unset;
   }
 
   .cd-grid-4-col > * {
@@ -94,6 +83,12 @@
 }
 
 @supports (display: grid) {
+  .cd-grid-2-col > *,
+  .cd-grid-3-col > *,
+  .cd-grid-4-col > * {
+    max-width: unset;
+  }
+
   @media (min-width: 576px) {
     .cd-grid {
       display: grid;
@@ -120,6 +115,8 @@
   @media (min-width: 768px) {
     .cd-grid {
       grid-template-columns: repeat(3, minmax(200px, 1fr));
+      max-width: 100%;
+      max-width: unset;
     }
 
     .cd-grid-2-col {
@@ -132,6 +129,8 @@
   @media (min-width: 1024px) {
     .cd-grid {
       grid-template-columns: repeat(4, minmax(200px, 1fr));
+      max-width: 100%;
+      max-width: unset;
     }
 
     .cd-grid-2-col {
