@@ -45,8 +45,8 @@
 
 <style>
   /* This page's styles */
-  h2.cd-styleguide > *[id*="cd-"],
-  h3.cd-styleguide > *[id*="cd-"] {
+  h2.cd-styleguide,
+  h3.cd-styleguide {
     display: block;
     padding: 1rem;
     background-color: var(--cd-site-bg-color);
@@ -60,10 +60,15 @@
   h3.cd-styleguide {
     margin: 4rem 0;
     font-size: 2rem;
+    width: 100%;
+    border: 1px solid var(--cd-bright-blue);
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
   }
 
   h3.cd-styleguide > a[id*="cd-"] {
-    border: 1px solid var(--cd-bright-blue);
+    flex: 1;
   }
 
 </style>
@@ -79,27 +84,8 @@
 
   {{ page.breadcrumb }}
 
-  <div class="cd-container">
-    <ul id="cd-toc" class="cd-toc cd-bullet-list">
-      <li><a href="#cd-alert">Alert</a></li>
-      <li><a href="#cd-button">Buttons</a></li>
-      <li><a href="#cd-banner">Banner</a></li>
-      <li><a href="#cd-bullet-list">Bullet List</a></li>
-      <li><a href="#cd-teaser">Card</a></li>
-      <li><a href="#cd-date">Date</a></li>
-      <li><a href="#cd-filter">Filter</a></li>
-      <li><a href="#cd-hero">Hero</a></li>
-      <li><a href="#cd-list">List</a></li>
-      <li><a href="#cd-table">Table</a></li>
-      <li><a href="#cd-article-teaser">Teaser</a></li>
-      <li><a href="#cd-search--inline">Search</a></li>
-      <li><a href="#cd-pagination">Pagination</a></li>
-      <li><a href="#cd-user-list">User List</a></li>
-      <li><a href="#cd-grid">Grid</a></li>
-    </ul>
-  </div>
 
-  <h3 class="cd-styleguide"><a id="cd-hero">cd-hero</a></h3>
+  <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
 
   {% block hero %}
     <div class="cd-layout-hero">
@@ -124,83 +110,119 @@
 
     <div class="cd-layout-content">
 
+      <div class="cd-container">
+        <ul id="cd-toc" class="cd-toc cd-bullet-list">
+          <li><a href="#cd-alert">Alert</a></li>
+          <li><a href="#cd-button">Buttons</a></li>
+          <li><a href="#cd-banner">Banner</a></li>
+          <li><a href="#cd-bullet-list">Bullet List</a></li>
+          <li><a href="#cd-teaser">Card</a></li>
+          <li><a href="#cd-date">Date</a></li>
+          <li><a href="#cd-filter">Filter</a></li>
+          <li><a href="#cd-hero">Hero</a></li>
+          <li><a href="#cd-list">List</a></li>
+          <li><a href="#cd-table">Table</a></li>
+          <li><a href="#cd-article-teaser">Teaser</a></li>
+          <li><a href="#cd-search--inline">Search</a></li>
+          <li><a href="#cd-pagination">Pagination</a></li>
+          <li><a href="#cd-user-list">User List</a></li>
+          <li><a href="#cd-grid">Grid</a></li>
+        </ul>
+      </div>
+
       {{ page.content }}
 
       {% if componentsModule %}
 
         <h2 class="cd-styleguide"><a id="cd-components--content" class="cd-bleed--background-only">Content components</a></h2>
 
-        <h3 class="cd-styleguide"><a id="cd-banner">cd-banner</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-banner">cd-banner</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-banner-v2/cd-banner.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-article-teaser">cd-article-teaser</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-article-teaser">cd-article-teaser</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-bullet-list">cd-bullet-list</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-bullet-list">cd-bullet-list</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-list">cd-list</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-list">cd-list</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-list/cd-list.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-teaser">cd-teaser</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-teaser">cd-teaser</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-user-list">cd-user-list</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-user-list">cd-user-list</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-alert">cd-alert</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-alert">cd-alert</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-table">cd-table</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-table">cd-table</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-table/cd-table.html.twig' %}
 
 
         <h2 class="cd-styleguide"><a id="cd-components--ui" class="cd-bleed--background-only">UI components</a></h2>
 
-        <h3 class="cd-styleguide"><a id="cd-button">cd-button</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-button">cd-button</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-button/cd-button.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-date">cd-date</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-date">cd-date</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-date/cd-date.html.twig' %}
         <p style="clear:both">{# clear #}</p>
 
-        {#        <h3 class="cd-styleguide"><a id="cd-search">cd-search</a></h3>#}
+        {#        <h3 class="cd-styleguide"><a id="cd-search">cd-search</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>#}
 
 {#        {% include '@cd-components/cd-search/cd-search.html.twig' %}#}
 
-        <h3 class="cd-styleguide"><a id="cd-search--inline">cd-search--inline</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-search--inline">cd-search--inline</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         <div style="position:relative">
           {% include '@cd-components/cd-search--inline/cd-search--inline.html.twig' %}
           <p style="clear:both">{# clear #}</p>
         </div>
 
-        <h3 class="cd-styleguide"><a id="cd-pagination">cd-pagination</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-pagination">cd-pagination</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-pagination/cd-pagination.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-filter">cd-filter</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-filter">cd-filter</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
 
 
         <h2 class="cd-styleguide"><a id="cd-components--layout" class="cd-bleed--background-only">Layout components</a></h2>
 
-        <h3 class="cd-styleguide"><a id="cd-grid">cd-grid</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-grid">cd-grid</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-grid/cd-grid.html.twig' %}
 
-        <h3 class="cd-styleguide"><a id="cd-image-grid">cd-image-grid</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-image-grid">cd-image-grid</a>
+          {% include '@cd-components/cd-toc/cd-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
 
