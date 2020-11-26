@@ -81,14 +81,16 @@
     'cd-teaser node--view-mode-teaser [ cd-flow ]'
   ]
 %}
-{{ attach_library('classy/node') }}
 {{ attach_library('common_design/cd-teaser') }}
+{{ attach_library('common_design/cd-read-more') }}
 
 <article{{ attributes.addClass(classes) }}>
 
-  <div class="cd-teaser__image">
-    <img src="https://via.placeholder.com/410x210" alt="teaser image example">
-  </div>
+  {% if content.field_image|render %}
+    <div class="cd-teaser__image">
+      {{ content.field_image }}
+    </div>
+  {% endif %}
 
   <div class="cd-teaser__container cd-center [ cd-flow ]">
 
@@ -101,13 +103,19 @@
     {{ title_suffix }}
 
     <div{{ content_attributes.addClass('cd-teaser__description node__content') }}>
-      {{ content }}
+      {{ content|without('field_image', 'body') }}
+
+      {% set contentBody %}
+        {{ content.body }}
+      {% endset %}
+
+      {{ contentBody|striptags }}
     </div>
 
   </div>
 
   <div class="cd-teaser__footer cd-center">
-    <a href="{{ url }}" class="cd-teaser__link">
+    <a href="{{ url }}" class="cd-teaser__link cd-read-more">
       Learn more
     </a>
   </div>
