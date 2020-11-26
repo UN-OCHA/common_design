@@ -1,0 +1,11 @@
+.cd-read-more {
+  display: block;
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.cd-read-more svg {
+  width: 0.5rem;
+  height: 0.5rem;
+  fill: var(--cd-ocha-blue);
+}

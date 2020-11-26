@@ -150,6 +150,13 @@ cd-pagination:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-read-more:
+  css:
+    component:
+      components/cd-read-more/cd-read-more.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-table:
   css:
     component:

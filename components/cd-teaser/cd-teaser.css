@@ -8,16 +8,10 @@
 }
 
 .cd-teaser__image--rounded {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
   min-width: 105px;
   min-height: 105px;
   max-width: 205px;
   max-height: 205px;
-  border-radius: 50%;
-  overflow: hidden;
 }
 
 .cd-teaser__image + .cd-teaser__container {
