@@ -1,21 +1,26 @@
-{{ attach_library('common_design/cd-search') }}
+<div class="cd-site-header__actions">
 
-<div class="cd-search">
-  <div id="block-searchform" class="cd-search__form cd-dropdown" aria-labelledby="cd-search-form" data-toggable="Search" data-hidden="true" data-component="cd-search" data-logo="search" role="search">
-    <h2 id="cd-search-form" class="visually-hidden">Search Content</h2>
+  <div class="cd-search">
 
-    <form action="/search/content" method="get">
+    <div class="cd-search__form" aria-labelledby="cd-search-btn" data-cd-toggable="Search" data-cd-component="cd-search" data-cd-logo="search" data-cd-focus-target="cd-search" role="search">
 
-      <label for="edit-keys">Search</label>
-      <input placeholder="What are you looking for?" class="cd-search__input" type="text" id="cd-search">
+      <h2 class="visually-hidden">Search form</h2>
 
-      <button class="cd-search__submit button" value="Search" type="submit">
-        <svg class="cd-icon cd-icon--search">
-          <use xlink:href="#cd-icon--search"></use>
-        </svg>
-        <span class="visually-hidden">Search</span>
-      </button>
+      <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+        <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+          <label for="edit-keys" class="visually-hidden">Search</label>
+          <input title="Enter the terms you wish to search for." placeholder="What are you looking for?" class="cd-search__input form-search" id="cd-search" type="search" name="keys" value="" size="15" maxlength="128">
+        </div>
+        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+          <button class="cd-search__submit button js-form-submit form-submit" value="Search" type="submit" id="edit-submit">
+            <svg class="cd-icon cd-icon--search">
+              <use xlink:href="#cd-icon--search"></use>
+            </svg>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
 
-    </form>
+    </div>
   </div>
 </div>
