@@ -45,7 +45,8 @@
 
 <style>
   /* This page's styles */
-  *[name*="cd-"] {
+  h2.cd-styleguide > *[id*="cd-"],
+  h3.cd-styleguide > *[id*="cd-"] {
     display: block;
     padding: 1rem;
     background-color: var(--cd-site-bg-color);
@@ -61,7 +62,7 @@
     font-size: 2rem;
   }
 
-  h3 a[name*="cd-"] {
+  h3.cd-styleguide > a[id*="cd-"] {
     border: 1px solid var(--cd-bright-blue);
   }
 
@@ -79,7 +80,7 @@
   {{ page.breadcrumb }}
 
 
-  <h3 class="visually-hidden"><a name="cd-hero">cd-hero</a></h3>
+  <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
 
   {% block hero %}
     <div class="cd-layout-hero">
@@ -108,71 +109,79 @@
 
       {% if componentsModule %}
 
-        <h2 class="cd-styleguide"><a name="cd-components--content" class="cd-bleed--background-only">Content components</a></h2>
+        <h2 class="cd-styleguide"><a id="cd-components--content" class="cd-bleed--background-only">Content components</a></h2>
 
-        <h3 class="cd-styleguide"><a name="cd-banner">cd-banner</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-banner">cd-banner</a></h3>
 
         {% include '@cd-components/cd-banner-v2/cd-banner.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-article-teaser">cd-article-teaser</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-article-teaser">cd-article-teaser</a></h3>
 
         {% include '@cd-components/cd-article-teaser/cd-article-teaser.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-bullet-list">cd-bullet-list</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-bullet-list">cd-bullet-list</a></h3>
 
         {% include '@cd-components/cd-bullet-list/cd-bullet-list.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-list">cd-list</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-list">cd-list</a></h3>
 
         {% include '@cd-components/cd-list/cd-list.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-teaser">cd-teaser</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-teaser">cd-teaser</a></h3>
 
         {% include '@cd-components/cd-teaser/cd-teaser.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-user-list">cd-user-list</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-user-list">cd-user-list</a></h3>
 
         {% include '@cd-components/cd-user-list/cd-user-list.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-alert">cd-alert</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-alert">cd-alert</a></h3>
 
         {% include '@cd-components/cd-alert/cd-alert.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-table">cd-table</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-table">cd-table</a></h3>
 
         {% include '@cd-components/cd-table/cd-table.html.twig' %}
 
 
-        <h2 class="cd-styleguide"><a name="cd-components--ui" class="cd-bleed--background-only">UI components</a></h2>
+        <h2 class="cd-styleguide"><a id="cd-components--ui" class="cd-bleed--background-only">UI components</a></h2>
 
-        <h3 class="cd-styleguide"><a name="cd-button">cd-button</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-button">cd-button</a></h3>
 
         {% include '@cd-components/cd-button/cd-button.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-date">cd-date</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-date">cd-date</a></h3>
 
         {% include '@cd-components/cd-date/cd-date.html.twig' %}
+        <p style="clear:both">{# clear #}</p>
 
-        <h3 class="cd-styleguide"><a name="cd-search">cd-search</a></h3>
+        {#        <h3 class="cd-styleguide"><a id="cd-search">cd-search</a></h3>#}
 
-        {% include '@cd-components/cd-search/cd-search.html.twig' %}
+{#        {% include '@cd-components/cd-search/cd-search.html.twig' %}#}
 
-        <h3 class="cd-styleguide"><a name="cd-pagination">cd-pagination</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-search--inline">cd-search--inline</a></h3>
+
+        <div style="position:relative">
+          {% include '@cd-components/cd-search--inline/cd-search--inline.html.twig' %}
+          <p style="clear:both">{# clear #}</p>
+        </div>
+
+        <h3 class="cd-styleguide"><a id="cd-pagination">cd-pagination</a></h3>
 
         {% include '@cd-components/cd-pagination/cd-pagination.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-filter">cd-filter</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-filter">cd-filter</a></h3>
 
         {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
 
 
-        <h2 class="cd-styleguide"><a name="cd-components--layout" class="cd-bleed--background-only">Layout components</a></h2>
+        <h2 class="cd-styleguide"><a id="cd-components--layout" class="cd-bleed--background-only">Layout components</a></h2>
 
-        <h3 class="cd-styleguide"><a name="cd-grid">cd-grid</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-grid">cd-grid</a></h3>
 
         {% include '@cd-components/cd-grid/cd-grid.html.twig' %}
 
-        <h3 class="cd-styleguide"><a name="cd-image-grid">cd-image-grid</a></h3>
+        <h3 class="cd-styleguide"><a id="cd-image-grid">cd-image-grid</a></h3>
 
         {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
 
