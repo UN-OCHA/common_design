@@ -18,3 +18,7 @@ h2 {
 h3 {
   margin: 0;
 }
+
+.cd-max-width {
+  max-width: var(--cd-max-content-width);
+}
