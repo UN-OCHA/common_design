@@ -13,6 +13,7 @@
   min-height: 105px;
   max-width: 205px;
   max-height: 205px;
+  margin-top: 1rem;
 }
 
 .cd-teaser__image + .cd-teaser__container {
