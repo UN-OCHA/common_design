@@ -136,6 +136,13 @@ cd-image-grid:
     component:
       components/cd-image-grid/cd-image-grid.css: {}
 
+cd-link-list:
+  css:
+    component:
+      components/cd-link-list/cd-link-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-list:
   css:
     component:
@@ -171,6 +178,13 @@ cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-toc:
+  css:
+    component:
+      components/cd-toc/cd-toc.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
