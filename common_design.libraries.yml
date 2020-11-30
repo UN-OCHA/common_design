@@ -33,11 +33,6 @@ cd-alert:
   dependencies:
     - common_design/css-vars-ponyfill
 
-cd-article-teaser:
-  css:
-    component:
-      components/cd-article-teaser/cd-article-teaser.css: {}
-
 cd-banner:
   css:
     component:
@@ -73,6 +68,13 @@ cd-caption:
   css:
     component:
       components/cd-caption/cd-caption.css: {}
+
+cd-card:
+  css:
+    component:
+      components/cd-card/cd-card.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-date:
   css:
@@ -178,8 +180,6 @@ cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
 
 cd-toc:
   css:
