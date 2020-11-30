@@ -44,6 +44,7 @@ cd-banner-v2:
       components/cd-banner-v2/cd-banner.css: {}
 
 cd-bleed:
+  header: true
   js:
     components/cd-bleed/cd-bleed.js: {}
   css:

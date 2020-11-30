@@ -1,6 +1,7 @@
 .cd-card {
   flex-direction: column;
-  background: var(--cd-white);
+  /* Override grid background color from grid */
+  background-color: var(--cd-white) !important;
   border: 2px solid var(--cd-site-bg-color);
 }
 
