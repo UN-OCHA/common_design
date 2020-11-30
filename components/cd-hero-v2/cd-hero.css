@@ -102,7 +102,7 @@
       object-fit: none;
     }
 
-    .cd-full-width .cd-hero__image {
+    .cd-bleed .cd-hero__image {
       object-fit: cover;
     }
   }

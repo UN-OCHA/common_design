@@ -16,23 +16,6 @@
   flex: 1;
 }
 
-.cd-teaser__image + .cd-teaser__container {
-  /* padding: 0 1rem 0 7rem; */
-}
-
-.cd-teaser__title {
-  /* margin: 0 0 0.5rem; */
-}
-
-/* .cd-teaser__title a {
-  font-weight: 600;
-  font-size: 1rem;
-} */
-
-.cd-teaser__description {
-  /* margin: 0 0 1rem; */
-}
-
 .cd-teaser dt {
   font-weight: 600;
 }
@@ -42,7 +25,6 @@
 }
 
 @media (min-width: 576px) {
-
   .cd-teaser {
     display: flex;
     flex-wrap: wrap;
