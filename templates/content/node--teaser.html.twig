@@ -78,33 +78,35 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-card [ cd-flow ]'
+    'cd-teaser [ cd-flow cd-bumper ]'
   ]
 %}
 
 {{ attach_library('common_design/cd-flow') }}
-{{ attach_library('common_design/cd-card') }}
+{{ attach_library('common_design/cd-utilities') }}
+{{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design/cd-button') }}
 {{ attach_library('common_design/cd-read-more') }}
+{{ attach_library('common_design/cd-teaser') }}
 
 <article{{ attributes.addClass(classes) }}>
 
   {% if content.field_image|render %}
-    <div class="cd-card__image">
+    <div class="cd-teaser__image">
       {{ content.field_image }}
     </div>
   {% endif %}
 
-  <div class="cd-card__container cd-center [ cd-flow ]">
-
+  <div class="cd-teaser__container">
     {{ title_prefix }}
     {% if label and not page %}
-      <h2{{ title_attributes.addClass('cd-card__title') }}>
+      <h3{{ title_attributes.addClass('cd-teaser__title') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
+      </h3>
     {% endif %}
     {{ title_suffix }}
 
-    <div{{ content_attributes.addClass('cd-card__description node__content') }}>
+    <div class="cd-teaser__description node__content">
       {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}
@@ -112,13 +114,16 @@
       {% endset %}
 
       {{ contentBody|striptags }}
-    </div>
 
+    </div>
   </div>
 
-  <div class="cd-card__footer cd-center">
-    <a href="{{ url }}" class="cd-card__link cd-read-more">
+  <div class="cd-teaser__footer">
+    <a href="{{ url }}" class="cd-teaser__link cd-read-more">
       {% trans %}Learn more{% endtrans %}
+      <svg class="cd-icon cd-icon--arrow-right">
+        <use xlink:href="#cd-icon--arrow-right"></use>
+      </svg>
     </a>
   </div>
 
