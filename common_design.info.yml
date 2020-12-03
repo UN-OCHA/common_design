@@ -34,6 +34,10 @@ libraries-override:
         css/components/links.css: false
         css/components/menu.css: false
 
+  core/modernizr:
+    js:
+      assets/vendor/modernizr/modernizr.min.js: js/cd-modernizr.min.js
+
 # CD components
 component-libraries:
   cd-components:
