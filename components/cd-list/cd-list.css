@@ -19,6 +19,20 @@
   max-height: 4rem;
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-list__image {
+    display: block;
+  }
+}
+
+/* Microsoft Edge Browser 15+ - @supports method */
+@supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) {
+  .cd-list__image {
+    display: block;
+  }
+}
+
 .cd-list__image--rounded {
   min-width: 2rem;
   min-height: 2rem;
@@ -40,7 +54,7 @@
 }
 
 .cd-list__container {
-  flex: 1;
+  flex: 1 1 0%;
 }
 
 .cd-list__footer {
@@ -50,10 +64,7 @@
 }
 
 @media (min-width: 576px) {
-
   .cd-list li {
-    display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
   }
 
@@ -78,6 +89,20 @@
     flex: 0 1 auto;
     padding-right: 0;
     margin-top: 0;
+  }
+
+  /* For IE11 */
+  @media all and (-ms-high-contrast: none) {
+    .cd-list__footer {
+      flex: 0 1 auto;
+    }
+  }
+
+  /* Microsoft Edge Browser 15+ - @supports method */
+  @supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) {
+    .cd-list__footer {
+      flex: 0 1 auto;
+    }
   }
 }
 
