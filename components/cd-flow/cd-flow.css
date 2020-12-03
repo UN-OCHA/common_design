@@ -9,5 +9,9 @@
 }
 
 .cd-bumper > * + * {
-  padding-left: var(--cd-flow-space, 1em);
+  padding-left: var(--cd-bumper-space, 1em);
+}
+
+.cd-bumper--rtl > *:not(:last-child) {
+  padding-right: var(--cd-bumper-space, 1em);
 }
