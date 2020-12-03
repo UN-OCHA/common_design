@@ -76,6 +76,7 @@ cd-card:
       components/cd-card/cd-card.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
+    - common_design/cd-object-fit
 
 cd-date:
   css:
@@ -210,6 +211,14 @@ cd-utilities:
   dependencies:
     - common_design/css-vars-ponyfill
 
+# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
+cd-object-fit:
+  header: true
+  js:
+    js/cd-object-fit.js: { attributes: { nomodule: true } }
+  dependencies:
+    - core/drupal
+    - core/modernizr
 
 # The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
 cd-polyfill:
@@ -228,3 +237,4 @@ css-vars-ponyfill:
 array-from-polyfill:
   js:
     js/array-from-polyfill.js: { attributes: { nomodule: true } }
+

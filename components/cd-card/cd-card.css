@@ -1,20 +1,34 @@
 .cd-card {
+  display: flex;
   flex-direction: column;
   /* Override grid background color from grid */
   background-color: var(--cd-white) !important;
   border: 2px solid var(--cd-site-bg-color);
 }
 
+.cd-card__image img {
+  display: block;
+  width: 100%;
+}
+
+/* For IE 11 and 15 when cd-object-fit.js is in use */
+.cd-ie-object-fit {
+  background-size: cover;
+  background-position: center center;
+  height: 205px;
+}
+
+.cd-ie-object-fit img {
+/*hide image if object fit is not supported - opacity to 0 for the link area*/
+  opacity: 0;
+}
+
 @supports (object-fit: cover) {
   .cd-card__image img {
+    height: 205px;
     object-fit: cover;
     object-position: 50% 50%;
   }
-}
-
-.cd-card__image img {
-  width: 100%;
-  height: 205px;
 }
 
 .cd-card__image--rounded {
@@ -26,7 +40,6 @@
 }
 
 .cd-card__image + .cd-card__container {
-  flex-grow: 1;
   padding: 1rem 2rem;
 }
 
