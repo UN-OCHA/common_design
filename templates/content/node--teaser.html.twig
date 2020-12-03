@@ -78,7 +78,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-teaser [ cd-flow cd-bumper ]'
+    'cd-teaser [ cd-flow cd-bumper--rtl ]'
   ]
 %}
 
@@ -97,16 +97,16 @@
     </div>
   {% endif %}
 
-  <div class="cd-teaser__container">
+  <div class="cd-teaser__container [ cd-flow ]">
     {{ title_prefix }}
     {% if label and not page %}
-      <h3{{ title_attributes.addClass('cd-teaser__title') }}>
+      <h3{{ title_attributes.addClass('cd-teaser__title cd-max-width') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h3>
     {% endif %}
     {{ title_suffix }}
 
-    <div class="cd-teaser__description node__content">
+    <div class="cd-teaser__description node__content cd-max-width">
       {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}
