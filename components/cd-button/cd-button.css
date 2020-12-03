@@ -131,6 +131,13 @@ a.cd-button {
   cursor: pointer;
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  a.cd-button {
+    display: inline-block;
+  }
+}
+
 .cd-button--outline {
   color: var(--cd-primary-color);
   background-color: var(--cd-white);
@@ -197,9 +204,16 @@ a.cd-button {
   text-align: left;
 }
 
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button--icon {
+    display: inline-block;
+  }
+}
+
 /* button--icon text needs to be inside span */
 .cd-button--icon .cd-button__text {
-  flex: 1;
+  flex: 1 1 0%;
   display: inline-block;
 }
 

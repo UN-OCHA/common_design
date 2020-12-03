@@ -27,7 +27,6 @@
   .cd-grid > * {
     flex: 0 0 48%;
     display: flex;
-    margin-bottom: 0;
   }
 
   .cd-grid-2-col.cd-grid--grow > *:last-child {
@@ -94,6 +93,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(200px, 1fr));
       grid-gap: 1rem;
+      margin-bottom: 0;
     }
 
     .cd-grid-2-col.cd-grid--grow > *:last-child {
@@ -144,7 +144,6 @@
     }
   }
 }
-
 
 /* IE 11 fix for clearing floated items */
 @media screen and (-ms-high-contrast: none) {

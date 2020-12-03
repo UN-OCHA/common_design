@@ -39,7 +39,7 @@
 }
 
 .cd-link-list__container {
-  flex: 1;
+  flex: 1 1 0%;
 }
 
 .cd-link-list__title {
