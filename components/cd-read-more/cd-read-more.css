@@ -1,6 +1,5 @@
 .cd-read-more {
   display: block;
-  text-align: right;
   font-size: 0.875rem;
 }
 
@@ -8,4 +7,8 @@
   width: 0.5rem;
   height: 0.5rem;
   fill: var(--cd-ocha-blue);
+}
+
+[dir='rtl'] .cd-read-more svg {
+  transform: scale(-1, 1);
 }
