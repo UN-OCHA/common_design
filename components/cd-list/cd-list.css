@@ -90,20 +90,6 @@
     padding-right: 0;
     margin-top: 0;
   }
-
-  /* For IE11 */
-  @media all and (-ms-high-contrast: none) {
-    .cd-list__footer {
-      flex: 0 1 auto;
-    }
-  }
-
-  /* Microsoft Edge Browser 15+ - @supports method */
-  @supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) {
-    .cd-list__footer {
-      flex: 0 1 auto;
-    }
-  }
 }
 
 @media (min-width: 767px) {
