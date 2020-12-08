@@ -147,10 +147,10 @@ cd-link-list:
   dependencies:
     - common_design/css-vars-ponyfill
 
-cd-list:
+cd-styled-list:
   css:
     component:
-      components/cd-list/cd-list.css: {}
+      components/cd-styled-list/cd-styled-list.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
