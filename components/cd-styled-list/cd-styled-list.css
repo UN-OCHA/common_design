@@ -1,10 +1,10 @@
-.cd-list {
+.cd-styled-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.cd-list li {
+.cd-styled-list > * {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -12,7 +12,7 @@
   border-bottom: 1px solid var(--cd-site-bg-color);
 }
 
-.cd-list__image {
+.cd-styled-list__image {
   display: flex;
   align-items: center;
   max-width: 4rem;
@@ -21,30 +21,30 @@
 
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
-  .cd-list__image {
+  .cd-styled-list__image {
     display: block;
   }
 }
 
 /* Microsoft Edge Browser 15+ - @supports method */
 @supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) {
-  .cd-list__image {
+  .cd-styled-list__image {
     display: block;
   }
 }
 
-.cd-list__image--rounded {
+.cd-styled-list__image--rounded {
   min-width: 2rem;
   min-height: 2rem;
   max-width: 4rem;
   max-height: 4rem;
 }
 
-.cd-list__image img {
+.cd-styled-list__image img {
   width: 100%;
 }
 
-.cd-list__image svg {
+.cd-styled-list__image svg {
   width: 100%;
   min-width: 2rem;
   min-height: 2rem;
@@ -53,37 +53,37 @@
   fill: var(--cd-ocha-blue);
 }
 
-.cd-list__container {
+.cd-styled-list__container {
   flex: 1 1 0%;
 }
 
-.cd-list__footer {
+.cd-styled-list__footer {
   flex: 1 0 100%;
   margin-top: 1rem;
   text-align: right;
 }
 
 @media (min-width: 576px) {
-  .cd-list li {
+  .cd-styled-list > * {
     flex-wrap: nowrap;
   }
 
-  .cd-list__image {
+  .cd-styled-list__image {
     max-width: 4rem;
     max-height: 4rem;
   }
 
-  .cd-list__image svg {
+  .cd-styled-list__image svg {
     max-width: 4rem;
     max-height: 4rem;
   }
 
-  .cd-list__date {
+  .cd-styled-list__date {
     flex: 0 0 50%;
     padding: 0.5rem 1rem 0.5rem 0;
   }
 
-  .cd-list__footer {
+  .cd-styled-list__footer {
     display: flex;
     align-items:center;
     flex: 0 1 auto;
@@ -93,21 +93,21 @@
 }
 
 @media (min-width: 767px) {
-  .cd-layout-sidebar-first .cd-list li {
+  .cd-layout-sidebar-first .cd-styled-list > * {
     flex-wrap: wrap;
   }
 
-  .cd-layout-sidebar-first .cd-list__image {
+  .cd-layout-sidebar-first .cd-styled-list__image {
     width: 3rem;
     max-height: 3rem;
   }
 
-  .cd-layout-sidebar-first .cd-list__footer {
+  .cd-layout-sidebar-first .cd-styled-list__footer {
     flex: 1 0 100%;
     display: block;
   }
 
-  .cd-layout-sidebar-first .cd-list__link {
+  .cd-layout-sidebar-first .cd-styled-list__link {
     text-align: right;
     padding-left: 0;
   }
