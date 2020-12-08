@@ -127,6 +127,7 @@
 /* When it's an anchor styled as a button */
 a.cd-button {
   display: inline-flex;
+  justify-content: center;
   text-decoration: none;
   cursor: pointer;
 }
