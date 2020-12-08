@@ -7,8 +7,19 @@
 }
 
 .cd-align--right,
-*[class*="--right"] {
+*[class*="--align-right"] {
   text-align: right;
+}
+
+/* Floating */
+.cd-float--left,
+*[class*="--float-left"] {
+  float: left;
+}
+
+.cd-float--right,
+*[class*="--float-right"] {
+  float: right;
 }
 
 /* Rounded image */
