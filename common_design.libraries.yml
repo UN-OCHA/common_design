@@ -51,6 +51,11 @@ cd-bleed:
     component:
       components/cd-bleed/cd-bleed.css: { weight: 1 }
 
+cd-block-title:
+  css:
+    component:
+      components/block-title/block-title.css: {}
+
 cd-bullet-list:
   css:
     component:
@@ -182,6 +187,11 @@ cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
+
+cd-title-list:
+  css:
+    component:
+      components/cd-title-list/cd-title-list.css: {}
 
 cd-toc:
   css:
