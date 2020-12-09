@@ -3,9 +3,11 @@
 
   Drupal.behaviors.cdObjectFit = {
     attach: function (context, settings) {
+      /* global Modernizr */
+      /* eslint no-undef: "error" */
       if (!Modernizr.objectfit) {
-        let imageContainers = document.getElementsByClassName('cd-card__image'),
-            item;
+        let imageContainers = document.getElementsByClassName('cd-card__image');
+        let item;
         // IE 11 loop.
         for (item = 0; item < imageContainers.length; item++) {
           let image = imageContainers[item].querySelector('.cd-card__image img');
