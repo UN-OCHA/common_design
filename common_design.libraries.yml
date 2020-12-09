@@ -38,11 +38,6 @@ cd-banner:
     component:
       components/cd-banner/cd-banner.css: {}
 
-cd-banner-v2:
-  css:
-    component:
-      components/cd-banner-v2/cd-banner.css: {}
-
 cd-bleed:
   header: true
   js:
@@ -112,33 +107,26 @@ cd-hero:
   dependencies:
     - common_design/css-vars-ponyfill
 
-cd-hero-v2:
-  css:
-    component:
-      components/cd-hero-v2/cd-hero.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
 cd-hero--style-one:
   css:
     component:
-      components/cd-hero-v2/cd-hero--style-one.css: {}
+      components/cd-hero/cd-hero--style-one.css: {}
   dependencies:
-    - common_design/cd-hero-v2
+    - common_design/cd-hero
 
 cd-hero--style-two:
   css:
     component:
-      components/cd-hero-v2/cd-hero--style-two.css: {}
+      components/cd-hero/cd-hero--style-two.css: {}
   dependencies:
-    - common_design/cd-hero-v2
+    - common_design/cd-hero
 
 cd-hero--style-three:
   css:
     component:
-      components/cd-hero-v2/cd-hero--style-three.css: {}
+      components/cd-hero/cd-hero--style-three.css: {}
   dependencies:
-    - common_design/cd-hero-v2
+    - common_design/cd-hero
 
 cd-image-grid:
   css:

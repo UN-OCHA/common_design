@@ -3,9 +3,8 @@
   /* Based on OCHA brand guidelines */
   /* Page 22 https://www.dropbox.com/s/j6tgps8u4u1ht4j/01_visual_identity.pdf?dl=1 */
 
-
-  /* Custom properties for IE.
-  /* This is needed due to inability to process calc() functions nested within color functions */
+/* Custom properties for IE.
+/* This is needed due to inability to process calc() functions nested within color functions */
   --cd-ie-primary-color: #1f69b3;
   --cd-ie-primary-color--light: #82b5e9;
   --cd-ie-primary-color--dark: #0b2641;
@@ -50,7 +49,7 @@
   font-size: 1rem;
   text-align: center;
   transition: background-color 0.6s ease-out,
-  color 0.6s ease-out;
+              color 0.6s ease-out;
   width: auto;
   color: var(--cd-white);
   background-color: var(--cd-primary-color);
