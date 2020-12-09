@@ -4,6 +4,11 @@
   list-style: none;
 }
 
+.cd-bullet-list li {
+  padding-left: 1.25em;
+  text-indent: -1.25em;
+}
+
 .cd-bullet-list li a {
   padding: 0.25rem 1rem 0.25rem 0;
   position: relative;
@@ -33,5 +38,3 @@
   display: inline-block;
   margin-right: 0.5rem;
 }
-
-

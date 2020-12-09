@@ -1,6 +1,6 @@
 .cd-grid > * {
   margin-bottom: 1rem;
-   background: var(--cd-light-grey);
+  background: var(--cd-light-grey);
 }
 
 /* Testing Aid */
@@ -27,6 +27,7 @@
   .cd-grid > * {
     flex: 0 0 48%;
     display: flex;
+    margin-bottom: 0;
   }
 
   .cd-grid-2-col.cd-grid--grow > *:last-child {
@@ -144,6 +145,7 @@
     }
   }
 }
+
 
 /* IE 11 fix for clearing floated items */
 @media screen and (-ms-high-contrast: none) {

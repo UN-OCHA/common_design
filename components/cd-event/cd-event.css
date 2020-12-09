@@ -1,0 +1,4 @@
+*[class*="__location"],
+*[class*="__time"] {
+  font-weight: 700;
+}

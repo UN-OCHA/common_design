@@ -125,13 +125,14 @@
 
   /* Quantity queries */
   /* https://alistapart.com/article/quantity-queries-for-css */
+
   /* If one element */
   .cd-filter__group:only-of-type,
-    /* If two elements */
+  /* If two elements */
   .cd-filter__group:nth-last-child(2):first-child,
   .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(2):first-child ~ .cd-export,
-    /* If three elements */
+  /* If three elements */
   .cd-filter__group:nth-last-child(3):first-child,
   .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(3):first-child ~ .cd-export {

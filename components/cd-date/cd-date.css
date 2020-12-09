@@ -5,6 +5,7 @@
   text-align: center;
   float: left;
   border-radius: 0.25rem;
+  width: 5.5rem;
 }
 
 .cd-date-day-wrapper {
@@ -13,7 +14,7 @@
 }
 
 .cd-date-day {
-  font-size: 2.625rem; /* 42px */
+  font-size: 2.625em; /* 42px */
   color: var(--cd-white);
   font-weight: bold;
 }
@@ -22,9 +23,13 @@
 .cd-date-year {
   color: var(--cd-ocha-blue);
   text-transform: uppercase;
-  font-weight: bold;
+  font-size: 0.875rem;
 }
 
 .cd-date-wrapper {
   padding: 0.25rem 0.5rem;
+}
+
+*[class*="--event"] {
+  margin: 1rem auto 0;
 }
