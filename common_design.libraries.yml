@@ -140,13 +140,6 @@ cd-link-list:
   dependencies:
     - common_design/css-vars-ponyfill
 
-cd-styled-list:
-  css:
-    component:
-      components/cd-styled-list/cd-styled-list.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
 cd-pagination:
   css:
     component:
@@ -158,6 +151,13 @@ cd-read-more:
   css:
     component:
       components/cd-read-more/cd-read-more.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-styled-list:
+  css:
+    component:
+      components/cd-styled-list/cd-styled-list.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
