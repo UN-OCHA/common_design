@@ -70,44 +70,44 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-list [ cd-flow ]'
-  ]
-%}
+{#{%#}
+{#  set classes = [#}
+{#    'node',#}
+{#    'node--type-' ~ node.bundle|clean_class,#}
+{#    node.isPromoted() ? 'node--promoted',#}
+{#    node.isSticky() ? 'node--sticky',#}
+{#    not node.isPublished() ? 'node--unpublished',#}
+{#    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,#}
+{#    'cd-styled-list [ cd-flow ]'#}
+{#  ]#}
+{#%}#}
 
 {{ attach_library('common_design/cd-flow') }}
 {{ attach_library('common_design/cd-utilities') }}
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-read-more') }}
 {{ attach_library('common_design/cd-button') }}
-{{ attach_library('common_design/cd-list') }}
+{{ attach_library('common_design/cd-styled-list') }}
 
-<article{{ attributes.addClass(classes) }}>
+<li{{ attributes.addClass(classes).addClass('cd-bumper') }}>
 
   {% if content.field_image|render %}
-    <div class="cd-list__image">
+    <div class="cd-styled-list__image cd-styled-list__image--rounded">
       {{ content.field_image }}
     </div>
   {% endif %}
 
-  <div class="cd-list__container [ cd-flow ]">
+  <div class="cd-styled-list__container [ cd-flow ]">
 
     {{ title_prefix }}
     {% if label and not page %}
-      <h2{{ title_attributes.addClass('cd-list__title') }}>
+      <h2{{ title_attributes.addClass('cd-styled-list__title') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     {% endif %}
     {{ title_suffix }}
 
-    <div{{ content_attributes.addClass('cd-list__description node__content') }}>
+    <div{{ content_attributes.addClass('cd-styled-list__description node__content') }}>
       {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}
@@ -119,13 +119,13 @@
 
   </div>
 
-  <div class="cd-list__footer cd-center">
-    <a href="{{ url }}" class="cd-list__link cd-button cd-button--outline cd-button--icon cd-button--uppercase cd-button--bold">
+  <div class="cd-styled-list__footer cd-center">
+    <a href="{{ url }}" class="cd-styled-list__link cd-button cd-button--outline cd-button--icon cd-button--uppercase cd-button--bold">
       <span class="cd-button__text">{% trans %}Learn more{% endtrans %}</span>
-      <svg class="cd-icon cd-icon--arrow-right">
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false">
         <use xlink:href="#cd-icon--arrow-right"></use>
       </svg>
     </a>
   </div>
 
-</article>
+</li>
