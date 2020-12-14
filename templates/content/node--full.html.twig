@@ -81,7 +81,12 @@
     'cd-layout-with-section-sidebar'
   ]
 %}
-{{ attach_library('classy/node') }}
+{{ attach_library('common_design/cd-article') }}
+{{ attach_library('common_design/cd-author') }}
+{{ attach_library('common_design/cd-typography') }}
+
+{% set unochaDate = node.getCreatedTime|date('j F Y') %}
+
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
@@ -93,16 +98,22 @@
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
+    <footer class="cd-author node__meta [ cd-bumper ]">
+      {% if author_picture %}
+        <div class="cd-author__image cd-author__image--rounded">
+          {{ author_picture }}
+        </div>
+      {% endif %}
+      <div class="cd-author__content">
+        <div{{ author_attributes.addClass('node__submitted') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ unochaDate }}{% endtrans %}
+          {{ metadata }}
+        </div>
       </div>
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('node__content') }}>
+  <div{{ content_attributes.addClass('node__content cd-max-width') }}>
 
     {{ content }}
 
