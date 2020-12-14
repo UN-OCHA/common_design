@@ -32,6 +32,16 @@ cd-alert:
       components/cd-alert/cd-alert.css: { preprocess:false }
   dependencies:
     - common_design/css-vars-ponyfill
+    -
+cd-article:
+  css:
+    component:
+      components/cd-article/cd-article.css: {}
+
+cd-author:
+  css:
+    component:
+      components/cd-author/cd-author.css: {}
 
 cd-banner:
   css:
@@ -62,6 +72,13 @@ cd-button:
   css:
     component:
       components/cd-button/cd-button.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-byline:
+  css:
+    component:
+      components/cd-byline/cd-byline.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
