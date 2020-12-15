@@ -115,6 +115,7 @@
         <ol id="cd-component-toc" class="cd-toc__list">
           <li><a href="#cd-alert">Alert</a></li>
           <li><a href="#cd-button">Buttons</a></li>
+          <li><a href="#cd-read-more">Read more</a></li>
           <li><a href="#cd-banner">Banner</a></li>
           <li><a href="#cd-bullet-list">Bullet List</a></li>
           <li><a href="#cd-card">Card</a></li>
@@ -123,12 +124,14 @@
           <li><a href="#cd-hero">Hero</a></li>
           <li><a href="#cd-link-list">Link List</a></li>
           <li><a href="#cd-styled-list">Styled List</a></li>
-          <li><a href="#cd-block-title">Block Title</a></li>
           <li><a href="#cd-title-list">Title List</a></li>
           <li><a href="#cd-table">Table</a></li>
+          <li><a href="#cd-author">Author</a></li>
+          <li><a href="#cd-byline">Byline</a></li>
           <li><a href="#cd-toc">Table of contents</a></li>
           <li><a href="#cd-teaser">Teaser</a></li>
-          <li><a href="#cd-search">Search</a></li>
+          <li><a href="#cd-search--inline">Search</a></li>
+          <li><a href="#cd-search--inline">Inline search</a></li>
           <li><a href="#cd-pagination">Pagination</a></li>
           <li><a href="#cd-grid">Grid</a></li>
         </ol>
@@ -190,6 +193,16 @@
 
         {% include '@cd-components/cd-table/cd-table.html.twig' %}
 
+        <h3 class="cd-styleguide"><a id="cd-author">cd-author</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-author/cd-author.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-byline">cd-byline</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-byline/cd-byline.html.twig' %}
+
         <h3 class="cd-styleguide"><a id="cd-toc">cd-toc</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
@@ -201,6 +214,11 @@
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-button/cd-button.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-read-more">cd-read-more</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-read-more/cd-read-more.html.twig' %}
 
         <h3 class="cd-styleguide"><a id="cd-date">cd-date</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
