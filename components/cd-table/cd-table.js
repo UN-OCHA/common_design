@@ -1,10 +1,6 @@
 // Table headings added as data-content to table cells for cards on mobile
 function cdResponsiveTables() {
   var table = document.querySelector('.cd-table--responsive');
-  if (!table) {
-    return;
-  }
-
   var tableRows = table.querySelectorAll('tbody tr');
   var tableHeadings = table.querySelectorAll('th');
   var tableHeadingCollection = Array.from(tableHeadings);

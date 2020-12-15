@@ -46,12 +46,12 @@
     max-width: 16rem;
   }
 
-  .cd-toc--left {
+  .cd-toc--float-left {
     float: left;
     margin: 0 1rem 1rem 0;
   }
 
-  .cd-toc--right {
+  .cd-toc--float-right {
     float: right;
     margin: 0 0 1rem 1rem;
   }
