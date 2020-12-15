@@ -1,10 +1,10 @@
-# Simple table
+# Table
 
 ## Purpose and Usage
-HTML table reset so table appears unstyled but spans 100% width.
+HTML table for complex data, using `data-` attribute selectors for styling specific column data. On mobile, the table displays as cards.
 
 @TODO
-determine whether the class attribute should be on the wrapper or the table element.
+Rework
 
 ## Caveats
 
