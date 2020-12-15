@@ -1,6 +1,11 @@
 .cd-alert {
   padding: 1rem;
   margin: 1rem 0 2rem;
+  border-radius: 0.25rem;
+}
+
+.cd-alert,
+.cd-alert div[role='alert']{
   display: flex;
   align-items: flex-start;
 }
@@ -17,43 +22,46 @@
 
 .cd-alert {
   border: 1px solid var(--cd-bright-blue);
-  border-left: 8px solid var(--cd-bright-blue);
+  box-shadow: -8px 0 0 var(--cd-bright-blue);
+  color: var(--cd-dark-grey);
 }
 
 .cd-alert svg {
   fill: var(--cd-bright-blue);
 }
 
-.cd-alert a {
+.cd-alert a,
+.cd-alert a:hover,
+.cd-alert a:focus {
   color: inherit;
 }
 
-.cd-alert--danger {
+.cd-alert--error {
   background: var(--cd-red--light);
   border: 1px solid var(--cd-red);
-  border-left: 8px solid var(--cd-red);
+  box-shadow: -8px 0 0 var(--cd-red);
 }
 
-.cd-alert--danger svg {
+.cd-alert--error svg {
   fill: var(--cd-red);
 }
 
-.cd-alert--attention {
+.cd-alert--warning {
   background: var(--cd-orange--light);
   border: 1px solid var(--cd-orange);
-  border-left: 8px solid var(--cd-orange);
+  box-shadow: -8px 0 0 var(--cd-orange);
 }
 
-.cd-alert--attention svg {
+.cd-alert--warning svg {
   fill: var(--cd-orange);
 }
 
-.cd-alert--success {
+.cd-alert--status {
   background: var(--cd-green--light);
   border: 1px solid var(--cd-green);
-  border-left: 8px solid var(--cd-green);
+  box-shadow: -8px 0 0 var(--cd-green);
 }
 
-.cd-alert--success svg {
+.cd-alert--status svg {
   fill: var(--cd-green);
 }
