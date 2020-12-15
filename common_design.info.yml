@@ -25,6 +25,10 @@ regions:
   footer_soft: Soft footer
   footer_navigation: Footer navigation
 
+libraries-extend:
+  classy/messages:
+    - common_design/cd-alert
+
 libraries-override:
   classy/base:
     css:

@@ -29,10 +29,10 @@ cd-ocha-services:
 cd-alert:
   css:
     component:
-      components/cd-alert/cd-alert.css: { preprocess:false }
+      components/cd-alert/cd-alert.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
-    -
+
 cd-article:
   css:
     component:
@@ -59,7 +59,7 @@ cd-bleed:
 cd-block-title:
   css:
     component:
-      components/block-title/block-title.css: {}
+      components/cd-block-title/cd-block-title.css: {}
 
 cd-bullet-list:
   css:
