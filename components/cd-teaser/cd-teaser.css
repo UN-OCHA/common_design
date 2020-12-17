@@ -1,7 +1,7 @@
 
 .cd-teaser {
   --cd-bumper-space: 2em;
-  border-bottom: 1px solid var(--cd-site-bg-color);
+  border-bottom: 1px solid var(--cd-blue-grey);
   padding-bottom: 1rem;
 }
 

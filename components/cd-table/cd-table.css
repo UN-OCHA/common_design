@@ -20,7 +20,7 @@ table caption {
 }
 
 .cd-table caption {
-  background: var(--cd-site-bg-color);
+  background: var(--cd-blue-grey);
   padding: 0.25rem 0.5rem;
 }
 
@@ -33,7 +33,7 @@ table caption {
 .cd-table th {
   color: var(--cd-ocha-blue);
   border-bottom: 1px solid white;
-  background: var(--cd-site-bg-color);
+  background: var(--cd-blue-grey);
 }
 
 .cd-table a {
@@ -108,7 +108,7 @@ table caption {
   .cd-table--responsive td {
     /* Behave  like a "row" */
     border: none;
-    border-bottom: 1px solid var(--cd-site-bg-color);
+    border-bottom: 1px solid var(--cd-blue-grey);
     position: relative;
     padding: 0.5rem;
     padding-left: 40% !important;

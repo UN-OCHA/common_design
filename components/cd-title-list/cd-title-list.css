@@ -7,7 +7,7 @@
 .cd-title-list__item {
   margin: 0;
   padding: 0;
-  border: 1px solid var(--cd-site-bg-color);
+  border: 1px solid var(--cd-blue-grey);
   border-width: 1px 0 1px 0;
 }
 .cd-title-list__item + .cd-title-list__item {
