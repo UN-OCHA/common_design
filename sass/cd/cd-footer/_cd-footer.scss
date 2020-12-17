@@ -5,20 +5,29 @@
 .cd-footer {
   // Position footer at the bottom of viewport. This might need adjusting based on page layout.
   grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
-  background: $cd-primary-bg-color;
-  color: $cd-white-text-color;
+  background: $cd-primary;
+  color: $cd-white;
   padding: 3rem 0 0;
   text-align: center;
   line-height: 1.5;
 
   a {
-    color: $cd-white-text-color;
     text-decoration: none;
+    color: $cd-white;
+
+    &.cd-button {
+      color: initial;
+    }
 
     &:hover,
     &:focus {
       color: $cd-white;
       text-decoration: underline;
+    }
+
+    &.cd-button:hover,
+    &.cd-button:focus {
+      color: initial;
     }
 
     &:focus {

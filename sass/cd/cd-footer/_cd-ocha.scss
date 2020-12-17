@@ -13,7 +13,7 @@
 .cd-ocha__btn {
   align-items: center;
   background: transparent;
-  color: $cd-white-text-color;
+  color: $cd-white;
   display: flex;
   @include font-size($cd-font-size-tiny);
   height: $cd-global-header-height;
@@ -170,12 +170,12 @@
   padding: 0;
 
   a {
-    color: $cd-white-text-color;
+    color: $cd-white;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      color: $cd-white-text-color;
+      color: $cd-white;
       text-decoration: underline;
     }
 

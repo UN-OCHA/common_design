@@ -15,7 +15,7 @@
   align-items: center;
   background: transparent;
   border: 0;
-  color: $cd-primary-bg-color;
+  color: $cd-primary;
   display: flex;
   font-size: 24px;
   height: $cd-site-header-height;
@@ -30,7 +30,7 @@
 
   &:hover,
   &:focus {
-    background: $cd-white-bg-color;
+    background: $cd-white;
     outline: none;
     color: $cd-highlight-red;
 
@@ -57,7 +57,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 6px 6px;
-      border-color: transparent transparent $cd-border-color;
+      border-color: transparent transparent $cd-blue-grey;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -70,7 +70,7 @@
 
     &:hover,
     &:focus {
-      background: $cd-white-bg-color;
+      background: $cd-white;
       outline: none;
     }
   }
@@ -84,7 +84,7 @@
 }
 
 .cd-search--inline__form {
-  background: $cd-mid-bluey-grey;
+  background: $cd-blue-grey;
   height: $cd-site-header-height;
   left: 0;
   position: absolute;
@@ -106,7 +106,7 @@
 
 .cd-search--inline__input {
   -webkit-appearance: none;
-  background: $cd-white-bg-color;
+  background: $cd-white;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -156,7 +156,7 @@
   align-items: center;
   background: $cd-dark-grey;
   border: 0;
-  color: $cd-white-text-color;
+  color: $cd-white;
   display: flex;
   @include font-size($cd-font-size-medium);
   font-weight: bold;
@@ -173,7 +173,7 @@
     box-sizing: content-box;
     width: 26px;
     height: 26px;
-    fill: $cd-white-text-color;
+    fill: $cd-white;
     margin: 0 auto;
   }
 
@@ -198,15 +198,15 @@
 
   .cd-search--inline {
     float: left;
-    border-left: 1px solid $cd-border-color;
-    //border-right: 1px solid $cd-border-color;
+    border-left: 1px solid $cd-blue-grey;
+    //border-right: 1px solid $cd-blue-grey;
     flex: 0 1 400px;
     margin-left: 30px;
   }
 
   .cd-search--inline__form {
     --dropdown: false;
-    background: $cd-white-bg-color;
+    background: $cd-white;
     position: relative;
 
     // This is needed for IE11
@@ -228,7 +228,7 @@
 
   .cd-search--inline__input {
     -webkit-appearance: none;
-    background: $cd-white-bg-color;
+    background: $cd-white;
     border: 0;
     border-radius: 0;
     box-sizing: content-box;
@@ -276,10 +276,10 @@
   }
 
   .cd-search--inline__submit {
-    background: $cd-white-bg-color;
+    background: $cd-white;
     border: 0;
-    border-left: 1px solid $cd-mid-bluey-grey;
-    color: $cd-dark-text-color;
+    border-left: 1px solid $cd-blue-grey;
+    color: $cd-black;
     @include font-size($cd-font-size-medium);
     font-weight: bold;
     height: $cd-site-header-height;
@@ -301,7 +301,7 @@
 
     &:hover,
     &:focus {
-      background-color: $cd-mid-bluey-grey;
+      background-color: $cd-blue-grey;
       outline: 0;
       box-shadow: none;
 
@@ -320,7 +320,7 @@
 
       &::before {
         content: '';
-        background: $cd-mid-bluey-grey;
+        background: $cd-blue-grey;
         width: 2px;
         height: 24px;
         position: absolute;
