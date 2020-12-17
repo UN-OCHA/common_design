@@ -1,7 +1,7 @@
 .cd-date {
   overflow: hidden;
   background-color: var(--cd-white);
-  border: 1px solid var(--cd-site-bg-color--light);
+  border: 1px solid var(--cd-blue-grey--light);
   text-align: center;
   float: left;
   border-radius: 0.25rem;

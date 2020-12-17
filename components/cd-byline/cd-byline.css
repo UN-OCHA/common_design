@@ -8,7 +8,7 @@
   content: "";
   display: block;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--cd-site-bg-color);
+  border-bottom: 1px solid var(--cd-blue-grey);
 }
 
 .cd-byline__wrapper {

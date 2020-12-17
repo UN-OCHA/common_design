@@ -2,7 +2,7 @@
   flex-direction: column;
   /* Override grid background color from grid */
   background-color: var(--cd-white);
-  border: 2px solid var(--cd-site-bg-color);
+  border: 2px solid var(--cd-blue-grey);
 }
 
 .cd-card__image img {
@@ -56,5 +56,5 @@
 
 .cd-card__link {
   padding: 1rem 0 0;
-  border-top: 1px solid var(--cd-site-bg-color);
+  border-top: 1px solid var(--cd-blue-grey);
 }
