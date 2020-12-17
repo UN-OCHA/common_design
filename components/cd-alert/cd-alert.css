@@ -23,7 +23,7 @@
 .cd-alert {
   border: 1px solid var(--cd-bright-blue);
   box-shadow: -8px 0 0 var(--cd-bright-blue);
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
 }
 
 .cd-alert svg {

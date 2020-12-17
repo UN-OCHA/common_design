@@ -118,27 +118,27 @@
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 4px rgba($cd-mid-grey,  0.7);
+    box-shadow: 0 0 4px rgba($cd-grey--mid,  0.7);
   }
 }
 
 .cd-search--inline__input::-webkit-input-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
 .cd-search--inline__input::-moz-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
 .cd-search--inline__input:-ms-input-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
 .cd-search--inline__input:-moz-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
@@ -154,7 +154,7 @@
 
 .cd-search--inline__submit {
   align-items: center;
-  background: $cd-dark-grey;
+  background: $cd-grey--dark;
   border: 0;
   color: $cd-white;
   display: flex;
@@ -251,22 +251,22 @@
   }
 
   .cd-search--inline__input::-webkit-input-placeholder {
-    color: $cd-mid-grey;
+    color: $cd-grey--mid;
     font-style: italic;
   }
 
   .cd-search--inline__input::-moz-placeholder {
-    color: $cd-mid-grey;
+    color: $cd-grey--mid;
     font-style: italic;
   }
 
   .cd-search--inline__input:-ms-input-placeholder {
-    color: $cd-mid-grey;
+    color: $cd-grey--mid;
     font-style: italic;
   }
 
   .cd-search--inline__input:-moz-placeholder {
-    color: $cd-mid-grey;
+    color: $cd-grey--mid;
     font-style: italic;
   }
 
@@ -295,7 +295,7 @@
       box-sizing: content-box;
       width: 22px;
       height: 22px;
-      fill: $cd-mid-grey;
+      fill: $cd-grey--mid;
       padding: 0 16px;
     }
 

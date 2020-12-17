@@ -263,7 +263,7 @@ a.cd-button {
 .cd-button--export,
 .cd-button--export:hover,
 .cd-button--export:focus {
-  background: var(--cd-mid-grey);
+  background: var(--cd-grey--mid);
   color: var(--cd-white);
   fill: var(--cd-white);
 }
@@ -276,6 +276,6 @@ a.cd-button {
 
 .cd-button--export:hover,
 .cd-button--export:focus {
-  background: var(--cd-dark-grey);
+  background: var(--cd-grey--dark);
   fill: var(--cd-white);
 }

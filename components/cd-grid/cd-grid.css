@@ -1,6 +1,6 @@
 .cd-grid > * {
   margin-bottom: 1rem;
-  background: var(--cd-light-grey);
+  background: var(--cd-grey--light);
 }
 
 /* Testing Aid */

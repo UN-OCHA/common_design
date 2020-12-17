@@ -20,7 +20,7 @@
 .cd-hero--style-three .cd-hero__date {
   padding-left: 0.5rem;
   margin-left: 0.5rem;
-  border-left: 1px solid var(--cd-dark-grey);
+  border-left: 1px solid var(--cd-grey--dark);
 }*/
 
 @media (min-width: 1024px) {

@@ -74,7 +74,7 @@ table caption {
 }
 
 .cd-table--striped tr:nth-child(even) {
-  background: var(--cd-light-grey);
+  background: var(--cd-grey--light);
 }
 
 @media (max-width: 575px) {
@@ -101,7 +101,7 @@ table caption {
   }
 
   .cd-table--responsive tr {
-    border-bottom: 1px solid var(--cd-light-grey);
+    border-bottom: 1px solid var(--cd-grey--light);
     padding: 0 !important;
   }
 

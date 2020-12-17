@@ -6,7 +6,7 @@ button,
 input[type='submit'] {
   -webkit-appearance: none;
   @include font-size($cd-font-size-base);
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   background: none;
   border: 0 none;
   border-radius: 0;
