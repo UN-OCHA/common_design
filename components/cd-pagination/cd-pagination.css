@@ -39,8 +39,8 @@
 .cd-pager__item a:hover,
 .cd-pager__item a:focus {
   color: white;
-  background-color: var(--cd-dark-blue);
-  border-color: var(--cd-dark-blue);
+  background-color: var(--cd-blue--dark);
+  border-color: var(--cd-blue--dark);
 }
 
 .cd-pager__item.is-active a {

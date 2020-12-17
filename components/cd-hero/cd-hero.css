@@ -29,14 +29,14 @@
   margin: 0 0 1rem;
   font-size: 1.75rem; /* 28px */
   font-weight: 700;
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
 }
 
 .cd-hero__description {
   margin: 0 0 1rem;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
 }
 
 .cd-hero__caption {

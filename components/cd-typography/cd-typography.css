@@ -27,7 +27,7 @@ article p,
 hr {
   margin: 3.5rem auto;
   border: none;
-  border-top: 2px solid var(--cd-light-grey);
+  border-top: 2px solid var(--cd-grey--light);
   max-width: var(--cd-max-content-width);
 }
 

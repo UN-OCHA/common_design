@@ -143,7 +143,7 @@
 }
 
 .cd-ocha-dropdown__heading {
-  color: $cd-lighter-blue;
+  color: cd-blue--lighter;
   margin: 0 0 10px;
   padding-bottom: 2px;
 
@@ -180,7 +180,7 @@
     }
 
     &:focus {
-      outline: 3px solid $cd-bright-blue;
+      outline: 3px solid cd-blue--bright;
       outline-offset: 8px;
     }
   }
