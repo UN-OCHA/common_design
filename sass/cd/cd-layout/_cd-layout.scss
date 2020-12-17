@@ -3,7 +3,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 html {
-  //background: $cd-site-bg-color;
+  //background: $cd-blue-grey;
   height: 100%;
 }
 
@@ -227,7 +227,7 @@ section.cd-layout-two-col {
 
     // I've styled this as a block with padding and bg colour.
     padding: 1rem;
-    background-color: $cd-light-bluey-grey;
+    background-color: $cd-blue-grey--light;
 
     @include desktop {
       flex-basis: 285px;

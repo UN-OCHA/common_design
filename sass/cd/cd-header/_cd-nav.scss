@@ -4,9 +4,9 @@
 
 .cd-nav__btn {
   background: transparent;
-  border: 0 none $cd-border-color;
-  //border-left: 1px solid $cd-border-color;
-  //border-right: 1px solid $cd-border-color;
+  border: 0 none $cd-blue-grey;
+  //border-left: 1px solid $cd-blue-grey;
+  //border-right: 1px solid $cd-blue-grey;
   @include font-size($cd-font-size-small);
   color: $cd-default-text-color;
   height: $cd-site-header-height;
@@ -37,7 +37,7 @@
   &[aria-expanded='true'] {
     position: relative;
     z-index: 101;
-    color: $cd-dark-text-color;
+    color: $cd-black;
 
     &::before {
       bottom: -6px;
@@ -52,14 +52,14 @@
     }
 
     &:focus {
-      background: $cd-white-bg-color;
+      background: $cd-white;
     }
   }
 
   &:hover,
   &:focus {
-    color: $cd-dark-text-color;
-    background: $cd-mid-bg-color;
+    color: $cd-black;
+    background: $cd-blue-grey;
     outline: none; // default browser outline is replaced by background colour change.
   }
 }
@@ -149,8 +149,8 @@
 
       &:hover,
       &:focus {
-        background: $cd-mid-bg-color;
-        color: $cd-dark-text-color;
+        background: $cd-blue-grey;
+        color: $cd-black;
         outline: none; // default browser outline is replaced by background colour change.
       }
     }
@@ -178,10 +178,10 @@
 
   // Second level.
   .cd-nav > .menu > li > .menu {
-    background: $cd-white-bg-color;
+    background: $cd-white;
 
     @include desktop {
-      box-shadow: 0 1px 8px rgba($cd-dark-bluey-grey, 0.8);
+      box-shadow: 0 1px 8px rgba($cd-blue-grey--dark, 0.8);
       //left: -1px;
       margin: 0;
       max-width: 300px;
@@ -195,11 +195,11 @@
   .menu .menu {
     a {
       display: flex;
-      color: $cd-dark-text-color;
+      color: $cd-black;
       font-weight: 600;
 
       &:hover {
-        background: $cd-mid-bg-color;
+        background: $cd-blue-grey;
       }
     }
   }
@@ -317,11 +317,11 @@
           }
 
           &:hover {
-            background: $cd-mid-bg-color;
+            background: $cd-blue-grey;
           }
 
           &:focus {
-            background: $cd-white-bg-color;
+            background: $cd-white;
           }
 
           &.is-active,
@@ -337,7 +337,7 @@
         a,
         button {
           &:hover {
-            background: $cd-mid-bg-color;
+            background: $cd-blue-grey;
           }
 
           &.is-active {
