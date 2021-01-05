@@ -13,7 +13,7 @@ const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const notify = browserSync.notify;
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
 const prefix = require('autoprefixer');
@@ -73,7 +73,7 @@ function sassCompileTask() {
   return gulp.src(['sass/styles.scss'])
     .pipe(plumber())
     .pipe(gulpif(process.env.NODE_ENV !== 'production', sourcemaps.init()))
-    .pipe(sass({outputStyle: 'nested'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(postcss([
       prefix({
         browsers: ['>1%', 'iOS 9'],
