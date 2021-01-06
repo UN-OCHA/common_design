@@ -2,6 +2,7 @@
 // Button styles
 //——————————————————————————————————————————————————————————————————————————————
 
+// @TODO This should be consolidated with cd-button, and/or renamed to denote Drupal-specific.
 button,
 input[type='submit'] {
   -webkit-appearance: none;
@@ -14,7 +15,6 @@ input[type='submit'] {
   font-family: $cd-font;
 }
 
-.btn-primary,
 .form-actions input[type='submit'] {
   display: inline-block;
   border-radius: 4px;
@@ -30,9 +30,4 @@ input[type='submit'] {
     background: darken($cd-ocha-blue, 10%);
     color: $cd-white;
   }
-}
-
-.btn-primary {
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
 }
