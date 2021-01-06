@@ -10,6 +10,6 @@ When base theme PRs are merged to `cd-226-design-system` branch, a deploy to htt
 
 Any config to accompany the v2 base theme work needs to be pushed to `feature/cd-226-design-system` branch on `common-design-site` repo. 
 
-Read more about the OPS set up [OPS-7069](https://humanitarian.atlassian.net/browse/OPS-7069)
+Read more about the OPS set up [OPS-7069](https://humanitarian.atlassian.net/browse/OPS-7069?focusedCommentId=118217)
 
-There's an issue open [OPS-7183](https://humanitarian.atlassian.net/browse/OPS-7069?focusedCommentId=118217) for feedback if this current set up seems problematic or if there are ideas for improvements.
+There's an issue open [OPS-7183](https://humanitarian.atlassian.net/browse/OPS-7183) for feedback if this current set up seems problematic or if there are ideas for improvements.
