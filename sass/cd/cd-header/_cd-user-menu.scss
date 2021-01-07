@@ -13,29 +13,28 @@
     fill: $cd-white;
   }
 
-  .cd-icon--user {
-    width: 14px;
-    height: $cd-global-header-height;
-    float: left;
-    position: relative;
+  // Logo icon before the button/link label.
+  // @todo add proper classes to make it more robust.
+  svg + span {
+    margin-left: 10px;
+
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: 10px;
+    }
   }
 
-  .cd-icon--arrow-down {
-    min-height: 100%; // IE11 fix.
-    margin-top: auto; // Center vertically in macOS 10
-    margin-bottom: auto; // Center vertically in macOS 10
+  // Vertical centering fallback for when flex is not supported.
+  // @see .cd-user-menu__item below.
+  .cd-icon {
+    display: inline-block;
+    vertical-align: middle;
   }
 
-  // Other icons.
-  button .cd-icon:not(.cd-icon--arrow-down) {
+  // Other icons, for example user or help icon.
+  .cd-icon:not(.cd-icon--arrow-down) {
     width: 14px;
     height: 14px;
-    margin-top: auto; // Center vertically in macOS 10
-    margin-bottom: auto; // Center vertically in macOS 10
-    // IE11 vertically align.
-    @media all and (-ms-high-contrast: none) {
-      min-height: 100%;
-    }
   }
 
   li {
@@ -175,12 +174,6 @@
 
 .no-js .cd-global-header .menu > li button {
   @extend .visually-hidden;
-}
-
-// First item following the SVG icon should have less left padding.
-.cd-global-header__user-menu .menu svg + a,
-.cd-global-header__user-menu .menu svg + button {
-  padding-left: 10px;
 }
 
 // Hides log out menu item when it is beside the expanded menu item.
