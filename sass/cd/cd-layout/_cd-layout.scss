@@ -235,3 +235,17 @@ section.cd-layout-two-col {
     }
   }
 }
+
+
+.region-sidebar-first:empty,
+.region-facets:empty {
+  display: none;
+}
+
+.region-facets + .region-sidebar-first {
+  margin-top: 2rem;
+
+  @include desktop {
+    margin-top: 1rem;
+  }
+}

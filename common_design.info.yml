@@ -22,6 +22,7 @@ regions:
   content: Content
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
+  facets: Facets
   footer_soft: Soft footer
   footer_navigation: Footer navigation
 
@@ -41,6 +42,17 @@ libraries-override:
   core/modernizr:
     js:
       assets/vendor/modernizr/modernizr.min.js: js/cd-modernizr.min.js
+
+  # select_a11y module for Facets dropdowns.
+  select_a11y/select_a11y_facets.widget:
+    css:
+      theme:
+        css/style.css: components/cd-select-a11y/cd-select-a11y.css
+
+  select_a11y/select_a11y.widget:
+    css:
+      theme:
+        css/style.css: components/cd-select-a11y/cd-select-a11y.css
 
 # CD components
 component-libraries:
