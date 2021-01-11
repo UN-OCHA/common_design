@@ -1,38 +1,20 @@
-/* When there is only one block, do not collapse on mobile */
-@media (min-width: 1024px) {
-  .cd-filter[data-cd-toggable] {
-    --dropdown: false;
-  }
-}
-
-/* This is needed for IE11*/
-/* No support for CSS custom properties means*/
-/* --dropdown: false; property on the dropdown container is not recognised*/
-/* so the cd-dropdown.js does not run the updateToggler function*/
-/* which toggles the data-cd-hidden attribute.*/
-/* This displays the dropdown regardless of that attribute value.*/
-@media all and (-ms-high-contrast: none) {
-  .cd-filter[data-cd-toggable][data-cd-hidden='true'] {
-    display: block;
-  }
-}
-
 .cd-filter {
   padding: 1rem 0.5rem;
   margin-bottom: 1rem;
 }
 
+/* Light grey background to visually distinguish container on mobile. */
+.cd-filter[data-cd-hidden="false"] {
+  background: var(--cd-light-grey);
+}
+
+.cd-filter:empty {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .cd-filter {
     padding: 0;
-  }
-
-  .cd-filter[data-cd-hidden="false"] {
-    background: var(--cd-light-grey);
-   }
-
-  .cd-filter:empty {
-    display: none;
   }
 }
 
