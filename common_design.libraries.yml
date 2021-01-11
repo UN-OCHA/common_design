@@ -102,6 +102,11 @@ cd-date:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-facets:
+  css:
+    component:
+      components/cd-facets/cd-facets.css: {}
+
 cd-filter:
   css:
     component:
@@ -170,6 +175,11 @@ cd-read-more:
       components/cd-read-more/cd-read-more.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
+
+cd-select-a11y:
+  css:
+    theme:
+      components/cd-select-a11y/cd-select-a11y.css: {}
 
 cd-styled-list:
   css:

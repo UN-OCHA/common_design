@@ -8,7 +8,7 @@ Check out the  `common_design` repo branch `cd-226-design-system` and make PR ag
 
 When base theme PRs are merged to `cd-226-design-system` branch, a deploy to https://feature.commondesign-unocha-org.ahconu.org happens automatically.
 
-Any config to accompany the v2 base theme work needs to be pushed to `feature/cd-226-design-system` branch on `common-design-site` repo. 
+Any config to accompany the v2 base theme work needs to be pushed to `cd-226-design-system` branch on `common-design-site` repo. 
 
 Read more about the OPS set up [OPS-7069](https://humanitarian.atlassian.net/browse/OPS-7069?focusedCommentId=118217)
 
