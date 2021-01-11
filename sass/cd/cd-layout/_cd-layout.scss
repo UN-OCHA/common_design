@@ -249,3 +249,32 @@ section.cd-layout-two-col {
     margin-top: 1rem;
   }
 }
+
+// Page title.
+.cd-page-title + main.cd-container {
+  padding-top: 0;
+}
+
+.cd-page-title {
+  margin-top: 2rem;
+
+  @include tablet {
+    margin-top: 3rem; // Matches main.cd-container.
+  }
+}
+
+.page-title {
+  @include xl {
+    padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+  }
+}
+
+// Hide page title on homepage
+//.path-frontpage .page-title {
+//  display: none;
+//}
+
+// Remove margin from page title on homepage
+//.path-frontpage .page-title {
+//  margin-top: 0;
+//}
