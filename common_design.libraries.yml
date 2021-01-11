@@ -29,6 +29,11 @@ cd-alert:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-article-list:
+  css:
+    component:
+      components/cd-article-list/cd-article-list.css: {}
+
 cd-article-teaser:
   css:
     component:
@@ -76,6 +81,11 @@ cd-hero:
       components/cd-hero/cd-hero.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
+
+cd-hr:
+  css:
+    component:
+      components/cd-hr/cd-hr.css: {}
 
 cd-image-grid:
   css:

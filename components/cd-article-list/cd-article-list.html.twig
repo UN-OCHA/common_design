@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Implementation for article list formatter.
+ *
+ * Available variables:
+ * - links: list of links to articles.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set links = [
+  {'title': 'Omnis ut quia animi rerum sit tempore quaerat qui.', 'url': '#',
+'attributes': [{'class': []}]},
+  {'title': 'Dicta consequatur voluptates occaecati nihil consequatur iste
+suscipit.', 'url': '#', 'attributes': [{'class': []}]},
+  {'title': 'Labore possimus tempore consequatur nam sunt unde.', 'url': '#',
+'attributes': []}
+  ]
+%}
+
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-article-list') }}
+
+{% if links %}
+<ul class="cd-article-list__list">
+{% for link in links %}
+  {% spaceless %}
+  <li class="cd-article-list__list__item">
+    <a href="{{ link.url }}" class="cd-article-list-link">
+      <span{{ attributes.addClass('cd-article-list-link__title') }}>{{ link.title }}</span>
+      <svg class="cd-icon cd-icon--arrow-right cd-article-list-link__arrow" width="16" height="16" aria-hidden="true" focusable="false">
+        <use xlink:href="#cd-icon--arrow-right"></use>
+      </svg>
+    </a>
+  </li>
+  {% endspaceless %}
+{% endfor %}
+</ul>
+{% endif %}
