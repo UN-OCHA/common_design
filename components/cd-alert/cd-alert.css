@@ -21,13 +21,13 @@
 }
 
 .cd-alert {
-  border: 1px solid var(--cd-bright-blue);
-  box-shadow: -8px 0 0 var(--cd-bright-blue);
+  border: 1px solid var(--cd-blue--bright);
+  box-shadow: -8px 0 0 var(--cd-blue--bright);
   color: var(--cd-grey--dark);
 }
 
 .cd-alert svg {
-  fill: var(--cd-bright-blue);
+  fill: var(--cd-blue--bright);
 }
 
 .cd-alert a,

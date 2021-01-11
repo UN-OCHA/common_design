@@ -1,0 +1,238 @@
+@import 'sass/cd/cd-variables';
+
+// select-a11y
+// ==========================================================
+/* if you use Scampi (https://gitlab.com/pidila/scampi),
+you don't need this first part */
+$gray-base:                   #262626;
+
+$gray-1:                      darken($gray-base, 10%) !default; /* #0c0c0c */
+$gray-2:                      $gray-base !default;
+$gray-3:                      lighten($gray-base, 15%) !default; /* #4d4d4d */
+$gray-4:                      lighten($gray-base, 30%) !default; /* #737373 */
+$gray-5:                      lighten($gray-base, 45%) !default; /* #999999 */
+$gray-6:                      lighten($gray-base, 60%) !default; /* #bfbfbf */
+$gray-7:                      lighten($gray-base, 75%) !default; /* #e5e5e5 */
+$gray-8:                      lighten($gray-base, 80) !default; /* #f2f2f2 */
+
+button,
+input,
+label,
+select {
+  font-size: 1em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* select-a11y
+------------------------------------------------------ */
+$btn-select-a11y-bg:          $cd-white !default;
+$btn-select-a11y-border:      $gray-7 !default;
+$btn-select-a11y-symbol:      "\25BC" !default; // ▼
+
+$tag-item-border:             $gray-7 !default;
+$tag-item-supp-symbol:        "\2715" !default; // X
+$tag-item-supp-symbol-color:  $cd-highlight-red !default;
+$tag-item-supp-border:        $cd-highlight-red !default;
+
+$a11y-suggestions-bg:         $gray-7 !default;
+$a11y-suggestion-color:       $gray-3 !default;
+$a11y-suggestion-color-hover: $gray-1 !default;
+$a11y-suggestion-bg-hover:    $gray-8 !default;
+$a11y-suggestion-bg-selected: $gray-7 !default;
+$a11y-suggestion-border:      $gray-5 !default;
+
+.select-a11y {
+  position: relative;
+  background-color: $gray-8;
+
+  .btn-select-a11y {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    padding: 9px .5rem;
+    background-color: $btn-select-a11y-bg;
+    border: 1px solid $btn-select-a11y-border;
+
+    .icon-select {
+      position: absolute;
+      background-color: $cd-highlight-red;
+      top: 50%;
+      right: 0.5em;
+      line-height: 0;
+    }
+
+    .icon-select::before {
+      content: $btn-select-a11y-symbol;
+      color: $gray-4;
+    }
+
+    &[aria-expanded="true"] {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &[aria-expanded="true"] .icon-select {
+      transform: rotate(180deg);
+    }
+  }
+
+  .tag-item {
+    border: 1px solid $tag-item-border;
+    padding: .2em .1em .2em 0.5em;
+    background: $cd-white;
+  }
+
+  .tag-item-supp {
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-left: 0.25rem;
+
+    .icon-delete::before {
+      content: $tag-item-supp-symbol;
+      color: $tag-item-supp-symbol-color;
+      line-height: 1;
+    }
+
+    &:focus {
+      outline: 1px solid $tag-item-supp-border;
+      color: $tag-item-supp-border;
+    }
+
+    &:hover {
+      color: $tag-item-supp-border;
+      border-color: $tag-item-supp-border;
+    }
+  }
+
+  .tag-hidden {
+    display: none;
+  }
+
+  &.is-open .a11y-container {
+    display: block;
+  }
+
+  .a11y-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0.5em;
+    background: $a11y-suggestions-bg;
+    z-index: 10;
+    border: 1px solid $gray-7;
+
+
+    input {
+      outline: 2px solid $cd-bright-blue;
+      width: 100%;
+    }
+  }
+
+  // fix safari pour cacher l'autocompletion native
+  // cf http://stackoverflow.com/questions/38663578/how-to-hide-autofill-safari-icon-in-input-field
+  input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+
+  .a11y-suggestions {
+    max-height: 10em;
+    overflow-y: auto;
+    border: 1px solid $a11y-suggestion-border;
+    margin-top: 0.5em;
+    background-color: #fff;
+  }
+
+  .a11y-suggestion {
+    padding: 0 (8em/16) 0 (26em/16);
+    color: $a11y-suggestion-color;
+    cursor: pointer;
+    text-align: left;
+
+    &:focus,
+    &:hover {
+      color: $a11y-suggestion-color-hover;
+      background-color: $a11y-suggestion-bg-hover;
+    }
+
+    &:focus {
+      outline: 1px dotted $a11y-suggestion-color-hover !important;
+      outline-offset: -1px;
+    }
+
+    &[aria-selected="true"] {
+      background-color: $a11y-suggestion-bg-selected;
+      color: $a11y-suggestion-color-hover;
+      position: relative;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: (8em/16);
+      }
+    }
+  }
+
+  .a11y-no-suggestion {
+    padding: 0 0.5em;
+    color: $a11y-suggestion-color;
+    text-align: left;
+    margin: 0;
+  }
+
+  .list-inline {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    background: $gray-8;
+  }
+
+  .list-selected {
+    padding: 0.5em;
+    margin: 0;
+
+    li {
+      margin: 0 0.3em 0.3em 0;
+      display: flex;
+      flex: 0 1 auto;
+      align-items: flex-start;
+
+      &::before {
+        content: '';
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.btn,
+.btn {
+  font-size: 1rem;
+}
+
+.btn:focus,
+.btn.focus {
+  outline: 3px solid $cd-bright-blue;
+  outline-offset: -3px;
+}
