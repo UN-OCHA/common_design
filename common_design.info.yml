@@ -19,6 +19,7 @@ regions:
   header_search: Header search
   header_logo: Header logo
   header_navigation: Header navigation
+  page_title: Page title
   content: Content
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
