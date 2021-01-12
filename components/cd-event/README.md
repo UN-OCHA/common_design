@@ -7,4 +7,8 @@ Use with the date component for a visually appealing Event teaser.
 None
 
 ### Variants
-None
+
+```
+none
+
+```

@@ -7,4 +7,8 @@ Displays a single date, month and year in a calendar event style.
 Width-restricted so multiple dates do not display well.
 
 ### Variants
-None
+
+```
+none
+
+```

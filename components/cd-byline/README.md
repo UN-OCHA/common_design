@@ -8,10 +8,11 @@ Author information to accompany articles.
 - byline
 
 ## Caveats
+None
 
 ### Variants
 
 ```
-
+none
 
 ```

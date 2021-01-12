@@ -17,4 +17,8 @@ Use with cd-grid for a 2 column layout.
 Unsure whether this should be specifici to the ul element
 
 ### Variants
-None
+
+```
+none
+
+```

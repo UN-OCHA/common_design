@@ -9,6 +9,6 @@ Establishes the basic typographic rules for headings, paragraphs and other likel
 ### Variants
 
 ```
-
+none
 
 ```

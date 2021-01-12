@@ -12,13 +12,13 @@ All elements are optional.
 Title and message are width-restricted.
 
 ## Caveats
-None
+Uses and SVG as an element in the markup, not a background image.
 
 ### Variants
 
 ```
-.cd-alert--danger
-.cd-alert--attention
-.cd-alert--success
+.cd-alert--error
+.cd-alert--warning
+.cd-alert--status
 
 ```
