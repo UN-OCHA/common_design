@@ -107,6 +107,11 @@ cd-facets:
     component:
       components/cd-facets/cd-facets.css: {}
 
+cd-figure-list:
+  css:
+    component:
+      components/cd-figure-list/cd-figure-list.css: {}
+
 cd-filter:
   css:
     component:
