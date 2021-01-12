@@ -1,20 +1,36 @@
 .cd-filter {
+  padding: 1rem 0.5rem;
   margin-bottom: 1rem;
+}
+
+/* Light grey background to visually distinguish container on mobile. */
+.cd-filter[data-cd-hidden="false"] {
+  background: var(--cd-light-grey);
+}
+
+.cd-filter:empty {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cd-filter {
+    padding: 0;
+  }
 }
 
 .cd-filter__btn {
   width: 100%;
-  background: var(--cd-light-grey);
-  color: var(--cd-dark-grey);
+  background: var(--cd-grey--light);
+  color: var(--cd-grey--dark);
 }
 
 .cd-filter__btn svg {
-  fill: var(--cd-dark-grey);
+  fill: var(--cd-grey--dark);
 }
 
 .cd-filter__btn:hover {
-  background: var(--cd-dark-grey);
-  color: var(--cd-light-grey);
+  background: var(--cd-grey--dark);
+  color: var(--cd-grey--light);
 }
 
 .cd-filter__btn:hover svg {
@@ -23,7 +39,7 @@
 
 .cd-filter__btn:focus {
   color: var(--cd-white);
-  background: var(--cd-dark-grey);
+  background: var(--cd-grey--dark);
 }
 
 .cd-filter__btn:focus svg {
@@ -31,7 +47,7 @@
 }
 
 .cd-filter__form {
-  background: var(--cd-light-grey);
+  background: var(--cd-grey--light);
   width: 100%;
   padding: 1rem;
 }
@@ -58,7 +74,7 @@
 
 .cd-filter__input[type='search'],
 .cd-filter__input[type='text'] {
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
   font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
@@ -68,27 +84,27 @@
 .cd-filter__input[type='text']:focus {
   outline: 0;
   /* RGBA and custom properties? */
-  box-shadow: 0 0 4px rgba(var(--cd-mid-grey), 0.7);
+  box-shadow: 0 0 4px rgba(var(--cd-grey--mid), 0.7);
   box-shadow: 0 0 4px var(--cd-highlight-red);
 }
 
 .cd-filter__input::-webkit-input-placeholder {
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
 .cd-filter__input::-moz-placeholder {
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
 .cd-filter__input:-ms-input-placeholder {
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
 .cd-filter__input:-moz-placeholder {
-  color: var(--cd-dark-grey);
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
@@ -125,13 +141,14 @@
 
   /* Quantity queries */
   /* https://alistapart.com/article/quantity-queries-for-css */
+
   /* If one element */
   .cd-filter__group:only-of-type,
-    /* If two elements */
+  /* If two elements */
   .cd-filter__group:nth-last-child(2):first-child,
   .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(2):first-child ~ .cd-export,
-    /* If three elements */
+  /* If three elements */
   .cd-filter__group:nth-last-child(3):first-child,
   .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(3):first-child ~ .cd-export {

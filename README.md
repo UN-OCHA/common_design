@@ -1,4 +1,11 @@
-# OCHA Common Design base theme for Drupal 8
+# OCHA Common Design System
+
+- Full-width header and footer
+- Full-width components
+
+---
+
+# Common Design base theme for Drupal 8
 
 ## Releases
 

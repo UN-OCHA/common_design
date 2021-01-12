@@ -1,32 +1,35 @@
-.cd-date-wrapper {
+.cd-date {
   overflow: hidden;
-  background-color: var(--cd-site-bg-color--light);
+  background-color: var(--cd-white);
+  border: 1px solid var(--cd-blue-grey--light);
   text-align: center;
-  width: 80px;
-  line-height: 18px;
   float: left;
-  margin-right: 20px;
-  border-radius: 4px;
+  border-radius: 0.25rem;
+  width: 5.5rem;
 }
 
-.cd-date-month-wrapper {
+.cd-date-day-wrapper {
   background: var(--cd-ocha-blue);
-  padding: 3px 0;
-  margin-bottom: 10px;
-}
-
-.cd-date-month {
-  color: var(--cd-white);
-  padding-top: 10px;
-  text-transform: uppercase;
+  padding: 0 0.5rem;
 }
 
 .cd-date-day {
-  font-size: 25px;
-  color: var(--cd-dark-grey);
+  font-size: 2.625em; /* 42px */
+  color: var(--cd-white);
+  font-weight: bold;
 }
 
-.cd-date-year-wrapper {
+.cd-date-month,
+.cd-date-year {
   color: var(--cd-ocha-blue);
-  padding-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.cd-date-wrapper {
+  padding: 0.25rem 0.5rem;
+}
+
+*[class*="--event"] {
+  margin: 1rem auto 0;
 }

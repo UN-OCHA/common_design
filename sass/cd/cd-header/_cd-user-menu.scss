@@ -57,7 +57,7 @@
 
 .cd-user-menu__item {
   background: transparent;
-  color: $cd-white-text-color;
+  color: $cd-white;
   height: $cd-global-header-height;
   line-height: $cd-global-header-height;
   padding: 0 15px;
@@ -83,7 +83,7 @@
 
   // Separator.
   &::after {
-    background: $cd-light-blue-border-color;
+    background: $cd-blue--light;
     height: calc(#{$cd-global-header-height}/3);
     width: 2px;
     content: '';
@@ -99,7 +99,7 @@
   }
 
   &:focus {
-    outline: 3px solid $cd-bright-blue;
+    outline: 3px solid cd-blue--bright;
     outline-offset: -2px;
   }
 

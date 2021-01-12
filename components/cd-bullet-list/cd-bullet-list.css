@@ -1,19 +1,40 @@
 .cd-bullet-list {
-  margin: 0;
-  padding: 1rem 0;
+  margin: 0 0 1rem;
+  padding: 0;
   list-style: none;
 }
 
 .cd-bullet-list li {
-  padding-bottom: 1rem;
-  /* margin-bottom: 1rem; */
-  /* border-bottom: 1px solid var(--cd-site-bg-color); */
+  padding-left: 1.25em;
+  text-indent: -1.25em;
 }
 
-.cd-bullet-list svg {
+.cd-bullet-list li a {
+  padding: 0.25rem 1rem 0.25rem 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.cd-bullet-list li a::before {
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.5rem;
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%5C %3Cpath fill='%23ff4d59' d='M14,48a4,4,0,0,1-2.83-6.83L28.34,24,11.17,6.83a4,4,0,0,1,5.66-5.66l20,20a4,4,0,0,1,0,5.66l-20,20A4,4,0,0,1,14,48Z'/%3E%5C %3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+/* When using an SVG element as icon */
+.cd-bullet-list--icon li a::before {
+  content: none;
+}
+
+.cd-bullet-list--icon svg {
   fill: var(--cd-highlight-red);
   width: 0.5rem;
   height: 0.5rem;
   display: inline-block;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }

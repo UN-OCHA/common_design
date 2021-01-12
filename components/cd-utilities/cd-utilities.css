@@ -1,0 +1,40 @@
+/* Utlilty classes */
+
+/* Alignment */
+.cd-align--center,
+*[class*="--align-center"]  {
+  text-align: center;
+}
+
+.cd-align--right,
+*[class*="--align-right"] {
+  text-align: right;
+}
+
+/* Floating */
+.cd-float--left,
+*[class*="--float-left"] {
+  float: left;
+}
+
+.cd-float--right,
+*[class*="--float-right"] {
+  float: right;
+}
+
+/* Rounded image */
+/* Requires square image */
+*[class*="__image--rounded"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  /* For IE11 */
+  width: 100%;
+}
+
+/* Remove bottom border from last child of list */
+*[class*="__remove-border"]:last-child {
+  border-bottom: 0 none;
+}

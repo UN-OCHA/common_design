@@ -93,11 +93,11 @@ h5 {
 }
 
 .page-title {
-  padding-bottom: $cd-base-unit * 1.5;
-  border-bottom: 1px solid $cd-mid-bluey-grey;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $cd-blue-grey;
   font-weight: 300;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: $cd-default-text-color;
 
   @include sm {
@@ -106,7 +106,7 @@ h5 {
 }
 
 a {
-  color: $cd-dark-blue;
+  color: $cd-blue--dark;
 
   &:hover,
   &:focus {

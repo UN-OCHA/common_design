@@ -3,16 +3,21 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer {
-  //grid-row: 4 / 4; // Position footer so visible on short pages.
-  background: $cd-primary-bg-color;
-  color: $cd-white-text-color;
-  padding: 48px 0 0;
+  // Position footer at the bottom of viewport. This might need adjusting based on page layout.
+  grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
+  background: $cd-primary;
+  color: $cd-white;
+  padding: 3rem 0 0;
   text-align: center;
   line-height: 1.5;
 
   a {
-    color: $cd-white-text-color;
     text-decoration: none;
+    color: $cd-white;
+
+    &.cd-button {
+      color: initial;
+    }
 
     &:hover,
     &:focus {
@@ -20,8 +25,13 @@
       text-decoration: underline;
     }
 
+    &.cd-button:hover,
+    &.cd-button:focus {
+      color: initial;
+    }
+
     &:focus {
-      outline: 3px solid $cd-bright-blue;
+      outline: 3px solid cd-blue--bright;
       outline-offset: 8px;
     }
   }
@@ -29,7 +39,7 @@
 
 .cd-footer__section {
   margin: 0 auto;
-  padding-bottom: 48px;
+  padding-bottom: 3rem;
   float: none;
   width: 100%;
 

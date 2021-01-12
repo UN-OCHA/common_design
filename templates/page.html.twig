@@ -58,14 +58,31 @@
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
   {% endblock %}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
+  {% if page.breadcrumb %}
+    {% block breadcrumb %}
+      <div class="cd-layout-breadcrumb cd-container">
+        {{ page.breadcrumb }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
+  {% if page.highlighted %}
+    {% block highlighted %}
+      <div class="cd-layout-highlighted cd-container">
+        {{ page.highlighted }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
   {{ page.help }}
+
+  {% if page.page_title %}
+    {% block page_title %}
+      <div class="cd-page-title cd-container">
+        {{ page.page_title }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}

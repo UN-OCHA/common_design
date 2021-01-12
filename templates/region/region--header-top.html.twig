@@ -21,7 +21,7 @@
 ]
 %}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes).setAttribute('id', 'cd-global-header__actions') }}>
     {{ content }}
   </div>
 {% endif %}

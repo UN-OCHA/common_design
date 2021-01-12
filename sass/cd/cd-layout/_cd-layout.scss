@@ -3,29 +3,26 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 html {
+  //background: $cd-blue-grey;
   height: 100%;
-
-  @include desktop {
-    padding: 0 $cd-site-padding;
-  }
 }
 
 body {
-  background: $cd-site-bg-color;
   min-height: 100%;
 
-  // &:not(.user-logged-in) {
-  //   @supports (display: grid) {
-  //     display: grid;
-  //     grid-template-rows: 1fr auto;
-  //   }
-  // }
+  // Position footer at the bottom of viewport. This might need adjusting based on page layout.
+  &:not(.user-logged-in) {
+    @supports (display: grid) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+  }
 }
 
 .cd-layout-container {
-  background: $cd-white;
+  //background: $cd-white;
   margin: 0 auto;
-  max-width: $cd-max-body-width;
+  //max-width: $cd-max-body-width;
   min-height: 100%;
   padding: 0;
 
@@ -42,7 +39,7 @@ body {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 98px 1fr auto; // Height of header.
+      grid-template-rows: 101px 1fr auto; // Height of header.
 
       .no-js & {
         grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
@@ -86,6 +83,7 @@ body {
 // .cd-container is used as a utility class on other divs, for common padding, width control.
 .cd-layout-container main.cd-container {
   padding-top: 2rem;
+  background: $cd-white;
 
   @include tablet {
     padding-top: 3rem;
@@ -229,7 +227,7 @@ section.cd-layout-two-col {
 
     // I've styled this as a block with padding and bg colour.
     padding: 1rem;
-    background-color: $cd-light-bluey-grey;
+    background-color: $cd-blue-grey--light;
 
     @include desktop {
       flex-basis: 285px;
@@ -237,3 +235,46 @@ section.cd-layout-two-col {
     }
   }
 }
+
+
+.region-sidebar-first:empty,
+.region-facets:empty {
+  display: none;
+}
+
+.region-facets + .region-sidebar-first {
+  margin-top: 2rem;
+
+  @include desktop {
+    margin-top: 1rem;
+  }
+}
+
+// Page title.
+.cd-page-title + main.cd-container {
+  padding-top: 0;
+}
+
+.cd-page-title {
+  margin-top: 2rem;
+
+  @include tablet {
+    margin-top: 3rem; // Matches main.cd-container.
+  }
+}
+
+.page-title {
+  @include xl {
+    padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+  }
+}
+
+// Hide page title on homepage
+//.path-frontpage .page-title {
+//  display: none;
+//}
+
+// Remove margin from page title on homepage
+//.path-frontpage .page-title {
+//  margin-top: 0;
+//}

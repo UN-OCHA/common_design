@@ -1,0 +1,45 @@
+h1 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.375rem; /* 38px */
+    font-weight: 700;
+  }
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+h3 {
+  margin: 0;
+}
+
+article p,
+.cd-max-width {
+  max-width: var(--cd-max-content-width);
+}
+
+hr {
+  margin: 3.5rem auto;
+  border: none;
+  border-top: 2px solid var(--cd-grey--light);
+  max-width: var(--cd-max-content-width);
+}
+
+blockquote {
+  margin: 2rem 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #707070;
+}
+@media (min-width: 768px) {
+  blockquote {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}

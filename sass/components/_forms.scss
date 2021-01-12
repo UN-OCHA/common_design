@@ -2,6 +2,7 @@
 // Form styles
 //——————————————————————————————————————————————————————————————————————————————
 
+// @TODO This should be made into a comoponent, and/or renamed to denote Drupal-specific.
 input[type='text'],
 input[type='number'],
 input[type='password'],
@@ -13,10 +14,10 @@ input[type='date'],
 textarea {
   @include font-size($cd-font-size-base);
   padding: $cd-base-unit;
-  border: 1px solid $cd-mid-light-grey;
+  border: 1px solid $cd-grey--mid-light;
   width: 100%;
   max-width: 100%;
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   @include tablet {
     width: auto;
   }

@@ -1,0 +1,7 @@
+.cd-caption {
+  max-width: var(--cd-max-width);
+  margin: 0 auto;
+  text-align: right;
+  font-size: 0.9rem;
+  font-style: italic;
+}
