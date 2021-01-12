@@ -13,4 +13,8 @@ Use with cd-bleed component for full viewport width option
 Image uses object-fit and object-position when supported, otherwise a fallback technique using absolute positioning and transform is used.
 
 ### Variants
-None
+
+```
+none
+
+```

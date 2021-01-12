@@ -8,6 +8,6 @@ A list of links to page headings for onpage navigation.
 ### Variants
 
 ```
-
+none
 
 ```

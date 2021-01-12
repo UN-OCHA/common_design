@@ -20,4 +20,8 @@ Use with cd-grid for column layout (with limitations)
 Unsure whether this should be specifici to the ul element
 
 ### Variants
-None
+
+```
+none
+
+```
