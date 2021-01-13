@@ -2,7 +2,7 @@
 
 ## Criteria
 - Each component should have a clear purpose and a name to reflect.
-- Each component should be defined by purpose, not visual style. *his may be difficult sometimes. Discuss with team members.
+- Each component should be defined by purpose, not visual style. *This may be difficult sometimes. Discuss with team members.
 - The component name should start with `cd-`.
 - Each component should be in its own folder.
 - Each component should include a README.md and guidelines for use.
@@ -13,9 +13,9 @@
 - Each component should include an html file with example markup and dummy text, to best demonstrate its use and variants.
 - If there are multiple variants, each should be displayed for illustration purposes. Use `<hr>` to separate if needed.
 - The components CSS and JS files should be included. For CSS, the component's CSS is usually placed last.
-- Each component should include the `cd-base.css` which has the CSS custom properties and other generic rules. 
+- Each component should link to the `cd-base.css` which has the CSS custom properties and other generic rules. 
 This is found in the [common_design_system repo](https://github.com/UN-OCHA/common_design_system/blob/master/cd-base.css)
-- Any dependency components' CSS or JS should be included.
+- Any dependency components' CSS or JS should be linked to.
 
 Eg. For cd-alert component
 ```
@@ -27,7 +27,7 @@ Eg. For cd-alert component
 - Markup should be simple and semantic.
 - Use nested BEM naming for selectors.
 
-Eg.
+Eg. BEM
 ```
 <ul class="cd-title-list">
   <li class="cd-title-list__item">
@@ -43,7 +43,7 @@ Eg.
 - If the component requires a "page" layout for composition, add the standard layout divs from the base theme. 
 The layout styles are included in cd-base.css.
 
-Eg. BEM
+Eg. Layout markup
 ```
 <div class="cd-layout-container">
   <main role="main" id="main-content" class="cd-container">
@@ -73,7 +73,7 @@ Eg. For cd-hero component
 
 ### Twig
 - Include the markup without the wrapper divs. The main purpose of the twig file is to include the component on the demo page.
-- Define and attach the relevant Drupal libraries instead of CSS files. 
+- Define and attach the relevant Drupal libraries instead of linking to the CSS files. 
 As this will display on the demo page (a Drupal site), the cd-base.css is replaced with styles.css (already loaded)
 
 ### Add the component to the Demo page
@@ -82,8 +82,10 @@ As this will display on the demo page (a Drupal site), the cd-base.css is replac
 
 Eg. Include cd-teaser component
 ```
+// Table of Contents list.
 <li><a href="#cd-teaser">Teaser</a></li>
 
+// Include the component.
 <h3 class="cd-styleguide"><a id="cd-teaser">cd-teaser</a>
   {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
