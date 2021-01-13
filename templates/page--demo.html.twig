@@ -79,12 +79,6 @@
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
   {% endblock %}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-
   <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
 
   {% block hero %}
@@ -104,6 +98,14 @@
   {% endif %}
 
   {{ page.help }}
+
+  {% if page.page_title %}
+    {% block page_title %}
+      <div class="cd-page-title cd-container">
+        {{ page.page_title }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
   {# Link to skip to the main content is in html.html.twig #}
   <main role="main" id="main-content" class="cd-container">
@@ -134,6 +136,7 @@
           <li><a href="#cd-search--inline">Inline search</a></li>
           <li><a href="#cd-pagination">Pagination</a></li>
           <li><a href="#cd-grid">Grid</a></li>
+          <li><a href="#cd-typography">Typography</a></li>
         </ol>
       </div>
 
@@ -261,6 +264,11 @@
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-typography">cd-typography</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-typography/cd-typography.html.twig' %}
 
 
       {% endif %}

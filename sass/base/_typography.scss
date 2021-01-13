@@ -66,14 +66,30 @@ h3,
 h4,
 h5 {
   line-height: 1.2;
-  font-weight: bold;
   color: $cd-ocha-blue;
   //font-family: $cd-font--webfont;
 }
 
 h1 {
-  color: $cd-ocha-blue;
-  font-weight: normal;
+  color: $cd-default-text-color;
+  font-weight: 300;
+  font-size: 2rem; /* 32px */
+
+  @include desktop {
+    font-size: 2.5rem; /* 40px */
+  }
+}
+
+.page-title {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $cd-blue-grey;
+  margin-bottom: 2rem;
+}
+
+h2,
+h4,
+h5 {
+  font-weight: 400;
 }
 
 h1,
@@ -83,25 +99,18 @@ h4,
 h5,
 ol,
 dl {
-  margin-bottom: $cd-base-unit;
+  margin-bottom: 1rem;
 }
 
-
-h4,
-h5 {
-  font-weight: 400;
-}
-
-.page-title {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $cd-blue-grey;
-  font-weight: 300;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: $cd-default-text-color;
-
-  @include sm {
-    font-size: 2.5rem;
+@include tablet {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  ol,
+  dl {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -123,32 +132,17 @@ em {
   font-style: italic;
 }
 
+// The Unarticulated Annotation.
 u {
   text-decoration: none;
   font-weight: bold;
 }
 
+// Description list.
 dt {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 dd {
-  margin-bottom: $cd-base-unit;
-}
-
-@include min-width(sm) {
-
-  h2 {
-    font-weight: normal;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  ol,
-  dl {
-    margin-bottom: $cd-base-unit * 2;
-  }
+  margin-bottom: 1rem;
 }
