@@ -20,6 +20,7 @@ function common_design_preprocess(&$variables, $hook) {
   // Add username.
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
   $variables['username'] = $user->getUsername();
+  $variables['#cache']['contexts'][] = 'user';
 
   //Check if Components module is enabled, to prevent page--demo.html.twig breaking due to twig errors.
   $moduleHandler = \Drupal::service('module_handler');
