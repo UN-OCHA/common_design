@@ -6,9 +6,9 @@ Hyper link to full article
 ## Caveats
 
 ### Variants
-Can be aligned with `cd-utility` classes
+Alignment options with `cd-utility` classes
 
 ```
-
+none
 
 ```

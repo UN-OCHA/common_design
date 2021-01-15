@@ -8,6 +8,6 @@ Navigation for long collections, split across multiples pages.
 ### Variants
 
 ```
-
+none
 
 ```

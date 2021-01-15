@@ -8,6 +8,6 @@ A list of article titles, linked to the full article.
 ### Variants
 
 ```
-
+none
 
 ```
