@@ -12,5 +12,4 @@ See `cd-search--inline`
 ```
 .cd-search--inline
 
-
 ```

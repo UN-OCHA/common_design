@@ -1,25 +1,33 @@
-.cd-image-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .cd-image-grid > * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   padding: 0.25rem;
-  flex: 0 0 4rem;
 }
 
-/* Prevent img stretching in IE11 */
-.cd-image-grid  > * img {
-  flex-shrink: 0;
+@supports (display: flex) {
+  .cd-image-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cd-image-grid > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 4rem;
+  }
+
+  /* Prevent img stretching in IE11 */
+  .cd-image-grid  > * img {
+    flex-shrink: 0;
+  }
 }
 
+.cd-image-grid img,
 .cd-image-grid svg {
   max-width: 4rem;
   max-height: 4rem;
+  width: inherit;
+  height: inherit;
 }
 
 @supports (display: grid) {

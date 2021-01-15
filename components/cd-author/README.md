@@ -10,10 +10,11 @@ Author name and article date
 - date in UN format
 
 ## Caveats
+None
 
 ### Variants
 
 ```
-
+none
 
 ```
