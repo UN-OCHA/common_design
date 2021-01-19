@@ -161,6 +161,17 @@ function common_design_preprocess_html(&$vars) {
   if ($status_code && $status_code->getStatusCode() == 403) {
     $vars['attributes']['class'][] = 'path-error path-error--403';
   }
+
+  // Add a script to detect whether javascript is enabled or not and then
+  // replace the `no-js` class with the `js` one.
+  // Drupal.js does this but way too late on first load causing issues with
+  // css rules that rely on the `js` class being defined or not.
+  $js_detection = [
+    '#tag' => 'script',
+    '#value' => "document.documentElement.className = document.documentElement.className.replace('no-js', typeof document.addEventListener !== 'undefined' ? 'js' : 'no-js');",
+    '#weight' => -1,
+  ];
+  $vars['page']['#attached']['html_head'][] = [$js_detection, 'js-detection'];
 }
 
 ///**

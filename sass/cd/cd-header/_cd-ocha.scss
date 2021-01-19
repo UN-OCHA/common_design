@@ -4,9 +4,14 @@
 
 .cd-ocha {
   float: left;
+  text-align: left;
 
   .no-js & {
     float: none;
+  }
+
+  h2 {
+    color: $cd-white;
   }
 }
 
@@ -47,15 +52,10 @@
   flex-shrink: 0;
   height: 21px;
   width: 21px;
+  fill: $cd-white;
 
   @include tablet {
     margin-right: 4px;
-  }
-
-  svg {
-    width: 21px;
-    height: 21px;
-    fill: $cd-white;
   }
 }
 
@@ -94,7 +94,6 @@
       grid-gap: 100px;
     }
   }
-
 }
 
 .cd-ocha-dropdown__section {
@@ -202,4 +201,10 @@
     left: 0;
     right: 0;
   }
+}
+
+// When JS is disabled, OCHA Services moves to the footer.
+// This prevents the .cd-footer anchor rule from affecting the link colour.
+.no-js .cd-footer .cd-ocha-dropdown__see-all {
+  color: initial;
 }
