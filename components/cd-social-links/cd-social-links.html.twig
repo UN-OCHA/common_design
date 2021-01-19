@@ -1,0 +1,43 @@
+{{ attach_library('common_design/cd-social-links') }}
+
+<footer class="cd-social-links">
+  {% set shareText = label|render|striptags|default(title|render|striptags) %}
+  {% set shareMessage = 'Global Humanitarian Overview 2021: '|t ~ shareText %}
+  {% set shareUrl = 'https://gho.unocha.org' ~ url %}
+  <div class="cd-social-links__wrapper">
+    <ul>
+      <li>
+        <a class="cd-social-links__link cd-social-links__link--twitter" href="https://twitter.com/intent/tweet?text={{ shareMessage }}%0A%0A{{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on Twitter'|t }}</span>
+          {{ icon_twitter|raw }}
+        </a>
+      </li>
+      <li>
+        <a class="cd-social-links__link cd-social-links__link--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on Facebook'|t }}</span>
+          {{ icon_facebook|raw }}
+        </a>
+      </li>
+      <li>
+        <a class="cd-social-links__link cd-social-links__link--linkedin" href="https://www.linkedin.com/shareArticle?mini=true&summary={{ shareMessage }}&title={{ label|render|striptags|trim }}&url={{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on LinkedIn'|t }}</span>
+          {{ icon_linkedin|raw }}
+        </a>
+      </li>
+      <li>
+        <a class="cd-social-links__link cd-social-links__link--copy" href="{{ shareUrl }}" data-message="{{ 'URL copied to clipboard'|t }}">
+          <span class="visually-hidden">{{ 'Copy URL to clipboard'|t }}</span>
+          {{ icon_copyurl|raw }}
+        </a>
+      </li>
+      {% if pdf_download_url %}
+      <li>
+        <a class="cd-social-links__link cd-social-links__link--pdf" href="{{ pdf_download_url }}">
+          <span class="visually-hidden">{{ 'Download PDF'|t }}</span>
+          {{ icon_pdf|raw }}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</footer>
