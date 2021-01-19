@@ -21,6 +21,10 @@ cd-user-menu:
   dependencies:
     - common_design/cd-dropdown
 
+cd-ocha-services:
+  js:
+    js/cd-ocha-services.js: {}
+
 # CD components
 cd-alert:
   css:
