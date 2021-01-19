@@ -7,6 +7,9 @@
 
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Implements hook_preprocess().
+ */
 function common_design_preprocess(&$variables, $hook) {
   try {
     $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
@@ -26,6 +29,18 @@ function common_design_preprocess(&$variables, $hook) {
   if ($moduleHandler->moduleExists('components')){
     $variables['componentsModule'] = TRUE;
   }
+
+  // Inline icons.
+  $icon_twitter = file_get_contents(drupal_get_path('theme', 'common_design') . '/components/cd-social-links/img/icon--twitter.svg');
+  $icon_facebook = file_get_contents(drupal_get_path('theme', 'common_design') . '/components/cd-social-links/img/icon--facebook.svg');
+  $icon_linkedin = file_get_contents(drupal_get_path('theme', 'common_design') . '/components/cd-social-links/img/icon--linkedin.svg');
+  $icon_copyurl = file_get_contents(drupal_get_path('theme', 'common_design') . '/components/cd-social-links/img/icon--copyurl.svg');
+  $icon_pdf = file_get_contents(drupal_get_path('theme', 'common_design') . '/components/cd-social-links/img/icon--pdf.svg');
+  $variables['icon_twitter'] = $icon_twitter;
+  $variables['icon_facebook'] = $icon_facebook;
+  $variables['icon_linkedin'] = $icon_linkedin;
+  $variables['icon_copyurl'] = $icon_copyurl;
+  $variables['icon_pdf'] = $icon_pdf;
 }
 
 /**
