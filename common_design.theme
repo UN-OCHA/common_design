@@ -17,10 +17,6 @@ function common_design_preprocess(&$variables, $hook) {
   // Ensure the cache varies correctly.
   $variables['#cache']['contexts'][] = 'url.path.is_front';
 
-  // Add username.
-  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-  $variables['username'] = $user->getUsername();
-
   //Check if Components module is enabled, to prevent page--demo.html.twig breaking due to twig errors.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('components')){
@@ -222,11 +218,24 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
 //  ];
 //}
 
-///**
-// * Implements hook_block__language_block().
-// */
+/**
+ * Implements hook_block__language_block().
+ */
 function common_design_preprocess_block__language_block(&$vars) {
   // Current language available in template override.
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $vars['language'] = $language;
+}
+
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function common_design_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__account') {
+    // Add username.
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $variables['username'] = $user->getUsername();
+    $variables['#cache']['contexts'][] = 'user';
+  }
 }
