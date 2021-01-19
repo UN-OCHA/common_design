@@ -4,19 +4,24 @@
   // Collect all URL buttons.
   var urlButtons = document.querySelectorAll('.cd-social-links__link--copy');
 
-  // Process links co they copy URL to clipboard.
+  // Process links so they copy URL to clipboard.
   urlButtons.forEach(function (el) {
     el.addEventListener('click', function (ev) {
       var tempInput = document.createElement('input');
       var urlToCopy = el.href;
 
       try {
-        // Copy URL in browser bar to clipboard.
-        document.body.appendChild(tempInput);
-        tempInput.value = urlToCopy;
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(urlToCopy);
+        }
+        else {
+          // Copy URL in browser bar to clipboard.
+          document.body.appendChild(tempInput);
+          tempInput.value = urlToCopy;
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+        }
 
         // If we got this far, don't let the link click through.
         ev.preventDefault();
