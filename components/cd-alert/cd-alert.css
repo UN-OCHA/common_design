@@ -1,4 +1,5 @@
 .cd-alert {
+  --cd-flow-space: 0.5rem;
   padding: 1rem;
   margin: 1rem 0 2rem;
   border-radius: 0.25rem;
@@ -64,4 +65,23 @@
 
 .cd-alert--status svg {
   fill: var(--cd-green);
+}
+
+.cd-alert__message ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cd-alert__message p + ul,
+.cd-alert__message p {
+  margin: 0.5rem 0 0;
+}
+
+.cd-alert__message > ul {
+  margin-top: 0;
+}
+
+.cd-alert__message p:first-child {
+  margin-top: 0;
 }
