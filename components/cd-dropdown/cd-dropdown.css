@@ -1,13 +1,1 @@
 /* See https://github.com/UN-OCHA/common_design/blob/master/sass/cd/cd-header/_cd-dropdowns.scss */
-
-[data-cd-toggable] {
-  --dropdown: true;
-}
-
-[data-cd-hidden='false'] {
-  display: block;
-}
-
-[data-cd-hidden='true'] {
-  display: none;
-}
