@@ -6,6 +6,5 @@ Behaves the same as `cd-search` on mobile - search icon expands to display form 
 
 ## Caveats
 
-
 ### Variants
 This is a variant.

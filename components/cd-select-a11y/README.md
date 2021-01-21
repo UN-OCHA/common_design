@@ -6,7 +6,7 @@ CSS-only component to override facet plugin `select-a11y` from Drupal facet modu
 @TODO examine how this can be done without SASS.
 
 ## Caveats
-Requires Drupal and specific site set up.
+Requires Drupal and specific site set up, and uses SASS to compile due to the colour system.
 
 ### Variants
 
