@@ -11,12 +11,15 @@ All elements are optional.
 
 Title and message are width-restricted.
 
+Message can contain `<p>` and `<ul>` elements.
+
 ## Caveats
 Uses and SVG as an element in the markup, not a background image.
 
 ### Variants
 
 ```
+.cd-alert // default
 .cd-alert--error
 .cd-alert--warning
 .cd-alert--status
