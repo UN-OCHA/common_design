@@ -1,0 +1,63 @@
+/**
+ * Base component styles for the collection of tags
+ */
+.cd-tags {
+  display: inline-block;
+  /* This combined with the line-height ensures proper vertical alignement. */
+  vertical-align: top;
+  line-height: 1rem;
+}
+
+/**
+ * Individual tag
+ */
+.cd-tag {
+  display: inline-block;
+  width: 2.5rem;
+  margin: 0.25rem;
+  background: #5090cd;
+  color: #fff;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  line-height: 0.9375rem; /* 1.5 of font-size */
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+/**
+ * Variants
+ *
+ * You might call each tag a variant, but they do tend to correspond to content
+ * in the DB instead of exportable config that we can store in version control.
+ *
+ * Therefore, the following rules will serve as an example, and would probably
+ * be implemented in the primary active theme of a website.
+ */
+.cd-tag {
+  background-color: #555; /* default is gray */
+}
+
+/**
+ * Variant 1 has a custom color.
+ */
+.cd-tag--variant-1 {
+  background-color: #8869ae;
+}
+
+/**
+ * Variants 2 and 3 were determined by the business owner to have the same color
+ * so we group them here:
+ */
+.cd-tag--variant-2,
+.cd-tag--variant-3 {
+  background-color: #d85f49;
+}
+
+/**
+ * The business owner loves rounded corners
+ */
+.cd-tag--rounded {
+  border-radius: 3px;
+}
