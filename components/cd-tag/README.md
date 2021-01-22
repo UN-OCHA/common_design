@@ -7,10 +7,11 @@ Provides visual indication of tags or other taxonomy present on an entity.
 - color (optional)
 
 ## Caveats
-Since tags are Content within Drupal, a theme wishing to use this component will very likely have to implement their own rules to match business logic. We can't provide all possible colors in advance.
+Since tags are Content within Drupal, a theme wishing to use this component will very likely have to implement their own rules to match their business logic. We can't provide all possible colors in advance.
 
 ### Variants
 
 ```
 .cd-tag--rounded
+.cd-tag--linked
 ```
