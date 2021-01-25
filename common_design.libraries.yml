@@ -102,6 +102,13 @@ cd-date:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-event:
+  css:
+    component:
+      components/cd-event/cd-event.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-facets:
   css:
     component:
