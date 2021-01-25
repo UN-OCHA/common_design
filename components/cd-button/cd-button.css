@@ -9,6 +9,8 @@
   --cd-ie-primary-color--light: #82b5e9;
   --cd-ie-primary-color--dark: #0b2641;
   --cd-ie-primary-color--lighter: #a8ccf0;
+  --cd-ie-highlight-red: #eb5c6d;
+  --cd-ie-highlight-red--light: #f08995;
 
   --cd-primary-color-h: 210;
   --cd-primary-color-s: 70%;
@@ -264,11 +266,21 @@ a.cd-button {
   opacity: 0.6;
 }
 
+.cd-button[disabled],
 .cd-button[disabled]:hover,
-.cd-button[disabled]:focus {
+.cd-button[disabled]:focus,
+.cd-button[disabled]:hover *,
+.cd-button[disabled]:focus * {
   /* Prevents hover and focus  */
   pointer-events: none;
   cursor: not-allowed;
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-button[disabled] {
+    position: relative;
+  }
 }
 
 .cd-button--export,
@@ -299,9 +311,6 @@ a.cd-button {
   --cd-primary-color: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), var(--cd-primary-color-l));
   /* lighten */
   --cd-primary-color--light: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) + 10%));
-
-  --cd-ie-primary-color: #eb5c6d;
-  --cd-ie-primary-color--light: #f08995;
 }
 
 /* For IE11 */
