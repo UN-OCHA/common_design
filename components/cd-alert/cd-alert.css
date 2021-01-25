@@ -6,7 +6,7 @@
 }
 
 .cd-alert,
-.cd-alert div[role='alert']{
+.cd-alert div[role='alert'] {
   display: flex;
   align-items: flex-start;
 }

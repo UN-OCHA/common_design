@@ -2,7 +2,7 @@
 
 Add a check if you've reviewed the component and it passes the Criteria.
 
-- [ ] cd-alert
+- [ ] **cd-alert**
 - [ ] cd-article
 - [ ] cd-author
 - [ ] cd-banner
