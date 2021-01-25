@@ -136,7 +136,7 @@ $a11y-suggestion-border:      $gray-5 !default;
 
 
     input {
-      outline: 2px solid $cd-bright-blue;
+      outline: 2px solid $cd-blue--bright;
       width: 100%;
     }
   }
@@ -233,6 +233,6 @@ $a11y-suggestion-border:      $gray-5 !default;
 
 .btn:focus,
 .btn.focus {
-  outline: 3px solid $cd-bright-blue;
+  outline: 3px solid $cd-blue--bright;
   outline-offset: -3px;
 }
