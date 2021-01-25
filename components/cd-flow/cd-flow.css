@@ -8,10 +8,14 @@
   margin-top: var(--cd-flow-space, 1em);
 }
 
-.cd-bumper > * + * {
+[dir='ltr'] .cd-bumper > * + * {
   padding-left: var(--cd-bumper-space, 1em);
 }
 
-.cd-bumper--rtl > *:not(:last-child) {
+/*[dir='ltr'] .cd-bumper > *:not(:last-child) {*/
+/*  padding-right: var(--cd-bumper-space, 1em);*/
+/*}*/
+
+[dir='rtl'] .cd-bumper > * + * {
   padding-right: var(--cd-bumper-space, 1em);
 }
