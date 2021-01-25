@@ -13,7 +13,6 @@
 
 .cd-byline__wrapper {
   display: flex;
-  align-items: center;
 }
 
 .cd-byline__image {
@@ -39,12 +38,4 @@
 
 .cd-byline__name {
   font-weight: 700;
-}
-
-[dir='ltr'] .cd-byline__content {
-  margin-left: 1.5rem;
-}
-
-[dir='rtl'] .cd-byline__content {
-  margin-right: 1.5rem;
 }
