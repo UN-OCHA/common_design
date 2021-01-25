@@ -5,17 +5,17 @@
 /* Composition Utility Block Exception */
 
 .cd-flow > * + * {
-  margin-top: var(--cd-flow-space, 1em);
+  margin-top: var(--cd-flow-space, 1rem);
 }
 
 [dir='ltr'] .cd-bumper > * + * {
-  padding-left: var(--cd-bumper-space, 1em);
+  padding-left: var(--cd-bumper-space, 1rem);
 }
 
 /*[dir='ltr'] .cd-bumper > *:not(:last-child) {*/
-/*  padding-right: var(--cd-bumper-space, 1em);*/
+/*  padding-right: var(--cd-bumper-space, 1rem);*/
 /*}*/
 
 [dir='rtl'] .cd-bumper > * + * {
-  padding-right: var(--cd-bumper-space, 1em);
+  padding-right: var(--cd-bumper-space, 1rem);
 }

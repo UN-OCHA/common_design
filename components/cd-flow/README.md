@@ -13,6 +13,5 @@ There is currently no mechanism that allows remove or adjust based on viewport.
 ```
 .cd-flow
 .cd-bumper
-.cd-bumper--rtl
 
 ```
