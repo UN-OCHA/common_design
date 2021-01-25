@@ -1,14 +1,17 @@
 # Teaser
 
 ## Purpose and Usage
-Display multiple articles in a list. Each item is a teaser with a title, optional image, summary text and a link to the full article.
+Display multiple articles. Each item is a teaser with a title, optional image, summary text and a link to the full 
+article.
 
 The teaser title and or image can be linked, and the read more is optional.
 
 ## Caveats
+The image wrapper expands to accommodate the image width, and the content div width adjusts accordingly.
+We can use images styles during implementation so all the images and content widths will be consistent.
 
 ### Variants
-Use utility classes, cd-button or read-more component for varied content instead.
+Use utility classes, cd-button or cd-read-more component for varied content.
 
 ```
 none
