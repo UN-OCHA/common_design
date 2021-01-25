@@ -2,39 +2,43 @@
 
 Add a check if you've reviewed the component and it passes the Criteria.
 
-- [ ] cd-alert
-- [ ] cd-article
-- [ ] cd-author
-- [ ] cd-banner
-- [ ] cd-bleed
-- [ ] cd-block-title
-- [ ] cd-bullet-list
-- [ ] cd-button
-- [ ] cd-byline
-- [ ] cd-caption
-- [ ] cd-card
-- [ ] cd-date
-- [ ] cd-dropdown
-- [ ] cd-event
-- [ ] cd-facets
-- [ ] cd-filter
-- [ ] cd-flow
-- [ ] cd-grid
-- [ ] cd-hero
-- [ ] cd-image-grid
-- [ ] cd-link-list
-- [ ] cd-pagination
-- [ ] cd-read-more
-- [ ] cd-search
-- [ ] cd-search-inline
-- [ ] cd-select-a11y
-- [ ] cd-styled-list
-- [ ] cd-table
-- [ ] cd-teaser
-- [ ] cd-title-list
-- [ ] cd-toc
-- [ ] cd-typography
-- [ ] cd-utilities
+| Component           | QA round 1          | QA round 2          |
+| :------------------ | :------------------ | :------------------ |
+| cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-alert            |                     |                     |
+| cd-article          |                     |                     |
+| cd-author           |                     |                     |
+| cd-banner           |                     |                     |
+| cd-bleed            |                     |                     |
+| cd-block-title      |                     |                     |
+| cd-bullet-list      |                     |                     |
+| cd-button           |                     |                     |
+| cd-byline           |                     |                     |
+| cd-caption          |                     |                     |
+| cd-card             |                     |                     |
+| cd-date             |                     |                     |
+| cd-dropdown         |                     |                     |
+| cd-event            |                     |                     |
+| cd-facets           |                     |                     |
+| cd-filter           |                     |                     |
+| cd-flow             |                     |                     |
+| cd-grid             |                     |                     |
+| cd-hero             |                     |                     |
+| cd-image-grid       |                     |                     |
+| cd-link-list        |                     |                     |
+| cd-pagination       |                     |                     |
+| cd-read-more        |                     |                     |
+| cd-search           |                     |                     |
+| cd-search-inline    |                     |                     |
+| cd-select-a11y      |                     |                     |
+| cd-styled-list      |                     |                     |
+| cd-table            |                     |                     |
+| cd-teaser           |                     |                     |
+| cd-title-list       |                     |                     |
+| cd-toc              |                     |                     |
+| cd-typography       |                     |                     |
+| cd-utilities        |                     |                     |
+ 
 
 
 # What makes a component?
