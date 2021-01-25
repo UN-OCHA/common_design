@@ -1,3 +1,14 @@
+*[class*="--event"] {
+  margin: 1rem auto 0;
+}
+
+/* IE11 fix width to align center */
+@media all and (-ms-high-contrast: none) {
+  *[class*="--event"] {
+    width: 5.5rem;
+  }
+}
+
 *[class*="__location"],
 *[class*="__time"] {
   font-weight: 700;

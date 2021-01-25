@@ -29,7 +29,3 @@
 .cd-date-wrapper {
   padding: 0.25rem 0.5rem;
 }
-
-*[class*="--event"] {
-  margin: 1rem auto 0;
-}

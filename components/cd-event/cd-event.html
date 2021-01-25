@@ -5,12 +5,26 @@
 <link rel=stylesheet href="../cd-typography/cd-typography.css" type="text/css" media=screen>
 <link rel=stylesheet href="../cd-button/cd-button.css" type="text/css" media=screen>
 <link rel=stylesheet href="../cd-read-more/cd-read-more.css" type="text/css" media=screen>
-<link rel=stylesheet href="cd-card.css" type="text/css" media=screen>
+<link rel=stylesheet href="../cd-card/cd-card.css" type="text/css" media=screen>
+<link rel=stylesheet href="../cd-date/cd-date.css" type="text/css" media=screen>
+<link rel=stylesheet href="cd-event.css" type="text/css" media=screen>
 
 <div class="cd-layout-container">
-  <div class="cd-container cd-grid cd-grid-3-col">
+  <div class="cd-container cd-grid cd-grid-4-col">
 
     <article role="article" class="cd-card node--view-mode-card [ cd-flow ]">
+
+      <div class="cd-card__date--event">
+        <div class="cd-date">
+          <div class="cd-date-day-wrapper">
+            <span class="cd-date-day">20</span>
+          </div>
+          <div class="cd-date-wrapper">
+            <span class="cd-date-month">Sep</span>
+            <span class="cd-date-year">2020</span>
+          </div>
+        </div>
+      </div>
 
       <div class="cd-card__container [ cd-flow ]">
 
@@ -38,18 +52,30 @@
 
     <article role="article" class="cd-card node--view-mode-card [ cd-flow ]">
 
-      <div class="cd-card__image">
-        <img src="https://via.placeholder.com/410x210" alt="card image example">
+      <div class="cd-card__date--event">
+        <div class="cd-date">
+          <div class="cd-date-day-wrapper">
+            <span class="cd-date-day">30</span>
+          </div>
+          <div class="cd-date-wrapper">
+            <span class="cd-date-month">Jul</span>
+            <span class="cd-date-year">2020</span>
+          </div>
+        </div>
       </div>
 
       <div class="cd-card__container [ cd-flow ]">
 
         <h2 class="cd-card__title">
-          <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
+          <a href="#" rel="bookmark">Event title</a>
         </h2>
 
-        <div class="cd-card__date">
-          30 Jul 2019
+        <div class="cd-card__location">
+          Location
+        </div>
+
+        <div class="cd-card__time">
+          Time: 16:00 to 17:00
         </div>
 
         <div class="cd-card__description node__content">
@@ -72,8 +98,16 @@
 
     <article role="article" class="cd-card node--view-mode-card [ cd-flow ]">
 
-      <div class="cd-card__image">
-        <img src="https://via.placeholder.com/410x210" alt="card image example">
+      <div class="cd-card__date--event">
+        <div class="cd-date">
+          <div class="cd-date-day-wrapper">
+            <span class="cd-date-day">18-20</span>
+          </div>
+          <div class="cd-date-wrapper">
+            <span class="cd-date-month">Jun</span>
+            <span class="cd-date-year">2020</span>
+          </div>
+        </div>
       </div>
 
       <div class="cd-card__container cd-align--center [ cd-flow ]">
@@ -99,8 +133,16 @@
 
     <article role="article" class="cd-card node--view-mode-card [ cd-flow ]">
 
-      <div class="cd-card__image cd-card__image--rounded">
-        <img src="https://via.placeholder.com/205x205" alt="card image example">
+      <div class="cd-card__date--event">
+        <div class="cd-date">
+          <div class="cd-date-day-wrapper">
+            <span class="cd-date-day">04</span>
+          </div>
+          <div class="cd-date-wrapper">
+            <span class="cd-date-month">May</span>
+            <span class="cd-date-year">2020</span>
+          </div>
+        </div>
       </div>
 
       <div class="cd-card__container cd-align--center [ cd-flow ]">
@@ -127,30 +169,6 @@
     </article>
 
 
-    <article role="article" class="cd-card node--view-mode-card [ cd-flow ]">
-
-      <div class="cd-card__container [ cd-flow ]">
-
-        <h2 class="cd-card__title">
-          <a href="#" rel="bookmark">Sed dapibus lectus sit amet adipiscing egestas mauris est viverra nibh</a>
-        </h2>
-
-        <div class="cd-card__description node__content">
-          <p>Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh (iaculis pretium sem orci aliquet mauris). Nulla auctor eleifend turpis consequat pharetra. Nulla vel magna sit amet dui lobortis commodo vitae vel nulla sit amet ante hendrerit tempus. Donec a congue leo? </p>
-        </div>
-
-      </div>
-
-      <div class="cd-card__footer">
-        <a href="#" class="cd-card__link cd-read-more">
-          Learn more
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      </div>
-
-    </article>
 
   </div>
 
