@@ -8,7 +8,8 @@ The teaser title and or image can be linked, and the read more is optional.
 
 ## Caveats
 The image wrapper expands to accommodate the image width, and the content div width adjusts accordingly.
-We can use images styles during implementation so all the images and content widths will be consistent.
+The max-width of the image container is 24rem.
+We can use image styles during implementation so all the images and content widths will be consistent.
 
 ### Variants
 Use utility classes, cd-button or cd-read-more component for varied content.

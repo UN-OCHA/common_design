@@ -9,10 +9,11 @@
 }
 
 .cd-teaser__image img {
+  width: 100%;
   max-width: 100%;
 }
 
-.cd-teaser__container  {
+.cd-teaser__container {
   flex: 1 1 0%;
 }
 
