@@ -21,7 +21,6 @@
 .cd-bleed--background-only {
   position: relative;
   z-index: 1;
-  padding: 1em 0;
 }
 
 .cd-bleed--background-only:before {
