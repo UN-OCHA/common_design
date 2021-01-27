@@ -1,0 +1,87 @@
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='date'],
+textarea {
+  width: 100%;
+  max-width: 100%;
+  color: var(--cd-grey--dark);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='date'],
+  textarea {
+    width: auto;
+  }
+}
+
+label {
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border-color: var(--cd-highlight-red);
+}
+
+input:focus {
+  outline: 3px solid var(--cd-blue--bright);
+  outline-offset: -2px;
+}
+
+/* Form elements */
+select {
+  width: 100%;
+  max-width: 100%;
+}
+
+fieldset ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input::-moz-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input:-ms-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input:-moz-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input::-webkit-search-cancel-button {
+  position: relative;
+  right: 10px;
+}
+
+/* Safari fix */
+input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
