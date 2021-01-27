@@ -1,0 +1,100 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+  'cd-filter cd-filter--horizontal'
+]
+%}
+
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-dropdown') }}
+{{ attach_library('common_design/cd-filter') }}
+{{ attach_library('common_design/cd-facets') }}
+
+{% if content %}
+  <div{{ attributes
+    .setAttribute('id', 'cd-filter')
+    .setAttribute('data-cd-toggable','Modify your search'|t)
+    .setAttribute('data-cd-icon', 'arrow-down')
+    .setAttribute('data-cd-component', 'cd-filter')
+    .setAttribute('data-cd-toggable-keep', 'true')
+    .addClass(classes)
+    }}>
+
+    <div class="cd-filter__container [ cd-flow ]">
+      <h2 class="visually-hidden">Filter results</h2>
+
+      <p>Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
+
+      <form class="cd-filter__form [ cd-flow ]">
+        <div class="block">
+          <label for="published-date-range">Date Range</label>
+          <label class="visually-hidden" for="published-date-start">Start date</label>
+          <input class="cd-filter__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
+          <label class="visually-hidden" for="published-date-end">End date</label>
+          <input class="cd-filter__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
+        </div>
+        <div class="block">
+          <label for="mySelect">Select element</label>
+          <select id="mySelect" name="options">
+            <option value="opt1">Option one</option>
+            <option value="opt2">Option two with a really long option title</option>
+            <option value="opt3">Option three</option>
+          </select>
+          <div class="spinner disabled">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+        </div>
+        <div class="block">
+          <fieldset>
+            <legend>Title</legend>
+            <ul>
+              <li>
+                <label for="optionOne">
+                  <input type="radio" id="optionOne" name="title" value="optionOne">
+                  Option one
+                </label>
+              </li>
+              <li>
+                <label for="optionTwo">
+                  <input type="radio" id="optionTwo" name="title" value="optionTwo">
+                  Option two
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="block">
+          <label for="keyword-search">Keyword search</label>
+          <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filter__input" name="keys" value="" size="15" maxlength="128">
+        </div>
+
+        <div class="cd-export">
+          <button type="button" class="cd-button cd-button--uppercase cd-button--export cd-button--icon">
+            <span class="cd-button__text">Export</span>
+            <svg class="cd-icon cd-icon--arrow-down" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--arrow-down"></use>
+            </svg>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+{% endif %}
