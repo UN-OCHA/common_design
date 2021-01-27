@@ -17,11 +17,6 @@
   padding: 1rem;
 }
 
-/*.cd-filter__group,*/
-/*.cd-filter__form > .block {*/
-/*  margin: 0 0 1rem;*/
-/*}*/
-
 @media (min-width: 768px) {
   .cd-filter {
     margin-bottom: 2rem;
@@ -164,35 +159,70 @@
   }
 }
 
-/* Form elements */
-
+/* Dropdown button, duplication of .cd-button rules */
 .cd-filter__btn {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  box-shadow: none;
+  border: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.6s ease-out,
+  color 0.6s ease-out;
   width: 100%;
-  background: var(--cd-grey--light);
-  color: var(--cd-grey--dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  color: var(--cd-white);
+  background-color: var(--cd-primary-color);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .cd-filter__btn svg {
-  fill: var(--cd-grey--dark);
+  margin-right: 0;
+  margin-left: 2rem;
+}
+
+.cd-filter__btn[aria-expanded] .cd-icon--arrow-down {
+  width: 1rem;
+  height: 1rem;
 }
 
 .cd-filter__btn:hover {
-  background: var(--cd-grey--dark);
-  color: var(--cd-grey--light);
-}
-
-.cd-filter__btn:hover svg {
-  fill: var(--cd-white);
+  color: var(--cd-white);
+  background-color: var(--cd-primary-color--light);
 }
 
 .cd-filter__btn:focus {
-  color: var(--cd-white);
-  background: var(--cd-grey--dark);
+  /* We remove the outline because we are adding a border. */
+  /* so the rounded corners look nicer on hover */
+  outline: 0 solid var(--cd-primary-color--light);
+  border: 2px solid var(--cd-primary-color--dark);
 }
 
-.cd-filter__btn:focus svg {
-  fill: var(--cd-white);
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-filter__btn {
+    display: inline-block;
+    background-color: var(--cd-ie-primary-color);
+  }
+
+  .cd-filter__btn:hover,
+  .cd-filter__btn:focus {
+    background-color: var(--cd-ie-primary-color--light);
+  }
+
+  .cd-filter__btn:focus {
+    /* We remove the outline because we are adding a border. */
+    /* so the rounded corners look nicer on hover */
+    outline: 0 solid var(--cd-ie-primary-color--light);
+    border: 2px solid var(--cd-ie-primary-color--dark);
+  }
 }
+
+/* Form elements */
 
 .cd-filter__form label {
   display: block;
