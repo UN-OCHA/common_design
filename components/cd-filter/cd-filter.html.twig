@@ -3,10 +3,14 @@
 {{ attach_library('common_design/cd-dropdown') }}
 {{ attach_library('common_design/cd-filter') }}
 
-
-{#<div class="cd-filter cd-filter--horizontal">#}
-<div class="cd-filter cd-filter--horizontal" id="cd-filter" data-cd-toggable="Modify your search" data-cd-icon="arrow-down" data-cd-component="cd-filter" data-cd-toggable-keep="true" aria-labelledby="dropdown-title">
-
+<div{{ attributes
+  .setAttribute('id', 'cd-filter')
+  .setAttribute('data-cd-toggable','Modify your search'|t)
+  .setAttribute('data-cd-icon', 'arrow-down')
+  .setAttribute('data-cd-component', 'cd-filter')
+  .setAttribute('data-cd-toggable-keep', 'true')
+  .addClass('cd-filter cd-filter--horizontal')
+  }}>
   <div class="cd-filter__container [ cd-flow ]">
     <h2 class="visually-hidden">Filter results</h2>
 
