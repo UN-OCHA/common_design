@@ -205,7 +205,6 @@
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
   .cd-filter__btn {
-    display: inline-block;
     background-color: var(--cd-ie-primary-color);
   }
 
@@ -223,7 +222,6 @@
 }
 
 /* Form elements */
-
 .cd-filter__form label {
   display: block;
   margin: 0 0 0.5rem;
@@ -283,17 +281,6 @@
   -webkit-appearance: none;
 }
 
-/*This is needed for IE11
-No support for CSS custom properties means
---dropdown: false; property on filter container is not recognised
-so the cd-dropdown.js creates a toggler button on desktop
-This hides it when that happens.*/
-@media (min-width: 768px) and (-ms-high-contrast: none) {
-  .cd-filter__btn {
-    display: none;
-  }
-}
-
 @media (min-width: 1024px) {
   /* This is a test.*/
   /* .cd-filter[data-cd-toggable] {
@@ -312,15 +299,14 @@ This hides it when that happens.*/
   }
 }
 
-/* // This is needed for IE11
-// No support for CSS custom properties means
-// --dropdown: false; property on the dropdown container is not recognised
-// so the cd-dropdown.js does not run the updateToggler function
-// which toggles the data-cd-hidden attribute.
-// This displays the dropdown regardless of that attribute value. */
-@media all and (-ms-high-contrast: none) {
-  .cd-filter[data-cd-toggable][data-cd-hidden='true'] {
-    display: block;
+/*This is needed for IE11
+No support for CSS custom properties means
+--dropdown: false; property on filter container is not recognised
+so the cd-dropdown.js creates a toggler button on desktop
+This hides it when that happens.*/
+@media (min-width: 768px) and (-ms-high-contrast: none) {
+  .cd-filter__btn {
+    display: none;
   }
 }
 
