@@ -5,7 +5,7 @@
 
 /* Light grey background to visually distinguish container on mobile. */
 .cd-filter[data-cd-hidden="false"] {
-  background: var(--cd-grey--light);
+  background: var(--cd-light-grey);
 }
 
 .cd-filter:empty {
@@ -80,12 +80,9 @@
   box-sizing: border-box;
 }
 
-.cd-filter__input[type='search']:focus,
-.cd-filter__input[type='text']:focus {
-  outline: 0;
-  /* RGBA and custom properties? */
-  box-shadow: 0 0 4px rgba(var(--cd-grey--mid), 0.7);
-  box-shadow: 0 0 4px var(--cd-highlight-red);
+.cd-filter input:focus {
+  outline: 3px solid var(--cd-blue--bright);
+  outline-offset: -2px;
 }
 
 .cd-filter__input::-webkit-input-placeholder {
@@ -144,11 +141,11 @@
 
   /* If one element */
   .cd-filter__group:only-of-type,
-  /* If two elements */
+    /* If two elements */
   .cd-filter__group:nth-last-child(2):first-child,
   .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(2):first-child ~ .cd-export,
-  /* If three elements */
+    /* If three elements */
   .cd-filter__group:nth-last-child(3):first-child,
   .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(3):first-child ~ .cd-export {
@@ -165,8 +162,40 @@
   .cd-filter__group:nth-last-child(4):first-child,
   .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
   .cd-filter__group:nth-last-child(4):first-child ~ .cd-export {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child {
+    padding-right: 0;
+  }
+
+  /* If five elements */
+  .cd-filter__group:nth-last-child(5):first-child,
+  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
+  .cd-filter__group:nth-last-child(5):first-child ~ .cd-export {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* If four elements */
+  .cd-filter__group:nth-last-child(4):first-child,
+  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
+  .cd-filter__group:nth-last-child(4):first-child ~ .cd-export {
     flex: 1 0 25%;
     max-width: 25%;
+  }
+
+  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even) {
+    padding-right: 1rem;
   }
 
   .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child {
@@ -179,6 +208,10 @@
   .cd-filter__group:nth-last-child(5):first-child ~ .cd-export {
     flex: 1 0 20%;
     max-width: 20%;
+  }
+
+  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even) {
+    padding-right: 1rem;
   }
 
   .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child {
@@ -198,6 +231,12 @@ This hides it when that happens.*/
 }
 
 @media (min-width: 1024px) {
+  /*This is a test.*/
+  .cd-filter[data-cd-toggable] {
+    background: red;
+    --dropdown: false;
+  }
+
   .cd-filter__btn svg {
     width: 22px;
     height: 22px;
@@ -205,6 +244,18 @@ This hides it when that happens.*/
   }
 
   .cd-filter__btn-text {
+    display: block;
+  }
+}
+
+/* // This is needed for IE11
+// No support for CSS custom properties means
+// --dropdown: false; property on the dropdown container is not recognised
+// so the cd-dropdown.js does not run the updateToggler function
+// which toggles the data-cd-hidden attribute.
+// This displays the dropdown regardless of that attribute value. */
+@media all and (-ms-high-contrast: none) {
+  .cd-filter[data-cd-toggable][data-cd-hidden='true'] {
     display: block;
   }
 }
