@@ -55,6 +55,8 @@ cd-bleed:
   css:
     component:
       components/cd-bleed/cd-bleed.css: { weight: 1 }
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-block-title:
   css:

@@ -26,8 +26,6 @@
 /* Requires square image */
 *[class*="__image--rounded"] {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 50%;
   overflow: hidden;
   /* For IE11 */

@@ -1,4 +1,5 @@
 .cd-card {
+  display: flex;
   flex-direction: column;
   /* Override grid background color from grid */
   background-color: var(--cd-white);
@@ -23,6 +24,9 @@
   max-width: 13rem;
   max-height: 13rem;
   margin-top: 1rem;
+  /* Rounded image centered horizontally in cards */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cd-card__image + .cd-card__container {
