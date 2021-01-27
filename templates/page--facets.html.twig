@@ -2,8 +2,6 @@
   set facets_layout_classes = [
   'cd-container',
   page.sidebar_first|render or page.facets|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
-  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout-with-sidebar-second',
-  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout-with-sidebar-both',
 ]
 %}
 
@@ -25,9 +23,6 @@
       <div class="cd-layout-content">
         {{ page.content }}
       </div>{# /.cd-layout-content #}
-
-      {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
-      {% endif %}
 
     </main>
   {% endblock %}

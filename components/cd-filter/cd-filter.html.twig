@@ -1,11 +1,18 @@
-{{ attach_library('common_design/cd-filter') }}
+{{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-button') }}
+{{ attach_library('common_design/cd-dropdown') }}
+{{ attach_library('common_design/cd-filter') }}
 
-<div class="cd-filter">
-  <div class="cd-filter__form">
+
+{#<div class="cd-filter cd-filter--horizontal">#}
+<div class="cd-filter cd-filter--horizontal" id="cd-filter" data-cd-toggable="Modify your search" data-cd-icon="arrow-down" data-cd-component="cd-filter" data-cd-toggable-keep="true" aria-labelledby="dropdown-title">
+
+  <div class="cd-filter__container [ cd-flow ]">
     <h2 class="visually-hidden">Filter results</h2>
-    <p>Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
-    <form>
+
+    <p class="cd-max-width">Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
+
+    <form class="cd-filter__form [ cd-flow ]">
       <div class="cd-filter__group">
         <label for="published-date-range">Date Range</label>
         <label class="visually-hidden" for="published-date-start">Start date</label>
@@ -57,6 +64,7 @@
           </svg>
         </button>
       </div>
+
     </form>
   </div>
 </div>

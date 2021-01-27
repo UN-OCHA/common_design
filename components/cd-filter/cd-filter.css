@@ -1,22 +1,170 @@
 .cd-filter {
-  padding: 1rem 0.5rem;
   margin-bottom: 1rem;
 }
 
 /* Light grey background to visually distinguish container on mobile. */
 .cd-filter[data-cd-hidden="false"] {
-  background: var(--cd-light-grey);
+  background: var(--cd-grey--light);
 }
 
 .cd-filter:empty {
   display: none;
 }
 
-@media (min-width: 1024px) {
+.cd-filter__container {
+  background: var(--cd-grey--light);
+  width: 100%;
+  padding: 1rem;
+}
+
+/*.cd-filter__group,*/
+/*.cd-filter__form > .block {*/
+/*  margin: 0 0 1rem;*/
+/*}*/
+
+@media (min-width: 768px) {
   .cd-filter {
-    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .cd-filter--horizontal .cd-filter__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .cd-filter--horizontal .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__form > .block {
+    padding-right: 1rem;
+  }
+
+  .cd-filter--horizontal .cd-export {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .cd-filter__group {
+    width: 100%;
+  }
+
+  /* Quantity queries */
+  /* https://alistapart.com/article/quantity-queries-for-css */
+
+  /* If one element */
+  .cd-filter--horizontal .cd-filter__group:only-of-type,
+  .cd-filter--horizontal .cd-filter__form > .block:only-of-type,
+    /* If two elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .cd-export,
+    /* If three elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .cd-export {
+    flex: 1 0 33%;
+    max-width: 33%;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  /* If four elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .cd-export {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  /* If five elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .cd-export {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+    padding-right: 0;
   }
 }
+
+@media (min-width: 1024px) {
+  .cd-filter--horizontal .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__form > .block {
+    margin-bottom: 0;
+  }
+
+  /* If four elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .cd-export {
+    flex: 1 0 25%;
+    max-width: 25%;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
+    padding-right: 1rem;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  /* If five elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .cd-export {
+    flex: 1 0 20%;
+    max-width: 20%;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
+    padding-right: 1rem;
+  }
+
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+}
+
+/* Form elements */
 
 .cd-filter__btn {
   width: 100%;
@@ -46,19 +194,9 @@
   fill: var(--cd-white);
 }
 
-.cd-filter__form {
-  background: var(--cd-grey--light);
-  width: 100%;
-  padding: 1rem;
-}
-
 .cd-filter__form label {
   display: block;
   margin: 0 0 0.5rem;
-}
-
-.cd-filter__group {
-  margin: 0 0 1rem;
 }
 
 .cd-filter__form select {
@@ -115,110 +253,6 @@
   -webkit-appearance: none;
 }
 
-@media (min-width: 768px) {
-  .cd-filter {
-    margin-bottom: 2rem;
-  }
-
-  .cd-filter__form form {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .cd-filter__group {
-    padding-right: 1rem;
-  }
-
-  .cd-export {
-    margin-left: auto;
-    margin-bottom: 1rem;
-    text-align: right;
-  }
-
-  /* Quantity queries */
-  /* https://alistapart.com/article/quantity-queries-for-css */
-
-  /* If one element */
-  .cd-filter__group:only-of-type,
-    /* If two elements */
-  .cd-filter__group:nth-last-child(2):first-child,
-  .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group,
-  .cd-filter__group:nth-last-child(2):first-child ~ .cd-export,
-    /* If three elements */
-  .cd-filter__group:nth-last-child(3):first-child,
-  .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group,
-  .cd-filter__group:nth-last-child(3):first-child ~ .cd-export {
-    flex: 1 0 33%;
-    max-width: 33%;
-  }
-
-  .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
-  .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child {
-    padding-right: 0;
-  }
-
-  /* If four elements */
-  .cd-filter__group:nth-last-child(4):first-child,
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-export {
-    flex: 1 0 50%;
-    max-width: 50%;
-  }
-
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child {
-    padding-right: 0;
-  }
-
-  /* If five elements */
-  .cd-filter__group:nth-last-child(5):first-child,
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-export {
-    flex: 1 0 50%;
-    max-width: 50%;
-  }
-
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child {
-    padding-right: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* If four elements */
-  .cd-filter__group:nth-last-child(4):first-child,
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-export {
-    flex: 1 0 25%;
-    max-width: 25%;
-  }
-
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even) {
-    padding-right: 1rem;
-  }
-
-  .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child {
-    padding-right: 0;
-  }
-
-  /* If five elements */
-  .cd-filter__group:nth-last-child(5):first-child,
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-export {
-    flex: 1 0 20%;
-    max-width: 20%;
-  }
-
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even) {
-    padding-right: 1rem;
-  }
-
-  .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child {
-    padding-right: 0;
-  }
-}
-
 /*This is needed for IE11
 No support for CSS custom properties means
 --dropdown: false; property on filter container is not recognised
@@ -231,11 +265,11 @@ This hides it when that happens.*/
 }
 
 @media (min-width: 1024px) {
-  /*This is a test.*/
-  .cd-filter[data-cd-toggable] {
+  /* This is a test.*/
+  /* .cd-filter[data-cd-toggable] {
     background: red;
     --dropdown: false;
-  }
+  } */
 
   .cd-filter__btn svg {
     width: 22px;
