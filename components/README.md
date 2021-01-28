@@ -27,7 +27,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-image-grid       |                     |                     |
 | cd-link-list        |                     |                     |
 | cd-pagination       |                     |                     |
-| cd-read-more        |                     |                     |
+| cd-read-more        |    :x:              |                     |
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
 | cd-select-a11y      |                     |                     |
