@@ -119,10 +119,11 @@ $cd-primary--dark: $cd-blue--dark;
 
 $cd-font: helvetica, arial, sans-serif;
 $cd-font--system: system-ui;
+$cd-font--arabic: 'Noto Kufi Arabic', sans-serif;
 
 // Web fonts.
-//@import url('https://fonts.googleapis.com/css?family=Mali:300,400,500,600,700&display=swap"');
-//$cd-font--webfont: 'Mali', cursive;
+@import url('//fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+$cd-font--webfont: Roboto, helvetica, arial, sans-serif;
 
 
 //——————————————————————————————————————————————————————————————————————————————

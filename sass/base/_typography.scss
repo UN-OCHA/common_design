@@ -60,6 +60,34 @@
   src: local('.SFNSText-BoldItalic'), local('.HelveticaNeueDeskInterface-BoldItalic'), local('.LucidaGrandeUI'), local('Segoe UI Bold Italic'), local('Ubuntu Bold Italic'), local('Roboto-BoldItalic'), local('DroidSans-Bold'), local('Tahoma Bold');
 }
 
+
+/**
+ * Noto Kufi Arabic (Arabic) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot');
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix') format('embedded-opentype'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2') format('woff2'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff') format('woff'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot');
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix') format('embedded-opentype'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2') format('woff2'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff') format('woff'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf') format('truetype');
+}
+
 h1,
 h2,
 h3,
@@ -67,7 +95,7 @@ h4,
 h5 {
   line-height: 1.2;
   color: $cd-ocha-blue;
-  //font-family: $cd-font--webfont;
+  font-family: $cd-font--webfont;
 }
 
 h1 {
