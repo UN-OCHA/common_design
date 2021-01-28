@@ -31,6 +31,8 @@ regions:
 libraries-extend:
   classy/messages:
     - common_design/cd-alert
+  classy/tabs:
+    - common_design/cd-tabs
 
 libraries-override:
   classy/base:
