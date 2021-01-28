@@ -17,6 +17,7 @@ ul.tabs::after {
 
 ul.tabs > li {
   display: block;
+  margin: 0;
 }
 
 ul.tabs > li > a {
@@ -41,6 +42,7 @@ ul.tabs > li > a {
     position: relative;
     /* Height of border bottom. */
     margin-bottom: -2px;
+    margin-right: 0.5rem;
   }
 }
 
