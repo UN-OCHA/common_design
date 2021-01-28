@@ -35,8 +35,10 @@ body {
   }
 }
 
-html[lang='ar'] body {
-  font-family: $cd-font--arabic;
+html[lang='ar'] body,
+html[lang='ru'] body,
+html[lang='zh'] body {
+  font-family: $cd-font--noto;
 }
 
 img {
