@@ -9,6 +9,7 @@
 }
 
 .cd-alert,
+/* This is Drupal specific. If it's an error message, it gets an extra div with a role. */
 .cd-alert div[role='alert'] {
   display: flex;
   align-items: flex-start;
