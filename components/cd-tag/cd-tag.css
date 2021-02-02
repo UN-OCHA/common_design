@@ -73,3 +73,13 @@
 .cd-tag--xl {
   font-size: 1.5em;
 }
+
+/**
+ * Custom colors
+ */
+.cd-tag--color-1 {
+  background-color: #65c296;
+}
+.cd-tag--color-2 {
+  background-color: #d85f49;
+}
