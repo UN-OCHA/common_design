@@ -16,7 +16,7 @@
   margin: 0.25rem;
   padding: 0 .25em;
   background-color: #5090cd; /* default is up for discussion */
-  color: #fff;
+  color: var(--cd-white);
   font-size: .625em;
   font-weight: 700;
   line-height: 1.5;
