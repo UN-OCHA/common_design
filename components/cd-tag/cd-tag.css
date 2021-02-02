@@ -88,5 +88,18 @@
   --cd-tag--color: #65c296;
 }
 .cd-tag--color-2 {
-  --cd-tag--color: #d85f49;
+  --cd-tag--color: #eca154;
+}
+.cd-tag--color-3 {
+  --cd-tag--color: #e2e868;
+  color: var(--cd-black);
+}
+.cd-tag--color-4 {
+  --cd-tag--color: #a4d65e;
+}
+.cd-tag--color-5 {
+  --cd-tag--color: #71dbd4;
+}
+.cd-tag--color-6 {
+  --cd-tag--color: #9063cd;
 }
