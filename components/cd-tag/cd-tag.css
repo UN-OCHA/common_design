@@ -3,6 +3,7 @@
  */
 :root {
   --cd-tag--color: #5090cd;
+  --cd-tag--size: 0.75rem;
 }
 
 /**
@@ -16,15 +17,15 @@
  * Individual tag
  *
  * - margin is set in `rem` to ensure that multiple tag sizes visually line up
- * - all other units are `em` so that setting `font-size` can scale them easily
+ * - all other units are calculated so that setting `--cd-tag--size` scales them
  */
 .cd-tag {
   display: inline-block;
   margin: 0.25rem;
-  padding: 0 .25em;
+  padding: 0 calc(var(--cd-tag--size) * .4);
   background-color: var(--cd-tag--color);
   color: var(--cd-white);
-  font-size: .625em;
+  font-size: var(--cd-tag--size);
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
@@ -71,14 +72,14 @@
  * Variant: large
  */
 .cd-tag--large {
-  font-size: 1em;
+  --cd-tag--size: 1rem;
 }
 
 /**
  * Variant: huge
  */
 .cd-tag--xl {
-  font-size: 1.5em;
+  --cd-tag--size: 1.5rem;
 }
 
 /**
