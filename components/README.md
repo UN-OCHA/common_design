@@ -14,7 +14,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-bullet-list      |                     |                     |
 | cd-button           |                     |                     |
 | cd-byline           |                     |                     |
-| cd-caption          |        :x:          |                     |
+| cd-caption          | :heavy_check_mark:  |                     |
 | cd-card             |                     |                     |
 | cd-date             |                     |                     |
 | cd-dropdown         |                     |                     |
