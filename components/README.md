@@ -23,7 +23,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
 | cd-grid             |                     |                     |
-| cd-hero             |                     |                     |
+| cd-hero             |       :x:           |                     |
 | cd-image-grid       |                     |                     |
 | cd-link-list        |                     |                     |
 | cd-pagination       |                     |                     |
