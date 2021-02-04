@@ -87,26 +87,3 @@ button[aria-expanded='true'] .cd-icon--arrow-down {
 //    @include visually-hidden;
 //  }
 //}
-
-
-
-// This compliments the cd-filter component.
-// The CSS Custom property needs to be set in SASS in order to work, due to load order.
-
-.cd-filter[data-cd-toggable] {
-  @include desktop {
-    --dropdown: false;
-
-    // This is needed for IE11
-    // No support for CSS custom properties means
-    // --dropdown: false; property on the dropdown container is not recognised
-    // so the cd-dropdown.js does not run the updateToggler function
-    // which toggles the data-cd-hidden attribute.
-    // This displays the dropdown regardless of that attribute value.
-    @media all and (-ms-high-contrast: none) {
-      &[data-cd-hidden='true'] {
-        display: block;
-      }
-    }
-  }
-}

@@ -1,8 +1,13 @@
 # Filter
 
 ## Purpose and Usage
-Displays multiple and varied form elements like inputs and selects.
-Includes a submit button where relevant.
+Displays multiple and varied form elements like inputs and selects and submit button.
+
+By default, the elements flow in a single column. The intend default layout is a sidebar.
+There is a variant for horizontal filters that will span 100% of the available space, with a column layout up to 5 
+elements.
+There are BEM selectors `.cd-filter__group` and Drupal-friendly selectors `.cd-filter__form > .block` for the flex 
+children.
 
 Use with the cd-dropdown component to create a collapsed filter area on mobile.
 Due to issues documented on CD-241 the CSS custom property to set the dropdown control needs to be added to the
@@ -18,6 +23,6 @@ See above.
 ### Variants
 
 ```
-none
+cd-filter--horizontal
 
 ```

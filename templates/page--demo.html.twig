@@ -112,7 +112,7 @@
 
     <div class="cd-layout-content">
 
-      <div class="cd-toc cd-toc--left [ cd-flow ]">
+      <div class="cd-toc [ cd-flow ]">
         <div class="cd-toc__title">Table of Contents</div>
         <ol id="cd-component-toc" class="cd-toc__list">
           <li><a href="#cd-alert">Alert</a></li>
@@ -129,6 +129,7 @@
           <li><a href="#cd-styled-list">Styled List</a></li>
           <li><a href="#cd-title-list">Title List</a></li>
           <li><a href="#cd-table">Table</a></li>
+          <li><a href="#cd-tabs">Tabs</a></li>
           <li><a href="#cd-author">Author</a></li>
           <li><a href="#cd-byline">Byline</a></li>
           <li><a href="#cd-toc">Table of contents</a></li>
@@ -139,6 +140,7 @@
           <li><a href="#cd-grid">Grid</a></li>
           <li><a href="#cd-article">Article</a></li>
           <li><a href="#cd-typography">Typography</a></li>
+          <li><a href="#cd-form">Form</a></li>
         </ol>
       </div>
 
@@ -256,9 +258,20 @@
 
         <h3 class="cd-styleguide"><a id="cd-filter">cd-filter</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+        {# wrapper div needed for dropdown #}
+        <div>
+          {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
+        </div>
 
-        {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
+        <h3 class="cd-styleguide"><a id="cd-form">cd-form</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
+        {% include '@cd-components/cd-form/cd-form.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-tabs">cd-tabs</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-tabs/cd-tabs.html.twig' %}
 
         <h2 class="cd-styleguide cd-bleed--background-only"><a id="cd-components--layout">Layout components</a></h2>
 

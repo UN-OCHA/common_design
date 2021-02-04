@@ -1,0 +1,70 @@
+ul.tabs {
+  list-style: none;
+  border-bottom: 2px solid var(--cd-blue-grey);
+  margin: 1rem 0;
+  padding: 0;
+  display: block;
+}
+
+/* Clearfix */
+ul.tabs::after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+ul.tabs > li {
+  display: block;
+  margin: 0;
+}
+
+ul.tabs > li > a {
+  position: relative;
+  display: block;
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  border: 0 none;
+  text-decoration: none;
+  border-bottom: 2px solid var(--cd-blue-grey);
+  color: var(--cd-ocha-blue);
+}
+
+@media (min-width: 576px) {
+  ul.tabs > li {
+    float: left;
+    position: relative;
+    /* Height of border bottom. */
+    margin-bottom: -2px;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  ul.tabs > li > a {
+    min-width: 7rem; /* 112px */
+  }
+}
+
+ul.tabs > li > a.is-active,
+ul.tabs > li > a:hover {
+  border: 0 none !important;
+  border-bottom: 2px solid var(--cd-blue-grey) !important;
+  background-color: var(--cd-blue-grey);
+  color: var(--cd-ocha-blue);
+}
+
+ul.tabs > li > a.is-active {
+  background-color: var(--cd-grey--light);
+}
+
+ul.tabs > li > a:focus {
+  background: var(--cd-blue-grey);
+  outline: 3px solid var(--cd-blue--bright);
+}

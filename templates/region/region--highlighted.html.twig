@@ -1,36 +1,54 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
-    <link rel=stylesheet href="../cd-typography/cd-typography.css" type="text/css" media=screen>
-    <link rel=stylesheet href="../cd-button/cd-button.css" type="text/css" media=screen>
-    <link rel=stylesheet href="../cd-dropdown/cd-dropdown.css" type="text/css" media=screen>
-    <link rel=stylesheet href="cd-filter.css" type="text/css" media=screen>
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+  'cd-filter cd-filter--horizontal'
+]
+%}
 
-  <script>document.documentElement.className = document.addEventListener ? "js" : "no-js";</script>
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-dropdown') }}
+{{ attach_library('common_design/cd-filter') }}
+{{ attach_library('common_design/cd-facets') }}
 
-  </head>
-  <body>
-
-  <div class="cd-filter">
-  <!--<div class="cd-filter" id="cd-filter" data-cd-toggable="Modify your search" data-cd-icon="arrow-down" data-cd-component="cd-filter" data-cd-toggable-keep="true" aria-labelledby="dropdown-title">-->
+{% if content %}
+  <div{{ attributes
+    .setAttribute('id', 'cd-filter')
+    .setAttribute('data-cd-toggable','Modify your search'|t)
+    .setAttribute('data-cd-icon', 'arrow-down')
+    .setAttribute('data-cd-component', 'cd-filter')
+    .setAttribute('data-cd-toggable-keep', 'true')
+    .addClass(classes)
+    }}>
 
     <div class="cd-filter__container [ cd-flow ]">
       <h2 class="visually-hidden">Filter results</h2>
 
-      <p class="cd-max-width">Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
+      <p>Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
 
       <form class="cd-filter__form [ cd-flow ]">
-        <div class="cd-filter__group">
+        <div class="block">
           <label for="published-date-range">Date Range</label>
           <label class="visually-hidden" for="published-date-start">Start date</label>
           <input class="cd-filter__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
           <label class="visually-hidden" for="published-date-end">End date</label>
           <input class="cd-filter__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
         </div>
-        <div class="cd-filter__group">
+        <div class="block">
           <label for="mySelect">Select element</label>
           <select id="mySelect" name="options">
             <option value="opt1">Option one</option>
@@ -42,7 +60,7 @@
             <div class="double-bounce2"></div>
           </div>
         </div>
-        <div class="cd-filter__group">
+        <div class="block">
           <fieldset>
             <legend>Title</legend>
             <ul>
@@ -61,7 +79,7 @@
             </ul>
           </fieldset>
         </div>
-        <div class="cd-filter__group">
+        <div class="block">
           <label for="keyword-search">Keyword search</label>
           <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filter__input" name="keys" value="" size="15" maxlength="128">
         </div>
@@ -77,7 +95,6 @@
 
       </form>
     </div>
-  </div>
 
-  </body>
-</html>
+  </div>
+{% endif %}

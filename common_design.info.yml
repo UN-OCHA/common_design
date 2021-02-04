@@ -20,6 +20,7 @@ regions:
   header_logo: Header logo
   header_navigation: Header navigation
   page_title: Page title
+  highlighted: Highlighted
   content: Content
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
@@ -30,6 +31,8 @@ regions:
 libraries-extend:
   classy/messages:
     - common_design/cd-alert
+  classy/tabs:
+    - common_design/cd-tabs
 
 libraries-override:
   classy/base:
