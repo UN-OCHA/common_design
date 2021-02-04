@@ -1,51 +1,17 @@
-<link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
-<link rel=stylesheet href="cd-table.css" type="text/css" media=screen>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
+  <link rel=stylesheet href="../cd-typography/cd-typography.css" type="text/css" media=screen>
+  <link rel=stylesheet href="cd-table.css" type="text/css" media=screen>
+</head>
+<body>
 
 <div class="cd-layout-container">
-  <div class="cd-container with-grid">
+  <div class="cd-container">
 
-    <h1>Styled table</h1>
-    <table class="cd-table cd-table--row-numbers cd-table--responsive cd-table--striped">
-      <caption>This is the table caption</caption>
-      <thead>
-        <tr>
-          <th data-sort-type="disabled" class="cd-table--row-num"></th>
-          <th data-sort-type="alfa" data-sort-order="ASC" class="cd-table--name">Name</th>
-          <th data-sort-type="alfa" data-sort-order="" class="cd-table--type">Type</th>
-          <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Paid</th>
-          <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Pledged</th>
-          <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="cd-table--row-num"></td>
-          <td class="cd-table--name">This Name</td>
-          <td class="cd-table--type"><a href="#">This Type that is also a link</a></td>
-          <td class="cd-table--amount">1,000,000</td>
-          <td class="cd-table--amount">0</td>
-          <td class="cd-table--amount-total">1,000,000</td>
-        </tr>
-        <tr>
-          <td class="cd-table--row-num"></td>
-          <td class="cd-table--name">That Name</td>
-          <td class="cd-table--type">That Type</td>
-          <td class="cd-table--amount">1,000,000</td>
-          <td class="cd-table--amount">500,000</td>
-          <td class="cd-table--amount-total">1,500,000</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3">Total</td>
-          <td data-content="Paid" class="cd-table--amount-total">2,000,000</td>
-          <td data-content="Pledged" class="cd-table--amount-total">500,000</td>
-          <td data-content="Total" class="cd-table--amount-total">2,500,000</td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <h1>Simple table</h1>
+    <h2>Default table</h2>
     <table>
       <caption>This is the table caption</caption>
       <thead>
@@ -64,9 +30,239 @@
       </tbody>
     </table>
 
-    <p>This is here to clear the table but also to say that Javascript can be used to add the data-content attribute to the td element, using the content of the th element. This is especially handy for responsive table display.</p>
+    <hr>
 
+    <h2>Styled table</h2>
+    <div id="cd-table-container" class="cd-table-container" aria-labelledby="caption">
+      <table class="cd-table cd-table--row-numbers cd-table--striped">
+        <caption id="caption">This is the table caption</caption>
+        <thead>
+        <tr>
+          <th data-sort-type="disabled" class="cd-table--row-num"></th>
+          <th data-sort-type="alfa" data-sort-order="ASC" class="cd-table--name">Name</th>
+          <th data-sort-type="alfa" data-sort-order="" class="cd-table--type">Type</th>
+          <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Paid</th>
+          <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Pledged</th>
+          <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--name">This Name</td>
+          <td class="cd-table--type"><a href="#">This Type that is also a link</a></td>
+          <td class="cd-table--amount">1,000,000</td>
+          <td class="cd-table--amount">0</td>
+          <td class="cd-table--amount-total">1,000,000</td>
+        </tr>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--name">That Name</td>
+          <td class="cd-table--type">That Type</td>
+          <td class="cd-table--amount">1,000,000</td>
+          <td class="cd-table--amount">500,000</td>
+          <td class="cd-table--amount-total">1,500,000</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="3">Total</td>
+          <td data-content="Paid" class="cd-table--amount-total">2,000,000</td>
+          <td data-content="Pledged" class="cd-table--amount-total">500,000</td>
+          <td data-content="Total" class="cd-table--amount-total">2,500,000</td>
+        </tr>
+        </tfoot>
+      </table>
     </div>
-  </div>
 
-  <script src="cd-table.js" charset="utf-8"></script>
+    <p>This is here to clear the table.</p>
+
+
+    <hr>
+
+    <div class="cd-table-container" aria-labelledby="caption">
+      <table class="cd-table--allocations cd-table" summary="Summary report of allocations">
+        <caption>This is the table caption</caption>
+        <thead>
+        <tr>
+          <th class="cd-table--date">Country & report date</th>
+          <th class="cd-table--amount">Amount in US$</th>
+          <th class="cd-table--window">Window</th>
+          <th class="cd-table--emergency">Emergency</th>
+          <th class="cd-table--status">Status</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td colspan="6" class="cd-table--row-heading">Afghanistan</td>
+        </tr>
+        <tr>
+          <td class="cd-table--date"><a href="#">Feb 2017</a></td>
+          <td class="cd-table--amount-total">US$6,000,000</td>
+          <td class="cd-table--window"> Rapid response</td>
+          <td class="cd-table--emergency"> Conflict related and internal strife</td>
+          <td class="cd-table--status">Completed</td>
+          <td class="cd-table--readmore">
+            <a href="#">
+              <span class="visually-hidden">Read more</span>
+              <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+                <use xlink:href="#cd-icon--arrow-right"></use>
+              </svg>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="cd-table--date"><a href="#">Oct 2017</a></td>
+          <td class="cd-table--amount-total">US$10,000,000</td>
+          <td class="cd-table--window"> Rapid response</td>
+          <td class="cd-table--emergency"> Conflict related and internal strife</td>
+          <td class="cd-table--status">Completed</td>
+          <td class="cd-table--readmore">
+            <a href="#">
+              <span class="visually-hidden">Read more</span>
+              <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+                <use xlink:href="#cd-icon--arrow-right"></use>
+              </svg>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6" class="cd-table--row-heading">Angola</td>
+        </tr>
+        <tr>
+          <td class="cd-table--date"><a href="#">May 2017</a></td>
+          <td class="cd-table--amount-total">US$3,600,000</td>
+          <td class="cd-table--window"> Rapid response</td>
+          <td class="cd-table--emergency"> Conflict related and internal strife</td>
+          <td class="cd-table--status">Under implementation</td>
+          <td class="cd-table--readmore">
+            <a href="#">
+              <span class="visually-hidden">Read more</span>
+              <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+                <use xlink:href="#cd-icon--arrow-right"></use>
+              </svg>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="cd-table--date"><a href="#">Jun 2017</a></td>
+          <td class="cd-table--amount-total">US$11,000,000</td>
+          <td class="cd-table--window"> Underfunded emergencies</td>
+          <td class="cd-table--emergency"> Conflict related and internal strife</td>
+          <td class="cd-table--status">Completed</td>
+          <td class="cd-table--readmore">
+            <a href="#">
+              <span class="visually-hidden">Read more</span>
+              <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+                <use xlink:href="#cd-icon--arrow-right"></use>
+              </svg>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6" class="cd-table--row-heading">Antigua and Barbuda</td>
+        </tr>
+        <tr>
+          <td class="cd-table--date"><a href="#">Jan 2017</a></td>
+          <td class="cd-table--amount-total">US$4,400,000</td>
+          <td class="cd-table--window"> Rapid response</td>
+          <td class="cd-table--emergency"> Conflict related and internal strife</td>
+          <td class="cd-table--status">Completed</td>
+          <td class="cd-table--readmore">
+            <a href="#">
+              <span class="visually-hidden">Read more</span>
+              <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+                <use xlink:href="#cd-icon--arrow-right"></use>
+              </svg>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <div class="cd-table-container" aria-labelledby="caption">
+      <table class="cd-table cd-table--data sortable exportable cd-table--row-numbers">
+        <caption>This is the table caption</caption>
+        <thead>
+        <tr>
+          <th data-sort-type="disabled" data-export-column="skip" data-sort-order=""></th>
+          <th data-sort-type="disabled" class="hidden" data-export-width="10" data-sort-order="">Year</th>
+          <th data-sort-type="alfa" data-sort-order="">Donor</th>
+          <th data-sort-type="alfa" data-filterable="yes" data-filter-control-selector=".select-donor-type" data-sort-order="">Donor type</th>
+          <th data-sort-type="numeric" data-export-type="numeric" class="cd-table--amount-paid" data-export-width="15" data-sort-order="">Paid US$</th>
+          <th data-sort-type="numeric" data-export-type="numeric" class="cd-table--amount-pledged" data-export-width="15" data-sort-order="">Pledged US$</th>
+          <th data-sort-type="numeric" data-export-type="numeric" class="cd-table--amount-total" data-sort-order="DESC" data-export-width="15">Total US$</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--year hidden" data-content="Year">2021</td>
+          <td class="cd-table--name" data-content="Donor">United Kingdom</td>
+          <td class="cd-table--donor-type" data-content="Donor type">Member State</td>
+          <td class="cd-table--amount cd-table--amount-paid" data-auto-calc-amount-paid="0" data-content="Paid">$0</td>
+          <td class="cd-table--amount cd-table--amount-pledged"
+              data-auto-calc-amount-pledged="84779706.27489999" data-content="Pledged">$84,779,706</td>
+          <td class="cd-table--amount cd-table--amount-total" data-auto-calc-amount="84779706.27489999" data-content="Total">$84,779,706</td>
+        </tr>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--year hidden" data-content="Year">2021</td>
+          <td class="cd-table--name" data-content="Donor">Sweden</td>
+          <td class="cd-table--donor-type" data-content="Donor type">Member State</td>
+          <td class="cd-table--amount cd-table--amount-paid" data-auto-calc-amount-paid="0" data-content="Paid">$0</td>
+          <td class="cd-table--amount cd-table--amount-pledged" data-auto-calc-amount-pledged="64643646.0876" data-content="Pledged">$64,643,646</td>
+          <td class="cd-table--amount cd-table--amount-total" data-auto-calc-amount="64643646.0876" data-content="Total">$64,643,646
+          </td>
+        </tr>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--year hidden" data-content="Year">2021</td>
+          <td class="cd-table--name" data-content="Donor">Netherlands</td>
+          <td class="cd-table--donor-type" data-content="Donor type">Member State</td>
+          <td class="cd-table--amount cd-table--amount-paid" data-auto-calc-amount-paid="0" data-content="Paid">$0</td>
+          <td class="cd-table--amount cd-table--amount-pledged" data-auto-calc-amount-pledged="62500000" data-content="Pledged">$62,500,000</td>
+          <td class="cd-table--amount cd-table--amount-total" data-auto-calc-amount="62500000" data-content="Total">$62,500,000</td>
+        </tr>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--year hidden" data-content="Year">2021</td>
+          <td class="cd-table--name" data-content="Donor">Germany</td>
+          <td class="cd-table--donor-type" data-content="Donor type">Member State</td>
+          <td class="cd-table--amount cd-table--amount-paid" data-auto-calc-amount-paid="0" data-content="Paid">$0</td>
+          <td class="cd-table--amount cd-table--amount-pledged" data-auto-calc-amount-pledged="60827250.6082" data-content="Pledged">$60,827,251</td>
+          <td class="cd-table--amount cd-table--amount-total" data-auto-calc-amount="60827250.6082" data-content="Total">$60,827,251</td>
+        </tr>
+        <tr>
+          <td class="cd-table--row-num"></td>
+          <td class="cd-table--year hidden" data-content="Year">2021</td>
+          <td class="cd-table--name" data-content="Donor">Norway</td>
+          <td class="cd-table--donor-type" data-content="Donor type">Member State</td>
+          <td class="cd-table--amount cd-table--amount-paid" data-auto-calc-amount-paid="49797829.46"
+              data-content="Paid">$49,797,829</td>
+          <td class="cd-table--amount cd-table--amount-pledged" data-content="Pledged">$0</td>
+          <td class="cd-table--amount cd-table--amount-total" data-content="Total">$49,797,829</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="3">Total</td>
+          <td class="cd-table--amount cd-table--amount-paid">
+            $<span data-auto-calc="data-auto-calc-amount-paid" data-auto-calc-decimals="0">55,772,456</span></td>
+          <td data-content="Pledged" class="cd-table--amount cd-table--amount-pledged">
+            $<span data-auto-calc="data-auto-calc-amount-pledged" data-auto-calc-decimals="0">335,797,054</span></td>
+          <td data-content="Total" class="cd-table--amount cd-table--amount-total">
+            $<span data-auto-calc="data-auto-calc-amount" data-auto-calc-decimals="0">391,569,509</span></td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script src="cd-table.js" charset="utf-8"></script>
