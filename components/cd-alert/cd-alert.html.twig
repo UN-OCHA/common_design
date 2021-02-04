@@ -1,5 +1,5 @@
-{{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-alert') }}
 
 <div class="cd-alert">
@@ -20,7 +20,7 @@
   <div class="cd-alert__container cd-max-width [ cd-flow ]">
     <div class="cd-alert__message">
       <p>
-        I am an alert with a less important message and a link to somewhere with <a href="#">more information</a>.
+        I am a default alert with a less important message and a link to somewhere with <a href="#">more information</a>.
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo mauris ac convallis imperdiet.
@@ -30,29 +30,30 @@
   </div>
 </div>
 
-<div class="cd-alert cd-alert--error" role="alert">
-  <svg class="cd-icon cd-icon--alert" aria-hidden="true" focusable="false" width="16" height="16">
-    <use xlink:href="#cd-icon--alert"></use>
-  </svg>
-  <div class="cd-alert__container cd-max-width [ cd-flow ]">
-    <div class="cd-alert__title">
-      Error. Pay attention to me.
-    </div>
-    <div class="cd-alert__message">
-      <p>
-        I am an alert that indicates an error, with a very important message and a link to somewhere with <a href="#">more information</a>.
-      </p>
-      <ul>
-        <li>There may be many errors.</li>
-        <li>We can list them here.</li>
-        <li>In a nice list.</li>
-      </ul>
+<div class="cd-alert cd-alert--error">
+  <div role="alert">
+    <svg class="cd-icon cd-icon--alert" aria-hidden="true" focusable="false" width="16" height="16">
+      <use xlink:href="#cd-icon--alert"></use>
+    </svg>
+    <div class="cd-alert__container cd-max-width [ cd-flow ]">
+      <div class="cd-alert__title">
+        Error. Pay attention to me.
+      </div>
+      <div class="cd-alert__message">
+        <p>
+          I am an alert that indicates an error, with a very important message and a link to somewhere with <a href="#">more information</a>.
+        </p>
+        <ul>
+          <li>There may be many errors.</li>
+          <li>We can list them here.</li>
+          <li>In a nice list.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-
-<div class="cd-alert cd-alert--warning" role="alert">
+<div class="cd-alert cd-alert--warning">
   <svg class="cd-icon cd-icon--alert" aria-hidden="true" focusable="false" width="16" height="16">
     <use xlink:href="#cd-icon--alert"></use>
   </svg>
@@ -68,7 +69,7 @@
   </div>
 </div>
 
-<div class="cd-alert cd-alert--status" role="alert">
+<div class="cd-alert cd-alert--status">
   <svg class="cd-icon cd-icon--selected" aria-hidden="true" focusable="false" width="16" height="16">
     <use xlink:href="#cd-icon--selected"></use>
   </svg>
