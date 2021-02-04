@@ -34,7 +34,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-styled-list      |                     |                     |
 | cd-table            |                     |                     |
 | cd-teaser           |                     |                     |
-| cd-title-list       |                     |                     |
+| cd-title-list       |          :x:        |                     |
 | cd-toc              |                     |                     |
 | cd-typography       |                     |                     |
 | cd-utilities        |                     |                     |
