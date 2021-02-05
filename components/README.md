@@ -10,7 +10,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-author           |                     |                     |
 | cd-banner           |                     |                     |
 | cd-bleed            |                     |                     |
-| cd-block-title      |        :x:          |                     |
+| cd-block-title      | :heavy_check_mark:  |                     |
 | cd-bullet-list      |                     |                     |
 | cd-button           |                     |                     |
 | cd-byline           |                     |                     |
