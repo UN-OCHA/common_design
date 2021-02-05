@@ -12,7 +12,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-bleed            |                     |                     |
 | cd-block-title      |                     |                     |
 | cd-bullet-list      |                     |                     |
-| cd-button           |       :x:           |                     |
+| cd-button           | :heavy_check_mark:  |                     |
 | cd-byline           |                     |                     |
 | cd-caption          |                     |                     |
 | cd-card             |                     |                     |
