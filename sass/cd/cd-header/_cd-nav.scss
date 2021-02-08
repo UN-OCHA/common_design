@@ -340,12 +340,12 @@
             background: $cd-blue-grey;
           }
 
-          &.is-active {
+          &.menu-item--active-trail {
             border-left: 6px solid $cd-highlight-red;
           }
         }
 
-        > li.menu-item--active-trail .is-active {
+        > li.menu-item--active-trail {
           border-left: 6px solid $cd-highlight-red;
         }
       }
