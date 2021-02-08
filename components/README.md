@@ -7,14 +7,14 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-alert            | :heavy_check_mark:  |                     |
 | cd-article          |                     |                     |
-| cd-author           |                     |                     |
+| cd-author           | :heavy_check_mark:  |                     |
 | cd-banner           | :heavy_check_mark:  |                     |
 | cd-bleed            |                     |                     |
-| cd-block-title      |                     |                     |
+| cd-block-title      | :heavy_check_mark:  |                     |
 | cd-bullet-list      |                     |                     |
-| cd-button           |                     |                     |
-| cd-byline           |                     |                     |
-| cd-caption          |                     |                     |
+| cd-button           | :heavy_check_mark:  |                     |
+| cd-byline           | :heavy_check_mark:  |                     |
+| cd-caption          | :heavy_check_mark:  |                     |
 | cd-card             |                     |                     |
 | cd-date             |                     |                     |
 | cd-dropdown         |                     |                     |
@@ -27,7 +27,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-image-grid       |                     |                     |
 | cd-link-list        |                     |                     |
 | cd-pagination       |                     |                     |
-| cd-read-more        |                     |                     |
+| cd-read-more        | :heavy_check_mark:  |                     |
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
 | cd-select-a11y      |                     |                     |
