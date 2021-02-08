@@ -5,15 +5,15 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | Component           | QA round 1          | QA round 2          |
 | :------------------ | :------------------ | :------------------ |
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-alert            |                     |                     |
+| cd-alert            | :heavy_check_mark:  |                     |
 | cd-article          |                     |                     |
-| cd-author           |                     |                     |
+| cd-author           | :heavy_check_mark:  |                     |
 | cd-banner           |                     |                     |
 | cd-bleed            |                     |                     |
 | cd-block-title      |                     |                     |
 | cd-bullet-list      |                     |                     |
 | cd-button           |                     |                     |
-| cd-byline           |                     |                     |
+| cd-byline           | :heavy_check_mark:  |                     |
 | cd-caption          | :heavy_check_mark:  |                     |
 | cd-card             |                     |                     |
 | cd-date             |                     |                     |

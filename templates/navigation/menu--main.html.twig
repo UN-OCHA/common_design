@@ -59,7 +59,7 @@
           be replaced with a button to show the child menu.
         #}
         {% if item.url %}
-        <a href="{{ item.url }}" id="{{ id }}">{{ title }}</a>
+        <a href="{{ item.url }}" id="{{ id }}"><span>{{ title }}</span></a>
         {% else %}
         <span id="{{ id }}">{{ title }}</span>
         {% endif %}
@@ -69,12 +69,13 @@
         {% if item.is_expanded and item.below %}
 
           {%
-            do attributes
-              .setAttribute('data-cd-toggable', item.title)
-              .setAttribute('data-cd-icon', 'arrow-down')
-              .setAttribute('data-cd-component', 'cd-main-menu')
-              .setAttribute('data-cd-replace', id)
-              .setAttribute('id', ('cd-main-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id)
+            set attributes =  create_attribute({
+              'data-cd-toggable': item.title,
+              'data-cd-icon': 'arrow-down',
+              'data-cd-component': 'cd-main-menu',
+              'data-cd-replace': id,
+              'id': ('cd-main-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id,
+            })
           %}
 
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
