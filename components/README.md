@@ -18,7 +18,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-card             |                     |                     |
 | cd-date             |                     |                     |
 | cd-dropdown         |                     |                     |
-| cd-event            |                     |                     |
+| cd-event            |       :x:           |                     |
 | cd-facets           |                     |                     |
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
