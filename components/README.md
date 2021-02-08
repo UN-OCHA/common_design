@@ -16,7 +16,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-byline           | :heavy_check_mark:  |                     |
 | cd-caption          | :heavy_check_mark:  |                     |
 | cd-card             |                     |                     |
-| cd-date             |                     |                     |
+| cd-date             |        :x:          |                     |
 | cd-dropdown         |                     |                     |
 | cd-event            |                     |                     |
 | cd-facets           |                     |                     |
