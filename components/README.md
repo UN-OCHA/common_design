@@ -15,7 +15,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-button           | :heavy_check_mark:  |                     |
 | cd-byline           | :heavy_check_mark:  |                     |
 | cd-caption          | :heavy_check_mark:  |                     |
-| cd-card             |                     |                     |
+| cd-card             |       :x:           |                     |
 | cd-date             |                     |                     |
 | cd-dropdown         |                     |                     |
 | cd-event            |                     |                     |
