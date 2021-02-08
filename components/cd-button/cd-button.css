@@ -291,9 +291,7 @@ a.cd-button {
   }
 }
 
-.cd-button--export,
-.cd-button--export:hover,
-.cd-button--export:focus {
+.cd-button--export {
   background: var(--cd-grey--mid);
   color: var(--cd-white);
   fill: var(--cd-white);
@@ -308,6 +306,7 @@ a.cd-button {
 .cd-button--export:hover,
 .cd-button--export:focus {
   background: var(--cd-grey--dark);
+  color: var(--cd-white);
   fill: var(--cd-white);
 }
 
