@@ -5,7 +5,7 @@ Provides a letterbox image to visually augment pages or separate sections.
 
 - image
 
-Use with cd-caption component for image caption.
+Use with cd-caption component for image caption and/or image credits.
 
 Use with cd-bleed component for full viewport width option 
 
