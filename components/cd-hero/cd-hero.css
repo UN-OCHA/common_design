@@ -39,12 +39,6 @@
   color: var(--cd-grey--dark);
 }
 
-.cd-hero__caption {
-  text-align: right;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
 @media (min-width: 576px) {
   .cd-hero__footer {
     display: flex;
@@ -54,7 +48,7 @@
 
 @media (min-width: 1024px) {
   .cd-hero {
-    height: 28.125rem; /* 450px */
+    height: 28rem; /* 448px */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -80,7 +74,7 @@
   }
 
   .cd-hero__image {
-    height: 28.125rem; /* 450px */
+    height: 28rem; /* 448px */
     position: absolute;
     top: 50%;
     left: 50%;
