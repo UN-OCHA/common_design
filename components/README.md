@@ -33,7 +33,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-select-a11y      |                     |                     |
 | cd-styled-list      |                     |                     |
 | cd-table            |                     |                     |
-| cd-teaser           |                     |                     |
+| cd-teaser           |       :x:           |                     |
 | cd-title-list       | :heavy_check_mark:  |                     |
 | cd-toc              |                     |                     |
 | cd-typography       |                     |                     |
