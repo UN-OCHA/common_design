@@ -7,7 +7,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-alert            | :heavy_check_mark:  |                     |
 | cd-article          |                     |                     |
-| cd-author           |                     |                     |
+| cd-author           | :heavy_check_mark:  |                     |
 | cd-banner           |                     |                     |
 | cd-bleed            |                     |                     |
 | cd-block-title      |                     |                     |
