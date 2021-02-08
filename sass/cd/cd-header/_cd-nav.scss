@@ -189,6 +189,7 @@
       padding: 20px 0;
       top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
       position: absolute;
+      @include z-index(dropdown);
     }
   }
 
