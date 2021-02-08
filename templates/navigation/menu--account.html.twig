@@ -78,12 +78,13 @@
         {% if item.is_expanded and item.below %}
 
           {%
-            do attributes
-              .setAttribute('data-cd-toggable', title)
-              .setAttribute('data-cd-icon', 'arrow-down')
-              .setAttribute('data-cd-component', 'cd-user-menu')
-              .setAttribute('data-cd-replace', id)
-              .setAttribute('id', ('cd-user-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id)
+            set attributes =  create_attribute({
+              'data-cd-toggable': title,
+              'data-cd-icon': 'arrow-down',
+              'data-cd-component': 'cd-user-menu',
+              'data-cd-replace': id,
+              'id': ('cd-user-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id,
+            })
           %}
 
           {# Add the user icon for the first menu item of the root element. #}
