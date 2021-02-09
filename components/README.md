@@ -7,14 +7,14 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-alert            | :heavy_check_mark:  |                     |
 | cd-article          |                     |                     |
-| cd-author           |                     |                     |
-| cd-banner           |                     |                     |
+| cd-author           | :heavy_check_mark:  |                     |
+| cd-banner           | :heavy_check_mark:  |                     |
 | cd-bleed            |                     |                     |
-| cd-block-title      |                     |                     |
+| cd-block-title      | :heavy_check_mark:  |                     |
 | cd-bullet-list      |                     |                     |
-| cd-button           |                     |                     |
-| cd-byline           |                     |                     |
-| cd-caption          |                     |                     |
+| cd-button           | :heavy_check_mark:  |                     |
+| cd-byline           | :heavy_check_mark:  |                     |
+| cd-caption          | :heavy_check_mark:  |                     |
 | cd-card             |                     |                     |
 | cd-date             |                     |                     |
 | cd-dropdown         |                     |                     |
@@ -23,18 +23,18 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
 | cd-grid             |                     |                     |
-| cd-hero             |                     |                     |
+| cd-hero             | :heavy_check_mark:  |                     |
 | cd-image-grid       |                     |                     |
-| cd-link-list        |                     |                     |
+| cd-link-list        | :heavy_check_mark:  |                     |
 | cd-pagination       |                     |                     |
-| cd-read-more        |                     |                     |
+| cd-read-more        | :heavy_check_mark:  |                     |
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
 | cd-select-a11y      |                     |                     |
 | cd-styled-list      |                     |                     |
 | cd-table            |                     |                     |
 | cd-teaser           |                     |                     |
-| cd-title-list       |                     |                     |
+| cd-title-list       | :heavy_check_mark:  |                     |
 | cd-toc              |                     |                     |
 | cd-typography       |                     |                     |
 | cd-utilities        |                     |                     |
@@ -116,7 +116,7 @@ Eg. For cd-hero component
 
 ### Twig
 - Include the markup without the wrapper divs. The main purpose of the twig file is to include the component on the demo page.
-- Define and attach the relevant Drupal libraries instead of linking to the CSS files. 
+- Define and attach the relevant Drupal libraries instead of linking to the CSS files.
 As this will display on the demo page (a Drupal site), the cd-base.css is replaced with styles.css (already loaded)
 
 ### Add the component to the Demo page
