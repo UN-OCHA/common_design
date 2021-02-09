@@ -12,14 +12,7 @@ hr {
 
 blockquote {
   margin: 2rem 0;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: #707070;
-}
-
-@media (min-width: 768px) {
-  blockquote {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-  }
 }
