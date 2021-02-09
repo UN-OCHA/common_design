@@ -125,7 +125,7 @@ table caption {
     padding-right: 1rem;
     text-align: left;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: var(--cd-ocha-blue);
     /* Label the data */
     content: attr(data-content);

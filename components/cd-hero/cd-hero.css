@@ -27,7 +27,7 @@
 
 .cd-hero__title {
   margin: 0 0 1rem;
-  font-size: 1.75rem; /* 28px */
+  font-size: 2rem; /* 32px */
   font-weight: 700;
   color: var(--cd-grey--dark);
 }
@@ -64,7 +64,7 @@
   }
 
   .cd-hero__title {
-    font-size: 2.375rem; /* 38px */
+    font-size: 2.5rem;
     font-weight: 700;
   }
 
