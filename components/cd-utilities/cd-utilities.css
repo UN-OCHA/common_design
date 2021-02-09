@@ -32,6 +32,12 @@
   width: 100%;
 }
 
+
+/* To reset headings inside title divs */
+div[class*="__title"] > * {
+  margin: 0;
+}
+
 /* Remove bottom border from last child of list */
 *[class*="__remove-border"]:last-child {
   border-bottom: 0 none;
