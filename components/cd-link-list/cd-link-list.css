@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-.cd-link-list li {
+.cd-link-list__item {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -58,14 +58,19 @@
   padding: 1rem;
 }
 
-.cd-link-list__link svg {
+.cd-link-list__link .cd-icon {
   width: 0.75rem;
   height: 0.75rem;
   fill: var(--cd-ocha-blue);
 }
 
+[dir='rtl'] .cd-link-list__link .cd-icon {
+  margin: 0 1rem 0 0.25rem;
+  transform: scale(-1, 1);
+}
+
 @media (min-width: 576px) {
-  .cd-link-list li {
+  .cd-link-list__item {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
