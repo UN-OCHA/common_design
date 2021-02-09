@@ -77,7 +77,7 @@
 }
 
 .cd-search__btn-label {
-  font-size: 12px;
+  @include font-size($cd-font-size-tiny);
   font-weight: bold;
   text-transform: uppercase;
   display: none;
