@@ -14,7 +14,7 @@
 }
 
 .cd-date-day {
-  font-size: 2.625em; /* 42px */
+  font-size: 2.5em; /* 40px */
   color: var(--cd-white);
   font-weight: bold;
 }
