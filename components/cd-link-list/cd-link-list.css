@@ -42,8 +42,11 @@
   flex: 1 1 0%;
 }
 
-.cd-link-list__title {
-  margin: 0;
+.cd-link-list__title,
+.cd-link-list__title a {
+  font-weight: 700;
+  font-size: 1rem;
+  display: block;
 }
 
 .cd-link-list__footer {
