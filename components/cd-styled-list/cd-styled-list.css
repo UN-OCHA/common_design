@@ -96,16 +96,16 @@
 
   /* List displayed as a grid */
   .cd-grid.cd-styled-list > * {
-   flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   .cd-grid.cd-styled-list .cd-styled-list__footer {
-   flex: 1 0 100%;
-   display: block;
+    flex: 1 0 100%;
+    display: block;
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .cd-layout-sidebar-first .cd-styled-list > * {
     flex-wrap: wrap;
   }

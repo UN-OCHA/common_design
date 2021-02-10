@@ -31,7 +31,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
 | cd-select-a11y      |                     |                     |
-| cd-styled-list      |       :x:           |                     |
+| cd-styled-list      | :heavy_check_mark:  |                     |
 | cd-table            |                     |                     |
 | cd-teaser           |                     |                     |
 | cd-title-list       | :heavy_check_mark:  |                     |
