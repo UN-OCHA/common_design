@@ -3,8 +3,16 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-ocha {
-  float: left;
-  text-align: left;
+
+  [dir='ltr'] & {
+    float: left;
+    text-align: left;
+  }
+
+  [dir='rtl'] & {
+    float: right;
+    text-align: right;
+  }
 
   .no-js & {
     float: none;
@@ -44,6 +52,11 @@
     @include tablet {
       margin-left: 4px;
     }
+
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: 4px;
+    }
   }
 }
 
@@ -56,6 +69,11 @@
 
   @include tablet {
     margin-right: 4px;
+
+    [dir='rtl'] & {
+      margin-right: 0;
+      margin-left: 4px;
+    }
   }
 }
 

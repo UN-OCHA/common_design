@@ -252,6 +252,12 @@
             height: 48px; // Height of menu item.
             left: 15px; // Half of the left padding.
             background: rgba($cd-highlight-red, 0.2);
+
+            // sass-lint:disable nesting-depth
+            [dir='rtl'] & {
+              left: auto;
+              right: 15px; // Half of the left padding.
+            }
           }
 
           &.is-active::before {
@@ -287,6 +293,11 @@
           > ul.menu {
             left: auto;
             right: -1px;
+
+            [dir='rtl'] & {
+              left: -1px;
+              right: auto;
+            }
           }
         }
 
@@ -343,11 +354,21 @@
 
           &.menu-item--active-trail {
             border-left: 6px solid $cd-highlight-red;
+
+            [dir='rtl'] & {
+              border-left-width: 0;
+              border-right: 6px solid $cd-highlight-red;
+            }
           }
         }
 
         > li.menu-item--active-trail {
           border-left: 6px solid $cd-highlight-red;
+
+          [dir='rtl'] & {
+            border-left-width: 0;
+            border-right: 6px solid $cd-highlight-red;
+          }
         }
       }
     }

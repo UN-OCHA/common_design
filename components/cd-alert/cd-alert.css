@@ -27,6 +27,11 @@
   fill: var(--cd-blue--bright);
 }
 
+[dir='rtl'] .cd-alert svg {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
 .cd-alert a,
 .cd-alert a:hover,
 .cd-alert a:focus {

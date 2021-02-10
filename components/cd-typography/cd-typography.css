@@ -16,3 +16,43 @@ blockquote {
   line-height: 1.5rem;
   color: #707070;
 }
+
+/* Description list */
+
+dt {
+  font-weight: 500;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  dt {
+    flex: 0 0 25%;
+    width: 25%;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  [dir="rtl"] dt {
+    padding-right: 0;
+    padding-left: 0.5rem;
+  }
+
+  dd {
+    flex: 0 0 75%;
+    width: 75%;
+    margin-left: auto;
+  }
+
+  [dir="rtl"] dd {
+    margin-left: unset;
+    margin-right: auto;
+  }
+}

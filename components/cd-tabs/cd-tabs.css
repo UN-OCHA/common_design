@@ -38,11 +38,19 @@ ul.tabs > li > a {
 
 @media (min-width: 576px) {
   ul.tabs > li {
-    float: left;
     position: relative;
     /* Height of border bottom. */
     margin-bottom: -2px;
+  }
+
+  [dir='ltr'] ul.tabs > li {
+    float: left;
     margin-right: 0.5rem;
+  }
+
+  [dir='rtl'] ul.tabs > li {
+    float: right;
+    margin-left: 0.5rem;
   }
 }
 

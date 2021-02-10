@@ -131,6 +131,10 @@
 
 .cd-global-header__user-menu > .menu {
   padding-left: 0;
+
+  [dir='rtl'] {
+    padding-right: 0;
+  }
 }
 
 .cd-global-header .menu {

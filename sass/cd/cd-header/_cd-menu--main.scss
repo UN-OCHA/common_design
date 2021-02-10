@@ -22,6 +22,12 @@ ul[data-cd-hidden='true'] > ul {
   fill: $cd-highlight-red;
   margin-left: 4px;
   margin-top: 4px;
+
+  [dir='rtl'] & {
+    margin-left: 0;
+    margin-right: 4px;
+  }
+
   @include desktop {
     margin-top: -2px;
   }

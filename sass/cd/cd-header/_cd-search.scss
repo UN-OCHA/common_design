@@ -62,6 +62,13 @@
       bottom: 0;
       left: 50%;
       margin-left: -6px;
+
+      [dir='rtl'] & {
+        left: auto;
+        right: 50%;
+        margin-left: 0;
+        margin-right: -6px;
+      }
     }
 
     svg {
@@ -122,6 +129,10 @@
   width: 100%;
   box-sizing: border-box;
 
+  [dir='rtl'] & {
+    padding: 0 25px 0 45px;
+  }
+
   &:focus {
     outline: 0;
     box-shadow: 0 0 4px rgba($cd-grey--mid, 0.7);
@@ -175,6 +186,12 @@
   text-transform: uppercase;
   top: 8px;
 
+
+  [dir='rtl'] & {
+    right: auto;
+    left: $cd-container-padding;
+  }
+
   svg {
     box-sizing: content-box;
     width: 26px;
@@ -198,6 +215,10 @@
 
   .cd-search__input {
     padding: 0 44px 0 30px;
+
+    [dir='rtl'] & {
+      padding: 0 30px 0 44px;
+    }
   }
 
   .cd-search__submit {
@@ -209,7 +230,12 @@
   .cd-search__btn svg {
     width: 22px;
     height: 22px;
-    padding: 0 4px 0 0;
+    padding-left: 4px;
+
+    [dir='rtl'] & {
+      padding-left: 4px;
+      padding-right: 0;
+    }
   }
 
   .cd-search__btn-label {
@@ -224,5 +250,10 @@
 
   .cd-search__submit {
     right: $cd-container-padding-xlarge;
+
+    [dir='rtl'] & {
+      right: auto;
+      left: $cd-container-padding-xlarge;
+    }
   }
 }

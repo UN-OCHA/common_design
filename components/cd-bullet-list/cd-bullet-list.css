@@ -9,25 +9,42 @@
   text-indent: -1.25em;
 }
 
+[dir="rtl"] .cd-bullet-list li {
+  padding-left: 0;
+  padding-right: 1.25em;
+}
+
 .cd-bullet-list li a {
   padding: 0.25rem 1rem 0.25rem 0;
   position: relative;
   text-decoration: none;
 }
 
+[dir="rtl"] .cd-bullet-list li a {
+  padding: 0.25rem 0 0.25rem 1rem;
+}
+
 .cd-bullet-list li a::before {
   display: inline-block;
   height: 0.5rem;
   width: 0.5rem;
-  margin-right: 0.5rem;
-  content: '';
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%5C %3Cpath fill='%23ff4d59' d='M14,48a4,4,0,0,1-2.83-6.83L28.34,24,11.17,6.83a4,4,0,0,1,5.66-5.66l20,20a4,4,0,0,1,0,5.66l-20,20A4,4,0,0,1,14,48Z'/%3E%5C %3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
+  content: '';
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .cd-bullet-list li a::before {
+  transform: scale(-1, 1);
+  margin-right: 0;
+  margin-left: 0.5rem;
+  background-position: 100% 0;
 }
 
 /* When using an SVG element as icon */
-.cd-bullet-list--icon li a::before {
+[dir="ltr"] .cd-bullet-list--icon li a::before,
+[dir="rtl"] .cd-bullet-list--icon li a::before {
   content: none;
 }
 
@@ -37,4 +54,10 @@
   height: 0.5rem;
   display: inline-block;
   margin-right: 0.5rem;
+}
+
+[dir="rtl"] .cd-bullet-list--icon svg {
+  margin-right: 0;
+  margin-left: 0.5rem;
+  transform: scale(-1, 1);
 }

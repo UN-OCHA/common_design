@@ -214,6 +214,10 @@ a.cd-button {
   text-align: left;
 }
 
+[dir='rtl'] .cd-icon--arrow-right {
+  transform: scale(-1, 1);
+}
+
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
   .cd-button--icon {
@@ -235,11 +239,22 @@ a.cd-button {
   margin-right: 0.25rem;
   transition: fill 0.3s ease-in;
 }
+[dir='rtl'] .cd-button--icon svg {
+  /* Icon before */
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
 
 .cd-button--icon span + svg {
   /* Icon after */
   margin-right: 0;
   margin-left: 2rem;
+}
+
+[dir='rtl'] .cd-button--icon span + svg {
+  /* Icon after */
+  margin-left: 0;
+  margin-right: 2rem;
 }
 
 .cd-button--icon.cd-button--small svg {
@@ -250,6 +265,12 @@ a.cd-button {
 .cd-button--icon.cd-button--small span + svg {
   /* Icon after */
   margin-left: 1rem;
+}
+
+[dir='rtl'] .cd-button--icon.cd-button--small span + svg {
+  /* Icon after */
+  margin-left: 0;
+  margin-right: 1rem;
 }
 
 .cd-button--icon:hover svg,
