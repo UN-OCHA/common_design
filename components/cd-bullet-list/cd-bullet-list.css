@@ -9,13 +9,13 @@
   text-indent: -1.25em;
 }
 
-.cd-bullet-list li a {
+.cd-bullet-list li {
   padding: 0.25rem 1rem 0.25rem 0;
   position: relative;
   text-decoration: none;
 }
 
-.cd-bullet-list li a::before {
+.cd-bullet-list li::before {
   display: inline-block;
   height: 0.5rem;
   width: 0.5rem;
@@ -27,7 +27,7 @@
 }
 
 /* When using an SVG element as icon */
-.cd-bullet-list--icon li a::before {
+.cd-bullet-list--icon li::before {
   content: none;
 }
 
