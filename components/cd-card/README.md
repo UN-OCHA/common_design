@@ -3,6 +3,8 @@
 ## Purpose and Usage
 Displays concise information in a clear and visually striking manner, with optional images and call to action elements.
 
+Replace the title heading tag with the semantic level based on the other headings on the page.
+
 ## Caveats
 Requires cd-grid component or alternative grid system for layout.
 

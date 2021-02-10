@@ -15,6 +15,8 @@ Use with cd-bleed component for full viewport width option.
 
 Use with cd-button component for CTA options.
 
+Replace the title heading tag with the semantic level based on the other headings on the page.
+
 @TODO use srcset with good defaults, and add note about Responsive image module in Drupal and its config.
 
 ## Caveats

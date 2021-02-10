@@ -44,13 +44,10 @@
   padding: 0 2rem 2rem;
 }
 
-.cd-card__title {
-  margin: 0 0 1rem;
-}
-
+.cd-card__title,
 .cd-card__title a {
-  font-weight: 500;
-  /*font-size: 1rem;*/
+  font-weight: 700;
+  font-size: 1rem;
   display: block;
 }
 

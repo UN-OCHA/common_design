@@ -17,8 +17,11 @@
   flex: 1 1 0%;
 }
 
-.cd-teaser__title {
-  margin-top: 0;
+.cd-teaser__title,
+.cd-teaser__title a {
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: block;
 }
 
 .cd-teaser dt {
