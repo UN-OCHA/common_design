@@ -16,6 +16,10 @@
   padding: 1rem;
 }
 
+[dir='rtl'] .cd-hero--style-three .cd-hero__container {
+  text-align: right;
+}
+
 /*
 .cd-hero--style-three .cd-hero__date {
   padding-left: 0.5rem;
@@ -31,10 +35,20 @@
     left: 2rem;
     max-width: 40%;
   }
+
+  [dir='rtl'] .cd-hero--style-three .cd-hero__container {
+    left: 0;
+    right: 2rem;
+  }
 }
 
 @media (min-width: 1200px) {
   .cd-hero--style-three .cd-hero__container {
     left: 0;
+  }
+
+  [dir='rtl'] .cd-hero--style-three .cd-hero__container {
+    left: auto;
+    right: 0;
   }
 }

@@ -5,13 +5,25 @@
 .cd-global-header {
   .cd-global-header__actions {
     float: right;
+
+    [dir='rtl'] & {
+      float: left;
+    }
   }
 
   &__language-switcher {
     float: left;
+
+    [dir='rtl'] & {
+      float: right;
+    }
   }
 
   &__user-menu {
     float: left;
+
+    [dir='rtl'] & {
+      float: right;
+    }
   }
 }

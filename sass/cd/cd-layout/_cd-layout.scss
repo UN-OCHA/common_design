@@ -176,11 +176,21 @@ body {
 
     @include tablet {
       margin-left: 3rem;
+
+      [dir='rtl'] & {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
     }
 
     @include desktop {
       margin-right: 3rem;
       margin-bottom: 0;
+
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: 3rem;
+      }
     }
   }
 
@@ -188,6 +198,11 @@ body {
     @include tablet {
       margin-left: 3rem;
       margin-right: 0;
+
+      [dir='rtl'] & {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
     }
   }
 
@@ -198,6 +213,11 @@ body {
       margin-left: 0;
       margin-right: 3rem;
       margin-bottom: 0;
+
+      [dir='rtl'] & {
+        margin-left: 3rem;
+        margin-right: 0;
+      }
     }
   }
 }
@@ -219,6 +239,11 @@ section.cd-layout-two-col {
       margin-right: 2rem;
       flex-basis: 0;
       flex-grow: 999;
+
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: 2rem;
+      }
     }
   }
 
@@ -266,6 +291,11 @@ section.cd-layout-two-col {
 .page-title {
   @include xl {
     padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+
+    [dir='rtl'] & {
+      padding-right: 0;
+      padding-left: calc(285px + 3rem);
+    }
   }
 }
 

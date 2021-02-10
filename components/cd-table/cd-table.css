@@ -7,10 +7,18 @@ th {
   text-align: left;
 }
 
+[dir='rtl'] th {
+  text-align: right;
+}
+
 table caption {
   margin-top: 0.5rem;
   caption-side: bottom;
   text-align: left;
+}
+
+[dir='rtl'] table caption {
+  text-align: right;
 }
 
 .cd-table {
@@ -30,6 +38,11 @@ table caption {
   text-align: left;
 }
 
+[dir='rtl'] .cd-table th,
+[dir='rtl'] .cd-table td {
+  text-align: right;
+}
+
 .cd-table th {
   color: var(--cd-ocha-blue);
   border-bottom: 1px solid white;
@@ -45,6 +58,12 @@ table caption {
   .cd-table .cd-table--amount,
   .cd-table .cd-table--amount-total {
     text-align: right;
+  }
+
+  [dir='rtl'] .cd-table th[data-sort-type="numeric"],
+  [dir='rtl'] .cd-table .cd-table--amount,
+  [dir='rtl'] .cd-table .cd-table--amount-total {
+    text-align: left;
   }
 }
 
@@ -66,6 +85,11 @@ table caption {
   min-width: 1em;
   margin-right: 0.5em;
   font-weight: normal;
+}
+
+[dir='rtl'] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
+  margin-right: 0;
+  margin-left: 0.5em;
 }
 
 /* Striping */
@@ -117,6 +141,12 @@ table caption {
     text-align: left;
   }
 
+  [dir='rtl'] .cd-table--responsive td {
+    padding-left: auto !important;
+    padding-right: 40% !important;
+    text-align: right;
+  }
+
   .cd-table--responsive td:before {
     position: absolute;
     top: 0.5rem;
@@ -129,6 +159,14 @@ table caption {
     color: var(--cd-ocha-blue);
     /* Label the data */
     content: attr(data-content);
+  }
+
+  [dir='rtl'] .cd-table--responsive td:before {
+    left: auto;
+    right: 0.5rem;
+    padding-right: 0;
+    padding-left: 1rem;
+    text-align: right;
   }
 
   .cd-table--responsive tfoot td {
