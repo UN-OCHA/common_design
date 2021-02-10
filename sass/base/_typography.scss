@@ -114,25 +114,25 @@ dl {
   }
 }
 
-h2 {
-  @include font-size($cd-font-size-large);
-}
-
-h3 {
-  @include font-size($cd-font-size-medium);
-}
-
-h4 {
-  @include font-size($cd-font-size-base);
-}
-
-h5 {
-  @include font-size($cd-font-size-small);
-}
-
-h6 {
-  @include font-size($cd-font-size-base);
-}
+//h2 {
+//  @include font-size($cd-font-size-large);
+//}
+//
+//h3 {
+//  @include font-size($cd-font-size-medium);
+//}
+//
+//h4 {
+//  @include font-size($cd-font-size-base);
+//}
+//
+//h5 {
+//  @include font-size($cd-font-size-small);
+//}
+//
+//h6 {
+//  @include font-size($cd-font-size-base);
+//}
 
 
 a {
