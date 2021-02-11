@@ -15,10 +15,10 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-button           | :heavy_check_mark:  |                     |
 | cd-byline           | :heavy_check_mark:  |                     |
 | cd-caption          | :heavy_check_mark:  |                     |
-| cd-card             |                     |                     |
-| cd-date             |                     |                     |
+| cd-card             | :heavy_check_mark:  |                     |
+| cd-date             | :heavy_check_mark:  |                     |
 | cd-dropdown         |                     |                     |
-| cd-event            |                     |                     |
+| cd-event            | :heavy_check_mark:  |                     |
 | cd-facets           |                     |                     |
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
@@ -31,7 +31,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
 | cd-select-a11y      |                     |                     |
-| cd-styled-list      |                     |                     |
+| cd-styled-list      | :heavy_check_mark:  |                     |
 | cd-table            |                     |                     |
 | cd-teaser           | :heavy_check_mark:  |                     |
 | cd-title-list       | :heavy_check_mark:  |                     |
@@ -76,7 +76,7 @@ Eg. BEM
   <li class="cd-title-list__item">
     <a href="/#" class="cd-title-list__link">
       <span class="cd-title-list__title">Title</span>
-      <svg class="cd-icon cd-icon--arrow-right" width="16" height="16" aria-hidden="true" focusable="false">
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
         <use xlink:href="#cd-icon--arrow-right"></use>
       </svg>
     </a>

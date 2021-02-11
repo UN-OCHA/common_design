@@ -1,7 +1,7 @@
 ul.tabs {
   list-style: none;
   border-bottom: 2px solid var(--cd-blue-grey);
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
   padding: 0;
   display: block;
 }
@@ -38,11 +38,19 @@ ul.tabs > li > a {
 
 @media (min-width: 576px) {
   ul.tabs > li {
-    float: left;
     position: relative;
     /* Height of border bottom. */
     margin-bottom: -2px;
+  }
+
+  [dir='ltr'] ul.tabs > li {
+    float: left;
     margin-right: 0.5rem;
+  }
+
+  [dir='rtl'] ul.tabs > li {
+    float: right;
+    margin-left: 0.5rem;
   }
 }
 

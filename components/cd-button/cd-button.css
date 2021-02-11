@@ -184,7 +184,7 @@ a.cd-button {
 /* Utility classes */
 .cd-button--small {
   padding: 0.25rem 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
@@ -214,6 +214,14 @@ a.cd-button {
   text-align: left;
 }
 
+[dir='rtl'] .cd-button--icon {
+  text-align: right;
+}
+
+[dir='rtl'] .cd-icon--arrow-right {
+  transform: scale(-1, 1);
+}
+
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
   .cd-button--icon {
@@ -231,15 +239,29 @@ a.cd-button {
   fill: currentColor;
   width: 1rem;
   height: 1rem;
+  transition: fill 0.3s ease-in;
+}
+
+[dir='ltr'] .cd-button--icon svg {
   /* Icon before */
   margin-right: 0.25rem;
-  transition: fill 0.3s ease-in;
+}
+
+[dir='rtl'] .cd-button--icon svg {
+  /* Icon before */
+  margin-left: 0.25rem;
 }
 
 .cd-button--icon span + svg {
   /* Icon after */
   margin-right: 0;
   margin-left: 2rem;
+}
+
+[dir='rtl'] .cd-button--icon span + svg {
+  /* Icon after */
+  margin-left: 0;
+  margin-right: 2rem;
 }
 
 .cd-button--icon.cd-button--small svg {
@@ -250,6 +272,12 @@ a.cd-button {
 .cd-button--icon.cd-button--small span + svg {
   /* Icon after */
   margin-left: 1rem;
+}
+
+[dir='rtl'] .cd-button--icon.cd-button--small span + svg {
+  /* Icon after */
+  margin-left: 0;
+  margin-right: 1rem;
 }
 
 .cd-button--icon:hover svg,
