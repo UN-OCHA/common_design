@@ -73,10 +73,12 @@ button[aria-expanded] {
     fill: $cd-white;
     width: 9px;
     height: 9px;
-    margin-left: 4px;
+
+    [dir='ltr'] & {
+      margin-left: 4px;
+    }
 
     [dir='rtl'] & {
-      margin-left: 0;
       margin-right: 4px;
     }
   }

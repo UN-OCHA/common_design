@@ -9,23 +9,15 @@
 // Language switcher button
 .cd-language-switcher__btn {
   font-weight: 600;
-  padding: 0 0 0 15px;
   display: flex;
   align-items: center;
   box-sizing: content-box;
   line-height: $cd-global-header-height;
   height: $cd-global-header-height;
-
-  [dir='rtl'] & {
-    padding: 0 15px 0 0;
-  }
+  padding: 0 0 0 15px;
 
   @include tablet {
     padding: 0 0 0 20px;
-
-    [dir='rtl'] & {
-      padding: 0 20px 0 0;
-    }
   }
 
   // Language switcher is always on the far edge of the global header.
@@ -85,11 +77,13 @@
 
   &.is-active {
     font-weight: bold;
-    padding-right: 12px;
     position: relative;
 
+    [dir='ltr'] & {
+      padding-right: 12px;
+    }
+
     [dir='rtl'] & {
-      padding-right: 0;
       padding-left: 12px;
     }
 

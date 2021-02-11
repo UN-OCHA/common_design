@@ -60,13 +60,14 @@
       border-color: transparent transparent $cd-blue-grey;
       position: absolute;
       bottom: 0;
-      left: 50%;
-      margin-left: -6px;
+
+      [dir='ltr'] & {
+        left: 50%;
+        margin-left: -6px;
+      }
 
       [dir='rtl'] & {
-        left: auto;
         right: 50%;
-        margin-left: 0;
         margin-right: -6px;
       }
     }
@@ -125,9 +126,9 @@
   color: $cd-default-text-color;
   @include font-size($cd-font-size-base);
   height: calc(#{$cd-site-header-height} - 16px); //Padding.
-  padding: 0 45px 0 25px;
   width: 100%;
   box-sizing: border-box;
+  padding: 0 45px 0 25px;
 
   [dir='rtl'] & {
     padding: 0 25px 0 45px;
@@ -176,19 +177,20 @@
   color: $cd-white;
   display: flex;
   @include font-size($cd-font-size-base);
-  font-weight: bold;
+  font-weight: 700;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   width: 46px;
   margin: 0;
   padding: 0;
   position: absolute;
-  right: $cd-container-padding;
   text-transform: uppercase;
   top: 8px;
 
+  [dir='ltr'] & {
+    right: $cd-container-padding;
+  }
 
   [dir='rtl'] & {
-    right: auto;
     left: $cd-container-padding;
   }
 
@@ -222,7 +224,13 @@
   }
 
   .cd-search__submit {
-    right: $cd-container-padding-tablet;
+    [dir='ltr'] & {
+      right: $cd-container-padding-tablet;
+    }
+
+    [dir='rtl'] & {
+      left: $cd-container-padding-tablet;
+    }
   }
 }
 
@@ -230,11 +238,13 @@
   .cd-search__btn svg {
     width: 22px;
     height: 22px;
-    padding-left: 4px;
+
+    [dir='ltr'] & {
+      padding-right: 4px;
+    }
 
     [dir='rtl'] & {
       padding-left: 4px;
-      padding-right: 0;
     }
   }
 
@@ -249,10 +259,11 @@
   }
 
   .cd-search__submit {
-    right: $cd-container-padding-xlarge;
+    [dir='ltr'] & {
+      right: $cd-container-padding-xlarge;
+    }
 
     [dir='rtl'] & {
-      right: auto;
       left: $cd-container-padding-xlarge;
     }
   }

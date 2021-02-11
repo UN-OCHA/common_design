@@ -83,12 +83,14 @@ table caption {
 .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
   content: counter(rowNumber);
   min-width: 1em;
-  margin-right: 0.5em;
   font-weight: normal;
 }
 
+[dir='ltr'] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
+  margin-right: 0.5em;
+}
+
 [dir='rtl'] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
-  margin-right: 0;
   margin-left: 0.5em;
 }
 

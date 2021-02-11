@@ -175,20 +175,23 @@ body {
     margin-bottom: 1rem;
 
     @include tablet {
-      margin-left: 3rem;
+      [dir='ltr'] & {
+        margin-left: 3rem;
+      }
 
       [dir='rtl'] & {
-        margin-left: 0;
         margin-right: 3rem;
       }
     }
 
     @include desktop {
-      margin-right: 3rem;
       margin-bottom: 0;
 
+      [dir='ltr'] & {
+        margin-right: 3rem;
+      }
+
       [dir='rtl'] & {
-        margin-right: 0;
         margin-left: 3rem;
       }
     }
@@ -196,8 +199,10 @@ body {
 
   .cd-layout-with-sidebar-first & {
     @include tablet {
-      margin-left: 3rem;
-      margin-right: 0;
+      [dir='ltr'] & {
+        margin-left: 3rem;
+        margin-right: 0;
+      }
 
       [dir='rtl'] & {
         margin-left: 0;
@@ -210,9 +215,12 @@ body {
     margin-bottom: 1rem;
 
     @include tablet {
-      margin-left: 0;
-      margin-right: 3rem;
       margin-bottom: 0;
+
+      [dir='ltr'] & {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
 
       [dir='rtl'] & {
         margin-left: 3rem;
@@ -236,12 +244,14 @@ section.cd-layout-two-col {
     margin-left: 0;
 
     @include desktop {
-      margin-right: 2rem;
       flex-basis: 0;
       flex-grow: 999;
 
+      [dir='ltr'] & {
+        margin-right: 2rem;
+      }
+
       [dir='rtl'] & {
-        margin-right: 0;
         margin-left: 2rem;
       }
     }
@@ -290,10 +300,11 @@ section.cd-layout-two-col {
 
 .page-title {
   @include xl {
-    padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+    [dir='ltr'] & {
+      padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+    }
 
     [dir='rtl'] & {
-      padding-right: 0;
       padding-left: calc(285px + 3rem);
     }
   }

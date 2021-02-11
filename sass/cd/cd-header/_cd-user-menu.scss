@@ -16,10 +16,11 @@
   // Logo icon before the button/link label.
   // @todo add proper classes to make it more robust.
   svg + span {
-    margin-left: 10px;
+    [dir='ltr'] & {
+      margin-left: 10px;
+    }
 
     [dir='rtl'] & {
-      margin-left: 0;
       margin-right: 10px;
     }
   }
@@ -130,9 +131,11 @@
 }
 
 .cd-global-header__user-menu > .menu {
-  padding-left: 0;
+  [dir='ltr'] & {
+    padding-left: 0;
+  }
 
-  [dir='rtl'] {
+  [dir='rtl'] & {
     padding-right: 0;
   }
 }
