@@ -8,6 +8,7 @@ The teaser title and/ or image can be linked, and the read more is optional.
 
 Replace the title heading tag with the semantic level based on the other headings on the page.
 
+@TODO If needed, combine with cd-grid for column layout and make appropriate adjustments.
 
 ## Caveats
 The image wrapper expands to accommodate the image width, and the content div
