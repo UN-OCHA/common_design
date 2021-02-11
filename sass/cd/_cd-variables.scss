@@ -79,6 +79,15 @@ $cd-site-header-height: 60px;
   --cd-yellow--light: #f7f8d3;
   --cd-green: #7fb92f;
   --cd-green--light: #e8f5d6;
+
+  /* Fonts sizes in REMs */
+  --cd-font-size--tiny: 0.75rem;    /* 12px */
+  --cd-font-size--small: 0.875rem;  /* 14px */
+  --cd-font-size--base: 1rem;       /* 16px */
+  --cd-font-size--medium: 1.5rem;   /* 24px */
+  --cd-font-size--large: 2rem;      /* 32px */
+  --cd-font-size--xlarge: 2.5rem;   /* 40px */
+  --cd-font-size--xxlarge: 3rem;    /* 48px */
 }
 
 // Colour palette
@@ -132,9 +141,10 @@ $cd-font--system: system-ui;
 $cd-font-size-tiny: 12;
 $cd-font-size-small: 14;
 $cd-font-size-base: 16;
-$cd-font-size-medium: 20;
-$cd-font-size-xlarge: 30;
-
+$cd-font-size-medium: 24;
+$cd-font-size-large: 32;
+$cd-font-size-xlarge: 40;
+$cd-font-size-xxlarge: 48;
 
 //——————————————————————————————————————————————————————————————————————————————
 // z-indices
@@ -146,7 +156,7 @@ $zindex: (
   sidebar: 110,
   sidebar-underlay: 100,
   main-menu: 199,
-  search: 199,
-  dropdown: 200,
+  search: 200,
+  dropdown: 201,
   skip-link: 1000
 );

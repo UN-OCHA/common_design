@@ -6,6 +6,10 @@
   @include z-index(search);
   float: left;
 
+  [dir='rtl'] & {
+    float: right;
+  }
+
   @supports (display: flex) {
     float: none;
   }
@@ -60,8 +64,16 @@
       border-color: transparent transparent $cd-blue-grey;
       position: absolute;
       bottom: 0;
-      left: 50%;
-      margin-left: -6px;
+
+      [dir='ltr'] & {
+        left: 50%;
+        margin-left: -6px;
+      }
+
+      [dir='rtl'] & {
+        right: 50%;
+        margin-right: -6px;
+      }
     }
 
     svg {
@@ -77,8 +89,8 @@
 }
 
 .cd-search--inline__btn-label {
-  font-size: 12px;
-  font-weight: bold;
+  @include font-size($cd-font-size-tiny);
+  font-weight: 700;
   text-transform: uppercase;
   display: none;
 }
@@ -104,7 +116,8 @@
   padding: 8px $cd-container-padding;
 }
 
-.cd-search--inline__input {
+.cd-search--inline__input[type='search'],
+.cd-search--inline__input[type='text'] {
   -webkit-appearance: none;
   background: $cd-white;
   border: 0;
@@ -113,8 +126,13 @@
   color: $cd-default-text-color;
   @include font-size($cd-font-size-base);
   height: calc(#{$cd-site-header-height} - 16px); //padding.
-  padding: 0 45px 0 25px;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 45px 0 25px;
+
+  [dir='rtl'] & {
+    padding: 0 25px 0 45px;
+  }
 
   &:focus {
     outline: 0;
@@ -165,9 +183,16 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  right: $cd-container-padding;
   text-transform: uppercase;
   top: 8px;
+
+  [dir='ltr'] & {
+    right: $cd-container-padding;
+  }
+
+  [dir='rtl'] & {
+    left: $cd-container-padding;
+  }
 
   svg {
     box-sizing: content-box;
@@ -197,11 +222,19 @@
   }
 
   .cd-search--inline {
-    float: left;
-    border-left: 1px solid $cd-blue-grey;
-    //border-right: 1px solid $cd-blue-grey;
     flex: 0 1 400px;
-    margin-left: 30px;
+
+    [dir='ltr'] & {
+      float: left;
+      border-left: 1px solid $cd-blue-grey;
+      margin-left: 30px;
+    }
+
+    [dir='rtl'] & {
+      float: right;
+      border-right: 1px solid $cd-blue-grey;
+      margin-right: 30px;
+    }
   }
 
   .cd-search--inline__form {
@@ -226,7 +259,8 @@
     padding: 0;
   }
 
-  .cd-search--inline__input {
+  .cd-search--inline__input[type='search'],
+  .cd-search--inline__input[type='text'] {
     -webkit-appearance: none;
     background: $cd-white;
     border: 0;
@@ -237,6 +271,10 @@
     @include font-size($cd-font-size-small);
     height: $cd-site-header-height;
     padding: 0 72px 0 16px;
+
+    [dir='rtl'] & {
+      padding: 0 16px 0 72px;
+    }
 
     &:focus {
       outline: 0;
@@ -278,7 +316,6 @@
   .cd-search--inline__submit {
     background: $cd-white;
     border: 0;
-    border-left: 1px solid $cd-blue-grey;
     color: $cd-black;
     @include font-size($cd-font-size-medium);
     font-weight: bold;
@@ -286,10 +323,17 @@
     width: unset;
     padding: 0;
     position: absolute;
-    right: 0;
     top: 0;
     transition: background 0.3s ease;
     cursor: pointer;
+
+    [dir='ltr'] & {
+      right: 0;
+    }
+
+    [dir='rtl'] & {
+      left: 0;
+    }
 
     svg {
       box-sizing: content-box;

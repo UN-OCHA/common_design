@@ -17,16 +17,11 @@
   flex: 1 1 0%;
 }
 
-.cd-teaser__title {
-  margin-top: 0;
-}
-
-.cd-teaser__fields dt {
-  font-weight: 600;
-}
-
-.cd-teaser__fields dd {
-  padding-bottom: 0.5rem;
+.cd-teaser__title,
+.cd-teaser__title a {
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: block;
 }
 
 /* Override rule for cd-bumper on .cd-teaser__container to prevent padding-left on mobile. */
@@ -64,24 +59,6 @@
 
   .cd-teaser__footer {
     align-self: flex-end;
-  }
-
-  .cd-teaser__fields {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .cd-teaser__fields dt {
-    flex: 0 0 25%;
-    width: 25%;
-    padding-right: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .cd-teaser__fields dd {
-    flex: 0 0 75%;
-    width: 75%;
-    margin-left: auto;
   }
 }
 
