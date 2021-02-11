@@ -3,14 +3,10 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-ocha {
-
-  [dir='ltr'] & {
-    float: left;
-    text-align: left;
-  }
+  float: left;
+  text-align: left;
 
   [dir='rtl'] & {
-    float: right;
     text-align: right;
   }
 
@@ -50,12 +46,13 @@
     margin: auto; // Center vertically in macOS 10
 
     @include tablet {
-      margin-left: 4px;
-    }
+      [dir='ltr'] & {
+        margin-left: 4px;
+      }
 
-    [dir='rtl'] & {
-      margin-left: 0;
-      margin-right: 4px;
+      [dir='rtl'] & {
+        margin-right: 4px;
+      }
     }
   }
 }
@@ -68,10 +65,11 @@
   fill: $cd-white;
 
   @include tablet {
-    margin-right: 4px;
+    [dir='ltr'] & {
+      margin-right: 4px;
+    }
 
     [dir='rtl'] & {
-      margin-right: 0;
       margin-left: 4px;
     }
   }

@@ -214,6 +214,10 @@ a.cd-button {
   text-align: left;
 }
 
+[dir='rtl'] .cd-button--icon {
+  text-align: right;
+}
+
 [dir='rtl'] .cd-icon--arrow-right {
   transform: scale(-1, 1);
 }
@@ -235,13 +239,16 @@ a.cd-button {
   fill: currentColor;
   width: 1rem;
   height: 1rem;
-  /* Icon before */
-  margin-right: 0.25rem;
   transition: fill 0.3s ease-in;
 }
+
+[dir='ltr'] .cd-button--icon svg {
+  /* Icon before */
+  margin-right: 0.25rem;
+}
+
 [dir='rtl'] .cd-button--icon svg {
   /* Icon before */
-  margin-right: 0;
   margin-left: 0.25rem;
 }
 
