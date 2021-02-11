@@ -5,9 +5,8 @@
 .block-facets h2,
 .block-facets-summary h2 {
   margin-top: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-  padding-bottom: .5rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   color: var(--cd-primary-color);
   border-bottom: 1px solid var(--cd-primary-color);
@@ -75,7 +74,7 @@
 
 .block-facets-summary {
   background-color: var(--cd-grey--light);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   padding: 1rem 1rem 0.5rem;
   margin-bottom: 2rem;
 }
