@@ -8,24 +8,25 @@
   width: 5.5rem;
 }
 
-.cd-date-day-wrapper {
+.cd-date__wrapper {
   background: var(--cd-ocha-blue);
   padding: 0 0.5rem;
 }
 
-.cd-date-day {
+.cd-date__day {
   font-size: 3rem;
   color: var(--cd-white);
   font-weight: bold;
 }
 
-.cd-date-month,
-.cd-date-year {
+.cd-date__month,
+.cd-date__year {
   color: var(--cd-ocha-blue);
   text-transform: uppercase;
   font-size: 0.875rem;
 }
 
-.cd-date-wrapper {
+.cd-date__wrapper + .cd-date__wrapper {
+  background: transparent;
   padding: 0.25rem 0.5rem;
 }
