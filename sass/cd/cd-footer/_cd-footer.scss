@@ -75,6 +75,11 @@
     text-align: left;
     float: left;
     width: 70%;
+
+    [dir='rtl'] & {
+      text-align: right;
+      float: right;
+    }
   }
 }
 
@@ -83,6 +88,11 @@
     float: left;
     width: 30%;
     text-align: right;
+
+    [dir='rtl'] & {
+      text-align: left;
+      float: right;
+    }
   }
 }
 
@@ -91,6 +101,10 @@
     float: left;
     max-width: 780px;
     width: 60%;
+
+    [dir='rtl'] & {
+      float: right;
+    }
   }
 }
 
@@ -99,6 +113,10 @@
     float: right;
     max-width: 350px;
     width: 40%;
+
+    [dir='rtl'] & {
+      float: left;
+    }
   }
 }
 
@@ -116,6 +134,10 @@
     @include desktop {
       text-align: left;
       flex: 1 0 70%;
+
+      [dir='rtl'] & {
+        text-align: right;
+      }
     }
   }
 

@@ -79,11 +79,11 @@
   @include desktop {
     @supports(display: flex) {
       .cd-search {
-        flex: 0 0 auto;
+        flex: 0 1 auto;
       }
 
       .cd-site-header__nav-holder {
-        flex: 0 0 auto;
+        flex: 0 1 auto;
       }
     }
   }
@@ -113,18 +113,18 @@
     }
 
     @include desktop {
-      max-width: 112px;
+      //max-width: 112px;
 
       @supports(display: flex) {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
       }
     }
 
     @include xlarge {
-      max-width: 160px;
+      //max-width: 160px;
 
       @supports(display: flex) {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
       }
     }
 
