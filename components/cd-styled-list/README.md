@@ -1,8 +1,8 @@
 # Styled list
 
 ## Purpose and Usage
-A list of content that links to other content pages or external resources, or that lists content to augment material 
-on the page.
+A list of content that links to other content pages or external resources, or
+that lists content to augment material on the page.
 
 - image
 - title
