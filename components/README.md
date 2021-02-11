@@ -21,7 +21,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-event            | :heavy_check_mark:  |                     |
 | cd-facets           |                     |                     |
 | cd-filter           |                     |                     |
-| cd-flow             |                     |                     |
+| cd-flow             |      :x:            |                     |
 | cd-grid             |                     |                     |
 | cd-hero             | :heavy_check_mark:  |                     |
 | cd-image-grid       |                     |                     |
