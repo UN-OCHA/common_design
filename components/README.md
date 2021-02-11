@@ -16,9 +16,9 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-byline           | :heavy_check_mark:  |                     |
 | cd-caption          | :heavy_check_mark:  |                     |
 | cd-card             | :heavy_check_mark:  |                     |
-| cd-date             |                     |                     |
+| cd-date             | :heavy_check_mark:  |                     |
 | cd-dropdown         |                     |                     |
-| cd-event            |                     |                     |
+| cd-event            | :heavy_check_mark:  |                     |
 | cd-facets           |                     |                     |
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
@@ -33,7 +33,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-select-a11y      |                     |                     |
 | cd-styled-list      | :heavy_check_mark:  |                     |
 | cd-table            |                     |                     |
-| cd-teaser           |                     |                     |
+| cd-teaser           | :heavy_check_mark:  |                     |
 | cd-title-list       | :heavy_check_mark:  |                     |
 | cd-toc              |                     |                     |
 | cd-typography       |                     |                     |
