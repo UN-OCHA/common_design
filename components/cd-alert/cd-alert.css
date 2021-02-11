@@ -21,10 +21,17 @@
 
 .cd-alert svg {
   flex: 0 0 1.5rem;
-  margin-right: 1rem;
   width: 1.5rem;
   height: 1.5rem;
   fill: var(--cd-blue--bright);
+}
+
+[dir='ltr'] .cd-alert svg {
+  margin-right: 1rem;
+}
+
+[dir='rtl'] .cd-alert svg {
+  margin-left: 1rem;
 }
 
 .cd-alert a,

@@ -20,8 +20,16 @@ ul[data-cd-hidden='true'] > ul {
 
 .menu--main button[aria-expanded] .cd-icon--arrow-down {
   fill: $cd-highlight-red;
-  margin-left: 4px;
   margin-top: 4px;
+
+  [dir='ltr'] & {
+    margin-left: 4px;
+  }
+
+  [dir='rtl'] & {
+    margin-right: 4px;
+  }
+
   @include desktop {
     margin-top: -2px;
   }
