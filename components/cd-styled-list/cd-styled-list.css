@@ -57,6 +57,13 @@
   flex: 1 1 0%;
 }
 
+.cd-styled-list__title,
+.cd-styled-list__title a {
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: block;
+}
+
 .cd-styled-list__footer {
   flex: 1 0 100%;
   margin-top: 1rem;
