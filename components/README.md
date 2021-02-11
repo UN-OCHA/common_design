@@ -20,7 +20,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-dropdown         |                     |                     |
 | cd-event            | :heavy_check_mark:  |                     |
 | cd-facets           |                     |                     |
-| cd-filter           |                     |                     |
+| cd-filter           |      :x:            |                     |
 | cd-flow             |                     |                     |
 | cd-grid             |                     |                     |
 | cd-hero             | :heavy_check_mark:  |                     |
