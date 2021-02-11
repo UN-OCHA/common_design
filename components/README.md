@@ -2,7 +2,7 @@
 
 Add a check if you've reviewed the component and it passes the Criteria.
 
-| Component           | QA round 1          | QA round 2          |
+| Component           | Technical Review round 1    | Technical Review round 2    |
 | :------------------ | :------------------ | :------------------ |
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-alert            | :heavy_check_mark:  |                     |
