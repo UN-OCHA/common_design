@@ -234,7 +234,7 @@ function common_design_preprocess_menu(&$variables, $hook) {
   if ($hook == 'menu__account') {
     // Add username.
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-    $variables['username'] = $user->getUsername();
+    $variables['username'] = $user->getDisplayName();
     $variables['#cache']['contexts'][] = 'user';
   }
 }
