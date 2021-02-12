@@ -29,7 +29,7 @@ cd-ocha-services:
 cd-alert:
   css:
     component:
-      components/cd-alert/cd-alert.css: { preprocess:false }
+      components/cd-alert/cd-alert.css: { preprocess: false }
   dependencies:
     - common_design/css-vars-ponyfill
 
