@@ -1,7 +1,7 @@
 name: OCHA Common Design
 type: theme
 description: OCHA Common Design drupal theme. Use as a base theme, and extend.
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 # Defines the base theme
 base theme: classy
 logo: 'img/logos/ocha-lockup-blue.svg'
