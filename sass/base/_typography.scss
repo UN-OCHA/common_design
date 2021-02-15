@@ -123,10 +123,10 @@ html[lang='zh'] {
 h1 {
   color: $cd-default-text-color;
   font-weight: 300;
-  @include font-size($cd-font-size-xxlarge);
+  @include font-size($cd-font-size-2xmedium);
 
   @include desktop {
-    @include font-size($cd-font-size-xlarge);
+    @include font-size($cd-font-size-2xlarge);
   }
 }
 
@@ -164,25 +164,25 @@ dl {
   }
 }
 
-//h2 {
-//  @include font-size($cd-font-size-large);
-//}
-//
-//h3 {
-//  @include font-size($cd-font-size-medium);
-//}
-//
-//h4 {
-//  @include font-size($cd-font-size-base);
-//}
-//
-//h5 {
-//  @include font-size($cd-font-size-small);
-//}
-//
-//h6 {
-//  @include font-size($cd-font-size-base);
-//}
+h2 {
+  @include font-size($cd-font-size-2xmedium);
+}
+
+h3 {
+  @include font-size($cd-font-size-2xbase);
+}
+
+h4 {
+  @include font-size($cd-font-size-large);
+}
+
+h5 {
+  @include font-size($cd-font-size-medium);
+}
+
+h6 {
+  @include font-size($cd-font-size-base);
+}
 
 
 a {
@@ -206,5 +206,5 @@ em {
 // The Unarticulated Annotation.
 u {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
 }
