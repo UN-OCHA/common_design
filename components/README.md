@@ -22,6 +22,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-facets           |                     |                     |
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
+| cd-form             |                     |                     |
 | cd-grid             |                     |                     |
 | cd-hero             | :heavy_check_mark:  |                     |
 | cd-image-grid       |                     |                     |
@@ -33,6 +34,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-select-a11y      |                     |                     |
 | cd-styled-list      | :heavy_check_mark:  |                     |
 | cd-table            |                     |                     |
+| cd-tabs             |                     |                     |
 | cd-teaser           | :heavy_check_mark:  |                     |
 | cd-title-list       | :heavy_check_mark:  |                     |
 | cd-toc              |                     |                     |
