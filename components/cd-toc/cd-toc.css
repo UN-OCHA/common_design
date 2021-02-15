@@ -16,8 +16,12 @@
   counter-reset: item;
 }
 
-.cd-toc__list ol {
+[dir='ltr'] .cd-toc__list ol {
   padding: 0 0 0 1rem;
+}
+
+[dir='rtl'] .cd-toc__list ol {
+  padding: 0 1rem 0 0;
 }
 
 .cd-toc__list li {
@@ -53,6 +57,14 @@
 
   .cd-toc--float-right {
     margin: 0 0 1rem 1rem;
+  }
+
+  [dir='rtl'] .cd-toc--float-left {
+    margin: 0 0 1rem 1rem;
+  }
+
+  [dir='rtl'] .cd-toc--float-right {
+    margin: 0 1rem 1rem 0;
   }
 }
 

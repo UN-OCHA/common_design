@@ -3,10 +3,14 @@
   padding: 1rem;
   margin: 1rem 0 2rem;
   border-radius: 0.25rem;
+  border: 1px solid var(--cd-blue--bright);
+  box-shadow: -8px 0 0 var(--cd-blue--bright);
+  color: var(--cd-grey--dark);
 }
 
 .cd-alert,
-.cd-alert div[role='alert']{
+/* This is Drupal specific. If it's an error message, it gets an extra div with a role. */
+.cd-alert div[role='alert'] {
   display: flex;
   align-items: flex-start;
 }
@@ -16,19 +20,18 @@
 }
 
 .cd-alert svg {
-  margin-right: 1rem;
+  flex: 0 0 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
-}
-
-.cd-alert {
-  border: 1px solid var(--cd-blue--bright);
-  box-shadow: -8px 0 0 var(--cd-blue--bright);
-  color: var(--cd-grey--dark);
-}
-
-.cd-alert svg {
   fill: var(--cd-blue--bright);
+}
+
+[dir='ltr'] .cd-alert svg {
+  margin-right: 1rem;
+}
+
+[dir='rtl'] .cd-alert svg {
+  margin-left: 1rem;
 }
 
 .cd-alert a,

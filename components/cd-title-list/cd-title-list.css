@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   text-decoration: none;
 }
 .cd-title-list__link:hover,
@@ -29,15 +29,6 @@
 
 .cd-title-list__title {
   flex: 1 1 auto;
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-@media (min-width: 768px) {
-  .cd-title-list__title {
-    font-size: 1.125rem;
-    line-height: 2rem;
-  }
 }
 
 .cd-title-list__link .cd-icon {
