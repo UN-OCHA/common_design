@@ -85,10 +85,10 @@ html[lang='zh'] {
 h1 {
   color: $cd-default-text-color;
   font-weight: 300;
-  font-size: 2rem; /* 32px */
+  @include font-size($cd-font-size-xxlarge);
 
   @include desktop {
-    font-size: 2.5rem; /* 40px */
+    @include font-size($cd-font-size-xlarge);
   }
 }
 
@@ -126,6 +126,27 @@ dl {
   }
 }
 
+//h2 {
+//  @include font-size($cd-font-size-large);
+//}
+//
+//h3 {
+//  @include font-size($cd-font-size-medium);
+//}
+//
+//h4 {
+//  @include font-size($cd-font-size-base);
+//}
+//
+//h5 {
+//  @include font-size($cd-font-size-small);
+//}
+//
+//h6 {
+//  @include font-size($cd-font-size-base);
+//}
+
+
 a {
   color: $cd-blue--dark;
 
@@ -148,13 +169,4 @@ em {
 u {
   text-decoration: none;
   font-weight: bold;
-}
-
-// Description list.
-dt {
-  font-weight: 500;
-}
-
-dd {
-  margin-bottom: 1rem;
 }

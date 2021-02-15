@@ -2,39 +2,39 @@
 
 Add a check if you've reviewed the component and it passes the Criteria.
 
-| Component           | QA round 1          | QA round 2          |
+| Component           | Technical Review round 1    | Technical Review round 2    |
 | :------------------ | :------------------ | :------------------ |
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-alert            |                     |                     |
+| cd-alert            | :heavy_check_mark:  |                     |
 | cd-article          |                     |                     |
-| cd-author           |                     |                     |
-| cd-banner           |                     |                     |
+| cd-author           | :heavy_check_mark:  |                     |
+| cd-banner           | :heavy_check_mark:  |                     |
 | cd-bleed            |                     |                     |
-| cd-block-title      |                     |                     |
+| cd-block-title      | :heavy_check_mark:  |                     |
 | cd-bullet-list      |                     |                     |
-| cd-button           |                     |                     |
-| cd-byline           |                     |                     |
-| cd-caption          |                     |                     |
-| cd-card             |                     |                     |
-| cd-date             |                     |                     |
+| cd-button           | :heavy_check_mark:  |                     |
+| cd-byline           | :heavy_check_mark:  |                     |
+| cd-caption          | :heavy_check_mark:  |                     |
+| cd-card             | :heavy_check_mark:  |                     |
+| cd-date             | :heavy_check_mark:  |                     |
 | cd-dropdown         |                     |                     |
-| cd-event            |                     |                     |
+| cd-event            | :heavy_check_mark:  |                     |
 | cd-facets           |                     |                     |
 | cd-filter           |                     |                     |
 | cd-flow             |                     |                     |
 | cd-grid             |                     |                     |
-| cd-hero             |                     |                     |
+| cd-hero             | :heavy_check_mark:  |                     |
 | cd-image-grid       |                     |                     |
-| cd-link-list        |                     |                     |
+| cd-link-list        | :heavy_check_mark:  |                     |
 | cd-pagination       |                     |                     |
-| cd-read-more        |                     |                     |
+| cd-read-more        | :heavy_check_mark:  |                     |
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
 | cd-select-a11y      |                     |                     |
-| cd-styled-list      |                     |                     |
+| cd-styled-list      | :heavy_check_mark:  |                     |
 | cd-table            |                     |                     |
-| cd-teaser           |                     |                     |
-| cd-title-list       |                     |                     |
+| cd-teaser           | :heavy_check_mark:  |                     |
+| cd-title-list       | :heavy_check_mark:  |                     |
 | cd-toc              |                     |                     |
 | cd-typography       |                     |                     |
 | cd-utilities        |                     |                     |
@@ -76,7 +76,7 @@ Eg. BEM
   <li class="cd-title-list__item">
     <a href="/#" class="cd-title-list__link">
       <span class="cd-title-list__title">Title</span>
-      <svg class="cd-icon cd-icon--arrow-right" width="16" height="16" aria-hidden="true" focusable="false">
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
         <use xlink:href="#cd-icon--arrow-right"></use>
       </svg>
     </a>
@@ -116,7 +116,7 @@ Eg. For cd-hero component
 
 ### Twig
 - Include the markup without the wrapper divs. The main purpose of the twig file is to include the component on the demo page.
-- Define and attach the relevant Drupal libraries instead of linking to the CSS files. 
+- Define and attach the relevant Drupal libraries instead of linking to the CSS files.
 As this will display on the demo page (a Drupal site), the cd-base.css is replaced with styles.css (already loaded)
 
 ### Add the component to the Demo page
