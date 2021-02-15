@@ -177,7 +177,7 @@
   color: $cd-white;
   display: flex;
   @include font-size($cd-font-size-medium);
-  font-weight: bold;
+  font-weight: 700;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   width: 46px;
   margin: 0;
@@ -318,7 +318,7 @@
     border: 0;
     color: $cd-black;
     @include font-size($cd-font-size-medium);
-    font-weight: bold;
+    font-weight: 700;
     height: $cd-site-header-height;
     width: unset;
     padding: 0;
