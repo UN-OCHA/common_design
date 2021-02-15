@@ -106,7 +106,7 @@
 
 .facet-item__status {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .facet-item__status svg {
@@ -117,7 +117,7 @@
 
 .facet-summary-item--clear,
 .facet-item__value {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .facet-summary-item--clear {

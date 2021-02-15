@@ -16,7 +16,7 @@
 .cd-date__day {
   font-size: 3rem;
   color: var(--cd-white);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .cd-date__month,
