@@ -84,10 +84,11 @@ $cd-site-header-height: 60px;
   --cd-font-size--tiny: 0.75rem;    /* 12px */
   --cd-font-size--small: 0.875rem;  /* 14px */
   --cd-font-size--base: 1rem;       /* 16px */
-  --cd-font-size--medium: 1.5rem;   /* 24px */
-  --cd-font-size--large: 2rem;      /* 32px */
-  --cd-font-size--xlarge: 2.5rem;   /* 40px */
-  --cd-font-size--xxlarge: 3rem;    /* 48px */
+  --cd-font-size--medium: 1.25rem;  /* 20px */
+  --cd-font-size--large: 1.5rem;    /* 24px */
+  --cd-font-size--2xbase: 2rem;     /* 32px */
+  --cd-font-size--2xmedium: 2.5rem; /* 40px */
+  --cd-font-size--2xlarge: 3rem;    /* 48px */
 }
 
 // Colour palette
@@ -156,10 +157,12 @@ $cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
 $cd-font-size-tiny: 12;
 $cd-font-size-small: 14;
 $cd-font-size-base: 16;
-$cd-font-size-medium: 24;
-$cd-font-size-large: 32;
-$cd-font-size-xlarge: 40;
-$cd-font-size-xxlarge: 48;
+$cd-font-size-medium: 20;
+$cd-font-size-large: 24;
+$cd-font-size-2xbase: 32;
+$cd-font-size-2xmedium: 40;
+$cd-font-size-2xlarge: 48;
+
 
 //——————————————————————————————————————————————————————————————————————————————
 // z-indices
