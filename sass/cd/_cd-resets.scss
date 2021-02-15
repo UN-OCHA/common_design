@@ -12,7 +12,10 @@
   // Set box-sizing
   box-sizing: border-box;
 
-  html[lang='ar'] &,
+  html[lang='ar'] & {
+    font-family: $cd-font--noto-kufi;
+  }
+
   html[lang='ru'] &,
   html[lang='zh'] & {
     font-family: $cd-font--noto;
@@ -33,7 +36,10 @@
     @include font-size($cd-font-size-tiny);
     font-weight: 300;
 
-    html[lang='ar'] &,
+    html[lang='ar'] & {
+      font-family: $cd-font--noto-kufi;
+    }
+
     html[lang='ru'] &,
     html[lang='zh'] & {
       font-family: $cd-font--noto;
