@@ -129,9 +129,24 @@ $cd-primary--dark: $cd-blue--dark;
 $cd-font: helvetica, arial, sans-serif;
 $cd-font--system: system-ui;
 
-// Web fonts.
-//@import url('https://fonts.googleapis.com/css?family=Mali:300,400,500,600,700&display=swap"');
-//$cd-font--webfont: 'Mali', cursive;
+// sass-lint:disable no-url-domains no-url-protocols
+
+// Multilingual
+// https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+$cd-font--noto: 'Noto Sans', sans-serif;
+$cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
+
+// Roboto
+// https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
+//@import url('//fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+//$cd-font--roboto: 'Roboto', helvetica, arial, sans-serif;
+//
+//@import url('//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+//$cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
+//
+//@import url('//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+//$cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
 
 
 //——————————————————————————————————————————————————————————————————————————————

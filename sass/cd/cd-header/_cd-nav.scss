@@ -147,6 +147,10 @@
         display: flex;
       }
 
+      html[dir='rtl'] & {
+        text-align: right;
+      }
+
       &:hover,
       &:focus {
         background: $cd-blue-grey;
