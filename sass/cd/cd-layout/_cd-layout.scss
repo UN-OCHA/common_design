@@ -40,6 +40,7 @@ body {
     @include tablet {
       display: grid;
       grid-template-rows: 101px 1fr auto; // Height of header.
+      grid-auto-rows: minmax(min-content, max-content);
 
       .no-js & {
         grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
@@ -77,11 +78,7 @@ body {
   }
 }
 
-//@TODO This element (main) is one of the core layout elements.
-// Using the element as a selector, instead of a unique class
-// means I cannot @extend the rule below, for the inner layout rules.
-// .cd-container is used as a utility class on other divs, for common padding, width control.
-.cd-layout-container main.cd-container {
+.cd-layout-container .cd-layout-content-wrapper {
   padding-top: 2rem;
   background: $cd-white;
 
@@ -92,7 +89,7 @@ body {
   }
 }
 
-.cd-layout-container main.cd-container aside {
+.cd-layout-container .cd-layout-content-wrapper aside {
   // This is to prevent sidebar region wrapper div displaying when region is empty but still renders.
   &:empty {
     display: none;
@@ -271,7 +268,6 @@ body {
   }
 }
 
-
 .region-sidebar-first:empty,
 .region-facets:empty {
   display: none;
@@ -286,15 +282,15 @@ body {
 }
 
 // Page title.
-.cd-page-title + main.cd-container {
-  padding-top: 0;
-}
+//.cd-page-title + main.cd-container {
+//  padding-top: 0;
+//}
 
 .cd-page-title {
   margin-top: 2rem;
 
   @include tablet {
-    margin-top: 3rem; // Matches main.cd-container.
+    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
   }
 }
 
@@ -310,10 +306,10 @@ body {
   }
 }
 
-// Hide page title on homepage
-//.path-frontpage .page-title {
-//  display: none;
-//}
+// This is to prevent regions wrapper div displaying when region is empty but still renders.
+.region:empty {
+  display: none;
+}
 
 // Remove margin from page title on homepage
 //.path-frontpage .page-title {
