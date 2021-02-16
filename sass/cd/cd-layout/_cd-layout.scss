@@ -41,10 +41,6 @@ body {
       display: grid;
       grid-template-rows: 101px 1fr auto; // Height of header.
       grid-auto-rows: minmax(min-content, max-content);
-
-      .no-js & {
-        grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
-      }
     }
   }
 
