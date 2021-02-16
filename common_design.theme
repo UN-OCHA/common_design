@@ -29,6 +29,30 @@ function common_design_preprocess(&$variables, $hook) {
 }
 
 /**
+ * Implements hook_preprocess_page().
+ *
+ * Remove the default page title and local tasks blocks if they were already
+ * rendered by a page title paragraph or when viewing full article nodes.
+ *
+ */
+function common_design_preprocess_page(&$variables) {
+  if (isset($variables['node'])) {
+    $rendered = &drupal_static('common_design_rendered_blocks');
+
+    // If the block has already been rendered (from the page title block) then
+    // we remove the default page title block.
+    if (isset($rendered['page_title_block'])) {
+      unset($variables['page']['content']['common_design_page_title']);
+    }
+
+    // Same for the local tasks block.
+    if (isset($rendered['local_tasks_block'])) {
+      unset($variables['page']['content']['common_design_local_tasks']);
+    }
+  }
+}
+
+/**
  * @param $suggestions
  * @param array $variables
  */
