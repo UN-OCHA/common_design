@@ -35,12 +35,24 @@ body {
   }
 
   // Grid is used to fix the footer to the bottom of the screen, regardless of page min-height.
+  // Header height is fixed.
+  // Highlighted should contain Drupal messages and will be present even if empty.
+  // Main should grow to fit the available space.
+  // Soft footer is optional.
+  // Footer sticks to the bottom of the viewport.
+  // If there are additional direct descendents of .cd-layout-container, grid-template-areas and rows can be adjusted.
   @supports (display: grid) {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 101px 1fr auto; // Height of header.
-      grid-auto-rows: minmax(min-content, max-content);
+      grid-template-areas:
+      'header'
+      'highlighted'
+      'main'
+      'soft-footer'
+      'footer';
+      grid-template-rows: 101px auto 1fr auto;
+      grid-auto-rows: auto;
     }
   }
 
@@ -277,11 +289,6 @@ body {
   }
 }
 
-// Page title.
-//.cd-page-title + main.cd-container {
-//  padding-top: 0;
-//}
-
 .cd-page-title {
   margin-top: 2rem;
 
@@ -293,21 +300,18 @@ body {
 .page-title {
   @include xl {
     [dir='ltr'] & {
-      padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+      padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
     }
 
     [dir='rtl'] & {
-      padding-left: calc(285px + 3rem);
+      padding-left: 320px;
+    }
+
+    .cd-layout-with-sidebar-first &,
+    .cd-layout-with-sidebar-second &,
+    .cd-layout-with-sidebar-both & {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
-
-// This is to prevent regions wrapper div displaying when region is empty but still renders.
-.region:empty {
-  display: none;
-}
-
-// Remove margin from page title on homepage
-//.path-frontpage .page-title {
-//  margin-top: 0;
-//}
