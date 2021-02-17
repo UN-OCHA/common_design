@@ -58,9 +58,21 @@
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
   {% endblock %}
 
-  {{ page.breadcrumb }}
+  {% if page.breadcrumb %}
+    {% block breadcrumb %}
+      <div class="cd-layout-breadcrumb cd-container">
+        {{ page.breadcrumb }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
-  {{ page.highlighted }}
+  {% if page.highlighted %}
+    {% block highlighted %}
+      <div class="cd-layout-highlighted cd-container">
+        {{ page.highlighted }}
+      </div>
+    {% endblock %}
+  {% endif %}
 
   {{ page.help }}
 
