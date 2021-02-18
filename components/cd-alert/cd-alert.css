@@ -8,9 +8,10 @@
   color: var(--cd-grey--dark);
 }
 
-.cd-alert,
-/* This is Drupal specific. If it's an error message, it gets an extra div with a role. */
-.cd-alert div[role='alert'] {
+/* If it's a warning or an error message, div should have role='alert' which is equivalent to aria-live='assertive'. */
+.cd-alert div[role='alert'],
+/* If it's a status message, div should have aria-live='polite' */
+.cd-alert div[aria-live='polite'] {
   display: flex;
   align-items: flex-start;
 }
