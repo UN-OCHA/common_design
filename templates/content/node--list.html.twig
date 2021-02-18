@@ -107,7 +107,7 @@
     {% endif %}
     {{ title_suffix }}
 
-    <div{{ content_attributes.addClass('cd-styled-list__description node__content') }}>
+    <div{{ content_attributes.addClass('cd-styled-list__description') }}>
       {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}
