@@ -321,6 +321,13 @@ function common_design_get_block_render_array($id, $translate = TRUE) {
     if (empty($plugin_block)) {
       return [];
     }
+
+    // Check if the block is accessible to the current user.
+    $access = $plugin_block->access(\Drupal::currentUser());
+    // This can be a boolean or an object implementing AccessResultInterface.
+    if ($access === TRUE || ($access instanceof AccessResultInterface && $access->isAllowed())) {
+      return $plugin_block->build();
+    }
   }
 
   return [];
