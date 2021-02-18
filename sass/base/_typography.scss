@@ -136,12 +136,6 @@ h1 {
   margin-bottom: 2rem;
 }
 
-h2,
-h4,
-h5 {
-  font-weight: 400;
-}
-
 h1,
 h2,
 h3,
@@ -166,18 +160,22 @@ dl {
 
 h2 {
   @include font-size($cd-font-size-2xmedium);
+  font-weight: 400;
 }
 
 h3 {
   @include font-size($cd-font-size-2xbase);
+  font-weight: 500;
 }
 
 h4 {
   @include font-size($cd-font-size-large);
+  font-weight: 400;
 }
 
 h5 {
   @include font-size($cd-font-size-medium);
+  font-weight: 400;
 }
 
 h6 {
