@@ -35,15 +35,24 @@ body {
   }
 
   // Grid is used to fix the footer to the bottom of the screen, regardless of page min-height.
+  // Header height is fixed.
+  // Highlighted should contain Drupal messages and will be present even if empty.
+  // Main should grow to fit the available space.
+  // Soft footer is optional.
+  // Footer sticks to the bottom of the viewport.
+  // If there are additional direct descendents of .cd-layout-container, grid-template-areas and rows can be adjusted.
   @supports (display: grid) {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 101px 1fr auto; // Height of header.
-
-      .no-js & {
-        grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
-      }
+      grid-template-areas:
+      'header'
+      'highlighted'
+      'main'
+      'soft-footer'
+      'footer';
+      grid-template-rows: 101px auto 1fr auto;
+      grid-auto-rows: auto;
     }
   }
 
@@ -77,11 +86,7 @@ body {
   }
 }
 
-//@TODO This element (main) is one of the core layout elements.
-// Using the element as a selector, instead of a unique class
-// means I cannot @extend the rule below, for the inner layout rules.
-// .cd-container is used as a utility class on other divs, for common padding, width control.
-.cd-layout-container main.cd-container {
+.cd-layout-container .cd-layout-content-wrapper {
   padding-top: 2rem;
   background: $cd-white;
 
@@ -92,7 +97,7 @@ body {
   }
 }
 
-.cd-layout-container main.cd-container aside {
+.cd-layout-container .cd-layout-content-wrapper aside {
   // This is to prevent sidebar region wrapper div displaying when region is empty but still renders.
   &:empty {
     display: none;
@@ -271,7 +276,6 @@ body {
   }
 }
 
-
 .region-sidebar-first:empty,
 .region-facets:empty {
   display: none;
@@ -285,37 +289,29 @@ body {
   }
 }
 
-// Page title.
-.cd-page-title + main.cd-container {
-  padding-top: 0;
-}
-
 .cd-page-title {
   margin-top: 2rem;
 
   @include tablet {
-    margin-top: 3rem; // Matches main.cd-container.
+    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
   }
 }
 
 .page-title {
   @include xl {
     [dir='ltr'] & {
-      padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+      padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
     }
 
     [dir='rtl'] & {
-      padding-left: calc(285px + 3rem);
+      padding-left: 320px;
+    }
+
+    .cd-layout-with-sidebar-first &,
+    .cd-layout-with-sidebar-second &,
+    .cd-layout-with-sidebar-both & {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
-
-// Hide page title on homepage
-//.path-frontpage .page-title {
-//  display: none;
-//}
-
-// Remove margin from page title on homepage
-//.path-frontpage .page-title {
-//  margin-top: 0;
-//}
