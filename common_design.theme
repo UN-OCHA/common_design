@@ -241,30 +241,6 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
   }
 }
 
-///**
-// * Implements hook_pwa_manifest_alter() for PWA module.
-// */
-//function common_design_pwa_manifest_alter(&$manifest) {
-//  // Hard-code a theme-color into the manifest.
-//  $manifest['theme_color'] = '#026CB6';
-//
-//  // Override the PWA default icons with OCHA defaults.
-//  //
-//  // Copy this hook into your subtheme and customize to your heart's content.
-//  $manifest['icons'] = [
-//    [
-//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-512x512.png'),
-//      'sizes' => '512x512',
-//      'type' => 'image/png',
-//    ],
-//    [
-//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-192x192.png'),
-//      'sizes' => '192x192',
-//      'type' => 'image/png',
-//    ],
-//  ];
-//}
-
 /**
  * Implements hook_block__language_block().
  */
