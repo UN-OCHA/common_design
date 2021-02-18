@@ -85,6 +85,10 @@
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
+{# Pre-render the local_tasks so the `if local_tasks` below can work. #}
+{%
+  set local_tasks = local_tasks ? local_tasks|render
+%}
 
 <article{{ attributes.addClass(classes) }}>
 
@@ -101,6 +105,8 @@
     {% endif %}
   {% endif %}
   {{ title_suffix }}
+
+  {{ local_tasks }}
 
   {% if display_submitted %}
     <footer class="cd-author node__meta [ cd-bumper ]">
