@@ -40,11 +40,11 @@
 }
 
 // Apply menu  styles to Drupal Menu items
-.cd-footer__section--menu .menu {
+.cd-footer__section--menu ul {
   @extend .cd-footer-menu;
 }
 
 // Apply menu item styles to Drupal Menu items
-.cd-footer__section--menu .menu > li {
+.cd-footer__section--menu ul > li {
   @extend .cd-footer-menu__item;
 }
