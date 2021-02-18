@@ -8,10 +8,7 @@
   color: var(--cd-grey--dark);
 }
 
-/* If it's a warning or an error message, div should have role='alert' which is equivalent to aria-live='assertive'. */
-.cd-alert div[role='alert'],
-/* If it's a status message, div should have aria-live='polite' */
-.cd-alert div[aria-live='polite'] {
+.cd-alert >  div {
   display: flex;
   align-items: flex-start;
 }
