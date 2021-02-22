@@ -124,12 +124,12 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('cd-max-width') }}>
+  <div{{ content_attributes }}>
 
     {{ content }}
 
 {#    {% block section %}#}
-{#      <section class="cd-layout-two-col">#}
+{#      <div class="cd-layout-two-col">#}
 
 {#        <div class="cd-layout-main-content">#}
 {#          {{ content }}#}
@@ -139,7 +139,7 @@
 {#          Other fields on the node can be printed here to create a faux sidebar layout.#}
 {#        </div>#}
 
-{#      </section>#}
+{#      </div>#}
 {#    {% endblock %}#}
 
   </div>
