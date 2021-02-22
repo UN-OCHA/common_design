@@ -223,16 +223,16 @@
 
   .cd-search--inline {
     flex: 0 1 400px;
+    border-right: 1px solid $cd-blue-grey;
+    border-left: 1px solid $cd-blue-grey;
 
     [dir='ltr'] & {
       float: left;
-      border-left: 1px solid $cd-blue-grey;
       margin-left: 30px;
     }
 
     [dir='rtl'] & {
       float: right;
-      border-right: 1px solid $cd-blue-grey;
       margin-right: 30px;
     }
   }
@@ -279,7 +279,7 @@
     &:focus {
       outline: 0;
       box-shadow: none;
-      border-bottom: 3px solid $cd-highlight-red;
+      border-bottom: 6px solid $cd-highlight-red;
     }
   }
 
