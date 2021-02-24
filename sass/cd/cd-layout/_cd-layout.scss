@@ -90,7 +90,7 @@ body {
   padding-top: 2rem;
   background: $cd-white;
 
-  @include tablet {
+  @include desktop {
     padding-top: 3rem;
     display: flex;
     flex-wrap: wrap;
@@ -103,13 +103,13 @@ body {
     display: none;
   }
 
-  @include tablet {
+  @include desktop {
     flex-grow: 1;
   }
 
   .cd-layout-sidebar-first & {
     margin-bottom: 1rem;
-    @include tablet {
+    @include desktop {
       margin-bottom: 0;
     }
   }
@@ -118,22 +118,22 @@ body {
 // One sidebar.
 .cd-layout-with-sidebar-first .cd-layout-sidebar-first,
 .cd-layout-with-sidebar-second .cd-layout-sidebar-second {
-  @include tablet {
+  @include desktop {
     flex-basis: 285px;
   }
 }
 
 .cd-layout-sidebar-first {
-  //background: lightblue;
+  background: lightblue;
   margin-bottom: 1rem;
 
-  @include tablet {
+  @include desktop {
     margin-bottom: 0;
   }
 }
 
 .cd-layout-sidebar-second {
-  //background: lightpink;
+  background: lightpink;
 }
 
 // Both sidebars, individually control.
@@ -152,7 +152,7 @@ body {
 
   .cd-layout-sidebar-second {
     @include tablet {
-      flex-basis: 500px; // Keep this number large so exceeds the available space and thus sits below.
+      flex-basis: 550px; // Keep this number large so exceeds the available space and thus sits below.
     }
     @include desktop {
       flex-basis: 285px;
@@ -161,49 +161,50 @@ body {
 }
 
 .cd-layout-content {
-  //background: lightyellow;
+  background: lightyellow;
 
-  @include tablet {
+  @include desktop {
     flex-basis: 0;
     flex-grow: 999;
-    //min-width: 50%;
   }
 
-  // sass-lint:disable no-duplicate-properties
-  .cd-layout-with-sidebar-first &,
-  .cd-layout-with-sidebar-second & {
-    min-width: auto; //IE11 fix.
-    min-width: unset;
-  }
+  //// sass-lint:disable no-duplicate-properties
+  //.cd-layout-with-sidebar-first &,
+  //.cd-layout-with-sidebar-second & {
+  //  min-width: auto; //IE11 fix.
+  //  min-width: unset;
+  //}
 
   .cd-layout-with-sidebar-both & {
     margin-bottom: 1rem;
 
-    @include tablet {
-      [dir='ltr'] & {
-        margin-left: 3rem;
-      }
-
-      [dir='rtl'] & {
-        margin-right: 3rem;
-      }
-    }
+    //@include tablet {
+    //  [dir='ltr'] & {
+    //    margin-left: 3rem;
+    //  }
+    //
+    //  [dir='rtl'] & {
+    //    margin-right: 3rem;
+    //  }
+    //}
 
     @include desktop {
       margin-bottom: 0;
 
       [dir='ltr'] & {
+        margin-left: 3rem;
         margin-right: 3rem;
       }
 
       [dir='rtl'] & {
         margin-left: 3rem;
+        margin-right: 3rem;
       }
     }
   }
 
   .cd-layout-with-sidebar-first & {
-    @include tablet {
+    @include desktop {
       [dir='ltr'] & {
         margin-left: 3rem;
         margin-right: 0;
@@ -219,7 +220,7 @@ body {
   .cd-layout-with-sidebar-second & {
     margin-bottom: 1rem;
 
-    @include tablet {
+    @include desktop {
       margin-bottom: 0;
 
       [dir='ltr'] & {
