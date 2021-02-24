@@ -4,9 +4,21 @@
     {# Link to skip to the main content is in html.html.twig #}
     <main role="main" id="main-content" class="cd-container">
 
-      <div class="cd-layout-content">
-        {{ page.content }}
-      </div>{# /.layout-content #}
+      {% if page.page_title %}
+        {% block page_title %}
+          <div class="cd-page-title">
+            {{ page.page_title }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
+      <div class="cd-layout-content-wrapper">
+
+        <div class="cd-layout-content">
+          {{ page.content }}
+        </div>{# /.layout-content #}
+
+      </div>
 
     </main>
   {% endblock %}
