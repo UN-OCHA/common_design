@@ -43,15 +43,20 @@
   {# Link to skip to the main content is in html.html.twig #}
   <main role="main" id="main-content" class="cd-container">
 
-    <div class="cd-layout-content">
     {% if title %}
-      <h1>{{ title }}</h1>
+      <div class="cd-page-title">
+        <h1>{{ title }}</h1>
+      </div>
     {% endif %}
 
-    {{ page.highlighted }}
+    <div class="cd-layout-content-wrapper">
 
-    {{ page.content }}
-    </div>{# /.layout-content #}
+      <div class="cd-layout-content">
+
+      {{ page.content }}
+
+      </div>{# /.layout-content #}
+    </div>
   </main>
 
   <footer class="cd-footer" role="contentinfo">
