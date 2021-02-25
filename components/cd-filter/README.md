@@ -3,7 +3,8 @@
 ## Purpose and Usage
 Displays multiple and varied form elements like inputs and selects and submit button.
 
-By default, the elements flow in a single column. The intend default layout is a sidebar.
+By default, the elements flow in a single column on mobile, 2 columns on tablet, and back to a single column on desktop.
+The intend default layout is a sidebar.
 There is a variant for horizontal filters that will span 100% of the available space, with a column layout up to 5 
 elements.
 There are BEM selectors `.cd-filter__group` and Drupal-friendly selectors `.cd-filter__form > .block` for the flex 
