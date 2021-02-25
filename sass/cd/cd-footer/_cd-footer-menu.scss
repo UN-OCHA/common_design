@@ -34,17 +34,17 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 // Hide default block titles
-.menu--footer h2 {
+.cd-footer__section--menu h2 {
   @extend .visually-hidden;
   color: $cd-white;
 }
 
 // Apply menu  styles to Drupal Menu items
-.menu--footer .menu {
+.cd-footer__section--menu ul {
   @extend .cd-footer-menu;
 }
 
 // Apply menu item styles to Drupal Menu items
-.menu--footer .menu > li {
+.cd-footer__section--menu ul > li {
   @extend .cd-footer-menu__item;
 }

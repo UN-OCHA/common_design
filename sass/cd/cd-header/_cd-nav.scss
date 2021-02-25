@@ -26,7 +26,7 @@
   }
 
   .cd-nav__btn-label {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &[aria-expanded] .cd-icon--arrow-down {
@@ -147,6 +147,10 @@
         display: flex;
       }
 
+      html[dir='rtl'] & {
+        text-align: right;
+      }
+
       &:hover,
       &:focus {
         background: $cd-blue-grey;
@@ -164,7 +168,7 @@
     // First level.
     > .menu > .menu-item > a,
     > .menu > .menu-item > button {
-      font-weight: bold;
+      font-weight: 700;
       text-transform: uppercase;
     }
   }
@@ -197,7 +201,7 @@
     a {
       display: flex;
       color: $cd-black;
-      font-weight: 600;
+      font-weight: 700;
 
       &:hover {
         background: $cd-blue-grey;

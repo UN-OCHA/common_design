@@ -1,14 +1,10 @@
-/* https://piccalil.li/cube-css */
-
-/* CUBE CSS is a CSS methodology */
-/* orientated towards simplicity, pragmatism and consistency */
-/* Composition Utility Block Exception */
+/* @see https://cube.fyi */
 
 .cd-flow > * + * {
   margin-top: var(--cd-flow-space, 1rem);
 }
 
-.cd-flow > .visually-hidden + * {
+.cd-flow > .visually-hidden:first-child + * {
   margin-top: 0;
 }
 
