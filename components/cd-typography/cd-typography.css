@@ -43,7 +43,7 @@ dd {
     padding-right: 0.5rem;
   }
 
-  [dir='rlt'] dt {
+  [dir='rtl'] dt {
     padding-left: 0.5rem;
   }
 
@@ -56,7 +56,7 @@ dd {
     margin-left: auto;
   }
 
-  [dir='rlt'] dd {
+  [dir='rtl'] dd {
     margin-right: auto;
   }
 }
