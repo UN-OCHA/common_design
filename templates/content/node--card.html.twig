@@ -105,7 +105,7 @@
     {% endif %}
     {{ title_suffix }}
 
-    <div{{ content_attributes.addClass('cd-card__description node__content') }}>
+    <div{{ content_attributes.addClass('cd-card__description') }}>
       {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}

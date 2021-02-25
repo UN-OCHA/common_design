@@ -177,7 +177,7 @@
   color: $cd-white;
   display: flex;
   @include font-size($cd-font-size-medium);
-  font-weight: bold;
+  font-weight: 700;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   width: 46px;
   margin: 0;
@@ -223,16 +223,16 @@
 
   .cd-search--inline {
     flex: 0 1 400px;
+    border-right: 1px solid $cd-blue-grey;
+    border-left: 1px solid $cd-blue-grey;
 
     [dir='ltr'] & {
       float: left;
-      border-left: 1px solid $cd-blue-grey;
       margin-left: 30px;
     }
 
     [dir='rtl'] & {
       float: right;
-      border-right: 1px solid $cd-blue-grey;
       margin-right: 30px;
     }
   }
@@ -279,7 +279,7 @@
     &:focus {
       outline: 0;
       box-shadow: none;
-      border-bottom: 3px solid $cd-highlight-red;
+      border-bottom: 6px solid $cd-highlight-red;
     }
   }
 
@@ -318,7 +318,7 @@
     border: 0;
     color: $cd-black;
     @include font-size($cd-font-size-medium);
-    font-weight: bold;
+    font-weight: 700;
     height: $cd-site-header-height;
     width: unset;
     padding: 0;

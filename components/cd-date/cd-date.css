@@ -5,7 +5,7 @@
   text-align: center;
   float: left;
   border-radius: 0.25rem;
-  width: 5.5rem;
+  min-width: 5.5rem;
 }
 
 .cd-date__wrapper {
@@ -16,7 +16,7 @@
 .cd-date__day {
   font-size: 3rem;
   color: var(--cd-white);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .cd-date__month,
