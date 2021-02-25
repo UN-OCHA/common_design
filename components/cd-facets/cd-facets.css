@@ -6,6 +6,7 @@
 .block-facets-summary h2 {
   margin-top: 0;
   font-weight: 500;
+  font-size: 1.25rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   color: var(--cd-primary-color);
@@ -61,7 +62,7 @@
   }
 }
 
-.item-list__checkbox input[type="checkbox"] {
+.item-list__checkbox input[type='checkbox'] {
   display: block;
   float: left;
   width: 2rem;
@@ -72,6 +73,7 @@
   display: block;
 }
 
+/* Facet Summary block */
 .block-facets-summary {
   background-color: var(--cd-grey--light);
   font-size: 0.875rem;
@@ -106,7 +108,7 @@
 
 .facet-item__status {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .facet-item__status svg {
@@ -117,7 +119,7 @@
 
 .facet-summary-item--clear,
 .facet-item__value {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .facet-summary-item--clear {
@@ -136,7 +138,7 @@
 }
 
 /*Hide Summary block title.*/
-.facet-summary-item--clear h2 {
+.block-facets-summary h2 {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
