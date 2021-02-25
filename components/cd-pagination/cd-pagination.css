@@ -44,7 +44,7 @@
 }
 
 .cd-pager__item.is-active a {
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   background-color: var(--cd-ocha-blue);
   border-color: var(--cd-ocha-blue);

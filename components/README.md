@@ -5,23 +5,24 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | Component           | Technical Review round 1    | Technical Review round 2    |
 | :------------------ | :------------------ | :------------------ |
 | cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-alert            | :heavy_check_mark:  |                     |
-| cd-article          |                     |                     |
-| cd-author           | :heavy_check_mark:  |                     |
-| cd-banner           | :heavy_check_mark:  |                     |
-| cd-bleed            |                     |                     |
-| cd-block-title      | :heavy_check_mark:  |                     |
-| cd-bullet-list      |                     |                     |
-| cd-button           | :heavy_check_mark:  |                     |
-| cd-byline           | :heavy_check_mark:  |                     |
-| cd-caption          | :heavy_check_mark:  |                     |
-| cd-card             | :heavy_check_mark:  |                     |
-| cd-date             | :heavy_check_mark:  |                     |
-| cd-dropdown         |                     |                     |
-| cd-event            | :heavy_check_mark:  |                     |
-| cd-facets           |                     |                     |
-| cd-filter           |      :x:            |                     |
-| cd-flow             |                     |                     |
+| cd-alert            | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-article          |                     | :heavy_check_mark:  |
+| cd-author           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-banner           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-bleed            |                     | :heavy_check_mark:  |
+| cd-block-title      | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-bullet-list      |                     | :heavy_check_mark:  |
+| cd-button           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-byline           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-caption          | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-card             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-date             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-dropdown         |                     | :heavy_check_mark:  |
+| cd-event            | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-facets           |                     | :heavy_check_mark:  |
+| cd-filter           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-flow             |                     | :heavy_check_mark:  |
+| cd-form             |                     |                     |
 | cd-grid             |                     |                     |
 | cd-hero             | :heavy_check_mark:  |                     |
 | cd-image-grid       |                     |                     |
@@ -33,12 +34,13 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-select-a11y      |                     |                     |
 | cd-styled-list      | :heavy_check_mark:  |                     |
 | cd-table            |                     |                     |
+| cd-tabs             |                     |                     |
 | cd-teaser           | :heavy_check_mark:  |                     |
 | cd-title-list       | :heavy_check_mark:  |                     |
 | cd-toc              |                     |                     |
 | cd-typography       |                     |                     |
 | cd-utilities        |                     |                     |
- 
+
 
 
 # What makes a component?
@@ -56,7 +58,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 - Each component should include an html file with example markup and dummy text, to best demonstrate its use and variants.
 - If there are multiple variants, each should be displayed for illustration purposes. Use `<hr>` to separate if needed.
 - The components CSS and JS files should be included. For CSS, the component's CSS is usually placed last.
-- Each component should link to the `cd-base.css` which has the CSS custom properties and other generic rules. 
+- Each component should link to the `cd-base.css` which has the CSS custom properties and other generic rules.
 This is found in the [common_design_system repo](https://github.com/UN-OCHA/common_design_system/blob/master/cd-base.css)
 - Any dependency components' CSS or JS should be linked to.
 
@@ -83,7 +85,7 @@ Eg. BEM
   </li>
    ...
 ```
-- If the component requires a "page" layout for composition, add the standard layout divs from the base theme. 
+- If the component requires a "page" layout for composition, add the standard layout divs from the base theme.
 The layout styles are included in cd-base.css.
 
 Eg. Layout markup

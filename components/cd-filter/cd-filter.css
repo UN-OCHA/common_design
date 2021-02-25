@@ -3,7 +3,7 @@
 }
 
 /* Light grey background to visually distinguish container on mobile. */
-.cd-filter[data-cd-hidden="false"] {
+.cd-filter[data-cd-hidden='false'] {
   background: var(--cd-grey--light);
 }
 
@@ -17,25 +17,55 @@
   padding: 1rem;
 }
 
-@media (min-width: 768px) {
-  .cd-filter {
-    margin-bottom: 2rem;
-  }
-
-  .cd-filter--horizontal .cd-filter__form {
+@media (min-width: 576px) {
+  .cd-filter__form {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block {
+  [dir='ltr'] .cd-filter__group,
+  [dir='ltr'] .cd-filter__form > .block {
     padding-right: 1rem;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block {
+  [dir='rtl'] .cd-filter__group,
+  [dir='rtl'] .cd-filter__form > .block {
     padding-left: 1rem;
+  }
+
+  .cd-filter__group,
+  .cd-export,
+  .cd-filter__form > .block {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  /* Reset flow for alignment */
+  .cd-filter__group:first-child,
+  .cd-filter__form > .block:first-child {
+    margin-top: 1rem;
+  }
+
+  [dir='ltr'] .cd-filter__group:nth-child(even),
+  [dir='ltr'] .cd-filter__group:last-child,
+  [dir='ltr'] .cd-filter__form > .block:nth-child(even),
+  [dir='ltr'] .cd-filter__form > .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir='rtl'] .cd-filter__group:nth-child(even),
+  [dir='rtl'] .cd-filter__group:last-child,
+  [dir='rtl'] .cd-filter__form > .block:nth-child(even),
+  [dir='rtl'] .cd-filter__form > .block:last-child {
+    padding-left: 0;
+  }
+
+  /* If only one element */
+  .cd-filter__group:only-of-type,
+  .cd-filter__form > .block:only-of-type {
+    flex: 1 0 100%;
+    max-width: 100%;
   }
 
   [dir='ltr'] .cd-filter--horizontal .cd-export {
@@ -46,6 +76,22 @@
   [dir='rtl'] .cd-filter--horizontal .cd-export {
     margin-right: auto;
     text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .cd-filter--horizontal {
+    margin-bottom: 2rem;
+  }
+
+  [dir='ltr'] .cd-filter--horizontal .cd-filter__group,
+  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block {
+    padding-right: 1rem;
+  }
+
+  [dir='rtl'] .cd-filter--horizontal .cd-filter__group,
+  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block {
+    padding-left: 1rem;
   }
 
   .cd-filter__group {
@@ -142,9 +188,37 @@
 }
 
 @media (min-width: 1024px) {
+  .cd-filter__form {
+    display: block;
+  }
+
+  .cd-filter__group,
+  .cd-export,
+  .cd-filter__form > .block {
+    max-width: 100%;
+  }
+
+  /* Reset flow for alignment */
+  .cd-filter__group:first-child,
+  .cd-filter__form > .block:first-child {
+    margin-top: 0;
+  }
+
+  .cd-filter--horizontal .cd-filter__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
   .cd-filter--horizontal .cd-filter__group,
   .cd-filter--horizontal .cd-filter__form > .block {
     margin-bottom: 0;
+  }
+
+  /* Reset flow for alignment */
+  .cd-filter--horizontal .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__form > .block {
+    margin-top: 0;
   }
 
   /* If four elements */
@@ -307,7 +381,7 @@ No support for CSS custom properties means
 --dropdown: false; property on filter container is not recognised
 so the cd-dropdown.js creates a toggler button on desktop
 This hides it when that happens.*/
-@media (min-width: 768px) and (-ms-high-contrast: none) {
+@media (min-width: 1024px) and (-ms-high-contrast: none) {
   .cd-filter__btn {
     display: none;
   }
