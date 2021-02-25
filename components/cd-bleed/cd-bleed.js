@@ -1,8 +1,8 @@
 /**
- * Update the --gho-bleed-scrollbar-width css variable when the <html> element
+ * Update the --cd-bleed-scrollbar-width css variable when the <html> element
  * is resized, including when the scrollbar is initially added.
  */
-(function () {
+(function iife() {
   'use strict';
 
   function updateScrollBarWidth (event) {

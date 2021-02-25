@@ -33,8 +33,10 @@
     ]
   %}
   <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
+    {% if type == 'error' or type == 'warning' %}
       <div role="alert">
+    {% else %}
+      <div aria-live="polite">
     {% endif %}
 
       {% if type == 'error' or type == 'warning' %}
@@ -72,10 +74,7 @@
           </div>
 
         </div>
-
-    {% if type == 'error' %}
       </div>
-    {% endif %}
   </div>
   {# Remove type specific classes. #}
   {% set attributes = attributes.removeClass(classes) %}

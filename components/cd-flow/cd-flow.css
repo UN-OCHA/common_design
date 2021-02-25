@@ -8,7 +8,7 @@
   margin-top: var(--cd-flow-space, 1rem);
 }
 
-.cd-flow > .visually-hidden + * {
+.cd-flow > .visually-hidden:first-child + * {
   margin-top: 0;
 }
 

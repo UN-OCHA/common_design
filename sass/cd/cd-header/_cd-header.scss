@@ -83,7 +83,7 @@
       }
 
       .cd-site-header__nav-holder {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
       }
     }
   }
@@ -116,7 +116,7 @@
       //max-width: 112px;
 
       @supports(display: flex) {
-        flex: 0 1 auto;
+        flex: 1 1 auto;
       }
     }
 
@@ -124,7 +124,7 @@
       //max-width: 160px;
 
       @supports(display: flex) {
-        flex: 0 1 auto;
+        flex: 1 1 auto;
       }
     }
 

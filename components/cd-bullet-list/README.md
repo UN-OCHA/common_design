@@ -13,6 +13,6 @@ This means the fill colour can still be edited in CSS.
 The other variant `--icon` is when the SVG element markup is added to the list.
 
 ```
-cd-bullet-list--icon
+.cd-bullet-list--icon
 
 ```
