@@ -3,7 +3,7 @@
 }
 
 /* Light grey background to visually distinguish container on mobile. */
-.cd-filter[data-cd-hidden="false"] {
+.cd-filter[data-cd-hidden='false'] {
   background: var(--cd-grey--light);
 }
 
