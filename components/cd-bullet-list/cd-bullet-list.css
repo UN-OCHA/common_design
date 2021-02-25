@@ -4,52 +4,35 @@
   list-style: none;
 }
 
-.cd-bullet-list li {
-  text-indent: -1.25em;
+[dir='ltr'] .cd-bullet-list li {
+  padding: 0.25rem 1.25rem 0.25rem 1.25rem;
 }
 
-[dir="ltr"] .cd-bullet-list li {
-  padding-left: 1.25em;
+[dir='rlt'] .cd-bullet-list li {
+  padding: 0.25rem 0 0.25rem 1.25rem;
 }
 
-[dir="rtl"] .cd-bullet-list li {
-  padding-right: 1.25em;
-}
-
-.cd-bullet-list li a {
-  padding: 0.25rem 1rem 0.25rem 0;
-  position: relative;
-  text-decoration: none;
-}
-
-[dir="rtl"] .cd-bullet-list li a {
-  padding: 0.25rem 0 0.25rem 1rem;
-}
-
-.cd-bullet-list li a::before {
-  display: inline-block;
-  height: 0.5rem;
-  width: 0.5rem;
+/* https://yoksel.github.io/url-encoder/ */
+[dir='ltr'] .cd-bullet-list li {
+  padding-left: 1.5rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%5C %3Cpath fill='%23ff4d59' d='M14,48a4,4,0,0,1-2.83-6.83L28.34,24,11.17,6.83a4,4,0,0,1,5.66-5.66l20,20a4,4,0,0,1,0,5.66l-20,20A4,4,0,0,1,14,48Z'/%3E%5C %3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: 0 0;
-  content: '';
+  background-size: 0.5rem 0.5rem;
+  background-position: 0 0.75rem;
 }
 
-[dir="ltr"] .cd-bullet-list li a::before {
-  margin-right: 0.5rem;
-}
-
-[dir="rtl"] .cd-bullet-list li a::before {
-  transform: scale(-1, 1);
-  margin-left: 0.5rem;
-  background-position: 100% 0;
+[dir='rlt'] .cd-bullet-list li {
+  padding-right: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23ff4d59' d='M34,48a4,4,0,0,1-2.83-1.17l-20-20a4,4,0,0,1,0-5.66l20-20a4,4,0,0,1,5.66,5.66L19.66,24,36.83,41.17A4,4,0,0,1,34,48Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 0.5rem 0.5rem;
+  background-position: 100% 0.75rem;
 }
 
 /* When using an SVG element as icon */
-[dir="ltr"] .cd-bullet-list--icon li a::before,
-[dir="rtl"] .cd-bullet-list--icon li a::before {
-  content: none;
+[dir='ltr'] .cd-bullet-list--icon li,
+[dir='rlt'] .cd-bullet-list--icon li {
+  background-image: none;
 }
 
 .cd-bullet-list--icon svg {
@@ -59,11 +42,13 @@
   display: inline-block;
 }
 
-[dir="ltr"] .cd-bullet-list--icon svg {
+[dir='ltr'] .cd-bullet-list--icon .cd-icon--arrow-right {
   margin-right: 0.5rem;
+  margin-left: -1.25rem;
 }
 
-[dir="rtl"] .cd-bullet-list--icon svg {
+[dir='rlt'] .cd-bullet-list--icon .cd-icon--arrow-right {
   margin-left: 0.5rem;
+  margin-right: -1.25rem;
   transform: scale(-1, 1);
 }
