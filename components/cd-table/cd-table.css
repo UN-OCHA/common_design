@@ -54,13 +54,13 @@ table caption {
 }
 
 @media (min-width: 576px) {
-  .cd-table th[data-sort-type="numeric"],
+  .cd-table th[data-sort-type='numeric'],
   .cd-table .cd-table--amount,
   .cd-table .cd-table--amount-total {
     text-align: right;
   }
 
-  [dir='rtl'] .cd-table th[data-sort-type="numeric"],
+  [dir='rtl'] .cd-table th[data-sort-type='numeric'],
   [dir='rtl'] .cd-table .cd-table--amount,
   [dir='rtl'] .cd-table .cd-table--amount-total {
     text-align: left;

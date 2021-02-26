@@ -221,10 +221,9 @@ function common_design_preprocess_html(&$vars) {
   $vars['page']['#attached']['html_head'][] = [$js_detection, 'js-detection'];
 }
 
-///**
-/// * Implements hook_theme_suggestions_HOOK_alter().
-// */
-
+/**
+/ * Implements hook_theme_suggestions_HOOK_alter().
+ */
 function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $current_uri = \Drupal::request()->getRequestUri();
   // Set variable based on path alias to include Component demo page.
