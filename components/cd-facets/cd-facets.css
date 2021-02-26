@@ -62,7 +62,7 @@
   }
 }
 
-.item-list__checkbox input[type="checkbox"] {
+.item-list__checkbox input[type='checkbox'] {
   display: block;
   float: left;
   width: 2rem;
