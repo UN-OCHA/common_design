@@ -76,33 +76,30 @@
 
   {{ page.help }}
 
-  {% if page.page_title %}
-    {% block page_title %}
-      <div class="cd-page-title cd-container">
-        {{ page.page_title }}
-      </div>
-    {% endblock %}
-  {% endif %}
-
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
     <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(layout_classes) }}>
 
-      {% if page.sidebar_first %}
-        {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
-          This means we cannot have any white space between tags (as below).
-          Attn: Having the twig debug enabled means the div is no longer empty.
-          See Drupal issues/953034 for description and current status.
-        #}
-        <aside class="cd-layout-sidebar-first" role="complementary">{{ page.sidebar_first }}</aside>
-      {% endif %}
+      {{ page.page_title }}
 
-      <div class="cd-layout-content">
-        {{ page.content }}
-      </div>{# /.cd-layout-content #}
+      <div class="cd-layout-content-wrapper">
 
-      {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
-      {% endif %}
+        {% if page.sidebar_first %}
+          {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
+            This means we cannot have any white space between tags (as below).
+            Attn: Having the twig debug enabled means the div is no longer empty.
+            See Drupal issues/953034 for description and current status.
+          #}
+          <aside class="cd-layout-sidebar-first" role="complementary">{{ page.sidebar_first }}</aside>
+        {% endif %}
+
+        <div class="cd-layout-content">
+          {{ page.content }}
+        </div>{# /.cd-layout-content #}
+
+        {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
+        {% endif %}
+      </div>
 
     </main>
   {% endblock %}

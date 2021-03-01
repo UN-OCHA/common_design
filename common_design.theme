@@ -17,14 +17,57 @@ function common_design_preprocess(&$variables, $hook) {
   // Ensure the cache varies correctly.
   $variables['#cache']['contexts'][] = 'url.path.is_front';
 
-  // Add username.
-  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-  $variables['username'] = $user->getUsername();
-
   //Check if Components module is enabled, to prevent page--demo.html.twig breaking due to twig errors.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('components')){
     $variables['componentsModule'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Remove the default page title and local tasks blocks if they were already
+ * rendered by a page title paragraph or when viewing full article nodes.
+ *
+ */
+function common_design_preprocess_page(&$variables) {
+  if (isset($variables['node'])) {
+    $rendered = &drupal_static('common_design_rendered_blocks');
+
+    // If the block has already been rendered (from the page title block) then
+    // we remove the default page title block.
+    if (isset($rendered['page_title_block'])) {
+      unset($variables['page']['content']['common_design_page_title']);
+    }
+
+    // Same for the local tasks block.
+    if (isset($rendered['local_tasks_block'])) {
+      unset($variables['page']['content']['common_design_local_tasks']);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Use the page title block for the title and display the local tasks below it.
+ * We use common_design_get_block_render_array() that will cache the
+ * render array of the blocks so that they are not re-rendered and displayed
+ * again.
+ *
+ * @see common_design_preprocess_page()
+ * @see common_design_get_block_render_array()
+ */
+function common_design_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  // Prepare the title and local tasks so we have better control over where
+  // to display them for content in full node.
+  $view_mode = $variables['view_mode'] ?? '';
+  if ($view_mode === 'full') {
+    $variables['title'] = common_design_get_block_render_array('page_title_block');
+    $variables['local_tasks'] = common_design_get_block_render_array('local_tasks_block', FALSE);
   }
 }
 
@@ -178,10 +221,9 @@ function common_design_preprocess_html(&$vars) {
   $vars['page']['#attached']['html_head'][] = [$js_detection, 'js-detection'];
 }
 
-///**
-/// * Implements hook_theme_suggestions_HOOK_alter().
-// */
-
+/**
+/ * Implements hook_theme_suggestions_HOOK_alter().
+ */
 function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $current_uri = \Drupal::request()->getRequestUri();
   // Set variable based on path alias to include Component demo page.
@@ -198,35 +240,70 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
   }
 }
 
-///**
-// * Implements hook_pwa_manifest_alter() for PWA module.
-// */
-//function common_design_pwa_manifest_alter(&$manifest) {
-//  // Hard-code a theme-color into the manifest.
-//  $manifest['theme_color'] = '#026CB6';
-//
-//  // Override the PWA default icons with OCHA defaults.
-//  //
-//  // Copy this hook into your subtheme and customize to your heart's content.
-//  $manifest['icons'] = [
-//    [
-//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-512x512.png'),
-//      'sizes' => '512x512',
-//      'type' => 'image/png',
-//    ],
-//    [
-//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-192x192.png'),
-//      'sizes' => '192x192',
-//      'type' => 'image/png',
-//    ],
-//  ];
-//}
-
-///**
-// * Implements hook_block__language_block().
-// */
+/**
+ * Implements hook_block__language_block().
+ */
 function common_design_preprocess_block__language_block(&$vars) {
   // Current language available in template override.
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $vars['language'] = $language;
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function common_design_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__account') {
+    // Add username.
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $variables['username'] = $user->getDisplayName();
+    $variables['#cache']['contexts'][] = 'user';
+  }
+}
+
+/**
+ * Render a block.
+ *
+ * We cache a flag indicating the block has already been redendered and return
+ * an empty array in that case to ensure that the block is displayed only one
+ * on the page.
+ *
+ * @param string $id
+ *   Block ID.
+ * @param bool $translate
+ *   Translate the block or not. This allows to keep some elements of the page
+ *   in the site's default language for example like the local tasks (view, edit
+ *   etc.).
+ *
+ * @return array
+ *   Renderable array of the block. Empty array if this was already called
+ *   before to avoid displaying the block several times.
+ *
+ * @see https://drupal.stackexchange.com/a/171733
+ */
+function common_design_get_block_render_array($id, $translate = TRUE) {
+  $rendered = &drupal_static('common_design_rendered_blocks');
+
+  if (!isset($rendered[$id])) {
+    // Prevent rendering the block several times.
+    $rendered[$id] = TRUE;
+
+    // Generate an instance of the plugin block.
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $plugin_block = $block_manager->createInstance($id, []);
+
+    // Skip if there is no block matching the id.
+    if (empty($plugin_block)) {
+      return [];
+    }
+
+    // Check if the block is accessible to the current user.
+    $access = $plugin_block->access(\Drupal::currentUser());
+    // This can be a boolean or an object implementing AccessResultInterface.
+    if ($access === TRUE || ($access instanceof AccessResultInterface && $access->isAllowed())) {
+      return $plugin_block->build();
+    }
+  }
+
+  return [];
 }

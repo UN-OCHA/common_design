@@ -70,7 +70,7 @@ $cd-site-header-height: 60px;
   // This ensures the footer is always the last element.
   --cd-footer-row-number: 5;
 
-  /* From 01_OCHA_graphics_stylebook_visual_identity.pdf */
+  /* From https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/colours*/
   --cd-red: #cd3a1f;
   --cd-red--light: #f8d8d3;
   --cd-orange: #db7b18;
@@ -84,10 +84,11 @@ $cd-site-header-height: 60px;
   --cd-font-size--tiny: 0.75rem;    /* 12px */
   --cd-font-size--small: 0.875rem;  /* 14px */
   --cd-font-size--base: 1rem;       /* 16px */
-  --cd-font-size--medium: 1.5rem;   /* 24px */
-  --cd-font-size--large: 2rem;      /* 32px */
-  --cd-font-size--xlarge: 2.5rem;   /* 40px */
-  --cd-font-size--xxlarge: 3rem;    /* 48px */
+  --cd-font-size--medium: 1.25rem;  /* 20px */
+  --cd-font-size--large: 1.5rem;    /* 24px */
+  --cd-font-size--2xbase: 2rem;     /* 32px */
+  --cd-font-size--2xmedium: 2.5rem; /* 40px */
+  --cd-font-size--2xlarge: 3rem;    /* 48px */
 }
 
 // Colour palette
@@ -129,9 +130,24 @@ $cd-primary--dark: $cd-blue--dark;
 $cd-font: helvetica, arial, sans-serif;
 $cd-font--system: system-ui;
 
-// Web fonts.
-//@import url('https://fonts.googleapis.com/css?family=Mali:300,400,500,600,700&display=swap"');
-//$cd-font--webfont: 'Mali', cursive;
+// sass-lint:disable no-url-domains no-url-protocols
+
+// Multilingual
+// https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+$cd-font--noto: 'Noto Sans', sans-serif;
+$cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
+
+// Roboto
+// https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
+//@import url('//fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+//$cd-font--roboto: 'Roboto', helvetica, arial, sans-serif;
+//
+//@import url('//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+//$cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
+//
+//@import url('//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+//$cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
 
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -141,10 +157,12 @@ $cd-font--system: system-ui;
 $cd-font-size-tiny: 12;
 $cd-font-size-small: 14;
 $cd-font-size-base: 16;
-$cd-font-size-medium: 24;
-$cd-font-size-large: 32;
-$cd-font-size-xlarge: 40;
-$cd-font-size-xxlarge: 48;
+$cd-font-size-medium: 20;
+$cd-font-size-large: 24;
+$cd-font-size-2xbase: 32;
+$cd-font-size-2xmedium: 40;
+$cd-font-size-2xlarge: 48;
+
 
 //——————————————————————————————————————————————————————————————————————————————
 // z-indices

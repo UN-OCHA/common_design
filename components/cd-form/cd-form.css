@@ -29,13 +29,12 @@ textarea {
 }
 
 label {
-  font-weight: bold;
-  margin: 0 0 0.5rem;
+  font-weight: 700;
 }
 
-.form-item input.error,
-.form-item textarea.error,
-.form-item select.error {
+input.error,
+textarea.error,
+select.error {
   border-color: var(--cd-highlight-red);
 }
 
@@ -84,4 +83,18 @@ input::-webkit-search-cancel-button {
 /* Safari fix */
 input::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+.cd-form--inline,
+.cd-form--inline .cd-form__item {
+  display: flex;
+}
+
+.cd-form--inline label {
+  margin-inline-end: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.cd-form--inline select {
+  width: auto;
 }

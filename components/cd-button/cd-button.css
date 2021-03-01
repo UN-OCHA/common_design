@@ -42,8 +42,7 @@
 }
 
 /* Default button */
-.cd-button,
-input[type='submit'] {
+.cd-button {
   -webkit-appearance: none;
   border-radius: 3px;
   box-shadow: none;
@@ -61,16 +60,13 @@ input[type='submit'] {
 
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
-  .cd-button,
-  input[type='submit'] {
+  .cd-button {
     background-color: var(--cd-ie-primary-color);
   }
 }
 
 .cd-button:hover,
-.cd-button:focus,
-input[type='submit']:hover,
-input[type='submit']:focus {
+.cd-button:focus {
   color: var(--cd-white);
   background-color: var(--cd-primary-color--light);
 }
@@ -78,15 +74,12 @@ input[type='submit']:focus {
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
   .cd-button:hover,
-  .cd-button:focus,
-  input[type='submit']:hover,
-  input[type='submit']:focus {
+  .cd-button:focus {
     background-color: var(--cd-ie-primary-color--light);
   }
 }
 
-.cd-button:focus,
-input[type='submit']:focus {
+.cd-button:focus {
   /* We remove the outline because we are adding a border. */
   /* so the rounded corners look nicer on hover */
   outline: 0 solid var(--cd-primary-color--light);
@@ -361,4 +354,8 @@ a.cd-button {
   .cd-button--danger:focus {
     background-color: var(--cd-ie-highlight-red--light);
   }
+}
+
+.cd-button + .cd-button {
+  margin-inline-start: 0.5rem;
 }
