@@ -11,13 +11,7 @@
     {# Link to skip to the main content is in html.html.twig #}
     <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(facets_layout_classes) }}>
 
-      {% if page.page_title %}
-        {% block page_title %}
-          <div class="cd-page-title">
-            {{ page.page_title }}
-          </div>
-        {% endblock %}
-      {% endif %}
+      {{ page.page_title }}
 
       <div class="cd-layout-content-wrapper">
 
