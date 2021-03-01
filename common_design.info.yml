@@ -9,8 +9,9 @@ libraries:
   - core/drupal
   - core/normalize
   - common_design/global-styling
-  - common_design/cd-dropdown
   - common_design/cd-button
+  - common_design/cd-dropdown
+  - common_design/cd-flow
 
 # Regions
 regions:
@@ -19,6 +20,7 @@ regions:
   header_logo: Header logo
   header_navigation: Header navigation
   highlighted: Highlighted
+  page_title: Page title
   content: Content
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
