@@ -71,6 +71,11 @@
     flex: 1;
   }
 
+  .cd-footer {
+  --cd-footer-row-number: 6;
+    grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
+  }
+
 </style>
 
 <div class="cd-layout-container">
@@ -79,10 +84,9 @@
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
   {% endblock %}
 
-  <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
-
   {% block hero %}
     <div class="cd-layout-hero">
+      <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
       {% if componentsModule %}
         {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
       {% endif %}
@@ -99,13 +103,9 @@
 
   {{ page.help }}
 
-  {% if page.page_title %}
-    {% block page_title %}
-      <div class="cd-page-title cd-container">
-        {{ page.page_title }}
-      </div>
-    {% endblock %}
-  {% endif %}
+  <div class="cd-container">
+    {{ page.page_title }}
+  </div>
 
   {# Link to skip to the main content is in html.html.twig #}
   <main role="main" id="main-content" class="cd-container">

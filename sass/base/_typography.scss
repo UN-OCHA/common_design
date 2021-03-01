@@ -60,6 +60,34 @@
   src: local('.SFNSText-BoldItalic'), local('.HelveticaNeueDeskInterface-BoldItalic'), local('.LucidaGrandeUI'), local('Segoe UI Bold Italic'), local('Ubuntu Bold Italic'), local('Roboto-BoldItalic'), local('DroidSans-Bold'), local('Tahoma Bold');
 }
 
+// Noto Kufi Arabic (Arabic)
+// @see http://www.google.com/fonts/earlyaccess
+// sass-lint:disable no-url-domains no-url-protocols
+// sass-lint:disable no-duplicate-properties
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot');
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix') format('embedded-opentype'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2') format('woff2'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff') format('woff'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot');
+  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix') format('embedded-opentype'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2') format('woff2'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff') format('woff'),
+  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf') format('truetype');
+}
+
 h1,
 h2,
 h3,
@@ -67,29 +95,46 @@ h4,
 h5 {
   line-height: 1.2;
   color: $cd-ocha-blue;
-  //font-family: $cd-font--webfont;
+  //font-family: $cd-font--roboto;
+}
+
+html[lang='ar'] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $cd-font--noto-kufi;
+  }
+}
+
+// @TODO ZH might need special attention.
+html[lang='ru'],
+html[lang='zh'] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $cd-font--noto;
+  }
 }
 
 h1 {
   color: $cd-default-text-color;
   font-weight: 300;
-  @include font-size($cd-font-size-xxlarge);
+  @include font-size($cd-font-size-2xmedium);
 
   @include desktop {
-    @include font-size($cd-font-size-xlarge);
+    @include font-size($cd-font-size-2xlarge);
   }
 }
 
-.page-title {
+.cd-page-title {
+  margin-top: 0;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid $cd-blue-grey;
-  margin-bottom: 2rem;
-}
-
-h2,
-h4,
-h5 {
-  font-weight: 400;
 }
 
 h1,
@@ -114,25 +159,29 @@ dl {
   }
 }
 
-//h2 {
-//  @include font-size($cd-font-size-large);
-//}
-//
-//h3 {
-//  @include font-size($cd-font-size-medium);
-//}
-//
-//h4 {
-//  @include font-size($cd-font-size-base);
-//}
-//
-//h5 {
-//  @include font-size($cd-font-size-small);
-//}
-//
-//h6 {
-//  @include font-size($cd-font-size-base);
-//}
+h2 {
+  @include font-size($cd-font-size-2xmedium);
+  font-weight: 400;
+}
+
+h3 {
+  @include font-size($cd-font-size-2xbase);
+  font-weight: 500;
+}
+
+h4 {
+  @include font-size($cd-font-size-large);
+  font-weight: 400;
+}
+
+h5 {
+  @include font-size($cd-font-size-medium);
+  font-weight: 400;
+}
+
+h6 {
+  @include font-size($cd-font-size-base);
+}
 
 
 a {
@@ -156,5 +205,5 @@ em {
 // The Unarticulated Annotation.
 u {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
 }

@@ -1,17 +1,17 @@
 name: OCHA Common Design
 type: theme
 description: OCHA Common Design drupal theme. Use as a base theme, and extend.
-core: 8.x
-# Defines the base theme
-base theme: classy
+core_version_requirement: ^8.8 || ^9
 logo: 'img/logos/ocha-lockup-blue.svg'
 
 # Defines libraries group in which we can add css/js.
 libraries:
   - core/drupal
+  - core/normalize
   - common_design/global-styling
-  - common_design/cd-dropdown
   - common_design/cd-button
+  - common_design/cd-dropdown
+  - common_design/cd-flow
 
 # Regions
 regions:
@@ -19,8 +19,8 @@ regions:
   header_search: Header search
   header_logo: Header logo
   header_navigation: Header navigation
-  page_title: Page title
   highlighted: Highlighted
+  page_title: Page title
   content: Content
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
@@ -28,21 +28,7 @@ regions:
   footer_soft: Soft footer
   footer_navigation: Footer navigation
 
-libraries-extend:
-  classy/messages:
-    - common_design/cd-alert
-  classy/tabs:
-    - common_design/cd-tabs
-
 libraries-override:
-  classy/base:
-    css:
-      component:
-        css/components/button.css: false
-        css/components/inline-form.css: false
-        css/components/links.css: false
-        css/components/menu.css: false
-
   core/modernizr:
     js:
       assets/vendor/modernizr/modernizr.min.js: js/cd-modernizr.min.js
