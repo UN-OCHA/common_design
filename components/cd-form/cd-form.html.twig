@@ -8,9 +8,23 @@
 
   <p class="cd-max-width">Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
 
-  <label for="published-date">Date</label>
-  <input type="text" name="published_date" value="" size="20" maxlength="30" id="published-date" placeholder=" E.g., Sep 10 2019">
+  <div class="cd-form--inline">
+    <div class="cd-form__item">
+      <label for="published-date">Date</label>
+      <input type="text" name="published_date" value="" size="20" maxlength="30" id="published-date" placeholder=" E.g., Sep 10 2019">
+    </div>
+  </div>
 
+  <div class="cd-form--inline">
+    <label for="mySelect">Select element</label>
+    <select id="mySelect" name="options">
+      <option value="opt1">Option one</option>
+      <option value="opt2">Option two with a really long option title</option>
+      <option value="opt3">Option three</option>
+    </select>
+  </div>
+
+  <hr>
 
   <label for="mySelect">Select element</label>
   <select id="mySelect" name="options">
@@ -42,9 +56,11 @@
     </ul>
   </fieldset>
 
-  <label for="keyword-search">Keyword search</label>
-  <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filter__input" name="keys" value="" size="15" maxlength="128">
-
+  <div class="cd-form--inline">
+    <label for="keyword-search">Keyword search</label>
+    <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" name="keys" value="" size="15" maxlength="128">
+    <input type="submit" value="Search" class="cd-button cd-button--small cd-button--submit">
+  </div>
 
   <button type="submit" class="cd-button cd-button--uppercase cd-button--export cd-button--icon">
     <span class="cd-button__text">Export</span>
@@ -55,5 +71,32 @@
 
   <input type="submit" id="edit-submit" name="op" value="Send message" class="cd-button form-submit">
   <input type="submit" id="edit-preview" name="op" value="Preview" class="cd-button cd-button--outline form-submit">
+
+  <hr>
+
+  <div class="cd-form--inline">
+    <label class="visually-hidden" for="edit-keys">Search</label>
+    <input placeholder="Enter keywords" type="text" id="edit-keys" name="keys" size="30" maxlength="128">
+    <input type="submit" value="Search" class="cd-button cd-button--submit">
+  </div>
+
+  <hr>
+
+  <div class="cd-layout-with-sidebar-first">
+    <div class="cd-layout-content-wrapper">
+      <div class="cd-layout-sidebar-first">
+        <div class="cd-form--inline">
+          <div class="cd-form__item">
+            <label class="visually-hidden" for="edit-keys">Search</label>
+            <input placeholder="Enter keywords" type="text" id="edit-keys" name="keys" size="30" maxlength="128">
+          </div>
+
+          <div class="cd-form__item">
+            <input type="submit" value="Search" class="cd-button cd-button--submit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </form>

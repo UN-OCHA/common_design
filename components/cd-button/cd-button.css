@@ -355,3 +355,7 @@ a.cd-button {
     background-color: var(--cd-ie-highlight-red--light);
   }
 }
+
+.cd-button + .cd-button {
+  margin-inline-start: 0.5rem;
+}
