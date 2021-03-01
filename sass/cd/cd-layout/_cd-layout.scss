@@ -86,12 +86,27 @@ body {
   }
 }
 
-.cd-layout-container .cd-layout-content-wrapper {
+// Depending on whether the page title region is used,
+// or if the page title is printed via the node
+.cd-layout-container main > .cd-layout-content-wrapper,
+.cd-layout-container main > .cd-page-title {
   padding-top: 2rem;
-  background: $cd-white;
 
   @include desktop {
     padding-top: 3rem;
+  }
+}
+
+.cd-layout-container main > .cd-page-title + .cd-layout-content-wrapper {
+  padding-top: 0;
+
+  @include desktop {
+    padding-top: 0;
+  }
+}
+
+.cd-layout-container .cd-layout-content-wrapper {
+  @include desktop {
     display: flex;
     flex-wrap: wrap;
   }
@@ -298,7 +313,7 @@ body {
   }
 }
 
-.page-title {
+.cd-page-title {
   @include xl {
     [dir='ltr'] & {
       padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
