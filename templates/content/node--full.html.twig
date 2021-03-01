@@ -85,11 +85,6 @@
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
-{# Pre-render the local_tasks so the `if local_tasks` below can work. #}
-{%
-  set local_tasks = local_tasks ? local_tasks|render
-%}
-
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
