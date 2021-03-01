@@ -137,52 +137,27 @@
   }
 
   /* If four elements */
-  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child,
-  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
-  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-export,
-  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child,
-  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block,
-  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .cd-export {
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child ~ .cd-export {
     flex: 1 0 50%;
     max-width: 50%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child ~ .cd-filter__group:last-child,
+  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child ~ .block:nth-child(even),
+  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child ~ .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
-    padding-left: 0;
-  }
-
-  /* If five elements */
-  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child,
-  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
-  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-export,
-  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child,
-  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block,
-  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .cd-export {
-    flex: 1 0 50%;
-    max-width: 50%;
-  }
-
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
-    padding-right: 0;
-  }
-
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(n+4):first-child ~ .cd-filter__group:last-child,
+  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child ~ .block:nth-child(even),
+  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(n+4):first-child ~ .block:last-child {
     padding-left: 0;
   }
 }
@@ -328,7 +303,7 @@
 .cd-filter__btn:focus {
   /* We remove the outline because we are adding a border. */
   /* so the rounded corners look nicer on hover */
-  outline: 0 solid var(--cd-primary-color--light);
+  outline-width: 0;
   border: 2px solid var(--cd-primary-color--dark);
 }
 
@@ -344,9 +319,6 @@
   }
 
   .cd-filter__btn:focus {
-    /* We remove the outline because we are adding a border. */
-    /* so the rounded corners look nicer on hover */
-    outline: 0 solid var(--cd-ie-primary-color--light);
     border: 2px solid var(--cd-ie-primary-color--dark);
   }
 }
