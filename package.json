@@ -27,7 +27,8 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
-    "kind-of": ">=6.0.3"
+    "kind-of": ">=6.0.3",
+    "puppeteer": "^8.0.0"
   },
   "engines": {
     "node": "^10.18.1",
