@@ -6,6 +6,7 @@ input[type='search'],
 input[type='tel'],
 input[type='url'],
 input[type='date'],
+input[type='file'],
 textarea {
   width: 100%;
   max-width: 100%;
@@ -23,6 +24,7 @@ textarea {
   input[type='tel'],
   input[type='url'],
   input[type='date'],
+  input[type='file'],
   textarea {
     width: auto;
   }
@@ -60,17 +62,7 @@ input::-webkit-input-placeholder {
   font-style: italic;
 }
 
-input::-moz-placeholder {
-  color: var(--cd-grey--dark);
-  font-style: italic;
-}
-
 input:-ms-input-placeholder {
-  color: var(--cd-grey--dark);
-  font-style: italic;
-}
-
-input:-moz-placeholder {
   color: var(--cd-grey--dark);
   font-style: italic;
 }
@@ -83,6 +75,10 @@ input::-webkit-search-cancel-button {
 /* Safari fix */
 input::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+.cd-form--inline {
+  margin-bottom: 1rem;
 }
 
 .cd-form--inline,

@@ -347,6 +347,11 @@
             }
           }
         }
+
+        // Prevent SVG icon from shrinking if menu item text is long.
+        svg {
+          flex: 1 0 auto;
+        }
       }
 
       > li > ul {
