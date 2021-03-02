@@ -85,6 +85,10 @@ input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+.cd-form--inline {
+  margin-bottom: 1rem;
+}
+
 .cd-form--inline,
 .cd-form--inline .cd-form__item {
   display: flex;
