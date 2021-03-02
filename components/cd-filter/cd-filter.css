@@ -192,7 +192,8 @@
 
   /* Reset flow for alignment */
   .cd-filter--horizontal .cd-filter__group,
-  .cd-filter--horizontal .cd-filter__form > .block {
+  .cd-filter--horizontal .cd-filter__form > .block,
+  .cd-filter--horizontal .cd-filter__form > .cd-export  {
     margin-top: 0;
   }
 
