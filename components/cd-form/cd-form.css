@@ -60,17 +60,7 @@ input::-webkit-input-placeholder {
   font-style: italic;
 }
 
-input::-moz-placeholder {
-  color: var(--cd-grey--dark);
-  font-style: italic;
-}
-
 input:-ms-input-placeholder {
-  color: var(--cd-grey--dark);
-  font-style: italic;
-}
-
-input:-moz-placeholder {
   color: var(--cd-grey--dark);
   font-style: italic;
 }
