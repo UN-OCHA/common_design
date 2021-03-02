@@ -6,6 +6,7 @@ input[type='search'],
 input[type='tel'],
 input[type='url'],
 input[type='date'],
+input[type='file'],
 textarea {
   width: 100%;
   max-width: 100%;
@@ -23,6 +24,7 @@ textarea {
   input[type='tel'],
   input[type='url'],
   input[type='date'],
+  input[type='file'],
   textarea {
     width: auto;
   }
