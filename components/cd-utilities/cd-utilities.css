@@ -54,7 +54,7 @@ div[class*='__title'] > * {
   margin: 0;
 }
 /* and if the heading is nested */
-div[class*='__title'] > * {
+div[class*="__title"] > *:not(a) {
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
