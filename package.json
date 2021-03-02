@@ -35,13 +35,17 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "e2e": "jest _tests/*.test.js",
+    "test": "jest _tests/*.test.js"
   },
   "devDependencies": {
     "axios": ">=0.21.1",
     "dot-prop": ">=5.1.1",
     "eslint": "^6.8.0",
     "git-hooks": "^1.1.10",
+    "jest": "^26.6.3",
+    "jest-puppeteer": "^4.4.0",
     "minimist": "^1.2.5",
     "object-path": ">=0.11.5",
     "yargs-parser": "^18.1.3"
