@@ -26,7 +26,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-hero             | :heavy_check_mark:  |                     |
 | cd-image-grid       |                     |                     |
 | cd-link-list        | :heavy_check_mark:  |                     |
-| cd-pagination       |        :x:          |                     |
+| cd-pagination       | :heavy_check_mark:  |                     |
 | cd-read-more        | :heavy_check_mark:  |                     |
 | cd-search           |                     |                     |
 | cd-search-inline    |                     |                     |
