@@ -172,7 +172,7 @@ body {
     flex-grow: 999;
   }
 
-  //// sass-lint:disable no-duplicate-properties
+  // sass-lint:disable no-duplicate-properties
   .cd-layout-with-sidebar-first &,
   .cd-layout-with-sidebar-second & {
     min-width: auto; //IE11 fix.
