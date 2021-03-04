@@ -86,22 +86,11 @@ body {
   }
 }
 
-// Depending on whether the page title region is used,
-// or if the page title is printed via the node
-.cd-layout-container main > .cd-layout-content-wrapper,
-.cd-layout-container main > .cd-page-title {
+.cd-layout-container main {
   padding-top: 2rem;
 
   @include desktop {
     padding-top: 3rem;
-  }
-}
-
-.cd-layout-container main > .cd-page-title + .cd-layout-content-wrapper {
-  padding-top: 0;
-
-  @include desktop {
-    padding-top: 0;
   }
 }
 
@@ -184,24 +173,14 @@ body {
   }
 
   //// sass-lint:disable no-duplicate-properties
-  //.cd-layout-with-sidebar-first &,
-  //.cd-layout-with-sidebar-second & {
-  //  min-width: auto; //IE11 fix.
-  //  min-width: unset;
-  //}
+  .cd-layout-with-sidebar-first &,
+  .cd-layout-with-sidebar-second & {
+    min-width: auto; //IE11 fix.
+    min-width: unset;
+  }
 
   .cd-layout-with-sidebar-both & {
     margin-bottom: 1rem;
-
-    //@include tablet {
-    //  [dir='ltr'] & {
-    //    margin-left: 3rem;
-    //  }
-    //
-    //  [dir='rtl'] & {
-    //    margin-right: 3rem;
-    //  }
-    //}
 
     @include desktop {
       margin-bottom: 0;
@@ -305,13 +284,13 @@ body {
   }
 }
 
-.cd-page-title {
-  margin-top: 2rem;
-
-  @include tablet {
-    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
-  }
-}
+//.cd-page-title {
+//  margin-top: 2rem;
+//
+//  @include tablet {
+//    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
+//  }
+//}
 
 .cd-page-title {
   @include xl {
