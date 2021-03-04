@@ -65,7 +65,7 @@
           {% else %}
             {% set title = 'Go to page @key'|t({'@key': key}) %}
           {% endif %}
-          <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
+          <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} aria-current="page">
             <span class="visually-hidden">
               {{ current == key ? 'Current page'|t : 'Page'|t }}
             </span>
