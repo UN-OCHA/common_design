@@ -1,4 +1,3 @@
-article p,
 .cd-max-width {
   max-width: var(--cd-max-content-width);
 }
@@ -14,7 +13,7 @@ blockquote {
   margin: 2rem 0;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: #707070;
+  color: var(--cd-grey--mid);
 }
 
 /* Description list */

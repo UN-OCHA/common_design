@@ -40,7 +40,9 @@ select.error {
   border-color: var(--cd-highlight-red);
 }
 
-input:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: 3px solid var(--cd-blue--bright);
   outline-offset: -2px;
 }
@@ -49,12 +51,6 @@ input:focus {
 select {
   width: 100%;
   max-width: 100%;
-}
-
-fieldset ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 input::-webkit-input-placeholder {
