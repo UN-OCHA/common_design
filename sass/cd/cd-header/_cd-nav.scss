@@ -7,7 +7,7 @@
   border: 0 none $cd-blue-grey;
   //border-left: 1px solid $cd-blue-grey;
   //border-right: 1px solid $cd-blue-grey;
-  @include font-size($cd-font-size-small);
+  font-size: $cd-font-size--small;
   color: $cd-default-text-color;
   height: $cd-site-header-height;
   padding: 0 20px;
@@ -185,7 +185,7 @@
     background: $cd-white;
 
     @include desktop {
-      box-shadow: 0 1px 8px rgba($cd-blue-grey--dark, 0.8);
+      box-shadow: 0 1px 8px rgba($cd-rgb-blue-grey--dark, 0.8);
       //left: -1px;
       margin: 0;
       max-width: 300px;
@@ -239,7 +239,7 @@
       &.menu-item--expanded {
         > a.is-active::before,
         > button.is-active::before {
-          background: rgba($cd-highlight-red, 0.2);
+          background: rgba($cd-rgb-highlight-red, 0.2);
         }
       }
 
@@ -255,7 +255,7 @@
             top: 0;
             height: 48px; // Height of menu item.
             left: 15px; // Half of the left padding.
-            background: rgba($cd-highlight-red, 0.2);
+            background: rgba($cd-rgb-highlight-red, 0.2);
 
             // sass-lint:disable nesting-depth
             [dir='rtl'] & {
@@ -273,7 +273,7 @@
       > ul > li.menu-item--active-trail {
         a::before,
         button::before {
-          background: rgba($cd-highlight-red, 0.6);
+          background: rgba($cd-rgb-highlight-red, 0.6);
         }
 
         a.is-active::before,
