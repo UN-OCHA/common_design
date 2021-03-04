@@ -19,7 +19,7 @@
   background: $cd-black;
   color: $cd-white;
   display: inline-block;
-  @include font-size($cd-font-size-small);
+  font-size: $cd-font-size--small;
   font-family: sans-serif;
   font-weight: 500;
   line-height: 1.7;

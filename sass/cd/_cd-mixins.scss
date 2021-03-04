@@ -97,6 +97,12 @@
 //
 // CD breakpoints
 //
+@mixin mobile {
+  @include sm {
+    @content;
+  }
+}
+
 @mixin tablet {
   @include md {
     @content;
@@ -115,6 +121,12 @@
   }
 }
 
+@mixin xxlarge {
+  @include xxl {
+    @content;
+  }
+}
+
 
 //——————————————————————————————————————————————————————————————————————————————
 // Common Design: z-index
@@ -129,27 +141,4 @@
   } @else {
     @warn '`#{$value}` not found in `$zindex` map.';
   }
-}
-
-
-//——————————————————————————————————————————————————————————————————————————————
-// Common-Design: font-size
-//
-// Usage:
-//   @include font-size(14);
-//
-// Results in (with a $base-font-size of 18):
-//   font-size: 14px;
-//
-// If another unit were desired, it could be added to the output after the px
-// declarations to override the pixel value. However, prior experience has shown
-// that using another unit such as `rem` causes rounding errors when paired with
-// other math operations, such as unitless `line-height` properties.
-//
-// Example to output rem in addition to px:
-//   font-size: $size + px;
-//   font-size: #{$size / $cd-font-size-base}rem;
-//——————————————————————————————————————————————————————————————————————————————
-@mixin font-size($size) {
-  font-size: $size + px;
 }
