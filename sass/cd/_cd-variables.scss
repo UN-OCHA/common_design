@@ -1,68 +1,45 @@
 //——————————————————————————————————————————————————————————————————————————————
 // Common Design: Variables
-//
-// Don't use any maps directly. Please refer to `_cd-mixins.scss` partial.
 //——————————————————————————————————————————————————————————————————————————————
-
-//
-// Grid Breakpoints
-//
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1200px,
-  xxl: 1400px
-) !default;
-
-//
-// CD Breakpoints correspond to the following grid breakpoints:
-//
-$cd-breakpoints: (
-  tablet: #{map-get($grid-breakpoints, 'md')},
-  desktop: #{map-get($grid-breakpoints, 'lg')},
-  xlarge: #{map-get($grid-breakpoints, 'xl')},
-  xxlarge: #{map-get($grid-breakpoints, 'xxl')}
-);
-
-
-//——————————————————————————————————————————————————————————————————————————————
-// Measurements
-//——————————————————————————————————————————————————————————————————————————————
-$cd-max-body-width: 1400px;
-$cd-max-width: 1220px;
-
-$cd-container-padding: 0.75rem; /* 12px */
-$cd-container-padding-tablet: 1.5rem; /* 24px */
-$cd-container-padding-xlarge: 2.5rem; /* 40px */
-
-$cd-global-header-height: 35px;
-$cd-site-header-height: 60px;
-
 
 //——————————————————————————————————————————————————————————————————————————————
 // Colours
 //——————————————————————————————————————————————————————————————————————————————
 :root {
   /* Color palette */
-  --cd-ocha-blue: #026cb6;
-  --cd-blue--dark: #025995;
-  --cd-blue--bright: #80cbff;
-  --cd-highlight-red: #eb5c6d;
+  --cd-ocha-blue: #1f69b3;
+  --cd-blue--dark: #1f519b;
+  --cd-blue--bright: #82b5e9;
+  --cd-blue--light: #d4e5f7;
+  --cd-highlight-red: #e56a54;
+  // This shade of red has been selected based on WCAG AAA requirements for contrast.
+  --cd-contrast-red: #e00000;
   --cd-white: #fff;
   --cd-grey--light: #f2f2f2;
   --cd-grey--mid: #595959;
   --cd-grey--dark: #4a4a4a;
   --cd-black: #000;
   --cd-blue-grey: #e6ecf1;
+  --cd-blue-grey--dark: #d3dde5;
   --cd-blue-grey--light: #ebf0f4;
+
+  // Colours used with rgba().
+  // https://stackoverflow.com/questions/40010597/how-do-i-apply-opacity-to-a-css-color-variable
+  --cd-rgb-ocha-blue: 2, 108, 182;
+  --cd-rgb-grey--mid: 89, 89, 89;
+  --cd-rgb-grey--dark: 74, 74, 74;
+  --cd-rgb-highlight-red:  229, 106, 84;
+  --cd-rgb-blue-grey--dark: 211, 221, 229;
+
+  /* Measurements */
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
   --cd-max-width: 1220px;
   --cd-container-padding: 0.75rem; /* 12px */
   --cd-container-padding-tablet: 1.5rem; /* 24px */
   --cd-container-padding-xlarge: 2.5rem; /* 40px */
+
+  /* Vertical Rhythm */
   --cd-flow-space: 1rem;
   --cd-bumper-space: 1rem;
 
@@ -89,35 +66,72 @@ $cd-site-header-height: 60px;
   --cd-font-size--2xbase: 2rem;     /* 32px */
   --cd-font-size--2xmedium: 2.5rem; /* 40px */
   --cd-font-size--2xlarge: 3rem;    /* 48px */
+
+  /* Fonts */
+  --cd-font: helvetica, arial, sans-serif;
+  --cd-font--system: system-ui;
+
+  // sass-lint:disable no-url-domains no-url-protocols
+  // Multilingual
+  // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
+  @import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+  --cd-font--noto: 'Noto Sans', sans-serif;
+  --cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
+
+  // Roboto
+  // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
+  @import url('//fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+  --cd-font--roboto: 'Roboto', helvetica, arial, sans-serif;
+
+  @import url('//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+  --cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
+
+  @import url('//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+  --cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
 }
 
-// Colour palette
-$cd-ocha-blue: #026cb6;
-$cd-blue--dark: #025995;
-$cd-blue--bright: #80cbff;
-$cd-blue--light: #9ec5e2;
-$cd-blue--lighter: #b7e0ff;
+//——————————————————————————————————————————————————————————————————————————————
+// Measurements
+//——————————————————————————————————————————————————————————————————————————————
+$cd-max-body-width: var(--cd-max-body-width);
+$cd-max-width: var(--cd-max-width);
 
-$cd-grey--light: #f2f2f2;
-$cd-grey--mid-light: #ccc;
-$cd-grey--mid: #595959;
-$cd-grey--dark: #4a4a4a;
+$cd-container-padding: var(--cd-container-padding);
+$cd-container-padding-tablet: var(--cd-container-padding-tablet);
+$cd-container-padding-xlarge: var(--cd-container-padding-xlarge);
+
+$cd-global-header-height: 35px;
+$cd-site-header-height: 60px;
+
+// Colour palette
+$cd-ocha-blue: var(--cd-ocha-blue);
+$cd-blue--dark: var(--cd-blue--dark);
+$cd-blue--bright: var(--cd-blue--bright);
+$cd-blue--light: var(--cd-blue--light);
+
+$cd-grey--light: var(--cd-grey--light);
+$cd-grey--mid: var(--cd-grey--mid);
+$cd-grey--dark: var(--cd-grey--dark);
 
 // Default text colour.
-$cd-default-text-color: $cd-grey--dark;
+$cd-default-text-color: var(--cd-default-text-color);
 
-$cd-white: #fff;
-$cd-black: #000;
+$cd-white: var(--cd-white);
+$cd-black: var(--cd-black);
 
 // Site background colour.
-$cd-blue-grey--dark: #d3dde5;
-$cd-blue-grey: #e6ecf1;
-$cd-blue-grey--light: #f2f5f8;
+$cd-blue-grey--dark: var(--cd-blue-grey--dark);
+$cd-blue-grey: var(--cd-blue-grey);
+$cd-blue-grey--light: var(--cd-blue-grey--light);
 
-$cd-highlight-red: #eb5c6d;
-// This shade of red has been selected based on WCAG AAA requirements for contrast.
-$cd-contrast-red: #e00000;
+$cd-highlight-red: var(--cd-highlight-red);
+$cd-contrast-red: var(--cd-contrast-red);
 
+$cd-rgb-ocha-blue: var(--cd-rgb-ocha-blue);
+$cd-rgb-grey--mid: var(--cd-rgb-grey--mid);
+$cd-rgb-grey--dark: var(--cd-rgb-grey--dark);
+$cd-rgb-highlight-red: var(--cd-rgb-highlight-red);
+$cd-rgb-blue-grey--dark: var(--cd-rgb-blue-grey--dark);
 
 // Brand colours
 $cd-primary: $cd-ocha-blue;
@@ -127,42 +141,52 @@ $cd-primary--dark: $cd-blue--dark;
 // Fonts
 //——————————————————————————————————————————————————————————————————————————————
 
-$cd-font: helvetica, arial, sans-serif;
-$cd-font--system: system-ui;
-
-// sass-lint:disable no-url-domains no-url-protocols
-
-// Multilingual
-// https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
-@import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-$cd-font--noto: 'Noto Sans', sans-serif;
-$cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
-
-// Roboto
-// https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
-//@import url('//fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
-//$cd-font--roboto: 'Roboto', helvetica, arial, sans-serif;
-//
-//@import url('//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
-//$cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
-//
-//@import url('//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
-//$cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
-
+$cd-font: var(--cd-font);
+$cd-font--system:  var(--cd-font--system);
+$cd-font--noto: var(--cd-font--noto);
+$cd-font--noto-kufi: var(--cd-font--noto-kufi);
+$cd-font--roboto: var(--cd-font--roboto);
+$cd-font--roboto-condensed: var(--cd-font--roboto-condensed);
+$cd-font--roboto-slab: var(--cd-font--roboto-slab);
 
 //——————————————————————————————————————————————————————————————————————————————
 // Font sizes
 //——————————————————————————————————————————————————————————————————————————————
 
-$cd-font-size-tiny: 12;
-$cd-font-size-small: 14;
-$cd-font-size-base: 16;
-$cd-font-size-medium: 20;
-$cd-font-size-large: 24;
-$cd-font-size-2xbase: 32;
-$cd-font-size-2xmedium: 40;
-$cd-font-size-2xlarge: 48;
+$cd-font-size--tiny: var(--cd-font-size--tiny);
+$cd-font-size--small: var(--cd-font-size--small);
+$cd-font-size--base: var(--cd-font-size--base);
+$cd-font-size--medium: var(--cd-font-size--medium);
+$cd-font-size--large: var(--cd-font-size--large);
+$cd-font-size--2xbase: var(--cd-font-size--2xbase);
+$cd-font-size--2xmedium: var(--cd-font-size--2xmedium);
+$cd-font-size--2xlarge: var(--cd-font-size--2xlarge);
 
+//——————————————————————————————————————————————————————————————————————————————
+// Don't use any maps directly. Please refer to `_cd-mixins.scss` partial.
+//——————————————————————————————————————————————————————————————————————————————
+
+//
+// Grid Breakpoints
+//
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+//
+// CD Breakpoints correspond to the following grid breakpoints:
+//
+$cd-breakpoints: (
+  tablet: #{map-get($grid-breakpoints, 'md')},
+  desktop: #{map-get($grid-breakpoints, 'lg')},
+  xlarge: #{map-get($grid-breakpoints, 'xl')},
+  xxlarge: #{map-get($grid-breakpoints, 'xxl')}
+);
 
 //——————————————————————————————————————————————————————————————————————————————
 // z-indices

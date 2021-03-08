@@ -10,15 +10,11 @@
 
 html,
 input {
-  // Font size should be set at the correct percentage to match the base-font-size
-  // 16px = 100%
-  // 18px = 112.5%
-  // See http://pxtoem.com/ for conversion chart
-  font-size: ($cd-font-size-base / 16 * 100) + unquote('%');
+  font-size: $cd-font-size--base;
 }
 
 body {
-  @include font-size($cd-font-size-base);
+  font-size: $cd-font-size--base;
   font-family: $cd-font--system;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

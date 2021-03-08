@@ -24,6 +24,7 @@
   color: var(--cd-ocha-blue);
   text-transform: uppercase;
   font-size: 0.875rem;
+  font-weight: 700;
 }
 
 .cd-date__wrapper + .cd-date__wrapper {

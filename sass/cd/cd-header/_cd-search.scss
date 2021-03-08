@@ -85,7 +85,7 @@
 }
 
 .cd-search__btn-label {
-  @include font-size($cd-font-size-tiny);
+  font-size: $cd-font-size--tiny;
   font-weight: 700;
   text-transform: uppercase;
   display: none;
@@ -124,7 +124,7 @@
   border-radius: 0;
   box-shadow: none;
   color: $cd-default-text-color;
-  @include font-size($cd-font-size-base);
+  font-size: $cd-font-size--base;
   height: calc(#{$cd-site-header-height} - 16px); //Padding.
   width: 100%;
   box-sizing: border-box;
@@ -136,7 +136,7 @@
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 4px rgba($cd-grey--mid, 0.7);
+    box-shadow: 0 0 4px rgba($cd-rgb-grey--mid, 0.7);
   }
 }
 
@@ -176,7 +176,7 @@
   border: 0;
   color: $cd-white;
   display: flex;
-  @include font-size($cd-font-size-base);
+  font-size: $cd-font-size--base;
   font-weight: 700;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   width: 46px;

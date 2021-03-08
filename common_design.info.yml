@@ -12,6 +12,7 @@ libraries:
   - common_design/cd-button
   - common_design/cd-dropdown
   - common_design/cd-flow
+  - common_design/cd-utilities
 
 # Regions
 regions:

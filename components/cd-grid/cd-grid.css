@@ -64,7 +64,6 @@
 
   .cd-grid > *:nth-child(odd) {
     margin-right: unset;
-    clear: initial;
   }
 
   .cd-grid-2-col > * {

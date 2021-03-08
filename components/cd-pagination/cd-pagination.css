@@ -4,7 +4,7 @@
   padding: 0.5rem;
 }
 
-@supports (display: grid) {
+@supports (display: flex) {
   .cd-pager__items {
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@
   margin: 0 0.25rem 0.25rem 0;
 }
 
-@supports (display: grid) {
+@supports (display: flex) {
   .cd-pager__item {
     display: flex;
     align-self: baseline;
