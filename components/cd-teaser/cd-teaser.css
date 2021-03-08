@@ -22,6 +22,7 @@
   font-weight: 700;
   font-size: 1.125rem;
   display: block;
+  margin-top: 0;
 }
 
 /* Override rule for cd-bumper on .cd-teaser__container to prevent padding-left on mobile. */
