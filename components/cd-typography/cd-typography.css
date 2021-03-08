@@ -2,6 +2,11 @@
   max-width: var(--cd-max-content-width);
 }
 
+.cd-max-width--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 hr {
   margin: 3.5rem auto;
   border: none;
