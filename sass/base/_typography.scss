@@ -95,7 +95,7 @@ h4,
 h5 {
   line-height: 1.2;
   color: $cd-ocha-blue;
-  //font-family: $cd-font--roboto;
+  font-family: $cd-font--roboto;
 }
 
 html[lang='ar'] {
@@ -123,10 +123,10 @@ html[lang='zh'] {
 h1 {
   color: $cd-default-text-color;
   font-weight: 300;
-  @include font-size($cd-font-size-2xmedium);
+  font-size: $cd-font-size--2xmedium;
 
   @include desktop {
-    @include font-size($cd-font-size-2xlarge);
+    font-size: $cd-font-size--2xlarge;
   }
 }
 
@@ -160,27 +160,27 @@ dl {
 }
 
 h2 {
-  @include font-size($cd-font-size-2xmedium);
+  font-size: $cd-font-size--2xmedium;
   font-weight: 400;
 }
 
 h3 {
-  @include font-size($cd-font-size-2xbase);
+  font-size: $cd-font-size--2xbase;
   font-weight: 500;
 }
 
 h4 {
-  @include font-size($cd-font-size-large);
+  font-size: $cd-font-size--large;
   font-weight: 400;
 }
 
 h5 {
-  @include font-size($cd-font-size-medium);
+  font-size: $cd-font-size--medium;
   font-weight: 400;
 }
 
 h6 {
-  @include font-size($cd-font-size-base);
+  font-size: $cd-font-size--base;
 }
 
 

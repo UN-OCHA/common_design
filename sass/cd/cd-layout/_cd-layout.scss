@@ -86,22 +86,11 @@ body {
   }
 }
 
-// Depending on whether the page title region is used,
-// or if the page title is printed via the node
-.cd-layout-container main > .cd-layout-content-wrapper,
-.cd-layout-container main > .cd-page-title {
+.cd-layout-container main {
   padding-top: 2rem;
 
   @include desktop {
     padding-top: 3rem;
-  }
-}
-
-.cd-layout-container main > .cd-page-title + .cd-layout-content-wrapper {
-  padding-top: 0;
-
-  @include desktop {
-    padding-top: 0;
   }
 }
 
@@ -139,7 +128,7 @@ body {
 }
 
 .cd-layout-sidebar-first {
-  background: lightblue;
+  //background: lightblue;
   margin-bottom: 1rem;
 
   @include desktop {
@@ -147,9 +136,9 @@ body {
   }
 }
 
-.cd-layout-sidebar-second {
-  background: lightpink;
-}
+//.cd-layout-sidebar-second {
+//  background: lightpink;
+//}
 
 // Both sidebars, individually control.
 .cd-layout-with-sidebar-both {
@@ -176,32 +165,15 @@ body {
 }
 
 .cd-layout-content {
-  background: lightyellow;
+  //background: lightyellow;
 
   @include desktop {
     flex-basis: 0;
     flex-grow: 999;
   }
 
-  //// sass-lint:disable no-duplicate-properties
-  //.cd-layout-with-sidebar-first &,
-  //.cd-layout-with-sidebar-second & {
-  //  min-width: auto; //IE11 fix.
-  //  min-width: unset;
-  //}
-
   .cd-layout-with-sidebar-both & {
     margin-bottom: 1rem;
-
-    //@include tablet {
-    //  [dir='ltr'] & {
-    //    margin-left: 3rem;
-    //  }
-    //
-    //  [dir='rtl'] & {
-    //    margin-right: 3rem;
-    //  }
-    //}
 
     @include desktop {
       margin-bottom: 0;
@@ -305,22 +277,24 @@ body {
   }
 }
 
-.cd-page-title {
-  margin-top: 2rem;
-
-  @include tablet {
-    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
-  }
-}
+//.cd-page-title {
+//  margin-top: 2rem;
+//
+//  @include tablet {
+//    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
+//  }
+//}
 
 .cd-page-title {
   @include xl {
-    [dir='ltr'] & {
-      padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
-    }
+    .cd-layout-with-sidebar {
+      [dir='ltr'] & {
+        padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
+      }
 
-    [dir='rtl'] & {
-      padding-left: 320px;
+      [dir='rtl'] & {
+        padding-left: 320px;
+      }
     }
 
     .cd-layout-with-sidebar-first &,
