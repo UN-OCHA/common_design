@@ -128,7 +128,7 @@ body {
 }
 
 .cd-layout-sidebar-first {
-  background: lightblue;
+  //background: lightblue;
   margin-bottom: 1rem;
 
   @include desktop {
@@ -136,9 +136,9 @@ body {
   }
 }
 
-.cd-layout-sidebar-second {
-  background: lightpink;
-}
+//.cd-layout-sidebar-second {
+//  background: lightpink;
+//}
 
 // Both sidebars, individually control.
 .cd-layout-with-sidebar-both {
@@ -165,18 +165,11 @@ body {
 }
 
 .cd-layout-content {
-  background: lightyellow;
+  //background: lightyellow;
 
   @include desktop {
     flex-basis: 0;
     flex-grow: 999;
-  }
-
-  // sass-lint:disable no-duplicate-properties
-  .cd-layout-with-sidebar-first &,
-  .cd-layout-with-sidebar-second & {
-    min-width: auto; //IE11 fix.
-    min-width: unset;
   }
 
   .cd-layout-with-sidebar-both & {
@@ -294,12 +287,14 @@ body {
 
 .cd-page-title {
   @include xl {
-    [dir='ltr'] & {
-      padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
-    }
+    .cd-layout-with-sidebar {
+      [dir='ltr'] & {
+        padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
+      }
 
-    [dir='rtl'] & {
-      padding-left: 320px;
+      [dir='rtl'] & {
+        padding-left: 320px;
+      }
     }
 
     .cd-layout-with-sidebar-first &,
