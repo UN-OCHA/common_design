@@ -77,7 +77,8 @@
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'cd-article'
   ]
 %}
 {{ attach_library('common_design/cd-article') }}
@@ -88,14 +89,14 @@
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if title %}
+  {% if label %}
     {% if not page %}
       <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     {% else %}
       <h1{{ title_attributes.addClass('cd-page-title') }}>
-        {{ title }}
+        {{ label }}
       </h1>
     {% endif %}
   {% endif %}
