@@ -89,14 +89,14 @@
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if label %}
+  {% if title %}
     {% if not page %}
       <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        <a href="{{ url }}" rel="bookmark">{{ title }}</a>
       </h2>
     {% else %}
       <h1{{ title_attributes.addClass('cd-page-title') }}>
-        {{ label }}
+        {{ title }}
       </h1>
     {% endif %}
   {% endif %}
