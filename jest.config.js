@@ -1,7 +1,11 @@
 const E2E_MODE = process.env.npm_lifecycle_event === 'e2e';
 
 const config = {
-  verbose: true
+  verbose: true,
+  preset: 'babel-jest',
+  transform: {
+    "^.+\\.(js|jsx)$": "babel-jest",
+  },
 };
 
 // E2E requires a special preset
