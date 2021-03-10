@@ -104,9 +104,17 @@ function common_design_preprocess_page(&$variables) {
 function common_design_preprocess_node(&$variables) {
   $view_mode = $variables['view_mode'] ?? '';
 
+  // Get the list of node view modes for which to use the pre-rendered page
+  // title instead of the normal page title block. This is an associative array
+  // keyed by view modes and with either the view mode as value when enabled
+  // or 0 otherwise. If not set, enable the behavior for the full view-mode.
+  $view_modes = theme_get_setting('common_design_node_title');
+  if (!isset($view_modes)) {
+    $view_modes = ['full' => 'full'];
+  }
+
   // Prepare the title and local tasks so we have better control over where
   // to display them for content in full node.
-  $view_modes = theme_get_setting('common_design_node_title');
   if (!empty($view_modes[$view_mode])) {
     $variables['title'] = common_design_get_block_render_array('page_title_block');
     $variables['local_tasks'] = common_design_get_block_render_array('local_tasks_block');
