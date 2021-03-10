@@ -1,14 +1,10 @@
-// import env from './env';
+import env from './env';
 
-baseUrl='https://commondesign.test';
-timeout=10000;
-
-jest.setTimeout(timeout);
-
+jest.setTimeout(env.timeout);
 
 describe('SearchDropdown', () => {
   beforeAll(async () => {
-    await page.goto(baseUrl);
+    await page.goto(`${env.baseUrl}`);
   });
 
   it('should expand when clicked', async () => {
