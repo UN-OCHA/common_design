@@ -1,4 +1,4 @@
-# OCHA Common Design System v2
+# OCHA Common Design System v3
 
 - Full-width header and footer
 - Full-width components
