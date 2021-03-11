@@ -1,0 +1,125 @@
+.cd-styled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cd-styled-list > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cd-blue-grey);
+}
+
+.cd-styled-list__image {
+  display: flex;
+  align-items: center;
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-styled-list__image {
+    display: block;
+  }
+}
+
+/* Microsoft Edge Browser 15+ - @supports method */
+@supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) {
+  .cd-styled-list__image {
+    display: block;
+  }
+}
+
+.cd-styled-list__image--rounded {
+  min-width: 2rem;
+  min-height: 2rem;
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.cd-styled-list__image img {
+  width: 100%;
+}
+
+.cd-styled-list__image svg {
+  width: 100%;
+  min-width: 2rem;
+  min-height: 2rem;
+  max-width: 4rem;
+  max-height: 4rem;
+  fill: var(--cd-ocha-blue);
+}
+
+.cd-styled-list__container {
+  flex: 1 1 0%;
+}
+
+.cd-styled-list__title,
+.cd-styled-list__title a {
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: block;
+  margin: 0 0 1rem;
+}
+
+.cd-styled-list__footer {
+  flex: 1 0 100%;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+@media (min-width: 576px) {
+
+  .cd-styled-list > * {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .cd-styled-list__image {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+
+  .cd-styled-list__image svg {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+
+  .cd-styled-list__date {
+    flex: 0 0 50%;
+    padding: 0.5rem 1rem 0.5rem 0;
+  }
+
+  .cd-styled-list__footer {
+    display: flex;
+    align-items:center;
+    flex: 0 1 auto;
+    padding-right: 0;
+    margin-top: 0;
+  }
+
+  /* List displayed as a grid */
+  .cd-grid.cd-styled-list > * {
+    flex-wrap: wrap;
+  }
+
+  .cd-grid.cd-styled-list .cd-styled-list__footer {
+    flex: 1 0 100%;
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .cd-layout-sidebar-first .cd-styled-list > * {
+    flex-wrap: wrap;
+  }
+
+  .cd-layout-sidebar-first .cd-styled-list__footer {
+    flex: 1 0 100%;
+    display: block;
+  }
+}

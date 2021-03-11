@@ -1,0 +1,32 @@
+<link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
+<link rel=stylesheet href="../cd.css" type="text/css" media=screen>
+
+<script>document.documentElement.className = document.addEventListener ? "js" : "no-js";</script>
+
+
+    <div class="cd-search--inline">
+
+      <div class="cd-search--inline__form" aria-labelledby="cd-search--inline__btn" data-cd-toggable="Search" data-cd-component="cd-search--inline" data-cd-logo="search" data-cd-focus-target="cd-search--inline" role="search">
+
+      <h2 class="visually-hidden">Search form</h2>
+
+        <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+          <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+            <label for="edit-keys" class="visually-hidden">Search</label>
+            <input title="Enter the terms you wish to search for." placeholder="What are you looking for?" class="cd-search--inline__input form-search" id="cd-search--inline" type="search" name="keys" value="" size="15" maxlength="128">
+          </div>
+          <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+            <button class="cd-search--inline__submit" value="Search" type="submit" id="edit-submit">
+              <svg class="cd-icon cd-icon--search" aria-hidden="true" focusable="false" width="16" height="16">
+                <use xlink:href="#cd-icon--search"></use>
+              </svg>
+              <span class="visually-hidden">Search</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+<script src="../cd-dropdown/cd-dropdown.js" charset="utf-8"></script>
+

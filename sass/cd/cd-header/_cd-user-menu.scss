@@ -16,10 +16,11 @@
   // Logo icon before the button/link label.
   // @todo add proper classes to make it more robust.
   svg + span {
-    margin-left: 10px;
+    [dir='ltr'] & {
+      margin-left: 10px;
+    }
 
     [dir='rtl'] & {
-      margin-left: 0;
       margin-right: 10px;
     }
   }
@@ -56,7 +57,7 @@
 
 .cd-user-menu__item {
   background: transparent;
-  color: $cd-white-text-color;
+  color: $cd-white;
   height: $cd-global-header-height;
   line-height: $cd-global-header-height;
   padding: 0 15px;
@@ -82,7 +83,7 @@
 
   // Separator.
   &::after {
-    background: $cd-light-blue-border-color;
+    background: $cd-blue--light;
     height: calc(#{$cd-global-header-height}/3);
     width: 2px;
     content: '';
@@ -98,7 +99,7 @@
   }
 
   &:focus {
-    outline: 3px solid $cd-bright-blue;
+    outline: 3px solid $cd-blue--bright;
     outline-offset: -2px;
   }
 
@@ -130,7 +131,13 @@
 }
 
 .cd-global-header__user-menu > .menu {
-  padding-left: 0;
+  [dir='ltr'] & {
+    padding-left: 0;
+  }
+
+  [dir='rtl'] & {
+    padding-right: 0;
+  }
 }
 
 .cd-global-header .menu {

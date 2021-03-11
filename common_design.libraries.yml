@@ -29,19 +29,39 @@ cd-ocha-services:
 cd-alert:
   css:
     component:
-      components/cd-alert/cd-alert.css: { preprocess:false }
+      components/cd-alert/cd-alert.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
-cd-article-teaser:
+cd-article:
   css:
     component:
-      components/cd-article-teaser/cd-article-teaser.css: {}
+      components/cd-article/cd-article.css: {}
+
+cd-author:
+  css:
+    component:
+      components/cd-author/cd-author.css: {}
 
 cd-banner:
   css:
     component:
       components/cd-banner/cd-banner.css: {}
+
+cd-bleed:
+  header: true
+  js:
+    components/cd-bleed/cd-bleed.js: {}
+  css:
+    component:
+      components/cd-bleed/cd-bleed.css: { weight: 1 }
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-block-title:
+  css:
+    component:
+      components/cd-block-title/cd-block-title.css: {}
 
 cd-bullet-list:
   css:
@@ -57,6 +77,26 @@ cd-button:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-byline:
+  css:
+    component:
+      components/cd-byline/cd-byline.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-caption:
+  css:
+    component:
+      components/cd-caption/cd-caption.css: {}
+
+cd-card:
+  css:
+    component:
+      components/cd-card/cd-card.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+    - common_design/cd-object-fit
+
 cd-date:
   css:
     component:
@@ -64,10 +104,32 @@ cd-date:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-event:
+  css:
+    component:
+      components/cd-event/cd-event.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-facets:
+  css:
+    component:
+      components/cd-facets/cd-facets.css: {}
+
 cd-filter:
   css:
     component:
       components/cd-filter/cd-filter.css: {}
+
+cd-flow:
+  css:
+    component:
+      components/cd-flow/cd-flow.css: {}
+
+cd-form:
+  css:
+    component:
+      components/cd-form/cd-form.css: {}
 
 cd-grid:
   css:
@@ -81,15 +143,36 @@ cd-hero:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-hero--style-one:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-one.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-hero--style-two:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-two.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-hero--style-three:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-three.css: {}
+  dependencies:
+    - common_design/cd-hero
+
 cd-image-grid:
   css:
     component:
       components/cd-image-grid/cd-image-grid.css: {}
 
-cd-list:
+cd-link-list:
   css:
     component:
-      components/cd-list/cd-list.css: {}
+      components/cd-link-list/cd-link-list.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
@@ -97,6 +180,25 @@ cd-pagination:
   css:
     component:
       components/cd-pagination/cd-pagination.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-read-more:
+  css:
+    component:
+      components/cd-read-more/cd-read-more.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-select-a11y:
+  css:
+    theme:
+      components/cd-select-a11y/cd-select-a11y.css: {}
+
+cd-styled-list:
+  css:
+    component:
+      components/cd-styled-list/cd-styled-list.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
@@ -110,10 +212,27 @@ cd-table:
     - common_design/css-vars-ponyfill
     - common_design/array-from-polyfill
 
+cd-tabs:
+  css:
+    component:
+      components/cd-tabs/cd-tabs.css: {}
+  dependencies:
+    - common_design/css-vars-polyfill
+
 cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
+
+cd-title-list:
+  css:
+    component:
+      components/cd-title-list/cd-title-list.css: {}
+
+cd-toc:
+  css:
+    component:
+      components/cd-toc/cd-toc.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
 
@@ -124,6 +243,28 @@ cd-user-list:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-typography:
+  css:
+    component:
+      components/cd-typography/cd-typography.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-utilities:
+  css:
+    component:
+      components/cd-utilities/cd-utilities.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
+cd-object-fit:
+  header: true
+  js:
+    js/cd-object-fit.js: { attributes: { nomodule: true } }
+  dependencies:
+    - core/drupal
+    - core/modernizr
 
 # The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
 cd-polyfill:
@@ -142,3 +283,4 @@ css-vars-ponyfill:
 array-from-polyfill:
   js:
     js/array-from-polyfill.js: { attributes: { nomodule: true } }
+

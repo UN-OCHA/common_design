@@ -1,0 +1,16 @@
+@media (min-width: 1024px) {
+  .cd-hero--style-two .cd-hero__container {
+    padding: 2rem 3.75rem;
+    background-color: var(--cd-white);
+  }
+
+  .cd-hero--style-two .cd-hero__container .cd-hero__title,
+  .cd-hero--style-two .cd-hero__container .cd-hero__description {
+    color: var(--cd-grey--dark);
+  }
+
+  .cd-hero--style-two .cd-hero__title,
+  .cd-hero--style-two .cd-hero__description {
+    color: var(--cd-grey--dark);
+  }
+}

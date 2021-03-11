@@ -76,7 +76,7 @@ function sassCompileTask() {
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(postcss([
       prefix({
-        browsers: ['>1%', 'iOS 9'],
+        browsers: ['>1%', 'last 3 versions'],
         cascade: false,
       }),
       cssnano(),

@@ -1,17 +1,81 @@
 .cd-banner {
-  margin: 0;
-  height: 16rem;
-  width: 100%;
+  text-align: center;
+  height: 24rem; /* 384px */
+  overflow: hidden;
+  position: relative;
 }
 
 .cd-banner__image {
+  display: block;
   width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
+  height: 24rem; /* 384px */
+  max-width: 100%;
 }
 
-.cd-banner__caption {
-  text-align: right;
-  font-size: 0.9rem;
-  font-style: italic;
+@supports (object-fit: cover) {
+  .cd-banner__image {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-banner__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @supports (object-fit: cover) {
+    .cd-banner__image {
+      transform: none;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  .cd-banner__image {
+    height: auto;
+  }
+
+  .cd-bleed--background-only .cd-banner__image {
+    width: auto;
+  }
+}
+
+/* Microsoft Edge Browser 15+ - @supports method */
+@supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) {
+  .cd-banner__image {
+    height: auto;
+  }
+
+  .cd-bleed--background-only .cd-banner__image {
+    width: auto;
+  }
+  /* Exclude for Edge 16+ */
+  @supports (object-fit: cover) {
+    .cd-banner__image {
+      height: inherit;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  @supports (object-fit: cover) {
+    .cd-banner__image {
+      object-fit: none;
+    }
+
+    .cd-bleed .cd-banner__image {
+      object-fit: cover;
+    }
+
+    .cd-bleed--background-only .cd-banner__image {
+      object-fit: none;
+    }
+  }
 }

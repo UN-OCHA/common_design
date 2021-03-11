@@ -1,11 +1,22 @@
-{{ attach_library('common_design/cd-filter') }}
+{{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-button') }}
+{{ attach_library('common_design/cd-dropdown') }}
+{{ attach_library('common_design/cd-filter') }}
 
-<div class="cd-filter">
-  <div class="cd-filter__form">
+<div{{ attributes
+  .setAttribute('id', 'cd-filter')
+  .setAttribute('data-cd-toggable','Modify your search'|t)
+  .setAttribute('data-cd-icon', 'arrow-down')
+  .setAttribute('data-cd-component', 'cd-filter')
+  .setAttribute('data-cd-toggable-keep', 'true')
+  .addClass('cd-filter cd-filter--horizontal')
+  }}>
+  <div class="cd-filter__container [ cd-flow ]">
     <h2 class="visually-hidden">Filter results</h2>
-    <p>Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
-    <form>
+
+    <p class="cd-max-width">Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
+
+    <form class="cd-filter__form [ cd-flow ]">
       <div class="cd-filter__group">
         <label for="published-date-range">Date Range</label>
         <label class="visually-hidden" for="published-date-start">Start date</label>
@@ -20,10 +31,10 @@
           <option value="opt2">Option two with a really long option title</option>
           <option value="opt3">Option three</option>
         </select>
-        <span class="spinner disabled">
-              <div class="double-bounce1"></div>
-              <div class="double-bounce2"></div>
-            </span>
+        <div class="spinner disabled">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
       </div>
       <div class="cd-filter__group">
         <fieldset>
@@ -50,8 +61,14 @@
       </div>
 
       <div class="cd-export">
-        <button id="export-xlsx-" class="cd-button cd-button--export export-xlsx">Export to XLSX</button>
+        <button type="button" class="cd-button cd-button--uppercase cd-button--export cd-button--icon">
+          <span class="cd-button__text">Export</span>
+          <svg class="cd-icon cd-icon--arrow-down" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--arrow-down"></use>
+          </svg>
+        </button>
       </div>
+
     </form>
   </div>
 </div>

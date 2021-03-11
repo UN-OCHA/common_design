@@ -78,36 +78,54 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-layout-with-section-sidebar'
+    'cd-article'
   ]
 %}
-{{ attach_library('classy/node') }}
+{{ attach_library('common_design/cd-article') }}
+{{ attach_library('common_design/cd-author') }}
+{{ attach_library('common_design/cd-typography') }}
+
+{% set unochaDate = node.getCreatedTime|date('j F Y') %}
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+  {% if title %}
+    {% if not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+      </h2>
+    {% else %}
+      {# This is not wrapped as this renders the page title block which
+         already wraps the node title in a <h1>. #}
+      {{ title }}
+    {% endif %}
   {% endif %}
   {{ title_suffix }}
 
+  {{ local_tasks }}
+
   {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
+    <footer class="cd-author node__meta [ cd-bumper ]">
+      {% if author_picture %}
+        <div class="cd-author__image cd-author__image--rounded">
+          {{ author_picture }}
+        </div>
+      {% endif %}
+      <div class="cd-author__content">
+        <div{{ author_attributes.addClass('node__submitted') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ unochaDate }}{% endtrans %}
+          {{ metadata }}
+        </div>
       </div>
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('node__content') }}>
+  <div{{ content_attributes }}>
 
     {{ content }}
 
 {#    {% block section %}#}
-{#      <section class="cd-layout-two-col">#}
+{#      <div class="cd-layout-two-col">#}
 
 {#        <div class="cd-layout-main-content">#}
 {#          {{ content }}#}
@@ -117,7 +135,7 @@
 {#          Other fields on the node can be printed here to create a faux sidebar layout.#}
 {#        </div>#}
 
-{#      </section>#}
+{#      </div>#}
 {#    {% endblock %}#}
 
   </div>

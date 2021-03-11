@@ -1,43 +1,70 @@
-.cd-grid .cd-teaser {
-  flex-wrap: wrap;
+.cd-teaser {
+  border-bottom: 1px solid var(--cd-blue-grey);
+  padding-bottom: 1rem;
 }
 
 .cd-teaser__image {
-  width: 100%;
-  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .cd-teaser__image img {
   width: 100%;
+  max-width: 100%;
 }
 
 .cd-teaser__container {
-  padding: 1rem 1rem 0;
+  flex: 1 1 0%;
 }
 
-.cd-teaser__title {
-  margin: 0 0 0.5rem;
-}
-
+.cd-teaser__title,
 .cd-teaser__title a {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
   display: block;
+  margin-top: 0;
 }
 
-.cd-teaser__description {
-  margin: 0 0 1rem;
+/* Override rule for cd-bumper on .cd-teaser__container to prevent padding-left on mobile. */
+@media (max-width: 575px) {
+  [dir='ltr'] .cd-bumper .cd-teaser__container {
+    padding-left: 0;
+  }
 }
 
-.cd-teaser__date {
-  padding: 0 0 1rem;
+@media (min-width: 576px) {
+  .cd-teaser {
+    --cd-bumper-space: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  /* For IE11 as the CSS custom property for cd-bumper above will not work */
+  @media all and (-ms-high-contrast: none) {
+    .cd-teaser {
+      padding-left: 2rem;
+    }
+  }
+
+  .cd-teaser__container {
+    padding-left: unset;
+  }
+
+  .cd-teaser__image {
+    max-width: 16rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cd-teaser__footer {
+    align-self: flex-end;
+  }
 }
 
-.cd-teaser__footer {
-  display: flex;
-  align-items: center;
-}
-
-.cd-teaser__link {
-  text-align: right;
+@media (min-width: 768px) {
+  .cd-teaser__image {
+    max-width: 24rem;
+  }
 }

@@ -1,0 +1,103 @@
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='date'],
+input[type='file'],
+textarea {
+  width: 100%;
+  max-width: 100%;
+  color: var(--cd-grey--dark);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='date'],
+  input[type='file'],
+  textarea {
+    width: auto;
+  }
+}
+
+label {
+  font-weight: 700;
+}
+
+input.error,
+textarea.error,
+select.error {
+  border-color: var(--cd-highlight-red);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cd-blue--bright);
+  outline-offset: -2px;
+}
+
+/* Form elements */
+select {
+  width: 100%;
+  max-width: 100%;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input:-ms-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input::-webkit-search-cancel-button {
+  position: relative;
+  right: 10px;
+}
+
+/* Safari fix */
+input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.cd-form--inline {
+  margin-bottom: 1rem;
+}
+
+.cd-form--inline,
+.cd-form--inline .cd-form__item {
+  display: flex;
+}
+
+.cd-form--inline label {
+  margin-inline-end: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  [dir='ltr'] .cd-form--inline label {
+    margin-right: 0.5rem;
+  }
+
+  [dir='rtl'] .cd-form--inline label {
+    margin-left: 0.5rem;
+  }
+}
+
+.cd-form--inline select {
+  width: auto;
+}

@@ -5,39 +5,26 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-soft-footer {
-  background: rgba($cd-ocha-blue, 0.9);
-  color: $cd-white-text-color;
+  background: rgba($cd-rgb-ocha-blue, 0.9);
+  color: $cd-white;
   padding: 24px 0;
   text-align: center;
-  font-family: $cd-font;
+
+  h2 {
+    color: $cd-white;
+  }
 
   a {
-    color: $cd-white-text-color;
+    color: $cd-white;
 
     &:hover,
     &:focus {
-      color: $cd-white-text-color;
+      color: $cd-white;
     }
 
     &:focus {
-      outline: 3px solid $cd-bright-blue;
+      outline: 3px solid $cd-blue--bright;
     }
-  }
-}
-
-.cd-soft-footer__button {
-  display: inline-block;
-  background: $cd-highlight-red;
-  color: $cd-white-text-color;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 24px;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
-
-  &:hover,
-  &:focus {
-    background: darken($cd-highlight-red, 5%);
   }
 }
 
@@ -56,6 +43,6 @@
 
 @include desktop {
   .cd-soft-footer {
-    padding: 32px 0;
+    padding: 2rem 0;
   }
 }

@@ -38,10 +38,10 @@
  */
 .cd-global-header__dropdown {
   @include z-index(dropdown);
-  background: $cd-primary-bg-color;
+  background: $cd-primary;
   left: 0;
   position: absolute;
-  color: $cd-white-text-color;
+  color: $cd-white;
 
   .no-js & {
     position: relative;
@@ -60,7 +60,7 @@
     height: 0;
     border-style: solid;
     border-width: 0 6px 6px;
-    border-color: transparent transparent $cd-primary-bg-color;
+    border-color: transparent transparent $cd-primary;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -73,7 +73,14 @@ button[aria-expanded] {
     fill: $cd-white;
     width: 9px;
     height: 9px;
-    margin-left: 4px;
+
+    [dir='ltr'] & {
+      margin-left: 4px;
+    }
+
+    [dir='rtl'] & {
+      margin-right: 4px;
+    }
   }
 }
 

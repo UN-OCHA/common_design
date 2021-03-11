@@ -30,12 +30,12 @@
 
   &:hover,
   &:focus {
-    background: $cd-white-bg-color;
+    background: $cd-white;
     outline: none;
-    color: $cd-dark-blue;
+    color: $cd-blue--dark;
 
     svg {
-      fill: $cd-dark-blue;
+      fill: $cd-blue--dark;
     }
   }
 
@@ -57,11 +57,19 @@
       height: 0;
       border-style: solid;
       border-width: 0 6px 6px;
-      border-color: transparent transparent $cd-border-color;
+      border-color: transparent transparent $cd-blue-grey;
       position: absolute;
       bottom: 0;
-      left: 50%;
-      margin-left: -6px;
+
+      [dir='ltr'] & {
+        left: 50%;
+        margin-left: -6px;
+      }
+
+      [dir='rtl'] & {
+        right: 50%;
+        margin-right: -6px;
+      }
     }
 
     svg {
@@ -70,21 +78,21 @@
 
     &:hover,
     &:focus {
-      background: $cd-white-bg-color;
+      background: $cd-white;
       outline: none;
     }
   }
 }
 
 .cd-search__btn-label {
-  font-size: 12px;
-  font-weight: bold;
+  font-size: $cd-font-size--tiny;
+  font-weight: 700;
   text-transform: uppercase;
   display: none;
 }
 
 .cd-search__form {
-  background: $cd-mid-bluey-grey;
+  background: $cd-blue-grey;
   height: $cd-site-header-height;
   left: 0;
   position: absolute;
@@ -111,40 +119,44 @@
 .cd-search__input[type='search'],
 .cd-search__input[type='text'] {
   -webkit-appearance: none;
-  background: $cd-white-bg-color;
+  background: $cd-white;
   border: 0;
   border-radius: 0;
   box-shadow: none;
   color: $cd-default-text-color;
-  @include font-size($cd-font-size-base);
+  font-size: $cd-font-size--base;
   height: calc(#{$cd-site-header-height} - 16px); //Padding.
-  padding: 0 45px 0 25px;
   width: 100%;
   box-sizing: border-box;
+  padding: 0 45px 0 25px;
+
+  [dir='rtl'] & {
+    padding: 0 25px 0 45px;
+  }
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 4px rgba($cd-mid-grey, 0.7);
+    box-shadow: 0 0 4px rgba($cd-rgb-grey--mid, 0.7);
   }
 }
 
 .cd-search__input::-webkit-input-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
 .cd-search__input::-moz-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
 .cd-search__input:-ms-input-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
 .cd-search__input:-moz-placeholder {
-  color: $cd-dark-grey;
+  color: $cd-grey--dark;
   font-style: italic;
 }
 
@@ -160,26 +172,33 @@
 
 .cd-search__submit {
   align-items: center;
-  background: $cd-dark-grey;
+  background: $cd-grey--dark;
   border: 0;
-  color: $cd-white-text-color;
+  color: $cd-white;
   display: flex;
-  @include font-size($cd-font-size-base);
-  font-weight: bold;
+  font-size: $cd-font-size--base;
+  font-weight: 700;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   width: 46px;
   margin: 0;
   padding: 0;
   position: absolute;
-  right: $cd-container-padding;
   text-transform: uppercase;
   top: 8px;
+
+  [dir='ltr'] & {
+    right: $cd-container-padding;
+  }
+
+  [dir='rtl'] & {
+    left: $cd-container-padding;
+  }
 
   svg {
     box-sizing: content-box;
     width: 26px;
     height: 26px;
-    fill: $cd-white-text-color;
+    fill: $cd-white;
     margin: 0 auto;
   }
 
@@ -198,10 +217,20 @@
 
   .cd-search__input {
     padding: 0 44px 0 30px;
+
+    [dir='rtl'] & {
+      padding: 0 30px 0 44px;
+    }
   }
 
   .cd-search__submit {
-    right: $cd-container-padding-tablet;
+    [dir='ltr'] & {
+      right: $cd-container-padding-tablet;
+    }
+
+    [dir='rtl'] & {
+      left: $cd-container-padding-tablet;
+    }
   }
 }
 
@@ -209,7 +238,14 @@
   .cd-search__btn svg {
     width: 22px;
     height: 22px;
-    padding: 0 4px 0 0;
+
+    [dir='ltr'] & {
+      padding-right: 4px;
+    }
+
+    [dir='rtl'] & {
+      padding-left: 4px;
+    }
   }
 
   .cd-search__btn-label {
@@ -218,16 +254,17 @@
 }
 
 @include xlarge {
-  .cd-search__form {
-    left: 8px;
-    right: 8px;
-  }
-
   .cd-search__form form {
     padding: 8px $cd-container-padding-xlarge;
   }
 
   .cd-search__submit {
-    right: $cd-container-padding-xlarge;
+    [dir='ltr'] & {
+      right: $cd-container-padding-xlarge;
+    }
+
+    [dir='rtl'] & {
+      left: $cd-container-padding-xlarge;
+    }
   }
 }

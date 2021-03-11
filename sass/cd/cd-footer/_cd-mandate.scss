@@ -17,6 +17,10 @@
   margin: 0 auto 16px;
   background: url('../img/logos/ocha-lockup.svg') 0 center no-repeat;
 
+  [dir='rtl'] & {
+    background-position: 100% 0;
+  }
+
   .no-svg & {
     background: url('../img/logos/ocha-lockup@149x37.png') 0 center no-repeat;
   }
@@ -26,7 +30,16 @@
     float: left;
     margin: -4px $cd-container-padding 0 auto;
     padding-right: $cd-container-padding;
-    border-right: 1px solid $cd-border-color;
+    border-right: 1px solid $cd-blue-grey;
+
+    [dir='rtl'] & {
+      float: right;
+      margin: -4px auto 0$cd-container-padding;
+      padding-right: 0;
+      padding-left: $cd-container-padding;
+      border-right-width: 0;
+      border-left: 1px solid $cd-blue-grey;
+    }
   }
 }
 
@@ -38,6 +51,10 @@
   @include desktop {
     text-align: left;
     padding: 0;
+
+    [dir='rtl'] & {
+      text-align: right;
+    }
   }
 }
 
@@ -54,6 +71,11 @@
     padding-right: $cd-container-padding-xlarge;
     margin: 0;
     max-width: 100%;
+
+    [dir='rtl'] & {
+      text-align: right;
+      padding-left: $cd-container-padding-xlarge;
+      padding-right: 173px; // Width of logo.
+    }
   }
 }
-
