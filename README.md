@@ -72,10 +72,49 @@ Run `gulp sass` to compile the CSS only.
 
 Preferably use Jenkins to run the Gulp task on build to generate the CSS. If this is possible on your project, add the `css/` folder to the `.gitignore` file and delete generated CSS from the repo.
 
+## Fonts
+
+This projects defines a few `css custom properties` for font families that use google fonts in `sass/cs/_cd-variables`, in accordance to the brand visual identity as explained at https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1.
+
+The fonts are added via libraries (ex: `common_design/fonts-arabic`) defined in `common_design.libraries.yml`.
+
+The fonts can be disabled in the `common_design_subtheme` for example by adding an override in the `common_design_subtheme.info.yml`:
+
+```yaml
+libraries-override:
+  # Disable Arabic fonts.
+  common_design/fonts-arabic: false
+```
+
+Fonts for other languages like Chinese can be added in the `common_design_subtheme.libraries.yml`:
+
+```yaml
+# Chinese.
+# @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/chinese
+fonts-chinese:
+  css:
+    theme:
+      //fonts.googleapis.com/css2?family=Noto+Sans+CJK+SC:wght@400;700&display=swap: { type: external, minified: true }
+
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+  dependencies:
+    - common_design_subtheme/fonts-chinese
+```
+
+and then adding a new font-family in the `common_design_subtheme/sass/cd/_cd-variables.scss`:
+
+```css
+:root {
+  --cd-font--noto-cjk-sc: 'Noto Sans', sans-serif;
+}
+```
 
 ## JS
 
-Javascript files should be added to `js/` and defined as a library in `common_design.ibraries.yml`
+Javascript files should be added to `js/` and defined as a library in `common_design.libraries.yml`
 
 Instead of grouping all JS in one file, each component has its own JS file associated with it. They have been built to be reused, allowing you to mix and match any combination of JS files and use each as a dependency without altering the original file. The general pattern to reference the method of a behavior is:
 
@@ -150,7 +189,7 @@ The icons are black by default. If you need another color, it's best to copy the
 ```
 Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-icon--arrow-down`. We can create associated CSS rules to control dimension and fill.
 
-Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load. 
+Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load.
 If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
 
 We're using https://github.com/jkphl/gulp-svg-sprite. See https://una.im/svg-icons for more details.
