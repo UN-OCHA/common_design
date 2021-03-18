@@ -79,12 +79,12 @@ $a11y-suggestion-border:      $gray-5 !default;
       color: $gray-4;
     }
 
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
 
-    &[aria-expanded="true"] .icon-select {
+    &[aria-expanded='true'] .icon-select {
       transform: rotate(180deg);
     }
   }
@@ -136,7 +136,7 @@ $a11y-suggestion-border:      $gray-5 !default;
 
 
     input {
-      outline: 2px solid $cd-bright-blue;
+      outline: 2px solid $cd-blue--bright;
       width: 100%;
     }
   }
@@ -176,7 +176,7 @@ $a11y-suggestion-border:      $gray-5 !default;
       outline-offset: -1px;
     }
 
-    &[aria-selected="true"] {
+    &[aria-selected='true'] {
       background-color: $a11y-suggestion-bg-selected;
       color: $a11y-suggestion-color-hover;
       position: relative;
@@ -233,6 +233,6 @@ $a11y-suggestion-border:      $gray-5 !default;
 
 .btn:focus,
 .btn.focus {
-  outline: 3px solid $cd-bright-blue;
+  outline: 3px solid $cd-blue--bright;
   outline-offset: -3px;
 }

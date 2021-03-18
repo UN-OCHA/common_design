@@ -21,7 +21,6 @@
 .cd-bleed--background-only {
   position: relative;
   z-index: 1;
-  padding: 1em 0;
 }
 
 .cd-bleed--background-only:before {
@@ -38,8 +37,15 @@
   z-index: -1;
 }
 
-@media screen and (min-width: 1024px) {
-  .cd-bleed--background-only {
-    padding: 2em 0;
+.cd-bleed--background-only {
+  background-color: var(--cd-ocha-blue);
+}
+
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+/* Avoid overflow due to scrollbars */
+  body {
+    overflow-x: hidden;
   }
 }

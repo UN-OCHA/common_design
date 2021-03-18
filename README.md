@@ -1,4 +1,4 @@
-# OCHA Common Design System v2
+# OCHA Common Design System v3
 
 - Full-width header and footer
 - Full-width components
@@ -17,7 +17,7 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Common Footer
 * Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://thenounproject.com/ochavisual/))
 * Variables for breakpoints, colours, font sizes, fonts, measurements and z-index
-* Mixins for clearfix, REM font sizes and media queries
+* Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
 * See [common_design implementation notes](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
 
@@ -33,9 +33,8 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 **Additional components:**
 
 * Typography
-* Basic form styles
 * Component library
-   * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials, or used with `@extend` Sass rule.
+   * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials.
    * Requires Drupal [Components module](https://www.drupal.org/project/components)
    * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples.
 * Favicons

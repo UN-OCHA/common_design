@@ -4,9 +4,18 @@
 
 .cd-ocha {
   float: left;
+  text-align: left;
+
+  [dir='rtl'] & {
+    text-align: right;
+  }
 
   .no-js & {
     float: none;
+  }
+
+  h2 {
+    color: $cd-white;
   }
 }
 
@@ -15,7 +24,7 @@
   background: transparent;
   color: $cd-white;
   display: flex;
-  @include font-size($cd-font-size-tiny);
+  font-size: $cd-font-size--tiny;
   height: $cd-global-header-height;
   padding: 0;
   position: relative;
@@ -37,7 +46,13 @@
     margin: auto; // Center vertically in macOS 10
 
     @include tablet {
-      margin-left: 4px;
+      [dir='ltr'] & {
+        margin-left: 4px;
+      }
+
+      [dir='rtl'] & {
+        margin-right: 4px;
+      }
     }
   }
 }
@@ -50,7 +65,13 @@
   fill: $cd-white;
 
   @include tablet {
-    margin-right: 4px;
+    [dir='ltr'] & {
+      margin-right: 4px;
+    }
+
+    [dir='rtl'] & {
+      margin-left: 4px;
+    }
   }
 }
 
@@ -89,7 +110,6 @@
       grid-gap: 100px;
     }
   }
-
 }
 
 .cd-ocha-dropdown__section {
@@ -138,7 +158,7 @@
 }
 
 .cd-ocha-dropdown__heading {
-  color: $cd-blue--lighter;
+  color: $cd-blue--light;
   margin: 0 0 10px;
   padding-bottom: 2px;
 
@@ -160,7 +180,7 @@
 
 .cd-ocha-dropdown__link {
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 12px;
   padding: 0;
 
@@ -186,7 +206,7 @@
 }
 
 .cd-ocha-dropdown__see-all {
-  @include font-size($cd-font-size-small);
+  font-size: $cd-font-size--small;
   display: inline-block;
   width: 100%;
   padding: 10px;
@@ -197,4 +217,10 @@
     left: 0;
     right: 0;
   }
+}
+
+// When JS is disabled, OCHA Services moves to the footer.
+// This prevents the .cd-footer anchor rule from affecting the link colour.
+.no-js .cd-footer .cd-ocha-dropdown__see-all {
+  color: initial;
 }

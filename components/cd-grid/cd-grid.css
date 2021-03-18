@@ -27,7 +27,6 @@
   .cd-grid > * {
     flex: 0 0 48%;
     display: flex;
-    margin-bottom: 0;
   }
 
   .cd-grid-2-col.cd-grid--grow > *:last-child {
@@ -65,7 +64,6 @@
 
   .cd-grid > *:nth-child(odd) {
     margin-right: unset;
-    clear: initial;
   }
 
   .cd-grid-2-col > * {
@@ -94,6 +92,9 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(200px, 1fr));
       grid-gap: 1rem;
+    }
+
+    .cd-grid > * {
       margin-bottom: 0;
     }
 

@@ -1,12 +1,3 @@
-{% if is_front %}
-  <h1>
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
-      <span class="visually-hidden">{{ site_name }}</span>
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" width="100%" height="60px" />
-    </a>
-  </h1>
-{% else %}
-  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
-    <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" width="100%" height="60px" />
-  </a>
-{% endif %}
+<a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
+  <img src="{{ site_logo }}" alt="{{ site_name }}" aria-label="{{ 'Home'|t }}" width="100%" height="60px" />
+</a>

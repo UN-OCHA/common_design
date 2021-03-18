@@ -1,0 +1,134 @@
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='date'],
+input[type='file'],
+textarea {
+  width: 100%;
+  max-width: 100%;
+  color: var(--cd-grey--dark);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='date'],
+  input[type='file'],
+  textarea {
+    width: auto;
+  }
+}
+
+label {
+  font-weight: 700;
+}
+
+input.error,
+textarea.error,
+select.error {
+  border-color: var(--cd-highlight-red);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cd-blue--bright);
+  outline-offset: -2px;
+}
+
+/* Form elements */
+select {
+  width: 100%;
+  max-width: 100%;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input:-ms-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+input::-webkit-search-cancel-button {
+  position: relative;
+  right: 10px;
+}
+
+/* Safari fix */
+input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.cd-form--inline {
+  margin-bottom: 1rem;
+}
+
+.cd-form--inline,
+.cd-form--inline .cd-form__item {
+  display: flex;
+}
+
+.cd-form--inline label {
+  margin-inline-end: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* For IE11 */
+@media all and (-ms-high-contrast: none) {
+  [dir='ltr'] .cd-form--inline label {
+    margin-right: 0.5rem;
+  }
+
+  [dir='rtl'] .cd-form--inline label {
+    margin-left: 0.5rem;
+  }
+}
+
+.cd-form--inline select {
+  width: auto;
+}
+
+/*From Classy.*/
+.form-required::after {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0.3em;
+  content: '';
+  vertical-align: super;
+  /* Use a background image to prevent screen readers from announcing the text. */
+  background-image: url('../../img/icons/form-required.svg');
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid var(--cd-contrast-red);
+}
+
+/* Inline error messages. */
+.form-item--error-message::before {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  content: "";
+  vertical-align: sub;
+  background: url('../../img/icons/form-error.svg') no-repeat;
+  background-size: contain;
+}
