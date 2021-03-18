@@ -30,6 +30,7 @@ textarea {
   }
 }
 
+.field__label,
 label {
   font-weight: 700;
 }
