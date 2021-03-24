@@ -13,6 +13,7 @@ textarea {
   color: var(--cd-grey--dark);
   font-size: 1rem;
   box-sizing: border-box;
+  padding: 0.25rem;
 }
 
 @media (min-width: 768px) {
@@ -52,6 +53,7 @@ textarea:focus {
 select {
   width: 100%;
   max-width: 100%;
+  padding: 0.25rem;
 }
 
 input::-webkit-input-placeholder {
