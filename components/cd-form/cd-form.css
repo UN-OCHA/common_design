@@ -13,7 +13,8 @@ textarea {
   color: var(--cd-grey--dark);
   font-size: 1rem;
   box-sizing: border-box;
-  padding: 0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 @media (min-width: 768px) {
