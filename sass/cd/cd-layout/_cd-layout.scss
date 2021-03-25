@@ -3,7 +3,6 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 html {
-  //background: $cd-blue-grey;
   height: 100%;
 }
 
@@ -20,9 +19,8 @@ body {
 }
 
 .cd-layout-container {
-  //background: $cd-white;
   margin: 0 auto;
-  //max-width: $cd-max-body-width;
+  width: 100%;
   min-height: 100%;
   padding: 0;
 
