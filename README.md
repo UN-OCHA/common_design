@@ -22,7 +22,7 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * See [v3.0.0 Release notes](https://github.com/UN-OCHA/common_design/releases/tag/v3.0.0) and [common_design implementation notes for v2](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
 
 There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) available
-   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and remove the .git folder (all the implementation specific work should happen in the subtheme). Optionally rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/master/README.md)
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and remove the .git folder (all the implementation specific work should happen in the subtheme). Optionally rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/main/README.md)
 
 **Drupal components:**
 
