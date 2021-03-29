@@ -60,8 +60,6 @@ describe('OCHAServicesDropdown', () => {
     ];
     const otherOchaServices = await page.$$eval('.cd-ocha-dropdown__section:not(:first-child) .cd-ocha-dropdown__link a', text => { return text.map(text => text.textContent).slice(0, 8) });
     const otherOchaServicesHref = await page.$$eval('.cd-ocha-dropdown__section:not(:first-child) .cd-ocha-dropdown__link a', anchors => { return anchors.map(anchor => anchor.href).slice(0, 8) });
-    // console.log(otherOchaServices);
-    // console.log(otherOchaServicesHref);
     await expect(otherOchaServices).toEqual(otherOchaServicesCorporate);
     await expect(otherOchaServicesHref).toEqual(otherOchaServicesCorporateHref);
   });

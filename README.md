@@ -200,7 +200,7 @@ npm i
 npm run e2e
 
 # See the tests run in a visible browser window with --debug
-npm run e2e -- --debug
+HEADLESS="false" SLOWMO=100 npm run e2e
 
 # If you want to run a limited number of tests, specify a string with the -t
 # argument. It will parse all of the describe() blocks and only run tests when
