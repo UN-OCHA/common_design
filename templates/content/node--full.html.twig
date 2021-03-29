@@ -77,7 +77,8 @@
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'cd-article'
   ]
 %}
 {{ attach_library('common_design/cd-article') }}
@@ -94,9 +95,9 @@
         <a href="{{ url }}" rel="bookmark">{{ title }}</a>
       </h2>
     {% else %}
-      <h1{{ title_attributes.addClass('cd-page-title') }}>
-        {{ title }}
-      </h1>
+      {# This is not wrapped as this renders the page title block which
+         already wraps the node title in a <h1>. #}
+      {{ title }}
     {% endif %}
   {% endif %}
   {{ title_suffix }}

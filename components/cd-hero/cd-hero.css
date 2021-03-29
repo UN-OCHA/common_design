@@ -30,6 +30,7 @@
   font-size: 2rem; /* 32px */
   font-weight: 700;
   color: var(--cd-grey--dark);
+  font-family: var(--cd-font--roboto);
 }
 
 .cd-hero__description {

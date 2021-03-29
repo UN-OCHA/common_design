@@ -212,6 +212,13 @@ cd-table:
     - common_design/css-vars-ponyfill
     - common_design/array-from-polyfill
 
+cd-tag:
+  css:
+    component:
+      components/cd-tag/cd-tag.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-tabs:
   css:
     component:
