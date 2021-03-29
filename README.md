@@ -187,3 +187,18 @@ Progressive enhancement approach to layout, using Feature Queries to detect supp
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
+
+
+
+## E2E testing
+
+```sh
+# Install dependencies for your host machine.
+npm i
+
+# Run all E2E tests in headless mode. The console will output the results.
+npm run e2e
+
+# See the tests run in a visible browser window with --debug
+npm run e2e -- --debug
+```
