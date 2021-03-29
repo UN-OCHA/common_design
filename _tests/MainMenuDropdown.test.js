@@ -1,4 +1,4 @@
-import env from './env';
+import env from './_env';
 
 jest.setTimeout(env.timeout);
 
