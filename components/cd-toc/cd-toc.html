@@ -1,18 +1,25 @@
-<link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
-<link rel=stylesheet href="../cd-flow/cd-flow.css" type="text/css" media=screen>
-<link rel=stylesheet href="../cd-utilities/cd-utilities.css" type="text/css" media=screen>
-<link rel=stylesheet href="../cd-button/cd-button.css" type="text/css" media=screen>
-<link rel=stylesheet href="cd-toc.css" type="text/css" media=screen>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
+  <link rel=stylesheet href="../cd-flow/cd-flow.css" type="text/css" media=screen>
+  <link rel=stylesheet href="../cd-utilities/cd-utilities.css" type="text/css" media=screen>
+  <link rel=stylesheet href="../cd-button/cd-button.css" type="text/css" media=screen>
+  <link rel=stylesheet href="cd-toc.css" type="text/css" media=screen>
+</head>
+<body>
 <div class="cd-layout-container">
   <div class="cd-container">
     <div class="cd-toc cd-toc--float-left [ cd-flow ]">
-      <h3 class="cd-toc__title">Table of Contents</h3>
-      <ol id="cd-toc" class="cd-toc__list">
+      <h3 class="cd-toc__title" id="table-of-contents-title">Table of Contents</h3>
+      <ol id="cd-toc" class="cd-toc__list cd-toc__list--roman" aria-labelledby="table-of-contents-title">
         <li><a href="#heading-one">Example heading one</a></li>
         <li><a href="#heading-two">Example heading two</a>
           <ol>
             <li><a href="#heading-two-point-one">Example heading two point one</a></li>
+            <li><a href="#heading-two-point-two">Example heading two point two  Mauris velit lacus, malesuada consectetur tortor quis</a></li>
           </ol>
         </li>
         <li><a href="#heading-three">Example heading three</a></li>
@@ -36,6 +43,23 @@
 
       <p>Cras venenatis erat eu congue cursus. Sed suscipit elementum volutpat. Mauris velit lacus, malesuada consectetur tortor quis, scelerisque mattis elit. Pellentesque ipsum purus, malesuada sit amet purus non, posuere maximus ligula. Integer eu est a leo egestas scelerisque nec ut lacus. Proin lectus risus, sagittis ac accumsan semper, condimentum id ligula. Suspendisse potenti. Mauris dictum placerat dignissim. Cras tortor nulla, sodales quis urna ac, blandit ultrices urna. Donec lectus nisl, molestie ut vulputate rutrum, sollicitudin molestie lectus.</p>
 
+      <h4 id="heading-two-point-two">This is an example heading</h4>
+
+      <p>Cras venenatis erat eu congue cursus. Sed suscipit elementum volutpat. Mauris velit lacus, malesuada consectetur tortor quis, scelerisque mattis elit. Pellentesque ipsum purus, malesuada sit amet purus non, posuere maximus ligula. Integer eu est a leo egestas scelerisque nec ut lacus. Proin lectus risus, sagittis ac accumsan semper, condimentum id ligula. Suspendisse potenti. Mauris dictum placerat dignissim. Cras tortor nulla, sodales quis urna ac, blandit ultrices urna. Donec lectus nisl, molestie ut vulputate rutrum, sollicitudin molestie lectus.</p>
+
+      <ol>
+        <li>first item</li>
+        <li>second item  <!-- closing </li> tag not here! -->
+          <ol>
+            <li>second item first subitem</li>
+            <li>second item second subitem</li>
+            <li>second item third subitem</li>
+          </ol>
+        </li>            <!-- Here's the closing </li> tag -->
+        <li>third item</li>
+      </ol>
+
+
       <h3 id="heading-three">This is an example heading</h3>
 
       <p>Donec porttitor maximus ligula. Quisque id gravida ante. Praesent nec leo ac nibh condimentum aliquet. Duis accumsan accumsan sagittis. Maecenas fermentum nulla et purus scelerisque finibus. Pellentesque egestas dignissim hendrerit. Sed pulvinar viverra libero ac rhoncus. Nunc pretium semper nisi, a viverra quam pulvinar non. Integer laoreet malesuada rhoncus. Aenean quis gravida justo. Proin faucibus mi justo, eget auctor nisi dapibus ac. Donec congue lorem quis odio venenatis ultrices.</p>
@@ -51,7 +75,7 @@
 
     </article>
 
-
   </div>
 </div>
-
+</body>
+</html>
