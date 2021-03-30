@@ -1,21 +1,21 @@
 {
   "name": "common-design",
+  "type": "module",
   "version": "3.0.5",
   "description": "OCHA Common Design base theme for Drupal 8",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
   "license": "GPL-2.0",
-  "engines": {
-    "node": "^12.21.0",
-    "npm": "^7.6.1"
-  },
+  "main": "index.js",
   "scripts": {
-    "sass": "sass sass/styles.scss css/styles.css"
+    "sass": "sass sass/styles.scss css/styles.css --style=compressed --embed-sources",
+    "start": "node index.js"
   },
   "devDependencies": {
     "sass": "^1.32.8"
   },
-  "dependencies": {
-    "githooks": "^1.1.1"
+  "engines": {
+    "node": "^12.21.0",
+    "npm": "^7.6.1"
   }
 }
