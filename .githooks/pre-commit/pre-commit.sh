@@ -8,5 +8,5 @@
 export NODE_ENV='production'
 
 # build assets
-gulp build
+npm run sass
 git add css/styles.css

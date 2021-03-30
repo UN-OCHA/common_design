@@ -10,9 +10,12 @@
     "npm": "^7.6.1"
   },
   "scripts": {
-    "sass" : "sass sass/styles.scss css/styles.css"
+    "sass": "sass sass/styles.scss css/styles.css"
   },
   "devDependencies": {
     "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "githooks": "^1.1.1"
   }
 }
