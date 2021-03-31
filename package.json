@@ -9,9 +9,9 @@
   "main": "index.js",
   "scripts": {
     "sass:compile": "sass sass/styles.scss css/styles.css --style=expanded --embed-sources",
-    "sass:watch": "npm run sass:lint && npm run sass:compile --watch",
+    "sass:watch": "npm run sass:lint && npm run sass:compile -- --watch",
     "sass:lint": "sass-lint -c .sass-lint.yml 'sass/**/*.scss' -v -q",
-    "sass:build": "npm run sass:compile && npm run sass:lint",
+    "sass:build": "npm run sass:lint && npm run sass:compile",
     "svg:compile": "svg-sprite -c svg-sprite.config.json --dest img/icons img/icons/cd-icons-sprite.svg",
     "start": "node index.js"
   },
