@@ -1,21 +1,6 @@
 {
-  "svg": {
-    "xmlDeclaration": false,
-    "doctypeDeclaration": false,
-    "rootAttributes": { "class": "cd-icons-sprite" }
-  },
-  "mode": {
-    "css": false,
-    "view": false,
-    "defs": false,
-    "stack": false,
-    "symbol": {
-      "dest": "img/icons",
-      "sprite": "cd-icons-sprite.svg",
-      "example": true,
-      "prefix": "%s"
-    }
-  }
+  "__comment": "--svg-rootattrs https://github.com/svg-sprite/svg-sprite/blob/master/docs/command-line.md",
+  "class": "cd-icons-sprite"
 }
 
 
