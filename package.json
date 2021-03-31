@@ -13,7 +13,7 @@
     "sass:lint": "sass-lint -c .sass-lint.yml 'sass/**/*.scss' -v -q",
     "sass:build": "npm run sass:lint && npm run sass:compile",
     "js:lint": "eslint js/*.js",
-    "svg:compile": "svg-sprite --log=info --symbol --symbol-dest=img/icons --symbol-sprite=img/icons/cd-icons-sprite.svg img/icons/svg-sprite/*.svg",
+    "svg:compile": "svg-sprite --log=info --symbol --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
     "start": "node index.js"
   },
   "engines": {
