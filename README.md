@@ -39,7 +39,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
    * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples
    * Refer to [Components README](https://github.com/UN-OCHA/common_design/blob/main/components/README.md) and https://github.com/UN-OCHA/common_design/blob/main/components/
 * Favicons and OCHA assets based on https://brand.unocha.org
-* gulp.js workflow for frontend development
+* Node workflow for frontend development
   * SASS
   * Sourcemaps (see which specific Sass file contains styles during local development)
   * Autoprefixer
@@ -125,13 +125,13 @@ Using `this` works for most functions except ones which are assigned to event li
 ```
 
 
-## Gulp
+## Task management
 
-This project uses [Gulp 4](https://github.com/gulpjs/gulp#whats-new-in-40)
+This project uses some Node packages for Sass compilation, watching and linting, JS linting and SVG icon sprite generation.
 
-To see a task listing, run the following command:
+See [scripts in package.json](https://github.com/UN-OCHA/common_design/blob/main/package.json#L9)
 
-`gulp --tasks`
+Eg: `npm run sass:watch`
 
 
 ## Icons
@@ -154,12 +154,12 @@ Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-i
 Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load. 
 If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
 
-We're using https://github.com/jkphl/gulp-svg-sprite. See https://una.im/svg-icons for more details.
+We're using https://github.com/jkphl/svg-sprite node package. See https://una.im/svg-icons for more details.
 
 ### Generating the icons sprite
-As defined in the gulp task, all new icons should be placed in the `img/icons` directory.
-Run `gulp sprites` to generate a new sprite.
-This generates the sprite SVG and places it in `img/icons/icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
+As defined in the node scripts, all new icons should be placed in the `img/icons` directory.
+Run `npm run svg:sprite` to generate a new sprite.
+This generates the sprite SVG and places it in `img/icons/cd-icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
 
 
 ### Renaming icons
