@@ -55,8 +55,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 
 1. Run `nvm use` in theme folder to ensure the correct node version.
 2. Install the dependencies: `npm install`
-3. Copy `localConfig.example.json` to `localConfig.json` and specify the URL of your local Drupal environment.
-4. Run the simple gulp task to build the CSS and watch for new changes: `gulp dev`
+4. Run `npm run sass:build` task to build the CSS and watch for new changes: `npm run sass:watch`
 5. When you make commits, it will automatically run a "production" Sass build that excludes Sourcemaps
 6. For twig debug and local development see [Disable Drupal 8 caching during development
 ](https://www.drupal.org/node/2598914)
@@ -67,11 +66,11 @@ Drupal 8 core has helper classes for accessibility [Hide content properly](https
 
 This project uses [Sass](http://sass-lang.com/). To make changes edit the `.scss` files in the `sass/` folder, do NOT edit the files in `css/` directly.
 
-Run `gulp dev` in the theme folder to have gulp watch for changes and automatically rebuild the CSS.
+Run `npm run sass:watch` in the theme folder to watch for changes and automatically rebuild the CSS.
 
-Run `gulp sass` to compile the CSS only.
+Run `npm run sass:build` to compile the CSS only.
 
-Preferably use Jenkins to run the Gulp task on build to generate the CSS. If this is possible on your project, add the `css/` folder to the `.gitignore` file and delete generated CSS from the repo.
+Preferably use Jenkins to run the sass:build task on build to generate the CSS. If this is possible on your project, add the `css/` folder to the `.gitignore` file and delete generated CSS from the repo.
 
 
 ## JS
