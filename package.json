@@ -9,17 +9,18 @@
   "main": "index.js",
   "scripts": {
     "sass:compile": "sass sass/styles.scss css/styles.css --style=expanded --embed-sources",
-    "sass:watch": "npm run sass:lint && npm run sass:compile --watch",
+    "sass:watch": "npm run sass:lint && npm run sass:compile -- --watch",
     "sass:lint": "sass-lint -c .sass-lint.yml 'sass/**/*.scss' -v -q",
-    "sass:build": "npm run sass:compile && npm run sass:lint",
-    "svg:compile": "svg-sprite -c svg-sprite.config.json --dest img/icons img/icons/cd-icons-sprite.svg",
-    "start": "node index.js"
+    "sass:build": "npm run sass:lint && npm run sass:compile",
+    "js:lint": "eslint js/*.js",
+    "svg:compile": "svg-sprite --log=info --symbol --symbol-dest=img/icons --symbol-sprite=img/icons/cd-icons-sprite.svg img/icons/svg-sprite/*.svg"
   },
   "engines": {
     "node": "^12.21.0",
     "npm": "^7.6.1"
   },
   "dependencies": {
+    "eslint": "^7.23.0",
     "sass": "^1.32.8",
     "sass-lint": "^1.13.1",
     "svg-sprite": "^1.5.0"
