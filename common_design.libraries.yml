@@ -116,6 +116,13 @@ cd-facets:
     component:
       components/cd-facets/cd-facets.css: {}
 
+cd-figure-list:
+  css:
+    component:
+      components/cd-figure-list/cd-figure-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-filter:
   css:
     component:
@@ -201,6 +208,8 @@ cd-social-links:
   css:
     component:
       components/cd-social-links/cd-social-links.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-styled-list:
   css:
