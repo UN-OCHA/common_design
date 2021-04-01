@@ -92,10 +92,12 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   line-height: 1.2;
-  color: $cd-ocha-blue;
   font-family: $cd-font--roboto;
+  color: $cd-default-text-color;
+  font-weight: 500;
 }
 
 html[lang='ar'] {
@@ -103,8 +105,10 @@ html[lang='ar'] {
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     font-family: $cd-font--noto-kufi;
+    font-weight: 400;
   }
 }
 
@@ -115,14 +119,15 @@ html[lang='zh'] {
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     font-family: $cd-font--noto;
   }
 }
 
 h1 {
   color: $cd-default-text-color;
-  font-weight: 300;
+  font-weight: 700;
   font-size: $cd-font-size--2xmedium;
 
   @include desktop {
@@ -131,29 +136,24 @@ h1 {
 }
 
 .cd-page-title {
-  font-size: $cd-font-size--2xmedium;
   margin-top: 0;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid $cd-blue-grey;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+.cd-page-title--landing {
+  font-size: $cd-font-size--2xbase;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 ol,
 dl {
   margin-bottom: 1rem;
 }
 
 @include tablet {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
   ol,
   dl {
     margin-bottom: 1.5rem;
@@ -162,22 +162,18 @@ dl {
 
 h2 {
   font-size: $cd-font-size--2xmedium;
-  font-weight: 400;
 }
 
 h3 {
   font-size: $cd-font-size--2xbase;
-  font-weight: 500;
 }
 
 h4 {
   font-size: $cd-font-size--large;
-  font-weight: 400;
 }
 
 h5 {
   font-size: $cd-font-size--medium;
-  font-weight: 400;
 }
 
 h6 {
