@@ -6,7 +6,7 @@
 .cd-footer {
   // Setup font
   font-family: $cd-font;
-  @include font-size($cd-font-size-tiny);
+  font-size: $cd-font-size--tiny;
   font-weight: 300;
 
   // Set box-sizing
@@ -33,7 +33,7 @@
     -webkit-appearance: none;
     border-radius: 0;
     box-shadow: none;
-    @include font-size($cd-font-size-tiny);
+    font-size: $cd-font-size--tiny;
     font-weight: 300;
 
     html[lang='ar'] & {

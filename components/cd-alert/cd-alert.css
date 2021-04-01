@@ -6,6 +6,7 @@
   border: 1px solid var(--cd-blue--bright);
   box-shadow: -8px 0 0 var(--cd-blue--bright);
   color: var(--cd-grey--dark);
+  background-color: var(--cd-white);
 }
 
 .cd-alert >  div {

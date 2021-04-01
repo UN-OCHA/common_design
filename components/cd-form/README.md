@@ -12,6 +12,7 @@ This can expand as needed. Currently, there are generic and Drupal-specific
 selectors.
 
 @TODO spinner as component.
+@TODO reinstate webkit search cancel button (currently disabled in normalise.css line 366)
 
 ## Caveats
 Possibly too generic. Specify as needed.

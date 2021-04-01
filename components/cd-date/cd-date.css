@@ -17,6 +17,7 @@
   font-size: 3rem;
   color: var(--cd-white);
   font-weight: 700;
+  word-spacing: -0.5rem;
 }
 
 .cd-date__month,
@@ -24,6 +25,7 @@
   color: var(--cd-ocha-blue);
   text-transform: uppercase;
   font-size: 0.875rem;
+  font-weight: 700;
 }
 
 .cd-date__wrapper + .cd-date__wrapper {
