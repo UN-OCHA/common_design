@@ -11,13 +11,20 @@ We use a HSL system and CSS custom properties so extra care is needed for IE11 s
 ### Variants
 
 ```
+.cd-button // default
+
 /* For buttons on a dark background */
 .cd-button--light
+
 /* For an outline style */
 .cd-button--outline
+
 /* For export style */
 @TODO review
 .cd-button--export
+
+/* For a destructive action */
+.cd-button--danger
 
 /* Utility classes */
 .cd-button--small
@@ -25,5 +32,8 @@ We use a HSL system and CSS custom properties so extra care is needed for IE11 s
 .cd-button--uppercase
 .cd-button--wide
 .cd-button--icon
+
+/* For disabled buttons */
+.cd-button[disabled]
 
 ```

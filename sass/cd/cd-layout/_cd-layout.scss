@@ -3,7 +3,6 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 html {
-  //background: $cd-blue-grey;
   height: 100%;
 }
 
@@ -20,9 +19,8 @@ body {
 }
 
 .cd-layout-container {
-  //background: $cd-white;
   margin: 0 auto;
-  //max-width: $cd-max-body-width;
+  width: 100%;
   min-height: 100%;
   padding: 0;
 
@@ -35,15 +33,24 @@ body {
   }
 
   // Grid is used to fix the footer to the bottom of the screen, regardless of page min-height.
+  // Header height is fixed.
+  // Highlighted should contain Drupal messages and will be present even if empty.
+  // Main should grow to fit the available space.
+  // Soft footer is optional.
+  // Footer sticks to the bottom of the viewport.
+  // If there are additional direct descendents of .cd-layout-container, grid-template-areas and rows can be adjusted.
   @supports (display: grid) {
     //background: rgba(0, 0, 255, 0.1);
     @include tablet {
       display: grid;
-      grid-template-rows: 101px 1fr auto; // Height of header.
-
-      .no-js & {
-        grid-template-rows: 292px 1fr auto; // Height of header with OCHA services expanded.
-      }
+      grid-template-areas:
+      'header'
+      'highlighted'
+      'main'
+      'soft-footer'
+      'footer';
+      grid-template-rows: 101px auto 1fr auto;
+      grid-auto-rows: auto;
     }
   }
 
@@ -77,34 +84,34 @@ body {
   }
 }
 
-//@TODO This element (main) is one of the core layout elements.
-// Using the element as a selector, instead of a unique class
-// means I cannot @extend the rule below, for the inner layout rules.
-// .cd-container is used as a utility class on other divs, for common padding, width control.
-.cd-layout-container main.cd-container {
+.cd-layout-container main {
   padding-top: 2rem;
-  background: $cd-white;
 
-  @include tablet {
+  @include desktop {
     padding-top: 3rem;
+  }
+}
+
+.cd-layout-container .cd-layout-content-wrapper {
+  @include desktop {
     display: flex;
     flex-wrap: wrap;
   }
 }
 
-.cd-layout-container main.cd-container aside {
+.cd-layout-container .cd-layout-content-wrapper aside {
   // This is to prevent sidebar region wrapper div displaying when region is empty but still renders.
   &:empty {
     display: none;
   }
 
-  @include tablet {
+  @include desktop {
     flex-grow: 1;
   }
 
   .cd-layout-sidebar-first & {
-    margin-bottom: 1rem;
-    @include tablet {
+    margin-bottom: 2rem;
+    @include desktop {
       margin-bottom: 0;
     }
   }
@@ -113,7 +120,7 @@ body {
 // One sidebar.
 .cd-layout-with-sidebar-first .cd-layout-sidebar-first,
 .cd-layout-with-sidebar-second .cd-layout-sidebar-second {
-  @include tablet {
+  @include desktop {
     flex-basis: 285px;
   }
 }
@@ -122,14 +129,14 @@ body {
   //background: lightblue;
   margin-bottom: 1rem;
 
-  @include tablet {
+  @include desktop {
     margin-bottom: 0;
   }
 }
 
-.cd-layout-sidebar-second {
-  //background: lightpink;
-}
+//.cd-layout-sidebar-second {
+//  background: lightpink;
+//}
 
 // Both sidebars, individually control.
 .cd-layout-with-sidebar-both {
@@ -147,7 +154,7 @@ body {
 
   .cd-layout-sidebar-second {
     @include tablet {
-      flex-basis: 500px; // Keep this number large so exceeds the available space and thus sits below.
+      flex-basis: 550px; // Keep this number large so exceeds the available space and thus sits below.
     }
     @include desktop {
       flex-basis: 285px;
@@ -158,53 +165,65 @@ body {
 .cd-layout-content {
   //background: lightyellow;
 
-  @include tablet {
+  @include desktop {
     flex-basis: 0;
     flex-grow: 999;
-    //min-width: 50%;
-  }
-
-  // sass-lint:disable no-duplicate-properties
-  .cd-layout-with-sidebar-first &,
-  .cd-layout-with-sidebar-second & {
-    min-width: auto; //IE11 fix.
-    min-width: unset;
   }
 
   .cd-layout-with-sidebar-both & {
     margin-bottom: 1rem;
 
-    @include tablet {
-      margin-left: 3rem;
-    }
-
     @include desktop {
-      margin-right: 3rem;
       margin-bottom: 0;
+
+      [dir='ltr'] & {
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+
+      [dir='rtl'] & {
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
     }
   }
 
   .cd-layout-with-sidebar-first & {
-    @include tablet {
-      margin-left: 3rem;
-      margin-right: 0;
+    @include desktop {
+      [dir='ltr'] & {
+        margin-left: 3rem;
+        margin-right: 0;
+      }
+
+      [dir='rtl'] & {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
     }
   }
 
   .cd-layout-with-sidebar-second & {
     margin-bottom: 1rem;
 
-    @include tablet {
-      margin-left: 0;
-      margin-right: 3rem;
+    @include desktop {
       margin-bottom: 0;
+
+      [dir='ltr'] & {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
+
+      [dir='rtl'] & {
+        margin-left: 3rem;
+        margin-right: 0;
+      }
     }
   }
 }
 
 // Faux sidebar in Node content.
 // Requires markup in node-full.html.twig.
-section.cd-layout-two-col {
+.cd-layout-two-col {
   @include desktop {
     display: flex;
     flex-wrap: wrap;
@@ -216,9 +235,16 @@ section.cd-layout-two-col {
     margin-left: 0;
 
     @include desktop {
-      margin-right: 2rem;
       flex-basis: 0;
       flex-grow: 999;
+
+      [dir='ltr'] & {
+        margin-right: 2rem;
+      }
+
+      [dir='rtl'] & {
+        margin-left: 2rem;
+      }
     }
   }
 
@@ -236,7 +262,6 @@ section.cd-layout-two-col {
   }
 }
 
-
 .region-sidebar-first:empty,
 .region-facets:empty {
   display: none;
@@ -250,31 +275,31 @@ section.cd-layout-two-col {
   }
 }
 
-// Page title.
-.cd-page-title + main.cd-container {
-  padding-top: 0;
-}
+//.cd-page-title {
+//  margin-top: 2rem;
+//
+//  @include tablet {
+//    margin-top: 3rem; // Matches .cd-layout-content-wrapper.
+//  }
+//}
 
 .cd-page-title {
-  margin-top: 2rem;
-
-  @include tablet {
-    margin-top: 3rem; // Matches main.cd-container.
-  }
-}
-
-.page-title {
   @include xl {
-    padding-right: calc(285px + 3rem); // width of sidebar plus content div right margin.
+    .cd-layout-with-sidebar {
+      [dir='ltr'] & {
+        padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
+      }
+
+      [dir='rtl'] & {
+        padding-left: 320px;
+      }
+    }
+
+    .cd-layout-with-sidebar-first &,
+    .cd-layout-with-sidebar-second &,
+    .cd-layout-with-sidebar-both & {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
-
-// Hide page title on homepage
-//.path-frontpage .page-title {
-//  display: none;
-//}
-
-// Remove margin from page title on homepage
-//.path-frontpage .page-title {
-//  margin-top: 0;
-//}

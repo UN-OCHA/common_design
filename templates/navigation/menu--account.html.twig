@@ -28,18 +28,17 @@
 {% macro menu_links(items, attributes, menu_level, username) %}
   {% import _self as menus %}
   {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
-    {% else %}
-      {%
-        set secondLevelClasses = [
+
+    {%
+      set menu_classes = [
         'menu',
-        'cd-global-header__dropdown',
-        'cd-user-menu__dropdown'
+        menu_level > 0 ? 'cd-global-header__dropdown',
+        menu_level > 0 ? 'cd-user-menu__dropdown'
       ]
-      %}
-      <ul {{attributes.addClass(secondLevelClasses)}}>
-    {% endif %}
+    %}
+
+    <ul{{ attributes.addClass(menu_classes) }}>
+
     {% for item in items %}
       {%
         set classes = [
@@ -49,41 +48,53 @@
           item.in_active_trail ? 'menu-item--active-trail',
         ]
       %}
+
+      {% set title = item.title == '%username%' ? username : item.title %}
+      {% set id = ('cd-user-menu-item-' ~ menu_level ~ '-' ~ loop.index)|clean_id %}
+
       <li{{ item.attributes.addClass(classes) }}>
-      {% if menu_level == 0 and loop.index == 1 %}
-        <svg class="cd-icon cd-icon--user" width="16" height="16" aria-hidden="true" focusable="false">
-          <use xlink:href="#cd-icon--user"></use>
-        </svg>
-      {% endif %}
 
-      {% if not (item.is_expanded) and (item.title  == '%username%') %}
-
-        <a href="{{ item.url }}">
-          <span class="cd-user-menu__btn-label">
-            {{ username }}
-          </span>
+        {#
+          Progressive enhancement: make sure there is always a menu entry.
+          If the menu item has children and javascript is enabled then this will
+          be replaced with a button to show the child menu.
+        #}
+        {% spaceless %}
+        <a href="{{ item.url }}" id="{{ id }}">
+          {# Add the user icon for the first menu item of the root element. #}
+          {% if menu_level == 0 and loop.index == 1 %}
+            <svg class="cd-icon cd-icon--user" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--user"></use>
+            </svg>
+          {% endif %}
+          <span>{{ title }}</span>
         </a>
+        {% endspaceless %}
 
-      {% elseif item.is_expanded %}
+        {#
+          If the menu item has children then we mark the sub-menu as toggable
+          and we'll let the dropdown javascript handle the rest.
+        #}
+        {% if item.is_expanded and item.below %}
 
-        <button{{ attributes.addClass('cd-user-menu__btn').addAttribute('data-cd-toggable', 'true') }}>
-          <span class="cd-user-menu__btn-label">
-            {{ username }}
-          </span>
-          <svg class="cd-icon cd-icon--arrow-down" width="16" height="16" aria-hidden="true" focusable="false">
-            <use xlink:href="#cd-icon--arrow-down"></use>
-          </svg>
-        </button>
+          {%
+            set attributes =  create_attribute({
+              'data-cd-toggable': title,
+              'data-cd-icon': 'arrow-down',
+              'data-cd-component': 'cd-user-menu',
+              'data-cd-replace': id,
+              'id': ('cd-user-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id,
+            })
+          %}
 
-      {% else %}
+          {# Add the user icon for the first menu item of the root element. #}
+          {% if menu_level == 0 and loop.index == 1 %}
+          {% do attributes.setAttribute('data-cd-logo', 'user') %}
+          {% endif %}
 
-          {{ link(item.title, item.url) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, username) }}
 
-      {% endif %}
-
-      {% if item.below %}
-        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-      {% endif %}
+        {% endif %}
 
       </li>
 

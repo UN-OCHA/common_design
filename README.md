@@ -1,4 +1,4 @@
-# OCHA Common Design System
+# OCHA Common Design System v3
 
 - Full-width header and footer
 - Full-width components
@@ -17,12 +17,12 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Common Footer
 * Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://thenounproject.com/ochavisual/))
 * Variables for breakpoints, colours, font sizes, fonts, measurements and z-index
-* Mixins for clearfix, REM font sizes and media queries
+* Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
-* See [common_design implementation notes](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
+* See [v3.0.0 Release notes](https://github.com/UN-OCHA/common_design/releases/tag/v3.0.0) and [common_design implementation notes for v2](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
 
 There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) available
-   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and remove the .git folder (all the implementation specific work should happen in the subtheme). Optionally rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/master/README.md)
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and remove the .git folder (all the implementation specific work should happen in the subtheme). Optionally rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/main/README.md)
 
 **Drupal components:**
 
@@ -33,14 +33,14 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 **Additional components:**
 
 * Typography
-* Basic form styles
 * Component library
-   * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials, or used with `@extend` Sass rule.
+   * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials.
    * Requires Drupal [Components module](https://www.drupal.org/project/components)
-   * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples.
-* Favicons
+   * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples
+   * Refer to [Components README](https://github.com/UN-OCHA/common_design/blob/main/components/README.md) and https://github.com/UN-OCHA/common_design/blob/main/components/
+* Favicons and OCHA assets based on https://brand.unocha.org
 * gulp.js workflow for frontend development
-  * Sass
+  * SASS
   * Sourcemaps (see which specific Sass file contains styles during local development)
   * Autoprefixer
   * Sass and JS linting

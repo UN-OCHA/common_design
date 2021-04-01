@@ -1,6 +1,4 @@
-
 .cd-teaser {
-  --cd-bumper-space: 2em;
   border-bottom: 1px solid var(--cd-blue-grey);
   padding-bottom: 1rem;
 }
@@ -11,7 +9,7 @@
 }
 
 .cd-teaser__image img {
-  /* width: 100%; */
+  width: 100%;
   max-width: 100%;
 }
 
@@ -19,20 +17,39 @@
   flex: 1 1 0%;
 }
 
-.cd-teaser dt {
-  font-weight: 600;
+.cd-teaser__title,
+.cd-teaser__title a {
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: block;
+  margin-top: 0;
 }
 
-.cd-teaser dd {
-  padding-bottom: 0.5rem;
+/* Override rule for cd-bumper on .cd-teaser__container to prevent padding-left on mobile. */
+@media (max-width: 575px) {
+  [dir='ltr'] .cd-bumper .cd-teaser__container {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 576px) {
   .cd-teaser {
+    --cd-bumper-space: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+
+  /* For IE11 as the CSS custom property for cd-bumper above will not work */
+  @media all and (-ms-high-contrast: none) {
+    .cd-teaser {
+      padding-left: 2rem;
+    }
+  }
+
+  .cd-teaser__container {
+    padding-left: unset;
   }
 
   .cd-teaser__image {
@@ -43,24 +60,6 @@
 
   .cd-teaser__footer {
     align-self: flex-end;
-  }
-
-  .cd-teaser dl {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .cd-teaser dt {
-    flex: 0 0 25%;
-    width: 25%;
-    padding-right: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .cd-teaser dd {
-    flex: 0 0 75%;
-    width: 75%;
-    margin-left: auto;
   }
 }
 

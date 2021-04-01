@@ -1,14 +1,15 @@
 # Read more
 
 ## Purpose and Usage
-Hyper link to full article
+Hyperlink to full article
 
 ## Caveats
+Uses an SVG element as icon.
 
 ### Variants
-Can be aligned with `cd-utility` classes
+Alignment options with `cd-utility` classes
 
 ```
-
+none
 
 ```

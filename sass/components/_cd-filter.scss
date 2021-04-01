@@ -1,0 +1,24 @@
+// This is to enable the cd-filter component collapse using cd-dropdown component
+// This file should be used in the base theme, and compiled with the styles.css
+
+// Set the breakpoint at which the filter should stop acting like a dropdown.
+// The Main Menu in the header `.cd-nav` is an example of this.
+// Adding `.cd-dropdown` class on `.cd-filter` means --dropdown defaults to true.
+
+.cd-filter {
+  @include desktop {
+    --dropdown: false;
+
+    // This is needed for IE11
+    // No support for CSS custom properties means
+    // --dropdown: false; property on the dropdown container is not recognised
+    // so the cd-dropdown.js does not run the updateToggler function
+    // which toggles the data-cd-hidden attribute.
+    // This displays the dropdown regardless of that attribute value.
+    @media all and (-ms-high-contrast: none) {
+      &[data-cd-hidden='true'] {
+        display: block;
+      }
+    }
+  }
+}

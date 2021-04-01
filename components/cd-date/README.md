@@ -1,10 +1,14 @@
 # Date
 
 ## Purpose and Usage
-Displays a single date, month and year in a calendar event style.
+Displays a date, month and year in a calendar event style.
 
 ## Caveats
-Width-restricted so multiple dates do not display well.
+There's a minimum width so multiple dates display but this has not been given any design attention.
 
 ### Variants
-None
+
+```
+none
+
+```

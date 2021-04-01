@@ -5,19 +5,20 @@
 {{ attach_library('common_design/cd-toc') }}
 
 <div class="cd-toc cd-toc--float-right [ cd-flow ]">
-  <h3 class="cd-toc__title">Table of Contents</h3>
-  <ol id="cd-toc" class="cd-toc__list">
+  <div class="cd-toc__title" id="table-of-contents-title">Table of Contents</div>
+  <ol id="cd-toc" class="cd-toc__list" aria-labelledby="table-of-contents-title">
     <li><a href="#heading-one">Example heading one</a></li>
     <li><a href="#heading-two">Example heading two</a>
       <ol>
         <li><a href="#heading-two-point-one">Example heading two point one</a></li>
+        <li><a href="#heading-two-point-two">Example heading two point two</a></li>
       </ol>
     </li>
     <li><a href="#heading-three">Example heading three</a></li>
   </ol>
 </div>
 
-<article>
+<article class="cd-article">
   <h2>This is an example article with a table of contents</h2>
 
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue a arcu sed aliquet. Vestibulum pretium lacus dolor, vitae luctus magna rhoncus eget. Fusce suscipit porttitor euismod. Vivamus turpis augue, sagittis ac risus in, dignissim posuere velit. Duis vestibulum dui non tellus luctus dignissim. Cras semper vitae magna vitae egestas. Aliquam erat volutpat. Ut neque arcu, euismod nec laoreet et, scelerisque vel tortor. Integer ut ligula eros. Sed in enim bibendum, dictum metus et, vehicula ante. Aliquam vitae vulputate odio, vel pretium mi. Integer dapibus pharetra eros, at placerat ante bibendum in.</p>
@@ -33,6 +34,16 @@
   <h4 id="heading-two-point-one">This is an example heading</h4>
 
   <p>Cras venenatis erat eu congue cursus. Sed suscipit elementum volutpat. Mauris velit lacus, malesuada consectetur tortor quis, scelerisque mattis elit. Pellentesque ipsum purus, malesuada sit amet purus non, posuere maximus ligula. Integer eu est a leo egestas scelerisque nec ut lacus. Proin lectus risus, sagittis ac accumsan semper, condimentum id ligula. Suspendisse potenti. Mauris dictum placerat dignissim. Cras tortor nulla, sodales quis urna ac, blandit ultrices urna. Donec lectus nisl, molestie ut vulputate rutrum, sollicitudin molestie lectus.</p>
+
+  <h4 id="heading-two-point-two">This is an example heading</h4>
+
+  <p>Cras venenatis erat eu congue cursus. Sed suscipit elementum volutpat. Mauris velit lacus, malesuada consectetur tortor quis, scelerisque mattis elit. Pellentesque ipsum purus, malesuada sit amet purus non, posuere maximus ligula. Integer eu est a leo egestas scelerisque nec ut lacus. Proin lectus risus, sagittis ac accumsan semper, condimentum id ligula. Suspendisse potenti. Mauris dictum placerat dignissim. Cras tortor nulla, sodales quis urna ac, blandit ultrices urna. Donec lectus nisl, molestie ut vulputate rutrum, sollicitudin molestie lectus.</p>
+
+  <ol>
+    <li>Example point one</li>
+    <li>Example point two</li>
+    <li>Example point three</li>
+  </ol>
 
   <h3 id="heading-three">This is an example heading</h3>
 

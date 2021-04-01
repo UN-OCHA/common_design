@@ -1,0 +1,23 @@
+{% embed 'page.html.twig' %}
+
+  {% block main %}
+    {# Link to skip to the main content is in html.html.twig #}
+    <main role="main" id="main-content" class="cd-container">
+
+      {{ page.page_title }}
+
+      <div class="cd-layout-content-wrapper">
+
+        <div class="cd-layout-content">
+          {{ page.content }}
+        </div>{# /.layout-content #}
+
+      </div>
+
+    </main>
+  {% endblock %}
+
+{% endembed %}
+
+
+

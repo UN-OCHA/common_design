@@ -1,7 +1,8 @@
 # Styled list
 
 ## Purpose and Usage
-A list of content that links to other content pages or external resources, or that lists content to augment material on the page.
+A list of content that links to other content pages or external resources, or
+that lists content to augment material on the page.
 
 - image
 - title
@@ -13,11 +14,17 @@ Image can be an SVG icon or img element.
 
 Use with cd-button or cd-read-more for style options in footer.
 
-@TODO review this:
-Use with cd-grid for column layout (with limitations)
+Replace the title heading tag with the semantic level based on the other headings on the page.
+
+@TODO combine with cd-grid for column layout (with limitations)
+
 
 ## Caveats
-Unsure whether this should be specifici to the ul element
+None
 
 ### Variants
-None
+
+```
+none
+
+```

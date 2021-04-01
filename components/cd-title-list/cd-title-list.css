@@ -18,8 +18,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1.25rem 0;
-  color: #1f1f1f;
+  padding: 1rem 0;
   text-decoration: none;
 }
 .cd-title-list__link:hover,
@@ -30,22 +29,13 @@
 
 .cd-title-list__title {
   flex: 1 1 auto;
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-@media (min-width: 768px) {
-  .cd-title-list__title {
-    font-size: 1.125rem;
-    line-height: 2rem;
-  }
 }
 
 .cd-title-list__link .cd-icon {
   display: block;
   flex: 0 0 auto;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.75rem;
+  height: 0.75rem;
   margin: 0 0.25rem 0 1rem;
   fill: var(--cd-ocha-blue);
 }

@@ -2,11 +2,66 @@
 
 /**
  * @file
- * Template overrides, preprocess, and alter hooks for the OCHA Common Design theme.
+ * Template overrides, preprocess, and hooks for the OCHA Common Design theme.
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
 
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ *
+ * Add a setting to the theme for the special handling of the node title.
+ */
+function common_design_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  if (!isset($form['common_design'])) {
+    $form['common_design'] = [
+      '#type' => 'details',
+      '#title' => t('Common design settings'),
+      '#open' => TRUE,
+    ];
+  }
+
+  // Load the node view modes.
+  $storage = \Drupal::entityTypeManager()->getStorage('entity_view_mode');
+  $view_modes = $storage->loadByProperties([
+    'targetEntityType' => 'node',
+  ]);
+  if (empty($view_modes)) {
+    return;
+  }
+
+  // The view mode ids are in the form `node.viewmode` which is not a valid
+  // key for the form options, so we strip the `node.`.
+  $options = [];
+  foreach ($view_modes as $view_mode) {
+    $id = preg_replace('/^node\./', '', $view_mode->id());
+    $options[$id] = $view_mode->label();
+  }
+
+  // By default, this behavior is enabled for the "full" view mode.
+  $default = theme_get_setting('common_design_node_title');
+  if (empty($default) && isset($options['full'])) {
+    $default = ['full'];
+  }
+
+  $form['common_design']['common_design_node_title'] = [
+    '#type'          => 'checkboxes',
+    '#title'         => t('Use node title for view mode'),
+    '#options'       => $options,
+    '#default_value' => $default,
+    '#description'   => t('Select the <strong>page</strong> node view modes for which to use the node title rather than the global page title block.'),
+  ];
+}
+
+/**
+ * Implements hook_preprocess().
+ */
 function common_design_preprocess(&$variables, $hook) {
   try {
     $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
@@ -17,20 +72,72 @@ function common_design_preprocess(&$variables, $hook) {
   // Ensure the cache varies correctly.
   $variables['#cache']['contexts'][] = 'url.path.is_front';
 
-  // Add username.
-  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-  $variables['username'] = $user->getUsername();
-
-  //Check if Components module is enabled, to prevent page--demo.html.twig breaking due to twig errors.
+  // Check if Components module is enabled, to prevent page--demo.html.twig
+  // breaking due to twig errors.
   $moduleHandler = \Drupal::service('module_handler');
-  if ($moduleHandler->moduleExists('components')){
+  if ($moduleHandler->moduleExists('components')) {
     $variables['componentsModule'] = TRUE;
   }
 }
 
 /**
- * @param $suggestions
- * @param array $variables
+ * Implements hook_preprocess_page().
+ *
+ * Remove the default page title and local tasks blocks if they were already
+ * rendered by a page title paragraph or when viewing full article nodes.
+ */
+function common_design_preprocess_page(&$variables) {
+  common_design_remove_rendered_blocks($variables);
+}
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Use the page title block for the title and display the local tasks below it.
+ * We use common_design_get_block_render_array() that will cache the
+ * render array of the blocks so that they are not re-rendered and displayed
+ * again.
+ *
+ * @see common_design_preprocess_page()
+ * @see common_design_get_block_render_array()
+ */
+function common_design_preprocess_node(&$variables) {
+  $view_mode = $variables['view_mode'] ?? '';
+
+  // Get the list of node view modes for which to use the pre-rendered page
+  // title instead of the normal page title block. This is an associative array
+  // keyed by view modes and with either the view mode as value when enabled
+  // or 0 otherwise. If not set, enable the behavior for the full view-mode.
+  $view_modes = theme_get_setting('common_design_node_title');
+  if (!isset($view_modes)) {
+    $view_modes = ['full' => 'full'];
+  }
+
+  // Prepare the title and local tasks so we have better control over where
+  // to display them for content in full node.
+  if (!empty($view_modes[$view_mode])) {
+    $variables['title'] = common_design_get_block_render_array('page_title_block');
+    $variables['local_tasks'] = common_design_get_block_render_array('local_tasks_block');
+    // Copy the title attributes.
+    if (!empty($variables['title']) && !empty($variables['title_attributes'])) {
+      $variables['title']['#title_attributes'] = $variables['title_attributes'];
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * Ensure we can set the title attributes to the page title.
+ */
+function common_design_theme_registry_alter(&$theme_registry) {
+  if (isset($theme_registry['page_title'])) {
+    $theme_registry['page_title']['variables']['title_attributes'] = [];
+  }
+}
+
+/**
+ * Impements hook_theme_suggestions_input_alter().
  */
 function common_design_theme_suggestions_input_alter(&$suggestions, array $variables) {
   $element = $variables['element'];
@@ -40,10 +147,12 @@ function common_design_theme_suggestions_input_alter(&$suggestions, array $varia
   }
 }
 
+/**
+ * Impements hook_theme_suggestions_form_alter().
+ */
 function common_design_theme_suggestions_form_alter(array &$suggestions, array $variables) {
-  $suggestions[] = 'form__'.$variables['element']['#id'];
+  $suggestions[] = 'form__' . $variables['element']['#id'];
 }
-
 
 /**
  * Implements hook_form_alter().
@@ -72,23 +181,27 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     // This is for a Drupal core INLINE search block.
     // There are templates needed for this. Replace cd-search.html.twig
     // with cd-search--inline.html.twig in cd-site-header.html.twig.
-//    $form['#attributes']['class'][] = 'cd-search--inline__form';
-//    $form['#attributes']['aria-labelledby'][] = 'cd-search-form--inline';
-//    $form['#attributes']['data-cd-toggable'][] = 'Search';
-//    $form['#attributes']['data-cd-icon'][] = '';
-//    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
-//    $form['#attributes']['data-cd-logo'][] = 'search';
-//    // Focus the input when clicking on the toggler button.
-//    $form['#attributes']['data-cd-focus-target'] = 'cd-search--inline';
-//    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
-//    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
-//    $form['keys']['#attributes']['type'][] = 'search';
-//    $form['keys']['#attributes']['id'][] = 'cd-search--inline';
-//    $form['keys']['#attributes']['autocomplete'][] = 'off';
-//    // Theme suggestion for submit element.
-//    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
-//    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
-//    $form['actions']['submit']['#attributes']['value'][] = 'Search';
+    // @codingStandardsIgnoreStart
+    /*
+    $form['#attributes']['class'][] = 'cd-search--inline__form';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-form--inline';
+    $form['#attributes']['data-cd-toggable'][] = 'Search';
+    $form['#attributes']['data-cd-icon'][] = '';
+    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
+    $form['#attributes']['data-cd-logo'][] = 'search';
+    // Focus the input when clicking on the toggler button.
+    $form['#attributes']['data-cd-focus-target'] = 'cd-search--inline';
+    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
+    $form['keys']['#attributes']['type'][] = 'search';
+    $form['keys']['#attributes']['id'][] = 'cd-search--inline';
+    $form['keys']['#attributes']['autocomplete'][] = 'off';
+    // Theme suggestion for submit element.
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+    $form['actions']['submit']['#attributes']['value'][] = 'Search';
+    */
+    // @codingStandardsIgnoreEnd
   }
 
   // To use this for Views exposed forms, copy the form alter hook into your
@@ -96,7 +209,8 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
   $includeView = [];
 
   // If in array above, add attributes for styling and behaviour.
-  // Replace $form['keys'] with the appropriate fulltext input eg. $form['search_api_fulltext'].
+  // Replace $form['keys'] with the appropriate fulltext input eg.
+  // $form['search_api_fulltext'].
   if (in_array($form['#id'], $includeView)) {
     $form['#attributes']['class'][] = 'cd-search__form';
     $form['#attributes']['aria-labelledby'][] = 'cd-search-form';
@@ -119,23 +233,27 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     // This is for a Views exposed form INLINE search block.
     // There are templates needed for this. Replace cd-search.html.twig
     // with cd-search--inline.html.twig in cd-site-header.html.twig.
-//      $form['#attributes']['class'][] = 'cd-search--inline__form';
-//      $form['#attributes']['aria-labelledby'][] = 'cd-search-form--inline';
-//      $form['#attributes']['data-cd-toggable'][] = 'Search';
-//      $form['#attributes']['data-cd-icon'][] = '';
-//      $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
-//      $form['#attributes']['data-cd-logo'][] = 'search';
-//      // Focus the input when clicking on the toggler button.
-//      $form['#attributes']['data-cd-focus-target'] = 'cd-search--inline';
-//      $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
-//      $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
-//      $form['keys']['#attributes']['type'][] = 'search';
-//      $form['keys']['#attributes']['id'][] = 'cd-search--inline';
-//      $form['keys']['#attributes']['autocomplete'][] = 'off';
-//      // Theme suggestion for submit element.
-//      $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
-//      $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
-//      $form['actions']['submit']['#attributes']['value'][] = 'Search';
+    // @codingStandardsIgnoreStart
+    /*
+    $form['#attributes']['class'][] = 'cd-search--inline__form';
+    $form['#attributes']['aria-labelledby'][] = 'cd-search-form--inline';
+    $form['#attributes']['data-cd-toggable'][] = 'Search';
+    $form['#attributes']['data-cd-icon'][] = '';
+    $form['#attributes']['data-cd-component'][] = 'cd-search--inline';
+    $form['#attributes']['data-cd-logo'][] = 'search';
+    // Focus the input when clicking on the toggler button.
+    $form['#attributes']['data-cd-focus-target'] = 'cd-search--inline';
+    $form['keys']['#attributes']['placeholder'][] = t('What are you looking for?');
+    $form['keys']['#attributes']['class'][] = 'cd-search--inline__input';
+    $form['keys']['#attributes']['type'][] = 'search';
+    $form['keys']['#attributes']['id'][] = 'cd-search--inline';
+    $form['keys']['#attributes']['autocomplete'][] = 'off';
+    // Theme suggestion for submit element.
+    $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'search_submit';
+    $form['actions']['submit']['#attributes']['class'][] = 'cd-search--inline__submit';
+    $form['actions']['submit']['#attributes']['value'][] = 'Search';
+    */
+    // @codingStandardsIgnoreEnd
   }
 }
 
@@ -145,77 +263,155 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
 function common_design_preprocess_html(&$vars) {
   // SVG sprite
   // Get the contents of the SVG sprite.
-  $icons = file_get_contents( drupal_get_path('theme', 'common_design') . '/img/icons/cd-icons-sprite.svg');
+  $icons = file_get_contents(drupal_get_path('theme', 'common_design') . '/img/icons/cd-icons-sprite.svg');
 
   // Add a new render array to page_bottom so the icons
   // get added to the page.
-  $vars['page_bottom']['icons'] = array(
+  $vars['page_bottom']['icons'] = [
     '#type' => 'inline_template',
     '#template' => '<span class="hidden">' . $icons . '</span>',
-  );
+  ];
 
-  // Check if current request is an exception to get error type
+  // Check if current request is an exception to get error type.
   $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
 
-  // add body classes.
+  // Add body classes.
   if ($status_code && $status_code->getStatusCode() == 404) {
     $vars['attributes']['class'][] = 'path-error path-error--404';
   }
-
   if ($status_code && $status_code->getStatusCode() == 403) {
     $vars['attributes']['class'][] = 'path-error path-error--403';
   }
+
+  // Add a script to detect whether javascript is enabled or not and then
+  // replace the `no-js` class with the `js` one.
+  // Drupal.js does this but way too late on first load causing issues with
+  // css rules that rely on the `js` class being defined or not.
+  $js_detection = [
+    '#tag' => 'script',
+    '#value' => "document.documentElement.className = document.documentElement.className.replace('no-js', typeof document.addEventListener !== 'undefined' ? 'js' : 'no-js');",
+    '#weight' => -1,
+  ];
+  $vars['page']['#attached']['html_head'][] = [$js_detection, 'js-detection'];
 }
 
-///**
-/// * Implements hook_theme_suggestions_HOOK_alter().
-// */
-
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
 function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $current_uri = \Drupal::request()->getRequestUri();
   // Set variable based on path alias to include Component demo page.
   if ($current_uri == '/demo') {
-    $suggestions[] = $hook . '__' . 'demo';
+    $suggestions[] = $hook . '__demo';
   }
 
-  /**
-   * error page template suggestions.
-   */
+  // Error page template suggestions.
   if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
     $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
     $suggestions[] = 'page__' . (string) $status_code;
   }
 }
 
-///**
-// * Implements hook_pwa_manifest_alter() for PWA module.
-// */
-//function common_design_pwa_manifest_alter(&$manifest) {
-//  // Hard-code a theme-color into the manifest.
-//  $manifest['theme_color'] = '#026CB6';
-//
-//  // Override the PWA default icons with OCHA defaults.
-//  //
-//  // Copy this hook into your subtheme and customize to your heart's content.
-//  $manifest['icons'] = [
-//    [
-//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-512x512.png'),
-//      'sizes' => '512x512',
-//      'type' => 'image/png',
-//    ],
-//    [
-//      'src' => url(drupal_get_path('theme', 'common_design') . '/img/android-chrome-192x192.png'),
-//      'sizes' => '192x192',
-//      'type' => 'image/png',
-//    ],
-//  ];
-//}
-
-///**
-// * Implements hook_block__language_block().
-// */
+/**
+ * Implements hook_block__language_block().
+ */
 function common_design_preprocess_block__language_block(&$vars) {
   // Current language available in template override.
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $vars['language'] = $language;
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function common_design_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__account') {
+    // Add username.
+    $user = User::load(\Drupal::currentUser()->id());
+    $variables['username'] = $user->getDisplayName();
+    $variables['#cache']['contexts'][] = 'user';
+  }
+}
+
+/**
+ * Render a block.
+ *
+ * We store the list of blocks rendered by this function so that we can
+ * prevent them from being rendered several times on a page.
+ *
+ * @param string $id
+ *   Block ID.
+ *
+ * @return array
+ *   Renderable array of the block. Empty array if this was already called
+ *   before to avoid displaying the block several times.
+ */
+function common_design_get_block_render_array($id) {
+  // Use of the `drupal_static` allows us to retrieve the cache in
+  // other functions like common_design_remove_rendered_blocks().
+  $rendered = &drupal_static('common_design_rendered_blocks');
+
+  if (!isset($rendered[$id])) {
+    // Prevent rendering the block several times.
+    $rendered[$id] = [];
+
+    $storage = \Drupal::entityTypeManager()->getStorage('block');
+    $theme = \Drupal::theme()->getActiveTheme();
+
+    // Load the blocks with that plugin id for the theme.
+    $blocks = $storage->loadByProperties([
+      'theme' => $theme->getName(),
+      'plugin' => $id,
+    ]);
+
+    // Skip if there were no matching blocks for the theme.
+    if (empty($blocks)) {
+      return [];
+    }
+
+    // Store the regions in which the blocks of that type were supposed to be
+    // rendered.
+    foreach ($blocks as $block) {
+      $rendered[$id][$block->id()] = $block->getRegion();
+    }
+    $block = reset($blocks);
+
+    // Return an empty build if the user doesn't have access to the block.
+    if (!$block->access('view', NULL, TRUE)) {
+      return [];
+    }
+
+    // Get the render array for the block.
+    $build = $block->getPlugin()->build();
+
+    // Ensure the page title block has a title.
+    // @see https://www.drupal.org/project/drupal/issues/2938129
+    if ($id === 'page_title_block' && empty($build['#title'])) {
+      $request = \Drupal::service('request_stack')->getCurrentRequest();
+      $route_object = \Drupal::service('current_route_match')->getRouteObject();
+      $title_resolver = \Drupal::service('title_resolver');
+
+      $build['#title'] = $title_resolver->getTitle($request, $route_object);
+    }
+    return $build;
+  }
+
+  return [];
+}
+
+/**
+ * Remove already rendered blocks from the page.
+ *
+ * @param array $variables
+ *   Page variables.
+ */
+function common_design_remove_rendered_blocks(array &$variables) {
+  $rendered = &drupal_static('common_design_rendered_blocks');
+  if (!empty($rendered)) {
+    foreach ($rendered as $blocks) {
+      foreach ($blocks as $id => $region) {
+        unset($variables['page'][$region][$id]);
+      }
+    }
+  }
 }

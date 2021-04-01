@@ -4,7 +4,7 @@
   padding: 0.5rem;
 }
 
-@supports (display: grid) {
+@supports (display: flex) {
   .cd-pager__items {
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@
   margin: 0 0.25rem 0.25rem 0;
 }
 
-@supports (display: grid) {
+@supports (display: flex) {
   .cd-pager__item {
     display: flex;
     align-self: baseline;
@@ -44,7 +44,7 @@
 }
 
 .cd-pager__item.is-active a {
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   background-color: var(--cd-ocha-blue);
   border-color: var(--cd-ocha-blue);

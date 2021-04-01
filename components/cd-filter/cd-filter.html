@@ -4,69 +4,80 @@
     <meta charset="utf-8">
     <title></title>
     <link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
-    <link rel=stylesheet href="https://demo.commondesign-unocha-org.ahconu.org/themes/contrib/common_design/css/styles.css" type="text/css" media=screen>
+    <link rel=stylesheet href="../cd-typography/cd-typography.css" type="text/css" media=screen>
     <link rel=stylesheet href="../cd-button/cd-button.css" type="text/css" media=screen>
-    <link rel=stylesheet href="../cd-filter/cd-filter.css" type="text/css" media=screen>
+    <link rel=stylesheet href="../cd-dropdown/cd-dropdown.css" type="text/css" media=screen>
+    <link rel=stylesheet href="cd-filter.css" type="text/css" media=screen>
 
   <script>document.documentElement.className = document.addEventListener ? "js" : "no-js";</script>
 
   </head>
   <body>
 
-    <div class="cd-filter">
-      <div class="cd-filter__form">
-        <h2 class="visually-hidden">Filter results</h2>
-          <p>Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
-        <form>
-          <div class="cd-filter__group">
-            <label for="published-date-range">Date Range</label>
-            <label class="visually-hidden" for="published-date-start">Start date</label>
-            <input class="cd-filter__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
-            <label class="visually-hidden" for="published-date-end">End date</label>
-            <input class="cd-filter__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
-          </div>
-          <div class="cd-filter__group">
-            <label for="mySelect">Select element</label>
-            <select id="mySelect" name="options">
-              <option value="opt1">Option one</option>
-              <option value="opt2">Option two with a really long option title</option>
-              <option value="opt3">Option three</option>
-            </select>
-            <div class="spinner disabled">
-              <div class="double-bounce1"></div>
-              <div class="double-bounce2"></div>
-            </div>
-          </div>
-          <div class="cd-filter__group">
-            <fieldset>
-               <legend>Title</legend>
-               <ul>
-                   <li>
-                     <label for="optionOne">
-                       <input type="radio" id="optionOne" name="title" value="optionOne">
-                       Option one
-                     </label>
-                   </li>
-                   <li>
-                     <label for="optionTwo">
-                       <input type="radio" id="optionTwo" name="title" value="optionTwo">
-                       Option two
-                     </label>
-                   </li>
-               </ul>
-             </fieldset>
-          </div>
-          <div class="cd-filter__group">
-            <label for="keyword-search">Keyword search</label>
-              <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filter__input" name="keys" value="" size="15" maxlength="128">
-          </div>
+  <div class="cd-filter">
+  <!--<div class="cd-filter" id="cd-filter" data-cd-toggable="Modify your search" data-cd-icon="arrow-down" data-cd-component="cd-filter" data-cd-toggable-keep="true" aria-labelledby="dropdown-title">-->
 
-          <div class="cd-export">
-            <button id="export-xlsx-" class="cd-button cd-button--export export-xlsx">Export to XLSX</button>
+    <div class="cd-filter__container [ cd-flow ]">
+      <h2 class="visually-hidden">Filter results</h2>
+
+      <p class="cd-max-width">Additional elements can go here. These are outside the flexbox rules, but can be inside the collapsible element if cd-dropdown is also used.</p>
+
+      <form class="cd-filter__form [ cd-flow ]">
+        <div class="cd-filter__group">
+          <label for="published-date-range">Date Range</label>
+          <label class="visually-hidden" for="published-date-start">Start date</label>
+          <input class="cd-filter__input" type="text" name="published_date_start" value="" size="20" maxlength="30" id="published-date-start" placeholder=" E.g., Sep 10 2019">
+          <label class="visually-hidden" for="published-date-end">End date</label>
+          <input class="cd-filter__input" type="text" id="published-date-end" name="published_date_end" value="" size="20" maxlength="30" placeholder=" E.g., Oct 10 2019">
+        </div>
+        <div class="cd-filter__group">
+          <label for="mySelect">Select element</label>
+          <select id="mySelect" name="options">
+            <option value="opt1">Option one</option>
+            <option value="opt2">Option two with a really long option title</option>
+            <option value="opt3">Option three</option>
+          </select>
+          <div class="spinner disabled">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="cd-filter__group">
+          <fieldset>
+            <legend>Title</legend>
+            <ul>
+              <li>
+                <label for="optionOne">
+                  <input type="radio" id="optionOne" name="title" value="optionOne">
+                  Option one
+                </label>
+              </li>
+              <li>
+                <label for="optionTwo">
+                  <input type="radio" id="optionTwo" name="title" value="optionTwo">
+                  Option two
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="cd-filter__group">
+          <label for="keyword-search">Keyword search</label>
+          <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" class="cd-filter__input" name="keys" value="" size="15" maxlength="128">
+        </div>
+
+        <div class="cd-export">
+          <button type="button" class="cd-button cd-button--uppercase cd-button--export cd-button--icon">
+            <span class="cd-button__text">Export</span>
+            <svg class="cd-icon cd-icon--arrow-down" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--arrow-down"></use>
+            </svg>
+          </button>
+        </div>
+
+      </form>
     </div>
+  </div>
 
-</body>
+  </body>
 </html>

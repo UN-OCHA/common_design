@@ -13,15 +13,12 @@
 
 .cd-byline__wrapper {
   display: flex;
-  align-items: center;
 }
 
 .cd-byline__image {
   width: 4rem;
   height: 4rem;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 4rem;
+  flex: 0 0 4rem;
   margin: 0;
 }
 
@@ -39,12 +36,4 @@
 
 .cd-byline__name {
   font-weight: 700;
-}
-
-[dir='ltr'] .cd-byline__content {
-  margin-left: 1.5rem;
-}
-
-[dir='rtl'] .cd-byline__content {
-  margin-right: 1.5rem;
 }
