@@ -161,23 +161,43 @@ dl {
 }
 
 h2 {
-  font-size: $cd-font-size--2xmedium;
+  font-size: $cd-font-size--2xbase;
+
+  @include desktop {
+    font-size: $cd-font-size--2xmedium;
+  }
 }
 
 h3 {
-  font-size: $cd-font-size--2xbase;
+  font-size: $cd-font-size--large;
+
+  @include desktop {
+    font-size: $cd-font-size--2xbase;
+  }
 }
 
 h4 {
-  font-size: $cd-font-size--large;
+  font-size: $cd-font-size--medium;
+
+  @include desktop {
+    font-size: $cd-font-size--large;
+  }
 }
 
 h5 {
-  font-size: $cd-font-size--medium;
+  font-size: $cd-font-size--base;
+
+  @include desktop {
+    font-size: $cd-font-size--medium;
+  }
 }
 
 h6 {
-  font-size: $cd-font-size--base;
+  font-size: 1rem;
+
+  @include desktop {
+    font-size: $cd-font-size--base;
+  }
 }
 
 
