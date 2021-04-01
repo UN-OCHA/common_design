@@ -27,9 +27,10 @@
 
 .cd-hero__title {
   margin: 0 0 1rem;
-  font-size: 1.75rem; /* 28px */
+  font-size: 2rem; /* 32px */
   font-weight: 700;
   color: var(--cd-grey--dark);
+  font-family: var(--cd-font--roboto);
 }
 
 .cd-hero__description {
@@ -37,12 +38,6 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--cd-grey--dark);
-}
-
-.cd-hero__caption {
-  text-align: right;
-  font-size: 0.9rem;
-  font-style: italic;
 }
 
 @media (min-width: 576px) {
@@ -54,7 +49,7 @@
 
 @media (min-width: 1024px) {
   .cd-hero {
-    height: 28.125rem; /* 450px */
+    height: 28rem; /* 448px */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -70,8 +65,7 @@
   }
 
   .cd-hero__title {
-    font-size: 2.375rem; /* 38px */
-    font-weight: 700;
+    font-size: 2.5rem;
   }
 
   .cd-hero__description {
@@ -80,7 +74,7 @@
   }
 
   .cd-hero__image {
-    height: 28.125rem; /* 450px */
+    height: 28rem; /* 448px */
     position: absolute;
     top: 50%;
     left: 50%;

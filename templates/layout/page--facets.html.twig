@@ -2,8 +2,6 @@
   set facets_layout_classes = [
   'cd-container',
   page.sidebar_first|render or page.facets|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
-  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout-with-sidebar-second',
-  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout-with-sidebar-both',
 ]
 %}
 
@@ -12,6 +10,10 @@
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
     <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(facets_layout_classes) }}>
+
+      {{ page.page_title }}
+
+      <div class="cd-layout-content-wrapper">
 
       {% if page.facets|render or page.sidebar_first|render %}
         {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
@@ -26,8 +28,7 @@
         {{ page.content }}
       </div>{# /.cd-layout-content #}
 
-      {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
-      {% endif %}
+      </div>
 
     </main>
   {% endblock %}

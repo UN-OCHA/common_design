@@ -1,3 +1,48 @@
+### Component QA status
+
+Add a check if you've reviewed the component and it passes the Criteria.
+
+| Component           | Technical Review round 1    | Technical Review round 2    |
+| :------------------ | :------------------ | :------------------ |
+| cd-example          | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-alert            | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-article          | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-author           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-banner           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-bleed            |                     | :heavy_check_mark:  |
+| cd-block-title      | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-bullet-list      | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-button           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-byline           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-caption          | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-card             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-date             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-dropdown         |                     | :heavy_check_mark:  |
+| cd-event            | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-facets           |                     | :heavy_check_mark:  |
+| cd-filter           |                     | :heavy_check_mark:  |
+| cd-flow             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-form             | :heavy_check_mark:  |                     |
+| cd-grid             |                     |                     |
+| cd-hero             | :heavy_check_mark:  |                     |
+| cd-image-grid       |                     |                     |
+| cd-link-list        | :heavy_check_mark:  |                     |
+| cd-pagination       | :heavy_check_mark:  |                     |
+| cd-read-more        | :heavy_check_mark:  |                     |
+| cd-search           |                     |                     |
+| cd-search-inline    |                     |                     |
+| cd-select-a11y      |                     |                     |
+| cd-styled-list      | :heavy_check_mark:  |                     |
+| cd-table            |                     |                     |
+| cd-tabs             |                     |                     |
+| cd-teaser           | :heavy_check_mark:  |                     |
+| cd-title-list       | :heavy_check_mark:  |                     |
+| cd-toc              |                     |                     |
+| cd-typography       |                     |                     |
+| cd-utilities        |                     |                     |
+
+
+
 # What makes a component?
 
 ## Criteria
@@ -13,8 +58,8 @@
 - Each component should include an html file with example markup and dummy text, to best demonstrate its use and variants.
 - If there are multiple variants, each should be displayed for illustration purposes. Use `<hr>` to separate if needed.
 - The components CSS and JS files should be included. For CSS, the component's CSS is usually placed last.
-- Each component should link to the `cd-base.css` which has the CSS custom properties and other generic rules. 
-This is found in the [common_design_system repo](https://github.com/UN-OCHA/common_design_system/blob/master/cd-base.css)
+- Each component should link to the `cd-base.css` which has the CSS custom properties and other generic rules.
+This is found in the [common_design_system repo](https://github.com/UN-OCHA/common_design_system/blob/main/cd-base.css)
 - Any dependency components' CSS or JS should be linked to.
 
 Eg. For cd-alert component
@@ -33,14 +78,14 @@ Eg. BEM
   <li class="cd-title-list__item">
     <a href="/#" class="cd-title-list__link">
       <span class="cd-title-list__title">Title</span>
-      <svg class="cd-icon cd-icon--arrow-right" width="16" height="16" aria-hidden="true" focusable="false">
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
         <use xlink:href="#cd-icon--arrow-right"></use>
       </svg>
     </a>
   </li>
    ...
 ```
-- If the component requires a "page" layout for composition, add the standard layout divs from the base theme. 
+- If the component requires a "page" layout for composition, add the standard layout divs from the base theme.
 The layout styles are included in cd-base.css.
 
 Eg. Layout markup
@@ -73,7 +118,7 @@ Eg. For cd-hero component
 
 ### Twig
 - Include the markup without the wrapper divs. The main purpose of the twig file is to include the component on the demo page.
-- Define and attach the relevant Drupal libraries instead of linking to the CSS files. 
+- Define and attach the relevant Drupal libraries instead of linking to the CSS files.
 As this will display on the demo page (a Drupal site), the cd-base.css is replaced with styles.css (already loaded)
 
 ### Add the component to the Demo page

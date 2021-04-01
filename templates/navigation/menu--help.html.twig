@@ -63,7 +63,7 @@
         <a href="{{ item.url }}" id="{{ id }}">
           {# Add the user icon for the first menu item of the root element. #}
           {% if menu_level == 0 and loop.index == 1 %}
-            <svg class="cd-icon cd-icon--help" width="16" height="16" aria-hidden="true" focusable="false">
+            <svg class="cd-icon cd-icon--help" aria-hidden="true" focusable="false" width="16" height="16">
               <use xlink:href="#cd-icon--help"></use>
             </svg>
           {% endif %}
@@ -76,12 +76,13 @@
         {% if item.is_expanded and item.below %}
 
           {%
-            do attributes
-              .setAttribute('data-cd-toggable', title)
-              .setAttribute('data-cd-icon', 'arrow-down')
-              .setAttribute('data-cd-component', 'cd-help-menu')
-              .setAttribute('data-cd-replace', id)
-              .setAttribute('id', ('cd-help-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id)
+            set attributes =  create_attribute({
+              'data-cd-toggable': title,
+              'data-cd-icon': 'arrow-down',
+              'data-cd-component': 'cd-help-menu',
+              'data-cd-replace': id,
+              'id': ('cd-help-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id,
+            })
           %}
 
           {# Add the help icon for the first menu item of the root element. #}

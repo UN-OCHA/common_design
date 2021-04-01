@@ -6,11 +6,20 @@
 .cd-footer {
   // Setup font
   font-family: $cd-font;
-  @include font-size($cd-font-size-tiny);
+  font-size: $cd-font-size--tiny;
   font-weight: 300;
 
   // Set box-sizing
   box-sizing: border-box;
+
+  html[lang='ar'] & {
+    font-family: $cd-font--noto-kufi;
+  }
+
+  html[lang='ru'] &,
+  html[lang='zh'] & {
+    font-family: $cd-font--noto;
+  }
 
   // box-sizing on all child elements
   *,
@@ -24,9 +33,17 @@
     -webkit-appearance: none;
     border-radius: 0;
     box-shadow: none;
-    font-family: $cd-font;
-    @include font-size($cd-font-size-tiny);
+    font-size: $cd-font-size--tiny;
     font-weight: 300;
+
+    html[lang='ar'] & {
+      font-family: $cd-font--noto-kufi;
+    }
+
+    html[lang='ru'] &,
+    html[lang='zh'] & {
+      font-family: $cd-font--noto;
+    }
 
     &[data-cd-toggler] {
       background-color: transparent;

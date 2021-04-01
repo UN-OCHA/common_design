@@ -55,6 +55,8 @@ cd-bleed:
   css:
     component:
       components/cd-bleed/cd-bleed.css: { weight: 1 }
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-block-title:
   css:
@@ -102,6 +104,13 @@ cd-date:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-event:
+  css:
+    component:
+      components/cd-event/cd-event.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-facets:
   css:
     component:
@@ -116,6 +125,11 @@ cd-flow:
   css:
     component:
       components/cd-flow/cd-flow.css: {}
+
+cd-form:
+  css:
+    component:
+      components/cd-form/cd-form.css: {}
 
 cd-grid:
   css:
@@ -204,6 +218,20 @@ cd-table:
   dependencies:
     - common_design/css-vars-ponyfill
     - common_design/array-from-polyfill
+
+cd-tag:
+  css:
+    component:
+      components/cd-tag/cd-tag.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-tabs:
+  css:
+    component:
+      components/cd-tabs/cd-tabs.css: {}
+  dependencies:
+    - common_design/css-vars-polyfill
 
 cd-teaser:
   css:

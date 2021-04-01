@@ -78,7 +78,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-teaser [ cd-flow cd-bumper--rtl ]'
+    'cd-teaser [ cd-flow cd-bumper ]'
   ]
 %}
 
@@ -100,13 +100,13 @@
   <div class="cd-teaser__container [ cd-flow ]">
     {{ title_prefix }}
     {% if label and not page %}
-      <h3{{ title_attributes.addClass('cd-teaser__title cd-max-width') }}>
+      <h2{{ title_attributes.addClass('cd-teaser__title cd-max-width') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h3>
+      </h2>
     {% endif %}
     {{ title_suffix }}
 
-    <div class="cd-teaser__description node__content cd-max-width">
+    <div class="cd-teaser__description cd-max-width">
       {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}
@@ -118,7 +118,7 @@
     </div>
       <a href="{{ url }}" class="cd-teaser__link cd-read-more">
         {% trans %}Learn more{% endtrans %}
-        <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false">
+        <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
           <use xlink:href="#cd-icon--arrow-right"></use>
         </svg>
       </a>

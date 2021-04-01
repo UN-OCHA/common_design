@@ -8,7 +8,8 @@ Author information to accompany articles.
 - byline
 
 ## Caveats
-None
+- Image needs to be square for `image--rounded` to work well
+- Image has fixed width and height, currently 4rem
 
 ### Variants
 

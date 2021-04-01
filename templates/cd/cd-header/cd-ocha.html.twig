@@ -1,12 +1,10 @@
-
-
 <section id="cd-ocha-services" class="cd-ocha">
 
   {# Dropdown toggle is created with javascript #}
 
-  <div class="cd-global-header__dropdown cd-ocha-dropdown cd-dropdown" id="cd-ocha-dropdown" aria-labelledby="cd-ocha-services-title" data-cd-toggable="{{ 'OCHA Services'|t }}" data-cd-hidden="true" data-cd-icon="arrow-down" data-cd-logo="ocha-logo" data-cd-component="cd-ocha">
+  <h2 id="cd-ocha-services-title">{% trans %}OCHA Services{% endtrans %}</h2>
 
-    <h2 id="cd-ocha-services-title" class="visually-hidden">{% trans %}OCHA Services{% endtrans %}</h2>
+  <div class="cd-global-header__dropdown cd-ocha-dropdown cd-dropdown" id="cd-ocha-dropdown" aria-labelledby="cd-ocha-services-title" data-cd-toggable="{{ 'OCHA Services'|t }}" data-cd-icon="arrow-down" data-cd-logo="ocha-logo" data-cd-component="cd-ocha" data-cd-replace="cd-ocha-services-title">
 
     <div class="cd-ocha-dropdown__inner">
       <div class="cd-ocha-dropdown__section">
@@ -43,7 +41,7 @@
         </ul>
       </div>
       <div class="cd-ocha-dropdown__section">
-        <a class="cd-button cd-button--light cd-button--bold cd-button--uppercase cd-ocha-dropdown__see-all" href="https://www.unocha.org/ocha-digital-services" target="_blank" rel="noopener">See all</a>
+        <a class="cd-button cd-button--light cd-button--bold cd-button--uppercase cd-ocha-dropdown__see-all" href="https://www.unocha.org/ocha-digital-services" target="_blank" rel="noopener">{{ 'See all'|t }}</a>
       </div>
     </div>
   </div>

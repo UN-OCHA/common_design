@@ -1,17 +1,21 @@
-/* https://piccalil.li/cube-css */
-
-/* CUBE CSS is a CSS methodology */
-/* orientated towards simplicity, pragmatism and consistency */
-/* Composition Utility Block Exception */
+/* @see https://cube.fyi */
 
 .cd-flow > * + * {
-  margin-top: var(--cd-flow-space, 1em);
+  margin-top: var(--cd-flow-space, 1rem);
 }
 
-.cd-bumper > * + * {
-  padding-left: var(--cd-bumper-space, 1em);
+.cd-flow > .visually-hidden:first-child + * {
+  margin-top: 0;
 }
 
-.cd-bumper--rtl > *:not(:last-child) {
-  padding-right: var(--cd-bumper-space, 1em);
+[dir='ltr'] .cd-bumper > * + * {
+  padding-left: var(--cd-bumper-space, 1rem);
+}
+
+/*[dir='ltr'] .cd-bumper > *:not(:last-child) {*/
+/*  padding-right: var(--cd-bumper-space, 1rem);*/
+/*}*/
+
+[dir='rtl'] .cd-bumper > * + * {
+  padding-right: var(--cd-bumper-space, 1rem);
 }

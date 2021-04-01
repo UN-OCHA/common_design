@@ -61,7 +61,7 @@
     margin: 4rem 0;
     font-size: 2rem;
     width: 100%;
-    border: 1px solid var(--cd-bright-blue);
+    border: 1px solid var(--cd-blue--bright);
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -69,6 +69,11 @@
 
   h3.cd-styleguide > a[id*="cd-"] {
     flex: 1;
+  }
+
+  .cd-footer {
+  --cd-footer-row-number: 6;
+    grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
   }
 
 </style>
@@ -79,10 +84,9 @@
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
   {% endblock %}
 
-  <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
-
   {% block hero %}
     <div class="cd-layout-hero">
+      <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
       {% if componentsModule %}
         {% include '@cd-components/cd-hero/cd-hero.html.twig' %}
       {% endif %}
@@ -99,28 +103,26 @@
 
   {{ page.help }}
 
-  {% if page.page_title %}
-    {% block page_title %}
-      <div class="cd-page-title cd-container">
-        {{ page.page_title }}
-      </div>
-    {% endblock %}
-  {% endif %}
+  <div class="cd-container">
+    {{ page.page_title }}
+  </div>
 
   {# Link to skip to the main content is in html.html.twig #}
   <main role="main" id="main-content" class="cd-container">
 
     <div class="cd-layout-content">
 
-      <div class="cd-toc cd-toc--left [ cd-flow ]">
+      <div class="cd-toc [ cd-flow ]">
         <div class="cd-toc__title">Table of Contents</div>
         <ol id="cd-component-toc" class="cd-toc__list">
           <li><a href="#cd-alert">Alert</a></li>
           <li><a href="#cd-button">Buttons</a></li>
           <li><a href="#cd-read-more">Read more</a></li>
           <li><a href="#cd-banner">Banner</a></li>
+          <li><a href="#cd-block-title">Block Title</a></li>
           <li><a href="#cd-bullet-list">Bullet List</a></li>
           <li><a href="#cd-card">Card</a></li>
+          <li><a href="#cd-event">Event</a></li>
           <li><a href="#cd-date">Date</a></li>
           <li><a href="#cd-filter">Filter</a></li>
           <li><a href="#cd-hero">Hero</a></li>
@@ -129,6 +131,8 @@
           <li><a href="#cd-social-links">Social links</a></li>
           <li><a href="#cd-title-list">Title List</a></li>
           <li><a href="#cd-table">Table</a></li>
+          <li><a href="#cd-tag">Tag</a></li>
+          <li><a href="#cd-tabs">Tabs</a></li>
           <li><a href="#cd-author">Author</a></li>
           <li><a href="#cd-byline">Byline</a></li>
           <li><a href="#cd-toc">Table of contents</a></li>
@@ -137,7 +141,9 @@
           <li><a href="#cd-search--inline">Inline search</a></li>
           <li><a href="#cd-pagination">Pagination</a></li>
           <li><a href="#cd-grid">Grid</a></li>
+          <li><a href="#cd-article">Article</a></li>
           <li><a href="#cd-typography">Typography</a></li>
+          <li><a href="#cd-form">Form</a></li>
         </ol>
       </div>
 
@@ -145,7 +151,7 @@
 
       {% if componentsModule %}
 
-        <h2 class="cd-styleguide"><a id="cd-components--content" class="cd-bleed--background-only">Content components</a></h2>
+        <h2 class="cd-styleguide cd-bleed--background-only"><a id="cd-components--content">Content components</a></h2>
 
         <h3 class="cd-styleguide"><a id="cd-banner">cd-banner</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
@@ -194,6 +200,11 @@
 
         {% include '@cd-components/cd-card/cd-card.html.twig' %}
 
+        <h3 class="cd-styleguide"><a id="cd-event">cd-event</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-event/cd-event.html.twig' %}
+
         <h3 class="cd-styleguide"><a id="cd-alert">cd-alert</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
@@ -203,6 +214,11 @@
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-table/cd-table.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-tag">cd-tag</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-tag/cd-tag.html.twig' %}
 
         <h3 class="cd-styleguide"><a id="cd-author">cd-author</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
@@ -219,7 +235,7 @@
 
         {% include '@cd-components/cd-toc/cd-toc.html.twig' %}
 
-        <h2 class="cd-styleguide"><a id="cd-components--ui" class="cd-bleed--background-only">UI components</a></h2>
+        <h2 class="cd-styleguide cd-bleed--background-only"><a id="cd-components--ui">UI components</a></h2>
 
         <h3 class="cd-styleguide"><a id="cd-button">cd-button</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
@@ -257,11 +273,22 @@
 
         <h3 class="cd-styleguide"><a id="cd-filter">cd-filter</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+        {# wrapper div needed for dropdown #}
+        <div>
+          {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
+        </div>
 
-        {% include '@cd-components/cd-filter/cd-filter.html.twig' %}
+        <h3 class="cd-styleguide"><a id="cd-form">cd-form</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
+        {% include '@cd-components/cd-form/cd-form.html.twig' %}
 
-        <h2 class="cd-styleguide"><a id="cd-components--layout" class="cd-bleed--background-only">Layout components</a></h2>
+        <h3 class="cd-styleguide"><a id="cd-tabs">cd-tabs</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-tabs/cd-tabs.html.twig' %}
+
+        <h2 class="cd-styleguide cd-bleed--background-only"><a id="cd-components--layout">Layout components</a></h2>
 
         <h3 class="cd-styleguide"><a id="cd-grid">cd-grid</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
@@ -272,6 +299,11 @@
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-image-grid/cd-image-grid.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-article">cd-article</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-article/cd-article.html.twig' %}
 
         <h3 class="cd-styleguide"><a id="cd-typography">cd-typography</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
