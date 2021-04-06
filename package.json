@@ -8,12 +8,27 @@
   "license": "GPL-2.0",
   "scripts": {
     "sass:compile": "sass sass/styles.scss css/styles.css --style=compressed --embed-sources",
-    "sass:watch": "npm run sass:lint && npm run sass:compile -- --watch",
+    "sass:watch": "npm-watch",
     "sass:lint": "stylelint '{sass,components}/**/*.{css,scss}'",
     "sass:postcss": "postcss css/styles.css --use autoprefixer -b 'last 3 versions' -r",
     "sass:build": "npm run sass:lint && npm run sass:compile && npm run sass:postcss",
     "js:lint": "eslint js/*.js",
     "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg"
+  },
+  "watch": {
+    "sass:lint": {
+      "patterns": [
+        "sass",
+        "components"
+      ],
+      "extensions": "css,scss"
+    },
+    "sass:compile": {
+      "patterns": [
+        "sass"
+      ],
+      "extensions": "scss"
+    }
   },
   "engines": {
     "node": "^12.21.0",
@@ -26,6 +41,7 @@
   "devDependencies": {
     "eslint": "^7.23.0",
     "minimist": "^1.2.5",
+    "npm-watch": "^0.9.0",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
     "stylelint": "^13.12.0",
