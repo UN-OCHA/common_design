@@ -10,11 +10,11 @@
 
 html,
 input {
-  font-size: $cd-font-size--base;
+  font-size: 16px;
 }
 
 body {
-  font-size: $cd-font-size--base;
+  font-size: 1rem;
   font-family: $cd-font--system;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -22,6 +22,10 @@ body {
   -webkit-font-smoothing: antialiased;
   color: $cd-grey--dark;
   line-height: 1.5;
+
+  @include desktop {
+    font-size: $cd-font-size--base;
+  }
 
   &.no-scroll {
     overflow: hidden;
