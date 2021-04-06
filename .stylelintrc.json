@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "../../../../html/core/.stylelintrc.json",
+    "stylelint-config-recommended-scss"
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "function-calc-no-unspaced-operator": null,
+    "unit-no-unknown": null
+  },
+  "defaultSeverity": "warning"
+}

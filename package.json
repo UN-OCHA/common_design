@@ -9,7 +9,7 @@
   "scripts": {
     "sass:compile": "sass sass/styles.scss css/styles.css --style=compressed --embed-sources",
     "sass:watch": "npm run sass:lint && npm run sass:compile -- --watch",
-    "sass:lint": "sass-lint -c .sass-lint.yml 'sass/**/*.scss' -v -q",
+    "sass:lint": "npx stylelint '{sass,components}/**/*.{css,scss}'",
     "sass:postcss": "npx postcss css/styles.css --use autoprefixer -b 'last 3 versions' -r",
     "sass:build": "npm run sass:lint && npm run sass:compile && npm run sass:postcss",
     "js:lint": "eslint js/*.js",
@@ -28,7 +28,9 @@
     "minimist": "^1.2.5",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
-    "sass-lint": "^1.13.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^3.19.0",
     "svg-sprite": "^1.5.0",
     "xmldom": ">=0.5.0",
     "yargs-parser": "^18.1.3"
