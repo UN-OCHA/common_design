@@ -1,6 +1,6 @@
 {
   "extends": [
-    "../../../../html/core/.stylelintrc.json",
+    "../../../core/.stylelintrc.json",
     "stylelint-config-recommended-scss"
   ],
   "rules": {
