@@ -130,7 +130,7 @@ This project uses some Node packages for Sass compilation, watching and linting,
 
 See [scripts in package.json](https://github.com/UN-OCHA/common_design/blob/main/package.json#L9)
 
-Eg: `npm run sass:watch`
+To get a list of commands, do `npm run` and it will output all possible options:
 
 
 ## Icons
