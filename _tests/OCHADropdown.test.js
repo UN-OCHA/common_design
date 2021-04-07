@@ -2,7 +2,7 @@ import env from './_env';
 
 jest.setTimeout(env.timeout);
 
-describe('OCHAServicesDropdown', () => {
+describe('Basetheme: OCHAServicesDropdown', () => {
   beforeAll(async () => {
     await page.goto(`${env.baseUrl}`);
   });
@@ -21,11 +21,6 @@ describe('OCHAServicesDropdown', () => {
       const relatedPlatformsLength = await page.$$eval('.cd-ocha-dropdown__section:first-child', nodeList => nodeList.length);
       await expect(relatedPlatformsLength).toBeLessThanOrEqual(relatedPlatformsLimit);
     });
-  });
-
-  it('should contain no links in the Related Platforms section which have default text', async () => {
-    const relatedPlatformsText = await page.$eval('.cd-ocha-dropdown__section:first-child .cd-ocha-dropdown__link a', (el) => el.innerHTML);
-    await expect(relatedPlatformsText).not.toMatch('Customizable');
   });
 
   it('should contain eight links in the Other OCHA Services section', async () => {
@@ -68,5 +63,12 @@ describe('OCHAServicesDropdown', () => {
     const seeAllButtonHref = await page.$eval('.cd-ocha-dropdown__see-all', (el) => el.href);
     const expectedUrl = 'https://www.unocha.org/ocha-digital-services';
     await expect(seeAllButtonHref).toEqual(expectedUrl);
+  });
+});
+
+describe('Subtheme: OCHAServicesDropdown', () => {
+  it('should contain no links in the Related Platforms section which have default text', async () => {
+    const relatedPlatformsText = await page.$eval('.cd-ocha-dropdown__section:first-child .cd-ocha-dropdown__link a', (el) => el.innerHTML);
+    await expect(relatedPlatformsText).not.toMatch('Customizable');
   });
 });

@@ -2,7 +2,7 @@ import env from './_env';
 
 jest.setTimeout(env.timeout);
 
-describe('MainMenuDropdown', () => {
+describe('Basetheme: MainMenuDropdown', () => {
   beforeAll(async () => {
     await page.goto(`${env.baseUrl}`);
   });

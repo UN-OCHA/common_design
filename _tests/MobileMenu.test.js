@@ -2,7 +2,7 @@ import env from './_env';
 
 jest.setTimeout(env.timeout);
 
-describe('MobileMenu', () => {
+describe('Basetheme: MobileMenu', () => {
   beforeAll(async () => {
     await page.goto(`${env.baseUrl}`);
   });

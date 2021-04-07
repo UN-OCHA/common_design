@@ -206,5 +206,5 @@ npm run e2e -- --debug
 # argument. It will parse all of the describe() blocks and only run tests when
 # it matches the string you supply.
 npm run e2e -- -t 'OCHAServicesDropdown'
-
+npm run e2e -- -t 'Subtheme: OCHAServicesDropdown'
 ```

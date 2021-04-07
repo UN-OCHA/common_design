@@ -3,7 +3,7 @@ import env from './_env';
 jest.setTimeout(env.timeout);
 
 
-describe('FooterLinks', () => {
+describe('Basetheme: FooterLinks', () => {
   beforeAll(async () => {
     await page.goto(`${env.baseUrl}`);
   });
