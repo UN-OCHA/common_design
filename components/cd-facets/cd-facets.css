@@ -26,7 +26,7 @@
   font-weight: 700;
 }
 
-/*This emulates the cd-bullet-list component using CSS bg image instead of SVG element in markup.*/
+/* This emulates the cd-bullet-list component using CSS bg image instead of SVG element in markup. */
 .block-facet--links li a {
   display: block;
   margin-bottom: 1rem;
@@ -137,7 +137,7 @@
   background-position: 0 0;
 }
 
-/*Hide Summary block title.*/
+/* Hide Summary block title. */
 .block-facets-summary h2 {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);

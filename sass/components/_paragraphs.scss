@@ -25,19 +25,15 @@
     &.paragraph__image--align-right {
       .field--name-field-media-content-text {
         order: 2;
-      }
 
-      .field--name-field-media-content-image {
-        order: 1;
-      }
-
-      .field--name-field-media-content-text {
         @include tablet {
           flex: 1 0 300px;
         }
       }
 
       .field--name-field-media-content-image {
+        order: 1;
+
         @include tablet {
           flex: 0 1 300px;
         }

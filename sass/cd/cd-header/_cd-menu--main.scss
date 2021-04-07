@@ -15,6 +15,7 @@
 
 ul[data-cd-hidden='true'] > ul {
   display: block;
+
   @include z-index(dropdown);
 }
 
@@ -35,6 +36,6 @@ ul[data-cd-hidden='true'] > ul {
   }
 }
 
-.no-js .menu-item--expanded> [aria-expanded='false'] + ul {
+.no-js .menu-item--expanded > [aria-expanded='false'] + ul {
   display: block;
 }

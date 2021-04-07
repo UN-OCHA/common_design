@@ -12,9 +12,11 @@
   padding-left: var(--cd-bumper-space, 1rem);
 }
 
-/*[dir='ltr'] .cd-bumper > *:not(:last-child) {*/
-/*  padding-right: var(--cd-bumper-space, 1rem);*/
-/*}*/
+/*
+[dir='ltr'] .cd-bumper > *:not(:last-child) {
+  padding-right: var(--cd-bumper-space, 1rem);
+}
+*/
 
 [dir='rtl'] .cd-bumper > * + * {
   padding-right: var(--cd-bumper-space, 1rem);

@@ -28,6 +28,7 @@
       outline-offset: 1px;
     }
   }
+
   @include desktop {
     // Force the text to wrap in IE10.
     display: inline-block;
@@ -55,8 +56,8 @@
 // To override `.cd-footer a` we must use tag in selector
 a.cd-footer-copyright__link {
   &:hover {
-    opacity: .8;
-    transition: opacity .1666s ease-in-out;
+    opacity: 0.8;
+    transition: opacity 0.1666s ease-in-out;
   }
 
   &:focus {

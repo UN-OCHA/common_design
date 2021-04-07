@@ -59,15 +59,12 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer__inner {
-
   @supports (display: flex) {
-
     @include tablet {
       display: flex;
       flex-wrap: wrap;
     }
   }
-
 }
 
 .cd-footer__section--menu {
@@ -120,9 +117,7 @@
   }
 }
 
-
 @supports (display: flex) {
-
   .cd-footer__section {
     float: none;
   }
@@ -131,6 +126,7 @@
     @include tablet {
       flex: 1 0 100%;
     }
+
     @include desktop {
       text-align: left;
       flex: 1 0 70%;
@@ -145,6 +141,7 @@
     @include tablet {
       flex: 1 0 100%;
     }
+
     @include desktop {
       flex: 0 1 auto;
     }
@@ -154,6 +151,7 @@
     @include tablet {
       flex: 1 0 100%;
     }
+
     @include desktop {
       max-width: 780px;
       flex: 1 0 50%;
@@ -165,10 +163,10 @@
     @include tablet {
       flex: 1 0 100%;
     }
+
     @include desktop {
       flex: 0 1 350px;
       margin: 0;
     }
   }
-
 }

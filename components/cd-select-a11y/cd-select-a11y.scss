@@ -62,7 +62,7 @@ $a11y-suggestion-border:      $gray-5 !default;
     position: relative;
     width: 100%;
     text-align: left;
-    padding: 9px .5rem;
+    padding: 9px 0.5rem;
     background-color: $btn-select-a11y-bg;
     border: 1px solid $btn-select-a11y-border;
 
@@ -91,7 +91,7 @@ $a11y-suggestion-border:      $gray-5 !default;
 
   .tag-item {
     border: 1px solid $tag-item-border;
-    padding: .2em .1em .2em 0.5em;
+    padding: 0.2em 0.1em 0.2em 0.5em;
     background: $cd-white;
   }
 
@@ -133,7 +133,6 @@ $a11y-suggestion-border:      $gray-5 !default;
     background: $a11y-suggestions-bg;
     z-index: 10;
     border: 1px solid $gray-7;
-
 
     input {
       outline: 2px solid $cd-blue--bright;
@@ -226,12 +225,10 @@ $a11y-suggestion-border:      $gray-5 !default;
   }
 }
 
-.btn,
 .btn {
   font-size: 1rem;
 }
 
-.btn:focus,
 .btn.focus {
   outline: 3px solid $cd-blue--bright;
   outline-offset: -3px;

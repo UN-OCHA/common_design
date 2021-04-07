@@ -23,7 +23,7 @@
 }
 .cd-title-list__link:hover,
 .cd-title-list__link:focus,
-.cd-title-list__link:active  {
+.cd-title-list__link:active {
   text-decoration: underline;
 }
 

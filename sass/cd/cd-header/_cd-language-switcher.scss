@@ -54,6 +54,7 @@
 
   li a {
     @extend .cd-user-menu__dropdown-link;
+
     color: $cd-white;
 
     &:hover,

@@ -11,7 +11,6 @@
   --cd-ie-primary-color--lighter: #a8ccf0;
   --cd-ie-highlight-red: #eb5c6d;
   --cd-ie-highlight-red--light: #f08995;
-
   --cd-primary-color-h: 210;
   --cd-primary-color-s: 70%;
   --cd-primary-color-l: 41%;
@@ -51,8 +50,9 @@
   font-size: 1rem;
   line-height: 1.15;
   text-align: center;
-  transition: background-color 0.6s ease-out,
-  color 0.6s ease-out;
+  transition:
+    background-color 0.6s ease-out,
+    color 0.6s ease-out;
   width: auto;
   color: var(--cd-white);
   background-color: var(--cd-primary-color);

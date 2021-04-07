@@ -107,7 +107,7 @@ input::-webkit-search-decoration {
   width: auto;
 }
 
-/*From Classy.*/
+/* From Classy */
 .form-required::after {
   display: inline-block;
   width: 6px;
