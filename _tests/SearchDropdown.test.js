@@ -2,7 +2,7 @@ import env from './_env';
 
 jest.setTimeout(env.timeout);
 
-describe('Basetheme: SearchDropdown', () => {
+describe('SearchDropdown', () => {
   beforeAll(async () => {
     await page.goto(`${env.baseUrl}`);
   });
