@@ -205,6 +205,16 @@ npm run e2e -- --debug
 # If you want to run a limited number of tests, specify a string with the -t
 # argument. It will parse all of the describe() blocks and only run tests when
 # it matches the string you supply.
+
+# All tests that include 'OCHAServicesDropdown'.
 npm run e2e -- -t 'OCHAServicesDropdown'
+
+# Only tests in 'Subtheme: OCHAServicesDropdown' block.
 npm run e2e -- -t 'Subtheme: OCHAServicesDropdown'
+
+# All 'OCHAServicesDropdown' test except blocks including 'Subtheme'.
+npm run e2e -- -t '^(?!.*Subtheme).*$OCHAServicesDropdown'
+
+# All tests except blocks including 'Subtheme'.
+npm run e2e -- -t '^(?!.*Subtheme).*$'
 ```
