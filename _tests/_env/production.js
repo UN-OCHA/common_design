@@ -1,6 +1,6 @@
 const env = {
   timeout: 5000,
-  baseUrl: 'https://feature.commondesign-unocha-org.ahconu.org/'
+  baseUrl: 'https://web.brand.unocha.org'
 };
 
 console.log('⚠️  E2E testing', env.baseUrl);
