@@ -1,7 +1,7 @@
 {
   "name": "common-design",
   "type": "module",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "OCHA Common Design base theme for Drupal 8",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
@@ -13,7 +13,9 @@
     "sass:postcss": "postcss css/styles.css --use autoprefixer -b 'last 3 versions' -r",
     "sass:build": "npm run sass:lint && npm run sass:compile && npm run sass:postcss",
     "js:lint": "eslint js/*.js",
-    "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg"
+    "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
+    "e2e": "jest _tests/*.test.js",
+    "test": "jest _tests/*.test.js"
   },
   "engines": {
     "node": "^12.21.0",
@@ -21,10 +23,15 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "puppeteer": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.13.10",
+    "babel-jest": "^26.6.3",
     "eslint": "^7.23.0",
+    "jest": "^26.6.3",
+    "jest-puppeteer": "^4.4.0",
     "minimist": "^1.2.5",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
@@ -32,6 +39,7 @@
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.19.0",
     "svg-sprite": "^1.5.0",
+    "ts-jest": "^26.5.3",
     "xmldom": ">=0.5.0",
     "yargs-parser": "^18.1.3"
   }
