@@ -3,6 +3,7 @@ type: theme
 description: OCHA Common Design drupal theme. Use as a base theme, and extend.
 core_version_requirement: ^8.8 || ^9
 logo: 'img/logos/ocha-lockup-blue.svg'
+base theme: stable
 
 # Defines libraries group in which we can add css/js.
 libraries:
