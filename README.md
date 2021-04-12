@@ -187,3 +187,34 @@ Progressive enhancement approach to layout, using Feature Queries to detect supp
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
+
+
+
+## E2E testing
+
+```sh
+# Install dependencies for your host machine.
+npm i
+
+# Run all E2E tests in headless mode. The console will output the results.
+npm run e2e
+
+# See the tests run in a visible browser window with --debug
+npm run e2e -- --debug
+
+# If you want to run a limited number of tests, specify a string with the -t
+# argument. It will parse all of the describe() blocks and only run tests when
+# it matches the string you supply.
+
+# All tests that include 'OCHAServicesDropdown'.
+npm run e2e -- -t 'OCHAServicesDropdown'
+
+# Only tests in 'Subtheme: OCHAServicesDropdown' block.
+npm run e2e -- -t 'Subtheme: OCHAServicesDropdown'
+
+# All 'OCHAServicesDropdown' test except blocks including 'Subtheme'.
+npm run e2e -- -t '^(?!.*Subtheme).*$OCHAServicesDropdown'
+
+# All tests except blocks including 'Subtheme'.
+npm run e2e -- -t '^(?!.*Subtheme).*$'
+```
