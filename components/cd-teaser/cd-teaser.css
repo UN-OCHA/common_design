@@ -42,13 +42,6 @@
     justify-content: flex-start;
   }
 
-  /* For IE11 as the CSS custom property for cd-bumper above will not work */
-  @media all and (-ms-high-contrast: none) {
-    .cd-teaser {
-      padding-left: 2rem;
-    }
-  }
-
   .cd-teaser__container {
     padding-left: unset;
   }
@@ -61,6 +54,13 @@
 
   .cd-teaser__footer {
     align-self: flex-end;
+  }
+
+  /* For IE11 as the CSS custom property for cd-bumper above will not work */
+  @media all and (-ms-high-contrast: none) {
+    .cd-teaser {
+      padding-left: 2rem;
+    }
   }
 }
 

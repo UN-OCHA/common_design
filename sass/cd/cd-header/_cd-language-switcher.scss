@@ -15,10 +15,6 @@
   padding: 0 0 0 15px;
   line-height: $cd-global-header-height;
 
-  @include tablet {
-    padding: 0 0 0 20px;
-  }
-
   // Language switcher is always on the far edge of the global header.
   // Cancel the border that we render for other elements.
   &::after {
@@ -33,6 +29,10 @@
 
   &:focus {
     outline: 3px solid $cd-blue--bright;
+  }
+
+  @include tablet {
+    padding: 0 0 0 20px;
   }
 }
 

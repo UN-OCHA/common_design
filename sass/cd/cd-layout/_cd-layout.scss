@@ -24,6 +24,10 @@ body {
   margin: 0 auto;
   padding: 0;
 
+  .no-js & {
+    display: block;
+  }
+
   // helper for @support testing. Enable background for colours.
   //background: rgba(255, 0, 0, 0.1);
 
@@ -52,10 +56,6 @@ body {
       grid-template-rows: 101px auto 1fr auto;
       grid-auto-rows: auto;
     }
-  }
-
-  .no-js & {
-    display: block;
   }
 }
 
@@ -106,16 +106,16 @@ body {
     display: none;
   }
 
-  @include desktop {
-    flex-grow: 1;
-  }
-
   .cd-layout-sidebar-first & {
     margin-bottom: 2rem;
 
     @include desktop {
       margin-bottom: 0;
     }
+  }
+
+  @include desktop {
+    flex-grow: 1;
   }
 }
 
@@ -166,12 +166,6 @@ body {
 }
 
 .cd-layout-content {
-  //background: lightyellow;
-
-  @include desktop {
-    flex-basis: 0;
-    flex-grow: 999;
-  }
 
   .cd-layout-with-sidebar-both & {
     margin-bottom: 1rem;
@@ -222,15 +216,17 @@ body {
       }
     }
   }
+  //background: lightyellow;
+
+  @include desktop {
+    flex-basis: 0;
+    flex-grow: 999;
+  }
 }
 
 // Faux sidebar in Node content.
 // Requires markup in node-full.html.twig.
 .cd-layout-two-col {
-  @include desktop {
-    display: flex;
-    flex-wrap: wrap;
-  }
 
   .cd-layout-main-content {
     // These override the main layout rules based on which sidebar is enabled.
@@ -262,6 +258,11 @@ body {
       flex-basis: 285px;
       margin-top: 0;
     }
+  }
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

@@ -14,9 +14,9 @@
 }
 
 ul[data-cd-hidden='true'] > ul {
-  display: block;
-
   @include z-index(dropdown);
+
+  display: block;
 }
 
 .menu--main button[aria-expanded] .cd-icon--arrow-down {

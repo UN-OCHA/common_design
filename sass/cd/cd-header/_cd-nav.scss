@@ -14,17 +14,6 @@
   //border-right: 1px solid $cd-blue-grey;
   font-size: $cd-font-size--small;
 
-  @include desktop {
-    // This is needed for IE11
-    // No support for CSS custom properties means
-    // --dropdown: false; property on nav container is not recognised
-    // so the cd-dropdown.js creates a toggler button on desktop
-    // This hides it when that happens.
-    @media all and (-ms-high-contrast: none) {
-      display: none;
-    }
-  }
-
   .cd-nav__btn-label {
     font-weight: 700;
   }
@@ -62,6 +51,17 @@
     outline: none; // default browser outline is replaced by background colour change.
     background: $cd-blue-grey;
   }
+
+  @include desktop {
+    // This is needed for IE11
+    // No support for CSS custom properties means
+    // --dropdown: false; property on nav container is not recognised
+    // so the cd-dropdown.js creates a toggler button on desktop
+    // This hides it when that happens.
+    @media all and (-ms-high-contrast: none) {
+      display: none;
+    }
+  }
 }
 
 // Hide default block titles
@@ -74,6 +74,63 @@
 
   .cd-nav {
     @include z-index(main-menu); // zindex may need adjusting depending on other site content.
+
+    > ul {
+      display: none;
+      background: $cd-white;
+
+      @include desktop {
+        display: flex;
+        background: transparent;
+      }
+    }
+
+    .no-js & > ul {
+      display: block;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a,
+    button {
+      display: block;
+      padding: 15px 30px;
+      text-align: left;
+      text-decoration: none;
+      color: $cd-default-text-color;
+
+      html[dir='rtl'] & {
+        text-align: right;
+      }
+
+      &:hover,
+      &:focus {
+        color: $cd-black;
+        outline: none; // default browser outline is replaced by background colour change.
+        background: $cd-blue-grey;
+      }
+
+      @supports (display: flex) {
+        display: flex;
+      }
+    }
+
+    button {
+      width: 100%;
+      border: 0 none;
+      background: transparent;
+    }
+
+    // First level.
+    > .menu > .menu-item > a,
+    > .menu > .menu-item > button {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
 
     @include max-width(lg) {
       &[data-cd-hidden='false'] {
@@ -114,63 +171,6 @@
           display: block;
         }
       }
-    }
-
-    > ul {
-      display: none;
-      background: $cd-white;
-
-      @include desktop {
-        display: flex;
-        background: transparent;
-      }
-    }
-
-    .no-js & > ul {
-      display: block;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    a,
-    button {
-      display: block;
-      padding: 15px 30px;
-      text-align: left;
-      text-decoration: none;
-      color: $cd-default-text-color;
-
-      @supports (display: flex) {
-        display: flex;
-      }
-
-      html[dir='rtl'] & {
-        text-align: right;
-      }
-
-      &:hover,
-      &:focus {
-        color: $cd-black;
-        outline: none; // default browser outline is replaced by background colour change.
-        background: $cd-blue-grey;
-      }
-    }
-
-    button {
-      width: 100%;
-      border: 0 none;
-      background: transparent;
-    }
-
-    // First level.
-    > .menu > .menu-item > a,
-    > .menu > .menu-item > button {
-      text-transform: uppercase;
-      font-weight: 700;
     }
   }
 
@@ -288,9 +288,6 @@
 
   @include desktop {
     .cd-nav > .menu {
-      @supports (display: flex) {
-        flex: 1 0 auto;
-      }
 
       // sass-lint:disable nesting-depth
       > .menu-item {
@@ -380,6 +377,10 @@
             border-left-width: 0;
           }
         }
+      }
+
+      @supports (display: flex) {
+        flex: 1 0 auto;
       }
     }
   }

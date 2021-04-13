@@ -40,6 +40,11 @@
 .cd-site-header__inner {
   height: $cd-site-header-height;
 
+  .no-js & {
+    display: block;
+    height: unset;
+  }
+
   @supports (display: grid) {
     display: grid;
     grid-template-rows: $cd-site-header-height;
@@ -49,11 +54,6 @@
     @include tablet {
       grid-template-columns: 186px 1fr;
     }
-  }
-
-  .no-js & {
-    display: block;
-    height: unset;
   }
 }
 
@@ -90,18 +90,15 @@
 }
 
 .cd-site-header__nav-holder nav > ul {
-  @include desktop {
-    @supports (display: flex) {
-      display: flex;
-      float: none;
-      flex: 0 0 auto;
-      flex-flow: row wrap;
-      justify-content: flex-end;
-    }
-  }
 
   > li,
   > .cd-nav__item {
+
+    .no-js & {
+      float: left;
+      max-width: unset;
+    }
+
     @include desktop {
       float: left;
     }
@@ -125,10 +122,15 @@
         flex: 1 1 auto;
       }
     }
+  }
 
-    .no-js & {
-      float: left;
-      max-width: unset;
+  @include desktop {
+    @supports (display: flex) {
+      display: flex;
+      float: none;
+      flex: 0 0 auto;
+      flex-flow: row wrap;
+      justify-content: flex-end;
     }
   }
 }

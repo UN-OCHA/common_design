@@ -23,15 +23,15 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
 
-  @include desktop {
-    font-size: $cd-font-size--base;
-  }
-
   &.no-scroll {
     position: fixed;
     overflow: hidden;
     width: 100%;
     height: 100%;
+  }
+
+  @include desktop {
+    font-size: $cd-font-size--base;
   }
 }
 

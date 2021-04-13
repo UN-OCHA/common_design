@@ -67,20 +67,6 @@
   background: transparent;
   line-height: $cd-global-header-height;
 
-  @include tablet {
-    padding: 0 20px;
-  }
-
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
-  }
-
-  @include tablet {
-    max-width: none;
-    padding: 0 20px;
-  }
-
   // Separator.
   &::after {
     position: absolute;
@@ -113,6 +99,20 @@
     @include tablet {
       max-width: unset;
     }
+  }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    max-width: none;
+    padding: 0 20px;
   }
 }
 

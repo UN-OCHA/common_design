@@ -30,18 +30,6 @@
   background: transparent;
   font-size: $cd-font-size--tiny;
 
-  @include tablet {
-    display: flex;
-    width: auto;
-
-    &:hover,
-    &:focus {
-      .cd-ocha__btn-label {
-        text-decoration: underline;
-      }
-    }
-  }
-
   .cd-icon--arrow-down {
     margin: auto; // Center vertically in macOS 10
 
@@ -52,6 +40,18 @@
 
       [dir='rtl'] & {
         margin-right: 4px;
+      }
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    width: auto;
+
+    &:hover,
+    &:focus {
+      .cd-ocha__btn-label {
+        text-decoration: underline;
       }
     }
   }
@@ -121,6 +121,13 @@
   // On mobile the link sections need space.
   margin-bottom: 1.5rem;
 
+  // on mobile, the two middle columns should look like one list.
+  &:nth-child(2) {
+    @include max-width(md) {
+      margin-bottom: 0;
+    }
+  }
+
   //
   // Grid not supported, fall back to floats on desktop
   //
@@ -137,13 +144,6 @@
 
     &:last-child {
       margin-right: 0;
-    }
-  }
-
-  // on mobile, the two middle columns should look like one list.
-  &:nth-child(2) {
-    @include max-width(md) {
-      margin-bottom: 0;
     }
   }
 

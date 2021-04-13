@@ -64,14 +64,14 @@ $grid-columns: 12 !default;
 }
 
 @mixin make-grid-columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+
+  $breakpoint-counter: 0;
   %grid-column {
     @include make-gutters();
 
     position: relative;
     min-height: 1px;
   }
-
-  $breakpoint-counter: 0;
 
   @each $breakpoint in map-keys($breakpoints) {
     $breakpoint-counter: ($breakpoint-counter + 1);

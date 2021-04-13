@@ -8,24 +8,6 @@ a.cd-footer-social__link {
   margin: 0 10px;
   border: 0 none;
 
-  @include desktop {
-    margin: 0 0 0 20px;
-
-    &:first-child {
-      margin: 0;
-    }
-
-    [dir='rtl'] & {
-      &:first-child {
-        margin: 0 0 0 20px;
-      }
-
-      &:last-child {
-        margin: 0;
-      }
-    }
-  }
-
   svg {
     width: 26px;
     height: 26px;
@@ -44,6 +26,24 @@ a.cd-footer-social__link {
 
     .hover-style {
       display: inline-block;
+    }
+  }
+
+  @include desktop {
+    margin: 0 0 0 20px;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    [dir='rtl'] & {
+      &:first-child {
+        margin: 0 0 0 20px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 }
