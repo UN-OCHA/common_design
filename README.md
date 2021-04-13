@@ -16,7 +16,7 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Common Header
 * Common Footer
 * Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://thenounproject.com/ochavisual/))
-* Variables for breakpoints, colours, font sizes, fonts, measurements and z-index
+* Variables for breakpoints, colours, font sizes, fonts, and z-index
 * Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
 * See [v3.0.0 Release notes](https://github.com/UN-OCHA/common_design/releases/tag/v3.0.0) and [common_design implementation notes for v2](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
@@ -55,8 +55,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 
 1. Run `nvm use` in theme folder to ensure the correct node version.
 2. Install the dependencies: `npm install`
-4. Run `npm run sass:build` task to build the CSS and watch for new changes: `npm run sass:watch`
-5. When you make commits, it will automatically run a "production" Sass build that excludes Sourcemaps
+4. For development, run `npm run sass:watch` (this includes an initial linting and sourcemaps) and run `npm run sass:build` for final CSS generation.
 6. For twig debug and local development see [Disable Drupal 8 caching during development
 ](https://www.drupal.org/node/2598914)
 
@@ -68,9 +67,9 @@ This project uses [Sass](http://sass-lang.com/). To make changes edit the `.scss
 
 Run `npm run sass:watch` in the theme folder to watch for changes and automatically rebuild the CSS.
 
-Run `npm run sass:build` to compile the CSS only.
+Run `npm run sass:build` to compile production-ready CSS.
 
-Preferably use Jenkins to run the sass:build task on build to generate the CSS. If this is possible on your project, add the `css/` folder to the `.gitignore` file and delete generated CSS from the repo.
+Preferably use Jenkins to run the sass:build task on build to generate the CSS.
 
 
 ## JS
@@ -130,8 +129,7 @@ This project uses some Node packages for Sass compilation, watching and linting,
 
 See [scripts in package.json](https://github.com/UN-OCHA/common_design/blob/main/package.json#L9)
 
-To get a list of commands, do `npm run` and it will output all possible options:
-
+To get a list of commands, do `npm run` and it will output all possible options.
 
 ## Icons
 
@@ -186,7 +184,6 @@ Progressive enhancement approach to layout, using Feature Queries to detect supp
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
-
 
 
 ## E2E testing
