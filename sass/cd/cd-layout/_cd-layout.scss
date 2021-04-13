@@ -20,9 +20,9 @@ body {
 
 .cd-layout-container {
   width: 100%;
+  min-height: 100%;
   margin: 0 auto;
   padding: 0;
-  min-height: 100%;
 
   // helper for @support testing. Enable background for colours.
   //background: rgba(255, 0, 0, 0.1);
@@ -64,9 +64,9 @@ body {
 
   box-sizing: border-box;
   width: 100%;
+  max-width: $cd-max-width;
   margin: 0 auto;
   padding: 0 $cd-container-padding;
-  max-width: $cd-max-width;
 
   @include tablet {
     padding: 0 $cd-container-padding-tablet;

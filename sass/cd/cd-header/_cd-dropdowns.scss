@@ -28,8 +28,8 @@
   }
 
   .no-js & {
-    display: block;
     position: relative;
+    display: block;
   }
 }
 
@@ -39,10 +39,10 @@
 .cd-global-header__dropdown {
   @include z-index(dropdown);
 
-  background: $cd-primary;
-  left: 0;
   position: absolute;
+  left: 0;
   color: $cd-white;
+  background: $cd-primary;
 
   .no-js & {
     position: relative;
@@ -56,16 +56,16 @@
 // Triangle on toggle when active.
 .cd-global-header button[aria-expanded='true'] {
   &::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 6px 6px;
-    border-color: transparent transparent $cd-primary;
     position: absolute;
     bottom: 0;
     left: 50%;
+    width: 0;
+    height: 0;
     margin-left: -6px;
+    content: '';
+    border-width: 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent $cd-primary;
   }
 }
 

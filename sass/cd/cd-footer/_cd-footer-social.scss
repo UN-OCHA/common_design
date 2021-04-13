@@ -4,9 +4,9 @@
 
 // To override `.cd-footer a` we must use tag in selector
 a.cd-footer-social__link {
-  border: 0 none;
   display: inline-block;
   margin: 0 10px;
+  border: 0 none;
 
   @include desktop {
     margin: 0 0 0 20px;
@@ -27,8 +27,8 @@ a.cd-footer-social__link {
   }
 
   svg {
-    height: 26px;
     width: 26px;
+    height: 26px;
     fill: $cd-white;
 
     &.hover-style {
