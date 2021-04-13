@@ -5,9 +5,9 @@
 /* The border is not on the container itself due to potential left/right padding
  * values that can interfere. Ex: when it has the `content-width` class. */
 .cd-byline::after {
-  content: "";
   display: block;
   padding-bottom: 2rem;
+  content: "";
   border-bottom: 1px solid var(--cd-blue-grey);
 }
 
@@ -16,9 +16,9 @@
 }
 
 .cd-byline__image {
+  flex: 0 0 4rem;
   width: 4rem;
   height: 4rem;
-  flex: 0 0 4rem;
   margin: 0;
 }
 

@@ -8,13 +8,13 @@ input[type='url'],
 input[type='date'],
 input[type='file'],
 textarea {
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
   color: var(--cd-grey--dark);
   font-size: 1rem;
-  box-sizing: border-box;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 @media (min-width: 768px) {
@@ -54,8 +54,8 @@ textarea:focus {
 select {
   width: 100%;
   max-width: 100%;
-  padding-left: 0.25rem;
   padding-right: 0.25rem;
+  padding-left: 0.25rem;
 }
 
 input::-webkit-input-placeholder {

@@ -1,7 +1,7 @@
 .cd-pager__items {
   clear: both;
-  text-align: center;
   padding: 0.5rem;
+  text-align: center;
 }
 
 @supports (display: flex) {
@@ -27,22 +27,22 @@
 .cd-pager__item a {
   display: block;
   padding: 0.5rem 0.75rem;
-  background-color: white;
+  text-decoration: none;
   border: 1px solid var(--cd-blue-grey);
   border-radius: 0.25rem;
-  text-decoration: none;
+  background-color: white;
 }
 
 .cd-pager__item a:hover,
 .cd-pager__item a:focus {
   color: white;
-  background-color: var(--cd-blue--dark);
   border-color: var(--cd-blue--dark);
+  background-color: var(--cd-blue--dark);
 }
 
 .cd-pager__item.is-active a {
-  font-weight: 700;
   color: white;
-  background-color: var(--cd-ocha-blue);
   border-color: var(--cd-ocha-blue);
+  background-color: var(--cd-ocha-blue);
+  font-weight: 700;
 }

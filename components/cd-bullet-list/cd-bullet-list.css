@@ -6,19 +6,19 @@
 
 /* https://yoksel.github.io/url-encoder/ */
 [dir='ltr'] .cd-bullet-list li {
+  padding: 0.25rem 0 0.25rem 1.5rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%5C %3Cpath fill='%23ff4d59' d='M14,48a4,4,0,0,1-2.83-6.83L28.34,24,11.17,6.83a4,4,0,0,1,5.66-5.66l20,20a4,4,0,0,1,0,5.66l-20,20A4,4,0,0,1,14,48Z'/%3E%5C %3C/svg%3E");
   background-repeat: no-repeat;
-  background-size: 0.5rem 0.5rem;
   background-position: 0 0.75rem;
-  padding: 0.25rem 0 0.25rem 1.5rem;
+  background-size: 0.5rem 0.5rem;
 }
 
 [dir='rtl'] .cd-bullet-list li {
+  padding: 0.25rem 1.5rem 0.25rem 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23ff4d59' d='M34,48a4,4,0,0,1-2.83-1.17l-20-20a4,4,0,0,1,0-5.66l20-20a4,4,0,0,1,5.66,5.66L19.66,24,36.83,41.17A4,4,0,0,1,34,48Z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-size: 0.5rem 0.5rem;
   background-position: 100% 0.75rem;
-  padding: 0.25rem 1.5rem 0.25rem 0;
+  background-size: 0.5rem 0.5rem;
 }
 
 /* When using an SVG element as icon */
@@ -28,10 +28,10 @@
 }
 
 .cd-bullet-list--icon svg {
-  fill: var(--cd-highlight-red);
+  display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
-  display: inline-block;
+  fill: var(--cd-highlight-red);
 }
 
 [dir='ltr'] .cd-bullet-list--icon .cd-icon--arrow-right {
@@ -40,7 +40,7 @@
 }
 
 [dir='rtl'] .cd-bullet-list--icon .cd-icon--arrow-right {
-  margin-left: 0.5rem;
   margin-right: -1.4rem;
+  margin-left: 0.5rem;
   transform: scale(-1, 1);
 }

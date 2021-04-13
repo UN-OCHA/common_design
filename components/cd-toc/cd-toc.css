@@ -1,17 +1,17 @@
 .cd-toc {
-  padding: 1rem;
-  background-color: var(--cd-blue-grey);
-  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
   display: inline-block;
   min-width: 16rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--cd-blue-grey);
 }
 
 .cd-toc__list,
 .cd-toc__list ol {
-  padding: 0;
   margin-bottom: 0;
+  padding: 0;
 }
 
 .cd-toc ol {
@@ -48,14 +48,14 @@
 }
 
 .cd-toc__back-to-toc {
-  text-align: right;
   padding: 1rem 0;
+  text-align: right;
 }
 
 @media (min-width: 576px) {
   div[class*='cd-toc--float'] {
-    max-width: 16rem;
     display: block;
+    max-width: 16rem;
   }
 
   .cd-toc--float-left {

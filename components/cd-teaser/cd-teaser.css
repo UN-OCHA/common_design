@@ -1,6 +1,6 @@
 .cd-teaser {
-  border-bottom: 1px solid var(--cd-blue-grey);
   padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cd-blue-grey);
 }
 
 .cd-teaser__image {
@@ -19,10 +19,10 @@
 
 .cd-teaser__title,
 .cd-teaser__title a {
-  font-weight: 700;
-  font-size: 1.125rem;
   display: block;
   margin-top: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 /* Override rule for cd-bumper on .cd-teaser__container to prevent padding-left on mobile. */
@@ -38,8 +38,8 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     align-items: flex-start;
+    justify-content: flex-start;
   }
 
   /* For IE11 as the CSS custom property for cd-bumper above will not work */

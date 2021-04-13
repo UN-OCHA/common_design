@@ -3,22 +3,22 @@
 }
 
 .cd-max-width--center {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 hr {
+  max-width: var(--cd-max-content-width);
   margin: 3.5rem auto;
   border: none;
   border-top: 2px solid var(--cd-grey--light);
-  max-width: var(--cd-max-content-width);
 }
 
 blockquote {
   margin: 2rem 0;
+  color: var(--cd-grey--mid);
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: var(--cd-grey--mid);
 }
 
 /* Description list */

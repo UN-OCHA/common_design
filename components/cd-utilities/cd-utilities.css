@@ -41,10 +41,10 @@
 /* Requires square image */
 *[class*='__image--rounded'] {
   display: block;
-  border-radius: 50%;
   overflow: hidden;
   /* For IE11 */
   width: 100%;
+  border-radius: 50%;
 }
 
 /* To reset component title and heading styles */

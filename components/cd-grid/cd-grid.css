@@ -22,8 +22,8 @@
 @media (min-width: 576px) {
   .cd-grid {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .cd-grid > * {
@@ -64,8 +64,8 @@
   }
 
   .cd-grid > *:nth-child(odd) {
-    margin-right: unset;
     clear: initial;
+    margin-right: unset;
   }
 
   .cd-grid--2-col > * {
@@ -124,8 +124,8 @@
 
     .cd-grid--2-col {
       display: grid;
-      grid-gap: 1rem;
       grid-template-columns: repeat(2, minmax(200px, 1fr));
+      grid-gap: 1rem;
     }
   }
 
@@ -138,8 +138,8 @@
 
     .cd-grid--2-col {
       display: grid;
-      grid-gap: 1rem;
       grid-template-columns: repeat(2, minmax(200px, 1fr));
+      grid-gap: 1rem;
     }
 
     .cd-grid--3-col {

@@ -22,14 +22,14 @@ table caption {
 }
 
 .cd-table {
+  width: 100%;
   margin: 0 auto 3rem;
   border-collapse: collapse;
-  width: 100%;
 }
 
 .cd-table caption {
-  background: var(--cd-blue-grey);
   padding: 0.25rem 0.5rem;
+  background: var(--cd-blue-grey);
 }
 
 .cd-table th,
@@ -81,8 +81,8 @@ table caption {
 }
 
 .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
-  content: counter(rowNumber);
   min-width: 1em;
+  content: counter(rowNumber);
   font-weight: normal;
 }
 
@@ -127,25 +127,25 @@ table caption {
   }
 
   .cd-table--responsive tr {
-    border-bottom: 1px solid var(--cd-grey--light);
     padding: 0 !important;
+    border-bottom: 1px solid var(--cd-grey--light);
   }
 
   .cd-table--responsive td {
+    position: relative;
+    min-height: 2rem; /* label should wrap */
+    padding: 0.5rem;
+    padding-left: 40% !important;
+    text-align: left;
+    white-space: normal !important;
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid var(--cd-blue-grey);
-    position: relative;
-    padding: 0.5rem;
-    padding-left: 40% !important;
-    min-height: 2rem; /* label should wrap */
-    white-space: normal !important;
-    text-align: left;
   }
 
   [dir='rtl'] .cd-table--responsive td {
-    padding-left: auto !important;
     padding-right: 40% !important;
+    padding-left: auto !important;
     text-align: right;
   }
 
@@ -155,17 +155,17 @@ table caption {
     left: 0.5rem;
     width: 35%;
     padding-right: 1rem;
-    text-align: left;
-    font-weight: bold;
-    font-size: 0.875rem;
-    color: var(--cd-ocha-blue);
     /* Label the data */
     content: attr(data-content);
+    text-align: left;
+    color: var(--cd-ocha-blue);
+    font-size: 0.875rem;
+    font-weight: bold;
   }
 
   [dir='rtl'] .cd-table--responsive td:before {
-    left: auto;
     right: 0.5rem;
+    left: auto;
     padding-right: 0;
     padding-left: 1rem;
     text-align: right;
@@ -180,7 +180,7 @@ table caption {
   }
 
   .cd-table--row-numbers tbody tr td.cd-table--row-num::before {
-    font-weight: bold;
     font-size: 1.5rem;
+    font-weight: bold;
   }
 }
