@@ -1,6 +1,5 @@
 {
   "name": "common-design",
-  "type": "module",
   "version": "3.0.6",
   "description": "OCHA Common Design base theme for Drupal 8",
   "repository": "git@github.com:UN-OCHA/common_design.git",
