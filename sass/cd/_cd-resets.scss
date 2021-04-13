@@ -12,12 +12,12 @@
   font-size: $cd-font-size--tiny;
   font-weight: 300;
 
-  html[lang='ar'] & {
+  html[lang="ar"] & {
     font-family: $cd-font--noto-kufi;
   }
 
-  html[lang='ru'] &,
-  html[lang='zh'] & {
+  html[lang="ru"] &,
+  html[lang="zh"] & {
     font-family: $cd-font--noto;
   }
 
@@ -36,12 +36,12 @@
     font-weight: 300;
     -webkit-appearance: none;
 
-    html[lang='ar'] & {
+    html[lang="ar"] & {
       font-family: $cd-font--noto-kufi;
     }
 
-    html[lang='ru'] &,
-    html[lang='zh'] & {
+    html[lang="ru"] &,
+    html[lang="zh"] & {
       font-family: $cd-font--noto;
     }
 

@@ -7,7 +7,7 @@
 
   float: left;
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     float: right;
   }
 
@@ -52,7 +52,7 @@
     }
   }
 
-  &[aria-expanded='true'] {
+  &[aria-expanded="true"] {
     position: relative;
     color: $cd-highlight-red;
 
@@ -61,17 +61,17 @@
       bottom: 0;
       width: 0;
       height: 0;
-      content: '';
+      content: "";
       border-width: 0 6px 6px;
       border-style: solid;
       border-color: transparent transparent $cd-blue-grey;
 
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         left: 50%;
         margin-left: -6px;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         right: 50%;
         margin-right: -6px;
       }
@@ -117,8 +117,8 @@
   padding: 8px $cd-container-padding;
 }
 
-.cd-search--inline__input[type='search'],
-.cd-search--inline__input[type='text'] {
+.cd-search--inline__input[type="search"],
+.cd-search--inline__input[type="text"] {
   box-sizing: border-box;
   width: 100%;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
@@ -131,7 +131,7 @@
   font-size: $cd-font-size--base;
   -webkit-appearance: none;
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     padding: 0 25px 0 45px;
   }
 
@@ -187,11 +187,11 @@
   font-size: $cd-font-size--medium;
   font-weight: 700;
 
-  [dir='ltr'] & {
+  [dir="ltr"] & {
     right: $cd-container-padding;
   }
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     left: $cd-container-padding;
   }
 
@@ -227,12 +227,12 @@
     border-right: 1px solid $cd-blue-grey;
     border-left: 1px solid $cd-blue-grey;
 
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       float: left;
       margin-left: 30px;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: right;
       margin-right: 30px;
     }
@@ -251,7 +251,7 @@
     // which toggles the data-cd-hidden attribute.
     // This displays the search regardless of that attribute value.
     @media all and (-ms-high-contrast: none) {
-      &[data-cd-hidden='true'] {
+      &[data-cd-hidden="true"] {
         display: block;
       }
     }
@@ -261,8 +261,8 @@
     padding: 0;
   }
 
-  .cd-search--inline__input[type='search'],
-  .cd-search--inline__input[type='text'] {
+  .cd-search--inline__input[type="search"],
+  .cd-search--inline__input[type="text"] {
     box-sizing: content-box;
     height: $cd-site-header-height;
     padding: 0 72px 0 16px;
@@ -274,7 +274,7 @@
     font-size: $cd-font-size--small;
     -webkit-appearance: none;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       padding: 0 16px 0 72px;
     }
 
@@ -329,11 +329,11 @@
     font-size: $cd-font-size--medium;
     font-weight: 700;
 
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       right: 0;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       left: 0;
     }
 
@@ -368,7 +368,7 @@
         position: absolute;
         width: 2px;
         height: 24px;
-        content: '';
+        content: "";
         background: $cd-blue-grey;
       }
     }
@@ -376,8 +376,8 @@
 
   @media all and (-ms-high-contrast: none) {
     // Removes search cancel x on IE 11 only.
-    input[type='search']::-ms-clear,
-    input[type='search']::-ms-reveal {
+    input[type="search"]::-ms-clear,
+    input[type="search"]::-ms-reveal {
       display: none;
       width: 0;
       height: 0;

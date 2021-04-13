@@ -73,7 +73,7 @@
     width: 70%;
     text-align: left;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: right;
       text-align: right;
     }
@@ -86,7 +86,7 @@
     width: 30%;
     text-align: right;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: right;
       text-align: left;
     }
@@ -99,7 +99,7 @@
     width: 60%;
     max-width: 780px;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: right;
     }
   }
@@ -111,7 +111,7 @@
     width: 40%;
     max-width: 350px;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: left;
     }
   }
@@ -131,7 +131,7 @@
       flex: 1 0 70%;
       text-align: left;
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         text-align: right;
       }
     }

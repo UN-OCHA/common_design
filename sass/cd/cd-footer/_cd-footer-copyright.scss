@@ -16,7 +16,7 @@
     margin-top: 34px; // Align with provide-by main text.
     text-align: right;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       text-align: left;
     }
   }
@@ -47,7 +47,7 @@
   @include desktop {
     margin: 0 0 0 20px;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       margin: 0 20px 0 0;
     }
   }

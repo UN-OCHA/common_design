@@ -48,7 +48,7 @@
     }
   }
 
-  &[aria-expanded='true'] {
+  &[aria-expanded="true"] {
     position: relative;
     color: $cd-highlight-red;
 
@@ -57,17 +57,17 @@
       bottom: 0;
       width: 0;
       height: 0;
-      content: '';
+      content: "";
       border-width: 0 6px 6px;
       border-style: solid;
       border-color: transparent transparent $cd-blue-grey;
 
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         left: 50%;
         margin-left: -6px;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         right: 50%;
         margin-right: -6px;
       }
@@ -117,8 +117,8 @@
   }
 }
 
-.cd-search__input[type='search'],
-.cd-search__input[type='text'] {
+.cd-search__input[type="search"],
+.cd-search__input[type="text"] {
   box-sizing: border-box;
   width: 100%;
   height: calc(#{$cd-site-header-height} - 16px); //Padding.
@@ -131,7 +131,7 @@
   font-size: $cd-font-size--base;
   -webkit-appearance: none;
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     padding: 0 25px 0 45px;
   }
 
@@ -187,11 +187,11 @@
   font-size: $cd-font-size--base;
   font-weight: 700;
 
-  [dir='ltr'] & {
+  [dir="ltr"] & {
     right: $cd-container-padding;
   }
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     left: $cd-container-padding;
   }
 
@@ -219,17 +219,17 @@
   .cd-search__input {
     padding: 0 44px 0 30px;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       padding: 0 30px 0 44px;
     }
   }
 
   .cd-search__submit {
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       right: $cd-container-padding-tablet;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       left: $cd-container-padding-tablet;
     }
   }
@@ -240,11 +240,11 @@
     width: 22px;
     height: 22px;
 
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       padding-right: 4px;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       padding-left: 4px;
     }
   }
@@ -260,11 +260,11 @@
   }
 
   .cd-search__submit {
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       right: $cd-container-padding-xlarge;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       left: $cd-container-padding-xlarge;
     }
   }

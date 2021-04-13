@@ -13,7 +13,7 @@
     visibility: hidden;
     clear: both;
     height: 0;
-    content: '.';
+    content: ".";
   }
 }
 
@@ -43,7 +43,7 @@
   }
 
   @else {
-    @warn '`#{$breakpoint}` not found in `$grid-breakpoints` map.';
+    @warn "`#{$breakpoint}` not found in `$grid-breakpoints` map.";
   }
 }
 
@@ -55,7 +55,7 @@
   }
 
   @else {
-    @warn '`#{$breakpoint}` not found in `$grid-breakpoints` map.';
+    @warn "`#{$breakpoint}` not found in `$grid-breakpoints` map.";
   }
 }
 
@@ -63,37 +63,37 @@
 // Grid breakpoints
 //
 @mixin xs {
-  @include min-width('xs') {
+  @include min-width("xs") {
     @content;
   }
 }
 
 @mixin sm {
-  @include min-width('sm') {
+  @include min-width("sm") {
     @content;
   }
 }
 
 @mixin md {
-  @include min-width('md') {
+  @include min-width("md") {
     @content;
   }
 }
 
 @mixin lg {
-  @include min-width('lg') {
+  @include min-width("lg") {
     @content;
   }
 }
 
 @mixin xl {
-  @include min-width('xl') {
+  @include min-width("xl") {
     @content;
   }
 }
 
 @mixin xxl {
-  @include min-width('xxl') {
+  @include min-width("xxl") {
     @content;
   }
 }
@@ -144,6 +144,6 @@
   }
 
   @else {
-    @warn '`#{$value}` not found in `$zindex` map.';
+    @warn "`#{$value}` not found in `$zindex` map.";
   }
 }

@@ -23,7 +23,7 @@
     fill: $cd-highlight-red;
   }
 
-  &[aria-expanded='true'] {
+  &[aria-expanded="true"] {
     position: relative;
     z-index: 101;
     color: $cd-black;
@@ -35,7 +35,7 @@
       left: -1px;
       width: calc(100% + 1px);
       height: 6px;
-      content: '';
+      content: "";
       transition: background 0.3s ease;
       background: $cd-highlight-red;
     }
@@ -103,7 +103,7 @@
       text-decoration: none;
       color: $cd-default-text-color;
 
-      html[dir='rtl'] & {
+      html[dir="rtl"] & {
         text-align: right;
       }
 
@@ -133,7 +133,7 @@
     }
 
     @include max-width(lg) {
-      &[data-cd-hidden='false'] {
+      &[data-cd-hidden="false"] {
         position: absolute;
         top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 6px);
         right: 0;
@@ -143,7 +143,7 @@
         background: $cd-white;
       }
 
-      &[data-cd-hidden='false'] > ul {
+      &[data-cd-hidden="false"] > ul {
         display: block;
       }
     }
@@ -167,7 +167,7 @@
       // which toggles the data-cd-hidden attribute.
       // This displays the nav regardless of that attribute value.
       @media all and (-ms-high-contrast: none) {
-        &[data-cd-hidden='true'] {
+        &[data-cd-hidden="true"] {
           display: block;
         }
       }
@@ -225,7 +225,7 @@
           left: 15px; // Half of the left padding.
           width: 6px;
           height: 48px; // Height of menu item.
-          content: '';
+          content: "";
           background: transparent;
         }
       }
@@ -256,11 +256,11 @@
             left: 15px; // Half of the left padding.
             width: 6px;
             height: 48px; // Height of menu item.
-            content: '';
+            content: "";
             background: rgba($cd-rgb-highlight-red, 0.2);
 
             // sass-lint:disable nesting-depth
-            [dir='rtl'] & {
+            [dir="rtl"] & {
               right: 15px; // Half of the left padding.
               left: auto;
             }
@@ -296,7 +296,7 @@
             right: -1px;
             left: auto;
 
-            [dir='rtl'] & {
+            [dir="rtl"] & {
               right: auto;
               left: -1px;
             }
@@ -325,7 +325,7 @@
             left: -1px;
             width: calc(100% + 2px);
             height: 6px;
-            content: '';
+            content: "";
             transition: background 0.3s ease;
             background: transparent;
           }
@@ -362,7 +362,7 @@
           &.menu-item--active-trail {
             border-left: 6px solid $cd-highlight-red;
 
-            [dir='rtl'] & {
+            [dir="rtl"] & {
               border-right: 6px solid $cd-highlight-red;
               border-left-width: 0;
             }
@@ -372,7 +372,7 @@
         > li.menu-item--active-trail {
           border-left: 6px solid $cd-highlight-red;
 
-          [dir='rtl'] & {
+          [dir="rtl"] & {
             border-right: 6px solid $cd-highlight-red;
             border-left-width: 0;
           }

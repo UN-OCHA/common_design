@@ -48,11 +48,11 @@ body {
     @include tablet {
       display: grid;
       grid-template-areas:
-        'header'
-        'highlighted'
-        'main'
-        'soft-footer'
-        'footer';
+        "header"
+        "highlighted"
+        "main"
+        "soft-footer"
+        "footer";
       grid-template-rows: 101px auto 1fr auto;
       grid-auto-rows: auto;
     }
@@ -77,7 +77,7 @@ body {
   }
 }
 
-.cd-container[role='main'] {
+.cd-container[role="main"] {
   padding-bottom: 2rem;
 
   @include desktop {
@@ -173,12 +173,12 @@ body {
     @include desktop {
       margin-bottom: 0;
 
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         margin-right: 3rem;
         margin-left: 3rem;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         margin-right: 3rem;
         margin-left: 3rem;
       }
@@ -187,12 +187,12 @@ body {
 
   .cd-layout-with-sidebar-first & {
     @include desktop {
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         margin-right: 0;
         margin-left: 3rem;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         margin-right: 3rem;
         margin-left: 0;
       }
@@ -205,12 +205,12 @@ body {
     @include desktop {
       margin-bottom: 0;
 
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         margin-right: 3rem;
         margin-left: 0;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         margin-right: 0;
         margin-left: 3rem;
       }
@@ -237,11 +237,11 @@ body {
       flex-basis: 0;
       flex-grow: 999;
 
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         margin-right: 2rem;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         margin-left: 2rem;
       }
     }
@@ -290,11 +290,11 @@ body {
 .cd-page-title {
   @include xl {
     .cd-layout-with-sidebar {
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         padding-left: 320px;
       }
     }

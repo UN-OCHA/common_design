@@ -6,7 +6,7 @@
   float: left;
   text-align: left;
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     text-align: right;
   }
 
@@ -34,11 +34,11 @@
     margin: auto; // Center vertically in macOS 10
 
     @include tablet {
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         margin-left: 4px;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         margin-right: 4px;
       }
     }
@@ -65,11 +65,11 @@
   fill: $cd-white;
 
   @include tablet {
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       margin-right: 4px;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       margin-left: 4px;
     }
   }

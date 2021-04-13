@@ -23,7 +23,7 @@
   @include desktop {
     margin: 0 32px 0 0;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       margin: 0 0 0 32px;
     }
   }
