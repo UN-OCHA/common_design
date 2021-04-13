@@ -4,13 +4,13 @@
 
 .cd-header,
 .cd-footer {
+
+  // Set box-sizing
+  box-sizing: border-box;
   // Setup font
   font-family: $cd-font;
   font-size: $cd-font-size--tiny;
   font-weight: 300;
-
-  // Set box-sizing
-  box-sizing: border-box;
 
   html[lang='ar'] & {
     font-family: $cd-font--noto-kufi;
@@ -30,11 +30,11 @@
 
   // Reset button styles.
   button {
-    -webkit-appearance: none;
     border-radius: 0;
     box-shadow: none;
     font-size: $cd-font-size--tiny;
     font-weight: 300;
+    -webkit-appearance: none;
 
     html[lang='ar'] & {
       font-family: $cd-font--noto-kufi;

@@ -14,13 +14,13 @@ input {
 }
 
 body {
-  font-size: 1rem;
+  color: $cd-grey--dark;
   font-family: $cd-font--roboto;
+  font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: $cd-grey--dark;
   line-height: 1.5;
 
   @include desktop {
@@ -28,8 +28,8 @@ body {
   }
 
   &.no-scroll {
-    overflow: hidden;
     position: fixed;
+    overflow: hidden;
     width: 100%;
     height: 100%;
   }

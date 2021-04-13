@@ -81,8 +81,8 @@
   }
 
   .cd-table {
-    font-size: 10pt;
     margin-bottom: 1rem;
+    font-size: 10pt;
   }
 
   .cd-table th,
@@ -93,8 +93,8 @@
 
   .cd-grid {
     display: grid;
-    grid-gap: 1rem;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-gap: 1rem;
   }
 
   .cd-grid--2-col {

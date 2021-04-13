@@ -19,10 +19,10 @@ body {
 }
 
 .cd-layout-container {
-  margin: 0 auto;
   width: 100%;
-  min-height: 100%;
+  margin: 0 auto;
   padding: 0;
+  min-height: 100%;
 
   // helper for @support testing. Enable background for colours.
   //background: rgba(255, 0, 0, 0.1);
@@ -63,9 +63,9 @@ body {
   @include clearfix;
 
   box-sizing: border-box;
-  padding: 0 $cd-container-padding;
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
+  padding: 0 $cd-container-padding;
   max-width: $cd-max-width;
 
   @include tablet {
@@ -180,13 +180,13 @@ body {
       margin-bottom: 0;
 
       [dir='ltr'] & {
-        margin-left: 3rem;
         margin-right: 3rem;
+        margin-left: 3rem;
       }
 
       [dir='rtl'] & {
-        margin-left: 3rem;
         margin-right: 3rem;
+        margin-left: 3rem;
       }
     }
   }
@@ -194,13 +194,13 @@ body {
   .cd-layout-with-sidebar-first & {
     @include desktop {
       [dir='ltr'] & {
-        margin-left: 3rem;
         margin-right: 0;
+        margin-left: 3rem;
       }
 
       [dir='rtl'] & {
-        margin-left: 0;
         margin-right: 3rem;
+        margin-left: 0;
       }
     }
   }
@@ -212,13 +212,13 @@ body {
       margin-bottom: 0;
 
       [dir='ltr'] & {
-        margin-left: 0;
         margin-right: 3rem;
+        margin-left: 0;
       }
 
       [dir='rtl'] & {
-        margin-left: 3rem;
         margin-right: 0;
+        margin-left: 3rem;
       }
     }
   }
@@ -301,8 +301,8 @@ body {
     .cd-layout-with-sidebar-first &,
     .cd-layout-with-sidebar-second &,
     .cd-layout-with-sidebar-both & {
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
     }
   }
 }
