@@ -10,6 +10,7 @@
     "sass:compile-dev": "sass --embed-sources sass/styles.scss css/styles.css",
     "sass:watch": "npm run sass:lint && npm run sass:compile-dev -- --watch",
     "sass:lint": "stylelint '{sass,components}/**/*.{css,scss}'",
+    "sass:lint-fix": "stylelint '{sass,components}/**/*.{css,scss}' --fix",
     "sass:postcss": "postcss css/styles.css --use autoprefixer -b 'last 3 versions' -r",
     "sass:build": "npm run sass:lint && npm run sass:compile && npm run sass:postcss",
     "js:lint": "eslint js/*.js",
