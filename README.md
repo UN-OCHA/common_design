@@ -67,6 +67,8 @@ This project uses [Sass](http://sass-lang.com/). To make changes edit the `.scss
 
 Run `npm run sass:watch` in the theme folder to watch for changes and automatically rebuild the CSS.
 
+Run `npm run sass:lint` in the theme folder for linting. To use the [automatic fix](https://stylelint.io/user-guide/usage/cli#--fix), run `npm run sass:lint-fix`
+
 Run `npm run sass:build` to compile production-ready CSS.
 
 Preferably use Jenkins to run the sass:build task on build to generate the CSS.
