@@ -2,44 +2,44 @@
 
 /* Alignment */
 .cd-align--center,
-*[class*='--align-center'] {
+*[class*="--align-center"] {
   text-align: center;
 }
 
 .cd-align--right,
-*[class*='--align-right'] {
+*[class*="--align-right"] {
   text-align: right;
 }
 
-[dir='rtl'] .cd-align--right,
-[dir='rtl'] *[class*='--align-right'] {
+[dir="rtl"] .cd-align--right,
+[dir="rtl"] *[class*="--align-right"] {
   text-align: left;
 }
 
 /* Floating */
 .cd-float--left,
-*[class*='--float-left'] {
+*[class*="--float-left"] {
   float: left;
 }
 
-[dir='rtl'] .cd-float--left,
-[dir='rtl'] *[class*='--float-left'] {
+[dir="rtl"] .cd-float--left,
+[dir="rtl"] *[class*="--float-left"] {
   float: right;
 }
 
 .cd-float--right,
-*[class*='--float-right'] {
+*[class*="--float-right"] {
   float: right;
 }
 
-[dir='rtl'] .cd-float--right,
-[dir='rtl'] *[class*='--float-right'] {
+[dir="rtl"] .cd-float--right,
+[dir="rtl"] *[class*="--float-right"] {
   float: left;
 }
 
 /* Rounded image */
 /* Requires square image */
-*[class*='__image--rounded'] {
+*[class*="__image--rounded"] {
   display: block;
   overflow: hidden;
   /* For IE11 */
@@ -48,18 +48,18 @@
 }
 
 /* To reset component title and heading styles */
-div[class*='__title'],
-div[class*='__title'] > * {
+div[class*="__title"],
+div[class*="__title"] > * {
   margin: 0;
 }
 /* and if the heading is nested */
-div[class*='__title'] > *:not(a) {
+div[class*="__title"] > *:not(a) {
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
 /* Remove bottom border from last child of list */
-*[class*='__remove-border']:last-child {
+*[class*="__remove-border"]:last-child {
   border-bottom: 0 none;
 }

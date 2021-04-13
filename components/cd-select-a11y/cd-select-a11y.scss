@@ -1,4 +1,4 @@
-@import 'sass/cd/cd-variables';
+@import "sass/cd/cd-variables";
 
 // select-a11y
 // ==========================================================
@@ -79,12 +79,12 @@ $a11y-suggestion-border:      $gray-5 !default;
       color: $gray-4;
     }
 
-    &[aria-expanded='true'] {
+    &[aria-expanded="true"] {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
 
-    &[aria-expanded='true'] .icon-select {
+    &[aria-expanded="true"] .icon-select {
       transform: rotate(180deg);
     }
   }
@@ -175,7 +175,7 @@ $a11y-suggestion-border:      $gray-5 !default;
       outline-offset: -1px;
     }
 
-    &[aria-selected='true'] {
+    &[aria-selected="true"] {
       position: relative;
       color: $a11y-suggestion-color-hover;
       background-color: $a11y-suggestion-bg-selected;
@@ -184,7 +184,7 @@ $a11y-suggestion-border:      $gray-5 !default;
         position: absolute;
         top: 50%;
         left: (8em/16);
-        content: '✓';
+        content: "✓";
         transform: translateY(-50%);
       }
     }
@@ -215,7 +215,7 @@ $a11y-suggestion-border:      $gray-5 !default;
       margin: 0 0.3em 0.3em 0;
 
       &::before {
-        content: '';
+        content: "";
       }
 
       span {

@@ -12,7 +12,7 @@ ul.tabs::after {
   visibility: hidden;
   clear: both;
   height: 0;
-  content: '.';
+  content: ".";
 }
 
 ul.tabs > li {
@@ -43,12 +43,12 @@ ul.tabs > li > a {
     margin-bottom: -2px;
   }
 
-  [dir='ltr'] ul.tabs > li {
+  [dir="ltr"] ul.tabs > li {
     float: left;
     margin-right: 0.5rem;
   }
 
-  [dir='rtl'] ul.tabs > li {
+  [dir="rtl"] ul.tabs > li {
     float: right;
     margin-left: 0.5rem;
   }

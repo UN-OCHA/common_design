@@ -27,7 +27,7 @@
 
 /* Override rule for cd-bumper on .cd-teaser__container to prevent padding-left on mobile. */
 @media (max-width: 575px) {
-  [dir='ltr'] .cd-bumper .cd-teaser__container {
+  [dir="ltr"] .cd-bumper .cd-teaser__container {
     padding-left: 0;
   }
 }

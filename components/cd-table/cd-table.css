@@ -7,7 +7,7 @@ th {
   text-align: left;
 }
 
-[dir='rtl'] th {
+[dir="rtl"] th {
   text-align: right;
 }
 
@@ -17,7 +17,7 @@ table caption {
   text-align: left;
 }
 
-[dir='rtl'] table caption {
+[dir="rtl"] table caption {
   text-align: right;
 }
 
@@ -38,8 +38,8 @@ table caption {
   text-align: left;
 }
 
-[dir='rtl'] .cd-table th,
-[dir='rtl'] .cd-table td {
+[dir="rtl"] .cd-table th,
+[dir="rtl"] .cd-table td {
   text-align: right;
 }
 
@@ -54,15 +54,15 @@ table caption {
 }
 
 @media (min-width: 576px) {
-  .cd-table th[data-sort-type='numeric'],
+  .cd-table th[data-sort-type="numeric"],
   .cd-table .cd-table--amount,
   .cd-table .cd-table--amount-total {
     text-align: right;
   }
 
-  [dir='rtl'] .cd-table th[data-sort-type='numeric'],
-  [dir='rtl'] .cd-table .cd-table--amount,
-  [dir='rtl'] .cd-table .cd-table--amount-total {
+  [dir="rtl"] .cd-table th[data-sort-type="numeric"],
+  [dir="rtl"] .cd-table .cd-table--amount,
+  [dir="rtl"] .cd-table .cd-table--amount-total {
     text-align: left;
   }
 }
@@ -86,11 +86,11 @@ table caption {
   font-weight: normal;
 }
 
-[dir='ltr'] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
+[dir="ltr"] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
   margin-right: 0.5em;
 }
 
-[dir='rtl'] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
+[dir="rtl"] .cd-table--row-numbers tbody tr td.cd-table--row-num:first-child::before {
   margin-left: 0.5em;
 }
 
@@ -143,7 +143,7 @@ table caption {
     border-bottom: 1px solid var(--cd-blue-grey);
   }
 
-  [dir='rtl'] .cd-table--responsive td {
+  [dir="rtl"] .cd-table--responsive td {
     padding-right: 40% !important;
     padding-left: auto !important;
     text-align: right;
@@ -163,7 +163,7 @@ table caption {
     font-weight: bold;
   }
 
-  [dir='rtl'] .cd-table--responsive td:before {
+  [dir="rtl"] .cd-table--responsive td:before {
     right: 0.5rem;
     left: auto;
     padding-right: 0;

@@ -8,7 +8,7 @@
   margin-top: 0;
 }
 
-[dir='ltr'] .cd-bumper > * + * {
+[dir="ltr"] .cd-bumper > * + * {
   padding-left: var(--cd-bumper-space, 1rem);
 }
 
@@ -18,6 +18,6 @@
 }
 */
 
-[dir='rtl'] .cd-bumper > * + * {
+[dir="rtl"] .cd-bumper > * + * {
   padding-right: var(--cd-bumper-space, 1rem);
 }

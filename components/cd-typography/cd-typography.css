@@ -43,11 +43,11 @@ dd {
     padding-bottom: 0.5rem;
   }
 
-  [dir='ltr'] dt {
+  [dir="ltr"] dt {
     padding-right: 0.5rem;
   }
 
-  [dir='rtl'] dt {
+  [dir="rtl"] dt {
     padding-left: 0.5rem;
   }
 
@@ -56,11 +56,11 @@ dd {
     width: 75%;
   }
 
-  [dir='ltr'] dd {
+  [dir="ltr"] dd {
     margin-left: auto;
   }
 
-  [dir='rtl'] dd {
+  [dir="rtl"] dd {
     margin-right: auto;
   }
 }

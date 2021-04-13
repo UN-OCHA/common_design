@@ -207,11 +207,11 @@ a.cd-button {
   text-align: left;
 }
 
-[dir='rtl'] .cd-button--icon {
+[dir="rtl"] .cd-button--icon {
   text-align: right;
 }
 
-[dir='rtl'] .cd-icon--arrow-right {
+[dir="rtl"] .cd-icon--arrow-right {
   transform: scale(-1, 1);
 }
 
@@ -235,12 +235,12 @@ a.cd-button {
   transition: fill 0.3s ease-in;
 }
 
-[dir='ltr'] .cd-button--icon svg {
+[dir="ltr"] .cd-button--icon svg {
   /* Icon before */
   margin-right: 0.25rem;
 }
 
-[dir='rtl'] .cd-button--icon svg {
+[dir="rtl"] .cd-button--icon svg {
   /* Icon before */
   margin-left: 0.25rem;
 }
@@ -251,7 +251,7 @@ a.cd-button {
   margin-left: 2rem;
 }
 
-[dir='rtl'] .cd-button--icon span + svg {
+[dir="rtl"] .cd-button--icon span + svg {
   margin-right: 2rem;
   /* Icon after */
   margin-left: 0;
@@ -267,7 +267,7 @@ a.cd-button {
   margin-left: 1rem;
 }
 
-[dir='rtl'] .cd-button--icon.cd-button--small span + svg {
+[dir="rtl"] .cd-button--icon.cd-button--small span + svg {
   margin-right: 1rem;
   /* Icon after */
   margin-left: 0;

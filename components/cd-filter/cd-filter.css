@@ -3,7 +3,7 @@
 }
 
 /* Light grey background to visually distinguish container on mobile. */
-.cd-filter[data-cd-hidden='false'] {
+.cd-filter[data-cd-hidden="false"] {
   background: var(--cd-grey--light);
 }
 
@@ -24,13 +24,13 @@
     align-items: flex-start;
   }
 
-  [dir='ltr'] .cd-filter__group,
-  [dir='ltr'] .cd-filter__form > .block {
+  [dir="ltr"] .cd-filter__group,
+  [dir="ltr"] .cd-filter__form > .block {
     padding-right: 1rem;
   }
 
-  [dir='rtl'] .cd-filter__group,
-  [dir='rtl'] .cd-filter__form > .block {
+  [dir="rtl"] .cd-filter__group,
+  [dir="rtl"] .cd-filter__form > .block {
     padding-left: 1rem;
   }
 
@@ -47,17 +47,17 @@
     margin-top: 1rem;
   }
 
-  [dir='ltr'] .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter__form > .block:nth-child(even),
-  [dir='ltr'] .cd-filter__form > .block:last-child {
+  [dir="ltr"] .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter__form > .block:nth-child(even),
+  [dir="ltr"] .cd-filter__form > .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter__form > .block:nth-child(even),
-  [dir='rtl'] .cd-filter__form > .block:last-child {
+  [dir="rtl"] .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter__form > .block:nth-child(even),
+  [dir="rtl"] .cd-filter__form > .block:last-child {
     padding-left: 0;
   }
 
@@ -68,12 +68,12 @@
     max-width: 100%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-export {
+  [dir="ltr"] .cd-filter--horizontal .cd-export {
     margin-left: auto;
     text-align: right;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-export {
+  [dir="rtl"] .cd-filter--horizontal .cd-export {
     margin-right: auto;
     text-align: left;
   }
@@ -84,13 +84,13 @@
     margin-bottom: 2rem;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block {
     padding-right: 1rem;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block {
     padding-left: 1rem;
   }
 
@@ -122,17 +122,17 @@
     max-width: 33%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
     padding-left: 0;
   }
 
@@ -147,17 +147,17 @@
     max-width: 50%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
     padding-left: 0;
   }
 
@@ -172,17 +172,17 @@
     max-width: 50%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
     padding-left: 0;
   }
 }
@@ -228,23 +228,23 @@
     max-width: 25%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
     padding-right: 1rem;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
     padding-left: 1rem;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
     padding-left: 0;
   }
 
@@ -259,23 +259,23 @@
     max-width: 20%;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
     padding-right: 1rem;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
     padding-left: 1rem;
   }
 
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
-  [dir='ltr'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
     padding-right: 0;
   }
 
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
-  [dir='rtl'] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
     padding-left: 0;
   }
 }
@@ -302,12 +302,12 @@
   -webkit-appearance: none;
 }
 
-[dir='ltr'] .cd-filter__btn svg {
+[dir="ltr"] .cd-filter__btn svg {
   margin-right: 0;
   margin-left: 2rem;
 }
 
-[dir='rtl'] .cd-filter__btn svg {
+[dir="rtl"] .cd-filter__btn svg {
   margin-right: 2rem;
   margin-left: 0;
 }
@@ -360,11 +360,11 @@
     height: 22px;
   }
 
-  [dir='ltr'] .cd-filter__btn svg {
+  [dir="ltr"] .cd-filter__btn svg {
     padding: 0 0 0 4px;
   }
 
-  [dir='rtl'] .cd-filter__btn svg {
+  [dir="rtl"] .cd-filter__btn svg {
     padding: 0 4px 0 0;
   }
 

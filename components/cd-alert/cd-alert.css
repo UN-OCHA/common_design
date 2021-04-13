@@ -26,11 +26,11 @@
   fill: var(--cd-blue--bright);
 }
 
-[dir='ltr'] .cd-alert svg {
+[dir="ltr"] .cd-alert svg {
   margin-right: 1rem;
 }
 
-[dir='rtl'] .cd-alert svg {
+[dir="rtl"] .cd-alert svg {
   margin-left: 1rem;
 }
 

@@ -21,10 +21,10 @@
     padding-right: inherit;
     padding-left: inherit;
   }
-  html[dir='ltr'] .cd-social-links ul {
+  html[dir="ltr"] .cd-social-links ul {
     right: 0;
   }
-  html[dir='rtl'] .cd-social-links ul {
+  html[dir="rtl"] .cd-social-links ul {
     left: 0;
   }
 }
@@ -35,11 +35,11 @@
   list-style-type: none;
 }
 
-html[dir='ltr'] .cd-social-links li + li {
+html[dir="ltr"] .cd-social-links li + li {
   margin-left: 0.5rem;
 }
 
-html[dir='rtl'] .cd-social-links li + li {
+html[dir="rtl"] .cd-social-links li + li {
   margin-right: 0.5rem;
 }
 
@@ -131,7 +131,7 @@ html[dir='rtl'] .cd-social-links li + li {
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   border-top: 10px solid black;
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
