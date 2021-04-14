@@ -43,19 +43,21 @@ select.error {
   border-color: var(--cd-highlight-red);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid var(--cd-blue--bright);
-  outline-offset: -2px;
-}
-
-/* Form elements */
 select {
   width: 100%;
   max-width: 100%;
   padding-right: 0.25rem;
   padding-left: 0.25rem;
+}
+
+input::-webkit-search-cancel-button {
+  position: relative;
+  right: 10px;
+}
+
+/* Safari fix */
+input::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 input::-webkit-input-placeholder {
@@ -68,14 +70,11 @@ input:-ms-input-placeholder {
   font-style: italic;
 }
 
-input::-webkit-search-cancel-button {
-  position: relative;
-  right: 10px;
-}
-
-/* Safari fix */
-input::-webkit-search-decoration {
-  -webkit-appearance: none;
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cd-blue--bright);
+  outline-offset: -2px;
 }
 
 .cd-form--inline {

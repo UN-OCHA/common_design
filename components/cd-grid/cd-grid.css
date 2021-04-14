@@ -30,14 +30,14 @@
     flex: 0 0 48%;
   }
 
+  .cd-grid--3-col > * {
+    flex: 0 0 48%;
+  }
+
   .cd-grid--2-col.cd-grid--grow > *:last-child {
     flex: 1 0 100%;
     max-width: 100%;
     max-width: unset;
-  }
-
-  .cd-grid--3-col > * {
-    flex: 0 0 48%;
   }
 }
 
@@ -63,11 +63,6 @@
     flex: 0 0 24%;
   }
 
-  .cd-grid > *:nth-child(odd) {
-    clear: initial;
-    margin-right: unset;
-  }
-
   .cd-grid--2-col > * {
     flex: 0 0 48%;
   }
@@ -78,6 +73,11 @@
 
   .cd-grid--4-col > * {
     flex: 0 0 24%;
+  }
+
+  .cd-grid > *:nth-child(odd) {
+    clear: initial;
+    margin-right: unset;
   }
 }
 

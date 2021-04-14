@@ -4,13 +4,13 @@
     background-color: var(--cd-white);
   }
 
-  .cd-hero--style-two .cd-hero__container .cd-hero__title,
-  .cd-hero--style-two .cd-hero__container .cd-hero__description {
+  .cd-hero--style-two .cd-hero__title,
+  .cd-hero--style-two .cd-hero__description {
     color: var(--cd-grey--dark);
   }
 
-  .cd-hero--style-two .cd-hero__title,
-  .cd-hero--style-two .cd-hero__description {
+  .cd-hero--style-two .cd-hero__container .cd-hero__title,
+  .cd-hero--style-two .cd-hero__container .cd-hero__description {
     color: var(--cd-grey--dark);
   }
 }

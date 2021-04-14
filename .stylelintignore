@@ -1,1 +1,5 @@
 components/cd-select-a11y/*.css
+components/cd-filter/*.css
+components/cd-button/*.css
+sass/cd/cd-header/_cd-nav.scss
+sass/cd/cd-header/_cd-language-switcher.scss

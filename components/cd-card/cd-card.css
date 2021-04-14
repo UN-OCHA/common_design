@@ -29,14 +29,14 @@
   margin-left: auto;
 }
 
-.cd-card__image + .cd-card__container {
-  flex-grow: 1;
-  padding: 1rem 2rem;
-}
-
 .cd-card__container {
   flex-grow: 1;
   padding: 2rem 2rem 1rem;
+}
+
+.cd-card__image + .cd-card__container {
+  flex-grow: 1;
+  padding: 1rem 2rem;
 }
 
 .cd-card__footer {

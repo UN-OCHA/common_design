@@ -121,8 +121,14 @@ $a11y-suggestion-border:      $gray-5 !default;
     display: none;
   }
 
-  &.is-open .a11y-container {
-    display: block;
+  // fix safari pour cacher l'autocompletion native
+  // cf http://stackoverflow.com/questions/38663578/how-to-hide-autofill-safari-icon-in-input-field
+  input::-webkit-contacts-auto-fill-button {
+    position: absolute;
+    right: 0;
+    display: none !important;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .a11y-container {
@@ -140,14 +146,8 @@ $a11y-suggestion-border:      $gray-5 !default;
     }
   }
 
-  // fix safari pour cacher l'autocompletion native
-  // cf http://stackoverflow.com/questions/38663578/how-to-hide-autofill-safari-icon-in-input-field
-  input::-webkit-contacts-auto-fill-button {
-    position: absolute;
-    right: 0;
-    display: none !important;
-    visibility: hidden;
-    pointer-events: none;
+  &.is-open .a11y-container {
+    display: block;
   }
 
   .a11y-suggestions {

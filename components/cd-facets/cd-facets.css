@@ -26,6 +26,10 @@
   font-weight: 700;
 }
 
+.block-facets-summary a {
+  text-decoration: none;
+}
+
 /* This emulates the cd-bullet-list component using CSS bg image instead of SVG element in markup. */
 .block-facet--links li a {
   position: relative;
@@ -95,10 +99,6 @@
 
 .block-facets-summary .source-summary-empty p {
   margin: 0 0 0.5rem;
-}
-
-.block-facets-summary a {
-  text-decoration: none;
 }
 
 .block-facets-summary a:hover,

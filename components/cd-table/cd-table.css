@@ -17,6 +17,11 @@ table caption {
   text-align: left;
 }
 
+.cd-table caption {
+  padding: 0.25rem 0.5rem;
+  background: var(--cd-blue-grey);
+}
+
 [dir="rtl"] table caption {
   text-align: right;
 }
@@ -27,26 +32,21 @@ table caption {
   border-collapse: collapse;
 }
 
-.cd-table caption {
-  padding: 0.25rem 0.5rem;
-  background: var(--cd-blue-grey);
-}
-
 .cd-table th,
 .cd-table td {
   padding: 0.5rem;
   text-align: left;
 }
 
-[dir="rtl"] .cd-table th,
-[dir="rtl"] .cd-table td {
-  text-align: right;
-}
-
 .cd-table th {
   color: var(--cd-ocha-blue);
   border-bottom: 1px solid white;
   background: var(--cd-blue-grey);
+}
+
+[dir="rtl"] .cd-table th,
+[dir="rtl"] .cd-table td {
+  text-align: right;
 }
 
 .cd-table a {
@@ -119,16 +119,16 @@ table caption {
     display: block;
   }
 
+  .cd-table--responsive tr {
+    padding: 0 !important;
+    border-bottom: 1px solid var(--cd-grey--light);
+  }
+
   /* Hide table headers (but not display: none;, for accessibility) */
   .cd-table--responsive thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
-  }
-
-  .cd-table--responsive tr {
-    padding: 0 !important;
-    border-bottom: 1px solid var(--cd-grey--light);
   }
 
   .cd-table--responsive td {
@@ -141,6 +141,10 @@ table caption {
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid var(--cd-blue-grey);
+  }
+
+  .cd-table--responsive tfoot td {
+    border-bottom: 0 none;
   }
 
   [dir="rtl"] .cd-table--responsive td {
@@ -169,10 +173,6 @@ table caption {
     padding-right: 0;
     padding-left: 1rem;
     text-align: right;
-  }
-
-  .cd-table--responsive tfoot td {
-    border-bottom: 0 none;
   }
 
   .cd-table--row-numbers tbody tr td.cd-table--row-num {
