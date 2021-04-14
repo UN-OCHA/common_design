@@ -4,13 +4,10 @@
     "stylelint-config-recommended-scss"
   ],
   "rules": {
-    "no-descending-specificity": null,
-    "function-calc-no-unspaced-operator": null,
     "unit-no-unknown": null,
     "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
     "unit-whitelist": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
-    "plugin/no-browser-hacks": null,
-    "function-name-case": null
+    "plugin/no-browser-hacks": null
   },
   "defaultSeverity": "warning"
 }
