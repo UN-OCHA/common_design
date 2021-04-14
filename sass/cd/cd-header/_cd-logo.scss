@@ -20,7 +20,6 @@
   }
 
   // Logo for mobile.
-  // sass-lint:disable no-duplicate-properties
   @include max-width(md) {
     background: url("../img/logos/ocha-logo-blue@53x37.png") center no-repeat;
     background: linear-gradient(transparent, transparent), url("../img/logos/ocha-logo-blue.svg") center no-repeat;
