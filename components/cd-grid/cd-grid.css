@@ -7,20 +7,16 @@
 }
 
 /* Testing Aid */
-.cd-grid > * {
-   /*background: lightgray;*/
-}
-
 .cd-grid--2-col > * {
-   /*background: lightpink;*/
+  /* background: lightpink; */
 }
 
-.cd-grid--3-col > *  {
-   /*background: lightgreen;*/
+.cd-grid--3-col > * {
+  /* background: lightgreen; */
 }
 
 .cd-grid--4-col > * {
-   /*background: lightblue;*/
+  /* background: lightblue; */
 }
 
 @media (min-width: 576px) {
@@ -76,7 +72,7 @@
     flex: 0 0 48%;
   }
 
-  .cd-grid--3-col > *  {
+  .cd-grid--3-col > * {
     flex: 0 0 32%;
   }
 
@@ -114,7 +110,7 @@
     }
 
     .cd-grid--4-col.cd-grid--grow > *:last-child,
-    .cd-grid--3-col.cd-grid--grow > *:last-child  {
+    .cd-grid--3-col.cd-grid--grow > *:last-child {
       grid-column: -1/1;
     }
   }
@@ -151,7 +147,6 @@
     }
   }
 }
-
 
 /* IE 11 fix for clearing floated items */
 @media screen and (-ms-high-contrast: none) {

@@ -93,6 +93,7 @@
 
     @include desktop {
       --dropdown: false;
+
       height: $cd-site-header-height;
       max-width: none;
       padding: 0;
@@ -185,6 +186,8 @@
     background: $cd-white;
 
     @include desktop {
+      @include z-index(dropdown);
+
       box-shadow: 0 1px 8px rgba($cd-rgb-blue-grey--dark, 0.8);
       //left: -1px;
       margin: 0;
@@ -193,7 +196,6 @@
       padding: 20px 0;
       top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
       position: absolute;
-      @include z-index(dropdown);
     }
   }
 
@@ -281,7 +283,6 @@
           background: $cd-highlight-red;
         }
       }
-
     }
   }
 

@@ -44,11 +44,11 @@ body {
     @include tablet {
       display: grid;
       grid-template-areas:
-      'header'
-      'highlighted'
-      'main'
-      'soft-footer'
-      'footer';
+        'header'
+        'highlighted'
+        'main'
+        'soft-footer'
+        'footer';
       grid-template-rows: 101px auto 1fr auto;
       grid-auto-rows: auto;
     }
@@ -61,6 +61,7 @@ body {
 
 .cd-container {
   @include clearfix;
+
   box-sizing: border-box;
   padding: 0 $cd-container-padding;
   margin: 0 auto;
@@ -111,6 +112,7 @@ body {
 
   .cd-layout-sidebar-first & {
     margin-bottom: 2rem;
+
     @include desktop {
       margin-bottom: 0;
     }
@@ -156,6 +158,7 @@ body {
     @include tablet {
       flex-basis: 550px; // Keep this number large so exceeds the available space and thus sits below.
     }
+
     @include desktop {
       flex-basis: 285px;
     }

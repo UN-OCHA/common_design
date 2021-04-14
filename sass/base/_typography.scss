@@ -70,10 +70,11 @@
   font-weight: 400;
   font-display: swap;
   src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot');
-  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix') format('embedded-opentype'),
-  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2') format('woff2'),
-  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff') format('woff'),
-  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf') format('truetype');
+  src:
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix') format('embedded-opentype'),
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2') format('woff2'),
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff') format('woff'),
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -82,10 +83,11 @@
   font-weight: 700;
   font-display: swap;
   src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot');
-  src: url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix') format('embedded-opentype'),
-  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2') format('woff2'),
-  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff') format('woff'),
-  url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf') format('truetype');
+  src:
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix') format('embedded-opentype'),
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2') format('woff2'),
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff') format('woff'),
+    url('//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf') format('truetype');
 }
 
 h1,
@@ -199,7 +201,6 @@ h6 {
     font-size: $cd-font-size--base;
   }
 }
-
 
 a {
   color: $cd-blue--dark;

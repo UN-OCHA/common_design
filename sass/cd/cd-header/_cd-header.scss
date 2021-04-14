@@ -40,7 +40,7 @@
 .cd-site-header__inner {
   height: $cd-site-header-height;
 
-  @supports(display: grid) {
+  @supports (display: grid) {
     display: grid;
     grid-template-columns: 52px 1fr;
     grid-template-rows: $cd-site-header-height;
@@ -65,19 +65,19 @@
     float: left;
   }
 
-  @supports(display: flex) {
+  @supports (display: flex) {
     float: none;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
   }
 
-  @supports(display: grid) {
+  @supports (display: grid) {
     grid-column: 2 / 2;
   }
 
   @include desktop {
-    @supports(display: flex) {
+    @supports (display: flex) {
       .cd-search {
         flex: 0 1 auto;
       }
@@ -90,9 +90,8 @@
 }
 
 .cd-site-header__nav-holder nav > ul {
-
   @include desktop {
-    @supports(display: flex) {
+    @supports (display: flex) {
       float: none;
       flex: 0 0 auto;
       display: flex;
@@ -103,19 +102,18 @@
 
   > li,
   > .cd-nav__item {
-
     @include desktop {
       float: left;
     }
 
-    @supports(display: flex) {
+    @supports (display: flex) {
       flex: 1 0 100%;
     }
 
     @include desktop {
       //max-width: 112px;
 
-      @supports(display: flex) {
+      @supports (display: flex) {
         flex: 1 1 auto;
       }
     }
@@ -123,7 +121,7 @@
     @include xlarge {
       //max-width: 160px;
 
-      @supports(display: flex) {
+      @supports (display: flex) {
         flex: 1 1 auto;
       }
     }

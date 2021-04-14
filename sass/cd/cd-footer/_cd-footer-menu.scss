@@ -36,6 +36,7 @@
 // Hide default block titles
 .cd-footer__section--menu h2 {
   @extend .visually-hidden;
+
   color: $cd-white;
 }
 

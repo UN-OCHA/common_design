@@ -4,6 +4,7 @@
 :root {
   /* This will be set up by javascript after the document is loaded as we cannot
    * determine it via css only... */
+  /* stylelint-disable-next-line length-zero-no-unit */
   --cd-bleed-scrollbar-width: 0px;
 }
 
@@ -21,6 +22,7 @@
 .cd-bleed--background-only {
   position: relative;
   z-index: 1;
+  background-color: var(--cd-ocha-blue);
 }
 
 .cd-bleed--background-only:before {
@@ -37,14 +39,9 @@
   z-index: -1;
 }
 
-.cd-bleed--background-only {
-  background-color: var(--cd-ocha-blue);
-}
-
-
 /* For IE11 */
 @media all and (-ms-high-contrast: none) {
-/* Avoid overflow due to scrollbars */
+  /* Avoid overflow due to scrollbars */
   body {
     overflow-x: hidden;
   }

@@ -6,10 +6,11 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .skip-link {
+  @include z-index(skip-link);
+
   position: absolute;
   top: 0;
   left: 50%;
-  @include z-index(skip-link);
   transform: translateX(-50%);
 }
 

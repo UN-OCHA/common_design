@@ -40,7 +40,9 @@
     @media (min-width: #{map-get($grid-breakpoints, $breakpoint)}) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @warn '`#{$breakpoint}` not found in `$grid-breakpoints` map.';
   }
 }
@@ -50,7 +52,9 @@
     @media (max-width: #{map-get($grid-breakpoints, $breakpoint)-1}) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @warn '`#{$breakpoint}` not found in `$grid-breakpoints` map.';
   }
 }
@@ -127,7 +131,6 @@
   }
 }
 
-
 //——————————————————————————————————————————————————————————————————————————————
 // Common Design: z-index
 //
@@ -138,7 +141,9 @@
 @mixin z-index($value: 0) {
   @if map-has-key($zindex, $value) {
     z-index: #{map-get($zindex, $value)};
-  } @else {
+  }
+
+  @else {
     @warn '`#{$value}` not found in `$zindex` map.';
   }
 }

@@ -21,10 +21,10 @@
 .cd-tag {
   display: inline-block;
   margin: 0.25rem;
-  padding: 0 .25em;
+  padding: 0 0.25em;
   background-color: var(--cd-tag--color);
   color: var(--cd-white);
-  font-size: .625em;
+  font-size: 0.625em;
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
@@ -92,6 +92,7 @@
 }
 .cd-tag--color-3 {
   --cd-tag--color: #e2e868;
+
   color: var(--cd-black);
 }
 .cd-tag--color-4 {

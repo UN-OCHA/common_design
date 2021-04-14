@@ -51,7 +51,7 @@
 
 .cd-link-list__footer {
   display: flex;
-  align-items:center;
+  align-items: center;
   flex: 0 1 auto;
   text-align: right;
 }
