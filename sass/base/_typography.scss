@@ -102,31 +102,6 @@ h6 {
   line-height: 1.2;
 }
 
-html[lang="ar"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $cd-font--noto-kufi;
-    font-weight: 400;
-  }
-}
-
-// @TODO ZH might need special attention.
-html[lang="ru"],
-html[lang="zh"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $cd-font--noto;
-  }
-}
-
 h1 {
   color: $cd-default-text-color;
   font-size: $cd-font-size--2xmedium;
@@ -134,31 +109,6 @@ h1 {
 
   @include desktop {
     font-size: $cd-font-size--2xlarge;
-  }
-}
-
-.cd-page-title {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $cd-blue-grey;
-}
-
-.cd-page-title--landing {
-  text-transform: uppercase;
-  font-size: $cd-font-size--2xbase;
-  font-weight: 700;
-}
-
-ol,
-dl {
-  margin-bottom: 1rem;
-}
-
-@include tablet {
-  ol,
-  dl {
-    margin-bottom: 1.5rem;
   }
 }
 
@@ -199,6 +149,56 @@ h6 {
 
   @include desktop {
     font-size: $cd-font-size--base;
+  }
+}
+
+html[lang="ar"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $cd-font--noto-kufi;
+    font-weight: 400;
+  }
+}
+
+// @TODO ZH might need special attention.
+html[lang="ru"],
+html[lang="zh"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $cd-font--noto;
+  }
+}
+
+.cd-page-title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $cd-blue-grey;
+}
+
+.cd-page-title--landing {
+  text-transform: uppercase;
+  font-size: $cd-font-size--2xbase;
+  font-weight: 700;
+}
+
+ol,
+dl {
+  margin-bottom: 1rem;
+}
+
+@include tablet {
+  ol,
+  dl {
+    margin-bottom: 1.5rem;
   }
 }
 

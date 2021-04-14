@@ -85,14 +85,20 @@
       }
     }
 
-    .no-js & > ul {
-      display: block;
-    }
-
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
+    }
+
+    .no-js & > ul {
+      display: block;
+    }
+
+    button {
+      width: 100%;
+      border: 0 none;
+      background: transparent;
     }
 
     a,
@@ -103,10 +109,6 @@
       text-decoration: none;
       color: $cd-default-text-color;
 
-      html[dir="rtl"] & {
-        text-align: right;
-      }
-
       &:hover,
       &:focus {
         color: $cd-black;
@@ -114,15 +116,13 @@
         background: $cd-blue-grey;
       }
 
+      html[dir="rtl"] & {
+        text-align: right;
+      }
+
       @supports (display: flex) {
         display: flex;
       }
-    }
-
-    button {
-      width: 100%;
-      border: 0 none;
-      background: transparent;
     }
 
     // First level.
@@ -182,6 +182,18 @@
   }
 
   // Second level.
+  .menu .menu {
+    a {
+      display: flex;
+      color: $cd-black;
+      font-weight: 700;
+
+      &:hover {
+        background: $cd-blue-grey;
+      }
+    }
+  }
+
   .cd-nav > .menu > li > .menu {
     background: $cd-white;
 
@@ -196,18 +208,6 @@
       margin: 0;
       padding: 20px 0;
       box-shadow: 0 1px 8px rgba($cd-rgb-blue-grey--dark, 0.8);
-    }
-  }
-
-  .menu .menu {
-    a {
-      display: flex;
-      color: $cd-black;
-      font-weight: 700;
-
-      &:hover {
-        background: $cd-blue-grey;
-      }
     }
   }
 
@@ -289,6 +289,33 @@
   @include desktop {
     .cd-nav > .menu {
 
+      > li > ul {
+        a,
+        button {
+          &:hover {
+            background: $cd-blue-grey;
+          }
+
+          &.menu-item--active-trail {
+            border-left: 6px solid $cd-highlight-red;
+
+            [dir="rtl"] & {
+              border-right: 6px solid $cd-highlight-red;
+              border-left-width: 0;
+            }
+          }
+        }
+
+        > li.menu-item--active-trail {
+          border-left: 6px solid $cd-highlight-red;
+
+          [dir="rtl"] & {
+            border-right: 6px solid $cd-highlight-red;
+            border-left-width: 0;
+          }
+        }
+      }
+
       // sass-lint:disable nesting-depth
       > .menu-item {
         &:last-child {
@@ -301,11 +328,6 @@
               left: -1px;
             }
           }
-        }
-
-        &.menu-item--active-trail a::before,
-        &.menu-item--active-trail button::before {
-          background: $cd-highlight-red;
         }
 
         > a,
@@ -346,36 +368,14 @@
           }
         }
 
+        &.menu-item--active-trail a::before,
+        &.menu-item--active-trail button::before {
+          background: $cd-highlight-red;
+        }
+
         // Prevent SVG icon from shrinking if menu item text is long.
         svg {
           flex: 1 0 auto;
-        }
-      }
-
-      > li > ul {
-        a,
-        button {
-          &:hover {
-            background: $cd-blue-grey;
-          }
-
-          &.menu-item--active-trail {
-            border-left: 6px solid $cd-highlight-red;
-
-            [dir="rtl"] & {
-              border-right: 6px solid $cd-highlight-red;
-              border-left-width: 0;
-            }
-          }
-        }
-
-        > li.menu-item--active-trail {
-          border-left: 6px solid $cd-highlight-red;
-
-          [dir="rtl"] & {
-            border-right: 6px solid $cd-highlight-red;
-            border-left-width: 0;
-          }
         }
       }
 

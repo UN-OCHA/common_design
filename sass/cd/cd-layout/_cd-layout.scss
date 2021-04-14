@@ -119,20 +119,20 @@ body {
   }
 }
 
-// One sidebar.
-.cd-layout-with-sidebar-first .cd-layout-sidebar-first,
-.cd-layout-with-sidebar-second .cd-layout-sidebar-second {
-  @include desktop {
-    flex-basis: 285px;
-  }
-}
-
 .cd-layout-sidebar-first {
   //background: lightblue;
   margin-bottom: 1rem;
 
   @include desktop {
     margin-bottom: 0;
+  }
+}
+
+// One sidebar.
+.cd-layout-with-sidebar-first .cd-layout-sidebar-first,
+.cd-layout-with-sidebar-second .cd-layout-sidebar-second {
+  @include desktop {
+    flex-basis: 285px;
   }
 }
 

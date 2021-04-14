@@ -2,11 +2,6 @@
 // Common Design: Header
 //——————————————————————————————————————————————————————————————————————————————
 
-// We want uniform focus styles on the whole Header
-.cd-header button:focus {
-  outline: 3px solid $cd-blue--bright;
-}
-
 //
 // Global Header.
 // Top header bar, contains Sites Menu ('OCHA Services') and User Menu.
@@ -25,6 +20,11 @@
   button {
     border: 0;
   }
+}
+
+// We want uniform focus styles on the whole Header
+.cd-header button:focus {
+  outline: 3px solid $cd-blue--bright;
 }
 
 //
@@ -90,15 +90,8 @@
 }
 
 .cd-site-header__nav-holder nav > ul {
-
   > li,
   > .cd-nav__item {
-
-    .no-js & {
-      float: left;
-      max-width: unset;
-    }
-
     @include desktop {
       float: left;
     }
@@ -136,13 +129,19 @@
 }
 
 // Second level menu.
-.no-js .cd-site-header__nav-holder .cd-nav > .menu {
-  display: block;
-}
-
 .no-js .cd-site-header__nav-holder li li {
   float: left;
   max-width: unset;
+}
+
+.no-js .cd-site-header__nav-holder nav > ul > li,
+.no-js .cd-site-header__nav-holder nav > ul > .cd-nav__item {
+  float: left;
+  max-width: unset;
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu {
+  display: block;
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item li:first-child {

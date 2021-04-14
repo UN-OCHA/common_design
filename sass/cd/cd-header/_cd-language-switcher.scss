@@ -51,22 +51,45 @@
     display: block;
     float: none;
   }
+}
 
-  li a {
-    @extend .cd-user-menu__dropdown-link;
+.no-js .cd-user-menu__dropdown {
+  width: unset;
+  margin-left: 12px;
+  padding: 0;
 
+  li {
+    display: inline-block;
+    padding: 0 12px;
+  }
+
+  a {
+    height: $cd-global-header-height;
+    padding: 0;
+    line-height: $cd-global-header-height;
+  }
+
+  // Reposition checkmark icon.
+  .is-active::after {
+    top: 9px;
+    right: -6px;
+  }
+}
+
+.cd-user-menu__dropdown li a {
+  @extend .cd-user-menu__dropdown-link;
+
+  color: $cd-white;
+
+  &:hover,
+  &:focus {
+    color: $cd-blue--bright;
+  }
+
+  &:focus {
+    text-decoration: underline;
     color: $cd-white;
-
-    &:hover,
-    &:focus {
-      color: $cd-blue--bright;
-    }
-
-    &:focus {
-      text-decoration: underline;
-      color: $cd-white;
-      outline: 3px solid $cd-blue--bright;
-    }
+    outline: 3px solid $cd-blue--bright;
   }
 }
 
@@ -103,28 +126,5 @@
         left: 0;
       }
     }
-  }
-}
-
-.no-js .cd-user-menu__dropdown {
-  width: unset;
-  margin-left: 12px;
-  padding: 0;
-
-  li {
-    display: inline-block;
-    padding: 0 12px;
-  }
-
-  a {
-    height: $cd-global-header-height;
-    padding: 0;
-    line-height: $cd-global-header-height;
-  }
-
-  // Reposition checkmark icon.
-  .is-active::after {
-    top: 9px;
-    right: -6px;
   }
 }

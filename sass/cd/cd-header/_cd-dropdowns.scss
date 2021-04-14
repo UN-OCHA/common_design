@@ -69,6 +69,10 @@
   }
 }
 
+button[aria-expanded="true"] .cd-icon--arrow-down {
+  transform: rotate(180deg);
+}
+
 button[aria-expanded] {
   .cd-icon--arrow-down {
     fill: $cd-white;
@@ -83,10 +87,6 @@ button[aria-expanded] {
       margin-right: 4px;
     }
   }
-}
-
-button[aria-expanded="true"] .cd-icon--arrow-down {
-  transform: rotate(180deg);
 }
 
 // Hide label on mobile.

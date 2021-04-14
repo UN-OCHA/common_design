@@ -73,7 +73,7 @@
     top: 50%;
     right: -1px;
     width: 2px;
-    height: calc(#{$cd-global-header-height}/3);
+    height: calc(#{$cd-global-header-height} / 3);
     content: "";
     transform: translateY(-50%);
     background: $cd-blue--light;
@@ -130,6 +130,14 @@
   @extend .visually-hidden;
 }
 
+.cd-global-header .menu {
+  @extend .cd-user-menu;
+
+  // If there's no language switcher in the Global Header, uncomment this line
+  // to apply special treatment to the last link in the list.
+  //@extend .cd-user-menu--no-language-switcher;
+}
+
 .cd-global-header__user-menu > .menu {
   [dir="ltr"] & {
     padding-left: 0;
@@ -138,14 +146,6 @@
   [dir="rtl"] & {
     padding-right: 0;
   }
-}
-
-.cd-global-header .menu {
-  @extend .cd-user-menu;
-
-  // If there's no language switcher in the Global Header, uncomment this line
-  // to apply special treatment to the last link in the list.
-  //@extend .cd-user-menu--no-language-switcher;
 }
 
 // If there's only the expanded user menu in the Global Header uncomment this rule
@@ -179,10 +179,6 @@
   @extend .cd-user-menu__item;
 }
 
-.no-js .cd-global-header .menu > li button {
-  @extend .visually-hidden;
-}
-
 // Hides log out menu item when it is beside the expanded menu item.
 // When there are more than 3 menu items, the log out should also be in the dropdown.
 // This is content-specific. See CD-98 for specs.
@@ -211,4 +207,8 @@
 .cd-global-header .menu > .menu-item:last-child > ul.menu {
   right: -1px;
   left: auto;
+}
+
+.no-js .cd-global-header .menu > li button {
+  @extend .visually-hidden;
 }

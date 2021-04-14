@@ -2,6 +2,12 @@
 // Common Design: Drupal main menu dropdown display rules for nested menus
 //——————————————————————————————————————————————————————————————————————————————
 
+ul[data-cd-hidden="true"] > ul {
+  @include z-index(dropdown);
+
+  display: block;
+}
+
 .menu-item--expanded {
   // Hide child nav.
   [aria-expanded="false"] + ul {
@@ -11,12 +17,6 @@
   [aria-expanded="true"] + ul {
     display: block;
   }
-}
-
-ul[data-cd-hidden="true"] > ul {
-  @include z-index(dropdown);
-
-  display: block;
 }
 
 .menu--main button[aria-expanded] .cd-icon--arrow-down {
