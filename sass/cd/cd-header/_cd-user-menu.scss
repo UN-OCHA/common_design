@@ -73,7 +73,7 @@
     top: 50%;
     right: -1px;
     width: 2px;
-    height: calc(#{$cd-global-header-height}/3);
+    height: calc(#{$cd-global-header-height} / 3);
     content: "";
     transform: translateY(-50%);
     background: $cd-blue--light;

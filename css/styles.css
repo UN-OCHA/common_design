@@ -894,7 +894,7 @@ ul[data-cd-hidden=true] > ul {
   top: 50%;
   right: -1px;
   width: 2px;
-  height: calc(35px/3);
+  height: calc(35px / 3);
   content: "";
   transform: translateY(-50%);
   background: var(--cd-blue--light);
