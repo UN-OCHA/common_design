@@ -6,7 +6,7 @@
   float: left;
   text-align: left;
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     text-align: right;
   }
 
@@ -20,15 +20,29 @@
 }
 
 .cd-ocha__btn {
-  align-items: center;
-  background: transparent;
-  color: $cd-white;
+  position: relative;
   display: flex;
-  font-size: $cd-font-size--tiny;
+  align-items: center;
   height: $cd-global-header-height;
   padding: 0;
-  position: relative;
   transition: background 0.3s ease;
+  color: $cd-white;
+  background: transparent;
+  font-size: $cd-font-size--tiny;
+
+  .cd-icon--arrow-down {
+    margin: auto; // Center vertically in macOS 10
+
+    @include tablet {
+      [dir="ltr"] & {
+        margin-left: 4px;
+      }
+
+      [dir="rtl"] & {
+        margin-right: 4px;
+      }
+    }
+  }
 
   @include tablet {
     display: flex;
@@ -41,35 +55,21 @@
       }
     }
   }
-
-  .cd-icon--arrow-down {
-    margin: auto; // Center vertically in macOS 10
-
-    @include tablet {
-      [dir='ltr'] & {
-        margin-left: 4px;
-      }
-
-      [dir='rtl'] & {
-        margin-right: 4px;
-      }
-    }
-  }
 }
 
 .cd-ocha__logo {
   display: inline-block;
   flex-shrink: 0;
-  height: 21px;
   width: 21px;
+  height: 21px;
   fill: $cd-white;
 
   @include tablet {
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       margin-right: 4px;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       margin-left: 4px;
     }
   }
@@ -82,13 +82,13 @@
 }
 
 .cd-ocha-dropdown {
-  padding: 22px 0;
   width: 100%;
+  padding: 22px 0;
 }
 
 .cd-ocha-dropdown__inner {
-  padding: 0 $cd-container-padding;
   max-width: $cd-max-width;
+  padding: 0 $cd-container-padding;
 
   @include tablet {
     margin: 0 auto;
@@ -115,11 +115,18 @@
 .cd-ocha-dropdown__section {
   @include clearfix;
 
+  // For the see-all link
+  position: relative;
+
   // On mobile the link sections need space.
   margin-bottom: 1.5rem;
 
-  // For the see-all link
-  position: relative;
+  // on mobile, the two middle columns should look like one list.
+  &:nth-child(2) {
+    @include max-width(md) {
+      margin-bottom: 0;
+    }
+  }
 
   //
   // Grid not supported, fall back to floats on desktop
@@ -127,23 +134,16 @@
   @include tablet {
     float: left;
     width: 21.25%;
+
+    // ensure a min-height for IE11
+    min-height: 120px;
     margin-right: 5%;
 
     // remove space between sections
     margin-bottom: 0;
 
-    // ensure a min-height for IE11
-    min-height: 120px;
-
     &:last-child {
       margin-right: 0;
-    }
-  }
-
-  // on mobile, the two middle columns should look like one list.
-  &:nth-child(2) {
-    @include max-width(md) {
-      margin-bottom: 0;
     }
   }
 
@@ -157,9 +157,9 @@
 }
 
 .cd-ocha-dropdown__heading {
-  color: $cd-blue--light;
   margin: 0 0 10px;
   padding-bottom: 2px;
+  color: $cd-blue--light;
 
   // there's an invisible heading in the third column to keep the links inside
   // column 2/3 in line with each other. it's hidden on mobile.
@@ -179,18 +179,18 @@
 
 .cd-ocha-dropdown__link {
   display: block;
-  font-weight: 700;
   margin: 0 0 12px;
   padding: 0;
+  font-weight: 700;
 
   a {
-    color: $cd-white;
     text-decoration: none;
+    color: $cd-white;
 
     &:hover,
     &:focus {
-      color: $cd-white;
       text-decoration: underline;
+      color: $cd-white;
     }
 
     &:focus {
@@ -205,16 +205,16 @@
 }
 
 .cd-ocha-dropdown__see-all {
-  font-size: $cd-font-size--small;
   display: inline-block;
   width: 100%;
   padding: 10px;
+  font-size: $cd-font-size--small;
 
   @include tablet {
     position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
   }
 }
 

@@ -1,4 +1,4 @@
-@import 'sass/cd/cd-variables';
+@import "sass/cd/cd-variables";
 
 // select-a11y
 // ==========================================================
@@ -24,16 +24,16 @@ select {
 
 .sr-only {
   position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
   -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
-  border: 0;
-  white-space: nowrap;
 }
 
 /* select-a11y
@@ -61,16 +61,16 @@ $a11y-suggestion-border:      $gray-5 !default;
   .btn-select-a11y {
     position: relative;
     width: 100%;
-    text-align: left;
     padding: 9px 0.5rem;
-    background-color: $btn-select-a11y-bg;
+    text-align: left;
     border: 1px solid $btn-select-a11y-border;
+    background-color: $btn-select-a11y-bg;
 
     .icon-select {
       position: absolute;
-      background-color: $cd-highlight-red;
       top: 50%;
       right: 0.5em;
+      background-color: $cd-highlight-red;
       line-height: 0;
     }
 
@@ -79,26 +79,26 @@ $a11y-suggestion-border:      $gray-5 !default;
       color: $gray-4;
     }
 
-    &[aria-expanded='true'] {
+    &[aria-expanded="true"] {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
 
-    &[aria-expanded='true'] .icon-select {
+    &[aria-expanded="true"] .icon-select {
       transform: rotate(180deg);
     }
   }
 
   .tag-item {
-    border: 1px solid $tag-item-border;
     padding: 0.2em 0.1em 0.2em 0.5em;
+    border: 1px solid $tag-item-border;
     background: $cd-white;
   }
 
   .tag-item-supp {
-    background-color: transparent;
-    border: 1px solid transparent;
     margin-left: 0.25rem;
+    border: 1px solid transparent;
+    background-color: transparent;
 
     .icon-delete::before {
       content: $tag-item-supp-symbol;
@@ -107,8 +107,8 @@ $a11y-suggestion-border:      $gray-5 !default;
     }
 
     &:focus {
-      outline: 1px solid $tag-item-supp-border;
       color: $tag-item-supp-border;
+      outline: 1px solid $tag-item-supp-border;
     }
 
     &:hover {
@@ -127,42 +127,42 @@ $a11y-suggestion-border:      $gray-5 !default;
 
   .a11y-container {
     position: absolute;
-    left: 0;
-    right: 0;
-    padding: 0.5em;
-    background: $a11y-suggestions-bg;
     z-index: 10;
+    right: 0;
+    left: 0;
+    padding: 0.5em;
     border: 1px solid $gray-7;
+    background: $a11y-suggestions-bg;
 
     input {
-      outline: 2px solid $cd-blue--bright;
       width: 100%;
+      outline: 2px solid $cd-blue--bright;
     }
   }
 
   // fix safari pour cacher l'autocompletion native
   // cf http://stackoverflow.com/questions/38663578/how-to-hide-autofill-safari-icon-in-input-field
   input::-webkit-contacts-auto-fill-button {
-    visibility: hidden;
-    display: none !important;
-    pointer-events: none;
     position: absolute;
     right: 0;
+    display: none !important;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .a11y-suggestions {
-    max-height: 10em;
     overflow-y: auto;
-    border: 1px solid $a11y-suggestion-border;
+    max-height: 10em;
     margin-top: 0.5em;
+    border: 1px solid $a11y-suggestion-border;
     background-color: #fff;
   }
 
   .a11y-suggestion {
     padding: 0 (8em/16) 0 (26em/16);
-    color: $a11y-suggestion-color;
     cursor: pointer;
     text-align: left;
+    color: $a11y-suggestion-color;
 
     &:focus,
     &:hover {
@@ -175,47 +175,47 @@ $a11y-suggestion-border:      $gray-5 !default;
       outline-offset: -1px;
     }
 
-    &[aria-selected='true'] {
-      background-color: $a11y-suggestion-bg-selected;
-      color: $a11y-suggestion-color-hover;
+    &[aria-selected="true"] {
       position: relative;
+      color: $a11y-suggestion-color-hover;
+      background-color: $a11y-suggestion-bg-selected;
 
       &::before {
-        content: '✓';
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         left: (8em/16);
+        content: "✓";
+        transform: translateY(-50%);
       }
     }
   }
 
   .a11y-no-suggestion {
-    padding: 0 0.5em;
-    color: $a11y-suggestion-color;
-    text-align: left;
     margin: 0;
+    padding: 0 0.5em;
+    text-align: left;
+    color: $a11y-suggestion-color;
   }
 
   .list-inline {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
     background: $gray-8;
   }
 
   .list-selected {
-    padding: 0.5em;
     margin: 0;
+    padding: 0.5em;
 
     li {
-      margin: 0 0.3em 0.3em 0;
       display: flex;
       flex: 0 1 auto;
       align-items: flex-start;
+      margin: 0 0.3em 0.3em 0;
 
       &::before {
-        content: '';
+        content: "";
       }
 
       span {

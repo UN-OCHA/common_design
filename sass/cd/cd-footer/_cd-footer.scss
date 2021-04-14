@@ -5,10 +5,10 @@
 .cd-footer {
   // Position footer at the bottom of viewport. This might need adjusting based on page layout.
   grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
-  background: $cd-primary;
-  color: $cd-white;
   padding: 3rem 0 0;
   text-align: center;
+  color: $cd-white;
+  background: $cd-primary;
   line-height: 1.5;
 
   a {
@@ -21,8 +21,8 @@
 
     &:hover,
     &:focus {
-      color: $cd-white;
       text-decoration: underline;
+      color: $cd-white;
     }
 
     &.cd-button:hover,
@@ -38,10 +38,10 @@
 }
 
 .cd-footer__section {
-  margin: 0 auto;
-  padding-bottom: 3rem;
   float: none;
   width: 100%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
 
   // When we know a section contains no content, we can set an empty variant
   // to collapse it to zero-height which helps especially on mobile, without
@@ -69,13 +69,13 @@
 
 .cd-footer__section--menu {
   @include desktop {
-    text-align: left;
     float: left;
     width: 70%;
+    text-align: left;
 
-    [dir='rtl'] & {
-      text-align: right;
+    [dir="rtl"] & {
       float: right;
+      text-align: right;
     }
   }
 }
@@ -86,9 +86,9 @@
     width: 30%;
     text-align: right;
 
-    [dir='rtl'] & {
-      text-align: left;
+    [dir="rtl"] & {
       float: right;
+      text-align: left;
     }
   }
 }
@@ -96,10 +96,10 @@
 .cd-footer__section--mandate {
   @include desktop {
     float: left;
-    max-width: 780px;
     width: 60%;
+    max-width: 780px;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: right;
     }
   }
@@ -108,10 +108,10 @@
 .cd-footer__section--copyright {
   @include desktop {
     float: right;
-    max-width: 350px;
     width: 40%;
+    max-width: 350px;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: left;
     }
   }
@@ -128,10 +128,10 @@
     }
 
     @include desktop {
-      text-align: left;
       flex: 1 0 70%;
+      text-align: left;
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         text-align: right;
       }
     }
@@ -153,8 +153,8 @@
     }
 
     @include desktop {
-      max-width: 780px;
       flex: 1 0 50%;
+      max-width: 780px;
       margin: 0;
     }
   }

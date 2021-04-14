@@ -12,9 +12,9 @@ $grid-columns: 12 !default;
 @mixin make-container() {
   @include clearfix;
 
-  margin-left: auto;
-  margin-right: auto;
   max-width: $cd-max-width;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @mixin make-row() {
@@ -23,8 +23,8 @@ $grid-columns: 12 !default;
 }
 
 @mixin make-gutters() {
-  padding-left: 1rem;
   padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 @mixin make-col-ready() {
@@ -64,14 +64,14 @@ $grid-columns: 12 !default;
 }
 
 @mixin make-grid-columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+
+  $breakpoint-counter: 0;
   %grid-column {
     @include make-gutters();
 
     position: relative;
     min-height: 1px;
   }
-
-  $breakpoint-counter: 0;
 
   @each $breakpoint in map-keys($breakpoints) {
     $breakpoint-counter: ($breakpoint-counter + 1);
@@ -118,8 +118,8 @@ $grid-columns: 12 !default;
   @include make-gutters();
 
   @include min-width(xl) {
-    padding-left: 1rem;
     padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 

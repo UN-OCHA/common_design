@@ -12,8 +12,8 @@
  * Bleed the content and the background if any.
  */
 .cd-bleed {
-  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
   margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
+  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
 }
 
 /**
@@ -26,17 +26,17 @@
 }
 
 .cd-bleed--background-only:before {
-  content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  background-color: inherit;
   z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
+  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
+  content: "";
+  background-color: inherit;
 }
 
 /* For IE11 */

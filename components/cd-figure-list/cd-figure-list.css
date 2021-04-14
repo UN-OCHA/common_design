@@ -2,12 +2,12 @@
  * Figure list.
  */
 .cd-figure-list {
-  border-style: solid;
-  border-color: var(--cd-grey--light);
-  border-width: 0 0 1px 0;
   margin: 0;
   padding: 0;
   list-style: none;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: var(--cd-grey--light);
 }
 .cd-figure-list + .cd-figure-list {
   border-width: 0 0 1px 0;
@@ -17,9 +17,9 @@
   margin: 0;
   padding: 1rem 0;
   list-style: none;
+  border-width: 1px 0 0 0;
   border-style: solid;
   border-color: var(--cd-grey--light);
-  border-width: 1px 0 0 0;
 }
 .cd-figure-list__label {
   font-weight: 700;
@@ -61,20 +61,20 @@
   }
   .cd-figure-list--large .cd-figure-list__item {
     display: inline-block;
-    flex-grow: 1;
-    flex-shrink: 0;
     /* @todo use a quantity media query to adjust this? */
     flex-basis: 33.33%;
+    flex-grow: 1;
+    flex-shrink: 0;
     padding: 0 1.5rem;
     border-width: 0 0 0 1px;
   }
   [dir="ltr"] .cd-figure-list--large .cd-figure-list__item:first-child {
-    border-width: 0;
     padding-left: 0;
+    border-width: 0;
   }
   [dir="rtl"] .cd-figure-list--large .cd-figure-list__item:first-child {
-    border-width: 0 0 0 1px;
     padding-right: 0;
+    border-width: 0 0 0 1px;
   }
   [dir="rtl"] .cd-figure-list--large .cd-figure-list__item:last-child {
     border-width: 0;
@@ -105,12 +105,12 @@
   /* For the small variant of the figure list, we let the figures wrap to new
    * rows instead of displaying one per row on smaller screens. */
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: space-around;
   /* This is to hide the left and right borders of the figure items. */
   overflow-x: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: flex-start;
   /* Compensate for the margins of the figure items. */
   margin: -1rem 0 0 0;
 }
@@ -119,21 +119,21 @@
   min-width: 140px;
   margin: 1rem 0 0 0;
 }
-[dir='ltr'] .cd-figure-list--small .cd-figure-list__item {
+[dir="ltr"] .cd-figure-list--small .cd-figure-list__item {
+  margin-right: 0;
   /* The left margin combined with the overflow-x: hidden of the parent
    * ensures the left border and padding are hidden for the first item of each
    * row. */
   margin-left: calc(-1rem - 1px);
-  margin-right: 0;
   padding: 0 2rem 0 1rem;
   border-width: 0 0 0 1px;
 }
-[dir='rtl'] .cd-figure-list--small .cd-figure-list__item {
+[dir="rtl"] .cd-figure-list--small .cd-figure-list__item {
+  margin-right: calc(-1rem - 1px);
   /* The right margin combined with the overflow-x: hidden of the parent
    * ensures the right border and padding are hidden for the first item of each
    * row. */
   margin-left: 0;
-  margin-right: calc(-1rem - 1px);
   padding: 0 1rem 0 2rem;
   border-width: 0 1px 0 0;
 }
