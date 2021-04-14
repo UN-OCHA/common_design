@@ -31,7 +31,6 @@ body {
   // helper for @support testing. Enable background for colours.
   //background: rgba(255, 0, 0, 0.1);
 
-  // sass-lint:disable no-empty-rulesets
   @supports (display: flex) {
     //background: rgba(0, 255, 0, 0.1);
   }
