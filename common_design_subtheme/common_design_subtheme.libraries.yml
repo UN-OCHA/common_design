@@ -1,0 +1,10 @@
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+
+# Custom components
+# cd-teaser:
+#   css:
+#     theme:
+#       components/cd-teaser/cd-teaser.css: {}

@@ -15,14 +15,14 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 
 * Common Header
 * Common Footer
-* Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://thenounproject.com/ochavisual/))
+* Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://brand.unocha.org/d/xEPytAUjC3sH/icons))
 * Variables for breakpoints, colours, font sizes, fonts, and z-index
 * Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
 * See [v3.0.0 Release notes](https://github.com/UN-OCHA/common_design/releases/tag/v3.0.0) and [common_design implementation notes for v2](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
 
-There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) available
-   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Clone the common_design_subtheme directory to /themes/custom/ and remove the .git folder (all the implementation specific work should happen in the subtheme). Optionally rename the subtheme folder and associated theme files. See the [sub theme README](https://github.com/UN-OCHA/common_design_subtheme/blob/main/README.md)
+There is a sub theme included in this repo.
+   * This can be used as a starting point for implementations. Add components, override and extend the base theme as needed. Copy the common_design_subtheme directory to /themes/custom/ and refer to its [README](https://github.com/UN-OCHA/common_design/blob/main/common_design_subtheme/README.md). All the implementation-specific work should happen in the sub theme. Optionally rename the subtheme folder and associated theme files.
 
 **Drupal components:**
 
@@ -34,29 +34,32 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 
 * Typography
 * Component library
-   * HTML/CSS/JS that can be attached as Drupal libraries to twig templates, or copied into sass partials.
+   * HTML/CSS/JS components that can be attached as Drupal libraries to twig templates, or copied into sass partials.
    * Requires Drupal [Components module](https://www.drupal.org/project/components)
-   * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples
+   * See [Common Design demo](https://web.brand.unocha.org/demo) for Component examples
    * Refer to [Components README](https://github.com/UN-OCHA/common_design/blob/main/components/README.md) and https://github.com/UN-OCHA/common_design/blob/main/components/
-* Favicons and OCHA assets based on https://brand.unocha.org
+* Favicons and OCHA branded assets based on https://brand.unocha.org
 * Node workflow for frontend development
   * SASS
   * Sourcemaps (see which specific Sass file contains styles during local development)
   * Autoprefixer
   * Sass and JS linting
+  * SVG sprite
+  * E2E tests
 
 ## Getting started
 
 1. Clone this repo to `/themes/contrib/` or install using `composer require unocha/common_design`
-2. Clone the [common_design_subtheme](https://github.com/UN-OCHA/common_design_subtheme) repo to `/themes/custom/`
+2. Copy the `common_design_subtheme` directory to `/themes/custom/`
 3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' (or whatever you've renamed it to), and select **Enable and set default**
 
-**To contribute to `common_design` base theme development and/or to customise the sub theme**
+**To contribute to `common_design` base theme or sub theme development and/or to customise the sub theme**
 
 1. Run `nvm use` in theme folder to ensure the correct node version.
 2. Install the dependencies: `npm install`
-4. For development, run `npm run sass:watch` (this includes an initial linting and sourcemaps) and run `npm run sass:build` for final CSS generation.
-6. For twig debug and local development see [Disable Drupal 8 caching during development
+3. For development, run `npm run sass:watch` (this includes an initial linting and sourcemaps) or run `npm run sass:compile-dev` to compile.
+4. Run `npm run sass:build` for final CSS generation.
+5. For twig debug and local development see [Disable Drupal 8 caching during development
 ](https://www.drupal.org/node/2598914)
 
 Drupal 8 core has helper classes for accessibility [Hide content properly](https://www.drupal.org/docs/8/accessibility/hide-content-properly)
@@ -69,11 +72,11 @@ Run `npm run sass:watch` in the theme folder to watch for changes and automatica
 
 Run `npm run sass:lint` in the theme folder for linting. To use the [automatic fix](https://stylelint.io/user-guide/usage/cli#--fix), run `npm run sass:lint-fix`
 
-The stylelintrc.json config file extends Drupal core stylelint config. Run `npm i` in `html/core` to install the stylelint plugins.
+The `stylelintrc.json` config file extends Drupal core stylelint config. Run `npm i` in `html/core` to install the stylelint plugins if there are errors indicating missing packages.
 
 Run `npm run sass:build` to compile production-ready CSS.
 
-Preferably use Jenkins to run the sass:build task on build to generate the CSS.
+Preferably use Jenkins to run the `sass:build` task on build to generate the CSS.
 
 
 ## JS
@@ -144,7 +147,7 @@ There are two techniques used, depending on context.
 1. SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG file. We use this technique only when using technique 2 isn't possible.
 The icons are black by default. If you need another color, it's best to copy the icon and manually adjust the fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
 
-2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.tpl.php` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
+2. SVG symbol sprite using the `<use>` element. The SVG sprite is loaded as a single asset in the `html.html.twig` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
 ```
 <svg class="cd-icon cd-icon--arrow-down" width="16" height="16" aria-hidden="true" focusable="false">
   <use xlink:href="#cd-icon--arrow-down"></use>
@@ -160,31 +163,13 @@ We're using https://github.com/jkphl/svg-sprite node package. See https://una.im
 ### Generating the icons sprite
 As defined in the node scripts, all new icons should be placed in the `img/icons` directory.
 Run `npm run svg:sprite` to generate a new sprite.
-This generates the sprite SVG and places it in `img/icons/cd-icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
-
-
-### Renaming icons
-When importing a new version of the Common Icons, there is a bulk-renaming command in `package.json` that can be invoked by running the following:
-
-```
-# first, cd to repo root
-npm run icon-rename
-```
-
-This assumes that you have a tool compatible with http://brewformulas.org/Rename — you can install it on OSX using Homebrew:
-
-```
-brew install rename
-```
-
+This generates the sprite SVG `img/icons/cd-icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
 
 ## Browser support
-
 Progressive enhancement approach to layout, using Feature Queries to detect support for flexbox and grid.
 
 
 ## Favicons
-
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
