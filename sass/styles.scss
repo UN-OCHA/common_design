@@ -4,8 +4,7 @@
 // Imports everything in the `cd` folder and ensures that the templates provided
 // in this theme for the Header/Footer will carry Common Design branding.
 //——————————————————————————————————————————————————————————————————————————————
-@import 'cd/cd';
-
+@import "cd/cd";
 
 //——————————————————————————————————————————————————————————————————————————————
 // Theme extras
@@ -14,8 +13,8 @@
 // if you want something to get you started quickly.
 //——————————————————————————————————————————————————————————————————————————————
 
-@import 'base/_base';
-@import 'base/_grid';
-@import 'base/_typography';
-@import 'components/_cd-filter';
-@import 'components/_paragraphs';
+@import "base/_base";
+@import "base/_grid";
+@import "base/_typography";
+@import "components/_cd-filter";
+@import "components/_paragraphs";

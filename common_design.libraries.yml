@@ -305,5 +305,5 @@ css-vars-ponyfill:
 # https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
 array-from-polyfill:
   js:
-    js/array-from-polyfill.js: { attributes: { nomodule: true } }
+    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
 

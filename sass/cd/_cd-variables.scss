@@ -6,17 +6,15 @@
 // Google fonts
 //——————————————————————————————————————————————————————————————————————————————
 
-// sass-lint:disable no-url-domains no-url-protocols
-
 // Multilingual
 // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
-@import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400%3B500%3B700&display=swap');
+@import url("//fonts.googleapis.com/css2?family=Noto+Sans:wght@400%3B500%3B700&display=swap");
 
 // Roboto
 // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
-@import url('//fonts.googleapis.com/css?family=Roboto:ital,wght@0,300%3B0,400%3B0,500%3B0,700%3B0,900%3B1,400%3B1,700&display=swap');
-@import url('//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400%3B700&display=swap');
-@import url('//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400%3B700&display=swap');
+@import url("//fonts.googleapis.com/css?family=Roboto:ital,wght@0,300%3B0,400%3B0,500%3B0,700%3B0,900%3B1,400%3B1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400%3B700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400%3B700&display=swap");
 
 // sass-lint:enable no-url-domains no-url-protocols
 
@@ -50,7 +48,7 @@
   --cd-rgb-ocha-blue: 2, 108, 182;
   --cd-rgb-grey--mid: 89, 89, 89;
   --cd-rgb-grey--dark: 74, 74, 74;
-  --cd-rgb-highlight-red:  229, 106, 84;
+  --cd-rgb-highlight-red: 229, 106, 84;
   --cd-rgb-blue-grey--dark: 211, 221, 229;
 
   /* Measurements */
@@ -69,7 +67,7 @@
   // This ensures the footer is always the last element.
   --cd-footer-row-number: 5;
 
-  /* From https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/colours*/
+  /* From https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/colours */
   --cd-red: #cd3a1f;
   --cd-red--light: #f8d8d3;
   --cd-orange: #db7b18;
@@ -93,17 +91,16 @@
   --cd-font: helvetica, arial, sans-serif;
   --cd-font--system: system-ui;
 
-  // sass-lint:disable no-url-domains no-url-protocols
   // Multilingual
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
-  --cd-font--noto: 'Noto Sans', sans-serif;
-  --cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
+  --cd-font--noto: "Noto Sans", sans-serif;
+  --cd-font--noto-kufi: "Noto Kufi Arabic", sans-serif;
 
   // Roboto
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
-  --cd-font--roboto: 'Roboto', helvetica, arial, sans-serif;
-  --cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
-  --cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
+  --cd-font--roboto: "Roboto", helvetica, arial, sans-serif;
+  --cd-font--roboto-condensed: "Roboto Condensed", helvetica, arial, sans-serif;
+  --cd-font--roboto-slab: "Roboto Slab", helvetica, arial, sans-serif;
 }
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -198,10 +195,10 @@ $grid-breakpoints: (
 // CD Breakpoints correspond to the following grid breakpoints:
 //
 $cd-breakpoints: (
-  tablet: #{map-get($grid-breakpoints, 'md')},
-  desktop: #{map-get($grid-breakpoints, 'lg')},
-  xlarge: #{map-get($grid-breakpoints, 'xl')},
-  xxlarge: #{map-get($grid-breakpoints, 'xxl')}
+  tablet: #{map-get($grid-breakpoints, "md")},
+  desktop: #{map-get($grid-breakpoints, "lg")},
+  xlarge: #{map-get($grid-breakpoints, "xl")},
+  xxlarge: #{map-get($grid-breakpoints, "xxl")}
 );
 
 //——————————————————————————————————————————————————————————————————————————————

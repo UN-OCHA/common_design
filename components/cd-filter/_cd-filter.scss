@@ -16,7 +16,7 @@
     // which toggles the data-cd-hidden attribute.
     // This displays the dropdown regardless of that attribute value.
     @media all and (-ms-high-contrast: none) {
-      &[data-cd-hidden='true'] {
+      &[data-cd-hidden="true"] {
         display: block;
       }
     }

@@ -1,18 +1,18 @@
 ul.tabs {
-  list-style: none;
-  border-bottom: 2px solid var(--cd-blue-grey);
+  display: block;
   margin: 1rem 0 2rem;
   padding: 0;
-  display: block;
+  list-style: none;
+  border-bottom: 2px solid var(--cd-blue-grey);
 }
 
 /* Clearfix */
 ul.tabs::after {
-  content: '.';
   display: block;
-  height: 0;
-  clear: both;
   visibility: hidden;
+  clear: both;
+  height: 0;
+  content: ".";
 }
 
 ul.tabs > li {
@@ -23,17 +23,17 @@ ul.tabs > li {
 ul.tabs > li > a {
   position: relative;
   display: block;
-  padding: 0.25rem 1rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-align: center;
-  background: none;
-  border-radius: 0;
   margin: 0;
-  border: 0 none;
+  padding: 0.25rem 1rem;
+  text-align: center;
   text-decoration: none;
-  border-bottom: 2px solid var(--cd-blue-grey);
+  text-transform: uppercase;
   color: var(--cd-ocha-blue);
+  border: 0 none;
+  border-bottom: 2px solid var(--cd-blue-grey);
+  border-radius: 0;
+  background: none;
+  font-weight: 700;
 }
 
 @media (min-width: 576px) {
@@ -43,12 +43,12 @@ ul.tabs > li > a {
     margin-bottom: -2px;
   }
 
-  [dir='ltr'] ul.tabs > li {
+  [dir="ltr"] ul.tabs > li {
     float: left;
     margin-right: 0.5rem;
   }
 
-  [dir='rtl'] ul.tabs > li {
+  [dir="rtl"] ul.tabs > li {
     float: right;
     margin-left: 0.5rem;
   }
@@ -62,10 +62,10 @@ ul.tabs > li > a {
 
 ul.tabs > li > a.is-active,
 ul.tabs > li > a:hover {
+  color: var(--cd-ocha-blue);
   border: 0 none !important;
   border-bottom: 2px solid var(--cd-blue-grey) !important;
   background-color: var(--cd-blue-grey);
-  color: var(--cd-ocha-blue);
 }
 
 ul.tabs > li > a.is-active {
@@ -73,6 +73,6 @@ ul.tabs > li > a.is-active {
 }
 
 ul.tabs > li > a:focus {
-  background: var(--cd-blue-grey);
   outline: 3px solid var(--cd-blue--bright);
+  background: var(--cd-blue-grey);
 }

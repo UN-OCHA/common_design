@@ -9,6 +9,6 @@
   fill: var(--cd-ocha-blue);
 }
 
-[dir='rtl'] .cd-read-more svg {
+[dir="rtl"] .cd-read-more svg {
   transform: scale(-1, 1);
 }

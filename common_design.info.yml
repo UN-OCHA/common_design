@@ -33,7 +33,7 @@ regions:
 libraries-override:
   core/modernizr:
     js:
-      assets/vendor/modernizr/modernizr.min.js: js/cd-modernizr.min.js
+      assets/vendor/modernizr/modernizr.min.js: js/vendor/cd-modernizr.min.js
 
   # select_a11y module for Facets dropdowns.
   select_a11y/select_a11y_facets.widget:

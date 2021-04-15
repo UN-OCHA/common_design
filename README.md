@@ -16,7 +16,7 @@ Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) fo
 * Common Header
 * Common Footer
 * Common SVG Icons (a web-specific subset of [OCHA humanitarian icons](https://thenounproject.com/ochavisual/))
-* Variables for breakpoints, colours, font sizes, fonts, measurements and z-index
+* Variables for breakpoints, colours, font sizes, fonts, and z-index
 * Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
 * See [v3.0.0 Release notes](https://github.com/UN-OCHA/common_design/releases/tag/v3.0.0) and [common_design implementation notes for v2](https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4) for more detailed documentation
@@ -39,7 +39,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
    * See [Common Design demo](https://demo.commondesign-unocha-org.ahconu.org) for Component examples
    * Refer to [Components README](https://github.com/UN-OCHA/common_design/blob/main/components/README.md) and https://github.com/UN-OCHA/common_design/blob/main/components/
 * Favicons and OCHA assets based on https://brand.unocha.org
-* gulp.js workflow for frontend development
+* Node workflow for frontend development
   * SASS
   * Sourcemaps (see which specific Sass file contains styles during local development)
   * Autoprefixer
@@ -55,9 +55,7 @@ There is a [sub theme](https://github.com/UN-OCHA/common_design_subtheme) availa
 
 1. Run `nvm use` in theme folder to ensure the correct node version.
 2. Install the dependencies: `npm install`
-3. Copy `localConfig.example.json` to `localConfig.json` and specify the URL of your local Drupal environment.
-4. Run the simple gulp task to build the CSS and watch for new changes: `gulp dev`
-5. When you make commits, it will automatically run a "production" Sass build that excludes Sourcemaps
+4. For development, run `npm run sass:watch` (this includes an initial linting and sourcemaps) and run `npm run sass:build` for final CSS generation.
 6. For twig debug and local development see [Disable Drupal 8 caching during development
 ](https://www.drupal.org/node/2598914)
 
@@ -67,11 +65,15 @@ Drupal 8 core has helper classes for accessibility [Hide content properly](https
 
 This project uses [Sass](http://sass-lang.com/). To make changes edit the `.scss` files in the `sass/` folder, do NOT edit the files in `css/` directly.
 
-Run `gulp dev` in the theme folder to have gulp watch for changes and automatically rebuild the CSS.
+Run `npm run sass:watch` in the theme folder to watch for changes and automatically rebuild the CSS.
 
-Run `gulp sass` to compile the CSS only.
+Run `npm run sass:lint` in the theme folder for linting. To use the [automatic fix](https://stylelint.io/user-guide/usage/cli#--fix), run `npm run sass:lint-fix`
 
-Preferably use Jenkins to run the Gulp task on build to generate the CSS. If this is possible on your project, add the `css/` folder to the `.gitignore` file and delete generated CSS from the repo.
+The stylelintrc.json config file extends Drupal core stylelint config. Run `npm i` in `html/core` to install the stylelint plugins.
+
+Run `npm run sass:build` to compile production-ready CSS.
+
+Preferably use Jenkins to run the sass:build task on build to generate the CSS.
 
 
 ## JS
@@ -125,14 +127,13 @@ Using `this` works for most functions except ones which are assigned to event li
 ```
 
 
-## Gulp
+## Task management
 
-This project uses [Gulp 4](https://github.com/gulpjs/gulp#whats-new-in-40)
+This project uses some Node packages for Sass compilation, watching and linting, JS linting and SVG icon sprite generation.
 
-To see a task listing, run the following command:
+See [scripts in package.json](https://github.com/UN-OCHA/common_design/blob/main/package.json#L9)
 
-`gulp --tasks`
-
+To get a list of commands, do `npm run` and it will output all possible options.
 
 ## Icons
 
@@ -154,12 +155,12 @@ Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-i
 Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load. 
 If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
 
-We're using https://github.com/jkphl/gulp-svg-sprite. See https://una.im/svg-icons for more details.
+We're using https://github.com/jkphl/svg-sprite node package. See https://una.im/svg-icons for more details.
 
 ### Generating the icons sprite
-As defined in the gulp task, all new icons should be placed in the `img/icons` directory.
-Run `gulp sprites` to generate a new sprite.
-This generates the sprite SVG and places it in `img/icons/icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
+As defined in the node scripts, all new icons should be placed in the `img/icons` directory.
+Run `npm run svg:sprite` to generate a new sprite.
+This generates the sprite SVG and places it in `img/icons/cd-icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
 
 
 ### Renaming icons
@@ -187,7 +188,6 @@ Progressive enhancement approach to layout, using Feature Queries to detect supp
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
-
 
 
 ## E2E testing

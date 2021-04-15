@@ -1,5 +1,4 @@
 # local environment
-localConfig.json
 
 # dev files
 **/node_modules/

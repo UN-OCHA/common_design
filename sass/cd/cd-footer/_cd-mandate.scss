@@ -15,24 +15,24 @@
   width: 149px;
   height: 37px;
   margin: 0 auto 16px;
-  background: url('../img/logos/ocha-lockup.svg') 0 center no-repeat;
+  background: url("../img/logos/ocha-lockup.svg") 0 center no-repeat;
 
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     background-position: 100% 0;
   }
 
   .no-svg & {
-    background: url('../img/logos/ocha-lockup@149x37.png') 0 center no-repeat;
+    background: url("../img/logos/ocha-lockup@149x37.png") 0 center no-repeat;
   }
 
   @include desktop {
-    box-sizing: content-box;
     float: left;
+    box-sizing: content-box;
     margin: -4px $cd-container-padding 0 auto;
     padding-right: $cd-container-padding;
     border-right: 1px solid $cd-blue-grey;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       float: right;
       margin: -4px auto 0$cd-container-padding;
       padding-right: 0;
@@ -49,10 +49,10 @@
   padding: 0 $cd-container-padding;
 
   @include desktop {
-    text-align: left;
     padding: 0;
+    text-align: left;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       text-align: right;
     }
   }
@@ -65,17 +65,17 @@
   padding: 0 $cd-container-padding;
 
   @include desktop {
-    text-align: left;
-    padding: 0;
-    padding-left: 173px; // Width of logo.
-    padding-right: $cd-container-padding-xlarge;
-    margin: 0;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-right: $cd-container-padding-xlarge;
+    padding-left: 173px; // Width of logo.
+    text-align: left;
 
-    [dir='rtl'] & {
-      text-align: right;
-      padding-left: $cd-container-padding-xlarge;
+    [dir="rtl"] & {
       padding-right: 173px; // Width of logo.
+      padding-left: $cd-container-padding-xlarge;
+      text-align: right;
     }
   }
 }

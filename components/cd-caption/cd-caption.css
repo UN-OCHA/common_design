@@ -7,7 +7,7 @@
   font-style: italic;
 }
 
-[dir='rtl'] .cd-caption {
+[dir="rtl"] .cd-caption {
   text-align: left;
 }
 

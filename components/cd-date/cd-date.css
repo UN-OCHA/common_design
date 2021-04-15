@@ -1,34 +1,34 @@
 .cd-date {
-  overflow: hidden;
-  background-color: var(--cd-white);
-  border: 1px solid var(--cd-blue-grey--light);
-  text-align: center;
   float: left;
-  border-radius: 0.25rem;
+  overflow: hidden;
   min-width: 5.5rem;
+  text-align: center;
+  border: 1px solid var(--cd-blue-grey--light);
+  border-radius: 0.25rem;
+  background-color: var(--cd-white);
 }
 
 .cd-date__wrapper {
-  background: var(--cd-ocha-blue);
   padding: 0 0.5rem;
+  background: var(--cd-ocha-blue);
 }
 
 .cd-date__day {
-  font-size: 3rem;
-  color: var(--cd-white);
-  font-weight: 700;
   word-spacing: -0.5rem;
+  color: var(--cd-white);
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .cd-date__month,
 .cd-date__year {
-  color: var(--cd-ocha-blue);
   text-transform: uppercase;
+  color: var(--cd-ocha-blue);
   font-size: 0.875rem;
   font-weight: 700;
 }
 
 .cd-date__wrapper + .cd-date__wrapper {
-  background: transparent;
   padding: 0.25rem 0.5rem;
+  background: transparent;
 }
