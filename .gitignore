@@ -1,5 +1,3 @@
-# local environment
-
 # dev files
 **/node_modules/
 **/.sass-cache/
