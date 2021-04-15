@@ -4,7 +4,7 @@ A sub theme, extending [common_design](https://github.com/UN-OCHA/common_design)
 
 This can be used as a starting point for implementations. Add components, override and extend base theme as needed. Refer to [Drupal 8 Theming documentation](https://www.drupal.org/docs/8/theming) for more.
 
-Clone this repo to /themes/custom/ and optionally rename the folder and associated theme files from
+Copy this directory to `/themes/custom/` and optionally rename the folder and associated theme files from
 `common_design_subtheme` to your theme name.
 
 ### Path of the libraries
@@ -29,6 +29,8 @@ Override sass partials and extend twig templates from the base theme as needed, 
 
 Add new components by defining new libraries in `common_design_subtheme.libraries.yml` and attaching them to relevant templates. Or use existing components from `common_design.libraries.yml` base theme by attaching the libraries to twig template overrides in the sub theme.
 
-Override theme preprocess functions by copying from common_design.theme and editing as needed. For example, if new icons are added, a new icon sprite will need to be generated and the `common_design_preprocess_html` hook used to attach the icon sprite to the page will need a new path to reflect the sub theme's icon sprite location.
+Override theme preprocess functions by copying from `common_design.theme` and editing as needed. For example, if new icons are added, a new icon sprite will need to be generated and the `common_design_preprocess_html` hook used to attach the icon sprite to the page will need a new path to reflect the sub theme's icon sprite location.
 
-Refer to [common_design README](https://github.com/UN-OCHA/common_design/#ocha-common-design-base-theme-for-drupal-8) for general details about base theme and instructions for compilation. There should be no need to compile the base theme, only the sub theme.
+Refer to [common_design README](https://github.com/UN-OCHA/common_design/#common-design-base-theme-for-drupal-8) for general details about base theme and instructions for compilation. There should be no need to compile the base theme, only the sub theme.
+
+Refer to [common_design README E2E testing](https://github.com/UN-OCHA/common_design/#e2e-testing) for information about running tests.
