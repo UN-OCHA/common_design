@@ -1,0 +1,7 @@
+# dev files
+**/node_modules/
+**/.sass-cache/
+**/*.css.map
+
+# mac stuff
+**/.DS_Store
