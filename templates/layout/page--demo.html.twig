@@ -116,35 +116,38 @@
         <div class="cd-toc__title">Table of Contents</div>
         <ol id="cd-component-toc" class="cd-toc__list">
           <li><a href="#cd-alert">Alert</a></li>
-          <li><a href="#cd-button">Buttons</a></li>
-          <li><a href="#cd-read-more">Read more</a></li>
+          <li><a href="#cd-article">Article</a></li>
+          <li><a href="#cd-author">Author</a></li>
           <li><a href="#cd-banner">Banner</a></li>
           <li><a href="#cd-block-title">Block Title</a></li>
           <li><a href="#cd-bullet-list">Bullet List</a></li>
-          <li><a href="#cd-card">Card</a></li>
-          <li><a href="#cd-event">Event</a></li>
-          <li><a href="#cd-date">Date</a></li>
-          <li><a href="#cd-filter">Filter</a></li>
-          <li><a href="#cd-hero">Hero</a></li>
-          <li><a href="#cd-link-list">Link List</a></li>
-          <li><a href="#cd-styled-list">Styled List</a></li>
-          <li><a href="#cd-social-links">Social links</a></li>
-          <li><a href="#cd-title-list">Title List</a></li>
-          <li><a href="#cd-table">Table</a></li>
-          <li><a href="#cd-tag">Tag</a></li>
-          <li><a href="#cd-tabs">Tabs</a></li>
-          <li><a href="#cd-author">Author</a></li>
+          <li><a href="#cd-button">Buttons</a></li>
           <li><a href="#cd-byline">Byline</a></li>
-          <li><a href="#cd-toc">Table of contents</a></li>
-          <li><a href="#cd-teaser">Teaser</a></li>
+          <li><a href="#cd-banner">Caption</a></li>
+          <li><a href="#cd-card">Card</a></li>
+          <li><a href="#cd-date">Date</a></li>
+          <li><a href="#cd-event">Event</a></li>
+          <li><a href="#cd-figure-list">Figure list</a></li>
+          <li><a href="#cd-filter">Filter</a></li>
+          <li><a href="#cd-form">Form</a></li>
+          <li><a href="#cd-grid">Grid</a></li>
+          <li><a href="#cd-hero">Hero</a></li>
+          <li><a href="#cd-image-grid">Image grid</a></li>
+          <li><a href="#cd-link-list">Link List</a></li>
+          <li><a href="#cd-page-title">Page title</a></li>
+          <li><a href="#cd-pagination">Pagination</a></li>
+          <li><a href="#cd-read-more">Read more</a></li>
           <li><a href="#cd-search--inline">Search</a></li>
           <li><a href="#cd-search--inline">Inline search</a></li>
-          <li><a href="#cd-pagination">Pagination</a></li>
-          <li><a href="#cd-grid">Grid</a></li>
-          <li><a href="#cd-figure-list">Figure list</a></li>
-          <li><a href="#cd-article">Article</a></li>
+          <li><a href="#cd-social-links">Social links</a></li>
+          <li><a href="#cd-styled-list">Styled List</a></li>
+          <li><a href="#cd-table">Table</a></li>
+          <li><a href="#cd-tabs">Tabs</a></li>
+          <li><a href="#cd-tag">Tag</a></li>
+          <li><a href="#cd-teaser">Teaser</a></li>
+          <li><a href="#cd-title-list">Title List</a></li>
+          <li><a href="#cd-toc">Table of contents</a></li>
           <li><a href="#cd-typography">Typography</a></li>
-          <li><a href="#cd-form">Form</a></li>
         </ol>
       </div>
 
@@ -153,6 +156,11 @@
       {% if componentsModule %}
 
         <h2 class="cd-styleguide cd-bleed--background-only"><a id="cd-components--content">Content components</a></h2>
+
+        <h3 class="cd-styleguide"><a id="cd-page-title">cd-page-title</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-page-title/cd-page-title.html.twig' %}
 
         <h3 class="cd-styleguide"><a id="cd-banner">cd-banner</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
