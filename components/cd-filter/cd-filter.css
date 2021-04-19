@@ -349,11 +349,12 @@
 }
 
 @media (min-width: 1024px) {
-  /* This is a test. */
-  /* .cd-filter[data-cd-toggable] {
-    background: red;
+  /* This is to enable the cd-filter component collapse using cd-dropdown component
+  Set the breakpoint at which the filter should stop acting like a dropdown.
+  Adding `.cd-dropdown` class on `.cd-filter` means --dropdown defaults to true. */
+  .cd-filter[data-cd-toggable] {
     --dropdown: false;
-  } */
+  }
 
   .cd-filter__btn svg {
     width: 22px;
