@@ -183,6 +183,13 @@ cd-link-list:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-page-title:
+  css:
+    component:
+      components/cd-page-title/cd-page-title.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-pagination:
   css:
     component:

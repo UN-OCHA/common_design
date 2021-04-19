@@ -25,6 +25,8 @@
     'cd-page-title'
   ]
 %}
+{{ attach_library('common_design/cd-page-title') }}
+
 {{ title_prefix }}
 {% if title %}
   <h1{{ title_attributes.addClass(classes) }}>{{ title }}</h1>
