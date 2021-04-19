@@ -3,11 +3,11 @@ import env from './_env';
 jest.setTimeout(env.timeout);
 
 describe('MainMenuDropdown', () => {
-  beforeAll(async () => {
+  beforeAll(async() => {
     await page.goto(`${env.baseUrl}`);
   });
 
-  it('should expand when clicked', async () => {
+  it('should expand when clicked', async() => {
     const toggle = await page.$('.cd-main-menu__btn');
     await page.setViewport({ width: 1280, height: 800 });
     await toggle.click();

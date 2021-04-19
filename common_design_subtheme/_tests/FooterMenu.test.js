@@ -4,11 +4,11 @@ jest.setTimeout(env.timeout);
 
 
 describe('FooterLinks', () => {
-  beforeAll(async () => {
+  beforeAll(async() => {
     await page.goto(`${env.baseUrl}`);
   });
 
-  it('should contain specific links in the Footer menu', async () => {
+  it('should contain specific links in the Footer menu', async() => {
     const footerMenuItems = [
       'Privacy',
       'Terms of use'
