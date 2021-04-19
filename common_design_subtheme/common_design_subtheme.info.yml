@@ -29,9 +29,16 @@ regions:
 #   common_design/cd-teaser:
 #     - common_design_subtheme/cd-teaser
 
+
+
 # CD components
 # Requires Components module
-# component-libraries:
+component-libraries:
 #   cd-components:
 #     paths:
 #       - components
+# Attempt to prevent missing template issues from subtheme being inside base theme directory.
+# https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
+    common_design_subtheme:
+      paths:
+        - commmon_design_subtheme
