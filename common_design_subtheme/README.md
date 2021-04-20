@@ -5,7 +5,7 @@ A sub theme, extending [common_design](https://github.com/UN-OCHA/common_design)
 This can be used as a starting point for implementations. Add components, override and extend base theme as needed. Refer to [Drupal 8 Theming documentation](https://www.drupal.org/docs/8/theming) for more.
 
 Copy this directory to `/themes/custom/` and optionally rename the folder and associated theme files from
-`common_design_subtheme` to your theme name.
+`common_design_subtheme` to your theme name. Then rename the `common_design_subtheme.info.yml.example` to `common_design_subtheme.info.yml`.
 
 ### Path of the libraries
 If the subtheme name changes, the path of the global style sheet in `common_design_subtheme.info.yml` needs to reflect the new sub theme name.

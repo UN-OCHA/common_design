@@ -47,7 +47,7 @@ libraries-override:
         css/style.css: components/cd-select-a11y/cd-select-a11y.css
 
 # CD components
-component-libraries:
-  cd-components:
-    paths:
-      - components
+# Requires Components module
+components:
+  namespaces:
+    cd-components: components
