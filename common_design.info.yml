@@ -47,7 +47,9 @@ libraries-override:
         css/style.css: components/cd-select-a11y/cd-select-a11y.css
 
 # CD components
-component-libraries:
-  cd-components:
-    paths:
-      - components
+components:
+  namespaces:
+    cd-components: components
+    # Attempt to prevent missing template issues from subtheme being inside base theme directory.
+    # https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
+    common_design_subtheme: commmon_design_subtheme/templates
