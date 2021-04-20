@@ -134,6 +134,15 @@ function common_design_theme_registry_alter(&$theme_registry) {
   if (isset($theme_registry['page_title'])) {
     $theme_registry['page_title']['variables']['title_attributes'] = [];
   }
+
+  // The theme discovery (drupal_find_theme_templates()) is too greedy and
+  // picks up the templates in `common_design/common_design_subtheme`. The code
+  // below reverts that behavior to use the `common_design` templates instead.
+  foreach ($theme_registry as $name => $theme_info) {
+    if (isset($theme_info['path']) && strpos($theme_info['path'], 'common_design/common_design_subtheme') !== FALSE) {
+      $theme_registry[$name]['path'] = str_replace('common_design/common_design_subtheme', 'common_design', $theme_info['path']);
+    }
+  }
 }
 
 /**
