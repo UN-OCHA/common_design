@@ -1,5 +1,4 @@
 const env = {
-  timeout: 15000,
   baseUrl: 'https://commondesign.test'
 };
 
