@@ -1,5 +1,4 @@
 const env = {
-  timeout: 5000,
   baseUrl: 'https://web.brand.unocha.org'
 };
 
