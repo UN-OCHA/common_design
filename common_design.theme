@@ -5,6 +5,7 @@
  * Template overrides, preprocess, and hooks for the OCHA Common Design theme.
  */
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 
@@ -122,6 +123,10 @@ function common_design_preprocess_node(&$variables) {
     if (!empty($variables['title']) && !empty($variables['title_attributes'])) {
       $variables['title']['#title_attributes'] = $variables['title_attributes'];
     }
+    // The local tasks have by default a max-age cache of 0 which prevents the
+    // entire caching of the rendered node so we remove it as there are already
+    // cache contexts and tags to ensure its displayed appropriately.
+    unset($variables['local_tasks']['#cache']['max-age']);
   }
 }
 
@@ -356,13 +361,11 @@ function common_design_preprocess_menu(&$variables, $hook) {
  *   before to avoid displaying the block several times.
  */
 function common_design_get_block_render_array($id) {
-  // Use of the `drupal_static` allows us to retrieve the cache in
-  // other functions like common_design_remove_rendered_blocks().
-  $rendered = &drupal_static('common_design_rendered_blocks');
+  static $rendered = [];
 
   if (!isset($rendered[$id])) {
     // Prevent rendering the block several times.
-    $rendered[$id] = [];
+    $rendered[$id] = TRUE;
 
     $storage = \Drupal::entityTypeManager()->getStorage('block');
     $theme = \Drupal::theme()->getActiveTheme();
@@ -378,20 +381,27 @@ function common_design_get_block_render_array($id) {
       return [];
     }
 
-    // Store the regions in which the blocks of that type were supposed to be
-    // rendered.
-    foreach ($blocks as $block) {
-      $rendered[$id][$block->id()] = $block->getRegion();
-    }
-    $block = reset($blocks);
-
-    // Return an empty build if the user doesn't have access to the block.
-    if (!$block->access('view', NULL, TRUE)) {
-      return [];
-    }
-
     // Get the render array for the block.
+    $block = reset($blocks);
     $build = $block->getPlugin()->build();
+
+    // Check the accessibility to the block.
+    $build['#access'] = $block->access('view', NULL, TRUE);
+
+    // Store the regions in which the blocks of that type were supposed to be
+    // rendered. We store that info as cache tags so that we can retrieve the
+    // list regardless of whether the rendered node is cached or not
+    // (when cached, the hook_preprocess_node() is not called).
+    $prefix = 'common_design:rendered:block:';
+    foreach ($blocks as $block) {
+      $build['#cache']['tags'][] = $prefix . $id . ':' . $block->id() . ':' . $block->getRegion();
+    }
+
+    // Ensure the appropriate cache metadata is added to the build.
+    $cache = CacheableMetadata::createFromRenderArray($build);
+    $cache->addCacheableDependency($block);
+    $cache->addCacheableDependency($build['#access']);
+    $cache->applyTo($build);
 
     // Ensure the page title block has a title.
     // @see https://www.drupal.org/project/drupal/issues/2938129
@@ -409,13 +419,49 @@ function common_design_get_block_render_array($id) {
 }
 
 /**
+ * Get the list of blocks rendered by common_design_get_block_render_array().
+ *
+ * @param array $variables
+ *   Render elements for example the page build array in which to look for
+ *   the rendered blocks.
+ *
+ * @return array
+ *   The list of rendered blocks keyed by their ids and with the regions they
+ *   are supposed to be rendered in, as values.
+ */
+function common_design_collect_rendered_blocks(array &$variables) {
+  $blocks = [];
+
+  // Extract the block id and the region it was supposed to be rendered.
+  if (isset($variables['#cache']['tags']) && is_array($variables['#cache']['tags'])) {
+    $prefix = 'common_design:rendered:block:';
+    $prefix_length = strlen($prefix);
+    foreach ($variables['#cache']['tags'] as $tag) {
+      if (strpos($tag, $prefix) === 0) {
+        list($plugin_id, $block_id, $region) = explode(':', substr($tag, $prefix_length), 3);
+        $blocks[$plugin_id][$block_id] = $region;
+      }
+    }
+  }
+
+  // Recursively collect the rendered block info.
+  foreach ($variables as $key => $item) {
+    if ((is_int($key) || $key === '' || $key[0] !== '#') && is_array($item)) {
+      $blocks = array_merge_recursive($blocks, common_design_collect_rendered_blocks($item));
+    }
+  }
+
+  return $blocks;
+}
+
+/**
  * Remove already rendered blocks from the page.
  *
  * @param array $variables
  *   Page variables.
  */
 function common_design_remove_rendered_blocks(array &$variables) {
-  $rendered = &drupal_static('common_design_rendered_blocks');
+  $rendered = common_design_collect_rendered_blocks($variables);
   if (!empty($rendered)) {
     foreach ($rendered as $blocks) {
       foreach ($blocks as $id => $region) {
