@@ -5,6 +5,7 @@
  * Template overrides, preprocess, and hooks for the OCHA Common Design theme.
  */
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
@@ -82,13 +83,55 @@ function common_design_preprocess(&$variables, $hook) {
 }
 
 /**
+ * Indicate whether to render the page title inside the node or not.
+ *
+ * @param string $view_mode
+ *   View mode to check against the theme settings.
+ *
+ * @return bool
+ *   TRUE if the page title should be rendered inside the node.
+ */
+function common_design_use_node_page_title($view_mode) {
+  if (empty($view_mode)) {
+    return FALSE;
+  }
+
+  // Get the list of node view modes for which to use the pre-rendered page
+  // title instead of the normal page title block. This is an associative array
+  // keyed by view modes and with either the view mode as value when enabled
+  // or 0 otherwise. If not set, enable the behavior for the full view-mode.
+  $view_modes = theme_get_setting('common_design_node_title');
+  if (!isset($view_modes)) {
+    $view_modes = ['full' => 'full'];
+  }
+
+  return !empty($view_modes[$view_mode]);
+}
+
+/**
  * Implements hook_preprocess_page().
  *
  * Remove the default page title and local tasks blocks if they were already
  * rendered by a page title paragraph or when viewing full article nodes.
  */
 function common_design_preprocess_page(&$variables) {
-  common_design_remove_rendered_blocks($variables);
+  // If the node variable is defined then we assume we are on a node page.
+  // We retrieve the view mode for the page and compare it against the settings
+  // to render the page title inside the node. If so, we hide the page title
+  // and local tasks blocks from their original region in the page.
+  if (isset($variables['node']) && is_a($variables['node'], '\Drupal\node\NodeInterface')) {
+    // This gives us an array with the page view mode for the node.
+    $build = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->view($variables['node']);
+
+    if (common_design_use_node_page_title($build['#view_mode'] ?? '')) {
+      common_design_hide_rendered_blocks_from_page($variables, [
+        'page_title_block',
+        'local_tasks_block',
+      ]);
+    }
+  }
 }
 
 /**
@@ -105,28 +148,15 @@ function common_design_preprocess_page(&$variables) {
 function common_design_preprocess_node(&$variables) {
   $view_mode = $variables['view_mode'] ?? '';
 
-  // Get the list of node view modes for which to use the pre-rendered page
-  // title instead of the normal page title block. This is an associative array
-  // keyed by view modes and with either the view mode as value when enabled
-  // or 0 otherwise. If not set, enable the behavior for the full view-mode.
-  $view_modes = theme_get_setting('common_design_node_title');
-  if (!isset($view_modes)) {
-    $view_modes = ['full' => 'full'];
-  }
-
   // Prepare the title and local tasks so we have better control over where
   // to display them for content in full node.
-  if (!empty($view_modes[$view_mode])) {
+  if (common_design_use_node_page_title($view_mode)) {
     $variables['title'] = common_design_get_block_render_array('page_title_block');
     $variables['local_tasks'] = common_design_get_block_render_array('local_tasks_block');
     // Copy the title attributes.
     if (!empty($variables['title']) && !empty($variables['title_attributes'])) {
       $variables['title']['#title_attributes'] = $variables['title_attributes'];
     }
-    // The local tasks have by default a max-age cache of 0 which prevents the
-    // entire caching of the rendered node so we remove it as there are already
-    // cache contexts and tags to ensure its displayed appropriately.
-    unset($variables['local_tasks']['#cache']['max-age']);
   }
 }
 
@@ -348,6 +378,30 @@ function common_design_preprocess_menu(&$variables, $hook) {
 }
 
 /**
+ * Load the block entities for the given ids.
+ *
+ * @param array $ids
+ *   Block ids.
+ *
+ * @return \Drupal\block\BlockInterface[]
+ *   Block entities.
+ */
+function common_design_load_theme_blocks(array $ids) {
+  if (empty($ids)) {
+    return [];
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('block');
+  $theme = \Drupal::theme()->getActiveTheme();
+
+  // Load the blocks with that plugin id for the theme.
+  return $storage->loadByProperties([
+    'theme' => $theme->getName(),
+    'plugin' => $ids,
+  ]);
+}
+
+/**
  * Render a block.
  *
  * We store the list of blocks rendered by this function so that we can
@@ -367,16 +421,8 @@ function common_design_get_block_render_array($id) {
     // Prevent rendering the block several times.
     $rendered[$id] = TRUE;
 
-    $storage = \Drupal::entityTypeManager()->getStorage('block');
-    $theme = \Drupal::theme()->getActiveTheme();
-
     // Load the blocks with that plugin id for the theme.
-    $blocks = $storage->loadByProperties([
-      'theme' => $theme->getName(),
-      'plugin' => $id,
-    ]);
-
-    // Skip if there were no matching blocks for the theme.
+    $blocks = common_design_load_theme_blocks([$id]);
     if (empty($blocks)) {
       return [];
     }
@@ -387,15 +433,6 @@ function common_design_get_block_render_array($id) {
 
     // Check the accessibility to the block.
     $build['#access'] = $block->access('view', NULL, TRUE);
-
-    // Store the regions in which the blocks of that type were supposed to be
-    // rendered. We store that info as cache tags so that we can retrieve the
-    // list regardless of whether the rendered node is cached or not
-    // (when cached, the hook_preprocess_node() is not called).
-    $prefix = 'common_design:rendered:block:';
-    foreach ($blocks as $block) {
-      $build['#cache']['tags'][] = $prefix . $id . ':' . $block->id() . ':' . $block->getRegion();
-    }
 
     // Ensure the appropriate cache metadata is added to the build.
     $cache = CacheableMetadata::createFromRenderArray($build);
@@ -412,6 +449,13 @@ function common_design_get_block_render_array($id) {
 
       $build['#title'] = $title_resolver->getTitle($request, $route_object);
     }
+    // The local tasks have by default a max-age cache of 0 which prevents the
+    // entire caching so we remove it as there are already cache contexts and
+    // tags to ensure its displayed appropriately.
+    elseif ($id === 'local_tasks_block' && empty($build['#cache']['max-age'])) {
+      unset($build['#cache']['max-age']);
+    }
+
     return $build;
   }
 
@@ -419,53 +463,41 @@ function common_design_get_block_render_array($id) {
 }
 
 /**
- * Get the list of blocks rendered by common_design_get_block_render_array().
- *
- * @param array $variables
- *   Render elements for example the page build array in which to look for
- *   the rendered blocks.
- *
- * @return array
- *   The list of rendered blocks keyed by their ids and with the regions they
- *   are supposed to be rendered in, as values.
- */
-function common_design_collect_rendered_blocks(array &$variables) {
-  $blocks = [];
-
-  // Extract the block id and the region it was supposed to be rendered.
-  if (isset($variables['#cache']['tags']) && is_array($variables['#cache']['tags'])) {
-    $prefix = 'common_design:rendered:block:';
-    $prefix_length = strlen($prefix);
-    foreach ($variables['#cache']['tags'] as $tag) {
-      if (strpos($tag, $prefix) === 0) {
-        list($plugin_id, $block_id, $region) = explode(':', substr($tag, $prefix_length), 3);
-        $blocks[$plugin_id][$block_id] = $region;
-      }
-    }
-  }
-
-  // Recursively collect the rendered block info.
-  foreach ($variables as $key => $item) {
-    if ((is_int($key) || $key === '' || $key[0] !== '#') && is_array($item)) {
-      $blocks = array_merge_recursive($blocks, common_design_collect_rendered_blocks($item));
-    }
-  }
-
-  return $blocks;
-}
-
-/**
  * Remove already rendered blocks from the page.
  *
  * @param array $variables
- *   Page variables.
+ *   Page variables as passed to hook_preprocess_page().
+ * @param array $block_ids
+ *   Ids of the blocks to hide.
  */
-function common_design_remove_rendered_blocks(array &$variables) {
-  $rendered = common_design_collect_rendered_blocks($variables);
-  if (!empty($rendered)) {
-    foreach ($rendered as $blocks) {
-      foreach ($blocks as $id => $region) {
-        unset($variables['page'][$region][$id]);
+function common_design_hide_rendered_blocks_from_page(array &$variables, array $block_ids) {
+  $blocks = common_design_load_theme_blocks($block_ids);
+  if (!empty($blocks)) {
+    foreach ($blocks as $block) {
+      $id = $block->id();
+      $region = $block->getRegion();
+
+      // If the block exists in the page, then deny access to it so that it's
+      // hidden. We don't remove the block so that access and visibility can
+      // be restored by other modules/sub-themes.
+      if (isset($variables['page'][$region][$id])) {
+        $access = $variables['page'][$region][$id]['#access'] ?? NULL;
+        // Store the original access information so that other modules that
+        // want to undo what is done here can do so.
+        $variables['page'][$region][$id]['#original_access'] = $access;
+
+        // Deny access to hide the block. We use the function name as reason
+        // so that it's easy for modules/sub-themes that want to revert the
+        // behavior to identify blocks that have been denied access this way.
+        $forbidden = AccessResult::forbidden(__FUNCTION__);
+        if ($access instanceof AccessResult) {
+          // This preserves the cache metadata of the previous access result.
+          $access = $access->andIf($forbidden);
+        }
+        else {
+          $access = $forbidden;
+        }
+        $variables['page'][$region][$id]['#access'] = $access;
       }
     }
   }
