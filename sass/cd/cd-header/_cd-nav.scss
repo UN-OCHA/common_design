@@ -3,30 +3,19 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-nav__btn {
-  background: transparent;
-  border: 0 none $cd-blue-grey;
-  //border-left: 1px solid $cd-blue-grey;
-  //border-right: 1px solid $cd-blue-grey;
-  @include font-size($cd-font-size-small);
-  color: $cd-default-text-color;
   height: $cd-site-header-height;
   padding: 0 20px;
-  text-transform: uppercase;
   transition: background 0.3s ease;
-
-  @include desktop {
-    // This is needed for IE11
-    // No support for CSS custom properties means
-    // --dropdown: false; property on nav container is not recognised
-    // so the cd-dropdown.js creates a toggler button on desktop
-    // This hides it when that happens.
-    @media all and (-ms-high-contrast: none) {
-      display: none;
-    }
-  }
+  text-transform: uppercase;
+  color: $cd-default-text-color;
+  border: 0 none $cd-blue-grey;
+  background: transparent;
+  //border-left: 1px solid $cd-blue-grey;
+  //border-right: 1px solid $cd-blue-grey;
+  font-size: $cd-font-size--small;
 
   .cd-nav__btn-label {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &[aria-expanded] .cd-icon--arrow-down {
@@ -34,21 +23,21 @@
     fill: $cd-highlight-red;
   }
 
-  &[aria-expanded='true'] {
+  &[aria-expanded="true"] {
     position: relative;
     z-index: 101;
     color: $cd-black;
 
     &::before {
-      bottom: -6px;
-      content: '';
-      background: $cd-highlight-red;
-      height: 6px;
-      left: -1px;
       position: absolute;
       right: -1px;
-      transition: background 0.3s ease;
+      bottom: -6px;
+      left: -1px;
       width: calc(100% + 1px);
+      height: 6px;
+      content: "";
+      transition: background 0.3s ease;
+      background: $cd-highlight-red;
     }
 
     &:focus {
@@ -59,8 +48,19 @@
   &:hover,
   &:focus {
     color: $cd-black;
-    background: $cd-blue-grey;
     outline: none; // default browser outline is replaced by background colour change.
+    background: $cd-blue-grey;
+  }
+
+  @include desktop {
+    // This is needed for IE11
+    // No support for CSS custom properties means
+    // --dropdown: false; property on nav container is not recognised
+    // so the cd-dropdown.js creates a toggler button on desktop
+    // This hides it when that happens.
+    @media all and (-ms-high-contrast: none) {
+      display: none;
+    }
   }
 }
 
@@ -75,53 +75,13 @@
   .cd-nav {
     @include z-index(main-menu); // zindex may need adjusting depending on other site content.
 
-    @include max-width(lg) {
-      &[data-cd-hidden='false'] {
-        background: $cd-white;
-        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 6px));
-        padding: 20px 0 36px;
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 6px);
-      }
-
-      &[data-cd-hidden='false'] > ul {
-        display: block;
-      }
-    }
-
-    @include desktop {
-      --dropdown: false;
-      height: $cd-site-header-height;
-      max-width: none;
-      padding: 0;
-      position: relative;
-      left: 0;
-      right: auto;
-      top: auto;
-      width: auto;
-
-      // This is needed for IE11
-      // No support for CSS custom properties means
-      // --dropdown: false; property on nav container is not recognised
-      // so the cd-dropdown.js does not run the updateToggler function
-      // which toggles the data-cd-hidden attribute.
-      // This displays the nav regardless of that attribute value.
-      @media all and (-ms-high-contrast: none) {
-        &[data-cd-hidden='true'] {
-          display: block;
-        }
-      }
-    }
-
     > ul {
       display: none;
       background: $cd-white;
 
       @include desktop {
-        background: transparent;
         display: flex;
+        background: transparent;
       }
     }
 
@@ -130,42 +90,87 @@
     }
 
     ul {
-      list-style: none;
       margin: 0;
       padding: 0;
+      list-style: none;
     }
 
     a,
     button {
-      color: $cd-default-text-color;
-      padding: 15px 30px;
-      text-decoration: none;
-      text-align: left;
       display: block;
+      padding: 15px 30px;
+      text-align: left;
+      text-decoration: none;
+      color: $cd-default-text-color;
 
-      @supports (display: flex) {
-        display: flex;
+      html[dir="rtl"] & {
+        text-align: right;
       }
 
       &:hover,
       &:focus {
-        background: $cd-blue-grey;
         color: $cd-black;
         outline: none; // default browser outline is replaced by background colour change.
+        background: $cd-blue-grey;
+      }
+
+      @supports (display: flex) {
+        display: flex;
       }
     }
 
     button {
-      border: 0 none;
       width: 100%;
+      border: 0 none;
       background: transparent;
     }
 
     // First level.
     > .menu > .menu-item > a,
     > .menu > .menu-item > button {
-      font-weight: bold;
       text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    @include max-width(lg) {
+      &[data-cd-hidden="false"] {
+        position: absolute;
+        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 6px);
+        right: 0;
+        left: 0;
+        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 6px));
+        padding: 20px 0 36px;
+        background: $cd-white;
+      }
+
+      &[data-cd-hidden="false"] > ul {
+        display: block;
+      }
+    }
+
+    @include desktop {
+      --dropdown: false;
+
+      position: relative;
+      top: auto;
+      right: auto;
+      left: 0;
+      width: auto;
+      max-width: none;
+      height: $cd-site-header-height;
+      padding: 0;
+
+      // This is needed for IE11
+      // No support for CSS custom properties means
+      // --dropdown: false; property on nav container is not recognised
+      // so the cd-dropdown.js does not run the updateToggler function
+      // which toggles the data-cd-hidden attribute.
+      // This displays the nav regardless of that attribute value.
+      @media all and (-ms-high-contrast: none) {
+        &[data-cd-hidden="true"] {
+          display: block;
+        }
+      }
     }
   }
 
@@ -181,14 +186,16 @@
     background: $cd-white;
 
     @include desktop {
-      box-shadow: 0 1px 8px rgba($cd-blue-grey--dark, 0.8);
+      @include z-index(dropdown);
+
+      position: absolute;
+      top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
+      min-width: 200px;
+      max-width: 300px;
       //left: -1px;
       margin: 0;
-      max-width: 300px;
-      min-width: 200px;
       padding: 20px 0;
-      top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
-      position: absolute;
+      box-shadow: 0 1px 8px rgba($cd-rgb-blue-grey--dark, 0.8);
     }
   }
 
@@ -196,7 +203,7 @@
     a {
       display: flex;
       color: $cd-black;
-      font-weight: 600;
+      font-weight: 700;
 
       &:hover {
         background: $cd-blue-grey;
@@ -214,11 +221,11 @@
 
         &::before {
           position: absolute;
-          content: '';
-          width: 6px;
           top: 0;
-          height: 48px; // Height of menu item.
           left: 15px; // Half of the left padding.
+          width: 6px;
+          height: 48px; // Height of menu item.
+          content: "";
           background: transparent;
         }
       }
@@ -234,7 +241,7 @@
       &.menu-item--expanded {
         > a.is-active::before,
         > button.is-active::before {
-          background: rgba($cd-highlight-red, 0.2);
+          background: rgba($cd-rgb-highlight-red, 0.2);
         }
       }
 
@@ -245,12 +252,17 @@
 
           &::before {
             position: absolute;
-            content: '';
-            width: 6px;
             top: 0;
-            height: 48px; // Height of menu item.
             left: 15px; // Half of the left padding.
-            background: rgba($cd-highlight-red, 0.2);
+            width: 6px;
+            height: 48px; // Height of menu item.
+            content: "";
+            background: rgba($cd-rgb-highlight-red, 0.2);
+
+            [dir="rtl"] & {
+              right: 15px; // Half of the left padding.
+              left: auto;
+            }
           }
 
           &.is-active::before {
@@ -262,7 +274,7 @@
       > ul > li.menu-item--active-trail {
         a::before,
         button::before {
-          background: rgba($cd-highlight-red, 0.6);
+          background: rgba($cd-rgb-highlight-red, 0.6);
         }
 
         a.is-active::before,
@@ -270,22 +282,22 @@
           background: $cd-highlight-red;
         }
       }
-
     }
   }
 
   @include desktop {
     .cd-nav > .menu {
-      @supports (display: flex) {
-        flex: 1 0 auto;
-      }
 
-      // sass-lint:disable nesting-depth
       > .menu-item {
         &:last-child {
           > ul.menu {
-            left: auto;
             right: -1px;
+            left: auto;
+
+            [dir="rtl"] & {
+              right: auto;
+              left: -1px;
+            }
           }
         }
 
@@ -296,24 +308,24 @@
 
         > a,
         button {
-          align-items: center;
-          background: transparent;
+          position: relative;
           display: flex;
+          align-items: center;
           height: $cd-site-header-height;
           padding: 0 14px;
-          position: relative;
           transition: background 0.3s ease;
+          background: transparent;
 
           &::before {
-            bottom: -6px;
-            content: '';
-            background: transparent;
-            height: 6px;
-            left: -1px;
             position: absolute;
             right: -1px;
-            transition: background 0.3s ease;
+            bottom: -6px;
+            left: -1px;
             width: calc(100% + 2px);
+            height: 6px;
+            content: "";
+            transition: background 0.3s ease;
+            background: transparent;
           }
 
           &:hover {
@@ -331,6 +343,11 @@
             }
           }
         }
+
+        // Prevent SVG icon from shrinking if menu item text is long.
+        svg {
+          flex: 1 0 auto;
+        }
       }
 
       > li > ul {
@@ -340,37 +357,51 @@
             background: $cd-blue-grey;
           }
 
-          &.is-active {
+          &.menu-item--active-trail {
             border-left: 6px solid $cd-highlight-red;
+
+            [dir="rtl"] & {
+              border-right: 6px solid $cd-highlight-red;
+              border-left-width: 0;
+            }
           }
         }
 
-        > li.menu-item--active-trail .is-active {
+        > li.menu-item--active-trail {
           border-left: 6px solid $cd-highlight-red;
+
+          [dir="rtl"] & {
+            border-right: 6px solid $cd-highlight-red;
+            border-left-width: 0;
+          }
         }
+      }
+
+      @supports (display: flex) {
+        flex: 1 0 auto;
       }
     }
   }
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav {
-  display: block;
-  background: $cd-white;
-  padding: 0;
   position: relative;
+  top: auto;
   right: 0;
   left: 0;
-  top: auto;
+  display: block;
+  padding: 0;
+  background: $cd-white;
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
-  box-shadow: unset;
-  margin: 0;
-  max-width: unset;
-  min-width: unset;
-  padding: 0;
-  top: 0;
   position: relative;
+  top: 0;
+  min-width: unset;
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+  box-shadow: unset;
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > li.menu-item--expanded button {
@@ -383,9 +414,9 @@
     height: $cd-site-header-height;
 
     a {
-      padding: 0 14px;
-      height: $cd-site-header-height;
       align-items: center;
+      height: $cd-site-header-height;
+      padding: 0 14px;
     }
   }
 }

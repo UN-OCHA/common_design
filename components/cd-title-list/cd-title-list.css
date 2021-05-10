@@ -18,26 +18,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   text-decoration: none;
 }
 .cd-title-list__link:hover,
 .cd-title-list__link:focus,
-.cd-title-list__link:active  {
+.cd-title-list__link:active {
   text-decoration: underline;
 }
 
 .cd-title-list__title {
   flex: 1 1 auto;
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-@media (min-width: 768px) {
-  .cd-title-list__title {
-    font-size: 1.125rem;
-    line-height: 2rem;
-  }
 }
 
 .cd-title-list__link .cd-icon {
@@ -49,7 +40,7 @@
   fill: var(--cd-ocha-blue);
 }
 
-[dir='rtl'] .cd-title-list__link .cd-icon {
+[dir="rtl"] .cd-title-list__link .cd-icon {
   margin: 0 1rem 0 0.25rem;
   transform: scale(-1, 1);
 }

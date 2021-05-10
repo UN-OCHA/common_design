@@ -5,12 +5,13 @@
 // SVG sprite palced before end of body in html.tpl.php
 svg.icons-sprite {
   @extend .hidden;
+
   overflow: hidden;
 }
 
 svg.icon {
-  pointer-events: none;
   display: inline-block;
+  pointer-events: none;
 }
 
 .cd-icon {

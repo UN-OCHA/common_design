@@ -4,7 +4,7 @@
 {{ attach_library('common_design/cd-article') }}
 
 <div class="cd-layout-with-sidebar">
-  <h1 class="cd-article__page-title">This is an example article's page title</h1>
+  <h1 class="cd-page-title cd-article__page-title">This is an example article's page title</h1>
 
   <article class="cd-article">
 
@@ -20,7 +20,7 @@
     </footer>
 
   {% block section %}
-    <section class="cd-layout-two-col">
+    <div class="cd-layout-two-col">
 
       <div class="cd-layout-main-content">
 
@@ -36,7 +36,7 @@
         This is a sidebar in the article element.
       </aside>
 
-    </section>
+    </div>
   {% endblock %}
 
   </article>

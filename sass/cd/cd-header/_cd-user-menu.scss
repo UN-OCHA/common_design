@@ -6,8 +6,8 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-user-menu {
-  list-style: none;
   margin: 0;
+  list-style: none;
 
   svg {
     fill: $cd-white;
@@ -16,10 +16,11 @@
   // Logo icon before the button/link label.
   // @todo add proper classes to make it more robust.
   svg + span {
-    margin-left: 10px;
+    [dir="ltr"] & {
+      margin-left: 10px;
+    }
 
-    [dir='rtl'] & {
-      margin-left: 0;
+    [dir="rtl"] & {
       margin-right: 10px;
     }
   }
@@ -38,8 +39,8 @@
   }
 
   li {
-    float: left;
     position: relative;
+    float: left;
   }
 
   &--no-language-switcher {
@@ -55,41 +56,27 @@
 }
 
 .cd-user-menu__item {
-  background: transparent;
-  color: $cd-white;
-  height: $cd-global-header-height;
-  line-height: $cd-global-header-height;
-  padding: 0 15px;
   position: relative;
+  display: block;
+  height: $cd-global-header-height;
+  padding: 0 15px;
+  transition: background 0.3s ease;
   white-space: nowrap;
   text-decoration: none;
-  transition: background 0.3s ease;
-  display: block;
-
-  @include tablet {
-    padding: 0 20px;
-  }
-
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
-  }
-
-  @include tablet {
-    max-width: none;
-    padding: 0 20px;
-  }
+  color: $cd-white;
+  background: transparent;
+  line-height: $cd-global-header-height;
 
   // Separator.
   &::after {
-    background: $cd-blue--light;
-    height: calc(#{$cd-global-header-height}/3);
-    width: 2px;
-    content: '';
     position: absolute;
-    right: -1px;
     top: 50%;
+    right: -1px;
+    width: 2px;
+    height: calc(#{$cd-global-header-height} / 3);
+    content: "";
     transform: translateY(-50%);
+    background: $cd-blue--light;
   }
 
   &:hover,
@@ -103,15 +90,29 @@
   }
 
   .cd-user-menu__btn-label {
-    max-width: 60px;
-    overflow: hidden;
     position: relative;
-    text-overflow: ellipsis;
     display: block;
+    overflow: hidden;
+    max-width: 60px;
+    text-overflow: ellipsis;
 
     @include tablet {
       max-width: unset;
     }
+  }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    max-width: none;
+    padding: 0 20px;
   }
 }
 
@@ -130,7 +131,13 @@
 }
 
 .cd-global-header__user-menu > .menu {
-  padding-left: 0;
+  [dir="ltr"] & {
+    padding-left: 0;
+  }
+
+  [dir="rtl"] & {
+    padding-right: 0;
+  }
 }
 
 .cd-global-header .menu {
@@ -202,6 +209,6 @@
 }
 
 .cd-global-header .menu > .menu-item:last-child > ul.menu {
-  left: auto;
   right: -1px;
+  left: auto;
 }

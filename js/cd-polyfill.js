@@ -1,15 +1,18 @@
-// forEach method on Nodelist
-// https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Polyfill
+/* eslint func-names: "off" */
+
+// Method forEach on Nodelist
+// See https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Polyfill
 if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
 
 // IE11 Polyfill for .closest
-// https://github.com/jonathantneal/closest
+// See https://github.com/jonathantneal/closest
 const ElementPrototype = window.Element.prototype;
 
 if (typeof ElementPrototype.matches !== 'function') {
   ElementPrototype.matches = ElementPrototype.msMatchesSelector || ElementPrototype.mozMatchesSelector || ElementPrototype.webkitMatchesSelector || function matches(selector) {
+    'use strict';
     let element = this;
     const elements = (element.document || element.ownerDocument).querySelectorAll(selector);
     let index = 0;
@@ -24,6 +27,7 @@ if (typeof ElementPrototype.matches !== 'function') {
 
 if (typeof ElementPrototype.closest !== 'function') {
   ElementPrototype.closest = function closest(selector) {
+    'use strict';
     let element = this;
 
     while (element && element.nodeType === 1) {

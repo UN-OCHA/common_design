@@ -1,0 +1,36 @@
+name:  OCHA Common Design sub theme
+type: theme
+description: OCHA Common Design sub theme
+core_version_requirement: ^8.8 || ^9
+base theme: common_design
+logo: 'img/logos/logo.svg'
+
+# Defines libraries group in which we can add css/js.
+libraries:
+  - common_design_subtheme/global-styling
+
+# Regions
+regions:
+  header_top: Header top
+  header_search: Header search
+  header_logo: Header logo
+  header_navigation: Header navigation
+  highlighted: Highlighted
+  page_title: Page title
+  content: Content
+  sidebar_first: First sidebar
+  sidebar_second: Second sidebar
+  facets: Facets
+  footer_soft: Soft footer
+  footer_navigation: Footer navigation
+
+# Add implementation-specific styles to base theme components
+# libraries-extend:
+#   common_design/cd-teaser:
+#     - common_design_subtheme/cd-teaser
+
+# Custom namespace
+# https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
+# Requires Components module
+# components:
+#   namespaces:

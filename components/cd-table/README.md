@@ -9,6 +9,7 @@ See https://inclusive-components.design/data-tables
 The component styles use `data-` attribute selectors for styling specific column data, as an example of how specific data can be targeted.
 
 @TODO add a message to prompt scrolling.
+
 @TODO expand this component to include a variant for when the data is too dense to display well on narrow viewports
 even with the horizontal scroll. In that case, we could output the table data as a definition list instead. See CD-219 for more.
 

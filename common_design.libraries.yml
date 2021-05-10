@@ -116,6 +116,13 @@ cd-facets:
     component:
       components/cd-facets/cd-facets.css: {}
 
+cd-figure-list:
+  css:
+    component:
+      components/cd-figure-list/cd-figure-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-filter:
   css:
     component:
@@ -176,6 +183,13 @@ cd-link-list:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-page-title:
+  css:
+    component:
+      components/cd-page-title/cd-page-title.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-pagination:
   css:
     component:
@@ -195,6 +209,15 @@ cd-select-a11y:
     theme:
       components/cd-select-a11y/cd-select-a11y.css: {}
 
+cd-social-links:
+  js:
+    components/cd-social-links/cd-social-links.js: {}
+  css:
+    component:
+      components/cd-social-links/cd-social-links.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
 cd-styled-list:
   css:
     component:
@@ -211,6 +234,13 @@ cd-table:
   dependencies:
     - common_design/css-vars-ponyfill
     - common_design/array-from-polyfill
+
+cd-tag:
+  css:
+    component:
+      components/cd-tag/cd-tag.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-tabs:
   css:
@@ -282,5 +312,5 @@ css-vars-ponyfill:
 # https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
 array-from-polyfill:
   js:
-    js/array-from-polyfill.js: { attributes: { nomodule: true } }
+    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
 

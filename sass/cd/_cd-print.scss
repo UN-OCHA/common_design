@@ -23,11 +23,11 @@
   }
 
   a[href]::after {
-    content: '('attr(href)')';
+    content: "("attr(href)")";
   }
 
   abbr[title]::after {
-    content: '('attr(title)')';
+    content: "("attr(title)")";
   }
 
   pre,
@@ -81,8 +81,8 @@
   }
 
   .cd-table {
-    font-size: 10pt;
     margin-bottom: 1rem;
+    font-size: 10pt;
   }
 
   .cd-table th,
@@ -93,15 +93,15 @@
 
   .cd-grid {
     display: grid;
-    grid-gap: 1rem;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-gap: 1rem;
   }
 
-  .cd-grid-2-col {
+  .cd-grid--2-col {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 
-  .cd-grid-3-col {
+  .cd-grid--3-col {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
 

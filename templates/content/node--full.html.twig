@@ -78,7 +78,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-layout-with-section-sidebar'
+    'cd-article'
   ]
 %}
 {{ attach_library('common_design/cd-article') }}
@@ -86,16 +86,23 @@
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
-
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+  {% if title %}
+    {% if not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+      </h2>
+    {% else %}
+      {# This is not wrapped as this renders the page title block which
+         already wraps the node title in a <h1>. #}
+      {{ title }}
+    {% endif %}
   {% endif %}
   {{ title_suffix }}
+
+  {{ local_tasks }}
 
   {% if display_submitted %}
     <footer class="cd-author node__meta [ cd-bumper ]">
@@ -113,12 +120,12 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('node__content cd-max-width') }}>
+  <div{{ content_attributes }}>
 
     {{ content }}
 
 {#    {% block section %}#}
-{#      <section class="cd-layout-two-col">#}
+{#      <div class="cd-layout-two-col">#}
 
 {#        <div class="cd-layout-main-content">#}
 {#          {{ content }}#}
@@ -128,7 +135,7 @@
 {#          Other fields on the node can be printed here to create a faux sidebar layout.#}
 {#        </div>#}
 
-{#      </section>#}
+{#      </div>#}
 {#    {% endblock %}#}
 
   </div>

@@ -1,13 +1,13 @@
 .cd-author {
-  margin: 1rem 0 2rem;
   display: flex;
   align-items: center;
+  margin: 1rem 0 2rem;
 }
 
 .cd-author__image {
+  flex: 0 0 3rem;
   width: 3rem;
   height: 3rem;
-  flex: 0 0 3rem;
 }
 
 .cd-author__image--rounded {
