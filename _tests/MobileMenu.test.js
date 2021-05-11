@@ -1,4 +1,4 @@
-import env from './_env';
+import env from './_env'
 
 describe('MobileMenu', () => {
   beforeAll(async() => {
