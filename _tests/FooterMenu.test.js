@@ -1,4 +1,3 @@
-import 'expect-puppeteer'
 import env from './_env'
 
 describe('FooterLinks', () => {
