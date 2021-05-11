@@ -10,7 +10,6 @@ const config = {
   setupFilesAfterEnv: ['expect-puppeteer'],
 };
 
-
 // Determine which mode we're running.
 const DEBUG_MODE = process.argv.includes('--debug');
 
