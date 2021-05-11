@@ -1,4 +1,5 @@
-import env from './_env';
+import 'expect-puppeteer'
+import env from './_env'
 
 describe('SearchDropdown', () => {
   beforeAll(async() => {
