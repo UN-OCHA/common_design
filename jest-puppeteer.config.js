@@ -6,8 +6,9 @@ const config = {
     headless: true,
   },
   testTimeout: 5000,
-  setupFilesAfterEnv: ["expect-puppeteer"],
+  setupFilesAfterEnv: ['expect-puppeteer'],
 };
+
 
 // Determine which mode we're running.
 const DEBUG_MODE = process.argv.includes('--debug');
