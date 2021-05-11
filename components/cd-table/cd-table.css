@@ -1,14 +1,3 @@
-.cd-table-container {
-  overflow-x: auto;
-  width: 100vw;
-}
-
-@media (min-width: 576px) {
-  .cd-table-container {
-    width: 100%;
-  }
-}
-
 table {
   width: 100%;
   margin-bottom: 1rem;
@@ -72,10 +61,12 @@ td.hidden {
   word-break: break-word;
 }
 
-.cd-table th[data-sort-type="numeric"],
-.cd-table td[class*="amount"] {
-  text-align: right;
-  white-space: nowrap;
+@media (min-width: 576px) {
+  .cd-table th[data-sort-type="numeric"],
+  .cd-table td[class*="amount"] {
+    text-align: right;
+    white-space: nowrap;
+  }
 }
 
 *[class*="total"] {

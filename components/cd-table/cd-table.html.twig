@@ -1,182 +1,227 @@
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-table') }}
+{{ attach_library('common_design/cd-table--responsive') }}
+{{ attach_library('common_design/cd-table--card') }}
 
-<h2>Default table</h2>
-<table>
-  <caption>This is the table caption</caption>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Number</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>This Name</td>
-    <td><a href="#">This Type that is also a link</a></td>
-    <td>1,000,000</td>
-  </tr>
-  </tbody>
-</table>
+{#<h2>Default table</h2>#}
+{#<table>#}
+{#  <caption>This is the table caption</caption>#}
+{#  <thead>#}
+{#  <tr>#}
+{#    <th>Name</th>#}
+{#    <th>Type</th>#}
+{#    <th>Number</th>#}
+{#  </tr>#}
+{#  </thead>#}
+{#  <tbody>#}
+{#  <tr>#}
+{#    <td>This Name</td>#}
+{#    <td><a href="#">This Type that is also a link</a></td>#}
+{#    <td>1,000,000</td>#}
+{#  </tr>#}
+{#  </tbody>#}
+{#</table>#}
 
-<hr>
+{#<hr>#}
 
-<h2>Styled table</h2>
-<div id="cd-table-container" class="cd-table-container" aria-labelledby="caption">
-  <table class="cd-table cd-table--row-numbers cd-table--striped">
+{#<h2>Styled table</h2>#}
+{#<div id="cd-table-container" class="cd-table-container" aria-labelledby="caption">#}
+{#  <table class="cd-table cd-table--row-numbers cd-table--striped">#}
+{#    <caption id="caption">This is the table caption</caption>#}
+{#    <thead>#}
+{#    <tr>#}
+{#      <th data-sort-type="disabled" class="cd-table--row-num"></th>#}
+{#      <th data-sort-type="alfa" data-sort-order="ASC" class="cd-table--name">Name</th>#}
+{#      <th data-sort-type="alfa" data-sort-order="" class="cd-table--type">Type</th>#}
+{#      <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Paid</th>#}
+{#      <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Pledged</th>#}
+{#      <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Total</th>#}
+{#    </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#    <tr>#}
+{#      <td class="cd-table--row-num"></td>#}
+{#      <td class="cd-table--name">This Name</td>#}
+{#      <td class="cd-table--type"><a href="#">This Type that is also a link</a></td>#}
+{#      <td class="cd-table--amount">1,000,000</td>#}
+{#      <td class="cd-table--amount">0</td>#}
+{#      <td class="cd-table--amount-total">1,000,000</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td class="cd-table--row-num"></td>#}
+{#      <td class="cd-table--name">That Name</td>#}
+{#      <td class="cd-table--type">That Type</td>#}
+{#      <td class="cd-table--amount">1,000,000</td>#}
+{#      <td class="cd-table--amount">500,000</td>#}
+{#      <td class="cd-table--amount-total">1,500,000</td>#}
+{#    </tr>#}
+{#    </tbody>#}
+{#    <tfoot>#}
+{#    <tr>#}
+{#      <td colspan="3">Total</td>#}
+{#      <td data-content="Paid" class="cd-table--amount-total">2,000,000</td>#}
+{#      <td data-content="Pledged" class="cd-table--amount-total">500,000</td>#}
+{#      <td data-content="Total" class="cd-table--amount-total">2,500,000</td>#}
+{#    </tr>#}
+{#    </tfoot>#}
+{#  </table>#}
+{#</div>#}
+
+
+{#<hr>#}
+
+{#<h2>Card table</h2>#}
+{#<table class="cd-table cd-table--card cd-table--row-numbers cd-table--striped">#}
+{#  <caption id="caption">This is the table caption</caption>#}
+{#  <thead>#}
+{#  <tr>#}
+{#    <th data-sort-type="disabled" class="cd-table--row-num"></th>#}
+{#    <th data-sort-type="alfa" data-sort-order="ASC" class="cd-table--name">Name</th>#}
+{#    <th data-sort-type="alfa" data-sort-order="" class="cd-table--type">Type</th>#}
+{#    <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Paid</th>#}
+{#    <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Pledged</th>#}
+{#    <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Total</th>#}
+{#  </tr>#}
+{#  </thead>#}
+{#  <tbody>#}
+{#  <tr>#}
+{#    <td class="cd-table--row-num"></td>#}
+{#    <td class="cd-table--name">This Name</td>#}
+{#    <td class="cd-table--type"><a href="#">This Type that is also a link</a></td>#}
+{#    <td class="cd-table--amount">1,000,000</td>#}
+{#    <td class="cd-table--amount">0</td>#}
+{#    <td class="cd-table--amount-total">1,000,000</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td class="cd-table--row-num"></td>#}
+{#    <td class="cd-table--name">That Name</td>#}
+{#    <td class="cd-table--type">That Type</td>#}
+{#    <td class="cd-table--amount">1,000,000</td>#}
+{#    <td class="cd-table--amount">500,000</td>#}
+{#    <td class="cd-table--amount-total">1,500,000</td>#}
+{#  </tr>#}
+{#  </tbody>#}
+{#  <tfoot>#}
+{#  <tr>#}
+{#    <td colspan="3">Total</td>#}
+{#    <td data-content="Paid" class="cd-table--amount-total">2,000,000</td>#}
+{#    <td data-content="Pledged" class="cd-table--amount-total">500,000</td>#}
+{#    <td data-content="Total" class="cd-table--amount-total">2,500,000</td>#}
+{#  </tr>#}
+{#  </tfoot>#}
+{#</table>#}
+
+{#<hr>#}
+
+{#<h2>Scrolling table</h2>#}
+{#<div class="cd-table-container" aria-labelledby="caption">#}
+{#  <table class="cd-table--allocations cd-table" summary="Summary report of allocations">#}
+{#    <caption id="caption">This is the table caption</caption>#}
+{#    <thead>#}
+{#    <tr>#}
+{#      <th class="cd-table--date">Country & report date</th>#}
+{#      <th class="cd-table--amount">Amount in US$</th>#}
+{#      <th class="cd-table--window">Window</th>#}
+{#      <th class="cd-table--emergency">Emergency</th>#}
+{#      <th class="cd-table--status">Status</th>#}
+{#      <th></th>#}
+{#    </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#    <tr>#}
+{#      <td colspan="6" class="cd-table--row-heading">Afghanistan</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td class="cd-table--date"><a href="#">Feb 2017</a></td>#}
+{#      <td class="cd-table--amount-total">US$6,000,000</td>#}
+{#      <td class="cd-table--window"> Rapid response</td>#}
+{#      <td class="cd-table--emergency"> Conflict related and internal strife</td>#}
+{#      <td class="cd-table--status">Completed</td>#}
+{#      <td class="cd-table--readmore">#}
+{#        <a href="#">#}
+{#          <span class="visually-hidden">Read more</span>#}
+{#          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">#}
+{#            <use xlink:href="#cd-icon--arrow-right"></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#      </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td class="cd-table--date"><a href="#">Oct 2017</a></td>#}
+{#      <td class="cd-table--amount-total">US$10,000,000</td>#}
+{#      <td class="cd-table--window"> Rapid response</td>#}
+{#      <td class="cd-table--emergency"> Conflict related and internal strife</td>#}
+{#      <td class="cd-table--status">Completed</td>#}
+{#      <td class="cd-table--readmore">#}
+{#        <a href="#">#}
+{#          <span class="visually-hidden">Read more</span>#}
+{#          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">#}
+{#            <use xlink:href="#cd-icon--arrow-right"></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#      </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="6" class="cd-table--row-heading">Angola</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td class="cd-table--date"><a href="#">May 2017</a></td>#}
+{#      <td class="cd-table--amount-total">US$3,600,000</td>#}
+{#      <td class="cd-table--window"> Rapid response</td>#}
+{#      <td class="cd-table--emergency"> Conflict related and internal strife</td>#}
+{#      <td class="cd-table--status">Under implementation</td>#}
+{#      <td class="cd-table--readmore">#}
+{#        <a href="#">#}
+{#          <span class="visually-hidden">Read more</span>#}
+{#          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">#}
+{#            <use xlink:href="#cd-icon--arrow-right"></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#      </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td class="cd-table--date"><a href="#">Jun 2017</a></td>#}
+{#      <td class="cd-table--amount-total">US$11,000,000</td>#}
+{#      <td class="cd-table--window"> Underfunded emergencies</td>#}
+{#      <td class="cd-table--emergency"> Conflict related and internal strife</td>#}
+{#      <td class="cd-table--status">Completed</td>#}
+{#      <td class="cd-table--readmore">#}
+{#        <a href="#">#}
+{#          <span class="visually-hidden">Read more</span>#}
+{#          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">#}
+{#            <use xlink:href="#cd-icon--arrow-right"></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#      </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="6" class="cd-table--row-heading">Antigua and Barbuda</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td class="cd-table--date"><a href="#">Jan 2017</a></td>#}
+{#      <td class="cd-table--amount-total">US$4,400,000</td>#}
+{#      <td class="cd-table--window"> Rapid response</td>#}
+{#      <td class="cd-table--emergency"> Conflict related and internal strife</td>#}
+{#      <td class="cd-table--status">Completed</td>#}
+{#      <td class="cd-table--readmore">#}
+{#        <a href="#">#}
+{#          <span class="visually-hidden">Read more</span>#}
+{#          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">#}
+{#            <use xlink:href="#cd-icon--arrow-right"></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#      </td>#}
+{#    </tr>#}
+{#    </tbody>#}
+{#  </table>#}
+{#</div>#}
+
+{#<hr>#}
+
+<h2>Scrolling table</h2>
+<div class="cd-table-container" aria-labelledby="caption">
+  <table class="cd-table cd-table--responsive cd-table--data sortable exportable cd-table--row-numbers" data-cd-message="Scroll to see more">
     <caption id="caption">This is the table caption</caption>
-    <thead>
-    <tr>
-      <th data-sort-type="disabled" class="cd-table--row-num"></th>
-      <th data-sort-type="alfa" data-sort-order="ASC" class="cd-table--name">Name</th>
-      <th data-sort-type="alfa" data-sort-order="" class="cd-table--type">Type</th>
-      <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Paid</th>
-      <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Pledged</th>
-      <th data-sort-type="numeric" data-sort-order="" class="cd-table--amount">Total</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td class="cd-table--row-num"></td>
-      <td class="cd-table--name">This Name</td>
-      <td class="cd-table--type"><a href="#">This Type that is also a link</a></td>
-      <td class="cd-table--amount">1,000,000</td>
-      <td class="cd-table--amount">0</td>
-      <td class="cd-table--amount-total">1,000,000</td>
-    </tr>
-    <tr>
-      <td class="cd-table--row-num"></td>
-      <td class="cd-table--name">That Name</td>
-      <td class="cd-table--type">That Type</td>
-      <td class="cd-table--amount">1,000,000</td>
-      <td class="cd-table--amount">500,000</td>
-      <td class="cd-table--amount-total">1,500,000</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <td colspan="3">Total</td>
-      <td data-content="Paid" class="cd-table--amount-total">2,000,000</td>
-      <td data-content="Pledged" class="cd-table--amount-total">500,000</td>
-      <td data-content="Total" class="cd-table--amount-total">2,500,000</td>
-    </tr>
-    </tfoot>
-  </table>
-</div>
-
-<p>This is here to clear the table.</p>
-
-
-<hr>
-
-<div class="cd-table-container" aria-labelledby="caption">
-  <table class="cd-table--allocations cd-table" summary="Summary report of allocations">
-    <caption>This is the table caption</caption>
-    <thead>
-    <tr>
-      <th class="cd-table--date">Country & report date</th>
-      <th class="cd-table--amount">Amount in US$</th>
-      <th class="cd-table--window">Window</th>
-      <th class="cd-table--emergency">Emergency</th>
-      <th class="cd-table--status">Status</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td colspan="6" class="cd-table--row-heading">Afghanistan</td>
-    </tr>
-    <tr>
-      <td class="cd-table--date"><a href="#">Feb 2017</a></td>
-      <td class="cd-table--amount-total">US$6,000,000</td>
-      <td class="cd-table--window"> Rapid response</td>
-      <td class="cd-table--emergency"> Conflict related and internal strife</td>
-      <td class="cd-table--status">Completed</td>
-      <td class="cd-table--readmore">
-        <a href="#">
-          <span class="visually-hidden">Read more</span>
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td class="cd-table--date"><a href="#">Oct 2017</a></td>
-      <td class="cd-table--amount-total">US$10,000,000</td>
-      <td class="cd-table--window"> Rapid response</td>
-      <td class="cd-table--emergency"> Conflict related and internal strife</td>
-      <td class="cd-table--status">Completed</td>
-      <td class="cd-table--readmore">
-        <a href="#">
-          <span class="visually-hidden">Read more</span>
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="6" class="cd-table--row-heading">Angola</td>
-    </tr>
-    <tr>
-      <td class="cd-table--date"><a href="#">May 2017</a></td>
-      <td class="cd-table--amount-total">US$3,600,000</td>
-      <td class="cd-table--window"> Rapid response</td>
-      <td class="cd-table--emergency"> Conflict related and internal strife</td>
-      <td class="cd-table--status">Under implementation</td>
-      <td class="cd-table--readmore">
-        <a href="#">
-          <span class="visually-hidden">Read more</span>
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td class="cd-table--date"><a href="#">Jun 2017</a></td>
-      <td class="cd-table--amount-total">US$11,000,000</td>
-      <td class="cd-table--window"> Underfunded emergencies</td>
-      <td class="cd-table--emergency"> Conflict related and internal strife</td>
-      <td class="cd-table--status">Completed</td>
-      <td class="cd-table--readmore">
-        <a href="#">
-          <span class="visually-hidden">Read more</span>
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="6" class="cd-table--row-heading">Antigua and Barbuda</td>
-    </tr>
-    <tr>
-      <td class="cd-table--date"><a href="#">Jan 2017</a></td>
-      <td class="cd-table--amount-total">US$4,400,000</td>
-      <td class="cd-table--window"> Rapid response</td>
-      <td class="cd-table--emergency"> Conflict related and internal strife</td>
-      <td class="cd-table--status">Completed</td>
-      <td class="cd-table--readmore">
-        <a href="#">
-          <span class="visually-hidden">Read more</span>
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<hr>
-
-<div class="cd-table-container" aria-labelledby="caption">
-  <table class="cd-table cd-table--data sortable exportable cd-table--row-numbers">
-    <caption>This is the table caption</caption>
     <thead>
     <tr>
       <th data-sort-type="disabled" data-export-column="skip" data-sort-order=""></th>

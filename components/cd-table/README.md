@@ -8,6 +8,9 @@ See https://inclusive-components.design/data-tables
 
 The component styles use `data-` attribute selectors for styling specific column data, as an example of how specific data can be targeted.
 
+`cd-table--card`
+HTML table for complex data, using `data-` attribute selectors for styling specific column data. On mobile, the table displays as cards. This has accessibility implications [CD-219](https://humanitarian.atlassian.net/browse/CD-219)
+
 @TODO add a message to prompt scrolling.
 
 @TODO expand this component to include a variant for when the data is too dense to display well on narrow viewports
@@ -22,6 +25,9 @@ We want to avoid using overflow rules on the body if possible.
 ### Variants
 
 ```
+cd-table--responsive
+cd-table--card
+
 cd-table--row-numbers
 cd-table--striped
 

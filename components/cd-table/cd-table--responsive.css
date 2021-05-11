@@ -1,0 +1,10 @@
+.cd-table-container {
+  overflow-x: auto;
+  width: 100vw;
+}
+
+@media (min-width: 576px) {
+  .cd-table-container {
+    width: 100%;
+  }
+}

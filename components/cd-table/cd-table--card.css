@@ -1,0 +1,81 @@
+/* The breakpoint has been changed to handle the large SLT tables.
+ * @todo Review if that should be pushed upstream. */
+@media (max-width: 767px) {
+  /* Force table to not be like tables anymore */
+  .cd-table--card,
+  .cd-table--card thead,
+  .cd-table--card tbody,
+  .cd-table--card tfoot,
+  .cd-table--card th,
+  .cd-table--card td,
+  .cd-table--card tr {
+    display: block;
+  }
+
+  .cd-table--card caption {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .cd-table--card thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .cd-table--card tr {
+    padding: 0 !important;
+    border-bottom: 1px solid var(--cd-grey--light);
+  }
+
+  .cd-table--card td {
+    position: relative;
+    /* Behave  like a "row" */
+    display: flex;
+    align-items: center;
+    min-height: 2rem; /* label should wrap */
+    padding: 0.5rem;
+    text-align: left;
+    white-space: normal !important;
+    border: none;
+    border-bottom: 1px solid var(--cd-blue-grey);
+  }
+
+  .cd-table--card td:before {
+    align-self: start;
+    width: 40%;
+    min-width: 40%;
+    padding-right: 1rem;
+    /* Label the data */
+    content: attr(data-content);
+    text-align: left;
+    color: var(--cd-ocha-blue);
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+
+  .cd-table--card tfoot td {
+    border-bottom: 0 none;
+  }
+
+  .cd-table--row-numbers tbody tr td.cd-table--row-num {
+    height: 3rem;
+  }
+
+  .cd-table--row-numbers tbody tr td.cd-table--row-num::before {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+/* Put the label above the value on smaller screens */
+@media (max-width: 575px) {
+  .cd-table--card td {
+    display: block;
+  }
+  .cd-table--card td:before {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+  }
+}

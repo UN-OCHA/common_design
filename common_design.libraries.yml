@@ -229,9 +229,28 @@ cd-table:
   css:
     component:
       components/cd-table/cd-table.css: {}
-  js:
-    components/cd-table/cd-table.js: {}
   dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-table--responsive:
+  css:
+    component:
+      components/cd-table/cd-table--responsive.css: {}
+  js:
+    components/cd-table/cd-table--responsive.js: {}
+  dependencies:
+    - common_design/cd-table
+    - common_design/css-vars-ponyfill
+    - common_design/array-from-polyfill
+
+cd-table--card:
+  css:
+    component:
+      components/cd-table/cd-table--card.css: {}
+  js:
+    components/cd-table/cd-table--card.js: {}
+  dependencies:
+    - common_design/cd-table
     - common_design/css-vars-ponyfill
     - common_design/array-from-polyfill
 
