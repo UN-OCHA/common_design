@@ -15,8 +15,8 @@ libraries:
 ```
 
 ### Customise the logo
-- Set the logo `logo: 'img/logos/logo.svg'` in the `common_design_subtheme.info.yml` file, and in the `sass/cd-header/_cd-logo.scss` partial override file.
-- Adjust the grid column width in `sass/cd-header/_cd-header.scss` partial override file to accommodate the logo.
+- Set the logo `logo: 'img/logos/logo.svg'` in the `common_design_subtheme.info.yml` file, and in the `sass/cd/cd-header/_cd-logo.scss` partial override file.
+- Adjust the grid column width in `sass/cd/cd-header/_cd-header.scss` partial override file to accommodate the logo.
 
 ### Customise the favicon and homescreen icons
 Replace the favicon in the theme's root, and the homescreen icons in `img/` with branded versions

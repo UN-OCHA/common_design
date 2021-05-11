@@ -4,6 +4,7 @@ const config = {
   launch: {
     slowMo: 10,
     headless: true,
+    ignoreHTTPSErrors: true,
   },
   testTimeout: 5000,
   setupFilesAfterEnv: ['expect-puppeteer'],
