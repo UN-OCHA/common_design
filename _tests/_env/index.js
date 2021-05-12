@@ -14,6 +14,6 @@ const environments = {
   },
 };
 
-console.log('⚠️ E2E testing', environments[process.env.NODE_ENV].baseUrl);
+console.log('⚠️ E2E testing', environments[process.env.NODE_ENV] && environments[process.env.NODE_ENV].baseUrl);
 
 module.exports = process.env.NODE_ENV ? environments[process.env.NODE_ENV] : environments['local'];
