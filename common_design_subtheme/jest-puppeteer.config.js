@@ -6,7 +6,7 @@ const config = {
     headless: true,
     ignoreHTTPSErrors: true,
   },
-  testTimeout: 5000,
+  testTimeout: 10000,
   setupFilesAfterEnv: ['expect-puppeteer'],
 };
 
