@@ -8,3 +8,23 @@
     width: 100%;
   }
 }
+
+/* Works on Firefox */
+.cd-table-container {
+  scrollbar-color: var(--cd-ocha-blue) var(--cd-blue--bright);
+}
+
+/* Works on Chrome, Edge, and Safari */
+.cd-table-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cd-table-container::-webkit-scrollbar-track {
+  background: var(--cd-blue--bright);
+}
+
+.cd-table-container::-webkit-scrollbar-thumb {
+  background-color: var(--cd-ocha-blue);
+  border-radius: 20px;
+  border: 3px solid  var(--cd-blue--bright);
+}
