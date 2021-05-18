@@ -42,27 +42,16 @@
     }
   }
 
-
-  /**
-   * Create a button to toggle a dropdown.
-   */
   function createMessage(element) {
-    // create a new div element
     const newDiv = document.createElement('div');
-
-    // and give it some content
     const newContent = document.createTextNode('Scroll to see more');
-
-    // add the text node to the newly created div
     newDiv.appendChild(newContent);
-
-    // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById('caption');
     currentDiv.appendChild(newDiv);
     // document.body.insertBefore(newDiv, currentDiv);
   }
 
-  // Find all non processed `cd-table--responsive` tables and update them.
+  // Find all non processed `cd-table-container` divs and update them.
   function updateTables() {
     var tables = document.querySelectorAll('.cd-table-container:not(.cd-table-container-processed)');
     for (var i = 0, l = tables.length; i < l; i++) {
@@ -71,7 +60,7 @@
   }
 
   // Register a mutation observer on the document to detect the addition
-  // of `cd-table` tables.
+  // of `cd-table-container` divs.
   var observer = new MutationObserver(function (mutations) {
     for (var i = 0, l = mutations.length; i < l; i++) {
       var mutation = mutations[i];
@@ -83,7 +72,7 @@
     }
   });
 
-  // Observe the entire DOM for the addition of the `cd-table` tables.
+  // Observe the entire DOM for the addition of the `cd-table-container` divs.
   observer.observe(document, {
     childList: true,
     subtree: true
@@ -92,18 +81,18 @@
   // Process existing `cd-table-container-processed` tables.
   updateTables();
 
-  // if (typeof window.ResizeObserver !== 'undefined') {
-  //   new ResizeObserver(updateTable).observe(document.documentElement);
-  // }
-  // // Use an iframe to detect the resizing of the inner width of the window if
-  // // ResizeObserver is not supported as we cannot use window.resize for that.
-  // else {
-  //   var iframe = document.createElement('iframe');
-  //   iframe.style.cssText = 'position:absolute;width:100%;height:0;border:none;visibility:hidden;';
-  //   iframe.onload = function () {
-  //     iframe.contentWindow.onresize = updateScrollBarWidth;
-  //     updateScrollBarWidth();
-  //   }
-  //   document.documentElement.appendChild(iframe);
-  // }
+  if (typeof window.ResizeObserver !== 'undefined') {
+    new ResizeObserver(updateTable).observe(document.documentElement);
+  }
+  // Use an iframe to detect the resizing of the inner width of the window if
+  // ResizeObserver is not supported as we cannot use window.resize for that.
+  else {
+    var iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:absolute;width:100%;height:0;border:none;visibility:hidden;';
+    iframe.onload = function () {
+      iframe.contentWindow.onresize = updateScrollBarWidth;
+      updateScrollBarWidth();
+    }
+    document.documentElement.appendChild(iframe);
+  }
 })();
