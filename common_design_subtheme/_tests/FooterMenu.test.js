@@ -1,5 +1,8 @@
 import env from './_env'
 
+jest.setTimeout(env.testTimeout);
+page.setDefaultNavigationTimeout(0);
+
 describe('FooterLinks', () => {
   beforeAll(async() => {
     await page.goto(`${env.baseUrl}`);
