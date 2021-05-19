@@ -1,6 +1,7 @@
 import env from './_env'
 
 jest.setTimeout(env.testTimeout);
+page.setDefaultNavigationTimeout(0);
 
 describe('MobileMenu', () => {
   beforeAll(async() => {
