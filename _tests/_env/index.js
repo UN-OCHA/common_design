@@ -9,7 +9,7 @@ const environments = {
   },
   'travis': {
     baseUrl: 'http://127.0.0.1:8080',
-    testTimeout: 30000,
+    testTimeout: 120000,
   },
   'production': {
     baseUrl: 'https://web.brand.unocha.org',
