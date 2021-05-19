@@ -10,5 +10,7 @@ describe('MobileMenu', () => {
     await toggle.click();
     const hidden = await page.$eval('.cd-site-header__nav', el => el.dataset.cdHidden);
     await expect(hidden).toMatch('false');
-  });
+  },
+    120000,
+  );
 });
