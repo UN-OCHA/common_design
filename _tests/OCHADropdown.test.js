@@ -1,6 +1,6 @@
 import env from './_env'
 
-jest.setTimeout(30000);
+jest.setTimeout(env.timeout);
 
 describe('OCHAServicesDropdown', () => {
   beforeAll(async() => {
