@@ -1,6 +1,6 @@
 import env from './_env'
 
-jest.setTimeout(env.timeout);
+jest.setTimeout(env.testTimeout);
 
 describe('MobileMenu', () => {
   beforeAll(async() => {

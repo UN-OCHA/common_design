@@ -5,15 +5,15 @@
 const environments = {
   'local': {
     baseUrl: 'https://commondesign.test',
-    timeout: 10000,
+    testTimeout: 10000,
   },
   'travis': {
     baseUrl: 'http://127.0.0.1:8080',
-    timeout: 30000,
+    testTimeout: 30000,
   },
   'production': {
     baseUrl: 'https://web.brand.unocha.org',
-    timeout: 10000,
+    testTimeout: 10000,
   },
 };
 
