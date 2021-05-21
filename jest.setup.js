@@ -1,5 +1,5 @@
 /**
- * This file is run every __FREQUENCY__ in order to provide setup/defaults to
+ * This file is run once for every test in order to provide setup/defaults to
  * each test automatically.
  *
  * The following globals are available:
