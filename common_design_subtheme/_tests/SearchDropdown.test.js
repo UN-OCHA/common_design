@@ -2,7 +2,7 @@ import env from './_env'
 
 describe('SearchDropdown', () => {
   beforeAll(async() => {
-    await page.goto(`${env.baseUrl}`);
+    await page.goto(env.baseUrl);
   });
 
   it('should expand when clicked', async() => {
