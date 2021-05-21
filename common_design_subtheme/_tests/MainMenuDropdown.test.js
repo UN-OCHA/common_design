@@ -1,8 +1,5 @@
 import env from './_env'
 
-jest.setTimeout(env.testTimeout);
-page.setDefaultNavigationTimeout(0);
-
 describe('MainMenuDropdown', () => {
   beforeAll(async() => {
     await page.goto(`${env.baseUrl}`);

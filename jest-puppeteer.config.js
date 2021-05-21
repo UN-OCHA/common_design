@@ -7,7 +7,6 @@ const config = {
     ignoreHTTPSErrors: true,
   },
   testTimeout: 10000,
-  setupFilesAfterEnv: ['expect-puppeteer'],
 };
 
 // Determine which mode we're running.
