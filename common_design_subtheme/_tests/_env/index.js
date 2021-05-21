@@ -20,6 +20,4 @@ const environments = {
 const environmentExists = typeof environments[process.env.NODE_ENV] !== 'undefined';
 const env = environmentExists ? environments[process.env.NODE_ENV] : environments['local'];
 
-console.log('⚠️  E2E baseUrl: ', env.baseUrl);
-
 module.exports = env;
