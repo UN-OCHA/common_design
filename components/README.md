@@ -17,7 +17,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-caption          | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-card             | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-date             | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-dropdown         |                     | :heavy_check_mark:  |
+| cd-dropdown         | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-event            | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-facets           |                     | :heavy_check_mark:  |
 | cd-filter           |                     | :heavy_check_mark:  |
