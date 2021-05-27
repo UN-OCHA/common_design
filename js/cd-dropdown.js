@@ -377,7 +377,7 @@
      * markup reflects the current behavior of the element.
      */
     updateToggable: function (element) {
-      if (window.getComputedStyle(element, null).getPropertyValue('--dropdown') === 'false') {
+      if (window.getComputedStyle(element, null).getPropertyValue('--dropdown').trim() === 'false') {
         this.unsetToggable(element);
       }
       else {

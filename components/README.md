@@ -21,25 +21,26 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-event            | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-facets           |                     | :heavy_check_mark:  |
 | cd-filter           | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-flow             |                     | :heavy_check_mark:  |
-| cd-form             |                     |                     |
-| cd-grid             |                     |                     |
-| cd-hero             | :heavy_check_mark:  |                     |
-| cd-image-grid       |                     |                     |
-| cd-link-list        | :heavy_check_mark:  |                     |
-| cd-pagination       |                     |                     |
-| cd-read-more        | :heavy_check_mark:  |                     |
-| cd-search           |                     |                     |
-| cd-search-inline    |                     |                     |
-| cd-select-a11y      |                     |                     |
-| cd-styled-list      | :heavy_check_mark:  |                     |
-| cd-table            |                     |                     |
-| cd-tabs             |                     |                     |
-| cd-teaser           | :heavy_check_mark:  |                     |
-| cd-title-list       | :heavy_check_mark:  |                     |
-| cd-toc              |                     |                     |
-| cd-typography       |                     |                     |
-| cd-utilities        |                     |                     |
+| cd-flow             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-form             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-grid             |                     | :heavy_check_mark:  |
+| cd-hero             | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-image-grid       |                     | :heavy_check_mark:  |
+| cd-link-list        | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-pagination       | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-read-more        | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-search           |                     | :heavy_check_mark:  |
+| cd-search-inline    |                     | :heavy_check_mark:  |
+| cd-select-a11y      |                     | :heavy_check_mark:  |
+| cd-styled-list      | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-table            |                     | :heavy_check_mark:  |
+| cd-tabs             |                     | :heavy_check_mark:  |
+| cd-teaser           | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-title-list       | :heavy_check_mark:  | :heavy_check_mark:  |
+| cd-toc              |                     | :heavy_check_mark:  |
+| cd-typography       |                     | :heavy_check_mark:  |
+| cd-utilities        |                     | :heavy_check_mark:  |
+
 
 
 
@@ -59,7 +60,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 - If there are multiple variants, each should be displayed for illustration purposes. Use `<hr>` to separate if needed.
 - The components CSS and JS files should be included. For CSS, the component's CSS is usually placed last.
 - Each component should link to the `cd-base.css` which has the CSS custom properties and other generic rules.
-This is found in the [common_design_system repo](https://github.com/UN-OCHA/common_design_system/blob/master/cd-base.css)
+This is found in the [common_design_system repo](https://github.com/UN-OCHA/common_design_system/blob/main/cd-base.css)
 - Any dependency components' CSS or JS should be linked to.
 
 Eg. For cd-alert component

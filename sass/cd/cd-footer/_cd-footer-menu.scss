@@ -5,9 +5,9 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer-menu {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
   text-transform: uppercase;
 }
 
@@ -23,7 +23,7 @@
   @include desktop {
     margin: 0 32px 0 0;
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       margin: 0 0 0 32px;
     }
   }
@@ -36,6 +36,7 @@
 // Hide default block titles
 .cd-footer__section--menu h2 {
   @extend .visually-hidden;
+
   color: $cd-white;
 }
 

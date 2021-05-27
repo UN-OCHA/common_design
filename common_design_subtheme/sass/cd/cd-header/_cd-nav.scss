@@ -1,0 +1,95 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Main Navigation
+//——————————————————————————————————————————————————————————————————————————————
+.cd-nav__btn {
+  &[aria-expanded] .cd-icon--arrow-down {
+    fill: $implementation-highlight;
+  }
+
+  &[aria-expanded="true"] {
+    &::before {
+      background: $implementation-highlight;
+    }
+  }
+}
+
+.cd-site-header__nav-holder {
+  // Active trail for mobile menu.
+  @include max-width(lg) {
+    .cd-nav > ul > li {
+      > a.is-active::before,
+      > button.is-active::before {
+        background: $implementation-highlight;
+      }
+
+      // First level menu item with children.
+      // Classes based on Drupal menu item configuration.
+      &.menu-item--collapsed,
+      &.menu-item--expanded {
+        > a.is-active::before,
+        > button.is-active::before {
+          background: rgba($implementation-highlight, 0.2);
+        }
+      }
+
+      &.menu-item--active-trail {
+        a,
+        button {
+          &::before {
+            background: rgba($implementation-highlight, 0.2);
+          }
+
+          &.is-active::before {
+            background: $implementation-highlight;
+          }
+        }
+      }
+
+      > ul > li.menu-item--active-trail {
+        a::before,
+        button::before {
+          background: rgba($implementation-highlight, 0.6);
+        }
+
+        a.is-active::before,
+        button.is-active::before {
+          background: $implementation-highlight;
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    .cd-nav > .menu {
+      > .menu-item {
+        &.menu-item--active-trail a::before,
+        &.menu-item--active-trail button::before {
+          background: $implementation-highlight;
+        }
+
+        > a,
+        button {
+          &.is-active,
+          &:focus {
+            &::before {
+              background: $implementation-highlight;
+            }
+          }
+        }
+      }
+
+      > li > ul {
+        a,
+        button {
+          &.is-active {
+            border-left: 3px solid $implementation-highlight;
+          }
+        }
+
+        > li.menu-item--active-trail .is-active {
+          border-left: 3px solid $implementation-highlight;
+        }
+      }
+    }
+  }
+}

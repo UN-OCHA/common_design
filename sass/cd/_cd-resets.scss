@@ -4,20 +4,20 @@
 
 .cd-header,
 .cd-footer {
-  // Setup font
-  font-family: $cd-font;
-  @include font-size($cd-font-size-tiny);
-  font-weight: 300;
 
   // Set box-sizing
   box-sizing: border-box;
+  // Setup font
+  font-family: $cd-font;
+  font-size: $cd-font-size--tiny;
+  font-weight: 300;
 
-  html[lang='ar'] & {
+  html[lang="ar"] & {
     font-family: $cd-font--noto-kufi;
   }
 
-  html[lang='ru'] &,
-  html[lang='zh'] & {
+  html[lang="ru"] &,
+  html[lang="zh"] & {
     font-family: $cd-font--noto;
   }
 
@@ -30,18 +30,18 @@
 
   // Reset button styles.
   button {
-    -webkit-appearance: none;
     border-radius: 0;
     box-shadow: none;
-    @include font-size($cd-font-size-tiny);
+    font-size: $cd-font-size--tiny;
     font-weight: 300;
+    -webkit-appearance: none;
 
-    html[lang='ar'] & {
+    html[lang="ar"] & {
       font-family: $cd-font--noto-kufi;
     }
 
-    html[lang='ru'] &,
-    html[lang='zh'] & {
+    html[lang="ru"] &,
+    html[lang="zh"] & {
       font-family: $cd-font--noto;
     }
 

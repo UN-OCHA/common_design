@@ -5,12 +5,12 @@
 .block-facets h2,
 .block-facets-summary h2 {
   margin-top: 0;
-  font-weight: 500;
-  font-size: 1.25rem;
-  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
   color: var(--cd-primary-color);
   border-bottom: 1px solid var(--cd-primary-color);
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .block-facets ul {
@@ -26,19 +26,19 @@
   font-weight: 700;
 }
 
-/*This emulates the cd-bullet-list component using CSS bg image instead of SVG element in markup.*/
+/* This emulates the cd-bullet-list component using CSS bg image instead of SVG element in markup. */
 .block-facet--links li a {
+  position: relative;
   display: block;
   margin-bottom: 1rem;
-  position: relative;
 }
 
 .block-facet--links li a::before {
   display: inline-block;
-  height: 9px;
   width: 9px;
+  height: 9px;
   margin-right: 1rem;
-  content: '';
+  content: "";
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%5C %3Cpath fill='%23ff4d59' d='M14,48a4,4,0,0,1-2.83-6.83L28.34,24,11.17,6.83a4,4,0,0,1,5.66-5.66l20,20a4,4,0,0,1,0,5.66l-20,20A4,4,0,0,1,14,48Z'/%3E%5C %3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -51,18 +51,18 @@
 }
 
 .item-list__checkbox .facet-item {
-  margin: 0 0.5rem 1rem 0;
   flex: 1 0 16rem;
+  margin: 0 0.5rem 1rem 0;
 }
 
 @media (min-width: 768px) {
   .item-list__checkbox .facet-item {
-    max-width: 16rem;
     flex: 0 1 16rem;
+    max-width: 16rem;
   }
 }
 
-.item-list__checkbox input[type='checkbox'] {
+.item-list__checkbox input[type="checkbox"] {
   display: block;
   float: left;
   width: 2rem;
@@ -75,16 +75,16 @@
 
 /* Facet Summary block */
 .block-facets-summary {
+  margin-bottom: 2rem;
+  padding: 1rem 1rem 0.5rem;
   background-color: var(--cd-grey--light);
   font-size: 0.875rem;
-  padding: 1rem 1rem 0.5rem;
-  margin-bottom: 2rem;
 }
 
 .block-facets-summary ul {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .block-facets-summary li {
@@ -112,9 +112,9 @@
 }
 
 .facet-item__status svg {
-  fill: var(--cd-primary-color);
-  height: 0.5rem;
   width: 0.5rem;
+  height: 0.5rem;
+  fill: var(--cd-primary-color);
 }
 
 .facet-summary-item--clear,
@@ -128,21 +128,21 @@
 
 .facet-summary-item--clear::before {
   display: inline-block;
-  height: 0.5rem;
   width: 0.5rem;
+  height: 0.5rem;
   margin-right: 0.25rem;
-  content: '';
+  content: "";
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"%3E%3Cpath fill="%233d5c76" d="M29.66,24,45.83,7.83a4,4,0,0,0-5.66-5.66L24,18.34,7.83,2.17A4,4,0,0,0,2.17,7.83L18.34,24,2.17,40.17a4,4,0,0,0,5.66,5.66L24,29.66,40.17,45.83a4,4,0,0,0,5.66-5.66Z"%3E%3C/path%3E%3C/svg%3E');
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
-/*Hide Summary block title.*/
+/* Hide Summary block title. */
 .block-facets-summary h2 {
   position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
-  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
   width: 1px;
+  height: 1px;
   word-wrap: normal;
 }

@@ -2,6 +2,7 @@ name: OCHA Common Design
 type: theme
 description: OCHA Common Design drupal theme. Use as a base theme, and extend.
 core_version_requirement: ^8.8 || ^9
+base theme: stable
 logo: 'img/logos/ocha-lockup-blue.svg'
 
 # Defines libraries group in which we can add css/js.
@@ -12,6 +13,7 @@ libraries:
   - common_design/cd-button
   - common_design/cd-dropdown
   - common_design/cd-flow
+  - common_design/cd-utilities
 
 # Regions
 regions:
@@ -31,7 +33,7 @@ regions:
 libraries-override:
   core/modernizr:
     js:
-      assets/vendor/modernizr/modernizr.min.js: js/cd-modernizr.min.js
+      assets/vendor/modernizr/modernizr.min.js: js/vendor/cd-modernizr.min.js
 
   # select_a11y module for Facets dropdowns.
   select_a11y/select_a11y_facets.widget:
@@ -45,7 +47,7 @@ libraries-override:
         css/style.css: components/cd-select-a11y/cd-select-a11y.css
 
 # CD components
-component-libraries:
-  cd-components:
-    paths:
-      - components
+# Requires Components module
+components:
+  namespaces:
+    cd-components: components

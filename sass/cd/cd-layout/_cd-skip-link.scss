@@ -6,26 +6,27 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .skip-link {
+  @include z-index(skip-link);
+
   position: absolute;
   top: 0;
   left: 50%;
-  @include z-index(skip-link);
   transform: translateX(-50%);
 }
 
 .skip-link,
 .skip-link:link,
 .skip-link:visited {
-  background: $cd-black;
-  color: $cd-white;
   display: inline-block;
-  @include font-size($cd-font-size-small);
-  font-family: sans-serif;
-  font-weight: 500;
-  line-height: 1.7;
   padding: 1px 10px 2px;
   text-decoration: none;
+  color: $cd-white;
   border-radius: 0 0 10px 10px;
+  background: $cd-black;
+  font-family: sans-serif;
+  font-size: $cd-font-size--small;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
 //
@@ -36,7 +37,7 @@
   &:hover,
   &:active,
   &:focus {
-    outline: 0;
     position: absolute !important;
+    outline: 0;
   }
 }

@@ -5,10 +5,10 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-soft-footer {
-  background: rgba($cd-ocha-blue, 0.9);
-  color: $cd-white;
   padding: 24px 0;
   text-align: center;
+  color: $cd-white;
+  background: rgba($cd-rgb-ocha-blue, 0.9);
 
   h2 {
     color: $cd-white;

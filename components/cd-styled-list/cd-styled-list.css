@@ -35,8 +35,8 @@
 
 .cd-styled-list__image--rounded {
   min-width: 2rem;
-  min-height: 2rem;
   max-width: 4rem;
+  min-height: 2rem;
   max-height: 4rem;
 }
 
@@ -47,8 +47,8 @@
 .cd-styled-list__image svg {
   width: 100%;
   min-width: 2rem;
-  min-height: 2rem;
   max-width: 4rem;
+  min-height: 2rem;
   max-height: 4rem;
   fill: var(--cd-ocha-blue);
 }
@@ -59,9 +59,10 @@
 
 .cd-styled-list__title,
 .cd-styled-list__title a {
-  font-weight: 700;
-  font-size: 1.125rem;
   display: block;
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .cd-styled-list__footer {
@@ -74,8 +75,8 @@
 
   .cd-styled-list > * {
     display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
+    justify-content: space-between;
   }
 
   .cd-styled-list__image {
@@ -95,10 +96,10 @@
 
   .cd-styled-list__footer {
     display: flex;
-    align-items:center;
     flex: 0 1 auto;
-    padding-right: 0;
+    align-items: center;
     margin-top: 0;
+    padding-right: 0;
   }
 
   /* List displayed as a grid */
@@ -107,8 +108,8 @@
   }
 
   .cd-grid.cd-styled-list .cd-styled-list__footer {
-    flex: 1 0 100%;
     display: block;
+    flex: 1 0 100%;
   }
 }
 
@@ -118,7 +119,7 @@
   }
 
   .cd-layout-sidebar-first .cd-styled-list__footer {
-    flex: 1 0 100%;
     display: block;
+    flex: 1 0 100%;
   }
 }
