@@ -6,6 +6,7 @@ const config = {
   transform: {
     "^.+\\.(js|jsx)$": "babel-jest",
   },
+  setupFilesAfterEnv: ['expect-puppeteer', './jest.setup.js'],
 };
 
 // E2E requires a special preset

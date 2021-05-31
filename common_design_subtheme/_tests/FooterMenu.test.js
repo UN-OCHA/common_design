@@ -1,11 +1,8 @@
 import env from './_env'
 
-jest.setTimeout(env.testTimeout);
-page.setDefaultNavigationTimeout(0);
-
 describe('FooterLinks', () => {
   beforeAll(async() => {
-    await page.goto(`${env.baseUrl}`);
+    await page.goto(env.baseUrl);
   });
 
   it('should contain specific links in the Footer menu', async() => {
