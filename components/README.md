@@ -9,7 +9,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-article          | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-author           | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-banner           | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-bleed            |                     | :heavy_check_mark:  |
+| cd-bleed            | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-block-title      | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-bullet-list      | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-button           | :heavy_check_mark:  | :heavy_check_mark:  |
