@@ -30,7 +30,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-pagination       | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-read-more        | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-search           |                     | :heavy_check_mark:  |
-| cd-search-inline    |                     | :heavy_check_mark:  |
+| cd-search-inline    | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-select-a11y      |                     | :heavy_check_mark:  |
 | cd-styled-list      | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-table            |                     | :heavy_check_mark:  |
