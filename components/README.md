@@ -38,7 +38,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-tabs             |                     | :heavy_check_mark:  |
 | cd-teaser           | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-title-list       | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-toc              |                     | :heavy_check_mark:  |
+| cd-toc              | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-typography       |                     | :heavy_check_mark:  |
 | cd-utilities        |                     | :heavy_check_mark:  |
 
