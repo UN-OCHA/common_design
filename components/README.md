@@ -33,7 +33,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-search-inline    | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-select-a11y      | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-styled-list      | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-table            |                     | :heavy_check_mark:  |
+| cd-table            | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-tabs             |                     | :heavy_check_mark:  |
 | cd-teaser           | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-title-list       | :heavy_check_mark:  | :heavy_check_mark:  |
