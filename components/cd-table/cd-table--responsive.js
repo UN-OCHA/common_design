@@ -12,43 +12,44 @@
     return;
   }
 
-  var elements = document.querySelectorAll('.cd-table-container');
-
   function updateTable(table) {
-    if (table.parentNode.classList.contains('cd-table-container-processed')) {
+
+    if (table.classList.contains('cd-table-container-processed')) {
       return;
     }
-    table.parentNode.classList.add('cd-table-container-processed');
+    table.classList.add('cd-table-container-processed');
+
+    var elements = document.querySelectorAll('.cd-table-container-processed');
 
     for (var i = 0, l = elements.length; i < l; i++) {
       var element = elements[i];
       var scrollWidth, clientWidth = element;
-      var isOverflowing = element.scrollWidth > element.offsetWidth;
+      var isOverflowing = element.scrollWidth > element.clientWidth;
 
       if (isOverflowing) {
         element.setAttribute('tabindex', '0');
         element.setAttribute('role', 'group');
 
+        console.log(isOverflowing);
         createMessage(element);
 
-      } else {
+      }
+      else {
         element.removeAttribute('tabindex');
         element.removeAttribute('role');
-        // const message = document.getElementById('caption').nextElementSibling;
-        // if (message) {
-        //   message.remove();
-        // }
+        console.log(isOverflowing);
       }
     }
   }
 
   function createMessage(element) {
+    console.log(element);
     const newDiv = document.createElement('div');
+    newDiv.classList.add('cd-table--message');
     const newContent = document.createTextNode('Scroll to see more');
     newDiv.appendChild(newContent);
-    const currentDiv = document.getElementById('caption');
-    currentDiv.appendChild(newDiv);
-    // document.body.insertBefore(newDiv, currentDiv);
+    const tableCaption = document.getElementById('cd-table__caption');
+    tableCaption.appendChild(newDiv);
   }
 
   // Find all non processed `cd-table-container` divs and update them.
@@ -80,19 +81,4 @@
 
   // Process existing `cd-table-container-processed` tables.
   updateTables();
-
-  if (typeof window.ResizeObserver !== 'undefined') {
-    new ResizeObserver(updateTable).observe(document.documentElement);
-  }
-  // Use an iframe to detect the resizing of the inner width of the window if
-  // ResizeObserver is not supported as we cannot use window.resize for that.
-  else {
-    var iframe = document.createElement('iframe');
-    iframe.style.cssText = 'position:absolute;width:100%;height:0;border:none;visibility:hidden;';
-    iframe.onload = function () {
-      iframe.contentWindow.onresize = updateScrollBarWidth;
-      updateScrollBarWidth();
-    }
-    document.documentElement.appendChild(iframe);
-  }
 })();
