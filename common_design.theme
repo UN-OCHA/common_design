@@ -357,6 +357,22 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provides more granularity when Views displays are getting rendered. The two
+ * suggestions will allow the following templates to be picked up:
+ *
+ * - views-view--VIEW.html.twig
+ * - views-view--VIEW--DISPLAY.html.twig
+ *
+ * @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_theme_suggestions_HOOK_alter/8.8.x
+ */
+function common_design_theme_suggestions_views_view_alter(&$suggestions, $variables) {
+  $suggestions[] = sprintf('views_view__%s', $variables['view']->id());
+  $suggestions[] = sprintf('views_view__%s__%s', $variables['view']->id(), $variables['view']->current_display);
+}
+
+/**
  * Implements hook_block__language_block().
  */
 function common_design_preprocess_block__language_block(&$vars) {
