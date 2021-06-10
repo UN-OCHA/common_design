@@ -7,12 +7,8 @@
 (function () {
   'use strict';
 
-  // Feature detection.
-  if (typeof MutationObserver === 'undefined') {
-    return;
-  }
-
   function updateTable(table) {
+    console.log('update table');
 
     if (table.classList.contains('cd-table-container-processed')) {
       return;
@@ -23,16 +19,13 @@
 
     for (var i = 0, l = elements.length; i < l; i++) {
       var element = elements[i];
-      var scrollWidth, clientWidth = element;
       var isOverflowing = element.scrollWidth > element.clientWidth;
 
       if (isOverflowing) {
         element.setAttribute('tabindex', '0');
         element.setAttribute('role', 'group');
-
         console.log(isOverflowing);
         createMessage(element);
-
       }
       else {
         element.removeAttribute('tabindex');
@@ -43,7 +36,7 @@
   }
 
   function createMessage(element) {
-    console.log(element);
+    console.log('no caption');
     const newDiv = document.createElement('div');
     newDiv.classList.add('cd-table--message');
     const newContent = document.createTextNode('Scroll to see more');
@@ -55,30 +48,26 @@
   // Find all non processed `cd-table-container` divs and update them.
   function updateTables() {
     var tables = document.querySelectorAll('.cd-table-container:not(.cd-table-container-processed)');
+    console.log('update tables');
     for (var i = 0, l = tables.length; i < l; i++) {
       updateTable(tables[i]);
     }
   }
 
-  // Register a mutation observer on the document to detect the addition
-  // of `cd-table-container` divs.
-  var observer = new MutationObserver(function (mutations) {
-    for (var i = 0, l = mutations.length; i < l; i++) {
-      var mutation = mutations[i];
-      if (mutation.type === 'childList' && mutation.addedNodes) {
-        updateTables();
-        // No need to continue further.
-        return;
-      }
-    }
-  });
-
-  // Observe the entire DOM for the addition of the `cd-table-container` divs.
-  observer.observe(document, {
-    childList: true,
-    subtree: true
-  });
-
-  // Process existing `cd-table-container-processed` tables.
   updateTables();
+
+  if (typeof window.ResizeObserver !== 'undefined') {
+    new ResizeObserver(updateTables).observe(document.documentElement);
+  }
+  // Use an iframe to detect the resizing of the inner width of the window if
+  // ResizeObserver is not supported as we cannot use window.resize for that.
+  else {
+    var iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:absolute;width:100%;height:0;border:none;visibility:hidden;';
+    iframe.onload = function () {
+      iframe.contentWindow.onresize = updateScrollBarWidth;
+      updateScrollBarWidth();
+    }
+    document.documentElement.appendChild(iframe);
+  }
 })();
