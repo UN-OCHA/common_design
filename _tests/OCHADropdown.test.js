@@ -40,7 +40,7 @@ describe('OCHAServicesDropdown', () => {
     const otherOchaServicesCorporateHref = [
       'https://fts.unocha.org/',
       'https://data.humdata.org/',
-      'https://humanitarian.id/',
+      'https://auth.humanitarian.id/',
       'https://humanitarianresponse.info/',
       'https://interagencystandingcommittee.org/',
       'https://unocha.org/',
