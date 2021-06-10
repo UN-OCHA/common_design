@@ -1,4 +1,4 @@
-const E2E_MODE = process.env.npm_lifecycle_event === 'e2e' || 'ci';
+const E2E_MODE = ['e2e', 'ci'].includes(process.env.npm_lifecycle_event);
 
 const config = {
   verbose: true,
