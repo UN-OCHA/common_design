@@ -14,14 +14,14 @@ describe('OCHAServicesDropdown', () => {
 
   it('should contain up to four links in the Related Platforms section', async() => {
     const relatedPlatformsLimit = 4;
-    await page.waitForSelector('.cd-ocha-dropdown__section:first-child', {timeout: 20000});
+    await page.waitForSelector('.cd-ocha-dropdown__section:first-child');
     const relatedPlatformsLength = await page.$$eval('.cd-ocha-dropdown__section:first-child', nodeList => nodeList.length);
     await expect(relatedPlatformsLength).toBeLessThanOrEqual(relatedPlatformsLimit);
   });
 
   it('should contain eight links in the Other OCHA Services section', async() => {
     const otherOchaServicesLimit = 8;
-    await page.waitForSelector('.cd-ocha-dropdown__section:not(:first-child)', {timeout: 20000});
+    await page.waitForSelector('.cd-ocha-dropdown__section:not(:first-child)');
     const otherOchaServicesLength = await page.$$eval('.cd-ocha-dropdown__section:not(:first-child)', nodeList => nodeList.length);
     await expect(otherOchaServicesLength).toBeLessThanOrEqual(otherOchaServicesLimit);
   });
