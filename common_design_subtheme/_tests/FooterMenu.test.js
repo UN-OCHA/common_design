@@ -1,8 +1,8 @@
-import env from './_env';
+import env from './_env'
 
 describe('FooterLinks', () => {
   beforeAll(async() => {
-    await page.goto(`${env.baseUrl}`);
+    await page.goto(env.baseUrl);
   });
 
   it('should contain specific links in the Footer menu', async() => {

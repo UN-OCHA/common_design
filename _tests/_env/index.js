@@ -5,18 +5,19 @@
 const environments = {
   'local': {
     baseUrl: 'https://commondesign.test',
+    testTimeout: 10000,
   },
   'travis': {
     baseUrl: 'http://127.0.0.1:8080',
+    testTimeout: 120000,
   },
   'production': {
     baseUrl: 'https://web.brand.unocha.org',
+    testTimeout: 10000,
   },
 };
 
 const environmentExists = typeof environments[process.env.NODE_ENV] !== 'undefined';
 const env = environmentExists ? environments[process.env.NODE_ENV] : environments['local'];
-
-console.log('⚠️  E2E baseUrl: ', env.baseUrl);
 
 module.exports = env;

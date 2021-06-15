@@ -16,6 +16,7 @@
     "js:lint": "eslint js/*.js",
     "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
     "e2e": "jest _tests/*.test.js",
+    "ci": "jest --maxWorkers=2 _tests/*.test.js",
     "test": "jest _tests/*.test.js"
   },
   "engines": {
