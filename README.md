@@ -204,7 +204,7 @@ npm run e2e -- -t '^(?!.*Subtheme).*$OCHAServicesDropdown'
 npm run e2e -- -t '^(?!.*Subtheme).*$'
 ```
 
-## Site manifest
+## Progressive Web App
 
 [web.brand.unocha.org](https://web.brand.unocha.org) website uses the Drupal 
 [PWA module](https://www.drupal.org/project/pwa)
