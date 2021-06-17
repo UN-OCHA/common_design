@@ -209,4 +209,4 @@ npm run e2e -- -t '^(?!.*Subtheme).*$'
 [web.brand.unocha.org](https://web.brand.unocha.org) website uses the Drupal 
 [PWA module](https://www.drupal.org/project/pwa)
 
-There is a `site.webmanifest` file available in the sub theme as an alternative to the module. The file should be adjusted per implementation, and added using a `<link>` element in the `<head>`, with additional configuration needed. See https://developer.mozilla.org/en-US/docs/Web/Manifest for implementation details.
+There is a `site.webmanifest` file available in the sub theme as an alternative to the module, if all you want is the Web Manifest, and you don't want offline capability. The manifest file should be adjusted per implementation, and added using a `<link>` element in the `<head>`, with additional configuration needed. See https://developer.mozilla.org/en-US/docs/Web/Manifest for implementation details.
