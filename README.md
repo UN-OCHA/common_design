@@ -14,8 +14,8 @@ We use [npm-version](https://docs.npmjs.com/cli/version) and [semantic versionin
 We aim to facilitate an annual major release. The next release date is June 2022.
 
 We continue to regularly release patches or minor releases to include bug fixes, dependency updates, and component 
-improvements. Refer to [Github releases](https://github.com/UN-OCHA/common_design/releases) for the latest tagged 
-releases. 
+improvements. Refer to the [CHANGELOG](https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md) and/or [Github releases](https://github.com/UN-OCHA/common_design/releases) for the latest tagged 
+releases.
 
 There may be several breaking changes during the year which result in increments to the major release number. Teams 
 using the base theme might be “behind” by a few numbers when they update annually. We hope these numbers will help to 
