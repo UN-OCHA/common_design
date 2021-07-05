@@ -1,3 +1,7 @@
+:root {
+  --cd-grid--item-size: 4rem;
+}
+
 .cd-image-grid > * {
   display: inline-block;
   padding: 0.25rem;
@@ -11,7 +15,7 @@
 
   .cd-image-grid > * {
     display: flex;
-    flex: 0 0 4rem;
+    flex: 0 0 var(--cd-grid--item-size, 4rem);
     align-items: center;
     justify-content: center;
   }
@@ -25,15 +29,15 @@
 .cd-image-grid img,
 .cd-image-grid svg {
   width: inherit;
-  max-width: 4rem;
+  max-width: var(--cd-grid--item-size, 4rem);
   height: inherit;
-  max-height: 4rem;
+  max-height: var(--cd-grid--item-size, 4rem);
 }
 
 @supports (display: grid) {
   .cd-image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--cd-grid--item-size, 4rem), 1fr));
     grid-gap: 1rem;
   }
 }
