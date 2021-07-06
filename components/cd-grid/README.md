@@ -23,7 +23,18 @@ one. That would allow a header and footer span the full width inside a grid layo
 @TODO This might be dropped in favour of more robust grid system.
 
 ## Caveats
-The selectors must be added to the parent div
+The selectors must be added to the parent div.
+
+### Using with Drupal Views Grid format
+The Views UI allows configuration for the number of columns, and alignment (horizontal or vertical).
+The `cd-grid` component is used **only when the Horizontal alignment is selected**. The checkbox for **Automatic width
+should be unchecked** and **maximum number of columns is 4**. See the template override in the base theme for 
+`views-view-grid`
+
+
+When the Automatic width is enabled, the width of the columns are set inline as part of the Drupal Views module.
+This means the Views Grid layout is not responsive. https://www.drupal.org/project/drupal/issues/3151553
+The vertical alignment, being less common, works as Drupal Views module intends and does not use the `cd-grid` component.
 
 ### Variants
 
