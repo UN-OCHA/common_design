@@ -26,47 +26,47 @@
  * @ingroup themeable
  */
 #}
-
-{{ attach_library('common_design/cd-grid') }}
-
 {%
   set classes = [
-    'views-view-grid',
-    options.alignment,
-    'cols-' ~ options.columns,
-    'clearfix',
-    'cd-grid cd-grid--' ~ options.columns ~ '-col',
-  ]
+  'views-view-grid',
+  options.alignment,
+  'cols-' ~ options.columns,
+  'clearfix',
+  options.alignment == 'horizontal' ? 'cd-grid cd-grid--' ~ options.columns ~ '-col',
+]
 %}
 {% if options.row_class_default %}
   {%
     set row_classes = [
-      'views-row',
-      options.alignment == 'horizontal' ? 'clearfix',
-    ]
+    'views-row',
+    options.alignment == 'horizontal' ? 'clearfix',
+  ]
   %}
 {% endif %}
 {% if options.col_class_default %}
   {%
     set col_classes = [
-      'views-col',
-      options.alignment == 'vertical' ? 'clearfix',
-    ]
+    'views-col',
+    options.alignment == 'vertical' ? 'clearfix',
+  ]
   %}
 {% endif %}
+
+{% if options.alignment == 'horizontal' %}
+  {{ attach_library('common_design/cd-grid') }}
+{% endif %}
+
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
 <div{{ attributes.addClass(classes) }}>
   {% if options.alignment == 'horizontal' %}
     {% for row in items %}
-{#      <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>#}
         {% for column in row.content %}
-{#          <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>#}
+          <div{{ column.attributes.addClass(col_classes) }}>
             {{- column.content -}}
-{#          </div>#}
+          </div>
         {% endfor %}
-{#      </div>#}
     {% endfor %}
   {% else %}
     {% for column in items %}
