@@ -23,7 +23,7 @@ Add a check if you've reviewed the component and it passes the Criteria.
 | cd-filter           |                     | :heavy_check_mark:  |
 | cd-flow             | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-form             | :heavy_check_mark:  | :heavy_check_mark:  |
-| cd-grid             |                     | :heavy_check_mark:  |
+| cd-grid             | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-hero             | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-image-grid       | :heavy_check_mark:  | :heavy_check_mark:  |
 | cd-link-list        | :heavy_check_mark:  | :heavy_check_mark:  |
