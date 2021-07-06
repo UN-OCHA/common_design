@@ -28,26 +28,26 @@
 #}
 {%
   set classes = [
-  'views-view-grid',
-  options.alignment,
-  'cols-' ~ options.columns,
-  'clearfix',
-  options.alignment == 'horizontal' ? 'cd-grid cd-grid--' ~ options.columns ~ '-col',
+    'views-view-grid',
+    options.alignment,
+    'cols-' ~ options.columns,
+    'clearfix',
+    options.alignment == 'horizontal' ? 'cd-grid cd-grid--' ~ options.columns ~ '-col',
 ]
 %}
 {% if options.row_class_default %}
   {%
     set row_classes = [
-    'views-row',
-    options.alignment == 'horizontal' ? 'clearfix',
+      'views-row',
+      options.alignment == 'horizontal' ? 'clearfix',
   ]
   %}
 {% endif %}
 {% if options.col_class_default %}
   {%
     set col_classes = [
-    'views-col',
-    options.alignment == 'vertical' ? 'clearfix',
+      'views-col',
+      options.alignment == 'vertical' ? 'clearfix',
   ]
   %}
 {% endif %}
