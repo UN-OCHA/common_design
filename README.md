@@ -172,7 +172,7 @@ The available icons can be found in `img/icons`
 There are two techniques used, depending on context.
 
 1. SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG
- file. We use this technique only when using technique 2 isn't possible.
+file. We use this technique only when using technique 2 isn't possible.
 The icons are black by default. If you need another color, it's best to copy the icon and manually adjust the 
 fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
 
@@ -242,4 +242,7 @@ npm run e2e -- -t '^(?!.*Subtheme).*$'
 [web.brand.unocha.org](https://web.brand.unocha.org) website uses the Drupal 
 [PWA module](https://www.drupal.org/project/pwa)
 
-There is a `site.webmanifest` file available in the sub theme as an alternative to the module, if all you want is the Web Manifest, and you don't want offline capability. The manifest file should be adjusted per implementation, and added using a `<link>` element in the `<head>`, with additional configuration needed. See https://developer.mozilla.org/en-US/docs/Web/Manifest for implementation details.
+There is a `site.webmanifest` file available in the sub theme as an alternative to the module, if all you want is the 
+Web Manifest, and you don't want offline capability. The manifest file should be adjusted per implementation, and added 
+using a `<link>` element in the `<head>`, with additional configuration needed. 
+See https://developer.mozilla.org/en-US/docs/Web/Manifest for implementation details.
