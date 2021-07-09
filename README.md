@@ -36,8 +36,7 @@ for more detailed documentation
 There is a sub theme included in this repo.
    * This can be used as a starting point for implementations. Add components, override and extend the base theme as 
    needed. Copy the common_design_subtheme directory to /themes/custom/ and refer to its [README](https://github.com/UN-OCHA/common_design/blob/main/common_design_subtheme/README.md). 
-   All the implementation-specific work should happen in the sub theme. Optionally rename the subtheme folder and 
-   associated theme files.
+   All the implementation-specific work should happen in the sub theme.
 
 **Drupal components:**
 
@@ -69,7 +68,7 @@ is included in Drupal core for display-related utility classes
 
 1. Clone this repo to `/themes/contrib/` or install using `composer require unocha/common_design`
 2. Copy the `common_design_subtheme` directory to `/themes/custom/`
-3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' (or whatever you've renamed it to), and 
+3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' and 
 select **Enable and set default**
 
 **To contribute to `common_design` base theme or sub theme development and/or to customise the sub theme**
