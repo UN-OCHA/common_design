@@ -1,0 +1,21 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: User Menu
+//
+// Includes user-centered settings and/or actions.
+//
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-user-menu__item {
+  &:focus {
+    outline: 3px solid $cd-blue--bright;
+  }
+}
+
+//——————————————————————————————————————————————————————————————————————————————
+// Drupal selectors
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-global-header .menu > li a,
+.cd-global-header .menu > li button {
+  @extend .cd-user-menu__item;
+}

@@ -3,7 +3,6 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 html {
-  //background: $cd-blue-grey;
   height: 100%;
 }
 
@@ -20,16 +19,18 @@ body {
 }
 
 .cd-layout-container {
-  //background: $cd-white;
-  margin: 0 auto;
-  //max-width: $cd-max-body-width;
+  width: 100%;
   min-height: 100%;
+  margin: 0 auto;
   padding: 0;
+
+  .no-js & {
+    display: block;
+  }
 
   // helper for @support testing. Enable background for colours.
   //background: rgba(255, 0, 0, 0.1);
 
-  // sass-lint:disable no-empty-rulesets
   @supports (display: flex) {
     //background: rgba(0, 255, 0, 0.1);
   }
@@ -46,28 +47,25 @@ body {
     @include tablet {
       display: grid;
       grid-template-areas:
-      'header'
-      'highlighted'
-      'main'
-      'soft-footer'
-      'footer';
+        "header"
+        "highlighted"
+        "main"
+        "soft-footer"
+        "footer";
       grid-template-rows: 101px auto 1fr auto;
       grid-auto-rows: auto;
     }
-  }
-
-  .no-js & {
-    display: block;
   }
 }
 
 .cd-container {
   @include clearfix;
+
   box-sizing: border-box;
-  padding: 0 $cd-container-padding;
-  margin: 0 auto;
   width: 100%;
   max-width: $cd-max-width;
+  margin: 0 auto;
+  padding: 0 $cd-container-padding;
 
   @include tablet {
     padding: 0 $cd-container-padding-tablet;
@@ -78,7 +76,7 @@ body {
   }
 }
 
-.cd-container[role='main'] {
+.cd-container[role="main"] {
   padding-bottom: 2rem;
 
   @include desktop {
@@ -107,15 +105,16 @@ body {
     display: none;
   }
 
-  @include desktop {
-    flex-grow: 1;
-  }
-
   .cd-layout-sidebar-first & {
     margin-bottom: 2rem;
+
     @include desktop {
       margin-bottom: 0;
     }
+  }
+
+  @include desktop {
+    flex-grow: 1;
   }
 }
 
@@ -158,6 +157,7 @@ body {
     @include tablet {
       flex-basis: 550px; // Keep this number large so exceeds the available space and thus sits below.
     }
+
     @include desktop {
       flex-basis: 285px;
     }
@@ -165,12 +165,6 @@ body {
 }
 
 .cd-layout-content {
-  //background: lightyellow;
-
-  @include desktop {
-    flex-basis: 0;
-    flex-grow: 999;
-  }
 
   .cd-layout-with-sidebar-both & {
     margin-bottom: 1rem;
@@ -178,28 +172,28 @@ body {
     @include desktop {
       margin-bottom: 0;
 
-      [dir='ltr'] & {
-        margin-left: 3rem;
+      [dir="ltr"] & {
         margin-right: 3rem;
+        margin-left: 3rem;
       }
 
-      [dir='rtl'] & {
-        margin-left: 3rem;
+      [dir="rtl"] & {
         margin-right: 3rem;
+        margin-left: 3rem;
       }
     }
   }
 
   .cd-layout-with-sidebar-first & {
     @include desktop {
-      [dir='ltr'] & {
-        margin-left: 3rem;
+      [dir="ltr"] & {
         margin-right: 0;
+        margin-left: 3rem;
       }
 
-      [dir='rtl'] & {
-        margin-left: 0;
+      [dir="rtl"] & {
         margin-right: 3rem;
+        margin-left: 0;
       }
     }
   }
@@ -210,26 +204,28 @@ body {
     @include desktop {
       margin-bottom: 0;
 
-      [dir='ltr'] & {
-        margin-left: 0;
+      [dir="ltr"] & {
         margin-right: 3rem;
+        margin-left: 0;
       }
 
-      [dir='rtl'] & {
-        margin-left: 3rem;
+      [dir="rtl"] & {
         margin-right: 0;
+        margin-left: 3rem;
       }
     }
+  }
+  //background: lightyellow;
+
+  @include desktop {
+    flex-basis: 0;
+    flex-grow: 999;
   }
 }
 
 // Faux sidebar in Node content.
 // Requires markup in node-full.html.twig.
 .cd-layout-two-col {
-  @include desktop {
-    display: flex;
-    flex-wrap: wrap;
-  }
 
   .cd-layout-main-content {
     // These override the main layout rules based on which sidebar is enabled.
@@ -240,11 +236,11 @@ body {
       flex-basis: 0;
       flex-grow: 999;
 
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         margin-right: 2rem;
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         margin-left: 2rem;
       }
     }
@@ -261,6 +257,11 @@ body {
       flex-basis: 285px;
       margin-top: 0;
     }
+  }
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -288,11 +289,11 @@ body {
 .cd-page-title {
   @include xl {
     .cd-layout-with-sidebar {
-      [dir='ltr'] & {
+      [dir="ltr"] & {
         padding-right: 320px; // --cd-max-width minus padding, minus --cd-max-content-width.
       }
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         padding-left: 320px;
       }
     }
@@ -300,8 +301,8 @@ body {
     .cd-layout-with-sidebar-first &,
     .cd-layout-with-sidebar-second &,
     .cd-layout-with-sidebar-both & {
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
     }
   }
 }

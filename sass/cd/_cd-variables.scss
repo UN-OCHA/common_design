@@ -7,8 +7,11 @@
 //——————————————————————————————————————————————————————————————————————————————
 :root {
   /* Color palette */
+  /* OCHA blue is one colour ramp darker than brand blue */
   --cd-ocha-blue: #1f69b3;
-  --cd-blue--dark: #1f519b;
+  /* Dark blue is two colour ramps darker than brand blue */
+  --cd-blue--dark: #144372;
+  /* Bright blue is one colour ramp lighter than brand blue */
   --cd-blue--bright: #82b5e9;
   --cd-blue--light: #d4e5f7;
   --cd-highlight-red: #e56a54;
@@ -29,7 +32,7 @@
   --cd-rgb-ocha-blue: 2, 108, 182;
   --cd-rgb-grey--mid: 89, 89, 89;
   --cd-rgb-grey--dark: 74, 74, 74;
-  --cd-rgb-highlight-red:  229, 106, 84;
+  --cd-rgb-highlight-red: 229, 106, 84;
   --cd-rgb-blue-grey--dark: 211, 221, 229;
 
   /* Measurements */
@@ -48,7 +51,7 @@
   // This ensures the footer is always the last element.
   --cd-footer-row-number: 5;
 
-  /* From https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/colours*/
+  /* From https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/colours */
   --cd-red: #cd3a1f;
   --cd-red--light: #f8d8d3;
   --cd-orange: #db7b18;
@@ -59,14 +62,14 @@
   --cd-green--light: #e8f5d6;
 
   /* Fonts sizes in REMs */
-  --cd-font-size--tiny: 0.75rem;    /* 12px */
-  --cd-font-size--small: 0.875rem;  /* 14px */
-  --cd-font-size--base: 1rem;       /* 16px */
-  --cd-font-size--medium: 1.25rem;  /* 20px */
-  --cd-font-size--large: 1.5rem;    /* 24px */
-  --cd-font-size--2xbase: 2rem;     /* 32px */
-  --cd-font-size--2xmedium: 2.5rem; /* 40px */
-  --cd-font-size--2xlarge: 3rem;    /* 48px */
+  --cd-font-size--tiny: 0.75rem;      /* 12px */
+  --cd-font-size--small: 0.875rem;    /* 14px */
+  --cd-font-size--base: 1.125rem;     /* 18px */
+  --cd-font-size--medium: 1.375rem;   /* 22px */
+  --cd-font-size--large: 1.625rem;    /* 26px */
+  --cd-font-size--2xbase: 1.875rem;   /* 30px */
+  --cd-font-size--2xmedium: 2.375rem; /* 38px */
+  --cd-font-size--2xlarge: 2.875rem;  /* 46px */
 
   /* Fonts */
   --cd-font: helvetica, arial, sans-serif;
@@ -74,14 +77,14 @@
 
   // Multilingual
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
-  --cd-font--noto: 'Noto Sans', sans-serif;
-  --cd-font--noto-kufi: 'Noto Kufi Arabic', sans-serif;
+  --cd-font--noto: "Noto Sans", sans-serif;
+  --cd-font--noto-kufi: "Noto Kufi Arabic", sans-serif;
 
   // Roboto
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
-  --cd-font--roboto: 'Roboto', helvetica, arial, sans-serif;
-  --cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
-  --cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
+  --cd-font--roboto: "Roboto", helvetica, arial, sans-serif;
+  --cd-font--roboto-condensed: "Roboto Condensed", helvetica, arial, sans-serif;
+  --cd-font--roboto-slab: "Roboto Slab", helvetica, arial, sans-serif;
 }
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -176,10 +179,10 @@ $grid-breakpoints: (
 // CD Breakpoints correspond to the following grid breakpoints:
 //
 $cd-breakpoints: (
-  tablet: #{map-get($grid-breakpoints, 'md')},
-  desktop: #{map-get($grid-breakpoints, 'lg')},
-  xlarge: #{map-get($grid-breakpoints, 'xl')},
-  xxlarge: #{map-get($grid-breakpoints, 'xxl')}
+  tablet: #{map-get($grid-breakpoints, "md")},
+  desktop: #{map-get($grid-breakpoints, "lg")},
+  xlarge: #{map-get($grid-breakpoints, "xl")},
+  xxlarge: #{map-get($grid-breakpoints, "xxl")}
 );
 
 //——————————————————————————————————————————————————————————————————————————————

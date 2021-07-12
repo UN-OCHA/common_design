@@ -11,13 +11,9 @@
   display: flex;
   align-items: center;
   box-sizing: content-box;
-  line-height: $cd-global-header-height;
   height: $cd-global-header-height;
   padding: 0 0 0 15px;
-
-  @include tablet {
-    padding: 0 0 0 20px;
-  }
+  line-height: $cd-global-header-height;
 
   // Language switcher is always on the far edge of the global header.
   // Cancel the border that we render for other elements.
@@ -34,17 +30,21 @@
   &:focus {
     outline: 3px solid $cd-blue--bright;
   }
+
+  @include tablet {
+    padding: 0 0 0 20px;
+  }
 }
 
 .cd-user-menu__dropdown {
-  list-style: none;
   margin: 0;
   padding: 12px 24px;
+  list-style: none;
 
   .cd-language-switcher & {
-    width: 125px;
-    left: auto;
     right: 0;
+    left: auto;
+    width: 125px;
   }
 
   li {
@@ -54,6 +54,7 @@
 
   li a {
     @extend .cd-user-menu__dropdown-link;
+
     color: $cd-white;
 
     &:hover,
@@ -62,8 +63,8 @@
     }
 
     &:focus {
-      color: $cd-white;
       text-decoration: underline;
+      color: $cd-white;
       outline: 3px solid $cd-blue--bright;
     }
   }
@@ -75,29 +76,29 @@
   text-decoration: none;
 
   &.is-active {
-    font-weight: 700;
     position: relative;
+    font-weight: 700;
 
-    [dir='ltr'] & {
+    [dir="ltr"] & {
       padding-right: 12px;
     }
 
-    [dir='rtl'] & {
+    [dir="rtl"] & {
       padding-left: 12px;
     }
 
     &::after {
       position: absolute;
       right: 0;
-      content: '';
       width: 14px;
       height: 14px;
-      background-image: url('../img/icons/selected--highlighted.svg');
+      content: "";
+      background-image: url("../img/icons/selected--highlighted.svg");
       background-repeat: no-repeat;
       background-position: 0 50%;
       background-size: 14px 14px;
 
-      [dir='rtl'] & {
+      [dir="rtl"] & {
         right: auto;
         left: 0;
       }
@@ -107,8 +108,8 @@
 
 .no-js .cd-user-menu__dropdown {
   width: unset;
-  padding: 0;
   margin-left: 12px;
+  padding: 0;
 
   li {
     display: inline-block;
@@ -117,8 +118,8 @@
 
   a {
     height: $cd-global-header-height;
-    line-height: $cd-global-header-height;
     padding: 0;
+    line-height: $cd-global-header-height;
   }
 
   // Reposition checkmark icon.
