@@ -79,6 +79,7 @@
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
   --cd-font--noto: "Noto Sans", sans-serif;
   --cd-font--noto-kufi: "Noto Kufi Arabic", sans-serif;
+  --cd-font--noto-sc: "Noto Sans", sans-serif;
 
   // Roboto
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
@@ -142,6 +143,7 @@ $cd-font: var(--cd-font);
 $cd-font--system:  var(--cd-font--system);
 $cd-font--noto: var(--cd-font--noto);
 $cd-font--noto-kufi: var(--cd-font--noto-kufi);
+$cd-font--noto-sc: var(--cd-font--noto-sc);
 $cd-font--roboto: var(--cd-font--roboto);
 $cd-font--roboto-condensed: var(--cd-font--roboto-condensed);
 $cd-font--roboto-slab: var(--cd-font--roboto-slab);
