@@ -106,7 +106,7 @@ This projects defines a few `css custom properties` for font families that use g
 
 The fonts are added via libraries (ex: `common_design/fonts-arabic`) defined in `common_design.libraries.yml`.
 
-The fonts can be disabled in the `common_design_subtheme` for example by adding an override in the `common_design_subtheme.info.yml`:
+The fonts can be disabled in the `common_design_subtheme` by adding an override in the `common_design_subtheme.info.yml`:
 
 ```yaml
 libraries-override:
@@ -114,30 +114,16 @@ libraries-override:
   common_design/fonts-arabic: false
 ```
 
-Fonts for other languages like Chinese can be added in the `common_design_subtheme.libraries.yml`:
+Fonts for other languages like Chinese or Russian can be included in the `common_design_subtheme.libraries.yml`:
 
 ```yaml
-# Chinese.
-# @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/chinese
-fonts-chinese:
-  css:
-    theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans+CJK+SC:wght@400;700&display=swap: { type: external, minified: true }
-
 global-styling:
   css:
     theme:
       css/styles.css: {}
   dependencies:
-    - common_design_subtheme/fonts-chinese
-```
-
-and then adding a new font-family in the `common_design_subtheme/sass/cd/_cd-variables.scss`:
-
-```css
-:root {
-  --cd-font--noto-cjk-sc: 'Noto Sans', sans-serif;
-}
+    - common_design/fonts-chinese
+    - common_design/fonts-russian
 ```
 
 ## JS
