@@ -1,0 +1,52 @@
+/* Drupal specific from Classy */
+.field__label {
+  font-weight: 700;
+}
+.field--label-above .field__label {
+  margin-bottom: 0.5em;
+}
+.field--label-inline .field__label,
+.field--label-inline .field__items {
+  float: left; /* LTR */
+}
+.field--label-inline .field__label,
+.field--label-inline > .field__item,
+.field--label-inline .field__items {
+  padding-right: 0.5em;
+}
+[dir="rtl"] .field--label-inline .field__label,
+[dir="rtl"] .field--label-inline .field__items {
+  padding-right: 0;
+  padding-left: 0.5em;
+}
+.field--label-inline .field__label::after {
+  content: ":";
+}
+
+.form-required::after {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0.3em;
+  content: "";
+  vertical-align: super;
+  /* Use a background image to prevent screen readers from announcing the text. */
+  background-image: url("../../img/icons/form-required.svg");
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid var(--cd-contrast-red);
+}
+/* Inline error messages. */
+.form-item--error-message::before {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  content: "";
+  vertical-align: sub;
+  background: url("../../img/icons/form-error.svg") no-repeat;
+  background-size: contain;
+}

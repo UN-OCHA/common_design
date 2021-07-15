@@ -1,0 +1,317 @@
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+
+cd-dropdown:
+  js:
+    js/cd-dropdown.js: {}
+  dependencies:
+    - common_design/cd-polyfill
+
+cd-menu:
+  js:
+    js/cd-menu.js: {}
+  dependencies:
+    - common_design/cd-dropdown
+
+cd-user-menu:
+  js:
+    js/cd-user-menu.js: {}
+  dependencies:
+    - common_design/cd-dropdown
+
+cd-ocha-services:
+  js:
+    js/cd-ocha-services.js: {}
+
+# CD components
+cd-alert:
+  css:
+    component:
+      components/cd-alert/cd-alert.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-article:
+  css:
+    component:
+      components/cd-article/cd-article.css: {}
+
+cd-author:
+  css:
+    component:
+      components/cd-author/cd-author.css: {}
+
+cd-banner:
+  css:
+    component:
+      components/cd-banner/cd-banner.css: {}
+
+cd-bleed:
+  header: true
+  js:
+    components/cd-bleed/cd-bleed.js: {}
+  css:
+    component:
+      components/cd-bleed/cd-bleed.css: { weight: 1 }
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-block-title:
+  css:
+    component:
+      components/cd-block-title/cd-block-title.css: {}
+
+cd-bullet-list:
+  css:
+    component:
+      components/cd-bullet-list/cd-bullet-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-button:
+  css:
+    component:
+      components/cd-button/cd-button.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-byline:
+  css:
+    component:
+      components/cd-byline/cd-byline.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-caption:
+  css:
+    component:
+      components/cd-caption/cd-caption.css: {}
+
+cd-card:
+  css:
+    component:
+      components/cd-card/cd-card.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+    - common_design/cd-object-fit
+
+cd-date:
+  css:
+    component:
+      components/cd-date/cd-date.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-event:
+  css:
+    component:
+      components/cd-event/cd-event.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-facets:
+  css:
+    component:
+      components/cd-facets/cd-facets.css: {}
+
+cd-figure-list:
+  css:
+    component:
+      components/cd-figure-list/cd-figure-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-filter:
+  css:
+    component:
+      components/cd-filter/cd-filter.css: {}
+
+cd-flow:
+  css:
+    component:
+      components/cd-flow/cd-flow.css: {}
+
+cd-form:
+  css:
+    component:
+      components/cd-form/cd-form.css: {}
+      components/cd-form/cd-form--drupal.css: {}
+
+cd-grid:
+  css:
+    component:
+      components/cd-grid/cd-grid.css: {}
+
+cd-hero:
+  css:
+    component:
+      components/cd-hero/cd-hero.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-hero--style-one:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-one.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-hero--style-two:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-two.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-hero--style-three:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-three.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-image-grid:
+  css:
+    component:
+      components/cd-image-grid/cd-image-grid.css: {}
+
+cd-link-list:
+  css:
+    component:
+      components/cd-link-list/cd-link-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-page-title:
+  css:
+    component:
+      components/cd-page-title/cd-page-title.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-pagination:
+  css:
+    component:
+      components/cd-pagination/cd-pagination.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-read-more:
+  css:
+    component:
+      components/cd-read-more/cd-read-more.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-select-a11y:
+  css:
+    theme:
+      components/cd-select-a11y/cd-select-a11y.css: {}
+
+cd-social-links:
+  js:
+    components/cd-social-links/cd-social-links.js: {}
+  css:
+    component:
+      components/cd-social-links/cd-social-links.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-styled-list:
+  css:
+    component:
+      components/cd-styled-list/cd-styled-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-table:
+  css:
+    component:
+      components/cd-table/cd-table.css: {}
+  js:
+    components/cd-table/cd-table.js: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+    - common_design/array-from-polyfill
+
+cd-tag:
+  css:
+    component:
+      components/cd-tag/cd-tag.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-tabs:
+  css:
+    component:
+      components/cd-tabs/cd-tabs.css: {}
+  dependencies:
+    - common_design/css-vars-polyfill
+
+cd-teaser:
+  css:
+    component:
+      components/cd-teaser/cd-teaser.css: {}
+
+cd-title-list:
+  css:
+    component:
+      components/cd-title-list/cd-title-list.css: {}
+
+cd-toc:
+  css:
+    component:
+      components/cd-toc/cd-toc.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-user-list:
+  css:
+    component:
+      components/cd-user-list/cd-user-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-typography:
+  css:
+    component:
+      components/cd-typography/cd-typography.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-utilities:
+  css:
+    component:
+      components/cd-utilities/cd-utilities.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
+cd-object-fit:
+  header: true
+  js:
+    js/cd-object-fit.js: { attributes: { nomodule: true } }
+  dependencies:
+    - core/drupal
+    - core/modernizr
+
+# The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
+cd-polyfill:
+  js:
+    js/cd-polyfill.js: { attributes: { nomodule: true } }
+
+# CSS custom properties polyfill for IE11.
+# https://jhildenbiddle.github.io/css-vars-ponyfill
+css-vars-ponyfill:
+  js:
+    https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2: { type: external, minified: true }
+    js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
+
+# Array.from polyfill for IE11.
+# https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
+array-from-polyfill:
+  js:
+    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
+

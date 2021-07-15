@@ -1,0 +1,114 @@
+<link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
+<link rel=stylesheet href="../cd-typography/cd-typography.css" type="text/css" media=screen>
+<link rel=stylesheet href="../cd-flow/cd-flow.css" type="text/css" media=screen>
+<link rel=stylesheet href="../cd-button/cd-button.css" type="text/css" media=screen>
+<link rel=stylesheet href="cd-form.css" type="text/css" media=screen>
+
+<div class="cd-layout-container">
+  <div class="cd-container">
+
+    <form class="cd-form [ cd-flow ]">
+      <h2 class="visually-hidden">Filter results</h2>
+
+      <div class="cd-form--inline">
+        <div class="cd-form__item">
+          <label for="published-date">Date</label>
+          <input type="text" name="published_date" value="" size="20" maxlength="30" id="published-date" placeholder=" E.g., Sep 10 2019">
+        </div>
+      </div>
+
+      <div class="cd-form--inline">
+        <div class="cd-form__item">
+          <label for="profile">Choose a profile picture:</label>
+          <input type="file" id="profile" name="profile">
+        </div>
+      </div>
+
+      <div class="cd-form--inline">
+        <label for="mySelect">Select element</label>
+        <select id="mySelect" name="options">
+          <option value="opt1">Option one</option>
+          <option value="opt2">Option two with a really long option title</option>
+          <option value="opt3">Option three</option>
+        </select>
+      </div>
+
+      <hr>
+
+      <label for="mySelect2">Select element</label>
+      <select id="mySelect2" name="options">
+        <option value="opt1">Option one</option>
+        <option value="opt2">Option two with a really long option title</option>
+        <option value="opt3">Option three</option>
+      </select>
+
+      <div class="spinner disabled">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+
+      <fieldset>
+        <legend>Title</legend>
+        <ul>
+          <li>
+            <label for="optionOne">
+              <input type="radio" id="optionOne" name="title" value="optionOne">
+              Option one
+            </label>
+          </li>
+          <li>
+            <label for="optionTwo">
+              <input type="radio" id="optionTwo" name="title" value="optionTwo">
+              Option two
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <div class="cd-form--inline">
+        <label for="keyword-search">Keyword search</label>
+        <input title="Enter search term" placeholder="Enter search term" type="text" id="keyword-search" name="keys" value="" size="15" maxlength="128">
+        <input type="submit" value="Search" class="cd-button cd-button--small cd-button--submit">
+      </div>
+
+      <button type="submit" class="cd-button cd-button--uppercase cd-button--export cd-button--icon">
+        <span class="cd-button__text">Export</span>
+        <svg class="cd-icon cd-icon--arrow-down" aria-hidden="true" focusable="false" width="16" height="16">
+          <use xlink:href="#cd-icon--arrow-down"></use>
+        </svg>
+      </button>
+
+      <input type="submit" id="edit-submit" name="op" value="Send message" class="cd-button form-submit">
+      <input type="submit" id="edit-preview" name="op" value="Preview" class="cd-button cd-button--outline form-submit">
+
+      <hr>
+
+      <div class="cd-form--inline">
+        <label class="visually-hidden" for="edit-keys">Search</label>
+        <input placeholder="Enter keywords" type="search" id="edit-keys" name="keys" size="30" maxlength="128">
+        <input type="submit" value="Search" class="cd-button cd-button--submit">
+      </div>
+
+      <hr>
+
+      <div class="cd-layout-with-sidebar-first">
+        <div class="cd-layout-content-wrapper">
+          <div class="cd-layout-sidebar-first">
+            <div class="cd-form--inline">
+              <div class="cd-form__item">
+                <label class="visually-hidden" for="edit-keys">Search</label>
+                <input placeholder="Enter keywords" type="text" id="edit-keys" name="keys" size="30" maxlength="128">
+              </div>
+
+              <div class="cd-form__item">
+                <input type="submit" value="Search" class="cd-button cd-button--submit">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
