@@ -137,7 +137,7 @@ cd-form:
   css:
     component:
       components/cd-form/cd-form.css: {}
-      components/cd-form/cd-form--drupal.css: {}\
+      components/cd-form/cd-form--drupal.css: {}
 
 cd-grid:
   css:
