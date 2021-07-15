@@ -35,13 +35,13 @@ body {
   }
 }
 
-html[lang="ar"] body {
+html[lang="ar"] body,
+html[lang="ru"] body {
   font-family: $cd-font--noto;
 }
 
-html[lang="ru"] body,
-html[lang="zh"] body {
-  font-family: $cd-font--noto-kufi;
+html[lang="zh-hans"] body {
+  font-family: $cd-font--noto-sc;
 }
 
 img {

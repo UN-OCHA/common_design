@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Adjust image path in manifest file
 - Add details about Manifest and PWA to README
+- Add libraries for advanced and multilanguage fonts and README updates to describe usage.
+### Removed
+- Remove Roboto Condensed and Slab fonts and Noto Sans for multilingual from being included by default in `styles.css`.
 
 
 ---
