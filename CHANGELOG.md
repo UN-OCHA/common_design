@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix Views `views-view-grid.html.twig` template override so it adds the `cd-grid` component only when the alignment
 setting from Views UI is set to "horizontal".
 ### Removed
-- Remove grid partial previously included in `styles.scss` as it is not in used. 
+- Remove grid partial previously included in `styles.scss` as it is not in use. 
 
 ---
 
