@@ -18,7 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Adjust image path in manifest file
 - Add details about Manifest and PWA to README
-
+- Add CSS custom property to set the grid size for `cd-image-grid` component
+### Fixed
+- Fix Views `views-view-grid.html.twig` template override so it adds the `cd-grid` component only when the alignment
+setting from Views UI is set to "horizontal".
+### Removed
+- Remove grid partial previously included in `styles.scss` as it is not in used. 
 
 ---
 
