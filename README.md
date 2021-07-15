@@ -108,7 +108,7 @@ This projects defines a few `css custom properties` for font families that use g
 https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1
 
 Roboto font is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`.
-This means Roboto font is compile as part of `styles.css`
+This means Roboto font is compiled as part of `styles.css`
 
 Additional fonts for advanced typography and multilingual are available as libraries (ex: `common_design/fonts-arabic`)
 defined in `common_design.libraries.yml` to include as needed. For performance reasons, we do not include these by
