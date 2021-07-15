@@ -1,0 +1,18 @@
+<div class="cd-site-header">
+  <div class="cd-container cd-site-header__inner">
+
+    {% include '@common_design/cd/cd-header/cd-logo.html.twig' %}
+
+    <div class="cd-site-header__actions">
+
+      {% if page.header_search %}
+
+        {% include '@common_design/cd/cd-header/cd-search.html.twig' %}
+
+      {% endif %}
+
+      {% include '@common_design/cd/cd-header/cd-navigation.html.twig' %}
+
+    </div>
+  </div>
+</div>

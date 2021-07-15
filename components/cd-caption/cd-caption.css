@@ -1,0 +1,17 @@
+.cd-caption {
+  max-width: var(--cd-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: right;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+[dir="rtl"] .cd-caption {
+  text-align: left;
+}
+
+/* If the caption is used for an element that is inside a cd-container, it doesn't need left and right padding */
+.cd-container .cd-caption {
+  padding: 0;
+}

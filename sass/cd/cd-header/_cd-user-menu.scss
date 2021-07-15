@@ -1,0 +1,214 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: User Menu
+//
+// Includes user-centered settings and/or actions.
+//
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-user-menu {
+  margin: 0;
+  list-style: none;
+
+  svg {
+    fill: $cd-white;
+  }
+
+  // Logo icon before the button/link label.
+  // @todo add proper classes to make it more robust.
+  svg + span {
+    [dir="ltr"] & {
+      margin-left: 10px;
+    }
+
+    [dir="rtl"] & {
+      margin-right: 10px;
+    }
+  }
+
+  // Vertical centering fallback for when flex is not supported.
+  // @see .cd-user-menu__item below.
+  .cd-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // Other icons, for example user or help icon.
+  .cd-icon:not(.cd-icon--arrow-down) {
+    width: 14px;
+    height: 14px;
+  }
+
+  li {
+    position: relative;
+    float: left;
+  }
+
+  &--no-language-switcher {
+    li:last-child a,
+    li:last-child button {
+      padding-right: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.cd-user-menu__item {
+  position: relative;
+  display: block;
+  height: $cd-global-header-height;
+  padding: 0 15px;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  color: $cd-white;
+  background: transparent;
+  line-height: $cd-global-header-height;
+
+  // Separator.
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    width: 2px;
+    height: calc(#{$cd-global-header-height} / 3);
+    content: "";
+    transform: translateY(-50%);
+    background: $cd-blue--light;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 3px solid $cd-blue--bright;
+    outline-offset: -2px;
+  }
+
+  .cd-user-menu__btn-label {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    max-width: 60px;
+    text-overflow: ellipsis;
+
+    @include tablet {
+      max-width: unset;
+    }
+  }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    max-width: none;
+    padding: 0 20px;
+  }
+}
+
+.cd-user-menu__dropdown {
+  min-width: 125px;
+}
+
+//——————————————————————————————————————————————————————————————————————————————
+// Drupal selectors
+//——————————————————————————————————————————————————————————————————————————————
+
+// Hide default block titles
+.cd-global-header .block--language h2,
+.cd-global-header .block-menu h2 {
+  @extend .visually-hidden;
+}
+
+.cd-global-header__user-menu > .menu {
+  [dir="ltr"] & {
+    padding-left: 0;
+  }
+
+  [dir="rtl"] & {
+    padding-right: 0;
+  }
+}
+
+.cd-global-header .menu {
+  @extend .cd-user-menu;
+
+  // If there's no language switcher in the Global Header, uncomment this line
+  // to apply special treatment to the last link in the list.
+  //@extend .cd-user-menu--no-language-switcher;
+}
+
+// If there's only the expanded user menu in the Global Header uncomment this rule
+// to apply special treatment to the expanded link in the list.
+//.cd-global-header .menu:only-of-type {
+//  .menu-item--expanded a,
+//  .menu-item--expanded button {
+//    padding-right: 0;
+//
+//    &::after {
+//      content: none;
+//    }
+//  }
+//}
+
+// If there's a second menu in the Global Header and no language switcher,
+// uncomment this rule to apply special treatment to the last link in the list.
+//.cd-global-header__user-menu + .cd-global-header__user-menu {
+//  li:last-child a,
+//  li:last-child button {
+//    padding-right: 0;
+//
+//    &::after {
+//      content: none;
+//    }
+//  }
+//}
+
+.cd-global-header .menu > li a,
+.cd-global-header .menu > li button {
+  @extend .cd-user-menu__item;
+}
+
+.no-js .cd-global-header .menu > li button {
+  @extend .visually-hidden;
+}
+
+// Hides log out menu item when it is beside the expanded menu item.
+// When there are more than 3 menu items, the log out should also be in the dropdown.
+// This is content-specific. See CD-98 for specs.
+.cd-global-header__user-menu .menu-item--expanded + .menu-item {
+  display: none;
+
+  .no-js & {
+    display: block;
+  }
+}
+
+// Second level reset.
+.cd-global-header .menu > li li {
+  float: none;
+}
+
+.cd-global-header .menu > li li a,
+.cd-global-header .menu > li li button {
+  padding: 0 !important;
+}
+
+.cd-global-header .menu > li li a::after {
+  content: none;
+}
+
+.cd-global-header .menu > .menu-item:last-child > ul.menu {
+  right: -1px;
+  left: auto;
+}

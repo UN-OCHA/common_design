@@ -1,0 +1,106 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+
+    {%
+      set menu_classes = [
+        'menu',
+        menu_level > 0 ? 'cd-global-header__dropdown',
+        menu_level > 0 ? 'cd-user-menu__dropdown'
+      ]
+    %}
+
+    <ul{{ attributes.addClass(menu_classes) }}>
+
+    {% for item in items %}
+      {%
+        set classes = [
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+        ]
+      %}
+
+      {% set title = item.title %}
+      {% set id = ('cd-help-menu-item-' ~ menu_level ~ '-' ~ loop.index)|clean_id %}
+
+      <li{{ item.attributes.addClass(classes) }}>
+
+        {#
+          Progressive enhancement: make sure there is always a menu entry.
+          If the menu item has children and javascript is enabled then this will
+          be replaced with a button to show the child menu.
+        #}
+        {% spaceless %}
+        <a href="{{ item.url }}" id="{{ id }}">
+          {# Add the user icon for the first menu item of the root element. #}
+          {% if menu_level == 0 and loop.index == 1 %}
+            <svg class="cd-icon cd-icon--help" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--help"></use>
+            </svg>
+          {% endif %}
+          <span>{{ title }}</span>
+        </a>
+        {% endspaceless %}
+
+        {# If the menu item has children then we mark it as toggable and we'll
+           let the dropdown javascript handle the rest. #}
+        {% if item.is_expanded and item.below %}
+
+          {%
+            set attributes =  create_attribute({
+              'data-cd-toggable': title,
+              'data-cd-icon': 'arrow-down',
+              'data-cd-component': 'cd-help-menu',
+              'data-cd-replace': id,
+              'id': ('cd-help-menu-' ~ menu_level ~ '-' ~ loop.index)|clean_id,
+            })
+          %}
+
+          {# Add the help icon for the first menu item of the root element. #}
+          {% if menu_level == 0 and loop.index == 1 %}
+          {%
+            do attributes
+              .setAttribute('data-cd-logo', 'help')
+              .setAttribute('data-cd-logo-only', '')
+          %}
+          {% endif %}
+
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+
+        {% endif %}
+
+      </li>
+
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

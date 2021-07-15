@@ -1,0 +1,17 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Global Header
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-global-header {
+  .cd-global-header__actions {
+    float: right;
+  }
+
+  &__language-switcher {
+    float: left;
+  }
+
+  &__user-menu {
+    float: left;
+  }
+}

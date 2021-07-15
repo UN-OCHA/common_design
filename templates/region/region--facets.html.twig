@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+  'cd-filter'
+]
+%}
+
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-dropdown') }}
+{{ attach_library('common_design/cd-filter') }}
+{{ attach_library('common_design/cd-facets') }}
+
+{% if content %}
+  <div{{ attributes
+    .setAttribute('id', 'cd-filter')
+    .setAttribute('data-cd-toggable','Modify your search'|t)
+    .setAttribute('data-cd-icon', 'arrow-down')
+    .setAttribute('data-cd-component', 'cd-filter')
+    .setAttribute('data-cd-toggable-keep', 'true')
+    .addClass(classes)
+  }}>
+    <div class="cd-filter__container [ cd-flow ]">
+      <h2 class="visually-hidden">{% trans %}Filter results{% endtrans %}</h2>
+      <div class="cd-filter__form [ cd-flow ]">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+{% endif %}

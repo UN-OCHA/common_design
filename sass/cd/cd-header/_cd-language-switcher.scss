@@ -1,0 +1,130 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Language Switcher
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-language-switcher {
+  position: relative;
+}
+
+// Language switcher button
+.cd-language-switcher__btn {
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+  height: $cd-global-header-height;
+  padding: 0 0 0 15px;
+  line-height: $cd-global-header-height;
+
+  // Language switcher is always on the far edge of the global header.
+  // Cancel the border that we render for other elements.
+  &::after {
+    content: none;
+  }
+
+  // Place toggle indicator on edge of Global Header
+  .cd-icon--arrow-down {
+    min-height: 100%; // IE11 fix.
+    margin: auto; // Center vertically in macOS 10
+  }
+
+  &:focus {
+    outline: 3px solid $cd-blue--bright;
+  }
+
+  @include tablet {
+    padding: 0 0 0 20px;
+  }
+}
+
+.cd-user-menu__dropdown {
+  margin: 0;
+  padding: 12px 24px;
+  list-style: none;
+
+  .cd-language-switcher & {
+    right: 0;
+    left: auto;
+    width: 125px;
+  }
+
+  li {
+    display: block;
+    float: none;
+  }
+
+  li a {
+    @extend .cd-user-menu__dropdown-link;
+
+    color: $cd-white;
+
+    &:hover,
+    &:focus {
+      color: $cd-blue--bright;
+    }
+
+    &:focus {
+      text-decoration: underline;
+      color: $cd-white;
+      outline: 3px solid $cd-blue--bright;
+    }
+  }
+}
+
+.cd-user-menu__dropdown-link {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+
+  &.is-active {
+    position: relative;
+    font-weight: 700;
+
+    [dir="ltr"] & {
+      padding-right: 12px;
+    }
+
+    [dir="rtl"] & {
+      padding-left: 12px;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      width: 14px;
+      height: 14px;
+      content: "";
+      background-image: url("../img/icons/selected--highlighted.svg");
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+      background-size: 14px 14px;
+
+      [dir="rtl"] & {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}
+
+.no-js .cd-user-menu__dropdown {
+  width: unset;
+  margin-left: 12px;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding: 0 12px;
+  }
+
+  a {
+    height: $cd-global-header-height;
+    padding: 0;
+    line-height: $cd-global-header-height;
+  }
+
+  // Reposition checkmark icon.
+  .is-active::after {
+    top: 9px;
+    right: -6px;
+  }
+}

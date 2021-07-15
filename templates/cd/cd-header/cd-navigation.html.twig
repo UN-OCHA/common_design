@@ -1,0 +1,11 @@
+{{ attach_library('common_design/cd-menu') }}
+
+<div class="cd-site-header__nav-holder">
+  {% if page.header_navigation %}
+
+    {# Menu dropdown toggle is created with javascript #}
+
+    {{ page.header_navigation }}
+
+  {% endif %}
+</div>

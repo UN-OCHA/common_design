@@ -1,0 +1,48 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Soft Footer
+//
+// Optional space for a CTA, newsletter sign-up, etc
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-soft-footer {
+  padding: 24px 0;
+  text-align: center;
+  color: $cd-white;
+  background: rgba($cd-rgb-ocha-blue, 0.9);
+
+  h2 {
+    color: $cd-white;
+  }
+
+  a {
+    color: $cd-white;
+
+    &:hover,
+    &:focus {
+      color: $cd-white;
+    }
+
+    &:focus {
+      outline: 3px solid $cd-blue--bright;
+    }
+  }
+}
+
+@include tablet {
+  // Override container layout so flexbox justify-content works.
+  .cd-soft-footer .cd-container::after {
+    content: none;
+  }
+
+  .cd-soft-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@include desktop {
+  .cd-soft-footer {
+    padding: 2rem 0;
+  }
+}

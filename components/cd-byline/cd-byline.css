@@ -1,0 +1,39 @@
+.cd-byline {
+  margin-top: 2rem;/* same as pseudo's padding-bottom */
+}
+
+/* The border is not on the container itself due to potential left/right padding
+ * values that can interfere. Ex: when it has the `content-width` class. */
+.cd-byline::after {
+  display: block;
+  padding-bottom: 2rem;
+  content: "";
+  border-bottom: 1px solid var(--cd-blue-grey);
+}
+
+.cd-byline__wrapper {
+  display: flex;
+}
+
+.cd-byline__image {
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+}
+
+.cd-byline__image img {
+  width: 100%;
+  height: 4rem;
+}
+
+@supports (object-fit: cover) {
+  .cd-byline__image img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.cd-byline__name {
+  font-weight: 700;
+}

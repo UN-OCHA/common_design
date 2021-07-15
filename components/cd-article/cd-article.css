@@ -1,0 +1,9 @@
+.cd-article p {
+  max-width: var(--cd-max-content-width);
+}
+
+.cd-article__page-title {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cd-blue-grey);
+}

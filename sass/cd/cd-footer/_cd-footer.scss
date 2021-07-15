@@ -1,0 +1,172 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Common Design: Footer
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-footer {
+  // Position footer at the bottom of viewport. This might need adjusting based on page layout.
+  grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
+  padding: 3rem 0 0;
+  text-align: center;
+  color: $cd-white;
+  background: $cd-primary;
+  line-height: 1.5;
+
+  a {
+    text-decoration: none;
+    color: $cd-white;
+
+    &.cd-button {
+      color: initial;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $cd-white;
+    }
+
+    &.cd-button:hover,
+    &.cd-button:focus {
+      color: initial;
+    }
+
+    &:focus {
+      outline: 3px solid $cd-blue--bright;
+      outline-offset: 8px;
+    }
+  }
+}
+
+.cd-footer__section {
+  float: none;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+
+  // When we know a section contains no content, we can set an empty variant
+  // to collapse it to zero-height which helps especially on mobile, without
+  // disrupting the layout on larger viewport widths.
+  &--empty {
+    padding-bottom: 0;
+  }
+}
+
+//——————————————————————————————————————————————————————————————————————————————
+// Common Footer: Layout
+//
+// The entire layout for the Common Footer is defined here. Each section has a
+// BEM modifier assigned to it now, and the block-level class
+//——————————————————————————————————————————————————————————————————————————————
+
+.cd-footer__inner {
+  @supports (display: flex) {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.cd-footer__section--menu {
+  @include desktop {
+    float: left;
+    width: 70%;
+    text-align: left;
+
+    [dir="rtl"] & {
+      float: right;
+      text-align: right;
+    }
+  }
+}
+
+.cd-footer__section--social {
+  @include desktop {
+    float: left;
+    width: 30%;
+    text-align: right;
+
+    [dir="rtl"] & {
+      float: right;
+      text-align: left;
+    }
+  }
+}
+
+.cd-footer__section--mandate {
+  @include desktop {
+    float: left;
+    width: 60%;
+    max-width: 780px;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+  }
+}
+
+.cd-footer__section--copyright {
+  @include desktop {
+    float: right;
+    width: 40%;
+    max-width: 350px;
+
+    [dir="rtl"] & {
+      float: left;
+    }
+  }
+}
+
+@supports (display: flex) {
+  .cd-footer__section {
+    float: none;
+  }
+
+  .cd-footer__section--menu {
+    @include tablet {
+      flex: 1 0 100%;
+    }
+
+    @include desktop {
+      flex: 1 0 70%;
+      text-align: left;
+
+      [dir="rtl"] & {
+        text-align: right;
+      }
+    }
+  }
+
+  .cd-footer__section--social {
+    @include tablet {
+      flex: 1 0 100%;
+    }
+
+    @include desktop {
+      flex: 0 1 auto;
+    }
+  }
+
+  .cd-footer__section--mandate {
+    @include tablet {
+      flex: 1 0 100%;
+    }
+
+    @include desktop {
+      flex: 1 0 50%;
+      max-width: 780px;
+      margin: 0;
+    }
+  }
+
+  .cd-footer__section--copyright {
+    @include tablet {
+      flex: 1 0 100%;
+    }
+
+    @include desktop {
+      flex: 0 1 350px;
+      margin: 0;
+    }
+  }
+}

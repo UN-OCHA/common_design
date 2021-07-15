@@ -1,0 +1,10 @@
+{# Displays the site header #}
+
+<header class="cd-header">
+
+  {% block header_content %}
+    {% include '@common_design/cd/cd-header/cd-global-header.html.twig' %}
+    {% include '@common_design/cd/cd-header/cd-site-header.html.twig' %}
+  {% endblock %}
+
+</header>

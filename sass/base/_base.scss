@@ -1,0 +1,56 @@
+//——————————————————————————————————————————————————————————————————————————————
+// Base styles
+//——————————————————————————————————————————————————————————————————————————————
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+input {
+  font-size: 16px;
+}
+
+body {
+  color: $cd-grey--dark;
+  font-family: $cd-font--roboto;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+
+  &.no-scroll {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include desktop {
+    font-size: $cd-font-size--base;
+  }
+}
+
+html[lang="ar"] body {
+  font-family: $cd-font--noto;
+}
+
+html[lang="ru"] body,
+html[lang="zh"] body {
+  font-family: $cd-font--noto-kufi;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media print {
+  #toolbar {
+    display: none !important;
+  }
+}

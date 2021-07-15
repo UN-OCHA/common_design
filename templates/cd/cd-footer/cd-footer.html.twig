@@ -1,0 +1,28 @@
+{# Displays the site footer #}
+
+{{ attach_library('common_design/cd-ocha-services') }}
+
+<footer class="cd-footer" role="contentinfo">
+  <div class="cd-container cd-footer__inner">
+
+    {% block footer_menu %}
+      {% include '@common_design/cd/cd-footer/cd-footer-menu.html.twig' %}
+    {% endblock %}
+    {% block social_menu %}
+      {% include '@common_design/cd/cd-footer/cd-social-menu.html.twig' %}
+    {% endblock %}
+    {% block mandate %}
+      {% include '@common_design/cd/cd-footer/cd-mandate.html.twig' %}
+    {% endblock %}
+    {% block copyright %}
+      {% include '@common_design/cd/cd-footer/cd-copyright.html.twig' %}
+    {% endblock %}
+
+
+    {% block ocha %}
+      {% include '@common_design/cd/cd-header/cd-ocha.html.twig' %}
+    {% endblock %}
+
+  </div>
+</footer>
+

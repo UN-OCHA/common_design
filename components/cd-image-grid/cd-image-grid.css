@@ -1,0 +1,39 @@
+.cd-image-grid > * {
+  display: inline-block;
+  padding: 0.25rem;
+}
+
+@supports (display: flex) {
+  .cd-image-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cd-image-grid > * {
+    display: flex;
+    flex: 0 0 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Prevent img stretching in IE11 */
+  .cd-image-grid > * img {
+    flex-shrink: 0;
+  }
+}
+
+.cd-image-grid img,
+.cd-image-grid svg {
+  width: inherit;
+  max-width: 4rem;
+  height: inherit;
+  max-height: 4rem;
+}
+
+@supports (display: grid) {
+  .cd-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+    grid-gap: 1rem;
+  }
+}
