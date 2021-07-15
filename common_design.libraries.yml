@@ -1,9 +1,8 @@
-# Roboto.
+# Roboto Condensed and Slab.
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
 fonts-advanced:
   css:
     theme:
-      //fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap: { type: external, minified: true }
       //fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap: { type: external, minified: true }
       //fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap: { type: external, minified: true }
 
@@ -20,7 +19,7 @@ fonts-arabic:
 fonts-chinese:
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans+CJK+SC:wght@400;700&display=swap: { type: external, minified: true }
+      //fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap: { type: external, minified: true }
 
 # Russian.
 fonts-russian:
@@ -32,9 +31,6 @@ global-styling:
   css:
     theme:
       css/styles.css: {}
-  dependencies:
-    - common_design/fonts-advanced
-    - common_design/fonts-arabic
 
 cd-dropdown:
   js:
