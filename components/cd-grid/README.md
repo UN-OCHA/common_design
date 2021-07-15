@@ -9,8 +9,8 @@ Default grid is 4 columns.
 The grid items are not width-restricted so with a 2 column grid, the items will
 span 50% of the available width.
 
-@TODO Consider replacing `cd-grid--grow` with a class added to lone grid elements
-with css to make it use the full width:
+@TODO Consider replacing `cd-grid--grow` with a class added to lone grid
+elements with css to make it use the full width:
 ```
       .cd-grid .cd-grid-item--grow {
         flex: 1 0 100%;
@@ -28,16 +28,15 @@ The selectors must be added to the parent div.
 
 ### Using with Drupal Views Grid format
 The Views UI allows configuration for the number of columns, and alignment
-(horizontal or vertical). The `cd-grid` component is used **only when the 
+(horizontal or vertical). The `cd-grid` component is used **only when the
 Horizontal alignment is selected**. The checkbox for **Automatic width
-should be unchecked** and **maximum number of columns is 4**. See the template 
-override in the base theme for `views-view-grid`
+should be unchecked** and **maximum number of columns is 4**. See the template
+override in the base theme for `views-view-grid`.
 
-
-When the Automatic width is enabled, the width of the columns are set inline as
-part of the Drupal Views module. This means the Views Grid layout is not responsive. 
-https://www.drupal.org/project/drupal/issues/3151553
-The vertical alignment, being less common, works as Drupal Views module intends 
+When the 'Automatic width' option is enabled, the width of the columns are set
+inline as part of the Drupal Views module. This means the Views Grid layout is
+not responsive. See https://www.drupal.org/project/drupal/issues/3151553.
+The vertical alignment, being less common, works as Drupal Views module intends
 and does not use the `cd-grid` component.
 
 ### Variants
