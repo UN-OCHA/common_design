@@ -29,11 +29,6 @@ regions:
 #   common_design/cd-teaser:
 #     - common_design_subtheme/cd-teaser
 
-# Exclude Webfonts
-# libraries-override:
-#   common_design/fonts-advanced: false
-#   common_design/fonts-arabic: false
-
 # Custom namespace
 # https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
 # Requires Components module
