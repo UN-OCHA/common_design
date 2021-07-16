@@ -12,7 +12,6 @@ fonts-advanced:
 fonts-arabic:
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap: { type: external, minified: true }
       //fonts.googleapis.com/earlyaccess/notokufiarabic.css: { type: external, minified: true }
 
 # Chinese.
