@@ -3,6 +3,15 @@ global-styling:
     theme:
       css/styles.css: {}
 
+# Arabic font using Dubai.
+# @todo This of the sake of the demo and could be merged with the base theme one
+# or removed.
+fonts-arabic:
+  label: Arabic
+  css:
+    theme:
+      css/fonts-arabic.css: {}
+
 # Custom components
 # cd-teaser:
 #   css:
