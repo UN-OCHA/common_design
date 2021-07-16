@@ -84,8 +84,8 @@
   // Multilingual
   // https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
   --cd-font--noto-sans: "Noto Sans", sans-serif;
-  --cd-font--noto-kufi: "Noto Kufi Arabic", sans-serif;
-  --cd-font--noto-sc: "Noto Sans SC", sans-serif;
+  --cd-font--noto-kufi-arabic: "Noto Kufi Arabic", sans-serif;
+  --cd-font--noto-sans-sc: "Noto Sans SC", sans-serif;
 }
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -145,8 +145,8 @@ $cd-font--roboto: var(--cd-font--roboto);
 $cd-font--roboto-condensed: var(--cd-font--roboto-condensed);
 $cd-font--roboto-slab: var(--cd-font--roboto-slab);
 $cd-font--noto-sans: var(--cd-font--noto-sans);
-$cd-font--noto-kufi: var(--cd-font--noto-kufi);
-$cd-font--noto-sc: var(--cd-font--noto-sc);
+$cd-font--noto-kufi: var(--cd-font--noto-kufi-arabic);
+$cd-font--noto-sc: var(--cd-font--noto-sans-sc);
 
 //——————————————————————————————————————————————————————————————————————————————
 // Font sizes
