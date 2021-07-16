@@ -72,7 +72,7 @@ h6 {
   line-height: 1.2;
 }
 
-html[lang="ar"] {
+[lang="ar"] {
   h1,
   h2,
   h3,
@@ -84,7 +84,7 @@ html[lang="ar"] {
   }
 }
 
-html[lang="ru"] {
+[lang="ru"] {
   h1,
   h2,
   h3,
@@ -97,7 +97,7 @@ html[lang="ru"] {
 }
 
 // @TODO ZH might need special attention.
-html[lang="zh-hans"] {
+[lang="zh-hans"] {
   h1,
   h2,
   h3,
