@@ -1,31 +1,33 @@
 # Roboto Condensed and Slab.
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
 fonts-advanced:
+  label: Advanced
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap: { type: external, minified: true }
-      //fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap: { type: external, minified: true }
+      css/fonts-advanced.css: {}
 
 # Multilingual
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/multi-language-typefaces-1
 # Arabic.
 fonts-arabic:
+  label: Arabic
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap: { type: external, minified: true }
-      //fonts.googleapis.com/earlyaccess/notokufiarabic.css: { type: external, minified: true }
+      css/fonts-arabic.css: {}
 
 # Chinese.
 fonts-chinese:
+  label: Chinese (Simplified)
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap: { type: external, minified: true }
+      css/fonts-chinese.css: {}
 
 # Russian.
 fonts-russian:
+  label: Russian
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap: { type: external, minified: true }
+      css/fonts-russian.css: {}
 
 global-styling:
   css:

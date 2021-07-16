@@ -129,6 +129,9 @@ global-styling:
     - common_design_subtheme/fonts-russian
 ```
 
+The fonts can also be enabled via the base theme or subtheme settings:
+`/admin/appearance/settings/common_design_subtheme`.
+
 ## JS
 
 Javascript files should be added to `js/` and defined as a library in `common_design.libraries.yml`

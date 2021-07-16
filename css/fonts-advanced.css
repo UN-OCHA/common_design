@@ -1,0 +1,15 @@
+/**
+ * Advanced fonts.
+ *
+ * @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/advanced-users
+ */
+
+/* Import the font(s). */
+@import url('//fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400%3B700&display=swap');
+@import url('//fonts.googleapis.com/css2?family=Roboto+Slab:wght@400%3B700&display=swap');
+
+/* Set the css variable(s) for the font(s). */
+:root {
+  --cd-font--roboto-condensed: 'Roboto Condensed', helvetica, arial, sans-serif;
+  --cd-font--roboto-slab: 'Roboto Slab', helvetica, arial, sans-serif;
+}

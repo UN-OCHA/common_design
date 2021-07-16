@@ -14,6 +14,8 @@ use Drupal\user\Entity\User;
  * Implements hook_form_system_theme_settings_alter().
  *
  * Add a setting to the theme for the special handling of the node title.
+ *
+ * Add a setting to enable extra fonts.
  */
 function common_design_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
@@ -59,6 +61,61 @@ function common_design_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => $default,
     '#description'   => t('Select the <strong>page</strong> node view modes for which to use the node title rather than the global page title block.'),
   ];
+
+  // Theme and library services.
+  $theme_handler = \Drupal::service('theme_handler');
+  $library_discovery = \Drupal::service('library.discovery');
+
+  // Get the installed themes.
+  /** @var \Drupal\Core\Extension\Extension[] $theme_list */
+  $theme_list = $theme_handler->listInfo();
+
+  // Get the name of the active theme.
+  $active_theme = \Drupal::theme()->getActiveTheme()->getName();
+
+  // Themes from which to extract the font libraries.
+  $themes = [];
+
+  // Get the name of the base theme. If it's the common design one, then we
+  // add it to the list of themes.
+  $base_theme = $theme_list[$active_theme]->base_theme;
+  if ($base_theme === 'common_design' && isset($theme_list[$base_theme])) {
+    $themes[$base_theme] = $theme_list[$base_theme];
+  }
+
+  // Add the active theme (after the base theme).
+  $themes[$active_theme] = $theme_list[$active_theme];
+
+  // Extract the font libraries.
+  $fonts_options = [];
+  foreach ($themes as $theme_name => $theme_extension) {
+    // Get the list of libraries defined in the theme's libaries.yml.
+    $libraries = $library_discovery->getLibrariesByExtension($theme_name);
+
+    foreach ($libraries as $name => $info) {
+      // @todo we could add a "tags" property instead for example.
+      if (strpos($name, 'fonts-') === 0) {
+        $value = $theme_name . '/' . $name;
+        // We prefix the label with the theme name to differentiate between
+        // libraries from the common design base theme and the ones from the
+        // subtheme.
+        $label = implode(' - ', [
+          $theme_extension->info['name'],
+          $info['label'] ?? ucfirst(substr($name, 6)),
+        ]);
+        $fonts_options[$value] = $label;
+      }
+    }
+  }
+
+  if (!empty($fonts_options)) {
+    $form['common_design']['common_design_fonts'] = [
+      '#type'          => 'checkboxes',
+      '#title'         => t('Enable fonts'),
+      '#options'       => $fonts_options,
+      '#default_value' => theme_get_setting('common_design_fonts') ?? [],
+    ];
+  }
 }
 
 /**
@@ -113,6 +170,8 @@ function common_design_use_node_page_title($view_mode) {
  *
  * Remove the default page title and local tasks blocks if they were already
  * rendered by a page title paragraph or when viewing full article nodes.
+ *
+ * Attach the selected fonts libraries.
  */
 function common_design_preprocess_page(&$variables) {
   // If the node variable is defined then we assume we are on a node page.
@@ -130,6 +189,14 @@ function common_design_preprocess_page(&$variables) {
         'page_title_block',
         'local_tasks_block',
       ]);
+    }
+  }
+
+  // Extra fronts to enable.
+  $fonts = theme_get_setting('common_design_fonts') ?? [];
+  foreach ($fonts as $name => $enabled) {
+    if (!empty($enabled)) {
+      $variables['#attached']['library'][] = $name;
     }
   }
 }
