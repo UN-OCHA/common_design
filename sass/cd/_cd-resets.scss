@@ -13,7 +13,7 @@
   font-weight: 300;
 
   html[lang="ar"] & {
-    font-family: $cd-font--noto-kufi;
+    font-family: $cd-font--noto-kufi-arabic;
   }
 
   html[lang="ru"] & {
@@ -40,7 +40,7 @@
     -webkit-appearance: none;
 
     html[lang="ar"] & {
-      font-family: $cd-font--noto-kufi;
+      font-family: $cd-font--noto-kufi-arabic;
     }
 
     html[lang="ru"] & {
