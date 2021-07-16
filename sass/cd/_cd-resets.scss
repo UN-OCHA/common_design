@@ -16,9 +16,12 @@
     font-family: $cd-font--noto-kufi;
   }
 
-  html[lang="ru"] &,
-  html[lang="zh"] & {
-    font-family: $cd-font--noto;
+  html[lang="ru"] & {
+    font-family: $cd-font--noto-sans;
+  }
+
+  html[lang="zh-hans"] & {
+    font-family: $cd-font--noto-sc;
   }
 
   // box-sizing on all child elements
@@ -40,9 +43,12 @@
       font-family: $cd-font--noto-kufi;
     }
 
-    html[lang="ru"] &,
+    html[lang="ru"] & {
+      font-family: $cd-font--noto-sans;
+    }
+
     html[lang="zh"] & {
-      font-family: $cd-font--noto;
+      font-family: $cd-font--noto-sc;
     }
 
     &[data-cd-toggler] {

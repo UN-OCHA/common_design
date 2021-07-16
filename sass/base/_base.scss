@@ -35,9 +35,12 @@ body {
   }
 }
 
-html[lang="ar"] body,
+html[lang="ar"] body {
+  font-family: $cd-font--noto-kufi;
+}
+
 html[lang="ru"] body {
-  font-family: $cd-font--noto;
+  font-family: $cd-font--noto-sans;
 }
 
 html[lang="zh-hans"] body {
