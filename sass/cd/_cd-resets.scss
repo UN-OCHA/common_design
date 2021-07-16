@@ -12,15 +12,6 @@
   font-size: $cd-font-size--tiny;
   font-weight: 300;
 
-  html[lang="ar"] & {
-    font-family: $cd-font--noto-kufi;
-  }
-
-  html[lang="ru"] &,
-  html[lang="zh"] & {
-    font-family: $cd-font--noto;
-  }
-
   // box-sizing on all child elements
   *,
   *::before,
@@ -35,15 +26,6 @@
     font-size: $cd-font-size--tiny;
     font-weight: 300;
     -webkit-appearance: none;
-
-    html[lang="ar"] & {
-      font-family: $cd-font--noto-kufi;
-    }
-
-    html[lang="ru"] &,
-    html[lang="zh"] & {
-      font-family: $cd-font--noto;
-    }
 
     &[data-cd-toggler] {
       background-color: transparent;

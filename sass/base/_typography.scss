@@ -72,43 +72,6 @@ h6 {
   line-height: 1.2;
 }
 
-html[lang="ar"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $cd-font--noto-kufi;
-    font-weight: 400;
-  }
-}
-
-html[lang="ru"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $cd-font--noto;
-    font-weight: 400;
-  }
-}
-
-// @TODO ZH might need special attention.
-html[lang="zh-hans"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $cd-font--noto-sc;
-    font-weight: 400;
-  }
-}
-
 h1 {
   color: $cd-default-text-color;
   font-size: $cd-font-size--2xmedium;

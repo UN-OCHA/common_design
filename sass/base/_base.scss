@@ -35,15 +35,6 @@ body {
   }
 }
 
-html[lang="ar"] body,
-html[lang="ru"] body {
-  font-family: $cd-font--noto;
-}
-
-html[lang="zh-hans"] body {
-  font-family: $cd-font--noto-sc;
-}
-
 img {
   max-width: 100%;
   height: auto;
