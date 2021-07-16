@@ -35,15 +35,15 @@ body {
   }
 }
 
-[lang="ar"] body {
+[lang="ar"] {
   font-family: $cd-font--noto-kufi-arabic;
 }
 
-[lang="ru"] body {
+[lang="ru"] {
   font-family: $cd-font--noto-sans;
 }
 
-[lang="zh-hans"] body {
+[lang="zh-hans"] {
   font-family: $cd-font--noto-sc;
 }
 
