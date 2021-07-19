@@ -36,6 +36,7 @@ select {
 
 label {
   font-weight: 700;
+  color: var(--cd-black);
 }
 
 input.error,
@@ -116,3 +117,8 @@ input::-webkit-search-decoration {
 .cd-form--inline select {
   width: auto;
 }
+
+.cd-form__item .image-widget {
+  display: inline-block;
+}
+
