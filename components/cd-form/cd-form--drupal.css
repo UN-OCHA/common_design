@@ -50,3 +50,11 @@
   background: url("../../img/icons/form-error.svg") no-repeat;
   background-size: contain;
 }
+
+/* Drupal user form, nested form items vertical rhythm control */
+.user-form {
+  --cd-flow-space: 2rem;
+}
+.cd-form__item.cd-flow > * {
+  --cd-flow-space: 1rem;
+}
