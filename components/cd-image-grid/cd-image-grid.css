@@ -5,7 +5,7 @@
 .cd-image-grid > * {
   display: inline-block;
   /* Padding is a 16th of the grid item size */
-  padding: calc(var(--cd-grid--item-size, 0.25rem) / 16);
+  padding: calc(var(--cd-grid--item-size, 4rem) / 16);
 }
 
 @supports (display: flex) {
