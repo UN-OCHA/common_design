@@ -299,6 +299,13 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     */
     // @codingStandardsIgnoreEnd
   }
+
+  /* Add CD class to Cancel buttons */
+  if (isset($form['actions']['delete'])) {
+    if ($form['actions']['delete']['#button_type'] == 'danger') {
+      $form['actions']['delete']['#attributes']['class'][] = 'cd-button--danger';
+    }
+  }
 }
 
 /**
