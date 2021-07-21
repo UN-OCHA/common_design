@@ -79,6 +79,10 @@ input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+.cd-form {
+  --cd-flow-space: 3rem;
+}
+
 .cd-form--inline {
   margin-bottom: 1rem;
 }
@@ -93,14 +97,28 @@ input::-webkit-search-decoration {
   margin-top: 0.25rem;
 }
 
+.cd-form__item {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--cd-grey--light);
+}
+
+.cd-form__item > label {
+  margin-inline-end: 0.5rem;
+}
+
+/* Nested fields */
+.cd-form__item .cd-form__item {
+  padding-bottom: 1rem;
+  border-bottom: 0 none;
+}
+
 .cd-form__item h4.label {
   margin-bottom: 0;
 }
 
 .cd-form__description {
-  background: var(--cd-grey--light);
   font-size: var(--cd-font-size--small);
-  padding: 0.25rem;
+  padding-top: 1rem;
 }
 
 /* For IE11 */
