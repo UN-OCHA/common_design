@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add details about Manifest and PWA to README
 - Add libraries for advanced and multilanguage fonts and README updates to describe usage.
 - Add CSS custom property to set the grid size for `cd-image-grid` component
+- Move `browserconfig.xml` into sub theme, and adjust image path.
 ### Fixed
 - Fix Views `views-view-grid.html.twig` template override so it adds the `cd-grid` component only when the alignment
 setting from Views UI is set to "horizontal".
