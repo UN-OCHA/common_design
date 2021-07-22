@@ -4,13 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-`Added` for new features.\
-`Changed` for changes in existing functionality.\
-`Deprecated` for soon-to-be removed features.\
-`Removed` for now removed features.\
-`Fixed` for any bug fixes.\
+<pre>
+`Added` for new features.
+`Changed` for changes in existing functionality.
+`Deprecated` for soon-to-be removed features.
+`Removed` for now removed features.
+`Fixed` for any bug fixes.
 `Security` in case of vulnerabilities.
+</pre>
 ---
 
 
@@ -18,7 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Adjust image path in manifest file
 - Add details about Manifest and PWA to README
-
+- Add CSS custom property to set the grid size for `cd-image-grid` component
+### Fixed
+- Fix Views `views-view-grid.html.twig` template override so it adds the `cd-grid` component only when the alignment
+setting from Views UI is set to "horizontal".
+### Removed
+- Remove grid partial previously included in `styles.scss` as it is not in use. 
 
 ---
 
