@@ -14,7 +14,8 @@ We use [npm-version](https://docs.npmjs.com/cli/version) and [semantic versionin
 We aim to facilitate an annual major release. The next release date is June 2022.
 
 We continue to regularly release patches or minor releases to include bug fixes, dependency updates, and component 
-improvements. Refer to the [CHANGELOG](https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md) and/or [Github releases](https://github.com/UN-OCHA/common_design/releases) for the latest tagged 
+improvements. Refer to the [CHANGELOG](https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md) and/or
+[Github releases](https://github.com/UN-OCHA/common_design/releases) for the latest tagged 
 releases.
 
 There may be several breaking changes during the year which result in increments to the major release number. Teams 
@@ -100,10 +101,37 @@ Run `npm run sass:build` to compile production-ready CSS.
 
 Preferably use Jenkins to run the `sass:build` task on build to generate the CSS.
 
+## Fonts
+
+This projects defines a few `css custom properties` for font families that use google fonts in
+`sass/cd/_cd-variables.scss`, in accordance with the brand visual identity as explained at
+https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1
+
+Roboto font is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`.
+This means Roboto font is compiled as part of `styles.css`
+
+Additional fonts for advanced typography and multilingual are available as libraries (ex: `common_design/fonts-arabic`)
+defined in `common_design.libraries.yml` to include as needed. For performance reasons, we do not include these by
+default.
+
+The fonts can be enabled in the `common_design_subtheme` by adding the relevant libraries as a dependency to the global
+styles in the `common_design_subtheme.info.yml`:
+
+```yaml
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+  dependencies:
+    - common_design_subtheme/fonts-advanced
+    - common_design_subtheme/fonts-arabic
+    - common_design_subtheme/fonts-chinese
+    - common_design_subtheme/fonts-russian
+```
 
 ## JS
 
-Javascript files should be added to `js/` and defined as a library in `common_design.ibraries.yml`
+Javascript files should be added to `js/` and defined as a library in `common_design.libraries.yml`
 
 Instead of grouping all JS in one file, each component has its own JS file associated with it. They have been built to 
 be reused, allowing you to mix and match any combination of JS files and use each as a dependency without altering the 
@@ -186,9 +214,9 @@ before the closing body tag. Each icon within the sprite can be referenced by it
 Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-icon--arrow-down`. We can create 
 associated CSS rules to control dimension and fill.
 
-Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow 
-or does not load. 
-If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
+Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow
+or does not load. If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the
+accessibility tree.
 
 We're using https://github.com/jkphl/svg-sprite node package. See https://una.im/svg-icons for more details.
 
