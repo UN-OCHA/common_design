@@ -37,13 +37,13 @@ updates are as clear as possible.
 * Variables for breakpoints, colours, font sizes, fonts, and z-index
 * Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
-* See [v3.0.0 Release notes][v3] and [common_design implementation notes for v2]
-[v2] for more detailed documentation
+* See [v3.0.0 Release notes][v3] and [common_design implementation notes for v2][v2]
+for more detailed documentation
 
 There is a sub theme included in this repo.
    * This can be used as a starting point for implementations. Add components,
    override and extend the base theme as needed. Copy the common_design_subtheme
-   directory to /themes/custom/ and refer to its [README][readme].
+   directory to `/themes/custom/` and refer to its [README][readme].
    All the implementation-specific work should happen in the sub theme.
 
   [icons]: https://brand.unocha.org/d/xEPytAUjC3sH/icons
@@ -71,8 +71,8 @@ utility classes
    templates, or copied into sass partials.
    * Requires Drupal [Components module][components].
    * See [Common Design demo][demo] for Component examples.
-   * Refer to [Components README][components-readme] and the [components used]
-   [components-used] in the theme.
+   * Refer to [Components README][components-readme] and the [components used][components-used]
+   in the theme.
 * Favicons and OCHA branded assets based on https://brand.unocha.org
 * Node workflow for frontend development
   * SASS
@@ -107,8 +107,7 @@ and sourcemaps) or run `npm run sass:compile-dev` to compile.
 5. For twig debug and local development see [Disable Drupal 8 caching during
 development][d8-caching].
 
-Drupal 8 core has helper classes for accessibility [Hide content properly][a11y
--help]
+Drupal 8 core has helper classes for accessibility [Hide content properly][a11y-help]
 
   [d8-caching]: https://www.drupal.org/node/2598914
   [a11y-help]: https://www.drupal.org/docs/8/accessibility/hide-content-properly
