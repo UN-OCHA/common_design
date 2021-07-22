@@ -14,7 +14,8 @@ We use [npm-version](https://docs.npmjs.com/cli/version) and [semantic versionin
 We aim to facilitate an annual major release. The next release date is June 2022.
 
 We continue to regularly release patches or minor releases to include bug fixes, dependency updates, and component 
-improvements. Refer to the [CHANGELOG](https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md) and/or [Github releases](https://github.com/UN-OCHA/common_design/releases) for the latest tagged 
+improvements. Refer to the [CHANGELOG](https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md) and/or
+[Github releases](https://github.com/UN-OCHA/common_design/releases) for the latest tagged 
 releases.
 
 There may be several breaking changes during the year which result in increments to the major release number. Teams 
@@ -102,42 +103,30 @@ Preferably use Jenkins to run the `sass:build` task on build to generate the CSS
 
 ## Fonts
 
-This projects defines a few `css custom properties` for font families that use google fonts in `sass/cs/_cd-variables`, in accordance to the brand visual identity as explained at https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1.
+This projects defines a few `css custom properties` for font families that use google fonts in
+`sass/cd/_cd-variables.scss`, in accordance with the brand visual identity as explained at
+https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1
 
-The fonts are added via libraries (ex: `common_design/fonts-arabic`) defined in `common_design.libraries.yml`.
+Roboto font is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`.
+This means Roboto font is compiled as part of `styles.css`
 
-The fonts can be disabled in the `common_design_subtheme` for example by adding an override in the `common_design_subtheme.info.yml`:
+Additional fonts for advanced typography and multilingual are available as libraries (ex: `common_design/fonts-arabic`)
+defined in `common_design.libraries.yml` to include as needed. For performance reasons, we do not include these by
+default.
+
+The fonts can be enabled in the `common_design_subtheme` by adding the relevant libraries as a dependency to the global
+styles in the `common_design_subtheme.info.yml`:
 
 ```yaml
-libraries-override:
-  # Disable Arabic fonts.
-  common_design/fonts-arabic: false
-```
-
-Fonts for other languages like Chinese can be added in the `common_design_subtheme.libraries.yml`:
-
-```yaml
-# Chinese.
-# @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/chinese
-fonts-chinese:
-  css:
-    theme:
-      //fonts.googleapis.com/css2?family=Noto+Sans+CJK+SC:wght@400;700&display=swap: { type: external, minified: true }
-
 global-styling:
   css:
     theme:
       css/styles.css: {}
   dependencies:
+    - common_design_subtheme/fonts-advanced
+    - common_design_subtheme/fonts-arabic
     - common_design_subtheme/fonts-chinese
-```
-
-and then adding a new font-family in the `common_design_subtheme/sass/cd/_cd-variables.scss`:
-
-```css
-:root {
-  --cd-font--noto-cjk-sc: 'Noto Sans', sans-serif;
-}
+    - common_design_subtheme/fonts-russian
 ```
 
 ## JS
@@ -225,8 +214,9 @@ before the closing body tag. Each icon within the sprite can be referenced by it
 Each icon should have the class `cd-icon` and a BEM selector if needed eg. `cd-icon--arrow-down`. We can create 
 associated CSS rules to control dimension and fill.
 
-Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load.
-If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
+Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow
+or does not load. If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the
+accessibility tree.
 
 We're using https://github.com/jkphl/svg-sprite node package. See https://una.im/svg-icons for more details.
 
