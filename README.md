@@ -201,6 +201,34 @@ Follow [Drupal JS coding standards and best practices][js-standards]
 
   [js-standards]: https://www.drupal.org/docs/develop/standards/javascript
 
+## Fonts
+
+This projects defines a few `css custom properties` for font families that use google fonts in
+`sass/cd/_cd-variables.scss`, in accordance with the brand visual identity as explained at
+https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1
+
+Roboto font is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`.
+This means Roboto font is compiled as part of `styles.css`
+
+Additional fonts for advanced typography and multilingual are available as libraries (ex: `common_design/fonts-arabic`)
+defined in `common_design.libraries.yml` to include as needed. For performance reasons, we do not include these by
+default.
+
+The fonts can be enabled in the `common_design_subtheme` by adding the relevant libraries as a dependency to the global
+styles in the `common_design_subtheme.info.yml`:
+
+```yaml
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+  dependencies:
+    - common_design_subtheme/fonts-advanced
+    - common_design_subtheme/fonts-arabic
+    - common_design_subtheme/fonts-chinese
+    - common_design_subtheme/fonts-russian
+```
+
 ## Task management
 
 This project uses some Node packages for Sass compilation, watching and linting,
