@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+
+---
+
+## [v4.1.0](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.0) - 2021-07-22
 ### Changed
 - Adjust image path in manifest file
 - Add details about Manifest and PWA to README
@@ -28,8 +33,6 @@ setting from Views UI is set to "horizontal".
 ### Removed
 - Remove Roboto Condensed and Slab fonts and Noto Sans for multilingual from being included by default in `styles.css`.
 - Remove grid partial previously included in `styles.scss` as it is not in use. 
-
----
 
 ## [v4.0.6](https://github.com/UN-OCHA/common_design/releases/tag/v4.0.6) - 2021-06-16
 ### Added
