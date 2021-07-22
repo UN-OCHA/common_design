@@ -32,7 +32,7 @@
     options.alignment,
     'cols-' ~ options.columns,
     'clearfix',
-    options.alignment == 'horizontal' and automatic_width == false ? 'cd-grid cd-grid--' ~ options.columns ~ '-col',
+    options.alignment == 'horizontal' and options['automatic_width'] == false ? 'cd-grid cd-grid--' ~ options.columns ~ '-col',
   ]
 %}
 {% if options.row_class_default %}
@@ -52,7 +52,7 @@
   %}
 {% endif %}
 
-{% if (options.alignment == 'horizontal') and (automatic_width == false) %}
+{% if (options.alignment == 'horizontal') and (options['automatic_width'] == false) %}
   {{ attach_library('common_design/cd-grid') }}
 {% endif %}
 
@@ -60,7 +60,7 @@
   <h3>{{ title }}</h3>
 {% endif %}
 <div{{ attributes.addClass(classes) }}>
-  {% if (options.alignment == 'horizontal') and (automatic_width == false) %}
+  {% if (options.alignment == 'horizontal') and (options['automatic_width'] == false) %}
     {% for row in items %}
         {% for column in row.content %}
           <div{{ column.attributes.addClass(col_classes) }}>
@@ -68,7 +68,7 @@
           </div>
         {% endfor %}
     {% endfor %}
-  {% elseif options.alignment == 'horizontal' and (automatic_width == true) %}
+  {% elseif options.alignment == 'horizontal' and (options['automatic_width'] == true) %}
     {% for row in items %}
       <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
