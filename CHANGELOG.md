@@ -20,6 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v4.1.1](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.1) - 2021-07-23
+### Fixed
+- Fix cd-filter component display for IE11 by reinstating previously removed rule to force display when CSS custom
+properties are not supported.
+
 ## [v4.1.0](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.0) - 2021-07-22
 ### Changed
 - Adjust image path in manifest file
