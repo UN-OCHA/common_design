@@ -62,7 +62,8 @@
   text-decoration: underline;
   color: inherit;
 }
-.cd-tag--linked a:hover {
+.cd-tag--linked a:hover,
+.cd-tag--linked a:focus {
   text-decoration: none;
   color: inherit;
 }

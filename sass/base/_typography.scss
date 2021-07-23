@@ -60,34 +60,6 @@
   font-style: italic;
 }
 
-// Noto Kufi Arabic (Arabic)
-// @see http://www.google.com/fonts/earlyaccess
-@font-face {
-  font-family: "Noto Kufi Arabic";
-  src: url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot");
-  src:
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix") format("embedded-opentype"),
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2") format("woff2"),
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff") format("woff"),
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Noto Kufi Arabic";
-  src: url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot");
-  src:
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix") format("embedded-opentype"),
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2") format("woff2"),
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff") format("woff"),
-    url("https://fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 h1,
 h2,
 h3,
@@ -100,28 +72,40 @@ h6 {
   line-height: 1.2;
 }
 
-html[lang="ar"] {
+[lang="ar"] {
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-kufi;
+    font-family: $cd-font--noto-kufi-arabic;
+    font-weight: 400;
+  }
+}
+
+[lang="ru"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $cd-font--noto-sans;
     font-weight: 400;
   }
 }
 
 // @TODO ZH might need special attention.
-html[lang="ru"],
-html[lang="zh"] {
+[lang="zh-hans"] {
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto;
+    font-family: $cd-font--noto-sans-sc;
+    font-weight: 400;
   }
 }
 
