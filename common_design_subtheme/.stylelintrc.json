@@ -7,8 +7,7 @@
     "no-descending-specificity": null,
     "unit-no-unknown": null,
     "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
-    "unit-whitelist": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
-    "plugin/no-browser-hacks": null
+    "unit-whitelist": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"]
   },
   "defaultSeverity": "error"
 }
