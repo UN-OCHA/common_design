@@ -1,0 +1,8 @@
+{
+    "name": "stylelint-no-browser-hacks",
+    "version": "1.0.0",
+    "description": "Dummy module to replace stylelint-no-browser-hacks with a no-op",
+    "files": [
+        "lib/"
+    ]
+}
