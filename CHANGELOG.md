@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Dependency updates for xmldom
+- Fix page title logic to limit the use of the page title to node canonical and preview pages
 
 ---
 
