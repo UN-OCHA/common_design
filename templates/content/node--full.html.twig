@@ -89,10 +89,12 @@
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if title and page %}
-    {# This is not wrapped as this renders the page title block which
-       already wraps the node title in a <h1>. #}
-    {{ title }}
+  {% if page %}
+    {% if title %}
+      {# This is not wrapped as this renders the page title block which
+         already wraps the node title in a <h1>. #}
+      {{ title }}
+    {% endif %}
   {% else %}
     <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
