@@ -333,7 +333,7 @@ cd-polyfill:
 # https://jhildenbiddle.github.io/css-vars-ponyfill
 css-vars-ponyfill:
   js:
-    https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2: { type: external, minified: true }
+    js/vendor/css-vars-ponyfill.js: { attributes: { nomodule: true } }
     js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
 
 # Array.from polyfill for IE11.
