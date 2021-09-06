@@ -385,6 +385,18 @@ This hides it when that happens. */
   }
 }
 
+/* This is needed for IE11
+No support for CSS custom properties means
+--dropdown: false; property on the dropdown container is not recognised
+so the cd-dropdown.js does not run the updateToggler function
+which toggles the data-cd-hidden attribute.
+This displays the dropdown regardless of that attribute value. */
+@media all and (-ms-high-contrast: none) {
+  .cd-filter[data-cd-toggable][data-cd-hidden="true"] {
+    display: block;
+  }
+}
+
 .no-js .cd-filter__form {
   display: block;
 }
