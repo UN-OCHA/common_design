@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add admin and external link SVG icons to SVG icon sprite
-- Add Pull Request template
+- Add and develop Pull Request template
 - Add Release Notes template to CONTRIBUTING.md
 ### Changed
 - Replace external js file with local file for CSS custom property ponyfill
