@@ -33,7 +33,7 @@ How does the proposed change impact existing implementations? What action is nee
 
 ## PR Checklist
 <!--- Put an `x` in all the boxes that apply. -->
-- [ ] I have included a CHANGELOG entry with th PR.
+- [ ] I have included a CHANGELOG entry with the PR.
 - [ ] My PR passes tests.
 - [ ] I have linted my code locally.
 - [ ] My code follows the code style of this project.
