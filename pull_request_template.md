@@ -38,3 +38,4 @@ How does the proposed change impact existing implementations? What action is nee
 - [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
 - [ ] I have updated the documentation accordingly.
+- [ ] I have made changes to the sub theme to reflect those in the base theme
