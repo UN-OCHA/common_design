@@ -333,3 +333,8 @@ See the [Manifest documentation][manifest-docs] for implementation details.
   [brand]: https://web.brand.unocha.org
   [pwa]: https://www.drupal.org/project/pwa
   [manifest-docs]: https://developer.mozilla.org/en-US/docs/Web/Manifest
+
+## Translations
+Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user 
+interface, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in
+the `translations` directory and the [README](https://github.com/UN-OCHA/common_design/translations/README.md).
