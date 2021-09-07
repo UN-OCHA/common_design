@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Dependency updates for xmldom
 - Fix page title logic to limit the use of the page title to node canonical and preview pages
+- Use `form_id` in theme_suggestions_form_alter hook to provide proper theme suggestions
 
 ---
 
