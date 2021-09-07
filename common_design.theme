@@ -185,15 +185,6 @@ function common_design_preprocess_node(&$variables) {
       common_design_set_page_title($variables, $node->label(), FALSE);
     }
   }
-
-  // Compatibility with node template overrides in sites using the CD theme:
-  // we set the title to the label on non-node pages. This label will be
-  // rendered as h2 (depending on the override) similarly to what is done in
-  // the core node template.
-  // @see Drupal/core/themes/stable/templates/content/node.html.twig
-  if (empty($variables['page']) && !isset($variables['title'])) {
-    $variables['title'] = $variables['label'] ?? $node->label();
-  }
 }
 
 /**
