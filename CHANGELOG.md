@@ -20,9 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add admin and external link SVG icons to SVG icon sprite
 - Add and develop Pull Request template
 - Add Release Notes template to CONTRIBUTING.md
+- Add `corejs` version to babel config to prevent warnings during `npm run e2e`
 ### Changed
 - Replace external js file with local file for CSS custom property ponyfill
 - Add missing accessibility-related attributes on SVG icons in the sub theme social media partial
+- node package `dependencies` and `devDependencies` reshuffle to speed up builds and ensure `sass:build` works when `NODE_ENV=production`
+### Removed
+- `stylelint-no-browser-hacks` plugin, also removed from D9. See [#265](https://github.com/UN-OCHA/common_design/issues/265)
 ### Fixed
 - Dependency updates for xmldom
 - Fix page title logic to limit the use of the page title to node canonical and preview pages
