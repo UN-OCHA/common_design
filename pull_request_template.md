@@ -3,11 +3,13 @@
 ## Types of changes
 <!--- Put `:heavy_check_mark:` next to all the types of changes that apply: -->
 
-| ------------------ |------------------------------------------------
-| :heavy_check_mark: | Bug fix (non-breaking change which fixes an issue)
+| :------------------| :---------------------------------------------------------------------------------------------- |
+| :heavy_check_mark: | Improvement (non-breaking change which iterates on an existing feature)
+|                    | Bug fix (non-breaking change which fixes an issue)
 |                    | New feature (non-breaking change which adds functionality)
 |                    | Breaking change (fix or feature that would cause existing functionality to not work as expected)
 |                    | Security update (dependency updates, or to fix a vulnerability)
+
 
 ## Description
 <!--- Describe your changes in detail -->
@@ -34,7 +36,7 @@ How does the proposed change impact existing implementations? What action is nee
 
 ## PR Checklist
 <!--- Put an `x` in all the boxes that apply. -->
-- [ ] I have included a CHANGELOG entry with th PR.
+- [ ] I have included a CHANGELOG entry with the PR.
 - [ ] My PR passes tests.
 - [ ] I have linted my code locally.
 - [ ] My code follows the code style of this project.
