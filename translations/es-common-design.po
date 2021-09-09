@@ -1,0 +1,51 @@
+# Spanish translation of Common Design Header and Footer
+#
+msgid "Skip to main content"
+msgstr "Ir al contenido principal"
+
+msgid "Related Platforms"
+msgstr "Plataformas relacionadas"
+
+msgid "Other OCHA Services"
+msgstr "Otros servicios de OCHA"
+
+msgid "See all"
+msgstr "Ver todo"
+
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+msgid "My account"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "Service provided by"
+msgstr "Servicio ofrecido por"
+
+msgid ""
+"OCHA coordinates the global emergency response to save lives and "
+"protect people in humanitarian crises. We advocate for effective and "
+"principled humanitarian action by all, for all."
+msgstr ""
+"OCHA coordina la respuesta humanitaria a emergencias a nivel global, "
+"para salvar vidas y proteger a las personas en crisis humanitarias. "
+"Abogamos por una acción humanitaria eficaz y basada en principios de "
+"todos y para todos."
+
+msgid ""
+"Except where otherwise noted, content on this site is licensed under a "
+"<a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative "
+"Commons Attribution 4.0</a> International license."
+msgstr ""
+"Salvo que se indique lo contrario, el contenido de este sitio web "
+"tiene una licencia <a "
+"href=\"https://creativecommons.org/licenses/by/4.0/deed.es\">Creative "
+"Commons Attribution 4.0 International</a>."
+
+msgid "OCHA Services"
+msgstr "Servicios de OCHA"
+
+msgid "Creative Commons BY 4.0"
+msgstr "Creative Commons BY 4.0"
