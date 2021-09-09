@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `stylelint-no-browser-hacks` plugin, also removed from D9. See [#265](https://github.com/UN-OCHA/common_design/issues/265)
 ### Fixed
 - Dependency updates for xmldom
+- Dependency updates for axios
 - Fix page title logic to limit the use of the page title to node canonical and preview pages
 - Use `form_id` in theme_suggestions_form_alter hook to provide proper theme suggestions
 
