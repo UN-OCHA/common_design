@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add admin and external link SVG icons to SVG icon sprite
 - Add and develop Pull Request template
 - Add Release Notes template to CONTRIBUTING.md
+- Add Arabic, French, and Spanish translation files for CD Header and Footer user interface strings
 - Add `corejs` version to babel config to prevent warnings during `npm run e2e`
 ### Changed
 - Replace external js file with local file for CSS custom property ponyfill
