@@ -78,6 +78,10 @@ input::-webkit-search-decoration {
 }
 
 .cd-form {
+  --cd-flow-space: 1rem;
+}
+
+.cd-form--styled {
   --cd-flow-space: 3rem;
 }
 
@@ -95,7 +99,18 @@ input::-webkit-search-decoration {
   margin-inline-end: 0.5rem;
 }
 
-.cd-form__item:not('.form-type-checkbox') {
+.cd-form__item:not(.form-type-checkbox):not(.form-type-radio) {
+  padding-bottom: 2rem;
+  /* border-bottom: 2px solid var(--cd-grey--light); */
+}
+/* Alternative to above :not rule */
+.cd-form__item.form-type-textfield {
+  padding-bottom: 2rem;
+  /* border-bottom: 2px solid var(--cd-grey--light); */
+}
+
+/* Proposed: add parent class */
+.cd-form--styled .cd-form__item.form-type-textfield {
   padding-bottom: 2rem;
   border-bottom: 2px solid var(--cd-grey--light);
 }
