@@ -27,9 +27,7 @@ select {
   input[type="tel"],
   input[type="url"],
   input[type="date"],
-  input[type="file"],
-  textarea,
-  select {
+  input[type="file"] {
     width: auto;
   }
 }
@@ -97,7 +95,7 @@ input::-webkit-search-decoration {
   margin-top: 0.25rem;
 }
 
-.cd-form__item {
+.cd-form__item:not('.form-type-checkbox') {
   padding-bottom: 2rem;
   border-bottom: 2px solid var(--cd-grey--light);
 }
