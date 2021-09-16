@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Fixed
+- Dependency update for set-value
 ---
 
 ## [v5.0.0](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.0) - 2021-07-23
