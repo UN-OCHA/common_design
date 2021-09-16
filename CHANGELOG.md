@@ -16,7 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
-### Fixed
+---
+
+## [v5.0.1](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.1) - 2021-09-16
+### Security
 - Dependency update for set-value
 ---
 
@@ -34,11 +37,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - `stylelint-no-browser-hacks` plugin, also removed from D9. See [#265](https://github.com/UN-OCHA/common_design/issues/265)
 ### Fixed
-- Dependency updates for xmldom
-- Dependency updates for axios
 - Fix page title logic to limit the use of the page title to node canonical and preview pages
 - Use `form_id` in theme_suggestions_form_alter hook to provide proper theme suggestions
-
+### Security
+- Dependency updates for xmldom
+- Dependency updates for axios
 ---
 
 ## [v4.1.1](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.1) - 2021-07-23
