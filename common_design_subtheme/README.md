@@ -1,9 +1,9 @@
-# OCHA Common Design sub theme for Drupal 8
+# OCHA Common Design sub theme for Drupal 8/9
 
 A sub theme, extending [common_design](https://github.com/UN-OCHA/common_design) base theme.
 
 This can be used as a starting point for implementations. Add components, override and extend base theme as needed.
-Refer to [Drupal 8 Theming documentation](https://www.drupal.org/docs/8/theming) for more.
+Refer to [Drupal 8+ Theming documentation](https://www.drupal.org/docs/theming-drupal) for more.
 
 Copy this directory to `/themes/custom/`, then rename the `common_design_subtheme.info.yml.example` to
 `common_design_subtheme.info.yml`.
@@ -33,7 +33,7 @@ Override theme preprocess functions by copying from `common_design.theme` and ed
 icons are added, a new icon sprite will need to be generated and the `common_design_preprocess_html` hook used to attach
 the icon sprite to the page will need a new path to reflect the sub theme's icon sprite location.
 
-Refer to [common_design README](https://github.com/UN-OCHA/common_design/#common-design-base-theme-for-drupal-8) for
+Refer to [common_design README](https://github.com/UN-OCHA/common_design/#common-design-base-theme-for-drupal-89) for
 general details about base theme and instructions for compilation. There should be no need to compile the base theme,
 only the sub theme.
 
