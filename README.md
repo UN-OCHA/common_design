@@ -5,7 +5,7 @@
 
 ---
 
-# Common Design base theme for Drupal 8
+# Common Design base theme for Drupal 8/9
 
 ## Releases
 
@@ -104,12 +104,12 @@ to customise the sub theme**
 3. For development, run `npm run sass:watch` (this includes an initial linting
 and sourcemaps) or run `npm run sass:compile-dev` to compile.
 4. Run `npm run sass:build` for final CSS generation.
-5. For twig debug and local development see [Disable Drupal 8 caching during
-development][d8-caching].
+5. For twig debug and local development see [Disable Drupal 8/9 caching during
+development][drupal-caching].
 
-Drupal 8 core has helper classes for accessibility [Hide content properly][a11y-help]
+Drupal 8/9 core have helper classes for accessibility [Hide content properly][a11y-help]
 
-  [d8-caching]: https://www.drupal.org/node/2598914
+  [drupal-caching]: https://www.drupal.org/node/2598914
   [a11y-help]: https://www.drupal.org/docs/8/accessibility/hide-content-properly
 
 ## CSS
@@ -181,7 +181,7 @@ if it were outside your Behavior)
       // ❌ WRONG:
       //
       // Inside this event listener handler, we do not have access to the
-      // Behavior object as `this` so this.sendAlert() will not be defined
+      // Behavior object as `this` so this.sendAlert() will not be defined
       // and the following error will occur:
       //
       // Uncaught TypeError: this.sendAlert is not a function
@@ -237,7 +237,7 @@ See [scripts in package.json][scripts].
 
 To get a list of commands, do `npm run` and it will output all possible options.
 
-  [scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L9
+  [scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L8-L21
 
 ## Icons
 
@@ -248,14 +248,18 @@ SVG as a background-image, depending on context. The sprite technique is
 preferred. We only use svg as a background image when using the sprite isn't
 possible.
 
-1. SVG symbol sprite with the `<use>` element. The SVG sprite is loaded as a
+### 1. SVG sprite
+
+SVG symbol sprite with the `<use>` element. The SVG sprite is loaded as a
 single asset in the `html.html.twig` before the closing body tag. Each icon
 within the sprite can be referenced by its ID eg.
-```
+
+```html
 <svg class="cd-icon cd-icon--arrow-down" width="16" height="16" aria-hidden="true" focusable="false">
   <use xlink:href="#cd-icon--arrow-down"></use>
 </svg>
 ```
+
 Each icon should have the class `cd-icon` and a BEM selector if needed eg.
 `cd-icon--arrow-down`. We can create associated CSS rules to control dimension
 and fill.
@@ -268,7 +272,9 @@ from the accessibility tree.
 We're using https://github.com/jkphl/svg-sprite node package. See
 https://una.im/svg-icons for more details.
 
-2. SVG as a background-image value, usually on a pseudo element. The SVG fill
+### 2. SVG background-image
+
+SVG as a background-image value, usually on a pseudo element. The SVG fill
 colour is added as an attribute in the SVG file. The icons are black by default.
 If you need another color, it's best to copy the icon and manually adjust the
 fill/stroke to suit your needs. Rename the copy to include the color in the
