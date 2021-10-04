@@ -3,10 +3,10 @@
 Clone the `common_design` base theme repo and make a [pull request](https://github.com/UN-OCHA/common_design/pulls)
 against `main` branch for peer review, or open a github [issue](https://github.com/UN-OCHA/common_design/issues).
 
-The PR should follow the [pull request template](https://github.com/UN-OCHA/common_design/pull_request_template.md)
+The PR should follow the [pull request template](https://github.com/UN-OCHA/common_design/blob/main/pull_request_template.md)
 as appropriate.
 
-An item should be added to the [CHANGELOG](https://github.com/UN-OCHA/common_design/CHANGELOG.md) before the PR is
+An item should be added to the [CHANGELOG](https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md) before the PR is
 merged to `main`.
 
 <hr>
