@@ -22,14 +22,14 @@
 .field--label-inline .field__label::after {
   content: ":";
 }
-
+.form-required {
+  display: inline-flex;
+}
 .form-required::after {
-  display: inline-block;
   width: 6px;
   height: 6px;
-  margin: 0 0.3em;
+  margin: 0.3em 0.3em 0;
   content: "";
-  vertical-align: super;
   /* Use a background image to prevent screen readers from announcing the text. */
   background-image: url("../../img/icons/form-required.svg");
   background-repeat: no-repeat;
