@@ -23,7 +23,7 @@
   content: ":";
 }
 .form-required {
-  display: inline-flex;
+  display: flex;
 }
 .form-required::after {
   width: 6px;
