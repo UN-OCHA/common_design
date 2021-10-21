@@ -4,12 +4,15 @@ form .js-media-library-widget .fieldset-wrapper {
   padding: 1rem;
   border: 2px solid var(--cd-blue-grey);
 }
+
 form .js-media-library-widget .field-prefix,
 form .js-media-library-widget .field-suffix {
   display: block;
+}
+form .js-media-library-widget .field-prefix {
   margin-bottom: 1rem;
 }
-form .js-media-library-widget .field-suffix {
+form .js-media-library-widget .field-suffix + .description {
   margin-top: 1rem;
 }
 
