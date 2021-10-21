@@ -131,7 +131,8 @@ form fieldset legend {
   margin-bottom: 0;
 }
 
-.cd-form__description {
+.cd-form__description,
+form .description {
   padding-top: 0.5rem;
   font-size: var(--cd-font-size--small);
 }
