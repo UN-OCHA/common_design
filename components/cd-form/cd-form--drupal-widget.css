@@ -30,6 +30,11 @@ form .image-widget {
     justify-content: center;
   }
 }
+
+.js-media-library-add-form .cd-form__item .image-widget {
+  display: block;
+}
+
 form .image-widget article {
   display: flex;
   flex: 1 0 auto;
