@@ -154,7 +154,7 @@ form .description {
 
 form .form-checkboxes .form-type-checkbox,
 form .form-radios .form-type-radio,
-.field--widget-boolean-checkbox {
+.field--widget-boolean-checkbox > .cd-form__item {
   margin-inline-end: 1rem;
   display: inline-flex;
   align-items: center;
