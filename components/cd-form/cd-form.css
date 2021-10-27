@@ -157,7 +157,12 @@ form .form-radios .form-type-radio,
 .field--widget-boolean-checkbox > .cd-form__item {
   margin-inline-end: 1rem;
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.field--widget-boolean-checkbox > .cd-form__item > .cd-form__description {
+  flex: 1 0 100%;
 }
 
 form .form-type-checkbox label,
