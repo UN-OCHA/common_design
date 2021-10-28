@@ -60,16 +60,16 @@
 }
 
 h4.label {
-  font-size: 1rem;
   margin: 0;
+  font-size: 1rem;
 }
 
 /* Checkboxes */
 .field--widget-boolean-checkbox > .cd-form__item {
-  margin-inline-end: 1rem;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-inline-end: 1rem;
 }
 
 .field--widget-boolean-checkbox > .cd-form__item > .cd-form__description {

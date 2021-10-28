@@ -15,9 +15,9 @@ select {
   max-width: 100%;
   padding: 0.5rem 0.75rem;
   color: var(--cd-grey--dark);
-  font-size: 1rem;
   border: 2px solid var(--cd-blue-grey);
   background: white;
+  font-size: 1rem;
 }
 
 textarea {
@@ -25,6 +25,7 @@ textarea {
   /* Better readability similar to paragraphs. */
   line-height: 1.5;
 }
+
 @media (min-width: 576px) {
   input[type="date"],
   input[type="time"],
@@ -154,14 +155,14 @@ form .description {
 form .form-type-checkbox,
 form .form-checkboxes .form-type-checkbox,
 form .form-radios .form-type-radio {
-  margin-inline-end: 1rem;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-inline-end: 1rem;
 }
 
 form .form-type-checkbox label,
 form .form-type-radio label {
-  font-weight: normal;
   margin-inline-start: 0.5rem;
+  font-weight: normal;
 }
