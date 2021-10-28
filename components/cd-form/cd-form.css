@@ -6,6 +6,7 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 input[type="date"],
+input[type="time"],
 input[type="file"],
 textarea,
 select {
@@ -25,6 +26,8 @@ textarea {
   line-height: 1.5;
 }
 @media (min-width: 576px) {
+  input[type="date"],
+  input[type="time"],
   select {
     width: auto;
   }
@@ -38,14 +41,14 @@ textarea {
   input[type="search"],
   input[type="tel"],
   input[type="url"],
-  input[type="date"],
   input[type="file"] {
     max-width: 50ch;
   }
 }
 
 label,
-fieldset legend {
+fieldset legend,
+.label {
   display: block;
   color: var(--cd-black);
   font-weight: 700;
@@ -82,10 +85,6 @@ input::-webkit-search-cancel-button {
 /* Safari fix */
 input::-webkit-search-decoration {
   -webkit-appearance: none;
-}
-
-details > summary + .cd-form__item {
-  margin-top: 1.5rem;
 }
 
 form fieldset {
@@ -152,40 +151,17 @@ form .description {
   width: auto;
 }
 
+form .form-type-checkbox,
 form .form-checkboxes .form-type-checkbox,
-form .form-radios .form-type-radio,
-.field--widget-boolean-checkbox > .cd-form__item {
+form .form-radios .form-type-radio {
   margin-inline-end: 1rem;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.field--widget-boolean-checkbox > .cd-form__item > .cd-form__description {
-  flex: 1 0 100%;
-}
-
 form .form-type-checkbox label,
 form .form-type-radio label {
   font-weight: normal;
   margin-inline-start: 0.5rem;
-}
-
-/* Form styles for Drupal User forms */
-
-.cd-form--user {
-  --cd-flow-space: 3rem;
-}
-
-.cd-form--user .cd-form__item.form-item-current-pass,
-.cd-form--user .cd-form__item.form-type-textfield,
-.cd-form--user .cd-form__item.form-type-email,
-.cd-form--user .cd-form__item.form-type-managed-file,
-.cd-form--user #password-policy-status,
-.cd-form--user details {
-  padding-bottom: 2rem;
-  border-bottom: 2px solid var(--cd-grey--light);
-}
-.cd-form--user #password-policy-status {
-  --cd-flow-space: 1.5rem;
 }

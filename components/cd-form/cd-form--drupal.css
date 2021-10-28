@@ -51,10 +51,50 @@
   background-size: contain;
 }
 
-/* Drupal user form, nested form items vertical rhythm control */
-/* .user-form { */
-/*  --cd-flow-space: 2rem; */
-/* } */
-/* .cd-form__item.cd-flow > * { */
-/*  --cd-flow-space: 1rem; */
-/* } */
+/* Date and time field */
+.field--type-datetime .fieldset-wrapper > div {
+  display: flex;
+}
+.field--type-datetime .fieldset-wrapper > div > .cd-form__item {
+  margin-inline-end: 0.5rem;
+}
+
+h4.label {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Checkboxes */
+.field--widget-boolean-checkbox > .cd-form__item {
+  margin-inline-end: 1rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.field--widget-boolean-checkbox > .cd-form__item > .cd-form__description {
+  flex: 1 0 100%;
+}
+
+/* Details element for Vertical tabs */
+.vertical-tabs details {
+  padding: 1rem;
+}
+
+/* Form styles for Drupal User forms */
+.cd-form--user {
+  --cd-flow-space: 3rem;
+}
+
+.cd-form--user .cd-form__item.form-item-current-pass,
+.cd-form--user .cd-form__item.form-type-textfield,
+.cd-form--user .cd-form__item.form-type-email,
+.cd-form--user .cd-form__item.form-type-managed-file,
+.cd-form--user #password-policy-status,
+.cd-form--user details {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--cd-grey--light);
+}
+.cd-form--user #password-policy-status {
+  --cd-flow-space: 1.5rem;
+}
