@@ -745,3 +745,18 @@ function common_design_form_taxonomy_term_form_alter(&$form, FormStateInterface 
 function common_design_form_user_form_alter(array &$form, FormStateInterface $form_state) {
   common_design_add_entity_edit_form_theme($form, $form_state);
 }
+
+
+/**
+ * Implemenents hook_preprocess_fieldset().
+ */
+function common_design_preprocess_fieldset(array &$variables) {
+  // Set the visually-hidden class to the legend element itself rather than
+  // its span when the title is supposed to be hidden.
+  // @see template_preprocess_fieldset()
+  if ($variables['title_display'] === 'invisible') {
+    $variables['legend']['attributes']->addClass('visually-hidden');
+    $variables['legend_span']['attributes']->removeClass('visually-hidden');
+  }
+}
+
