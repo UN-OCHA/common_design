@@ -27,7 +27,6 @@ form .image-widget {
   form .image-widget {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
   }
 }
 
@@ -48,21 +47,29 @@ form .image-widget article {
   }
 }
 /* File name */
-form .image-widget article > div {
-  margin-bottom: 16px;
-  font-size: 14px;
+@media (min-width: 576px) {
+  form .image-widget span.file,
+  form .image-widget span.file-size {
+    margin-inline-start: 0.5rem;
+  }
+  form .image-widget span.file-size {
+    margin-inline-end: 0.5rem;
+  }
 }
 
+form .image-widget article > div {
+  margin-bottom: 1rem;
+}
 @media (min-width: 576px) {
+  form .image-widget span.file,
   form .image-widget article > div {
     margin-bottom: 0;
-    font-size: 14px;
   }
 }
 form .image-widget .js-media-library-item-preview {
   max-width: 220px;
   max-height: 147px;
-  margin: 0 0 16px;
+  margin: 0 0 1rem;
 }
 form .image-widget .js-media-library-item-preview img {
   width: auto;
