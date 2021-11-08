@@ -22,7 +22,6 @@ form .image-widget {
   flex-wrap: wrap;
   align-items: flex-start;
 }
-
 @media (min-width: 576px) {
   form .image-widget {
     flex-direction: row;
@@ -40,7 +39,6 @@ form .image-widget article {
   flex-direction: column;
   order: 1;
 }
-
 @media (min-width: 576px) {
   form .image-widget article {
     flex: 1 0 220px;
@@ -84,9 +82,9 @@ form .image-widget .form-submit {
 /* Show/Hide media item weight button */
 .js-media-library-widget-toggle-weight {
   position: absolute;
-  right: 8px;
-  padding: 8px;
-  font-size: 14px;
+  right: 0.25rem;
+  padding: 0.25rem;
+  font-size: var(--cd-font-size--small);
 }
 /* Media item weight */
 form .image-widget .form-type-number {
@@ -96,12 +94,11 @@ form .image-widget .form-type-number {
 form .image-widget .form-type-number input {
   width: 100%;
 }
-
 @media (min-width: 576px) {
   form .image-widget .form-type-number {
     flex: 0 1 100px;
     margin-top: 0;
-    padding: 0 0 0 16px;
+    padding: 0 0 0 1rem;
   }
 }
 /* Media library dialog */
@@ -115,7 +112,7 @@ ul.js-media-library-add-form-added-media li {
   padding: 0;
 }
 .js-media-library-add-form-added-media .form-submit {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 .ui-dialog .ui-dialog-buttonpane button {
   margin: 0;
@@ -133,13 +130,13 @@ ul.js-media-library-add-form-added-media li {
 }
 /* Pagination */
 .view-media-library .js-pager__items {
-  margin: 16px 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   list-style-type: none;
 }
 .view-media-library .js-pager__items li {
   display: inline-block;
-  padding: 0 8px 0 0;
+  padding: 0 0.5rem 0 0;
 }
 
 /* CD form overrides */
