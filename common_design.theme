@@ -380,10 +380,24 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
     // @codingStandardsIgnoreEnd
   }
 
-  /* Add CD button classes to Cancel and Delete buttons */
+  /* Add CD button classes to Cancel and Delete */
   if (isset($form['actions']['delete'])) {
     if ($form['actions']['delete']['#button_type'] == 'danger') {
       $form['actions']['delete']['#attributes']['class'][] = 'cd-button cd-button--danger';
+    }
+  }
+
+  /* Add CD button classes to Delete and Cancel on Node/Term confirmation pages */
+  if ($form['#theme'] == 'confirm_form') {
+    if (isset($form['actions']['submit'])) {
+      if ($form['actions']['submit']['#button_type'] == 'primary') {
+        $form['actions']['submit']['#attributes']['class'][] = 'cd-button cd-button--danger';
+      }
+    }
+    if (isset($form['actions']['cancel'])) {
+      if ($form['actions']['cancel']['#type'] == 'link') {
+        $form['actions']['cancel']['#attributes']['class'][] = 'cd-button cd-button--outline';
+      }
     }
   }
 }
