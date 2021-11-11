@@ -9,7 +9,7 @@ form .js-media-library-widget .field-prefix,
 form .js-media-library-widget .field-suffix {
   display: block;
 }
-form .js-media-library-widget .field-prefix {
+form .js-media-library-widget .field-prefix:not(:empty) {
   margin-bottom: 1rem;
 }
 form .js-media-library-widget .field-suffix + .description {
@@ -82,7 +82,7 @@ form .image-widget .form-submit {
 /* Show/Hide media item weight button */
 .js-media-library-widget-toggle-weight {
   position: absolute;
-  right: 0.25rem;
+  right: 1rem;
   padding: 0.25rem;
   font-size: var(--cd-font-size--small);
 }
