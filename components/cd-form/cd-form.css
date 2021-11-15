@@ -100,7 +100,7 @@ form fieldset legend {
 }
 
 .cd-form {
-  --cd-flow-space: 1rem;
+  --cd-flow-space: 2rem;
 }
 
 .cd-form--inline {
