@@ -124,7 +124,6 @@ form fieldset legend {
 /* Nested fields */
 .cd-form__item .cd-form__item {
   padding-bottom: 1rem;
-  border-bottom: 0 none;
 }
 
 .cd-form__item h4.label {

@@ -76,6 +76,11 @@ h4.label {
   flex: 1 0 100%;
 }
 
+/* Link field */
+.field--type-link .fieldset-wrapper > div {
+  margin-top: 0.5rem;
+}
+
 /* Details element for Vertical tabs */
 .vertical-tabs details {
   padding: 1rem;
@@ -97,4 +102,8 @@ h4.label {
 }
 .cd-form--user #password-policy-status {
   --cd-flow-space: 1.5rem;
+}
+/* Nested fields */
+.cd-form--user .cd-form__item .cd-form__item {
+  border-bottom: 0 none;
 }
