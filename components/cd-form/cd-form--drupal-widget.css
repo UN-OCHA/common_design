@@ -51,7 +51,6 @@ form .image-widget article {
 form .image-widget article > div {
   margin-bottom: 1rem;
 }
-
 @media (min-width: 576px) {
   form .image-widget span.file,
   form .image-widget article > div {
@@ -61,17 +60,11 @@ form .image-widget article > div {
 form .image-widget .js-media-library-item-preview {
   margin: 0 0 1rem;
 }
-form .image-widget .js-media-library-item-preview img {
-  width: 220px;
-  height: auto;
-  margin: 0 auto;
-  object-fit: contain;
-}
+
 form .image-widget .form-submit,
 form .form-managed-file .form-submit {
   order: 2;
 }
-
 @media (max-width: 575px) {
   form .image-widget .form-submit,
   form .form-managed-file .form-submit {
@@ -112,7 +105,6 @@ form .image-widget .form-type-number {
 form .image-widget .form-type-number input {
   width: 100%;
 }
-
 @media (min-width: 576px) {
   form .image-widget .form-type-number {
     flex: 0 1 100px;
@@ -129,10 +121,6 @@ form .image-widget .form-type-number input {
 .tabledrag-toggle-weight {
   padding: 0.25rem;
   font-size: var(--cd-font-size--small);
-}
-.field--type-file table,
-.field--type-image table {
-  margin-bottom: 1rem;
 }
 /* Table drag */
 a.tabledrag-handle .handle {
@@ -188,10 +176,6 @@ ul.js-media-library-add-form-added-media li {
 .view-media-library .cd-form--inline .cd-form__item {
   display: block;
 }
-.js-media-library-add-form .cd-form__item .image-widget {
-  display: block;
-}
-
 @media (min-width: 768px) {
   .view-media-library .cd-form--inline {
     display: flex;
@@ -205,4 +189,12 @@ ul.js-media-library-add-form-added-media li {
     display: flex;
     flex-direction: column;
   }
+}
+
+.js-media-library-add-form .cd-form__item .image-widget {
+  display: block;
+}
+
+.cd-form .cd-table {
+  margin-bottom: 1rem;
 }
