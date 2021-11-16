@@ -51,6 +51,7 @@ form .image-widget article {
 form .image-widget article > div {
   margin-bottom: 1rem;
 }
+
 @media (min-width: 576px) {
   form .image-widget span.file,
   form .image-widget article > div {
@@ -65,6 +66,7 @@ form .image-widget .form-submit,
 form .form-managed-file .form-submit {
   order: 2;
 }
+
 @media (max-width: 575px) {
   form .image-widget .form-submit,
   form .form-managed-file .form-submit {
@@ -105,6 +107,7 @@ form .image-widget .form-type-number {
 form .image-widget .form-type-number input {
   width: 100%;
 }
+
 @media (min-width: 576px) {
   form .image-widget .form-type-number {
     flex: 0 1 100px;
@@ -176,6 +179,7 @@ ul.js-media-library-add-form-added-media li {
 .view-media-library .cd-form--inline .cd-form__item {
   display: block;
 }
+
 @media (min-width: 768px) {
   .view-media-library .cd-form--inline {
     display: flex;
