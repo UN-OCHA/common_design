@@ -90,8 +90,8 @@ h4.label {
   background-color: var(--cd-primary-color);
 }
 .form-wrapper .paragraphs-dropdown-action.cd-button {
-  margin: 0;
   width: 100%;
+  margin: 0;
 }
 .form-wrapper .paragraphs-dropdown-action.cd-button + .cd-button {
   margin-block-start: 0;

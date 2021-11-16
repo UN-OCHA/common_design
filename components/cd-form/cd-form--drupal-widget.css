@@ -23,6 +23,7 @@ form .form-managed-file {
   flex-wrap: wrap;
   align-items: flex-start;
 }
+
 @media (min-width: 576px) {
   form .form-managed-file {
     flex-direction: row;
@@ -50,6 +51,7 @@ form .image-widget article {
 form .image-widget article > div {
   margin-bottom: 1rem;
 }
+
 @media (min-width: 576px) {
   form .image-widget span.file,
   form .image-widget article > div {
@@ -69,10 +71,11 @@ form .image-widget .form-submit,
 form .form-managed-file .form-submit {
   order: 2;
 }
+
 @media (max-width: 575px) {
   form .image-widget .form-submit,
   form .form-managed-file .form-submit {
-  margin-top: 1rem;
+    margin-top: 1rem;
   }
 }
 
@@ -82,9 +85,9 @@ form .form-managed-file .form-submit {
 }
 /* Alt text field and/or file description field */
 .form-managed-file .form-type-textfield {
-  margin-top: 0.5rem;
-  order: 4;
   flex: 1 0 100%;
+  order: 4;
+  margin-top: 0.5rem;
 }
 .form-managed-file .form-type-checkbox {
   padding-bottom: 0;
@@ -109,6 +112,7 @@ form .image-widget .form-type-number {
 form .image-widget .form-type-number input {
   width: 100%;
 }
+
 @media (min-width: 576px) {
   form .image-widget .form-type-number {
     flex: 0 1 100px;
@@ -161,8 +165,8 @@ ul.js-media-library-add-form-added-media li {
 }
 .js-media-library-item {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 /* File name */
 .view-media-library .field-content article > div {
@@ -187,6 +191,7 @@ ul.js-media-library-add-form-added-media li {
 .js-media-library-add-form .cd-form__item .image-widget {
   display: block;
 }
+
 @media (min-width: 768px) {
   .view-media-library .cd-form--inline {
     display: flex;
