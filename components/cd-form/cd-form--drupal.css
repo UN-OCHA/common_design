@@ -81,6 +81,25 @@ h4.label {
   margin-top: 0.5rem;
 }
 
+/* Drupal Paragraphs */
+.paragraphs-dropbutton-wrapper,
+.field--widget-paragraphs .field-add-more-submit {
+  margin-top: 0.5rem;
+}
+.paragraphs-dropdown-actions {
+  background-color: var(--cd-primary-color);
+}
+.form-wrapper .paragraphs-dropdown-action.cd-button {
+  margin: 0;
+  width: 100%;
+}
+.form-wrapper .paragraphs-dropdown-action.cd-button + .cd-button {
+  margin-block-start: 0;
+}
+.paragraphs-subform > div {
+  margin-top: 0.5rem;
+}
+
 /* Details element for Vertical tabs */
 .vertical-tabs details {
   padding: 1rem;
