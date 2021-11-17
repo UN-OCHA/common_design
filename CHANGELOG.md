@@ -14,8 +14,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 </pre>
 ---
 
-
 ## [Unreleased]
+### Added
+- Add theme functions and template overrides for Node, Taxonomy term and user edit forms
+- Add template overrides for the date field, dataset table, media library item, radio element, and the generic form element, to add classes and attach CD libraries
+- Expand form and field visual styles in `cd-form` component and add some basic layout rules for some elements like the Image and File fields.
+- Add `ch` unit to `unit-allowed-list` stylelint configuration
+- Expand `form alter` function to add CD button variant classes for Cancel and Delete buttons
+- Expand `cd-form` README to explain the use of CubeCSS and `cd-flow` component to adjust vertical rhythm for forms
+
+### Removed
+- Remove `unit-whitelist` from stylelint configuration as it is deprecated
+- Remove `plugin/no-browser-hacks` from sub theme stylelint configuration. See [issues #265](https://github.com/UN-OCHA/common_design/issues/265). The base theme and sub theme are now tailored for >= Drupal 9.2
+
+
 ---
 
 ## [v5.0.0](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.0) - 2021-07-23
