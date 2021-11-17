@@ -22,15 +22,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `ch` unit to `unit-allowed-list` stylelint configuration
 - Expand `form alter` function to add CD button variant classes for Cancel and Delete buttons
 - Expand `cd-form` README to explain the use of CubeCSS and `cd-flow` component to adjust vertical rhythm for forms
-
+### Changed
+- Mention D9 in README
+- Fix some links in `CONTRIBUTING.md`
 ### Removed
 - Remove `unit-whitelist` from stylelint configuration as it is deprecated
 - Remove `plugin/no-browser-hacks` from sub theme stylelint configuration. See [issues #265](https://github.com/UN-OCHA/common_design/issues/265). The base theme and sub theme are now tailored for >= Drupal 9.2
-
+### Security
+- Dependency updates for nth-check
 
 ---
 
-## [v5.0.0](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.0) - 2021-07-23
+## [v5.0.1](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.1) - 2021-09-16
+### Security
+- Dependency update for set-value
+
+## [v5.0.0](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.0) - 2021-09-13
 ### Added
 - Add admin and external link SVG icons to SVG icon sprite
 - Add and develop Pull Request template
@@ -44,11 +51,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - `stylelint-no-browser-hacks` plugin, also removed from D9. See [#265](https://github.com/UN-OCHA/common_design/issues/265)
 ### Fixed
-- Dependency updates for xmldom
-- Dependency updates for axios
 - Fix page title logic to limit the use of the page title to node canonical and preview pages
 - Use `form_id` in theme_suggestions_form_alter hook to provide proper theme suggestions
-
+### Security
+- Dependency updates for xmldom
+- Dependency updates for axios
 ---
 
 ## [v4.1.1](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.1) - 2021-07-23
