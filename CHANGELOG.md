@@ -1,5 +1,21 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [5.1.0](https://github.com/UN-OCHA/common_design/compare/v3.0.6...v5.1.0) (2021-11-18)
+
+
+### Features
+
+* **team:** CD-000 add conventional commits package ([88051f8](https://github.com/UN-OCHA/common_design/commit/88051f801987ba59183668a0a7ae15db463e7342))
+
+
+### Bug Fixes
+
+* **scripts:** CD-000 add release script to run standard-version ([faefa13](https://github.com/UN-OCHA/common_design/commit/faefa13ac3e33d71f6e4f7b8e557c8e4639222ca))
+
+# Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
