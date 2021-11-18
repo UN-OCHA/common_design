@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 <pre>
 `Added` for new features.
 `Changed` for changes in existing functionality.
@@ -66,7 +69,7 @@ properties are not supported.
 setting from Views UI is set to "horizontal".
 ### Removed
 - Remove Roboto Condensed and Slab fonts and Noto Sans for multilingual from being included by default in `styles.css`.
-- Remove grid partial previously included in `styles.scss` as it is not in use. 
+- Remove grid partial previously included in `styles.scss` as it is not in use.
 
 ## [v4.0.6](https://github.com/UN-OCHA/common_design/releases/tag/v4.0.6) - 2021-06-16
 ### Added
@@ -83,5 +86,3 @@ setting from Views UI is set to "horizontal".
 - Dependabot Bump `ws` from 7.4.4 to 7.4.6
 - `css-what` as dev dependency for svg-sprite
 - `trim-newlines` for stylelint-no-browser-hacks
-
-

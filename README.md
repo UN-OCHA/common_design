@@ -9,7 +9,8 @@
 
 ## Releases
 
-We use [npm-version][npm] and [semantic versioning][semver]
+We use [npm-version][npm] and [semantic versioning][semver] for versioning, and
+[standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines and to generate the [CHANGELOG][log].
 
 We aim to facilitate an annual major release. The next release date is June
 2022.
@@ -341,6 +342,6 @@ See the [Manifest documentation][manifest-docs] for implementation details.
   [manifest-docs]: https://developer.mozilla.org/en-US/docs/Web/Manifest
 
 ## Translations
-Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user 
+Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user
 interface, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in
 the `translations` directory and the [README](https://github.com/UN-OCHA/common_design/translations/README.md).
