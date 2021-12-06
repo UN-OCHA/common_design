@@ -16,9 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Added
+- Add `ch` unit to `unit-allowed-list` stylelint configuration
 ### Changed
 - Mention D9 in README
 - Fix some links in `CONTRIBUTING.md`
+### Removed
+- Remove `unit-whitelist` from stylelint configuration as it is deprecated
+- Remove `plugin/no-browser-hacks` from sub theme stylelint configuration. See [issues #265](https://github.com/UN-OCHA/common_design/issues/265).
+The base theme and sub theme are now tailored for >= Drupal 9.2
 ### Security
 - Dependency updates for nth-check
 ---
