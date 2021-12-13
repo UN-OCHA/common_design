@@ -159,9 +159,16 @@ form .form-radios .form-type-radio {
   align-items: center;
   margin-inline-end: 1rem;
 }
-
 form .form-type-checkbox label,
 form .form-type-radio label {
   margin-inline-start: 0.5rem;
   font-weight: normal;
+}
+/* Break line and span 100% */
+form .form-type-checkbox > .cd-form__description {
+  flex: 1 0 100%;
+}
+/* Multiple checkboxes */
+form .form-type-checkbox + .form-type-checkbox {
+  margin-top: 1rem;
 }
