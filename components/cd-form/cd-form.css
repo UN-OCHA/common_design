@@ -168,7 +168,7 @@ form .form-type-radio label {
 form .form-type-checkbox > .cd-form__description {
   flex: 1 0 100%;
 }
-/* Multiple checkboxes */
-form .form-type-checkbox + .form-type-checkbox {
+/* Multiple checkboxes, displayed vertically */
+form .fieldset-wrapper > .form-type-checkbox + .form-type-checkbox {
   margin-top: 1rem;
 }
