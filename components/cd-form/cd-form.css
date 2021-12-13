@@ -172,3 +172,19 @@ form .form-type-checkbox > .cd-form__description {
 form .fieldset-wrapper > .form-type-checkbox + .form-type-checkbox {
   margin-top: 1rem;
 }
+
+/* Revision table dropdown button and list */
+.js .dropbutton-multiple .dropbutton {
+  padding: 0 1.5rem;
+}
+.js .dropbutton-multiple.open .dropbutton {
+  padding: 0 1.5rem 1rem;
+  border: 2px solid var(--cd-blue-grey);
+  border-right: 0 none;
+  background: white;
+}
+.js .dropbutton-multiple.open .dropbutton-toggle button {
+  border: 2px solid var(--cd-blue-grey);
+  border-left: 0 none;
+  background: white;
+}
