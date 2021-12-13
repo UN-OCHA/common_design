@@ -78,18 +78,6 @@ h4.label {
   font-size: inherit;
 }
 
-/* Checkboxes */
-.field--widget-boolean-checkbox > .cd-form__item {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-inline-end: 1rem;
-}
-
-.field--widget-boolean-checkbox > .cd-form__item > .cd-form__description {
-  flex: 1 0 100%;
-}
-
 /* Link field */
 .field--type-link .fieldset-wrapper > div {
   margin-top: 0.5rem;
