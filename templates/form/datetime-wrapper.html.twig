@@ -25,9 +25,7 @@
 {% endif %}
 {{ content }}
 {% if errors %}
-  <div class="form-item--error-message">
-    <strong>{{ errors }}</strong>
-  </div>
+  <div class="form-item--error-message cd-form__error-message">{{ errors }}</div>
 {% endif %}
 {% if description %}
   <div{{ description_attributes.addClass('description', 'cd-form__description') }}>
