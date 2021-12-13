@@ -41,14 +41,29 @@
   border: 2px solid var(--cd-contrast-red);
 }
 /* Inline error messages. */
+.cd-form__error-message,
+.form-item--error-message {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--cd-red--light);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.cd-form__error-message::before,
 .form-item--error-message::before {
   display: inline-block;
   width: 14px;
   height: 14px;
+  margin-inline-end: 0.25rem;
   content: "";
-  vertical-align: sub;
   background: url("../../img/icons/form-error.svg") no-repeat;
   background-size: contain;
+}
+.cd-form__error-message ul,
+.form-item--error-message ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* Date and time field */
