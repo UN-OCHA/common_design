@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `ch` unit to `unit-allowed-list` stylelint configuration
 - Expand `form alter` function to add CD button variant classes for Cancel and Delete buttons
 - Expand `cd-form` README to explain the use of CubeCSS and `cd-flow` component to adjust vertical rhythm for forms
+- Add `cd-dropbutton` component that extends core library, for Drupal actions like reverting and deleting revisions
 ### Changed
 - Mention D9 in README
 - Fix some links in `CONTRIBUTING.md`
