@@ -154,7 +154,8 @@ ul.js-media-library-add-form-added-media li {
   border-width: 2px;
   border-color: inherit;
 }
-.js-media-library-item {
+.js-media-library-item.image-widget,
+.js-media-library-item.views-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
