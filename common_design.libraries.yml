@@ -166,6 +166,11 @@ cd-form:
     component:
       components/cd-form/cd-form.css: {}
 
+cd-form--preview:
+  css:
+    component:
+      components/cd-form/cd-form--preview.css: {}
+
 cd-grid:
   css:
     component:
