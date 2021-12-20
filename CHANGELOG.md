@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Added
+- `cd-form--preview` component and template override for Drupal node and term forms preview.
 ### Security
 - Dependency updates for json-schema
 
