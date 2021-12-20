@@ -17,6 +17,10 @@
   color: var(--cd-white);
   line-height: 40px;
 }
+.node-preview-container .form-type-select,
+.term-preview-container .form-type-select {
+  margin-left: 0;
+}
 .node-preview-form-select .node-preview-backlink,
 .term-preview-form-select .term-preview-backlink {
   position: absolute;
@@ -41,10 +45,11 @@
   /* Or hide View mode select element */
   /* display: none; */
   position: absolute;
-  top: 0.5rem;
+  top: 0;
   left: 0.5rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .node-preview-form-select .form-item-view-mode label,
 .term-preview-form-select .form-item-view-mode label {
