@@ -300,10 +300,10 @@ http://realfavicongenerator.net/ is a good tool for generating favicons.
 ## Testing
 ### What we test
 See [Browsers to test](https://docs.google.com/document/d/1lN0kLOkgfEAmdGODZ0PzLxiAr0Z-87C4ytet6F4GIuw) and 
-[Draft - Supporting a global audience](https://docs.google.com/document/d/1AjKtlwUuJhZpbSrPs-nku3ECnMyZ67m9A1Lh05w7xM4/)
+[Draft - Supporting a global audience](https://docs.google.com/document/d/1AjKtlwUuJhZpbSrPs-nku3ECnMyZ67m9A1Lh05w7xM4/).
 
-We use [browserstack](https://www.browserstack.com/) for browser and device testing. We can test using our local
-development environments, select specific browsers for manual testing, and generate screenshots of many browsers at once.
+We use [browserstack](https://www.browserstack.com/) for browser and device testing. We can test using our [local
+development environments](https://www.browserstack.com/docs/live/local-testing), select specific browsers for manual testing, and generate screenshots of many browsers at once.
 Join the Flowdock [Developers](https://www.flowdock.com/app/unocha/developers) channel for access.
 
 ### How we test
