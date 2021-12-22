@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Security
 - Dependency updates for json-schema
+- Update xmldom package published to npm instead of github
+- Upgrade core-js
 
 ---
 
