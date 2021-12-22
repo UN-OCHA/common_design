@@ -319,6 +319,8 @@ projects.
 Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then 
 run the e2e tests.
 
+There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526](https://humanitarian.atlassian.net/browse/OPS-7526)
+
 ### E2E testing
 
 ```sh
