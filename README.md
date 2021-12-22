@@ -313,7 +313,7 @@ There is a [repo for Visual Regression testing](https://github.com/UN-OCHA/ocha_
 we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, 
 and capture keypress, hover and click actions.
 
-Depending on the project, we run tests via TravisCI. For the [common-design-site repo](https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45) 
+Depending on the project, we run tests via [Travis CI](https://travis-ci.org/). For the [common-design-site repo](https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45) 
 we run PHP lint and Drupal coding standards checks, and compile the theme's sass files. These are common among most 
 projects.
 Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then 
