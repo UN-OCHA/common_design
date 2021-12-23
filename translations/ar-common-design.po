@@ -1,0 +1,56 @@
+# Arabic translation of Common Design Header and Footer
+#
+msgid "Skip to main content"
+msgstr "اذهب الى المحتوى الرئيسي"
+
+msgid "Related Platforms"
+msgstr "المنصات ذات الصلة"
+
+msgid "Other OCHA Services"
+msgstr ""
+"الخدمات الأخرى لمكتب تنسيق الشؤون "
+"الإنسانية"
+
+msgid "See all"
+msgstr "الإطلاع على الكل"
+
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+msgid "My account"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "Service provided by"
+msgstr "الخدمة مقدمة من قبل"
+
+msgid ""
+"OCHA coordinates the global emergency response to save lives and "
+"protect people in humanitarian crises. We advocate for effective and "
+"principled humanitarian action by all, for all."
+msgstr ""
+"ينسق مكتب تنسيق الشؤون الإنسانية "
+"الاستجابة العالمية للطوارئ لإنقاذ "
+"الأرواح وحماية الأشخاص في الأزمات "
+"الإنسانية. نحن ندعو إلى العمل الإنساني "
+"الفعال والقائم على المبادئ من قبل "
+"الجميع وللجميع."
+
+msgid ""
+"Except where otherwise noted, content on this site is licensed under a "
+"<a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative "
+"Commons Attribution 4.0</a> International license."
+msgstr ""
+"ما لم يذكر خلاف ذلك، إن المحتوى "
+"الموجود على هذا الموقع مرخص بموجب "
+"ترخيص <a "
+"href=\"https://creativecommons.org/licenses/by/4.0/deed.ar\">Creative "
+"Commons Attribution 4.0 International License</a>."
+
+msgid "OCHA Services"
+msgstr "خدمات مكتب تنسيق الشؤون الإنسانية"
+
+msgid "Creative Commons BY 4.0"
+msgstr "Creative Commons BY 4.0"

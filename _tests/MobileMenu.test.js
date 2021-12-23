@@ -1,8 +1,8 @@
-import env from './_env';
+import env from './_env'
 
 describe('MobileMenu', () => {
   beforeAll(async() => {
-    await page.goto(`${env.baseUrl}`);
+    await page.goto(env.baseUrl);
   });
 
   it('should expand when clicked', async() => {

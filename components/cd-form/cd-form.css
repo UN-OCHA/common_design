@@ -88,8 +88,8 @@ input::-webkit-search-decoration {
 }
 
 .cd-form--inline label {
-  margin-inline-end: 0.5rem;
   margin-top: 0.25rem;
+  margin-inline-end: 0.5rem;
 }
 
 /* For IE11 */

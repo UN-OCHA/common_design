@@ -115,20 +115,40 @@ function common_design_use_node_page_title($view_mode) {
  * rendered by a page title paragraph or when viewing full article nodes.
  */
 function common_design_preprocess_page(&$variables) {
-  // If the node variable is defined then we assume we are on a node page.
-  // We retrieve the view mode for the page and compare it against the settings
-  // to render the page title inside the node. If so, we hide the page title
-  // and local tasks blocks from their original region in the page.
-  if (isset($variables['node']) && is_a($variables['node'], '\Drupal\node\NodeInterface')) {
-    // This gives us an array with the page view mode for the node.
-    $build = \Drupal::entityTypeManager()
-      ->getViewBuilder('node')
-      ->view($variables['node']);
+  $route_match = \Drupal::routeMatch();
+  $route_name = $route_match->getRouteName();
 
-    if (common_design_use_node_page_title($build['#view_mode'] ?? '')) {
+  // Retrieve the view mode for the node page or preview page.
+  $view_mode = '';
+  if ($route_name === 'entity.node.canonical') {
+    $node = $route_match->getParameter('node');
+    if (!empty($node)) {
+      // This gives us an array with the page view mode for the node.
+      $build = \Drupal::entityTypeManager()
+        ->getViewBuilder('node')
+        ->view($node);
+
+      $view_mode = $build['#view_mode'] ?? '';
+    }
+  }
+  elseif ($route_name === 'entity.node.preview') {
+    $view_mode = $route_match->getParameter('view_mode_id');
+  }
+
+  // If the view mode was selected to use the page title block, then
+  // we remove the original page title block and local tasks blocks.
+  // @see common_design_preprocess_node().
+  // @see common_design_set_page_title().
+  if (common_design_use_node_page_title($view_mode)) {
+    if ($route_name === 'entity.node.canonical') {
       common_design_hide_rendered_blocks_from_page($variables, [
         'page_title_block',
         'local_tasks_block',
+      ]);
+    }
+    elseif ($route_name === 'entity.node.preview') {
+      common_design_hide_rendered_blocks_from_page($variables, [
+        'page_title_block',
       ]);
     }
   }
@@ -137,26 +157,81 @@ function common_design_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_node().
  *
- * Use the page title block for the title and display the local tasks below it.
- * We use common_design_get_block_render_array() that will cache the
- * render array of the blocks so that they are not re-rendered and displayed
- * again.
+ * Use the page title block for the node title if the view mode was selected
+ * in the theme settings.
+ *
+ * Important: this assumes there is a template for the view mode that uses
+ * the `title` (and `local_tasks`) variables added by
+ * common_design_use_node_page_title(). See `node--full.html.twig`.
  *
  * @see common_design_preprocess_page()
- * @see common_design_get_block_render_array()
+ * @see common_design_set_page_title()
  */
 function common_design_preprocess_node(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  $node = $variables['node'] ?? NULL;
   $view_mode = $variables['view_mode'] ?? '';
 
-  // Prepare the title and local tasks so we have better control over where
-  // to display them for content in full node.
-  if (common_design_use_node_page_title($view_mode)) {
-    $variables['title'] = common_design_get_block_render_array('page_title_block');
-    $variables['local_tasks'] = common_design_get_block_render_array('local_tasks_block');
+  // If the node view mode was selected to use the page title block for the
+  // node title in the template, then we add the page title to the template
+  // variables. We only do that if we are on the canonical node page or on
+  // the node preview page.
+  if (isset($node) && common_design_use_node_page_title($view_mode)) {
+    if (node_is_page($node)) {
+      common_design_set_page_title($variables, $node->label(), TRUE);
+    }
+    elseif ($node->in_preview && $route_name === 'entity.node.preview') {
+      common_design_set_page_title($variables, $node->label(), FALSE);
+    }
+  }
+}
+
+/**
+ * Set the page title (ex: node page) using the page title block.
+ *
+ * @param array $variables
+ *   Variables as passed to a hook_preprocess_HOOK().
+ * @param string $default_title
+ *   Default title to use if none can be resolved.
+ * @param bool $is_page
+ *   Flag indicating if we are on a normal page as opposed to viewing an entity
+ *   in preview for example, or if this called outside of a page context.
+ */
+function common_design_set_page_title(array &$variables, $default_title, $is_page = FALSE) {
+  // Retrieve the page title block.
+  $variables['title'] = common_design_get_block_render_array('page_title_block');
+  if (!empty($variables['title'])) {
+    // If we are on a normal page (not in a node preview for example), and the
+    // page title render array doesn't have a default title, then we try to get
+    // the title from the title resolver service.
+    // @see https://www.drupal.org/project/drupal/issues/2938129
+    if ($is_page) {
+      if (empty($variables['title']['#title'])) {
+        $request = \Drupal::request();
+        $route_object = \Drupal::routeMatch()->getRouteObject();
+        if (!empty($request) && !empty($route_object)) {
+          $default_title = \Drupal::service('title_resolver')
+            ->getTitle($request, $route_object);
+        }
+      }
+      else {
+        $default_title = $variables['title']['#title'];
+      }
+    }
+
+    // Set the default title.
+    $variables['title']['#title'] = $default_title;
+
     // Copy the title attributes.
-    if (!empty($variables['title']) && !empty($variables['title_attributes'])) {
+    if (!empty($variables['title_attributes'])) {
       $variables['title']['#title_attributes'] = $variables['title_attributes'];
     }
+  }
+
+  // Also pre-render the local tasks when on a normal page.
+  if ($is_page) {
+    $variables['local_tasks'] = common_design_get_block_render_array('local_tasks_block');
   }
 }
 
@@ -195,7 +270,7 @@ function common_design_theme_suggestions_input_alter(&$suggestions, array $varia
  * Impements hook_theme_suggestions_form_alter().
  */
 function common_design_theme_suggestions_form_alter(array &$suggestions, array $variables) {
-  $suggestions[] = 'form__' . $variables['element']['#id'];
+  $suggestions[] = 'form__' . $variables['element']['#form_id'];
 }
 
 /**
@@ -357,6 +432,22 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provides more granularity when Views displays are getting rendered. The two
+ * suggestions will allow the following templates to be picked up:
+ *
+ * - views-view--VIEW.html.twig
+ * - views-view--VIEW--DISPLAY.html.twig
+ *
+ * @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_theme_suggestions_HOOK_alter/8.8.x
+ */
+function common_design_theme_suggestions_views_view_alter(&$suggestions, $variables) {
+  $suggestions[] = sprintf('views_view__%s', $variables['view']->id());
+  $suggestions[] = sprintf('views_view__%s__%s', $variables['view']->id(), $variables['view']->current_display);
+}
+
+/**
  * Implements hook_block__language_block().
  */
 function common_design_preprocess_block__language_block(&$vars) {
@@ -440,19 +531,10 @@ function common_design_get_block_render_array($id) {
     $cache->addCacheableDependency($build['#access']);
     $cache->applyTo($build);
 
-    // Ensure the page title block has a title.
-    // @see https://www.drupal.org/project/drupal/issues/2938129
-    if ($id === 'page_title_block' && empty($build['#title'])) {
-      $request = \Drupal::service('request_stack')->getCurrentRequest();
-      $route_object = \Drupal::service('current_route_match')->getRouteObject();
-      $title_resolver = \Drupal::service('title_resolver');
-
-      $build['#title'] = $title_resolver->getTitle($request, $route_object);
-    }
     // The local tasks have by default a max-age cache of 0 which prevents the
     // entire caching so we remove it as there are already cache contexts and
     // tags to ensure its displayed appropriately.
-    elseif ($id === 'local_tasks_block' && empty($build['#cache']['max-age'])) {
+    if ($id === 'local_tasks_block' && empty($build['#cache']['max-age'])) {
       unset($build['#cache']['max-age']);
     }
 
