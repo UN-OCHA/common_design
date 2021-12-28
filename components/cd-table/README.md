@@ -1,17 +1,18 @@
 # Table
 
 ## Purpose and Usage
-HTML table for displaying simple tabular data. 
+HTML table for displaying a variety of tabular data. 
 
-On narrow viewports, when the table width exceeds the available space, a horizontal scroll on the wrapping div appears, the tabindex attribute is added and set to 0, and the role of "group" is added.
+On narrow viewports, when the table width exceeds the available space, a horizontal scroll on the wrapper div appears. When the wrapper div include the `data-cd-scrollable` attribute, the tabindex attribute is added and set to 0, and the role of "group" is added.
+A message to prompt scrolling displays in the table caption element, which means a caption element is required. 
+The table caption has an ID that matches the `aria-labelledby` attribute added to the table's wrapping div. 
+To customise the text for the message, add it as a value to the `data-cd-scrollable` attribute on the table's wrapper div.
 See https://inclusive-components.design/data-tables
 
 The component styles use `data-` attribute selectors for styling specific column data, as an example of how specific data can be targeted.
 
 `cd-table--card`
 HTML table for complex data, using `data-` attribute selectors for styling specific column data. On mobile, the table displays as cards. This has accessibility implications [CD-219](https://humanitarian.atlassian.net/browse/CD-219)
-
-@TODO add a message to prompt scrolling.
 
 @TODO expand this component to include a variant for when the data is too dense to display well on narrow viewports
 even with the horizontal scroll. In that case, we could output the table data as a definition list instead. See CD-219 for more.
