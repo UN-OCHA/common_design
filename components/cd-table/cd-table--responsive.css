@@ -1,11 +1,21 @@
+/* Booo. Prevent horizontal scrolls */
+.cd-container,
+.cd-layout-content,
+.cd-layout-container {
+  overflow: hidden;
+}
+
+.cd-table-container:not([cd-table-container-processed]) {
+  background: lightpink;
+}
 .cd-table-container {
   overflow-x: auto;
-  width: 100vw;
+  width: 90vw;
 }
 
 @media (min-width: 576px) {
   .cd-table-container {
-    width: 100%;
+    width: 90vw;
   }
 }
 
@@ -18,7 +28,6 @@
 .cd-table-container::-webkit-scrollbar {
   width: 12px;
 }
-
 .cd-table-container::-webkit-scrollbar-track {
   background: var(--cd-blue--bright);
 }
