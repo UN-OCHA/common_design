@@ -117,6 +117,11 @@ td.cd-table--row-heading {
 .cd-table .cd-table--readmore:not(:empty)  {
   min-width: unset;
 }
+/* Prevent x scrollbar in Chrome */
+.cd-table--readmore span.visually-hidden {
+  width: 0;
+  height: 0;
+}
 
 .cd-table--readmore svg {
   width: 1rem;
