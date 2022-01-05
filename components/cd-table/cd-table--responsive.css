@@ -1,21 +1,19 @@
 /* Booo. Prevent horizontal scrolls */
-.cd-container,
+body {
+  overflow-x: hidden;
+}
 .cd-layout-content,
 .cd-layout-container {
   overflow: hidden;
 }
-
-.cd-table-container:not([cd-table-container-processed]) {
-  background: lightpink;
-}
 .cd-table-container {
   overflow-x: auto;
   width: 90vw;
+  margin-bottom: 2rem;
 }
-
-@media (min-width: 576px) {
+@media (min-width: 1024px) {
   .cd-table-container {
-    width: 90vw;
+    width: 100%;
   }
 }
 
