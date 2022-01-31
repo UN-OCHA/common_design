@@ -1,5 +1,6 @@
 {
   "extends": [
+    "stylelint-config-standard-scss",
     "../../../core/.stylelintrc.json",
     "stylelint-config-recommended-scss"
   ],
@@ -8,5 +9,5 @@
     "unit-no-unknown": null,
     "unit-allowed-list": ["ch", "deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"]
   },
-  "defaultSeverity": "warning"
+  "defaultSeverity": "error"
 }

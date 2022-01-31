@@ -1,7 +1,7 @@
 {
   "name": "common-design",
   "version": "5.0.2",
-  "description": "OCHA Common Design base theme for Drupal 8",
+  "description": "OCHA Common Design base theme for Drupal 8+",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
   "license": "GPL-2.0",
@@ -28,9 +28,10 @@
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.8",
-    "stylelint": "^13.12.0",
+    "stylelint": "^14.3.0",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^21.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.19.0"
   },

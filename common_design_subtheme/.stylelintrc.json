@@ -1,5 +1,6 @@
 {
   "extends": [
+    "stylelint-config-standard-scss",
     "../../../core/.stylelintrc.json",
     "stylelint-config-recommended-scss"
   ],
