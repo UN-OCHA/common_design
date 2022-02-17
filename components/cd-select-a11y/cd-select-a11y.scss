@@ -1,7 +1,6 @@
 @import "sass/cd/cd-variables";
 
 $gray-base:                   #262626;
-
 $gray-1:                      darken($gray-base, 10%) !default; /* #0c0c0c */
 $gray-2:                      $gray-base !default;
 $gray-3:                      lighten($gray-base, 15%) !default; /* #4d4d4d */
@@ -35,12 +34,10 @@ select {
 $btn-select-a11y-bg:          $cd-white !default;
 $btn-select-a11y-border:      $gray-7 !default;
 $btn-select-a11y-symbol:      "\25BC" !default; // ▼
-
 $tag-item-border:             $gray-7 !default;
 $tag-item-supp-symbol:        "\2715" !default; // X
 $tag-item-supp-symbol-color:  $cd-highlight-red !default;
 $tag-item-supp-border:        $cd-highlight-red !default;
-
 $a11y-suggestions-bg:         $gray-7 !default;
 $a11y-suggestion-color:       $gray-3 !default;
 $a11y-suggestion-color-hover: $gray-1 !default;
