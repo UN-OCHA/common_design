@@ -110,7 +110,7 @@
 }
 
 .cd-search__form form {
-  padding: 8px $cd-container-padding;
+  padding: 8px var(--cd-container-padding);
 
   .no-js & {
     min-width: 400px;
@@ -188,11 +188,11 @@
   font-weight: 700;
 
   [dir="ltr"] & {
-    right: $cd-container-padding;
+    right: var(--cd-container-padding);
   }
 
   [dir="rtl"] & {
-    left: $cd-container-padding;
+    left: var(--cd-container-padding);
   }
 
   svg {

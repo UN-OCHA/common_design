@@ -65,7 +65,7 @@ body {
   width: 100%;
   max-width: var(--cd-max-width);
   margin: 0 auto;
-  padding: 0 $cd-container-padding;
+  padding: 0 var(--cd-container-padding);
 
   @include tablet {
     padding: 0 $cd-container-padding-tablet;

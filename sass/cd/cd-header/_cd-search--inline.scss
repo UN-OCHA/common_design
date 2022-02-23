@@ -114,7 +114,7 @@
 }
 
 .cd-search--inline__form form {
-  padding: 8px $cd-container-padding;
+  padding: 8px var(--cd-container-padding);
 }
 
 .cd-search--inline__input[type="search"],
@@ -188,11 +188,11 @@
   font-weight: 700;
 
   [dir="ltr"] & {
-    right: $cd-container-padding;
+    right: var(--cd-container-padding);
   }
 
   [dir="rtl"] & {
-    left: $cd-container-padding;
+    left: var(--cd-container-padding);
   }
 
   svg {
