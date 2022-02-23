@@ -87,7 +87,7 @@
 }
 
 .cd-ocha-dropdown__inner {
-  max-width: $cd-max-width;
+  max-width: var(--cd-max-width);
   padding: 0 $cd-container-padding;
 
   @include tablet {

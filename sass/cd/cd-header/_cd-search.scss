@@ -211,7 +211,7 @@
 @include tablet {
   .cd-search__form form {
     position: relative;
-    max-width: $cd-max-width;
+    max-width: var(--cd-max-width);
     margin: 0 auto;
     padding: 8px $cd-container-padding-tablet;
   }
