@@ -68,7 +68,7 @@ body {
   padding: 0 var(--cd-container-padding);
 
   @include tablet {
-    padding: 0 $cd-container-padding-tablet;
+    padding: 0 var(--cd-container-padding-tablet);
   }
 
   @include xlarge {

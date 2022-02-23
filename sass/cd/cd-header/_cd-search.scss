@@ -213,7 +213,7 @@
     position: relative;
     max-width: var(--cd-max-width);
     margin: 0 auto;
-    padding: 8px $cd-container-padding-tablet;
+    padding: 8px var(--cd-container-padding-tablet);
   }
 
   .cd-search__input {
@@ -226,11 +226,11 @@
 
   .cd-search__submit {
     [dir="ltr"] & {
-      right: $cd-container-padding-tablet;
+      right: var(--cd-container-padding-tablet);
     }
 
     [dir="rtl"] & {
-      left: $cd-container-padding-tablet;
+      left: var(--cd-container-padding-tablet);
     }
   }
 }
