@@ -96,7 +96,7 @@
   }
 
   @include xlarge {
-    padding: 0 $cd-container-padding-xlarge;
+    padding: 0 var(--cd-container-padding-xlarge);
   }
 
   @supports (display: grid) {

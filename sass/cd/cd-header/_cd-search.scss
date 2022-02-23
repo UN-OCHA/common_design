@@ -256,16 +256,16 @@
 
 @include xlarge {
   .cd-search__form form {
-    padding: 8px $cd-container-padding-xlarge;
+    padding: 8px var(--cd-container-padding-xlarge);
   }
 
   .cd-search__submit {
     [dir="ltr"] & {
-      right: $cd-container-padding-xlarge;
+      right: var(--cd-container-padding-xlarge);
     }
 
     [dir="rtl"] & {
-      left: $cd-container-padding-xlarge;
+      left: var(--cd-container-padding-xlarge);
     }
   }
 }

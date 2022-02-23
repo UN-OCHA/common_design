@@ -68,13 +68,13 @@
     max-width: 100%;
     margin: 0;
     padding: 0;
-    padding-right: $cd-container-padding-xlarge;
+    padding-right: var(--cd-container-padding-xlarge);
     padding-left: 173px; // Width of logo.
     text-align: left;
 
     [dir="rtl"] & {
       padding-right: 173px; // Width of logo.
-      padding-left: $cd-container-padding-xlarge;
+      padding-left: var(--cd-container-padding-xlarge);
       text-align: right;
     }
   }
