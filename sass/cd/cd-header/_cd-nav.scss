@@ -3,7 +3,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-nav__btn {
-  height: $cd-site-header-height;
+  height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
   text-transform: uppercase;
@@ -135,10 +135,10 @@
     @include max-width(lg) {
       &[data-cd-hidden="false"] {
         position: absolute;
-        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 6px);
+        top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px);
         right: 0;
         left: 0;
-        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 6px));
+        height: calc(100vh - (var(--cd-global-header-height) + var(--cd-site-header-height) + 6px));
         padding: 20px 0 36px;
         background: $cd-white;
       }
@@ -157,7 +157,7 @@
       left: 0;
       width: auto;
       max-width: none;
-      height: $cd-site-header-height;
+      height: var(--cd-site-header-height);
       padding: 0;
 
       // This is needed for IE11
@@ -189,7 +189,7 @@
       @include z-index(dropdown);
 
       position: absolute;
-      top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
+      top: calc(var(--cd-site-header-height) + 6px); // border-bottom height
       min-width: 200px;
       max-width: 300px;
       //left: -1px;
@@ -311,7 +311,7 @@
           position: relative;
           display: flex;
           align-items: center;
-          height: $cd-site-header-height;
+          height: var(--cd-site-header-height);
           padding: 0 14px;
           transition: background 0.3s ease;
           background: transparent;
@@ -411,11 +411,11 @@
 // Style all menu items the same, regardless of their level.
 .no-js .menu-item--expanded li {
   @include desktop {
-    height: $cd-site-header-height;
+    height: var(--cd-site-header-height);
 
     a {
       align-items: center;
-      height: $cd-site-header-height;
+      height: var(--cd-site-header-height);
       padding: 0 14px;
     }
   }

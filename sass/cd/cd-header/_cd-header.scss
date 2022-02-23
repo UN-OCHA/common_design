@@ -13,7 +13,7 @@
 //
 .cd-global-header {
   position: relative;
-  height: $cd-global-header-height;
+  height: var(--cd-global-header-height);
   color: $cd-white;
   background: $cd-primary;
   background-image: linear-gradient(-180deg, $cd-primary 57%, $cd-primary--dark 97%);
@@ -38,7 +38,7 @@
 }
 
 .cd-site-header__inner {
-  height: $cd-site-header-height;
+  height: var(--cd-site-header-height);
 
   .no-js & {
     display: block;
@@ -47,7 +47,7 @@
 
   @supports (display: grid) {
     display: grid;
-    grid-template-rows: $cd-site-header-height;
+    grid-template-rows: var(--cd-site-header-height);
     grid-template-columns: 52px 1fr;
     grid-column-gap: 1em;
 

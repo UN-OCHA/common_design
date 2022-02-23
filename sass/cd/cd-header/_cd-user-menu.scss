@@ -58,14 +58,14 @@
 .cd-user-menu__item {
   position: relative;
   display: block;
-  height: $cd-global-header-height;
+  height: var(--cd-global-header-height);
   padding: 0 15px;
   transition: background 0.3s ease;
   white-space: nowrap;
   text-decoration: none;
   color: $cd-white;
   background: transparent;
-  line-height: $cd-global-header-height;
+  line-height: var(--cd-global-header-height);
 
   // Separator.
   &::after {
@@ -73,7 +73,7 @@
     top: 50%;
     right: -1px;
     width: 2px;
-    height: calc(#{$cd-global-header-height} / 3);
+    height: calc(var(--cd-global-header-height) / 3);
     content: "";
     transform: translateY(-50%);
     background: $cd-blue--light;

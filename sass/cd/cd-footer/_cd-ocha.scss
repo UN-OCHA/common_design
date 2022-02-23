@@ -23,7 +23,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: $cd-global-header-height;
+  height: var(--cd-global-header-height);
   padding: 0;
   transition: background 0.3s ease;
   color: $cd-white;

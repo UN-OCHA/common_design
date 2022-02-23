@@ -39,6 +39,8 @@
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
   --cd-max-width: 1220px;
+  --cd-global-header-height: 35px;
+  --cd-site-header-height: 60px;
   --cd-container-padding: 0.75rem; /* 12px */
   --cd-container-padding-tablet: 1.5rem; /* 24px */
   --cd-container-padding-xlarge: 2.5rem; /* 40px */
@@ -98,8 +100,8 @@
 // $cd-container-padding-tablet: var(--cd-container-padding-tablet);
 // $cd-container-padding-xlarge: var(--cd-container-padding-xlarge);
 
-$cd-global-header-height: 35px;
-$cd-site-header-height: 60px;
+// $cd-global-header-height: var(--cd-global-header-height);
+// $cd-site-header-height: var(--cd-site-header-height);
 
 // Colour palette
 $cd-ocha-blue: var(--cd-ocha-blue);

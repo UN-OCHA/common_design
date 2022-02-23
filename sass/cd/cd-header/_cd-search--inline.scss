@@ -19,7 +19,7 @@
 .cd-search--inline__btn {
   display: flex;
   align-items: center;
-  height: $cd-site-header-height;
+  height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
   color: $cd-primary;
@@ -100,7 +100,7 @@
   position: absolute;
   right: 0;
   left: 0;
-  height: $cd-site-header-height;
+  height: var(--cd-site-header-height);
   background: $cd-blue-grey;
 
   label {
@@ -121,7 +121,7 @@
 .cd-search--inline__input[type="text"] {
   box-sizing: border-box;
   width: 100%;
-  height: calc(#{$cd-site-header-height} - 16px); //padding.
+  height: calc(var(--cd-site-header-height) - 16px); //padding.
   padding: 0 45px 0 25px;
   color: $cd-default-text-color;
   border: 0;
@@ -177,7 +177,7 @@
   display: flex;
   align-items: center;
   width: 46px;
-  height: calc(#{$cd-site-header-height} - 16px); //padding.
+  height: calc(var(--cd-site-header-height) - 16px); //padding.
   margin: 0;
   padding: 0;
   text-transform: uppercase;
@@ -264,7 +264,7 @@
   .cd-search--inline__input[type="search"],
   .cd-search--inline__input[type="text"] {
     box-sizing: content-box;
-    height: $cd-site-header-height;
+    height: var(--cd-site-header-height);
     padding: 0 72px 0 16px;
     color: $cd-default-text-color;
     border: 0;
@@ -319,7 +319,7 @@
     position: absolute;
     top: 0;
     width: unset;
-    height: $cd-site-header-height;
+    height: var(--cd-site-header-height);
     padding: 0;
     cursor: pointer;
     transition: background 0.3s ease;

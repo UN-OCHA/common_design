@@ -11,9 +11,9 @@
   display: flex;
   align-items: center;
   box-sizing: content-box;
-  height: $cd-global-header-height;
+  height: var(--cd-global-header-height);
   padding: 0 0 0 15px;
-  line-height: $cd-global-header-height;
+  line-height: var(--cd-global-header-height);
 
   // Language switcher is always on the far edge of the global header.
   // Cancel the border that we render for other elements.
@@ -117,9 +117,9 @@
   }
 
   a {
-    height: $cd-global-header-height;
+    height: var(--cd-global-header-height);
     padding: 0;
-    line-height: $cd-global-header-height;
+    line-height: var(--cd-global-header-height);
   }
 
   // Reposition checkmark icon.
