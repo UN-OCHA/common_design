@@ -41,16 +41,16 @@
   }
 
   &:focus {
-    color: $cd-highlight-red;
+    color: var(--cd-highlight-red);
 
     svg {
-      fill: $cd-highlight-red;
+      fill: var(--cd-highlight-red);
     }
   }
 
   &[aria-expanded="true"] {
     position: relative;
-    color: $cd-highlight-red;
+    color: var(--cd-highlight-red);
 
     &::before {
       position: absolute;
@@ -74,7 +74,7 @@
     }
 
     svg {
-      fill: $cd-highlight-red;
+      fill: var(--cd-highlight-red);
     }
 
     &:hover,
@@ -204,7 +204,7 @@
   }
 
   &:focus {
-    background-color: $cd-highlight-red;
+    background-color: var(--cd-highlight-red);
   }
 }
 

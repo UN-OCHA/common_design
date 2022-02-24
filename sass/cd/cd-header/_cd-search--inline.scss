@@ -35,26 +35,26 @@
 
   &:hover,
   &:focus {
-    color: $cd-highlight-red;
+    color: var(--cd-highlight-red);
     outline: none;
     background: var(--cd-white);
 
     svg {
-      fill: $cd-highlight-red;
+      fill: var(--cd-highlight-red);
     }
   }
 
   &:focus {
-    color: $cd-highlight-red;
+    color: var(--cd-highlight-red);
 
     svg {
-      fill: $cd-highlight-red;
+      fill: var(--cd-highlight-red);
     }
   }
 
   &[aria-expanded="true"] {
     position: relative;
-    color: $cd-highlight-red;
+    color: var(--cd-highlight-red);
 
     &::before {
       position: absolute;
@@ -78,7 +78,7 @@
     }
 
     svg {
-      fill: $cd-highlight-red;
+      fill: var(--cd-highlight-red);
     }
 
     &:hover,
@@ -204,7 +204,7 @@
   }
 
   &:focus {
-    background-color: $cd-highlight-red;
+    background-color: var(--cd-highlight-red);
   }
 }
 
@@ -279,7 +279,7 @@
     }
 
     &:focus {
-      border-bottom: 6px solid $cd-highlight-red;
+      border-bottom: 6px solid var(--cd-highlight-red);
       outline: 0;
       box-shadow: none;
     }
@@ -352,7 +352,7 @@
       box-shadow: none;
 
       svg {
-        fill: $cd-highlight-red;
+        fill: var(--cd-highlight-red);
       }
     }
   }

@@ -20,7 +20,7 @@
 
   &[aria-expanded] .cd-icon--arrow-down {
     margin-left: 4px;
-    fill: $cd-highlight-red;
+    fill: var(--cd-highlight-red);
   }
 
   &[aria-expanded="true"] {
@@ -37,7 +37,7 @@
       height: 6px;
       content: "";
       transition: background 0.3s ease;
-      background: $cd-highlight-red;
+      background: var(--cd-highlight-red);
     }
 
     &:focus {
@@ -177,7 +177,7 @@
   .menu-item {
     > a::before,
     > button::before {
-      background: $cd-highlight-red;
+      background: var(--cd-highlight-red);
     }
   }
 
@@ -232,7 +232,7 @@
 
       > a.is-active::before,
       > button.is-active::before {
-        background: $cd-highlight-red;
+        background: var(--cd-highlight-red);
       }
 
       // First level menu item with children.
@@ -266,7 +266,7 @@
           }
 
           &.is-active::before {
-            background: $cd-highlight-red;
+            background: var(--cd-highlight-red);
           }
         }
       }
@@ -279,7 +279,7 @@
 
         a.is-active::before,
         button.is-active::before {
-          background: $cd-highlight-red;
+          background: var(--cd-highlight-red);
         }
       }
     }
@@ -303,7 +303,7 @@
 
         &.menu-item--active-trail a::before,
         &.menu-item--active-trail button::before {
-          background: $cd-highlight-red;
+          background: var(--cd-highlight-red);
         }
 
         > a,
@@ -339,7 +339,7 @@
           &.is-active,
           &:focus {
             &::before {
-              background: $cd-highlight-red;
+              background: var(--cd-highlight-red);
             }
           }
         }
@@ -358,20 +358,20 @@
           }
 
           &.menu-item--active-trail {
-            border-left: 6px solid $cd-highlight-red;
+            border-left: 6px solid var(--cd-highlight-red);
 
             [dir="rtl"] & {
-              border-right: 6px solid $cd-highlight-red;
+              border-right: 6px solid var(--cd-highlight-red);
               border-left-width: 0;
             }
           }
         }
 
         > li.menu-item--active-trail {
-          border-left: 6px solid $cd-highlight-red;
+          border-left: 6px solid var(--cd-highlight-red);
 
           [dir="rtl"] & {
-            border-right: 6px solid $cd-highlight-red;
+            border-right: 6px solid var(--cd-highlight-red);
             border-left-width: 0;
           }
         }

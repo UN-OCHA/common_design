@@ -90,7 +90,6 @@
   --cd-font--noto-sans-sc: "Noto Sans SC", sans-serif;
 }
 
-$cd-highlight-red: var(--cd-highlight-red);
 $cd-contrast-red: var(--cd-contrast-red);
 
 $cd-rgb-ocha-blue: var(--cd-rgb-ocha-blue);
@@ -177,4 +176,4 @@ $zindex: (
 $implementation-primary: var(--cd-ocha-blue);
 $implementation-primary-dark: var(--cd-blue--dark);
 $implementation-secondary: var(--cd-blue--bright);
-$implementation-highlight: $cd-highlight-red;
+$implementation-highlight: var(--cd-highlight-red);
