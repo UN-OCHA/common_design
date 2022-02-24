@@ -127,7 +127,7 @@ $a11y-suggestion-border:      $gray-5 !default;
 
     input {
       width: 100%;
-      outline: 2px solid $cd-blue--bright;
+      outline: 2px solid var(--cd-blue--bright);
     }
   }
 
@@ -221,6 +221,6 @@ $a11y-suggestion-border:      $gray-5 !default;
 }
 
 .btn.focus {
-  outline: 3px solid $cd-blue--bright;
+  outline: 3px solid var(--cd-blue--bright);
   outline-offset: -3px;
 }

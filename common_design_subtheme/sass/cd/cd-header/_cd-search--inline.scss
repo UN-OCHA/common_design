@@ -48,7 +48,7 @@
 @include desktop {
   .cd-search--inline__input {
     &:focus {
-      border-bottom: 3px solid $cd-blue--bright;
+      border-bottom: 3px solid var(--cd-blue--bright);
     }
   }
 

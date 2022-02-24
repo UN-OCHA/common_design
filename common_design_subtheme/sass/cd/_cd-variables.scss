@@ -91,7 +91,6 @@
 }
 
 // Colour palette
-$cd-blue--bright: var(--cd-blue--bright);
 $cd-blue--light: var(--cd-blue--light);
 
 $cd-grey--light: var(--cd-grey--light);
@@ -195,5 +194,5 @@ $zindex: (
 
 $implementation-primary: var(--cd-ocha-blue);
 $implementation-primary-dark: var(--cd-blue--dark);
-$implementation-secondary: $cd-blue--bright;
+$implementation-secondary: var(--cd-blue--bright);
 $implementation-highlight: $cd-highlight-red;

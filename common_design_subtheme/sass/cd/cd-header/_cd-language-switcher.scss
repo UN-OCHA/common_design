@@ -4,12 +4,12 @@
 
 .cd-language-switcher__btn {
   &:focus {
-    outline: 3px solid $cd-blue--bright;
+    outline: 3px solid var(--cd-blue--bright);
   }
 }
 
 .cd-user-menu__dropdown {
   li a:focus {
-    outline: 3px solid $cd-blue--bright;
+    outline: 3px solid var(--cd-blue--bright);
   }
 }
