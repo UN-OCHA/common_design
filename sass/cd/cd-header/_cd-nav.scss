@@ -7,7 +7,7 @@
   padding: 0 20px;
   transition: background 0.3s ease;
   text-transform: uppercase;
-  color: $cd-default-text-color;
+  color: var(--cd-default-text-color);
   border: 0 none $cd-blue-grey;
   background: transparent;
   //border-left: 1px solid $cd-blue-grey;
@@ -101,7 +101,7 @@
       padding: 15px 30px;
       text-align: left;
       text-decoration: none;
-      color: $cd-default-text-color;
+      color: var(--cd-default-text-color);
 
       html[dir="rtl"] & {
         text-align: right;

@@ -123,7 +123,7 @@
   width: 100%;
   height: calc(var(--cd-site-header-height) - 16px); //Padding.
   padding: 0 45px 0 25px;
-  color: $cd-default-text-color;
+  color: var(--cd-default-text-color);
   border: 0;
   border-radius: 0;
   background: $cd-white;

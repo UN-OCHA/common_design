@@ -32,7 +32,7 @@
 // Bottom header bar, contains Logo, Search and Navigation.
 //
 .cd-site-header {
-  color: $cd-default-text-color;
+  color: var(--cd-default-text-color);
   border-bottom: 6px solid $cd-blue-grey;
   background: $cd-white;
 }
