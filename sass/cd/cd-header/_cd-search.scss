@@ -33,7 +33,7 @@
   &:focus {
     color: var(--cd-blue--dark);
     outline: none;
-    background: $cd-white;
+    background: var(--cd-white);
 
     svg {
       fill: var(--cd-blue--dark);
@@ -80,7 +80,7 @@
     &:hover,
     &:focus {
       outline: none;
-      background: $cd-white;
+      background: var(--cd-white);
     }
   }
 }
@@ -126,7 +126,7 @@
   color: var(--cd-default-text-color);
   border: 0;
   border-radius: 0;
-  background: $cd-white;
+  background: var(--cd-white);
   box-shadow: none;
   font-size: $cd-font-size--base;
   -webkit-appearance: none;
@@ -181,7 +181,7 @@
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  color: $cd-white;
+  color: var(--cd-white);
   border: 0;
   background: var(--cd-grey--dark);
   font-size: $cd-font-size--base;
@@ -200,7 +200,7 @@
     width: 26px;
     height: 26px;
     margin: 0 auto;
-    fill: $cd-white;
+    fill: var(--cd-white);
   }
 
   &:focus {

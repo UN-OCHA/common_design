@@ -37,7 +37,7 @@
   &:focus {
     color: $cd-highlight-red;
     outline: none;
-    background: $cd-white;
+    background: var(--cd-white);
 
     svg {
       fill: $cd-highlight-red;
@@ -84,7 +84,7 @@
     &:hover,
     &:focus {
       outline: none;
-      background: $cd-white;
+      background: var(--cd-white);
     }
   }
 }
@@ -126,7 +126,7 @@
   color: var(--cd-default-text-color);
   border: 0;
   border-radius: 0;
-  background: $cd-white;
+  background: var(--cd-white);
   box-shadow: none;
   font-size: $cd-font-size--base;
   -webkit-appearance: none;
@@ -181,7 +181,7 @@
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  color: $cd-white;
+  color: var(--cd-white);
   border: 0;
   background: var(--cd-grey--dark);
   font-size: $cd-font-size--medium;
@@ -200,7 +200,7 @@
     width: 26px;
     height: 26px;
     margin: 0 auto;
-    fill: $cd-white;
+    fill: var(--cd-white);
   }
 
   &:focus {
@@ -242,7 +242,7 @@
     --dropdown: false;
 
     position: relative;
-    background: $cd-white;
+    background: var(--cd-white);
 
     // This is needed for IE11
     // No support for CSS custom properties means
@@ -269,7 +269,7 @@
     color: var(--cd-default-text-color);
     border: 0;
     border-radius: 0;
-    background: $cd-white;
+    background: var(--cd-white);
     box-shadow: none;
     font-size: $cd-font-size--small;
     -webkit-appearance: none;
@@ -325,7 +325,7 @@
     transition: background 0.3s ease;
     color: $cd-black;
     border: 0;
-    background: $cd-white;
+    background: var(--cd-white);
     font-size: $cd-font-size--medium;
     font-weight: 700;
 

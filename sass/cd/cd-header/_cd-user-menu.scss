@@ -10,7 +10,7 @@
   list-style: none;
 
   svg {
-    fill: $cd-white;
+    fill: var(--cd-white);
   }
 
   // Logo icon before the button/link label.
@@ -63,7 +63,7 @@
   transition: background 0.3s ease;
   white-space: nowrap;
   text-decoration: none;
-  color: $cd-white;
+  color: var(--cd-white);
   background: transparent;
   line-height: var(--cd-global-header-height);
 

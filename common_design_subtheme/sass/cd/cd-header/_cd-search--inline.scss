@@ -39,7 +39,7 @@
     background: $implementation-highlight;
 
     svg {
-      fill: $cd-white;
+      fill: var(--cd-white);
     }
   }
 }

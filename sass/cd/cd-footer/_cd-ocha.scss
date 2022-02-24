@@ -15,7 +15,7 @@
   }
 
   h2 {
-    color: $cd-white;
+    color: var(--cd-white);
   }
 }
 
@@ -26,7 +26,7 @@
   height: var(--cd-global-header-height);
   padding: 0;
   transition: background 0.3s ease;
-  color: $cd-white;
+  color: var(--cd-white);
   background: transparent;
   font-size: $cd-font-size--tiny;
 
@@ -62,7 +62,7 @@
   flex-shrink: 0;
   width: 21px;
   height: 21px;
-  fill: $cd-white;
+  fill: var(--cd-white);
 
   @include tablet {
     [dir="ltr"] & {
@@ -185,12 +185,12 @@
 
   a {
     text-decoration: none;
-    color: $cd-white;
+    color: var(--cd-white);
 
     &:hover,
     &:focus {
       text-decoration: underline;
-      color: $cd-white;
+      color: var(--cd-white);
     }
 
     &:focus {

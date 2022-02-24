@@ -41,7 +41,7 @@
 
   position: absolute;
   left: 0;
-  color: $cd-white;
+  color: var(--cd-white);
   background: $cd-primary;
 
   .no-js & {
@@ -71,7 +71,7 @@
 
 button[aria-expanded] {
   .cd-icon--arrow-down {
-    fill: $cd-white;
+    fill: var(--cd-white);
     width: 9px;
     height: 9px;
 

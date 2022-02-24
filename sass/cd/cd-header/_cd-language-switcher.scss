@@ -55,7 +55,7 @@
   li a {
     @extend .cd-user-menu__dropdown-link;
 
-    color: $cd-white;
+    color: var(--cd-white);
 
     &:hover,
     &:focus {
@@ -64,7 +64,7 @@
 
     &:focus {
       text-decoration: underline;
-      color: $cd-white;
+      color: var(--cd-white);
       outline: 3px solid var(--cd-blue--bright);
     }
   }

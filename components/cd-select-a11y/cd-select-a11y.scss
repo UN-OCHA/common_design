@@ -31,7 +31,7 @@ select {
   clip-path: inset(50%);
 }
 
-$btn-select-a11y-bg:          $cd-white !default;
+$btn-select-a11y-bg:          var(--cd-white) !default;
 $btn-select-a11y-border:      $gray-7 !default;
 $btn-select-a11y-symbol:      "\25BC" !default; // ▼
 $tag-item-border:             $gray-7 !default;
@@ -83,7 +83,7 @@ $a11y-suggestion-border:      $gray-5 !default;
   .tag-item {
     padding: 0.2em 0.1em 0.2em 0.5em;
     border: 1px solid $tag-item-border;
-    background: $cd-white;
+    background: var(--cd-white);
   }
 
   .tag-item-supp {
