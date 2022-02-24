@@ -323,7 +323,7 @@
     padding: 0;
     cursor: pointer;
     transition: background 0.3s ease;
-    color: $cd-black;
+    color: var(--cd-black);
     border: 0;
     background: var(--cd-white);
     font-size: $cd-font-size--medium;

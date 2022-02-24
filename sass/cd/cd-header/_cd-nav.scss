@@ -26,7 +26,7 @@
   &[aria-expanded="true"] {
     position: relative;
     z-index: 101;
-    color: $cd-black;
+    color: var(--cd-black);
 
     &::before {
       position: absolute;
@@ -47,7 +47,7 @@
 
   &:hover,
   &:focus {
-    color: $cd-black;
+    color: var(--cd-black);
     outline: none; // default browser outline is replaced by background colour change.
     background: $cd-blue-grey;
   }
@@ -109,7 +109,7 @@
 
       &:hover,
       &:focus {
-        color: $cd-black;
+        color: var(--cd-black);
         outline: none; // default browser outline is replaced by background colour change.
         background: $cd-blue-grey;
       }
@@ -202,7 +202,7 @@
   .menu .menu {
     a {
       display: flex;
-      color: $cd-black;
+      color: var(--cd-black);
       font-weight: 700;
 
       &:hover {
