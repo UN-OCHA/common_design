@@ -76,7 +76,7 @@
     height: calc(var(--cd-global-header-height) / 3);
     content: "";
     transform: translateY(-50%);
-    background: $cd-blue--light;
+    background: var(--cd-blue--light);
   }
 
   &:hover,
