@@ -150,7 +150,7 @@ $a11y-suggestion-border:      $gray-5 !default;
   }
 
   .a11y-suggestion {
-    padding: 0 (8em/16) 0 (26em/16);
+    padding: 0 calc(8em / 16) 0 calc(26em / 16);
     cursor: pointer;
     text-align: left;
     color: $a11y-suggestion-color;
@@ -174,7 +174,7 @@ $a11y-suggestion-border:      $gray-5 !default;
       &::before {
         position: absolute;
         top: 50%;
-        left: (8em/16);
+        left: calc(8em / 16);
         content: "✓";
         transform: translateY(-50%);
       }
