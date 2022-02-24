@@ -7,6 +7,6 @@ a {
 
   &:hover,
   &:focus {
-    color: $cd-ocha-blue;
+    color: var(--cd-ocha-blue);
   }
 }

@@ -18,7 +18,7 @@
   height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
-  color: $cd-ocha-blue;
+  color: var(--cd-ocha-blue);
   border: 0;
   background: transparent;
   font-size: 24px;
@@ -26,7 +26,7 @@
   svg {
     width: 26px;
     height: 26px;
-    fill: $cd-ocha-blue;
+    fill: var(--cd-ocha-blue);
   }
 
   &:hover,

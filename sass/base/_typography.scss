@@ -241,7 +241,7 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $cd-ocha-blue;
+    color: var(--cd-ocha-blue);
   }
 }
 

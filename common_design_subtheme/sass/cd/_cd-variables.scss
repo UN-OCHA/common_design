@@ -104,7 +104,7 @@
 // $cd-site-header-height: var(--cd-site-header-height);
 
 // Colour palette
-$cd-ocha-blue: var(--cd-ocha-blue);
+// $cd-ocha-blue: var(--cd-ocha-blue);
 $cd-blue--dark: var(--cd-blue--dark);
 $cd-blue--bright: var(--cd-blue--bright);
 $cd-blue--light: var(--cd-blue--light);
@@ -134,7 +134,7 @@ $cd-rgb-highlight-red: var(--cd-rgb-highlight-red);
 $cd-rgb-blue-grey--dark: var(--cd-rgb-blue-grey--dark);
 
 // Brand colours
-$cd-primary: $cd-ocha-blue;
+$cd-primary: var(--cd-ocha-blue);
 $cd-primary--dark: $cd-blue--dark;
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -208,7 +208,7 @@ $zindex: (
 // Implementation colours
 //——————————————————————————————————————————————————————————————————————————————
 
-$implementation-primary: $cd-ocha-blue;
+$implementation-primary: var(--cd-ocha-blue);
 $implementation-primary-dark: $cd-blue--dark;
 $implementation-secondary: $cd-blue--bright;
 $implementation-highlight: $cd-highlight-red;
