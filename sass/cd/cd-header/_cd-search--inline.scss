@@ -142,22 +142,22 @@
 }
 
 .cd-search--inline__input::-webkit-input-placeholder {
-  color: $cd-grey--dark;
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
 .cd-search--inline__input::-moz-placeholder {
-  color: $cd-grey--dark;
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
 .cd-search--inline__input:-ms-input-placeholder {
-  color: $cd-grey--dark;
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
 .cd-search--inline__input:-moz-placeholder {
-  color: $cd-grey--dark;
+  color: var(--cd-grey--dark);
   font-style: italic;
 }
 
@@ -183,7 +183,7 @@
   text-transform: uppercase;
   color: $cd-white;
   border: 0;
-  background: $cd-grey--dark;
+  background: var(--cd-grey--dark);
   font-size: $cd-font-size--medium;
   font-weight: 700;
 
@@ -291,22 +291,22 @@
   }
 
   .cd-search--inline__input::-webkit-input-placeholder {
-    color: $cd-grey--mid;
+    color: var(--cd-grey--mid);
     font-style: italic;
   }
 
   .cd-search--inline__input::-moz-placeholder {
-    color: $cd-grey--mid;
+    color: var(--cd-grey--mid);
     font-style: italic;
   }
 
   .cd-search--inline__input:-ms-input-placeholder {
-    color: $cd-grey--mid;
+    color: var(--cd-grey--mid);
     font-style: italic;
   }
 
   .cd-search--inline__input:-moz-placeholder {
-    color: $cd-grey--mid;
+    color: var(--cd-grey--mid);
     font-style: italic;
   }
 
@@ -342,7 +342,7 @@
       width: 22px;
       height: 22px;
       padding: 0 16px;
-      fill: $cd-grey--mid;
+      fill: var(--cd-grey--mid);
     }
 
     &:hover,

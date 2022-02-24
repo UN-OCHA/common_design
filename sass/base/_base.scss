@@ -14,7 +14,7 @@ input {
 }
 
 body {
-  color: $cd-grey--dark;
+  color: var(--cd-grey--dark);
   font-family: $cd-font--roboto;
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
