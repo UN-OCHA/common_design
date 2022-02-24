@@ -30,7 +30,7 @@
     box-sizing: content-box;
     margin: -4px var(--cd-container-padding) 0 auto;
     padding-right: var(--cd-container-padding);
-    border-right: 1px solid $cd-blue-grey;
+    border-right: 1px solid var(--cd-blue-grey);
 
     [dir="rtl"] & {
       float: right;
@@ -38,7 +38,7 @@
       padding-right: 0;
       padding-left: var(--cd-container-padding);
       border-right-width: 0;
-      border-left: 1px solid $cd-blue-grey;
+      border-left: 1px solid var(--cd-blue-grey);
     }
   }
 }

@@ -8,10 +8,10 @@
   transition: background 0.3s ease;
   text-transform: uppercase;
   color: var(--cd-default-text-color);
-  border: 0 none $cd-blue-grey;
+  border: 0 none var(--cd-blue-grey);
   background: transparent;
-  //border-left: 1px solid $cd-blue-grey;
-  //border-right: 1px solid $cd-blue-grey;
+  //border-left: 1px solid var(--cd-blue-grey);
+  //border-right: 1px solid var(--cd-blue-grey);
   font-size: $cd-font-size--small;
 
   .cd-nav__btn-label {
@@ -49,7 +49,7 @@
   &:focus {
     color: var(--cd-black);
     outline: none; // default browser outline is replaced by background colour change.
-    background: $cd-blue-grey;
+    background: var(--cd-blue-grey);
   }
 
   @include desktop {
@@ -111,7 +111,7 @@
       &:focus {
         color: var(--cd-black);
         outline: none; // default browser outline is replaced by background colour change.
-        background: $cd-blue-grey;
+        background: var(--cd-blue-grey);
       }
 
       @supports (display: flex) {
@@ -206,7 +206,7 @@
       font-weight: 700;
 
       &:hover {
-        background: $cd-blue-grey;
+        background: var(--cd-blue-grey);
       }
     }
   }
@@ -329,7 +329,7 @@
           }
 
           &:hover {
-            background: $cd-blue-grey;
+            background: var(--cd-blue-grey);
           }
 
           &:focus {
@@ -354,7 +354,7 @@
         a,
         button {
           &:hover {
-            background: $cd-blue-grey;
+            background: var(--cd-blue-grey);
           }
 
           &.menu-item--active-trail {

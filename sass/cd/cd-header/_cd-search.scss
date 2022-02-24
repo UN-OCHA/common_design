@@ -60,7 +60,7 @@
       content: "";
       border-width: 0 6px 6px;
       border-style: solid;
-      border-color: transparent transparent $cd-blue-grey;
+      border-color: transparent transparent var(--cd-blue-grey);
 
       [dir="ltr"] & {
         left: 50%;
@@ -97,7 +97,7 @@
   right: 0;
   left: 0;
   height: var(--cd-site-header-height);
-  background: $cd-blue-grey;
+  background: var(--cd-blue-grey);
 
   label {
     @extend .visually-hidden;

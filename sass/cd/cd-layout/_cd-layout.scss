@@ -251,7 +251,7 @@ body {
 
     // I've styled this as a block with padding and bg colour.
     padding: 1rem;
-    background-color: $cd-blue-grey--light;
+    background-color: var(--cd-blue-grey--light);
 
     @include desktop {
       flex-basis: 285px;
