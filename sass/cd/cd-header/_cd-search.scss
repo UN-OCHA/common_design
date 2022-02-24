@@ -31,12 +31,12 @@
 
   &:hover,
   &:focus {
-    color: $cd-blue--dark;
+    color: var(--cd-blue--dark);
     outline: none;
     background: $cd-white;
 
     svg {
-      fill: $cd-blue--dark;
+      fill: var(--cd-blue--dark);
     }
   }
 

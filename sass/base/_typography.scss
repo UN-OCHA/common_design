@@ -236,7 +236,7 @@ h6 {
 }
 
 a {
-  color: $cd-blue--dark;
+  color: var(--cd-blue--dark);
 
   &:hover,
   &:focus {

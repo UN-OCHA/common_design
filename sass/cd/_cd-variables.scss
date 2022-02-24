@@ -91,7 +91,6 @@
 }
 
 // Colour palette
-$cd-blue--dark: var(--cd-blue--dark);
 $cd-blue--bright: var(--cd-blue--bright);
 $cd-blue--light: var(--cd-blue--light);
 
@@ -121,7 +120,7 @@ $cd-rgb-blue-grey--dark: var(--cd-rgb-blue-grey--dark);
 
 // Brand colours
 $cd-primary: var(--cd-ocha-blue);
-$cd-primary--dark: $cd-blue--dark;
+$cd-primary--dark: var(--cd-blue--dark);
 
 //——————————————————————————————————————————————————————————————————————————————
 // Fonts
