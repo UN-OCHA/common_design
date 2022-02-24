@@ -774,3 +774,13 @@ function common_design_preprocess_fieldset(array &$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_datetime_wrapper().
+ */
+function common_design_preprocess_datetime_wrapper(&$variables) {
+  // Ensure the title is not displayed when instructed to be hidden.
+  if (isset($variables['element']['#title_display']) && $variables['element']['#title_display'] === 'invisible') {
+    $variables['title_attributes']['class'][] = 'visually-hidden';
+  }
+}
+
