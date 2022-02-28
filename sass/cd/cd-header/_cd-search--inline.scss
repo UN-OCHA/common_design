@@ -22,7 +22,7 @@
   height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
-  color: $cd-primary;
+  color: var(--cd-primary);
   border: 0;
   background: transparent;
   font-size: 24px;

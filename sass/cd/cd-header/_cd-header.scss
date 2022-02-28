@@ -15,8 +15,8 @@
   position: relative;
   height: var(--cd-global-header-height);
   color: var(--cd-white);
-  background: $cd-primary;
-  background-image: linear-gradient(-180deg, $cd-primary 57%, $cd-primary--dark 97%);
+  background: var(--cd-primary);
+  background-image: linear-gradient(-180deg, var(--cd-primary) 57%, $cd-primary--dark 97%);
 
   .no-js & {
     height: auto;

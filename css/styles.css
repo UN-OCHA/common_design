@@ -24,6 +24,8 @@
   --cd-rgb-grey--dark: 74, 74, 74;
   --cd-rgb-highlight-red: 229, 106, 84;
   --cd-rgb-blue-grey--dark: 211, 221, 229;
+  /* Brand colors */
+  --cd-primary: var(--cd-ocha-blue);
   /* Measurements */
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
@@ -606,8 +608,8 @@ body {
   position: relative;
   height: var(--cd-global-header-height);
   color: var(--cd-white);
-  background: var(--cd-ocha-blue);
-  background-image: linear-gradient(-180deg, var(--cd-ocha-blue) 57%, var(--cd-blue--dark) 97%);
+  background: var(--cd-primary);
+  background-image: linear-gradient(-180deg, var(--cd-primary) 57%, var(--cd-blue--dark) 97%);
 }
 .no-js .cd-global-header {
   height: auto;
@@ -767,7 +769,7 @@ body {
   position: absolute;
   left: 0;
   color: var(--cd-white);
-  background: var(--cd-ocha-blue);
+  background: var(--cd-primary);
 }
 .no-js .cd-global-header__dropdown {
   position: relative;
@@ -786,7 +788,7 @@ body {
   content: "";
   border-width: 0 6px 6px;
   border-style: solid;
-  border-color: transparent transparent var(--cd-ocha-blue);
+  border-color: transparent transparent var(--cd-primary);
 }
 
 button[aria-expanded] .cd-icon--arrow-down {
@@ -1627,7 +1629,7 @@ html[dir=rtl] .cd-site-header__nav-holder .cd-nav button {
   height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
-  color: var(--cd-ocha-blue);
+  color: var(--cd-primary);
   border: 0;
   background: transparent;
   font-size: 24px;
@@ -2074,7 +2076,7 @@ input[type=search]::-ms-reveal {
   padding: 3rem 0 0;
   text-align: center;
   color: var(--cd-white);
-  background: var(--cd-ocha-blue);
+  background: var(--cd-primary);
   line-height: 1.5;
 }
 .cd-footer a {
