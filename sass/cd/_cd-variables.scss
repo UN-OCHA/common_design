@@ -37,6 +37,7 @@
 
   /* Brand colors */
   --cd-primary: var(--cd-ocha-blue);
+  --cd-primary--dark: var(--cd-blue--dark);
 
   /* Measurements */
   --cd-max-content-width: 820px;
@@ -92,9 +93,6 @@
   --cd-font--noto-kufi-arabic: "Noto Kufi Arabic", sans-serif;
   --cd-font--noto-sans-sc: "Noto Sans SC", sans-serif;
 }
-
-// Brand colours
-$cd-primary--dark: var(--cd-blue--dark);
 
 //——————————————————————————————————————————————————————————————————————————————
 // Fonts

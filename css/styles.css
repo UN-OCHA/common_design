@@ -26,6 +26,7 @@
   --cd-rgb-blue-grey--dark: 211, 221, 229;
   /* Brand colors */
   --cd-primary: var(--cd-ocha-blue);
+  --cd-primary--dark: var(--cd-blue--dark);
   /* Measurements */
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
@@ -609,7 +610,7 @@ body {
   height: var(--cd-global-header-height);
   color: var(--cd-white);
   background: var(--cd-primary);
-  background-image: linear-gradient(-180deg, var(--cd-primary) 57%, var(--cd-blue--dark) 97%);
+  background-image: linear-gradient(-180deg, var(--cd-primary) 57%, var(--cd-primary--dark) 97%);
 }
 .no-js .cd-global-header {
   height: auto;
