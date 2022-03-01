@@ -28,7 +28,7 @@
   transition: background 0.3s ease;
   color: var(--cd-white);
   background: transparent;
-  font-size: $cd-font-size--tiny;
+  font-size: var(--cd-font-size--tiny);
 
   .cd-icon--arrow-down {
     margin: auto; // Center vertically in macOS 10
@@ -208,7 +208,7 @@
   display: inline-block;
   width: 100%;
   padding: 10px;
-  font-size: $cd-font-size--small;
+  font-size: var(--cd-font-size--small);
 
   @include tablet {
     position: absolute;

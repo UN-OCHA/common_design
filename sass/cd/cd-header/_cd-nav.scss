@@ -12,7 +12,7 @@
   background: transparent;
   //border-left: 1px solid var(--cd-blue-grey);
   //border-right: 1px solid var(--cd-blue-grey);
-  font-size: $cd-font-size--small;
+  font-size: var(--cd-font-size--small);
 
   .cd-nav__btn-label {
     font-weight: 700;

@@ -100,18 +100,6 @@
 
 $cd-font: var(--cd-font);
 
-//——————————————————————————————————————————————————————————————————————————————
-// Font sizes
-//——————————————————————————————————————————————————————————————————————————————
-
-$cd-font-size--tiny: var(--cd-font-size--tiny);
-$cd-font-size--small: var(--cd-font-size--small);
-$cd-font-size--base: var(--cd-font-size--base);
-$cd-font-size--medium: var(--cd-font-size--medium);
-$cd-font-size--large: var(--cd-font-size--large);
-$cd-font-size--2xbase: var(--cd-font-size--2xbase);
-$cd-font-size--2xmedium: var(--cd-font-size--2xmedium);
-$cd-font-size--2xlarge: var(--cd-font-size--2xlarge);
 
 //——————————————————————————————————————————————————————————————————————————————
 // Don't use any maps directly. Please refer to `_cd-mixins.scss` partial.

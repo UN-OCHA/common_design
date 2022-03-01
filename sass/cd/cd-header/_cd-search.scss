@@ -88,7 +88,7 @@
 .cd-search__btn-label {
   display: none;
   text-transform: uppercase;
-  font-size: $cd-font-size--tiny;
+  font-size: var(--cd-font-size--tiny);
   font-weight: 700;
 }
 
@@ -128,7 +128,7 @@
   border-radius: 0;
   background: var(--cd-white);
   box-shadow: none;
-  font-size: $cd-font-size--base;
+  font-size: var(--cd-font-size--base);
   -webkit-appearance: none;
 
   [dir="rtl"] & {
@@ -184,7 +184,7 @@
   color: var(--cd-white);
   border: 0;
   background: var(--cd-grey--dark);
-  font-size: $cd-font-size--base;
+  font-size: var(--cd-font-size--base);
   font-weight: 700;
 
   [dir="ltr"] & {

@@ -24,7 +24,7 @@
   border-radius: 0 0 10px 10px;
   background: var(--cd-black);
   font-family: sans-serif;
-  font-size: $cd-font-size--small;
+  font-size: var(--cd-font-size--small);
   font-weight: 500;
   line-height: 1.7;
 }

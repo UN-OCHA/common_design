@@ -92,7 +92,7 @@
 .cd-search--inline__btn-label {
   display: none;
   text-transform: uppercase;
-  font-size: $cd-font-size--tiny;
+  font-size: var(--cd-font-size--tiny);
   font-weight: 700;
 }
 
@@ -128,7 +128,7 @@
   border-radius: 0;
   background: var(--cd-white);
   box-shadow: none;
-  font-size: $cd-font-size--base;
+  font-size: var(--cd-font-size--base);
   -webkit-appearance: none;
 
   [dir="rtl"] & {
@@ -184,7 +184,7 @@
   color: var(--cd-white);
   border: 0;
   background: var(--cd-grey--dark);
-  font-size: $cd-font-size--medium;
+  font-size: var(--cd-font-size--medium);
   font-weight: 700;
 
   [dir="ltr"] & {
@@ -271,7 +271,7 @@
     border-radius: 0;
     background: var(--cd-white);
     box-shadow: none;
-    font-size: $cd-font-size--small;
+    font-size: var(--cd-font-size--small);
     -webkit-appearance: none;
 
     [dir="rtl"] & {
@@ -326,7 +326,7 @@
     color: var(--cd-black);
     border: 0;
     background: var(--cd-white);
-    font-size: $cd-font-size--medium;
+    font-size: var(--cd-font-size--medium);
     font-weight: 700;
 
     [dir="ltr"] & {

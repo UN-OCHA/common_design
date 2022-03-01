@@ -31,7 +31,7 @@ body {
   }
 
   @include desktop {
-    font-size: $cd-font-size--base;
+    font-size: var(--cd-font-size--base);
   }
 }
 

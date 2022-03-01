@@ -9,7 +9,7 @@
   box-sizing: border-box;
   // Setup font
   font-family: $cd-font;
-  font-size: $cd-font-size--tiny;
+  font-size: var(--cd-font-size--tiny);
   font-weight: 300;
 
   [lang="ar"] & {
@@ -35,7 +35,7 @@
   button {
     border-radius: 0;
     box-shadow: none;
-    font-size: $cd-font-size--tiny;
+    font-size: var(--cd-font-size--tiny);
     font-weight: 300;
     -webkit-appearance: none;
 
