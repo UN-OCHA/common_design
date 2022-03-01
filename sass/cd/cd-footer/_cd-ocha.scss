@@ -103,11 +103,11 @@
     @include tablet {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-gap: 12px;
+      gap: 12px;
     }
 
     @include xlarge {
-      grid-gap: 100px;
+      gap: 32px;
     }
   }
 }

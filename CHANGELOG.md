@@ -16,13 +16,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Expand README section about testing
 - Add theme functions and template overrides for Node, Taxonomy term and user edit forms
 - Add template overrides for the date field, dataset table, media library item, radio element, and the generic form element, to add classes and attach CD libraries
 - Expand form and field visual styles in `cd-form` component and add some basic layout rules for some elements like the Image and File fields.
-- Add `ch` unit to `unit-allowed-list` stylelint configuration
 - Expand `form alter` function to add CD button variant classes for Cancel and Delete buttons
 - Expand `cd-form` README to explain the use of CubeCSS and `cd-flow` component to adjust vertical rhythm for forms
 - Add `cd-dropbutton` component that extends core library, for Drupal actions like reverting and deleting revisions
+### Security
+- Dependency updates for json-schema
+- Update xmldom package published to npm instead of github
+- Upgrade core-js
+
+---
+
+## [v5.0.2](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.2) - 2021-12-06
+### Added
+- Add `ch` unit to `unit-allowed-list` stylelint configuration
 ### Changed
 - Mention D9 in README
 - Fix some links in `CONTRIBUTING.md`
@@ -32,7 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The base theme and sub theme are now tailored for >= Drupal 9.2
 ### Security
 - Dependency updates for nth-check
-
 ---
 
 ## [v5.0.1](https://github.com/UN-OCHA/common_design/releases/tag/v5.0.1) - 2021-09-16
