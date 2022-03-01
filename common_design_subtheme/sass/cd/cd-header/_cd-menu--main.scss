@@ -2,5 +2,5 @@
 // Common Design: Drupal dropdowns for nested menus
 //——————————————————————————————————————————————————————————————————————————————
 .menu--main button[aria-expanded] .cd-icon--arrow-down {
-  fill: $implementation-highlight;
+  fill: var(--implementation-highlight);
 }

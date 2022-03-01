@@ -3,7 +3,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer {
-  background: $implementation-primary;
+  background: var(--implementation-primary);
 
   a {
     &:focus {

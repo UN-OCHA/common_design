@@ -39,6 +39,12 @@
   --cd-primary: var(--cd-ocha-blue);
   --cd-primary--dark: var(--cd-blue--dark);
 
+  /* Implementation colors */
+  --implementation-primary: var(--cd-ocha-blue);
+  --implementation-primary-dark: var(--cd-blue--dark);
+  --implementation-secondary: var(--cd-blue--bright);
+  --implementation-highlight: var(--cd-highlight-red);
+
   /* Measurements */
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
@@ -134,12 +140,3 @@ $zindex: (
   dropdown: 201,
   skip-link: 1000
 );
-
-//——————————————————————————————————————————————————————————————————————————————
-// Implementation colours
-//——————————————————————————————————————————————————————————————————————————————
-
-$implementation-primary: var(--cd-ocha-blue);
-$implementation-primary-dark: var(--cd-blue--dark);
-$implementation-secondary: var(--cd-blue--bright);
-$implementation-highlight: var(--cd-highlight-red);
