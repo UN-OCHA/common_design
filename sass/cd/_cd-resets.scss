@@ -8,7 +8,7 @@
   // Set box-sizing
   box-sizing: border-box;
   // Setup font
-  font-family: $cd-font;
+  font-family: var(--cd-font);
   font-size: var(--cd-font-size--tiny);
   font-weight: 300;
 
