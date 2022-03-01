@@ -131,7 +131,7 @@ h4,
 h5,
 h6 {
   color: var(--cd-default-text-color);
-  font-family: $cd-font--roboto;
+  font-family: var(--cd-font--roboto);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -143,7 +143,7 @@ h6 {
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-kufi-arabic;
+    font-family: var(--cd-font--noto-kufi-arabic);
     font-weight: 400;
   }
 }
@@ -155,7 +155,7 @@ h6 {
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-sans;
+    font-family: var(--cd-font--noto-sans);
     font-weight: 400;
   }
 }
@@ -168,7 +168,7 @@ h6 {
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-sans-sc;
+    font-family: var(--cd-font--noto-sans-sc);
     font-weight: 400;
   }
 }

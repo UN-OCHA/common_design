@@ -15,7 +15,7 @@ input {
 
 body {
   color: var(--cd-grey--dark);
-  font-family: $cd-font--roboto;
+  font-family: var(--cd-font--roboto);
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -36,15 +36,15 @@ body {
 }
 
 [lang="ar"] {
-  font-family: $cd-font--noto-kufi-arabic;
+  font-family: var(--cd-font--noto-kufi-arabic);
 }
 
 [lang="ru"] {
-  font-family: $cd-font--noto-sans;
+  font-family: var(--cd-font--noto-sans);
 }
 
 [lang="zh-hans"] {
-  font-family: $cd-font--noto-sans-sc;
+  font-family: var(--cd-font--noto-sans-sc);
 }
 
 img {
