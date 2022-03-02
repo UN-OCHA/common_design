@@ -20,8 +20,9 @@ This component uses the `cd-flow` component for vertical rhythm.
 The base theme provides some template overrides to add classes to Drupal forms
 There is special styling and spacing for the Drupal user pages.
 The `--cd-flow-space` variable value should be adjusted as needed.
-Eg:
-```
+e.g.
+
+```css
 /* Form styles for Drupal User forms */
 .cd-form--user {
   --cd-flow-space: 3rem;
