@@ -1,0 +1,205 @@
+/* Media widget - Images, Files and Media */
+form .js-media-library-widget .fieldset-wrapper {
+  position: relative;
+  padding: 1rem;
+  border: 2px solid var(--cd-blue-grey);
+}
+
+form .js-media-library-widget .field-prefix,
+form .js-media-library-widget .field-suffix {
+  display: block;
+}
+form .js-media-library-widget .field-prefix:not(:empty) {
+  margin-bottom: 1rem;
+}
+form .js-media-library-widget .field-suffix + .description {
+  margin-top: 1rem;
+}
+
+/* Image and/or file field */
+form .form-managed-file {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+@media (min-width: 576px) {
+  form .form-managed-file {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/* Media image field */
+form .image-widget article {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  order: 1;
+}
+/* File name */
+@media (min-width: 576px) {
+  form .image-widget span.file,
+  form .image-widget span.file-size {
+    margin-inline-start: 0.5rem;
+  }
+  form .image-widget span.file-size {
+    margin-inline-end: 0.5rem;
+  }
+}
+
+form .image-widget article > div {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  form .image-widget span.file,
+  form .image-widget article > div {
+    margin-bottom: 0;
+  }
+}
+form .image-widget .js-media-library-item-preview {
+  margin: 0 0 1rem;
+}
+
+form .image-widget .form-submit,
+form .form-managed-file .form-submit {
+  order: 2;
+}
+
+@media (max-width: 575px) {
+  form .image-widget .form-submit,
+  form .form-managed-file .form-submit {
+    margin-top: 1rem;
+  }
+}
+
+.form-managed-file img,
+.form-managed-file .file {
+  margin-inline-end: 0.5rem;
+}
+/* Alt text field and/or file description field */
+.form-managed-file .form-type-textfield {
+  flex: 1 0 100%;
+  order: 4;
+  margin-top: 0.5rem;
+}
+.form-managed-file .form-type-checkbox {
+  padding-bottom: 0;
+}
+/* Image title field */
+.form-managed-file .form-type-textfield + .form-type-textfield {
+  order: 5;
+}
+
+/* Show/Hide media item weight button */
+.js-media-library-widget-toggle-weight {
+  position: absolute;
+  right: 1rem;
+  padding: 0.25rem;
+  font-size: var(--cd-font-size--small);
+}
+/* Media item weight */
+form .image-widget .form-type-number {
+  flex: 0 1 auto;
+  order: 3;
+}
+form .image-widget .form-type-number input {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  form .image-widget .form-type-number {
+    flex: 0 1 100px;
+    margin-top: 0;
+    padding: 0 0 0 1rem;
+  }
+}
+/* Mutliple files and/or images displayed in a table */
+.tabledrag-toggle-weight-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+/* Show/Hide media item weight button */
+.tabledrag-toggle-weight {
+  padding: 0.25rem;
+  font-size: var(--cd-font-size--small);
+}
+/* Table drag */
+a.tabledrag-handle .handle {
+  width: auto;
+  height: auto;
+}
+
+/* Media library dialog */
+.media-library-widget-modal {
+  /* Higher than CD header elements */
+  z-index: 202;
+}
+
+ul.js-media-library-add-form-added-media {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.js-media-library-add-form-added-media li {
+  margin: 0;
+  padding: 0;
+}
+.js-media-library-add-form-added-media .form-submit {
+  margin-top: 1rem;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+  margin: 0;
+  border-width: 2px;
+  border-color: inherit;
+}
+.js-media-library-item.image-widget,
+.js-media-library-item.views-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* File name */
+.view-media-library .field-content article > div {
+  word-wrap: break-word;
+}
+/* Pagination */
+.view-media-library .js-pager__items {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+.view-media-library .js-pager__items li {
+  display: inline-block;
+  padding: 0 0.5rem 0 0;
+}
+
+/* CD form overrides */
+.view-media-library .cd-form--inline,
+.view-media-library .cd-form--inline .cd-form__item {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .view-media-library .cd-form--inline {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+  .view-media-library .cd-form--inline > div {
+    margin-right: 1rem;
+  }
+  .view-media-library .cd-form--inline .cd-form__item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.js-media-library-add-form .cd-form__item .image-widget {
+  display: block;
+}
+
+.cd-form .cd-table {
+  margin-bottom: 1rem;
+}

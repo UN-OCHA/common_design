@@ -131,6 +131,13 @@ cd-date:
       components/cd-date/cd-date.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
+    -
+cd-dropbutton:
+  css:
+    component:
+      components/cd-dropbutton/cd-dropbutton.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-event:
   css:
@@ -165,6 +172,11 @@ cd-form:
   css:
     component:
       components/cd-form/cd-form.css: {}
+      components/cd-form/cd-form--drupal.css: {}
+      components/cd-form/cd-form--drupal-widget.css: {}
+  dependencies:
+    - common_design/cd-button
+    - common_design/cd-flow
 
 cd-grid:
   css:

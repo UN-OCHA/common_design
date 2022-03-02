@@ -6,15 +6,39 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 input[type="date"],
+input[type="time"],
 input[type="file"],
 textarea {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
-  padding-right: 0.25rem;
-  padding-left: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--cd-grey--dark);
+  border: 2px solid var(--cd-blue-grey);
+  background: white;
+  font-size: 1rem;
+}
+
+select {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
   color: var(--cd-grey--dark);
   font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  /* Better readability similar to paragraphs. */
+  line-height: 1.5;
+}
+
+@media (min-width: 576px) {
+  input[type="date"],
+  input[type="time"],
+  select {
+    width: auto;
+  }
 }
 
 @media (min-width: 768px) {
@@ -25,15 +49,16 @@ textarea {
   input[type="search"],
   input[type="tel"],
   input[type="url"],
-  input[type="date"],
-  input[type="file"],
-  textarea {
-    width: auto;
+  input[type="file"] {
+    max-width: 50ch;
   }
 }
 
-.field__label,
-label {
+label,
+fieldset legend,
+.label {
+  display: block;
+  color: var(--cd-black);
   font-weight: 700;
 }
 
@@ -48,14 +73,6 @@ select:focus,
 textarea:focus {
   outline: 3px solid var(--cd-blue--bright);
   outline-offset: -2px;
-}
-
-/* Form elements */
-select {
-  width: 100%;
-  max-width: 100%;
-  padding-right: 0.25rem;
-  padding-left: 0.25rem;
 }
 
 input::-webkit-input-placeholder {
@@ -78,6 +95,21 @@ input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+form fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+form fieldset legend {
+  margin: 0;
+  padding: 0;
+}
+
+.cd-form {
+  --cd-flow-space: 2rem;
+}
+
 .cd-form--inline {
   margin-bottom: 1rem;
 }
@@ -90,6 +122,25 @@ input::-webkit-search-decoration {
 .cd-form--inline label {
   margin-top: 0.25rem;
   margin-inline-end: 0.5rem;
+}
+
+.cd-form__item > label {
+  margin-inline-end: 0.5rem;
+}
+
+/* Nested fields */
+.cd-form__item .cd-form__item {
+  padding-bottom: 1rem;
+}
+
+.cd-form__item h4.label {
+  margin-bottom: 0;
+}
+
+.cd-form__description,
+form .description {
+  padding-top: 0.5rem;
+  font-size: var(--cd-font-size--small);
 }
 
 /* For IE11 */
@@ -107,33 +158,24 @@ input::-webkit-search-decoration {
   width: auto;
 }
 
-/* From Classy */
-.form-required::after {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin: 0 0.3em;
-  content: "";
-  vertical-align: super;
-  /* Use a background image to prevent screen readers from announcing the text. */
-  background-image: url("../../img/icons/form-required.svg");
-  background-repeat: no-repeat;
-  background-size: 6px 6px;
+form .form-type-checkbox,
+form .form-checkboxes .form-type-checkbox,
+form .form-radios .form-type-radio {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-inline-end: 1rem;
 }
-
-.form-item input.error,
-.form-item textarea.error,
-.form-item select.error {
-  border: 2px solid var(--cd-contrast-red);
+form .form-type-checkbox label,
+form .form-type-radio label {
+  margin-inline-start: 0.5rem;
+  font-weight: normal;
 }
-
-/* Inline error messages. */
-.form-item--error-message::before {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  content: "";
-  vertical-align: sub;
-  background: url("../../img/icons/form-error.svg") no-repeat;
-  background-size: contain;
+/* Break line and span 100% */
+form .form-type-checkbox > .cd-form__description {
+  flex: 1 0 100%;
+}
+/* Multiple checkboxes, displayed vertically */
+form .fieldset-wrapper > .form-type-checkbox + .form-type-checkbox {
+  margin-top: 1rem;
 }
