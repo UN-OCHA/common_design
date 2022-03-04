@@ -1,14 +1,36 @@
 {
   "extends": [
+    "stylelint-config-standard-scss",
     "../../../core/.stylelintrc.json",
     "stylelint-config-recommended-scss"
   ],
   "rules": {
+    "alpha-value-notation": "number",
+    "color-function-notation": "legacy",
+    "custom-property-pattern": "^(--)?[a-zA-Z0-9]+((-|--|__)?[a-zA-Z0-9]+)*$",
+    "declaration-block-no-redundant-longhand-properties": null,
+    "max-line-length": 130,
     "no-descending-specificity": null,
+    "property-no-vendor-prefix": null,
+    "selector-class-pattern": "^[a-zA-Z0-9]+((-|--|__)?[a-zA-Z0-9]+)*$",
+    "selector-no-vendor-prefix": null,
     "unit-no-unknown": null,
-    "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
-    "unit-whitelist": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
-    "plugin/no-browser-hacks": null
+    "unit-allowed-list": ["ch", "deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh", "fr", "pt", "$cd-container-padding"],
+    "value-keyword-case": null,
+    "value-no-vendor-prefix": null,
+
+    "scss/at-else-empty-line-before": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-if-closing-brace-newline-after": null,
+    "scss/at-if-closing-brace-space-after": null,
+    "scss/comment-no-empty": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/dollar-variable-colon-space-after": null,
+    "scss/dollar-variable-pattern": "^(--)?[a-zA-Z0-9]+((-|--|__)?[a-zA-Z0-9]+)*$",
+    "scss/no-global-function-names": null,
+    "scss/operator-no-unspaced": null
   },
   "defaultSeverity": "error"
 }

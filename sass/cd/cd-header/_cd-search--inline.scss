@@ -121,6 +121,7 @@
 .cd-search--inline__input[type="text"] {
   box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   height: calc(#{$cd-site-header-height} - 16px); //padding.
   padding: 0 45px 0 25px;
   color: $cd-default-text-color;

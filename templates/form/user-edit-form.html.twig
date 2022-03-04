@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override for the user form content.
+ *
+ * This template will be used when a user edit form specifies
+ * 'user_edit_form' as its #theme callback.
+ *
+ * Available variables:
+ * - form: The user add/edit form.
+ *
+ * @see common_design_form_user_form_alter()
+ *
+ */
+#}
+{{ attach_library('common_design/cd-form') }}
+
+{{ form.account.name }}
+{{ form.account.current_pass }}
+{{ form.account.mail }}
+{{ form.account.pass }}
+{{ form.account.reset_pass }}
+
+{{ form.account.status }}
+{{ form.account.roles }}
+
+{{
+  form.account|without([
+    'name',
+    'current_pass',
+    'mail',
+    'pass',
+    'reset_pass',
+    'status',
+    'roles',
+  ])
+}}
+
+{{
+  form|without([
+    'account',
+    'actions',
+  ])
+}}
+
+{{ form.actions }}

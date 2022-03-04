@@ -298,7 +298,31 @@ OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
 
-## E2E testing
+## Testing
+### What we test
+See [Browsers to test](https://docs.google.com/document/d/1lN0kLOkgfEAmdGODZ0PzLxiAr0Z-87C4ytet6F4GIuw) and 
+[Draft - Supporting a global audience](https://docs.google.com/document/d/1AjKtlwUuJhZpbSrPs-nku3ECnMyZ67m9A1Lh05w7xM4/).
+
+We use [browserstack](https://www.browserstack.com/) for browser and device testing. We can test using our [local
+development environments](https://www.browserstack.com/docs/live/local-testing), select specific browsers for manual testing, and generate screenshots of many browsers at once.
+Join the Flowdock [Developers](https://www.flowdock.com/app/unocha/developers) channel for access.
+
+### How we test
+There are e2e test using [Jest](https://github.com/facebook/jest) and [Puppeteer](https://github.com/puppeteer/puppeteer) in the base and sub theme.
+There is a [repo for Visual Regression testing](https://github.com/UN-OCHA/ocha_vrt/) using [backstopjs](https://github.com/garris/BackstopJS) and a 
+[Jenkins Job](https://github.com/UN-OCHA/ocha_vrt/) to run VRT on the server. Depending on the json configuration files,
+we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, 
+and capture keypress, hover and click actions.
+
+Depending on the project, we run tests via [Travis CI](https://travis-ci.org/). For the [common-design-site repo](https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45) 
+we run PHP lint and Drupal coding standards checks, and compile the theme's sass files. These are common among most 
+projects.
+Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then 
+run the e2e tests.
+
+There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526](https://humanitarian.atlassian.net/browse/OPS-7526)
+
+### E2E testing
 
 ```sh
 # Install dependencies for your host machine.
