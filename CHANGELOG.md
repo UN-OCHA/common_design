@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/UN-OCHA/common_design/compare/v5.0.2...v6.0.0) (2022-03-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* all implementations that receive updates after this
+commit will need to support node.js 16 LTS or higher.
+
+### Features
+
+* **forms:** provide styling for common form elements ([2163afe](https://github.com/UN-OCHA/common_design/commit/2163afe0bceef04ae589ccbf5321d63b609dd637))
+* **team:** CD-000 add conventional commits package ([88051f8](https://github.com/UN-OCHA/common_design/commit/88051f801987ba59183668a0a7ae15db463e7342))
+
+
+### Bug Fixes
+
+* on largest breakpoint, make room for potentially long site names ([86d071c](https://github.com/UN-OCHA/common_design/commit/86d071c5e431755165f679aaad9c96b648f6ecc6))
+* **scripts:** CD-000 add release script to run standard-version ([faefa13](https://github.com/UN-OCHA/common_design/commit/faefa13ac3e33d71f6e4f7b8e557c8e4639222ca))
+
+
+* upgrade to node.js LTS 16.13.2 ([3925e3d](https://github.com/UN-OCHA/common_design/commit/3925e3d28d0e6d04dd0341319bedf26a205c50cd))
+
 ## [5.1.0](https://github.com/UN-OCHA/common_design/compare/v3.0.6...v5.1.0) (2021-11-18)
 
 
