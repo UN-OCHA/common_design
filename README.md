@@ -7,39 +7,13 @@
 
 # Common Design base theme for Drupal 8/9
 
-## Releases
-
-We use [npm-version][npm] and [semantic versioning][semver] for versioning, and
-[standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines and to generate the [CHANGELOG][log].
-
-We aim to facilitate an annual major release. The next release date is June
-2022.
-
-We continue to regularly release patches or minor releases to include bug fixes,
-dependency updates, and component improvements. Refer to the [CHANGELOG][log]
-and/or [Github releases][releases] for the latest tagged releases.
-
-There may be several breaking changes during the year which result in increments
-to the major release number. Teams using the base theme might be “behind” by a
-few numbers when they update annually. We hope these numbers will help to
-highlight the major changes and we will offer support during these times so the
-updates are as clear as possible.
-
-  [npm]: https://docs.npmjs.com/cli/version
-  [semver]: https://semver.org/
-  [log]: https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md
-  [releases]: https://github.com/UN-OCHA/common_design/releases
-
-## This theme contains
-
 * Common Header
 * Common Footer
 * Common SVG Icons (a web-specific subset of [OCHA humanitarian icons][icons])
 * Variables for breakpoints, colours, font sizes, fonts, and z-index
 * Mixins for clearfix and media queries
 * Custom javascript for dropdown behaviour
-* See [v3.0.0 Release notes][v3] and [common_design implementation notes for v2][v2]
-for more detailed documentation
+* See [v3.0.0 Release notes][v3] and [common_design implementation notes for v2][v2] for more detailed documentation
 
 There is a sub theme included in this repo.
    * This can be used as a starting point for implementations. Add components,
