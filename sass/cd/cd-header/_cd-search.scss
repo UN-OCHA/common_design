@@ -121,6 +121,7 @@
 .cd-search__input[type="text"] {
   box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   height: calc(var(--cd-site-header-height) - 16px); //Padding.
   padding: 0 45px 0 25px;
   color: var(--cd-default-text-color);

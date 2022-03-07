@@ -1,6 +1,6 @@
 {
   "name": "common-design-subtheme",
-  "version": "5.0.2",
+  "version": "6.0.0",
   "description": "OCHA Common Design sub theme for Drupal 8+",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
@@ -27,7 +27,7 @@
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
-    "sass": "^1.32.8",
+    "sass": "^1.43.4",
     "stylelint": "^14.3.0",
     "stylelint-config-recommended-scss": "^5.0.2",
     "stylelint-config-standard": "^24.0.0",
@@ -36,7 +36,7 @@
     "stylelint-scss": "^3.19.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-env": "^7.16.4",
     "@xmldom/xmldom": "^0.7.5",
     "axios": ">=0.21.2",
     "babel-jest": "^26.6.3",

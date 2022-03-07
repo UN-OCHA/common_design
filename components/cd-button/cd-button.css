@@ -360,3 +360,8 @@ a.cd-button {
 .cd-button + .cd-button {
   margin-inline-start: 0.5rem;
 }
+
+/* Drupal entity delete confirmation Delete button followed by anchor */
+.cd-button + #edit-cancel {
+  margin-inline-start: 0.5rem;
+}
