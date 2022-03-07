@@ -1,0 +1,130 @@
+/* Drupal specific from Classy */
+.field__label {
+  font-weight: 700;
+}
+.field--label-above .field__label {
+  margin-bottom: 0.5em;
+}
+.field--label-inline .field__label,
+.field--label-inline .field__items {
+  float: left; /* LTR */
+}
+.field--label-inline .field__label,
+.field--label-inline > .field__item,
+.field--label-inline .field__items {
+  padding-right: 0.5em;
+}
+[dir="rtl"] .field--label-inline .field__label,
+[dir="rtl"] .field--label-inline .field__items {
+  padding-right: 0;
+  padding-left: 0.5em;
+}
+.field--label-inline .field__label::after {
+  content: ":";
+}
+.form-required {
+  display: flex;
+}
+.form-required::after {
+  width: 6px;
+  height: 6px;
+  margin: 0.3em 0.3em 0;
+  content: "";
+  /* Use a background image to prevent screen readers from announcing the text. */
+  background-image: url("../../img/icons/form-required.svg");
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid var(--cd-contrast-red);
+}
+/* Inline error messages. */
+.cd-form__error-message,
+.form-item--error-message {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--cd-red--light);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.cd-form__error-message::before,
+.form-item--error-message::before {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-inline-end: 0.25rem;
+  content: "";
+  background: url("../../img/icons/form-error.svg") no-repeat;
+  background-size: contain;
+}
+.cd-form__error-message ul,
+.form-item--error-message ul {
+  margin: 0;
+  padding: 0 0 0 1rem;
+}
+
+/* Date and time field */
+.field--type-datetime .fieldset-wrapper > div {
+  display: flex;
+}
+.field--type-datetime .fieldset-wrapper > div > .cd-form__item {
+  margin-inline-end: 0.5rem;
+}
+
+h4.label {
+  margin: 0;
+  font-size: inherit;
+}
+
+/* Link field */
+.field--type-link .fieldset-wrapper > div {
+  margin-top: 0.5rem;
+}
+
+/* Drupal Paragraphs */
+.paragraphs-dropbutton-wrapper,
+.field--widget-paragraphs .field-add-more-submit {
+  margin-top: 0.5rem;
+}
+.paragraphs-dropdown-actions {
+  background-color: var(--cd-primary-color);
+}
+.form-wrapper .paragraphs-dropdown-action.cd-button {
+  width: 100%;
+  margin: 0;
+}
+.form-wrapper .paragraphs-dropdown-action.cd-button + .cd-button {
+  margin-block-start: 0;
+}
+.paragraphs-subform > div {
+  margin-top: 0.5rem;
+}
+
+/* Details element for Vertical tabs */
+.vertical-tabs details {
+  padding: 1rem;
+}
+
+/* Form styles for Drupal User forms */
+.cd-form--user {
+  --cd-flow-space: 3rem;
+}
+
+.cd-form--user .cd-form__item.form-item-current-pass,
+.cd-form--user .cd-form__item.form-type-textfield,
+.cd-form--user .cd-form__item.form-type-email,
+.cd-form--user .cd-form__item.form-type-managed-file,
+.cd-form--user #password-policy-status,
+.cd-form--user details {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--cd-grey--light);
+}
+.cd-form--user #password-policy-status {
+  --cd-flow-space: 1.5rem;
+}
+/* Nested fields */
+.cd-form--user .cd-form__item .cd-form__item {
+  border-bottom: 0 none;
+}
