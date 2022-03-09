@@ -178,6 +178,11 @@ cd-form:
     - common_design/cd-button
     - common_design/cd-flow
 
+cd-form--preview:
+  css:
+    component:
+      components/cd-form/cd-form--preview.css: {}
+
 cd-grid:
   css:
     component:
