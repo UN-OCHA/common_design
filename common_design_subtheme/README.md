@@ -20,6 +20,14 @@ Replace the favicon in the theme's root, and the homescreen icons in `img/` with
 - Change colour-related variable names and values in `sass/cd/_cd_variables.scss` and replace in all references to in
 partial overrides in `common_design_subtheme/sass/cd/`
 
+### Customise icons
+- Copy SVG icons from the [Humanitarian icon set](https://reliefweb.int/report/world/humanitarian-and-country-icons-2018)
+into the subtheme `img/icons` directory and follow the instructions in the
+[common_design README](https://github.com/UN-OCHA/common_design/#icons) to
+generate a sprite with those new icons.
+- Edit the subtheme's `templates/cd/cd-icons/cd-icons.html.twig` to include the
+generated sprite file.
+
 ### Other customisations
 Override sass partials and extend twig templates from the base theme as needed, copying them into the sub theme and
 linking them using `@import` for sass and `extend` or `embed` for twig templates.
@@ -29,9 +37,7 @@ templates. Or use existing components from `common_design.libraries.yml` base th
 template overrides in the sub theme.
 `{{ attach_library('common_design/cd-teaser') }}`
 
-Override theme preprocess functions by copying from `common_design.theme` and editing as needed. For example, if new
-icons are added, a new icon sprite will need to be generated and the `common_design_preprocess_html` hook used to attach
-the icon sprite to the page will need a new path to reflect the sub theme's icon sprite location.
+Override theme preprocess functions by copying from `common_design.theme` and editing as needed.
 
 Refer to [common_design README](https://github.com/UN-OCHA/common_design/#common-design-base-theme-for-drupal-89) for
 general details about base theme and instructions for compilation. There should be no need to compile the base theme,
