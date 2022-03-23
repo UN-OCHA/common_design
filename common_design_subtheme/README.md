@@ -21,10 +21,8 @@ Replace the favicon in the theme's root, and the homescreen icons in `img/` with
 partial overrides in `common_design_subtheme/sass/cd/`
 
 ### Customise icons
-- Copy SVG icons from the [Humanitarian icon set](https://reliefweb.int/report/world/humanitarian-and-country-icons-2018)
-into the subtheme `img/icons` directory and follow the instructions in the
-[common_design README](https://github.com/UN-OCHA/common_design/#icons) to
-generate a sprite with those new icons.
+- Copy SVG icons from the [Humanitarian icon set](https://brand.unocha.org/d/xEPytAUjC3sH/icons) into the subtheme `img/icons` directory and follow the
+instructions in the [common_design README](https://github.com/UN-OCHA/common_design/#icons) to generate a sprite with those new icons.
 - Edit the subtheme's `templates/cd/cd-icons/cd-icons.html.twig` to include the
 generated sprite file.
 
