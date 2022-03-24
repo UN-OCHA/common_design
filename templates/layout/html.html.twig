@@ -50,6 +50,11 @@
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
+
+    {% block icons %}
+    {% include '@common_design/cd/cd-icons/cd-icons.html.twig' %}
+    {% endblock %}
+
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>

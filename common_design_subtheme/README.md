@@ -1,41 +1,38 @@
 # OCHA Common Design sub theme for Drupal 8/9
 
-A sub theme, extending [common_design](https://github.com/UN-OCHA/common_design) base theme.
+A sub-theme, for implementing the [common_design](https://github.com/UN-OCHA/common_design) base-theme in a way that allows for "upstream" changes such as security updates, new features, and so forth. The subtheme is ready to help you implement the following types of customizations:
 
-This can be used as a starting point for implementations. Add components, override and extend base theme as needed.
+- Modifying the Common Design, such as customizing its colors
+- override/extend base theme templates
+- adding/overriding/extending frontend components
+
 Refer to [Drupal 8+ Theming documentation](https://www.drupal.org/docs/theming-drupal) for more.
 
-Copy this directory to `/themes/custom/`, then rename the `common_design_subtheme.info.yml.example` to
-`common_design_subtheme.info.yml`.
+## Getting started
+1. Copy this directory to `/themes/custom/`
+2. Rename the `common_design_subtheme.info.yml.example` to `common_design_subtheme.info.yml`
 
 ### Customise the logo
-- Set the logo `logo: 'img/logos/logo.svg'` in the `common_design_subtheme.info.yml` file, and in the
-`sass/cd/cd-header/_cd-logo.scss` partial override file.
+- Set the logo `logo: 'img/logos/logo.svg'` in the `common_design_subtheme.info.yml` file, and in the `sass/cd/cd-header/_cd-logo.scss` partial override file.
 - Adjust the grid column width in `sass/cd/cd-header/_cd-header.scss` partial override file to accommodate the logo.
 
 ### Customise the favicon and homescreen icons
 Replace the favicon in the theme's root, and the homescreen icons in `img/` with branded versions
 
 ### Customise colours
-- Change colour-related variable names and values in `sass/cd/_cd_variables.scss` and replace in all references to in
-partial overrides in `common_design_subtheme/sass/cd/`
+- Change colour-related variable names and values in `sass/cd/_cd_variables.scss` and replace in all references to in partial overrides in `common_design_subtheme/sass/cd/`
+
+### Customise icons
+- Copy SVG icons from the [Humanitarian icon set](https://brand.unocha.org/d/xEPytAUjC3sH/icons) into the subtheme `img/icons` directory and follow the instructions in the [common_design README](https://github.com/UN-OCHA/common_design/#icons) to generate a sprite with those new icons.
+- Edit the subtheme's `templates/cd/cd-icons/cd-icons.html.twig` to include the generated sprite file.
 
 ### Other customisations
-Override sass partials and extend twig templates from the base theme as needed, copying them into the sub theme and
-linking them using `@import` for sass and `extend` or `embed` for twig templates.
+Override sass partials and extend twig templates from the base theme as needed, copying them into the sub theme and linking them using `@import` for sass and `extend` or `embed` for twig templates.
 
-Add new components by defining new libraries in `common_design_subtheme.libraries.yml` and attaching them to relevant
-templates. Or use existing components from `common_design.libraries.yml` base theme by attaching the libraries to twig
-template overrides in the sub theme.
-`{{ attach_library('common_design/cd-teaser') }}`
+Add new components by defining new libraries in `common_design_subtheme.libraries.yml` and attaching them to relevant templates. Or use existing components from `common_design.libraries.yml` base theme by attaching the libraries to twig template overrides in the sub theme: `{{ attach_library('common_design/cd-teaser') }}`
 
-Override theme preprocess functions by copying from `common_design.theme` and editing as needed. For example, if new
-icons are added, a new icon sprite will need to be generated and the `common_design_preprocess_html` hook used to attach
-the icon sprite to the page will need a new path to reflect the sub theme's icon sprite location.
+Override theme preprocess functions by copying from `common_design.theme` and editing as needed.
 
-Refer to [common_design README](https://github.com/UN-OCHA/common_design/#common-design-base-theme-for-drupal-89) for
-general details about base theme and instructions for compilation. There should be no need to compile the base theme,
-only the sub theme.
+Refer to [common_design README](https://github.com/UN-OCHA/common_design/#common-design-base-theme-for-drupal-89) for general details about base theme and instructions for compilation. There should be no need to compile the base theme, only the sub theme.
 
-Refer to [common_design README E2E testing](https://github.com/UN-OCHA/common_design/#e2e-testing) for information about
-running tests.
+Refer to [common_design README E2E testing](https://github.com/UN-OCHA/common_design/#e2e-testing) for information about running tests.
