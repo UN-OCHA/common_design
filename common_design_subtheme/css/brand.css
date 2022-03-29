@@ -1,0 +1,12 @@
+:root {
+  /**
+   * Site-specific brand colors
+   *
+   * Set these variables and the entire CD Header/Footer plus all Components in
+   * the design system will re-color themselves to your brand.
+   */
+  --brand-primary: var(--cd-ocha-blue);
+  --brand-primary-dark: var(--cd-blue--dark);
+  --brand-secondary: var(--cd-blue--bright);
+  --brand-highlight: var(--cd-highlight-red);
+}

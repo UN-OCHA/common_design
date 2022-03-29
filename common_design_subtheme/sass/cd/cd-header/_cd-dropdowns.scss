@@ -6,12 +6,12 @@
  * Global header specific dropdown styles.
  */
 .cd-global-header__dropdown {
-  background: var(--implementation-primary);
+  background: var(--brand-primary);
 }
 
 // Triangle on toggle when active.
 .cd-global-header button[aria-expanded="true"] {
   &::before {
-    border-color: transparent transparent var(--implementation-primary);
+    border-color: transparent transparent var(--brand-primary);
   }
 }

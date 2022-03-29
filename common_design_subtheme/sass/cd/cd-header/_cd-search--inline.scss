@@ -4,31 +4,31 @@
 
 .cd-search--inline__btn {
   svg {
-    fill: var(--implementation-primary);
+    fill: var(--brand-primary);
   }
 
   &:hover,
   &:focus {
-    color: var(--implementation-primary-dark);
+    color: var(--brand-primary-dark);
 
     svg {
-      fill: var(--implementation-primary-dark);
+      fill: var(--brand-primary-dark);
     }
   }
 
   &:focus {
-    color: var(--implementation-highlight);
+    color: var(--brand-highlight);
 
     svg {
-      fill: var(--implementation-primary-dark);
+      fill: var(--brand-primary-dark);
     }
   }
 
   &[aria-expanded="true"] {
-    color: var(--implementation-highlight);
+    color: var(--brand-highlight);
 
     svg {
-      fill: var(--implementation-highlight);
+      fill: var(--brand-highlight);
     }
   }
 }
@@ -36,7 +36,7 @@
 .cd-search--inline__submit {
   &:hover,
   &:focus {
-    background: var(--implementation-highlight);
+    background: var(--brand-highlight);
 
     svg {
       fill: var(--cd-white);
@@ -56,7 +56,7 @@
     &:hover,
     &:focus {
       svg {
-        fill: var(--implementation-highlight);
+        fill: var(--brand-highlight);
       }
     }
   }
