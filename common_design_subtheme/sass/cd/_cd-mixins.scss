@@ -35,6 +35,15 @@
 // `min-width` and `max-width` mixins are supplied, with convenience functions
 // for CD dimensions. All CD convenience functions are `min-width`.
 //——————————————————————————————————————————————————————————————————————————————
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
 @mixin min-width($breakpoint) {
   @if map-has-key($grid-breakpoints, $breakpoint) {
     @media (min-width: #{map-get($grid-breakpoints, $breakpoint)}) {
@@ -138,6 +147,17 @@
 //
 // Usage: @include z-index(dropdown);
 //——————————————————————————————————————————————————————————————————————————————
+$zindex: (
+  default: 1,
+  hidden: -1,
+  sidebar: 110,
+  sidebar-underlay: 100,
+  main-menu: 199,
+  search: 200,
+  dropdown: 201,
+  skip-link: 1000
+);
+
 @mixin z-index($value: 0) {
   @if map-has-key($zindex, $value) {
     z-index: #{map-get($zindex, $value)};
