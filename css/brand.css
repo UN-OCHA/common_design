@@ -93,4 +93,19 @@
   --cd-font--noto-sans: "Noto Sans", sans-serif;
   --cd-font--noto-kufi-arabic: "Noto Kufi Arabic", sans-serif;
   --cd-font--noto-sans-sc: "Noto Sans SC", sans-serif;
+
+  /**
+   * Site-specific brand defaults
+   *
+   * You can override these defaults in the SUB-THEME. We provide default values
+   * here so that the base theme can be used out of the box, for times when you
+   * don't even set up a sub-theme.
+   *
+   * @see common_design_subtheme/css/brand.css
+   */
+  --brand-primary: var(--cd-ocha-blue);
+  --brand-primary-light: var(--cd-blue--bright);
+  --brand-primary-dark: var(--cd-blue--dark);
+  --brand-highlight: var(--cd-highlight-red);
+  --brand-grey: var(--cd-blue-grey);
 }
