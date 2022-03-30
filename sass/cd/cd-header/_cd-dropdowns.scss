@@ -42,7 +42,7 @@
   position: absolute;
   left: 0;
   color: var(--cd-white);
-  background: var(--cd-primary);
+  background: var(--brand-primary);
 
   .no-js & {
     position: relative;
@@ -65,7 +65,7 @@
     content: "";
     border-width: 0 6px 6px;
     border-style: solid;
-    border-color: transparent transparent var(--cd-primary);
+    border-color: transparent transparent var(--brand-primary);
   }
 }
 
