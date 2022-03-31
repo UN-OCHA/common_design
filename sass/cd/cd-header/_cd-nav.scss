@@ -8,10 +8,8 @@
   transition: background 0.3s ease;
   text-transform: uppercase;
   color: var(--cd-default-text-color);
-  border: 0 none var(--cd-blue-grey);
+  border: 0 none var(--brand-grey);
   background: transparent;
-  //border-left: 1px solid var(--cd-blue-grey);
-  //border-right: 1px solid var(--cd-blue-grey);
   font-size: var(--cd-font-size--small);
 
   .cd-nav__btn-label {
@@ -20,7 +18,7 @@
 
   &[aria-expanded] .cd-icon--arrow-down {
     margin-left: 4px;
-    fill: var(--cd-highlight-red);
+    fill: var(--brand-highlight);
   }
 
   &[aria-expanded="true"] {
@@ -37,7 +35,7 @@
       height: 6px;
       content: "";
       transition: background 0.3s ease;
-      background: var(--cd-highlight-red);
+      background: var(--brand-highlight);
     }
 
     &:focus {
@@ -49,7 +47,7 @@
   &:focus {
     color: var(--cd-black);
     outline: none; // default browser outline is replaced by background colour change.
-    background: var(--cd-blue-grey);
+    background: var(--brand-grey);
   }
 
   @include desktop {
@@ -111,7 +109,7 @@
       &:focus {
         color: var(--cd-black);
         outline: none; // default browser outline is replaced by background colour change.
-        background: var(--cd-blue-grey);
+        background: var(--brand-grey);
       }
 
       @supports (display: flex) {
@@ -177,7 +175,7 @@
   .menu-item {
     > a::before,
     > button::before {
-      background: var(--cd-highlight-red);
+      background: var(--brand-highlight);
     }
   }
 
@@ -206,7 +204,7 @@
       font-weight: 700;
 
       &:hover {
-        background: var(--cd-blue-grey);
+        background: var(--brand-grey);
       }
     }
   }
@@ -232,7 +230,7 @@
 
       > a.is-active::before,
       > button.is-active::before {
-        background: var(--cd-highlight-red);
+        background: var(--brand-highlight);
       }
 
       // First level menu item with children.
@@ -241,7 +239,8 @@
       &.menu-item--expanded {
         > a.is-active::before,
         > button.is-active::before {
-          background: rgba(var(--cd-rgb-highlight-red), 0.2);
+          opacity: 0.2;
+          background: var(--brand-highlight);
         }
       }
 
@@ -257,7 +256,8 @@
             width: 6px;
             height: 48px; // Height of menu item.
             content: "";
-            background: rgba(var(--cd-rgb-highlight-red), 0.2);
+            opacity: 0.2;
+            background: var(--brand-highlight);
 
             [dir="rtl"] & {
               right: 15px; // Half of the left padding.
@@ -266,7 +266,7 @@
           }
 
           &.is-active::before {
-            background: var(--cd-highlight-red);
+            background: var(--brand-highlight);
           }
         }
       }
@@ -274,12 +274,13 @@
       > ul > li.menu-item--active-trail {
         a::before,
         button::before {
-          background: rgba(var(--cd-rgb-highlight-red), 0.6);
+          opacity: 0.6;
+          background: var(--brand-highlight);
         }
 
         a.is-active::before,
         button.is-active::before {
-          background: var(--cd-highlight-red);
+          background: var(--brand-highlight);
         }
       }
     }
@@ -303,7 +304,7 @@
 
         &.menu-item--active-trail a::before,
         &.menu-item--active-trail button::before {
-          background: var(--cd-highlight-red);
+          background: var(--brand-highlight);
         }
 
         > a,
@@ -329,7 +330,7 @@
           }
 
           &:hover {
-            background: var(--cd-blue-grey);
+            background: var(--brand-grey);
           }
 
           &:focus {
@@ -339,7 +340,7 @@
           &.is-active,
           &:focus {
             &::before {
-              background: var(--cd-highlight-red);
+              background: var(--brand-highlight);
             }
           }
         }
@@ -354,24 +355,24 @@
         a,
         button {
           &:hover {
-            background: var(--cd-blue-grey);
+            background: var(--brand-grey);
           }
 
           &.menu-item--active-trail {
-            border-left: 6px solid var(--cd-highlight-red);
+            border-left: 6px solid var(--brand-highlight);
 
             [dir="rtl"] & {
-              border-right: 6px solid var(--cd-highlight-red);
+              border-right: 6px solid var(--brand-highlight);
               border-left-width: 0;
             }
           }
         }
 
         > li.menu-item--active-trail {
-          border-left: 6px solid var(--cd-highlight-red);
+          border-left: 6px solid var(--brand-highlight);
 
           [dir="rtl"] & {
-            border-right: 6px solid var(--cd-highlight-red);
+            border-right: 6px solid var(--brand-highlight);
             border-left-width: 0;
           }
         }
