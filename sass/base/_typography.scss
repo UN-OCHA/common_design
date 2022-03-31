@@ -236,12 +236,12 @@ h6 {
 }
 
 a {
-  color: var(--cd-blue--dark);
+  color: var(--brand-primary-dark);
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: var(--cd-ocha-blue);
+    color: var(--brand-primary);
   }
 }
 
