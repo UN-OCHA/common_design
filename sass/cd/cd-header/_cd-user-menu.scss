@@ -76,7 +76,7 @@
     height: calc(var(--cd-global-header-height) / 3);
     content: "";
     transform: translateY(-50%);
-    background: var(--cd-blue--light);
+    background: var(--brand-grey);
   }
 
   &:hover,
@@ -85,7 +85,7 @@
   }
 
   &:focus {
-    outline: 3px solid var(--cd-blue--bright);
+    outline: 3px solid var(--brand-primary-light);
     outline-offset: -2px;
   }
 

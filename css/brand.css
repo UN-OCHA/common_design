@@ -6,7 +6,6 @@
   --cd-blue--dark: #144372;
   /* Bright blue is one colour ramp lighter than brand blue */
   --cd-blue--bright: #82b5e9;
-  --cd-blue--light: #d4e5f7;
   --cd-highlight-red: #e56a54;
   /* This has been selected based on WCAG AAA requirements for contrast. */
   --cd-contrast-red: #e00000;
