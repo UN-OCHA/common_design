@@ -10,4 +10,5 @@
   --brand-primary-dark: var(--cd-blue--dark);
   --brand-highlight: var(--cd-highlight-red);
   --brand-grey: var(--cd-blue-grey);
+  --brand-logo-width: 186px;
 }

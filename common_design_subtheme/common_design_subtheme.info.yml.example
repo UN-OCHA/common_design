@@ -3,7 +3,7 @@ type: theme
 description: OCHA Common Design sub theme
 core_version_requirement: ^8.8 || ^9
 base theme: common_design
-logo: 'img/logos/logo.svg'
+logo: 'img/logos/ocha-lockup-blue.svg'
 
 # Defines libraries group in which we can add css/js.
 libraries:

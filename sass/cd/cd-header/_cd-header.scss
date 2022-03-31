@@ -52,7 +52,7 @@
     grid-column-gap: 1em;
 
     @include tablet {
-      grid-template-columns: 186px 1fr;
+      grid-template-columns: var(--brand-logo-width) 1fr;
     }
   }
 }
