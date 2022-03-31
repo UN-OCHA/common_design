@@ -22,7 +22,7 @@
   height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
-  color: var(--cd-primary);
+  color: var(--brand-primary);
   border: 0;
   background: transparent;
   font-size: 24px;
@@ -30,31 +30,31 @@
   svg {
     width: 26px;
     height: 26px;
-    fill: var(--cd-ocha-blue);
+    fill: var(--brand-primary);
   }
 
   &:hover,
   &:focus {
-    color: var(--cd-highlight-red);
+    color: var(--brand-primary-dark);
     outline: none;
     background: var(--cd-white);
 
     svg {
-      fill: var(--cd-highlight-red);
+      fill: var(--brand-primary-dark);
     }
   }
 
   &:focus {
-    color: var(--cd-highlight-red);
+    color: var(--brand-highlight);
 
     svg {
-      fill: var(--cd-highlight-red);
+      fill: var(--brand-primary-dark);
     }
   }
 
   &[aria-expanded="true"] {
     position: relative;
-    color: var(--cd-highlight-red);
+    color: var(--brand-highlight);
 
     &::before {
       position: absolute;
@@ -64,7 +64,7 @@
       content: "";
       border-width: 0 6px 6px;
       border-style: solid;
-      border-color: transparent transparent var(--cd-blue-grey);
+      border-color: transparent transparent var(--brand-grey);
 
       [dir="ltr"] & {
         left: 50%;
@@ -78,7 +78,7 @@
     }
 
     svg {
-      fill: var(--cd-highlight-red);
+      fill: var(--brand-highlight);
     }
 
     &:hover,
@@ -101,7 +101,7 @@
   right: 0;
   left: 0;
   height: var(--cd-site-header-height);
-  background: var(--cd-blue-grey);
+  background: var(--brand-grey);
 
   label {
     @extend .visually-hidden;
@@ -205,7 +205,7 @@
   }
 
   &:focus {
-    background-color: var(--cd-highlight-red);
+    background-color: var(--brand-highlight);
   }
 }
 
@@ -225,8 +225,8 @@
 
   .cd-search--inline {
     flex: 0 1 400px;
-    border-right: 1px solid var(--cd-blue-grey);
-    border-left: 1px solid var(--cd-blue-grey);
+    border-right: 1px solid var(--brand-grey);
+    border-left: 1px solid var(--brand-grey);
 
     [dir="ltr"] & {
       float: left;
@@ -280,7 +280,7 @@
     }
 
     &:focus {
-      border-bottom: 6px solid var(--cd-highlight-red);
+      border-bottom: 6px solid var(--brand-highlight);
       outline: 0;
       box-shadow: none;
     }
@@ -349,11 +349,11 @@
     &:hover,
     &:focus {
       outline: 0;
-      background-color: var(--cd-blue-grey);
+      background-color: var(--brand-grey);
       box-shadow: none;
 
       svg {
-        fill: var(--cd-highlight-red);
+        fill: var(--brand-highlight);
       }
     }
   }
@@ -370,7 +370,7 @@
         width: 2px;
         height: 24px;
         content: "";
-        background: var(--cd-blue-grey);
+        background: var(--brand-grey);
       }
     }
   }

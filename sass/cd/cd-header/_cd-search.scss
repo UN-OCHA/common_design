@@ -18,7 +18,7 @@
   height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
-  color: var(--cd-ocha-blue);
+  color: var(--brand-primary);
   border: 0;
   background: transparent;
   font-size: 24px;
@@ -26,31 +26,31 @@
   svg {
     width: 26px;
     height: 26px;
-    fill: var(--cd-ocha-blue);
+    fill: var(--brand-primary);
   }
 
   &:hover,
   &:focus {
-    color: var(--cd-blue--dark);
+    color: var(--brand-primary-dark);
     outline: none;
     background: var(--cd-white);
 
     svg {
-      fill: var(--cd-blue--dark);
+      fill: var(--brand-primary-dark);
     }
   }
 
   &:focus {
-    color: var(--cd-highlight-red);
+    color: var(--brand-highlight);
 
     svg {
-      fill: var(--cd-highlight-red);
+      fill: var(--brand-highlight);
     }
   }
 
   &[aria-expanded="true"] {
     position: relative;
-    color: var(--cd-highlight-red);
+    color: var(--brand-highlight);
 
     &::before {
       position: absolute;
@@ -60,7 +60,7 @@
       content: "";
       border-width: 0 6px 6px;
       border-style: solid;
-      border-color: transparent transparent var(--cd-blue-grey);
+      border-color: transparent transparent var(--brand-grey);
 
       [dir="ltr"] & {
         left: 50%;
@@ -74,7 +74,7 @@
     }
 
     svg {
-      fill: var(--cd-highlight-red);
+      fill: var(--brand-highlight);
     }
 
     &:hover,
@@ -97,7 +97,7 @@
   right: 0;
   left: 0;
   height: var(--cd-site-header-height);
-  background: var(--cd-blue-grey);
+  background: var(--brand-grey);
 
   label {
     @extend .visually-hidden;
@@ -205,7 +205,7 @@
   }
 
   &:focus {
-    background-color: var(--cd-highlight-red);
+    background-color: var(--brand-highlight);
   }
 }
 
