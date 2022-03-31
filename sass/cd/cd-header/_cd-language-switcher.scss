@@ -28,7 +28,7 @@
   }
 
   &:focus {
-    outline: 3px solid var(--cd-blue--bright);
+    outline: 3px solid var(--brand-primary-light);
   }
 
   @include tablet {
@@ -59,13 +59,11 @@
 
     &:hover,
     &:focus {
-      color: var(--cd-blue--bright);
+      text-decoration: underline;
     }
 
     &:focus {
-      text-decoration: underline;
-      color: var(--cd-white);
-      outline: 3px solid var(--cd-blue--bright);
+      outline: 3px solid var(--brand-primary-light);
     }
   }
 }
