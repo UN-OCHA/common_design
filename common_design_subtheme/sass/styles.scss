@@ -1,15 +1,24 @@
 //——————————————————————————————————————————————————————————————————————————————
-// Common Design sub-theme Sass styles (deprecated)
+// DEPRECATED: Common Design sub-theme Sass styles
 //
 // As of CD v7 the Sass files are no longer necessary to re-brand a sub-theme.
 //
-// Instead, you can change the css/brand.css file to pick colors and specify
-// other site-specific values, such as logo width.
+// This file is retained as a deprecation notice. If you are still using it, we
+// recommend moving off of Sass and instead using Drupal libraries to override
+// any components you wish to change.
 //
-// This file is retained as a deprecation notice, along with all the existing
-// Sass tooling. If you are still using it, we recommend moving off of Sass and
-// instead customize using Drupal libraries to override any components you wish
-// to change. The output of this file is still recognized by the global-styling
-// library (enabled by default), so anything you place in here and then compile
-// will affect your website styles automatically.
+// You can change the css/brand.css file to pick colors and specify other
+// site-specific values, such as logo width.
+//
+// Docs on libraries/libraries-override/libraries-extend are available in the
+// README and commented-out examples are in the sub-theme .info file.
+//
+// However, to provide a transition period, the output of this file is still
+// recognized by the global-styling library (enabled by default). We've also
+// retained the Sass tooling and npm commands for a time, during which you can
+// use them to decommission your sub-theme Sass.
+//
+// If you were using the CD Sass mixins, you can directly reference the copy
+// contained in the base-theme by uncommenting this @import statement:
 //——————————————————————————————————————————————————————————————————————————————
+// @import "../../../contrib/common_design/sass/cd/cd-mixins";

@@ -4,8 +4,8 @@ global-styling:
       css/styles.css: {}
       css/brand.css: {}
 
-# Custom components
-# cd-teaser:
+# Define Drupal libraries for your custom components
+# subtheme-teaser:
 #   css:
 #     theme:
-#       components/cd-teaser/cd-teaser.css: {}
+#       components/subtheme-teaser/subtheme-teaser.css: {}

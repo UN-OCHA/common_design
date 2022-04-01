@@ -1,13 +1,9 @@
-name:  OCHA Common Design sub theme
-type: theme
-description: OCHA Common Design sub theme
+name: OCHA Common Design sub-theme
+description: OCHA Common Design sub-theme
 core_version_requirement: ^8.8 || ^9
+type: theme
 base theme: common_design
 logo: 'img/logos/ocha-lockup-blue.svg'
-
-# Defines libraries group in which we can add css/js.
-libraries:
-  - common_design_subtheme/global-styling
 
 # Regions
 regions:
@@ -24,13 +20,31 @@ regions:
   footer_soft: Soft footer
   footer_navigation: Footer navigation
 
-# Add implementation-specific styles to base theme components
+###
+# Define libraries in: common_design_subtheme.libraries.yml
+# @see common_design_subtheme.libraries.yml
+
+###
+# Extend libraries to add site-specific styles to the base-theme components.
+# Now, wherever the CD Teaser is used, both the base-theme component and your
+# modifications will automatically apply.
+#
 # libraries-extend:
 #   common_design/cd-teaser:
-#     - common_design_subtheme/cd-teaser
+#     - common_design_subtheme/fts-teaser
 
-# Custom namespace
-# https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
-# Requires Components module
+###
+# Override libraries to replace specific base-theme components. Now, when the
+# base-theme component would have been used, instead ONLY yours will apply.
+#
+# libraries-override:
+#   common_design/cd-tabs: common_design_subtheme/cd-tabs-overridden
+
+###
+# Custom namespace - requires Components module
+#
+# @see https://www.drupal.org/project/components
+# @see https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
+#
 # components:
 #   namespaces:
