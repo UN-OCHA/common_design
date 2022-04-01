@@ -28,7 +28,7 @@ ul.tabs > li > a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--brand-primary-dark);
+  color: var(--brand-primary--dark);
   border: 0 none;
   border-bottom: 2px solid var(--brand-grey);
   border-radius: 0;
@@ -73,6 +73,6 @@ ul.tabs > li > a.is-active {
 }
 
 ul.tabs > li > a:focus {
-  outline: 3px solid var(--brand-primary-light);
+  outline: 3px solid var(--brand-primary--light);
   background: var(--brand-grey);
 }

@@ -103,8 +103,8 @@
    * @see common_design_subtheme/css/brand.css
    */
   --brand-primary: var(--cd-ocha-blue);
-  --brand-primary-light: var(--cd-blue--bright);
-  --brand-primary-dark: var(--cd-blue--dark);
+  --brand-primary--light: var(--cd-blue--bright);
+  --brand-primary--dark: var(--cd-blue--dark);
   --brand-highlight: var(--cd-highlight-red);
   --brand-grey: var(--cd-blue-grey);
   --brand-logo-width: 186px;

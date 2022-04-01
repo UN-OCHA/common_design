@@ -28,7 +28,7 @@
   }
 
   &:focus {
-    outline: 3px solid var(--brand-primary-light);
+    outline: 3px solid var(--brand-primary--light);
   }
 
   @include tablet {
@@ -63,7 +63,7 @@
     }
 
     &:focus {
-      outline: 3px solid var(--brand-primary-light);
+      outline: 3px solid var(--brand-primary--light);
     }
   }
 }
