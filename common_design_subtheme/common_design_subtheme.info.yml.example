@@ -21,8 +21,13 @@ regions:
   footer_navigation: Footer navigation
 
 ###
-# Define libraries in: common_design_subtheme.libraries.yml
+# Define the default library for the subtheme. If you want to include other
+# libraries by default, add them as dependencies to global-styling.
+#
 # @see common_design_subtheme.libraries.yml
+#
+libraries:
+  - common_design_subtheme/global-styling
 
 ###
 # Extend libraries to add site-specific styles to the base-theme components.
