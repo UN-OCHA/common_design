@@ -5,10 +5,10 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-soft-footer {
+  position: relative;
   padding: 24px 0;
   text-align: center;
   color: var(--cd-white);
-  background: var(--brand-primary--light);
 
   h2 {
     color: var(--cd-white);
@@ -25,6 +25,18 @@
     &:focus {
       outline: 3px solid var(--brand-primary--dark);
     }
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    opacity: 0.9;
+    background: var(--brand-primary);
   }
 }
 
