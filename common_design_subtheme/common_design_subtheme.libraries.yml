@@ -1,11 +1,25 @@
+###
+# Default global styles for the sub-theme.
+#
+# If you want specific components to apply to your whole site, list them as
+# dependencies to this library.
 global-styling:
   css:
     theme:
       css/styles.css: {}
       css/brand.css: {}
+#   dependencies:
+#     - common_design_subtheme/custom-teaser
 
-# Define Drupal libraries for your custom components
-# subtheme-teaser:
+###
+# Define Drupal libraries for your custom components.
+#
+# These libraries can be referenced in your theme info.yml file to extend or
+# override existing base-theme or core Drupal libraries. They can also be
+# completely independent and style the custom content of your website, such as
+# a custom Paragraph type.
+#
+# custom-teaser:
 #   css:
 #     theme:
-#       components/subtheme-teaser/subtheme-teaser.css: {}
+#       components/custom-teaser/custom-teaser.css: {}

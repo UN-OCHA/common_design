@@ -32,11 +32,14 @@ libraries:
 ###
 # Extend libraries to add site-specific styles to the base-theme components.
 # Now, wherever the CD Teaser is used, both the base-theme component and your
-# modifications will automatically apply.
+# modifications will automatically apply. NOTE: the Drupal library must be
+# defined in the libraries.yml file to be used here.
+#
+# @see common_design_subtheme.libraries.yml
 #
 # libraries-extend:
 #   common_design/cd-teaser:
-#     - common_design_subtheme/fts-teaser
+#     - common_design_subtheme/custom-teaser
 
 ###
 # Override libraries to replace specific base-theme components. Now, when the
