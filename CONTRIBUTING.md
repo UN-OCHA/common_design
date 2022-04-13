@@ -57,28 +57,35 @@ There may be several breaking changes during the year which result in increments
 
 **Audience:** CD maintainers
 
-Create a new branch from `develop` and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files.
+Create a new branch from `develop` and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
+
+```sh
+# Example with the dry-run flag.
+$ npm run release -- --dry-run
+
+> common-design@6.0.0 release
+> standard-version "--dry-run"
+
+✔ bumping version in package.json from 6.0.0 to 7.0.0
+✔ bumping version in package-lock.json from 6.0.0 to 7.0.0
+✔ outputting changes to CHANGELOG.md
+```
+
+The command to make a release contains no flags:
 
 ```sh
 $ npm run release
-
-# it will report the new version number and provide some additional instructions
-# about pushing the tag. Note the tag, but IGNORE the other instructions!
 ```
 
-The tool will create a tag which **you should DELETE** using the following command, substituting our example tag `v0.0.0` for the tag that actually got created:
+Review the commit and make any necessary adjustments to the CHANGELOG, using `git commit --amend` to add your changes to the existing commit that standard-verion just created.
 
-```sh
-$ git tag -d v0.0.0
-```
+Push your branch and open a PR to `develop`, which you can merge without review. Once the changes are merged to `develop`, [create a PR from `develop` to `main`][pr-dev-main] which will include all work since the previous tagged release. You can merge that without review as well.
 
-With the tag deleted, push your branch and open a PR to `develop`, which you can merge without review. Once the changes are merged to `develop`, [create a PR from `develop` to `main`][pr-dev-main] which will include all work since the previous tagged release. You can merge that without review as well.
-
-Finally, [create the new Release][new-release] using the GitHub UI. The tag should be the **exact same as the one you deleted before**. If you forgot it, look at the first tag listed in [CHANGELOG in `main`][main-changelog] to see what your tag should be. It will be in the format `v0.0.0`. The next section covers the contents of your Release Notes.
+Finally, [create the new Release][new-release] using the GitHub UI. The tag should be the prefixed with `v` and the numbers should be identical to [`package.json` in the `main` branch][main-package]. The next section covers the contents of your Release Notes.
 
   [pr-dev-main]: https://github.com/UN-OCHA/common_design/compare/main...develop
   [new-release]: https://github.com/UN-OCHA/common_design/releases/new
-  [main-changelog]: https://github.com/UN-OCHA/common_design/blob/main/CHANGELOG.md#changelog
+  [main-package]: https://github.com/UN-OCHA/common_design/blob/main/package.json
 
 
 ### Release Notes Template
