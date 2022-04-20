@@ -16,7 +16,7 @@
   height: var(--cd-site-header-height);
 
   &:focus {
-    outline: 3px solid var(--cd-blue--bright);
+    outline: 3px solid var(--brand-primary--light);
   }
 
   // Logo for mobile.
@@ -26,7 +26,7 @@
   }
 
   @include tablet {
-    width: 186px; // width may need to be adjusted depending on logo width.
+    width: var(--brand-logo-width); // adjust within sub-theme's brand.css
     padding-top: 0;
     background: none;
 

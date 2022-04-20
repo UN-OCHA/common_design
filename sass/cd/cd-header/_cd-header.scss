@@ -4,7 +4,7 @@
 
 // We want uniform focus styles on the whole Header
 .cd-header button:focus {
-  outline: 3px solid var(--cd-blue--bright);
+  outline: 3px solid var(--brand-primary--light);
 }
 
 //
@@ -15,8 +15,7 @@
   position: relative;
   height: var(--cd-global-header-height);
   color: var(--cd-white);
-  background: var(--cd-primary);
-  background-image: linear-gradient(-180deg, var(--cd-primary) 57%, var(--cd-primary--dark) 97%);
+  background: var(--brand-primary);
 
   .no-js & {
     height: auto;
@@ -52,7 +51,7 @@
     grid-column-gap: 1em;
 
     @include tablet {
-      grid-template-columns: 186px 1fr;
+      grid-template-columns: var(--brand-logo-width) 1fr;
     }
   }
 }
