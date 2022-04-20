@@ -57,9 +57,10 @@
           Progressive enhancement: make sure there is always a menu entry.
           If the menu item has children and javascript is enabled then this will
           be replaced with a button to show the child menu.
+          If the menu item has children, an id attribute and value is added.
         #}
         {% if item.url %}
-        <a href="{{ item.url }}" id="{{ id }}"><span>{{ title }}</span></a>
+        <a href="{{ item.url }}"{% if item.below %} id="{{ id }}"{% endif %}><span>{{ title }}</span></a>
         {% else %}
         <span id="{{ id }}">{{ title }}</span>
         {% endif %}
@@ -79,6 +80,7 @@
           %}
 
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+
 
         {% endif %}
 
