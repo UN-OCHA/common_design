@@ -1,6 +1,14 @@
 # OCHA Common Design sub-theme for Drupal 8/9
 
-This can be used as a starting point for implementations of the [OCHA Common Design](https://github.com/UN-OCHA/common_design) base-theme. Add components, override and extend base-theme as needed. Refer to [Drupal 8+ Theming documentation](https://www.drupal.org/docs/theming-drupal) for more information.
+A boilerplate for implementing the [OCHA Common Design](https://github.com/UN-OCHA/common_design) base-theme in a way that allows for "upstream" changes such as security updates, new features, and so forth. The sub-theme is ready to help you implement the following types of customizations:
+
+- modifying the Common Design to customise its colors
+- modifying the icon sprite to add your own icons
+- override/extend base-theme templates
+- adding/overriding/extending frontend components
+
+Refer to [Drupal 8+ Theming documentation](https://www.drupal.org/docs/theming-drupal) for more information.
+
 
 ## Getting started
 
@@ -27,6 +35,12 @@ Replace the favicon in the theme's root, and the homescreen icons in `img/` with
 Change the CSS Vars in `css/brand.css` and save the file. Sass is no longer needed in CD v7.
 
 
+### Customise icons
+
+- Copy SVG icons from the [Humanitarian icon set](https://brand.unocha.org/d/xEPytAUjC3sH/icons) into the subtheme `img/icons` directory and follow the instructions in the [common_design README](https://github.com/UN-OCHA/common_design/#icons) to generate a sprite with those new icons.
+- Edit the subtheme's `templates/cd/cd-icons/cd-icons.html.twig` to include the generated sprite file.
+
+
 ### Creating Drupal libraries
 
 Add new components by [defining new libraries](https://www.drupal.org/docs/theming-drupal/adding-stylesheets-css-and-javascript-js-to-a-drupal-theme#define) in `common_design_subtheme.libraries.yml` and attaching them to relevant templates. Or use existing components from `common_design.libraries.yml` base-theme by overriding Twig templates in the sub-theme and [attaching the libraries](https://www.drupal.org/docs/theming-drupal/adding-stylesheets-css-and-javascript-js-to-a-drupal-theme#attach-library-specific-twig) like so:
@@ -38,6 +52,7 @@ Add new components by [defining new libraries](https://www.drupal.org/docs/themi
 {# Attach a custom sub-theme library #}
 {{ attach_library('common_design_subtheme/my-article-teaser') }}
 ```
+
 
 ### Overriding Drupal libraries
 
@@ -59,5 +74,5 @@ general details about base-theme and instructions for compilation. There should 
 
 
 ## Tests
-Refer to [common_design README E2E testing](https://github.com/UN-OCHA/common_design/#e2e-testing) for information about
-running tests.
+
+Refer to [common_design README E2E testing](https://github.com/UN-OCHA/common_design/#e2e-testing) for information about running tests.

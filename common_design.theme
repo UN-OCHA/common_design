@@ -406,17 +406,6 @@ function common_design_form_alter(&$form, FormStateInterface $form_state, $form_
  * Implements hook_preprocess_html().
  */
 function common_design_preprocess_html(&$vars) {
-  // SVG sprite
-  // Get the contents of the SVG sprite.
-  $icons = file_get_contents(drupal_get_path('theme', 'common_design') . '/img/icons/cd-icons-sprite.svg');
-
-  // Add a new render array to page_bottom so the icons
-  // get added to the page.
-  $vars['page_bottom']['icons'] = [
-    '#type' => 'inline_template',
-    '#template' => '<span class="hidden">' . $icons . '</span>',
-  ];
-
   // Check if current request is an exception to get error type.
   $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
 
