@@ -4,31 +4,31 @@
 
 .cd-search--inline__btn {
   svg {
-    fill: $implementation-primary;
+    fill: var(--implementation-primary);
   }
 
   &:hover,
   &:focus {
-    color: $implementation-primary-dark;
+    color: var(--implementation-primary-dark);
 
     svg {
-      fill: $implementation-primary-dark;
+      fill: var(--implementation-primary-dark);
     }
   }
 
   &:focus {
-    color: $implementation-highlight;
+    color: var(--implementation-highlight);
 
     svg {
-      fill: $implementation-primary-dark;
+      fill: var(--implementation-primary-dark);
     }
   }
 
   &[aria-expanded="true"] {
-    color: $implementation-highlight;
+    color: var(--implementation-highlight);
 
     svg {
-      fill: $implementation-highlight;
+      fill: var(--implementation-highlight);
     }
   }
 }
@@ -36,10 +36,10 @@
 .cd-search--inline__submit {
   &:hover,
   &:focus {
-    background: $implementation-highlight;
+    background: var(--implementation-highlight);
 
     svg {
-      fill: $cd-white;
+      fill: var(--cd-white);
     }
   }
 }
@@ -48,7 +48,7 @@
 @include desktop {
   .cd-search--inline__input {
     &:focus {
-      border-bottom: 3px solid $cd-blue--bright;
+      border-bottom: 3px solid var(--cd-blue--bright);
     }
   }
 
@@ -56,7 +56,7 @@
     &:hover,
     &:focus {
       svg {
-        fill: $implementation-highlight;
+        fill: var(--implementation-highlight);
       }
     }
   }

@@ -7,13 +7,13 @@
   grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
   padding: 3rem 0 0;
   text-align: center;
-  color: $cd-white;
-  background: $cd-primary;
+  color: var(--cd-white);
+  background: var(--cd-primary);
   line-height: 1.5;
 
   a {
     text-decoration: none;
-    color: $cd-white;
+    color: var(--cd-white);
 
     &.cd-button {
       color: initial;
@@ -22,7 +22,7 @@
     &:hover,
     &:focus {
       text-decoration: underline;
-      color: $cd-white;
+      color: var(--cd-white);
     }
 
     &.cd-button:hover,
@@ -31,7 +31,7 @@
     }
 
     &:focus {
-      outline: 3px solid $cd-blue--bright;
+      outline: 3px solid var(--cd-blue--bright);
       outline-offset: 8px;
     }
   }

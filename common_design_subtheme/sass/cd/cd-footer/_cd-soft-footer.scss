@@ -5,11 +5,11 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-soft-footer {
-  background: rgba($cd-rgb-ocha-blue, 0.9);
+  background: rgba(var(--cd-rgb-ocha-blue), 0.9);
 
   a {
     &:focus {
-      outline: 3px solid $cd-blue--bright;
+      outline: 3px solid var(--cd-blue--bright);
     }
   }
 }

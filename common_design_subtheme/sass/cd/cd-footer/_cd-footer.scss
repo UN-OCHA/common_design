@@ -3,11 +3,11 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-footer {
-  background: $implementation-primary;
+  background: var(--implementation-primary);
 
   a {
     &:focus {
-      outline: 3px solid $cd-blue--bright;
+      outline: 3px solid var(--cd-blue--bright);
     }
   }
 }

@@ -11,7 +11,7 @@ a.cd-footer-social__link {
   svg {
     width: 26px;
     height: 26px;
-    fill: $cd-white;
+    fill: var(--cd-white);
 
     &.hover-style {
       display: none;

@@ -130,8 +130,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: $cd-default-text-color;
-  font-family: $cd-font--roboto;
+  color: var(--cd-default-text-color);
+  font-family: var(--cd-font--roboto);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -143,7 +143,7 @@ h6 {
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-kufi-arabic;
+    font-family: var(--cd-font--noto-kufi-arabic);
     font-weight: 400;
   }
 }
@@ -155,7 +155,7 @@ h6 {
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-sans;
+    font-family: var(--cd-font--noto-sans);
     font-weight: 400;
   }
 }
@@ -168,18 +168,18 @@ h6 {
   h4,
   h5,
   h6 {
-    font-family: $cd-font--noto-sans-sc;
+    font-family: var(--cd-font--noto-sans-sc);
     font-weight: 400;
   }
 }
 
 h1 {
-  color: $cd-default-text-color;
-  font-size: $cd-font-size--2xmedium;
+  color: var(--cd-default-text-color);
+  font-size: var(--cd-font-size--2xmedium);
   font-weight: 700;
 
   @include desktop {
-    font-size: $cd-font-size--2xlarge;
+    font-size: var(--cd-font-size--2xlarge);
   }
 }
 
@@ -196,34 +196,34 @@ dl {
 }
 
 h2 {
-  font-size: $cd-font-size--2xbase;
+  font-size: var(--cd-font-size--2xbase);
 
   @include desktop {
-    font-size: $cd-font-size--2xmedium;
+    font-size: var(--cd-font-size--2xmedium);
   }
 }
 
 h3 {
-  font-size: $cd-font-size--large;
+  font-size: var(--cd-font-size--large);
 
   @include desktop {
-    font-size: $cd-font-size--2xbase;
+    font-size: var(--cd-font-size--2xbase);
   }
 }
 
 h4 {
-  font-size: $cd-font-size--medium;
+  font-size: var(--cd-font-size--medium);
 
   @include desktop {
-    font-size: $cd-font-size--large;
+    font-size: var(--cd-font-size--large);
   }
 }
 
 h5 {
-  font-size: $cd-font-size--base;
+  font-size: var(--cd-font-size--base);
 
   @include desktop {
-    font-size: $cd-font-size--medium;
+    font-size: var(--cd-font-size--medium);
   }
 }
 
@@ -231,17 +231,17 @@ h6 {
   font-size: 1rem;
 
   @include desktop {
-    font-size: $cd-font-size--base;
+    font-size: var(--cd-font-size--base);
   }
 }
 
 a {
-  color: $cd-blue--dark;
+  color: var(--cd-blue--dark);
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $cd-ocha-blue;
+    color: var(--cd-ocha-blue);
   }
 }
 

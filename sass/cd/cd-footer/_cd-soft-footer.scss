@@ -7,23 +7,23 @@
 .cd-soft-footer {
   padding: 24px 0;
   text-align: center;
-  color: $cd-white;
-  background: rgba($cd-rgb-ocha-blue, 0.9);
+  color: var(--cd-white);
+  background: rgba(var(--cd-rgb-ocha-blue), 0.9);
 
   h2 {
-    color: $cd-white;
+    color: var(--cd-white);
   }
 
   a {
-    color: $cd-white;
+    color: var(--cd-white);
 
     &:hover,
     &:focus {
-      color: $cd-white;
+      color: var(--cd-white);
     }
 
     &:focus {
-      outline: 3px solid $cd-blue--bright;
+      outline: 3px solid var(--cd-blue--bright);
     }
   }
 }

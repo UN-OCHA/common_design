@@ -41,8 +41,8 @@
 
   position: absolute;
   left: 0;
-  color: $cd-white;
-  background: $cd-primary;
+  color: var(--cd-white);
+  background: var(--cd-primary);
 
   .no-js & {
     position: relative;
@@ -65,13 +65,13 @@
     content: "";
     border-width: 0 6px 6px;
     border-style: solid;
-    border-color: transparent transparent $cd-primary;
+    border-color: transparent transparent var(--cd-primary);
   }
 }
 
 button[aria-expanded] {
   .cd-icon--arrow-down {
-    fill: $cd-white;
+    fill: var(--cd-white);
     width: 9px;
     height: 9px;
 

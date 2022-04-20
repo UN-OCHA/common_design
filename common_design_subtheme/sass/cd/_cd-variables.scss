@@ -35,10 +35,22 @@
   --cd-rgb-highlight-red: 229, 106, 84;
   --cd-rgb-blue-grey--dark: 211, 221, 229;
 
+  /* Brand colors */
+  --cd-primary: var(--cd-ocha-blue);
+  --cd-primary--dark: var(--cd-blue--dark);
+
+  /* Implementation colors */
+  --implementation-primary: var(--cd-ocha-blue);
+  --implementation-primary-dark: var(--cd-blue--dark);
+  --implementation-secondary: var(--cd-blue--bright);
+  --implementation-highlight: var(--cd-highlight-red);
+
   /* Measurements */
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;
   --cd-max-width: 1220px;
+  --cd-global-header-height: 35px;
+  --cd-site-header-height: 60px;
   --cd-container-padding: 0.75rem; /* 12px */
   --cd-container-padding-tablet: 1.5rem; /* 24px */
   --cd-container-padding-xlarge: 2.5rem; /* 40px */
@@ -89,79 +101,6 @@
 }
 
 //——————————————————————————————————————————————————————————————————————————————
-// Measurements
-//——————————————————————————————————————————————————————————————————————————————
-$cd-max-body-width: var(--cd-max-body-width);
-$cd-max-width: var(--cd-max-width);
-
-$cd-container-padding: var(--cd-container-padding);
-$cd-container-padding-tablet: var(--cd-container-padding-tablet);
-$cd-container-padding-xlarge: var(--cd-container-padding-xlarge);
-
-$cd-global-header-height: 35px;
-$cd-site-header-height: 60px;
-
-// Colour palette
-$cd-ocha-blue: var(--cd-ocha-blue);
-$cd-blue--dark: var(--cd-blue--dark);
-$cd-blue--bright: var(--cd-blue--bright);
-$cd-blue--light: var(--cd-blue--light);
-
-$cd-grey--light: var(--cd-grey--light);
-$cd-grey--mid: var(--cd-grey--mid);
-$cd-grey--dark: var(--cd-grey--dark);
-
-// Default text colour.
-$cd-default-text-color: var(--cd-default-text-color);
-
-$cd-white: var(--cd-white);
-$cd-black: var(--cd-black);
-
-// Site background colour.
-$cd-blue-grey--dark: var(--cd-blue-grey--dark);
-$cd-blue-grey: var(--cd-blue-grey);
-$cd-blue-grey--light: var(--cd-blue-grey--light);
-
-$cd-highlight-red: var(--cd-highlight-red);
-$cd-contrast-red: var(--cd-contrast-red);
-
-$cd-rgb-ocha-blue: var(--cd-rgb-ocha-blue);
-$cd-rgb-grey--mid: var(--cd-rgb-grey--mid);
-$cd-rgb-grey--dark: var(--cd-rgb-grey--dark);
-$cd-rgb-highlight-red: var(--cd-rgb-highlight-red);
-$cd-rgb-blue-grey--dark: var(--cd-rgb-blue-grey--dark);
-
-// Brand colours
-$cd-primary: $cd-ocha-blue;
-$cd-primary--dark: $cd-blue--dark;
-
-//——————————————————————————————————————————————————————————————————————————————
-// Fonts
-//——————————————————————————————————————————————————————————————————————————————
-
-$cd-font: var(--cd-font);
-$cd-font--system:  var(--cd-font--system);
-$cd-font--roboto: var(--cd-font--roboto);
-$cd-font--roboto-condensed: var(--cd-font--roboto-condensed);
-$cd-font--roboto-slab: var(--cd-font--roboto-slab);
-$cd-font--noto-sans: var(--cd-font--noto-sans);
-$cd-font--noto-kufi-arabic: var(--cd-font--noto-kufi-arabic);
-$cd-font--noto-sans-sc: var(--cd-font--noto-sans-sc);
-
-//——————————————————————————————————————————————————————————————————————————————
-// Font sizes
-//——————————————————————————————————————————————————————————————————————————————
-
-$cd-font-size--tiny: var(--cd-font-size--tiny);
-$cd-font-size--small: var(--cd-font-size--small);
-$cd-font-size--base: var(--cd-font-size--base);
-$cd-font-size--medium: var(--cd-font-size--medium);
-$cd-font-size--large: var(--cd-font-size--large);
-$cd-font-size--2xbase: var(--cd-font-size--2xbase);
-$cd-font-size--2xmedium: var(--cd-font-size--2xmedium);
-$cd-font-size--2xlarge: var(--cd-font-size--2xlarge);
-
-//——————————————————————————————————————————————————————————————————————————————
 // Don't use any maps directly. Please refer to `_cd-mixins.scss` partial.
 //——————————————————————————————————————————————————————————————————————————————
 
@@ -201,12 +140,3 @@ $zindex: (
   dropdown: 201,
   skip-link: 1000
 );
-
-//——————————————————————————————————————————————————————————————————————————————
-// Implementation colours
-//——————————————————————————————————————————————————————————————————————————————
-
-$implementation-primary: $cd-ocha-blue;
-$implementation-primary-dark: $cd-blue--dark;
-$implementation-secondary: $cd-blue--bright;
-$implementation-highlight: $cd-highlight-red;

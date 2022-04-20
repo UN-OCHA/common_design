@@ -13,10 +13,10 @@
   display: block;
   float: left;
   width: 52px;
-  height: $cd-site-header-height;
+  height: var(--cd-site-header-height);
 
   &:focus {
-    outline: 3px solid $cd-blue--bright;
+    outline: 3px solid var(--cd-blue--bright);
   }
 
   // Logo for mobile.

@@ -11,9 +11,9 @@
   display: flex;
   align-items: center;
   box-sizing: content-box;
-  height: $cd-global-header-height;
+  height: var(--cd-global-header-height);
   padding: 0 0 0 15px;
-  line-height: $cd-global-header-height;
+  line-height: var(--cd-global-header-height);
 
   // Language switcher is always on the far edge of the global header.
   // Cancel the border that we render for other elements.
@@ -28,7 +28,7 @@
   }
 
   &:focus {
-    outline: 3px solid $cd-blue--bright;
+    outline: 3px solid var(--cd-blue--bright);
   }
 
   @include tablet {
@@ -55,17 +55,17 @@
   li a {
     @extend .cd-user-menu__dropdown-link;
 
-    color: $cd-white;
+    color: var(--cd-white);
 
     &:hover,
     &:focus {
-      color: $cd-blue--bright;
+      color: var(--cd-blue--bright);
     }
 
     &:focus {
       text-decoration: underline;
-      color: $cd-white;
-      outline: 3px solid $cd-blue--bright;
+      color: var(--cd-white);
+      outline: 3px solid var(--cd-blue--bright);
     }
   }
 }
@@ -117,9 +117,9 @@
   }
 
   a {
-    height: $cd-global-header-height;
+    height: var(--cd-global-header-height);
     padding: 0;
-    line-height: $cd-global-header-height;
+    line-height: var(--cd-global-header-height);
   }
 
   // Reposition checkmark icon.

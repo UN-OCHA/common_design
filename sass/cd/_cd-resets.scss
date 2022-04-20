@@ -8,20 +8,20 @@
   // Set box-sizing
   box-sizing: border-box;
   // Setup font
-  font-family: $cd-font;
-  font-size: $cd-font-size--tiny;
+  font-family: var(--cd-font);
+  font-size: var(--cd-font-size--tiny);
   font-weight: 300;
 
   [lang="ar"] & {
-    font-family: $cd-font--noto-kufi-arabic;
+    font-family: var(--cd-font--noto-kufi-arabic);
   }
 
   [lang="ru"] & {
-    font-family: $cd-font--noto-sans;
+    font-family: var(--cd-font--noto-sans);
   }
 
   [lang="zh-hans"] & {
-    font-family: $cd-font--noto-sans-sc;
+    font-family: var(--cd-font--noto-sans-sc);
   }
 
   // box-sizing on all child elements
@@ -35,20 +35,20 @@
   button {
     border-radius: 0;
     box-shadow: none;
-    font-size: $cd-font-size--tiny;
+    font-size: var(--cd-font-size--tiny);
     font-weight: 300;
     -webkit-appearance: none;
 
     [lang="ar"] & {
-      font-family: $cd-font--noto-kufi-arabic;
+      font-family: var(--cd-font--noto-kufi-arabic);
     }
 
     [lang="ru"] & {
-      font-family: $cd-font--noto-sans;
+      font-family: var(--cd-font--noto-sans);
     }
 
     [lang="zh-hans"] & {
-      font-family: $cd-font--noto-sans-sc;
+      font-family: var(--cd-font--noto-sans-sc);
     }
 
     &[data-cd-toggler] {

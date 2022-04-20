@@ -15,7 +15,7 @@
   }
 
   h2 {
-    color: $cd-white;
+    color: var(--cd-white);
   }
 }
 
@@ -23,12 +23,12 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: $cd-global-header-height;
+  height: var(--cd-global-header-height);
   padding: 0;
   transition: background 0.3s ease;
-  color: $cd-white;
+  color: var(--cd-white);
   background: transparent;
-  font-size: $cd-font-size--tiny;
+  font-size: var(--cd-font-size--tiny);
 
   .cd-icon--arrow-down {
     margin: auto; // Center vertically in macOS 10
@@ -62,7 +62,7 @@
   flex-shrink: 0;
   width: 21px;
   height: 21px;
-  fill: $cd-white;
+  fill: var(--cd-white);
 
   @include tablet {
     [dir="ltr"] & {
@@ -87,16 +87,16 @@
 }
 
 .cd-ocha-dropdown__inner {
-  max-width: $cd-max-width;
-  padding: 0 $cd-container-padding;
+  max-width: var(--cd-max-width);
+  padding: 0 var(--cd-container-padding);
 
   @include tablet {
     margin: 0 auto;
-    padding: 0 $cd-container-padding-tablet;
+    padding: 0 var(--cd-container-padding-tablet);
   }
 
   @include xlarge {
-    padding: 0 $cd-container-padding-xlarge;
+    padding: 0 var(--cd-container-padding-xlarge);
   }
 
   @supports (display: grid) {
@@ -159,7 +159,7 @@
 .cd-ocha-dropdown__heading {
   margin: 0 0 10px;
   padding-bottom: 2px;
-  color: $cd-blue--light;
+  color: var(--cd-blue--light);
 
   // there's an invisible heading in the third column to keep the links inside
   // column 2/3 in line with each other. it's hidden on mobile.
@@ -185,16 +185,16 @@
 
   a {
     text-decoration: none;
-    color: $cd-white;
+    color: var(--cd-white);
 
     &:hover,
     &:focus {
       text-decoration: underline;
-      color: $cd-white;
+      color: var(--cd-white);
     }
 
     &:focus {
-      outline: 3px solid $cd-blue--bright;
+      outline: 3px solid var(--cd-blue--bright);
       outline-offset: 8px;
     }
   }
@@ -208,7 +208,7 @@
   display: inline-block;
   width: 100%;
   padding: 10px;
-  font-size: $cd-font-size--small;
+  font-size: var(--cd-font-size--small);
 
   @include tablet {
     position: absolute;
