@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/UN-OCHA/common_design/compare/v6.0.0...v7.0.0) (2022-04-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sass:** The sub-theme no longer uses Sass by default. All properties that were being overridden by sub-theme Sass are now folded into the base-theme, and instead you can use the `css/brand.css` file in the sub-theme to control your website branding.
+* **icons:** The icon SVG sprite is included via a template rather than a hook. If you've customized your icon sprite, you'll need to reconfigure the sub-theme to take advantage of the template instead of `hook_preprocess_html()`.
+
+### Features
+
+* **branding:** Created a CSS file dedicated to site branding. You can control all site branding using five CSS Vars. ([2224bf8](https://github.com/UN-OCHA/common_design/commit/2224bf8d9de864f031d9242d903af2e8a4cc1e57))
+* **icons:** include icon svg sprite via a template rather than a hook ([96cf1f7](https://github.com/UN-OCHA/common_design/commit/96cf1f7ca6cc8cbae72caae025b7a19158554d94))
+
+
 ## [6.0.0](https://github.com/UN-OCHA/common_design/compare/v5.1.0...v6.0.0) (2022-03-04)
 
 
