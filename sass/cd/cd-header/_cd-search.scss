@@ -86,10 +86,13 @@
 }
 
 .cd-search__btn-label {
-  display: none;
   text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
   font-weight: 700;
+
+  @include max-width(lg) {
+    @include visually-hidden;
+  }
 }
 
 .cd-search__form {
@@ -248,10 +251,6 @@
     [dir="rtl"] & {
       padding-left: 4px;
     }
-  }
-
-  .cd-search__btn-label {
-    display: block;
   }
 }
 
