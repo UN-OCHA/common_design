@@ -57,7 +57,7 @@ There may be several breaking changes during the year which result in increments
 
 **Audience:** CD maintainers
 
-Create a new branch from `develop` and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
+Create a new branch from `develop`, merge in `origin/main`, and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
 
 ```sh
 # Example with the dry-run flag.
