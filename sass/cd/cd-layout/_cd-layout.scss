@@ -63,16 +63,16 @@ body {
 
   box-sizing: border-box;
   width: 100%;
-  max-width: $cd-max-width;
+  max-width: var(--cd-max-width);
   margin: 0 auto;
-  padding: 0 $cd-container-padding;
+  padding: 0 var(--cd-container-padding);
 
   @include tablet {
-    padding: 0 $cd-container-padding-tablet;
+    padding: 0 var(--cd-container-padding-tablet);
   }
 
   @include xlarge {
-    padding: 0 $cd-container-padding-xlarge;
+    padding: 0 var(--cd-container-padding-xlarge);
   }
 }
 
@@ -251,7 +251,7 @@ body {
 
     // I've styled this as a block with padding and bg colour.
     padding: 1rem;
-    background-color: $cd-blue-grey--light;
+    background-color: var(--cd-blue-grey--light);
 
     @include desktop {
       flex-basis: 285px;

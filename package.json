@@ -1,11 +1,12 @@
 {
   "name": "common-design",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "OCHA Common Design base theme for Drupal 8+",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
   "license": "GPL-2.0",
   "scripts": {
+    "sass:css-select-a11y-dev": "sass components/cd-select-a11y/cd-select-a11y.scss components/cd-select-a11y/cd-select-a11y.css",
     "sass:compile": "sass sass/styles.scss css/styles.css --style=compressed --no-source-map",
     "sass:compile-dev": "sass --embed-sources sass/styles.scss css/styles.css",
     "sass:watch": "npm run sass:lint && npm run sass:compile-dev -- --watch",
@@ -47,7 +48,7 @@
     "jest": "^26.6.3",
     "jest-puppeteer": "^5.0.3",
     "json-schema": ">=0.4.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "nth-check": ">=2.0.1",
     "puppeteer": "^9.1.1",
     "set-value": ">=4.0.1",
@@ -56,5 +57,11 @@
     "trim": ">=0.0.3",
     "trim-newlines": "^4.0.2",
     "yargs-parser": "^18.1.3"
+  },
+  "//": "To integrate with our release process, we instruct standard-version to skip creation of git tags, which we manage on GitHub.",
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
   }
 }

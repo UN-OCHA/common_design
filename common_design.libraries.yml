@@ -29,6 +29,7 @@ fonts-russian:
 global-styling:
   css:
     theme:
+      css/brand.css: {}
       css/styles.css: {}
 
 cd-dropdown:

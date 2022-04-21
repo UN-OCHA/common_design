@@ -3,7 +3,7 @@ ul.tabs {
   margin: 1rem 0 2rem;
   padding: 0;
   list-style: none;
-  border-bottom: 2px solid var(--cd-blue-grey);
+  border-bottom: 2px solid var(--brand-grey);
 }
 
 /* Clearfix */
@@ -28,9 +28,9 @@ ul.tabs > li > a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--cd-ocha-blue);
+  color: var(--brand-primary--dark);
   border: 0 none;
-  border-bottom: 2px solid var(--cd-blue-grey);
+  border-bottom: 2px solid var(--brand-grey);
   border-radius: 0;
   background: none;
   font-weight: 700;
@@ -62,10 +62,10 @@ ul.tabs > li > a {
 
 ul.tabs > li > a.is-active,
 ul.tabs > li > a:hover {
-  color: var(--cd-ocha-blue);
+  color: var(--brand-primary);
   border: 0 none !important;
-  border-bottom: 2px solid var(--cd-blue-grey) !important;
-  background-color: var(--cd-blue-grey);
+  border-bottom: 2px solid var(--brand-grey) !important;
+  background-color: var(--brand-grey);
 }
 
 ul.tabs > li > a.is-active {
@@ -73,6 +73,6 @@ ul.tabs > li > a.is-active {
 }
 
 ul.tabs > li > a:focus {
-  outline: 3px solid var(--cd-blue--bright);
-  background: var(--cd-blue-grey);
+  outline: 3px solid var(--brand-primary--light);
+  background: var(--brand-grey);
 }

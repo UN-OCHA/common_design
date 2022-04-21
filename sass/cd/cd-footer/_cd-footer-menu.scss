@@ -37,7 +37,7 @@
 .cd-footer__section--menu h2 {
   @extend .visually-hidden;
 
-  color: $cd-white;
+  color: var(--cd-white);
 }
 
 // Apply menu  styles to Drupal Menu items

@@ -20,7 +20,7 @@ ul[data-cd-hidden="true"] > ul {
 }
 
 .menu--main button[aria-expanded] .cd-icon--arrow-down {
-  fill: $cd-highlight-red;
+  fill: var(--brand-highlight);
   margin-top: 4px;
 
   [dir="ltr"] & {
