@@ -128,6 +128,8 @@
 .cd-global-header .block--language h2,
 .cd-global-header .block-menu h2 {
   @extend .visually-hidden;
+
+  color: var(--cd-white);
 }
 
 .cd-global-header__user-menu > .menu {
