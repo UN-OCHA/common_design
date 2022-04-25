@@ -37,6 +37,8 @@
       ]
     %}
 
+    {% set parent_id = attributes.id ?? ('cd-help-menu-' ~ menu_level) %}
+
     <ul{{ attributes.addClass(menu_classes) }}>
 
     {% for item in items %}
@@ -50,7 +52,7 @@
       %}
 
       {% set title = item.title %}
-      {% set id = ('cd-help-menu-item-' ~ menu_level ~ '-' ~ loop.index)|clean_id %}
+      {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
       <li{{ item.attributes.addClass(classes) }}>
 

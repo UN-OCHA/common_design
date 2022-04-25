@@ -35,6 +35,8 @@
         menu_level > 0 ? 'cd-main-menu__dropdown',
       ]
     %}
+    
+    {% set parent_id = attributes.id ?? ('cd-main-menu-' ~ menu_level) %}
 
     <ul{{ attributes.addClass(menu_classes) }}>
 
@@ -49,7 +51,7 @@
       %}
 
       {% set title = item.title == '%username%' ? username : item.title %}
-      {% set id = ('cd-main-menu-item-' ~ menu_level ~ '-' ~ loop.index)|clean_id %}
+      {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
       <li{{ item.attributes.addClass(classes) }}>
 
@@ -60,7 +62,7 @@
           If the menu item has children, an id attribute and value is added.
         #}
         {% if item.url %}
-        <a href="{{ item.url }}"{% if item.below %} id="{{ id }}"{% endif %}><span>{{ title }}</span></a>
+        <a href="{{ item.url }}" id="{{ id }}"><span>{{ title }}</span></a>
         {% else %}
         <span id="{{ id }}">{{ title }}</span>
         {% endif %}
