@@ -33,7 +33,7 @@ How does the proposed change impact existing implementations? What action is nee
 
 ## PR Checklist
 <!--- Put an `x` in all the boxes that apply. -->
-- [ ] I have follow the Conventional Commits guidelines.
+- [ ] I have followed the Conventional Commits guidelines.
 - [ ] I have run local tests and the tests pass.
 - [ ] I have linted my code locally.
 - [ ] My code follows the code style of this project.
