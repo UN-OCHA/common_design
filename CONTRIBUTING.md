@@ -6,10 +6,11 @@ Clone the `common_design` base theme repo and make a [Pull Request][pr] (PR)
 against `develop` branch for peer review. The PR should follow the [pull request template][pr-template]
 as appropriate.
 
-Commits in your branch (or at the very least the PR merge commit) should follow the Conventional Commits guidelines, so that our CHANGELOG can be automatically generated with appropriate notes during each release. A few examples:
+Commits in your branch (or at the very least the PR merge commit) should follow the [Conventional Commits guidelines][cc-guidelines], so that our CHANGELOG can be automatically generated with appropriate notes during each release. A few examples:
 
   [pr]: https://github.com/UN-OCHA/common_design/pulls
   [pr-template]: https://github.com/UN-OCHA/common_design/blob/develop/pull_request_template.md
+  [cc-guidelines]: https://www.conventionalcommits.org/en/v1.0.0
 
 ```sh
 #
