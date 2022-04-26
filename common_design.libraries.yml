@@ -32,6 +32,7 @@ fonts-russian:
 global-styling:
   css:
     theme:
+      css/brand.css: {}
       css/styles.css: {}
 
 cd-dropdown:
@@ -134,6 +135,13 @@ cd-date:
       components/cd-date/cd-date.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
+    -
+cd-dropbutton:
+  css:
+    component:
+      components/cd-dropbutton/cd-dropbutton.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
 
 cd-event:
   css:
@@ -168,6 +176,16 @@ cd-form:
   css:
     component:
       components/cd-form/cd-form.css: {}
+      components/cd-form/cd-form--drupal.css: {}
+      components/cd-form/cd-form--drupal-widget.css: {}
+  dependencies:
+    - common_design/cd-button
+    - common_design/cd-flow
+
+cd-form--preview:
+  css:
+    component:
+      components/cd-form/cd-form--preview.css: {}
 
 cd-grid:
   css:
@@ -336,7 +354,7 @@ cd-polyfill:
 # https://jhildenbiddle.github.io/css-vars-ponyfill
 css-vars-ponyfill:
   js:
-    https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2: { type: external, minified: true }
+    js/vendor/css-vars-ponyfill.js: { attributes: { nomodule: true } }
     js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
 
 # Array.from polyfill for IE11.

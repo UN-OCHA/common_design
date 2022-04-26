@@ -42,7 +42,7 @@
   width: 38px;
   height: 38px;
   margin: 0 auto;
-  fill: $cd-white;
+  fill: var(--cd-white);
 
   @include desktop {
     margin: 0 0 0 20px;

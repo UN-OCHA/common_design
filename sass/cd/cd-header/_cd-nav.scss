@@ -3,16 +3,14 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-nav__btn {
-  height: $cd-site-header-height;
+  height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
   text-transform: uppercase;
-  color: $cd-default-text-color;
-  border: 0 none $cd-blue-grey;
+  color: var(--cd-default-text-color);
+  border: 0 none var(--brand-grey);
   background: transparent;
-  //border-left: 1px solid $cd-blue-grey;
-  //border-right: 1px solid $cd-blue-grey;
-  font-size: $cd-font-size--small;
+  font-size: var(--cd-font-size--small);
 
   .cd-nav__btn-label {
     font-weight: 700;
@@ -20,13 +18,13 @@
 
   &[aria-expanded] .cd-icon--arrow-down {
     margin-left: 4px;
-    fill: $cd-highlight-red;
+    fill: var(--brand-highlight);
   }
 
   &[aria-expanded="true"] {
     position: relative;
     z-index: 101;
-    color: $cd-black;
+    color: var(--cd-black);
 
     &::before {
       position: absolute;
@@ -37,19 +35,19 @@
       height: 6px;
       content: "";
       transition: background 0.3s ease;
-      background: $cd-highlight-red;
+      background: var(--brand-highlight);
     }
 
     &:focus {
-      background: $cd-white;
+      background: var(--cd-white);
     }
   }
 
   &:hover,
   &:focus {
-    color: $cd-black;
+    color: var(--cd-black);
     outline: none; // default browser outline is replaced by background colour change.
-    background: $cd-blue-grey;
+    background: var(--brand-grey);
   }
 
   @include desktop {
@@ -77,7 +75,7 @@
 
     > ul {
       display: none;
-      background: $cd-white;
+      background: var(--cd-white);
 
       @include desktop {
         display: flex;
@@ -101,7 +99,7 @@
       padding: 15px 30px;
       text-align: left;
       text-decoration: none;
-      color: $cd-default-text-color;
+      color: var(--cd-default-text-color);
 
       html[dir="rtl"] & {
         text-align: right;
@@ -109,9 +107,9 @@
 
       &:hover,
       &:focus {
-        color: $cd-black;
+        color: var(--cd-black);
         outline: none; // default browser outline is replaced by background colour change.
-        background: $cd-blue-grey;
+        background: var(--brand-grey);
       }
 
       @supports (display: flex) {
@@ -135,12 +133,12 @@
     @include max-width(lg) {
       &[data-cd-hidden="false"] {
         position: absolute;
-        top: calc(#{$cd-global-header-height} + #{$cd-site-header-height} + 6px);
+        top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px);
         right: 0;
         left: 0;
-        height: calc(100vh - (#{$cd-global-header-height} + #{$cd-site-header-height} + 6px));
+        height: calc(100vh - (var(--cd-global-header-height) + var(--cd-site-header-height) + 6px));
         padding: 20px 0 36px;
-        background: $cd-white;
+        background: var(--cd-white);
       }
 
       &[data-cd-hidden="false"] > ul {
@@ -157,7 +155,7 @@
       left: 0;
       width: auto;
       max-width: none;
-      height: $cd-site-header-height;
+      height: var(--cd-site-header-height);
       padding: 0;
 
       // This is needed for IE11
@@ -177,36 +175,36 @@
   .menu-item {
     > a::before,
     > button::before {
-      background: $cd-highlight-red;
+      background: var(--brand-highlight);
     }
   }
 
   // Second level.
   .cd-nav > .menu > li > .menu {
-    background: $cd-white;
+    background: var(--cd-white);
 
     @include desktop {
       @include z-index(dropdown);
 
       position: absolute;
-      top: calc(#{$cd-site-header-height} + 6px); // border-bottom height
+      top: calc(var(--cd-site-header-height) + 6px); // border-bottom height
       min-width: 200px;
       max-width: 300px;
       //left: -1px;
       margin: 0;
       padding: 20px 0;
-      box-shadow: 0 1px 8px rgba($cd-rgb-blue-grey--dark, 0.8);
+      box-shadow: 0 1px 8px rgba(var(--cd-rgb-blue-grey--dark), 0.8);
     }
   }
 
   .menu .menu {
     a {
       display: flex;
-      color: $cd-black;
+      color: var(--cd-black);
       font-weight: 700;
 
       &:hover {
-        background: $cd-blue-grey;
+        background: var(--brand-grey);
       }
     }
   }
@@ -232,7 +230,7 @@
 
       > a.is-active::before,
       > button.is-active::before {
-        background: $cd-highlight-red;
+        background: var(--brand-highlight);
       }
 
       // First level menu item with children.
@@ -241,7 +239,8 @@
       &.menu-item--expanded {
         > a.is-active::before,
         > button.is-active::before {
-          background: rgba($cd-rgb-highlight-red, 0.2);
+          opacity: 0.2;
+          background: var(--brand-highlight);
         }
       }
 
@@ -257,7 +256,8 @@
             width: 6px;
             height: 48px; // Height of menu item.
             content: "";
-            background: rgba($cd-rgb-highlight-red, 0.2);
+            opacity: 0.2;
+            background: var(--brand-highlight);
 
             [dir="rtl"] & {
               right: 15px; // Half of the left padding.
@@ -266,7 +266,7 @@
           }
 
           &.is-active::before {
-            background: $cd-highlight-red;
+            background: var(--brand-highlight);
           }
         }
       }
@@ -274,12 +274,13 @@
       > ul > li.menu-item--active-trail {
         a::before,
         button::before {
-          background: rgba($cd-rgb-highlight-red, 0.6);
+          opacity: 0.6;
+          background: var(--brand-highlight);
         }
 
         a.is-active::before,
         button.is-active::before {
-          background: $cd-highlight-red;
+          background: var(--brand-highlight);
         }
       }
     }
@@ -303,7 +304,7 @@
 
         &.menu-item--active-trail a::before,
         &.menu-item--active-trail button::before {
-          background: $cd-highlight-red;
+          background: var(--brand-highlight);
         }
 
         > a,
@@ -311,7 +312,7 @@
           position: relative;
           display: flex;
           align-items: center;
-          height: $cd-site-header-height;
+          height: var(--cd-site-header-height);
           padding: 0 14px;
           transition: background 0.3s ease;
           background: transparent;
@@ -329,17 +330,17 @@
           }
 
           &:hover {
-            background: $cd-blue-grey;
+            background: var(--brand-grey);
           }
 
           &:focus {
-            background: $cd-white;
+            background: var(--cd-white);
           }
 
           &.is-active,
           &:focus {
             &::before {
-              background: $cd-highlight-red;
+              background: var(--brand-highlight);
             }
           }
         }
@@ -354,24 +355,24 @@
         a,
         button {
           &:hover {
-            background: $cd-blue-grey;
+            background: var(--brand-grey);
           }
 
           &.menu-item--active-trail {
-            border-left: 6px solid $cd-highlight-red;
+            border-left: 6px solid var(--brand-highlight);
 
             [dir="rtl"] & {
-              border-right: 6px solid $cd-highlight-red;
+              border-right: 6px solid var(--brand-highlight);
               border-left-width: 0;
             }
           }
         }
 
         > li.menu-item--active-trail {
-          border-left: 6px solid $cd-highlight-red;
+          border-left: 6px solid var(--brand-highlight);
 
           [dir="rtl"] & {
-            border-right: 6px solid $cd-highlight-red;
+            border-right: 6px solid var(--brand-highlight);
             border-left-width: 0;
           }
         }
@@ -391,7 +392,7 @@
   left: 0;
   display: block;
   padding: 0;
-  background: $cd-white;
+  background: var(--cd-white);
 }
 
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
@@ -411,11 +412,11 @@
 // Style all menu items the same, regardless of their level.
 .no-js .menu-item--expanded li {
   @include desktop {
-    height: $cd-site-header-height;
+    height: var(--cd-site-header-height);
 
     a {
       align-items: center;
-      height: $cd-site-header-height;
+      height: var(--cd-site-header-height);
       padding: 0 14px;
     }
   }
