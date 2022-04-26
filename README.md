@@ -42,8 +42,7 @@ utility classes
 
 * Typography
 * Component library
-   * HTML/CSS/JS components that can be attached as Drupal libraries to twig
-   templates, or copied into sass partials.
+   * HTML/CSS/JS components that can be attached as Drupal libraries to twig templates, or copied into sass partials.
    * Requires Drupal [Components module][components].
    * See [Common Design demo][demo] for Component examples.
    * Refer to [Components README][components-readme] and the [components used][components-used]
@@ -51,8 +50,7 @@ utility classes
 * Favicons and OCHA branded assets based on https://brand.unocha.org
 * Node workflow for frontend development
   * SASS
-  * Sourcemaps (to show which specific Sass file contains styles during local
-  development)
+  * Sourcemaps (to show which specific Sass file contains styles during local development)
   * Autoprefixer
   * Sass and JS linting
   * SVG sprite
@@ -65,22 +63,17 @@ utility classes
 
 ## Getting started
 
-1. Clone this repo to `/themes/contrib/` or install using `composer require
-unocha/common_design`.
+1. Clone this repo to `/themes/contrib/` or install using `composer require unocha/common_design`.
 2. Copy the `common_design_subtheme` directory to `/themes/custom/`.
-3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme'
-and select **Enable and set default**.
+3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' and select **Enable and set default**.
 
-**To contribute to `common_design` base theme or sub theme development and/or
-to customise the sub theme**
+**To contribute to `common_design` base theme or sub theme development and/or to customise the sub theme**
 
 1. Run `nvm use` in theme folder to ensure the correct node version.
 2. Install the dependencies: `npm install`
-3. For development, run `npm run sass:watch` (this includes an initial linting
-and sourcemaps) or run `npm run sass:compile-dev` to compile.
+3. For development, run `npm run sass:watch` (this includes an initial linting and sourcemaps) or run `npm run sass:compile-dev` to compile.
 4. Run `npm run sass:build` for final CSS generation.
-5. For twig debug and local development see [Disable Drupal 8/9 caching during
-development][drupal-caching].
+5. For twig debug and local development see [Disable Drupal 8/9 caching during development][drupal-caching].
 
 Drupal 8/9 core have helper classes for accessibility. [Hide content properly][a11y-help] using official drupal.org docs.
 
@@ -105,9 +98,6 @@ Follow [Drupal CSS coding standards and best practices][css-standards]
   [sass]: http://sass-lang.com/
   [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
   [css-standards]: https://www.drupal.org/docs/develop/standards/css
-
-The fonts can also be enabled via the base theme or subtheme settings:
-`/admin/appearance/settings/common_design_subtheme`.
 
 ## JS
 
@@ -163,15 +153,22 @@ Follow [Drupal JS coding standards and best practices][js-standards]
 
   [js-standards]: https://www.drupal.org/docs/develop/standards/javascript
 
+
 ## Fonts
 
-This projects defines a few `css custom properties` for font families that use google fonts in `sass/cd/_cd-variables.scss`, in accordance with the brand visual identity as explained at https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1
+This projects defines a few CSS Vars for font-families that use Google Fonts. The actual fonts must be loaded by enabling them individually (see below). You can read official guidance on [OCHA's visual identity website][brand-fonts].
 
-Roboto font is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`. This means Roboto font is compiled as part of `styles.css`
+Here are the technical details relating to the theme itself:
 
-Additional fonts for advanced typography and multilingual are available as libraries (ex: `common_design/fonts-arabic`) defined in `common_design.libraries.yml` to include as needed. For performance reasons, we do not include these by default.
+- **Roboto** is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`. This means Roboto font is compiled as part of `styles.css`
+- Additional fonts for advanced typography and other languages which don't use Latin character sets are available as Drupal Libraries. The list is defined in `common_design.libraries.yml`. For performance reasons, we do not include these by default. If your website must support character sets that are not included in the base-theme, refer to the sub-theme's Libraries file `common_design_subtheme.libraries.yml` to see a commented-out example helping you create your own Drupal Library.
 
-The fonts can be enabled in the `common_design_subtheme` by adding the relevant libraries as a dependency to the global styles in the `common_design_subtheme.info.yml`:
+
+### Enabling individual fonts
+
+The fonts can be enabled one of two ways.
+
+First, in the `common_design_subtheme` by adding the relevant base-theme libraries as a dependency to the global styles in the `common_design_subtheme.libraries.yml`:
 
 ```yaml
 global-styling:
@@ -179,11 +176,15 @@ global-styling:
     theme:
       css/styles.css: {}
   dependencies:
-    - common_design_subtheme/fonts-advanced
-    - common_design_subtheme/fonts-arabic
-    - common_design_subtheme/fonts-chinese
-    - common_design_subtheme/fonts-russian
+    - common_design/fonts-advanced
+    - common_design/fonts-arabic
+    - common_design/fonts-chinese
+    - common_design/fonts-russian
 ```
+
+Second, you can also enable them in the Drupal Admin UI under the sub-theme theme settings at `/admin/appearance/settings/common_design_subtheme`.
+
+  [brand-fonts]: https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1
 
 ## Task management
 

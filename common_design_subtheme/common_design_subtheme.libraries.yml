@@ -2,7 +2,7 @@
 # Default global styles for the sub-theme.
 #
 # If you want specific components to apply to your whole site, list them as
-# dependencies to this library.
+# dependencies to this library. An example dependency appears here as a comment.
 global-styling:
   css:
     theme:
@@ -10,15 +10,6 @@ global-styling:
       css/brand.css: {}
 #   dependencies:
 #     - common_design_subtheme/custom-teaser
-
-# Arabic font using Dubai.
-# @todo This of the sake of the demo and could be merged with the base theme one
-# or removed.
-fonts-arabic:
-  label: Arabic
-  css:
-    theme:
-      css/fonts-arabic.css: {}
 
 ###
 # Define Drupal libraries for your custom components.
@@ -32,3 +23,17 @@ fonts-arabic:
 #   css:
 #     theme:
 #       components/custom-teaser/custom-teaser.css: {}
+
+###
+# Define Drupal libraries for additional webfonts.
+#
+# They will appear in the sub-theme settings in the Drupal Admin UI. The `label`
+# field is a key part of identifying them in the Admin UI.
+#
+# Example: Arabic font using Dubai.
+#
+# fonts-arabic:
+#   label: Arabic
+#   css:
+#     theme:
+#       css/fonts-arabic.css: {}
