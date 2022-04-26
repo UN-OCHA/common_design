@@ -28,17 +28,17 @@
   @include desktop {
     float: left;
     box-sizing: content-box;
-    margin: -4px $cd-container-padding 0 auto;
-    padding-right: $cd-container-padding;
-    border-right: 1px solid $cd-blue-grey;
+    margin: -4px var(--cd-container-padding) 0 auto;
+    padding-right: var(--cd-container-padding);
+    border-right: 1px solid var(--cd-blue-grey);
 
     [dir="rtl"] & {
       float: right;
-      margin: -4px auto 0$cd-container-padding;
+      margin: -4px auto 0 var(--cd-container-padding);
       padding-right: 0;
-      padding-left: $cd-container-padding;
+      padding-left: var(--cd-container-padding);
       border-right-width: 0;
-      border-left: 1px solid $cd-blue-grey;
+      border-left: 1px solid var(--cd-blue-grey);
     }
   }
 }
@@ -46,7 +46,7 @@
 .cd-mandate__heading {
   display: block;
   margin-bottom: 16px;
-  padding: 0 $cd-container-padding;
+  padding: 0 var(--cd-container-padding);
 
   @include desktop {
     padding: 0;
@@ -62,19 +62,19 @@
   display: block;
   max-width: 540px;
   margin: 0 auto;
-  padding: 0 $cd-container-padding;
+  padding: 0 var(--cd-container-padding);
 
   @include desktop {
     max-width: 100%;
     margin: 0;
     padding: 0;
-    padding-right: $cd-container-padding-xlarge;
+    padding-right: var(--cd-container-padding-xlarge);
     padding-left: 173px; // Width of logo.
     text-align: left;
 
     [dir="rtl"] & {
       padding-right: 173px; // Width of logo.
-      padding-left: $cd-container-padding-xlarge;
+      padding-left: var(--cd-container-padding-xlarge);
       text-align: right;
     }
   }

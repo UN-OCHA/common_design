@@ -48,6 +48,7 @@
   set classes = [
     'js-form-item',
     'form-item',
+    'form-type-' ~ type|clean_class,
     'js-form-type-' ~ type|clean_class,
     'form-item-' ~ name|clean_class,
     'js-form-item-' ~ name|clean_class,
@@ -61,6 +62,7 @@
   set description_classes = [
     'description',
     description_display == 'invisible' ? 'visually-hidden',
+    'cd-form__description'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>

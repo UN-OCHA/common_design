@@ -14,8 +14,8 @@ input {
 }
 
 body {
-  color: $cd-grey--dark;
-  font-family: $cd-font--roboto;
+  color: var(--cd-grey--dark);
+  font-family: var(--cd-font--roboto);
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -31,7 +31,7 @@ body {
   }
 
   @include desktop {
-    font-size: $cd-font-size--base;
+    font-size: var(--cd-font-size--base);
   }
 }
 

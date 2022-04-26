@@ -35,6 +35,8 @@
         menu_level > 0 ? 'cd-main-menu__dropdown',
       ]
     %}
+    
+    {% set parent_id = attributes.id ?? ('cd-main-menu-' ~ menu_level) %}
 
     <ul{{ attributes.addClass(menu_classes) }}>
 
@@ -49,7 +51,7 @@
       %}
 
       {% set title = item.title == '%username%' ? username : item.title %}
-      {% set id = ('cd-main-menu-item-' ~ menu_level ~ '-' ~ loop.index)|clean_id %}
+      {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
       <li{{ item.attributes.addClass(classes) }}>
 
@@ -57,6 +59,7 @@
           Progressive enhancement: make sure there is always a menu entry.
           If the menu item has children and javascript is enabled then this will
           be replaced with a button to show the child menu.
+          If the menu item has children, an id attribute and value is added.
         #}
         {% if item.url %}
         <a href="{{ item.url }}" id="{{ id }}"><span>{{ title }}</span></a>
@@ -79,6 +82,7 @@
           %}
 
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+
 
         {% endif %}
 

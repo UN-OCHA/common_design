@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('common_design/cd-form--preview') }}
+<header>
+  <h3>{{ 'Preview'|t }}</h3>
+</header>
+<form{{ attributes }}>
+  {{ children }}
+</form>

@@ -5,26 +5,38 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-soft-footer {
+  position: relative;
   padding: 24px 0;
   text-align: center;
-  color: $cd-white;
-  background: rgba($cd-rgb-ocha-blue, 0.9);
+  color: var(--cd-white);
 
   h2 {
-    color: $cd-white;
+    color: var(--cd-white);
   }
 
   a {
-    color: $cd-white;
+    color: var(--cd-white);
 
     &:hover,
     &:focus {
-      color: $cd-white;
+      color: var(--cd-white);
     }
 
     &:focus {
-      outline: 3px solid $cd-blue--bright;
+      outline: 3px solid var(--brand-primary--dark);
     }
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    opacity: 0.9;
+    background: var(--brand-primary);
   }
 }
 

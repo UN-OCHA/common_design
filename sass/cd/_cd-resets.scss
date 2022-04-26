@@ -8,8 +8,8 @@
   // Set box-sizing
   box-sizing: border-box;
   // Setup font
-  font-family: $cd-font;
-  font-size: $cd-font-size--tiny;
+  font-family: var(--cd-font);
+  font-size: var(--cd-font-size--tiny);
   font-weight: 300;
 
   // box-sizing on all child elements
@@ -23,7 +23,7 @@
   button {
     border-radius: 0;
     box-shadow: none;
-    font-size: $cd-font-size--tiny;
+    font-size: var(--cd-font-size--tiny);
     font-weight: 300;
     -webkit-appearance: none;
 
