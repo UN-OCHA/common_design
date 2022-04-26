@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.1](https://github.com/UN-OCHA/common_design/compare/v7.0.0...v7.0.1) (2022-04-26)
+
+
+### Bug Fixes
+
+* **a11y:** add focusable and aria-hidden attributes to search submit button svg to remove from accessibility tree ([cbc8782](https://github.com/UN-OCHA/common_design/commit/cbc87827f186879401e08b569f27627645419d9d))
+* **a11y:** replace display none with max-width mixin for search button label to visually hide on mobile ([df79789](https://github.com/UN-OCHA/common_design/commit/df797896dc82d6db4a861ad1c81db9b8d39f2777))
+* **a11y:** set text colour for visually hidden block headings to pass contrast ([94da5fa](https://github.com/UN-OCHA/common_design/commit/94da5faa7ad45a9d761e0404c12b0314636d0257))
+* add accurate unocha social media links to replace placeholder hashes ([52cfb58](https://github.com/UN-OCHA/common_design/commit/52cfb58e535f7577c8d79990f5b2cabe2d058f85))
+* add id to menu item anchors only if they have children to prevent duplicate ids on children ([cc1cc81](https://github.com/UN-OCHA/common_design/commit/cc1cc81d756c665c901f7ba60a9fbc698d79b5f4))
+* ensure proper ID hierarchy in help menu template ([1565cdc](https://github.com/UN-OCHA/common_design/commit/1565cdccb32262c75a1b3ad600785b8a1391fabe))
+* ensure proper ID hierarchy in main menu template ([6b33790](https://github.com/UN-OCHA/common_design/commit/6b33790fab5f9b43971abe6d4047f5fc0d7c7668))
+* ensure proper ID hierarchy in user menu template ([e45b493](https://github.com/UN-OCHA/common_design/commit/e45b4935a59608a9231b4c1055bd914c358ebcfe))
+
 ## [7.0.0](https://github.com/UN-OCHA/common_design/compare/v6.0.0...v7.0.0) (2022-04-21)
 
 
