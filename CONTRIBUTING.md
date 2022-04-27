@@ -91,7 +91,7 @@ Review the commit and make any necessary adjustments to the CHANGELOG, using `gi
 - **Tag:** new tag with format `v0.0.0` — numbers should match [`package.json` in the `develop` branch][develop-package]
 - **Target branch:** `develop`
 - **Title:** `v0.0.0 — YYYY-MM-DD` using the today's date
-- **Release notes:** Copy the new CHANGELOG bullets. If dependabot made any updates during this cycle, you can include "regular security updates" without being specific.
+- **Release notes:** See next section for a Release Notes template. If dependabot made any updates during this cycle, you can include "regular security updates" in the issue list without being more specific.
 
 Once the tagged Release has been created, [create a PR from `develop` to `main`][pr-dev-main] which will include all work within the tagged release. You can merge that without review as well. This step allows hotfixes to be created from `main` should the need arise.
 
