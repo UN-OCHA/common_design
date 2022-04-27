@@ -106,24 +106,18 @@ Once the tagged Release has been created, [create a PR from `develop` to `main`]
 | :---------- |
 | Maintainers |
 
-Below is a template to use for each Github Release, e.g. [v4.1.0 Release 2021-07-22](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.0)
+Below is a template to use for each Github Release, e.g. [v7.0.1 — 2022-04-26](https://github.com/UN-OCHA/common_design/releases/tag/v7.0.1)
 
 ```
-### 1. Title with release number, and date of release
-e.g. v4.1.0 Release 2021-07-22
-
-### 2. Overview
+### Overview
 A brief description of what the release notes include. This is a good place to highlight any breaking changes, or major modifications that must be tended to.
 
-### 3. Issue Summary
+### Issue Summary
 For each issue addressed, a short description of the bug or enhancement, and/or the item as it appears in the CHANGELOG. If there's an associated pull request, or Github issue, include it. If a JIRA issue exists and includes important supporting information, link to it.
 
 - CD-210: site manifest in sub theme #247
 - CD-301: Details about Annual Release schedule in README #248
 
-### 4. Resolution
-The modifications made to address the enhancement or bug, and/or the item as it appears in the CHANGELOG.
-
-### 5. Impacts
-Note any actions that users or administrators need to take to implement or upgrade to use this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
+### Steps to Upgrade
+Detailed, step-by-step instructions for anything that users or administrators need to do in order to implement or upgrade to this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
 ```
