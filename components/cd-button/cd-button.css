@@ -27,19 +27,6 @@
   --cd-primary-color--lighter: hsl(var(--cd-primary-color-h), var(--cd-primary-color-s), calc(var(--cd-primary-color-l) + 39%));
 }
 
-/* Backgrounds */
-.cd-background--dark {
-  color: var(--cd-white);
-  background-color: var(--cd-ocha-blue);
-}
-
-.cd-background--dark,
-.cd-background--light {
-  margin-bottom: 3rem;
-  padding: 1rem;
-  text-align: center;
-}
-
 /* Default button */
 .cd-button {
   width: auto;
