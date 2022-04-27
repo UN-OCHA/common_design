@@ -58,7 +58,7 @@ There may be several breaking changes during the year which result in increments
 
 **Audience:** CD maintainers
 
-Create a new branch from `develop`, merge in `origin/main`, and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
+Create a new branch from `develop` and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
 
 ```sh
 # Example with the dry-run flag.
@@ -78,15 +78,20 @@ The command to make a release contains no flags:
 $ npm run release
 ```
 
-Review the commit and make any necessary adjustments to the CHANGELOG, using `git commit --amend` to add your changes to the existing commit that standard-verion just created.
+Review the commit and make any necessary adjustments to the CHANGELOG, using `git commit --amend` to add your changes to the existing commit that `standard-version` just created. Push your branch and open a PR to `develop`, which you can merge without review.
 
-Push your branch and open a PR to `develop`, which you can merge without review. Once the changes are merged to `develop`, [create a PR from `develop` to `main`][pr-dev-main] which will include all work since the previous tagged release. You can merge that without review as well.
+[Create the new Release][new-release] using the GitHub UI with the following properties:
 
-Finally, [create the new Release][new-release] using the GitHub UI. The tag should be the prefixed with `v` and the numbers should be identical to [`package.json` in the `main` branch][main-package]. The next section covers the contents of your Release Notes.
+- **Tag:** new tag with format `v0.0.0` — numbers should match [`package.json` in the `develop` branch][develop-package]
+- **Target branch:** `develop`
+- **Title:** `v0.0.0 — YYYY-MM-DD` using the today's date
+- **Release notes:** Copy the new CHANGELOG bullets. If dependabot made any updates during this cycle, you can include "regular security updates" without being specific.
+
+Once the tagged Release has been created, [create a PR from `develop` to `main`][pr-dev-main] which will include all work within the tagged release. You can merge that without review as well. This step allows hotfixes to be created from `main` should the need arise.
 
   [pr-dev-main]: https://github.com/UN-OCHA/common_design/compare/main...develop
-  [new-release]: https://github.com/UN-OCHA/common_design/releases/new
-  [main-package]: https://github.com/UN-OCHA/common_design/blob/main/package.json
+  [new-release]: https://github.com/UN-OCHA/common_design/releases/new?target=develop
+  [develop-package]: https://github.com/UN-OCHA/common_design/blob/develop/package.json#L3
 
 
 ### Release Notes Template
