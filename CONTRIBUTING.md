@@ -1,6 +1,8 @@
 # Contributing to the base theme or the Component library
 
-**Audience:** anyone using the Common Design
+| Audience           |
+| :----------------- |
+| Contributors to CD |
 
 Clone the `common_design` base theme repo and make a [Pull Request][pr] (PR)
 against `develop` branch for peer review. The PR should follow the [pull request template][pr-template]
@@ -40,7 +42,9 @@ properly."
 
 ## Releases
 
-**Audience:** anyone using the Common Design
+| Audience |
+| :------- |
+| Everyone |
 
 We use [standard-version][standard-version] which reads the commit history to choose the appropriate tag based on [semantic versioning][semver] rules and generates the [CHANGELOG][changelog]. We aim to facilitate an annual release accompanied by department-wide comms. Each annual release might contain zero or many breaking changes, which must be clearly documented.
 
@@ -56,9 +60,11 @@ There may be several breaking changes during the year which result in increments
 
 ### Creating a Release
 
-**Audience:** CD maintainers
+| Audience    |
+| :---------- |
+| Maintainers |
 
-Create a new branch from `develop`, merge in `origin/main`, and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
+Create a new branch from `develop` and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
 
 ```sh
 # Example with the dry-run flag.
@@ -78,39 +84,40 @@ The command to make a release contains no flags:
 $ npm run release
 ```
 
-Review the commit and make any necessary adjustments to the CHANGELOG, using `git commit --amend` to add your changes to the existing commit that standard-verion just created.
+Review the commit and make any necessary adjustments to the CHANGELOG, using `git commit --amend` to add your changes to the existing commit that `standard-version` just created. Push your branch and open a PR to `develop`, which you can merge without review.
 
-Push your branch and open a PR to `develop`, which you can merge without review. Once the changes are merged to `develop`, [create a PR from `develop` to `main`][pr-dev-main] which will include all work since the previous tagged release. You can merge that without review as well.
+[Create the new Release][new-release] using the GitHub UI with the following properties:
 
-Finally, [create the new Release][new-release] using the GitHub UI. The tag should be the prefixed with `v` and the numbers should be identical to [`package.json` in the `main` branch][main-package]. The next section covers the contents of your Release Notes.
+- **Tag:** new tag with format `v0.0.0` — numbers should match [`package.json` in the `develop` branch][develop-package]
+- **Target branch:** `develop`
+- **Title:** `v0.0.0 — YYYY-MM-DD` using the today's date
+- **Release notes:** See next section for a Release Notes template. If dependabot made any updates during this cycle, you can include "regular security updates" in the issue list without being more specific.
+
+Once the tagged Release has been created, [create a PR from `develop` to `main`][pr-dev-main] which will include all work within the tagged release. You can merge that without review as well. This step allows hotfixes to be created from `main` should the need arise.
 
   [pr-dev-main]: https://github.com/UN-OCHA/common_design/compare/main...develop
-  [new-release]: https://github.com/UN-OCHA/common_design/releases/new
-  [main-package]: https://github.com/UN-OCHA/common_design/blob/main/package.json
+  [new-release]: https://github.com/UN-OCHA/common_design/releases/new?target=develop
+  [develop-package]: https://github.com/UN-OCHA/common_design/blob/develop/package.json#L3
 
 
 ### Release Notes Template
 
-**Audience:** CD maintainers
+| Audience    |
+| :---------- |
+| Maintainers |
 
-Below is a template to use for each Github Release, e.g. [v4.1.0 Release 2021-07-22](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.0)
+Below is a template to use for each Github Release, e.g. [v7.0.1 — 2022-04-26](https://github.com/UN-OCHA/common_design/releases/tag/v7.0.1)
 
 ```
-### 1. Title with release number, and date of release
-e.g. v4.1.0 Release 2021-07-22
-
-### 2. Overview
+### Overview
 A brief description of what the release notes include. This is a good place to highlight any breaking changes, or major modifications that must be tended to.
 
-### 3. Issue Summary
+### Issue Summary
 For each issue addressed, a short description of the bug or enhancement, and/or the item as it appears in the CHANGELOG. If there's an associated pull request, or Github issue, include it. If a JIRA issue exists and includes important supporting information, link to it.
 
 - CD-210: site manifest in sub theme #247
 - CD-301: Details about Annual Release schedule in README #248
 
-### 4. Resolution
-The modifications made to address the enhancement or bug, and/or the item as it appears in the CHANGELOG.
-
-### 5. Impacts
-Note any actions that users or administrators need to take to implement or upgrade to use this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
+### Steps to Upgrade
+Detailed, step-by-step instructions for anything that users or administrators need to do in order to implement or upgrade to this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
 ```
