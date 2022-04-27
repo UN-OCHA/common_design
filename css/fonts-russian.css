@@ -1,0 +1,35 @@
+/**
+ * Russian fonts.
+ *
+ * @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/russian
+ */
+
+/* Import the font(s). */
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400%3B700&display=swap');
+
+/* Set the css variable(s) for the font(s). */
+:root {
+  --cd-font--noto-sans: 'Noto Sans', sans-serif;
+}
+
+/* Body. */
+html[lang='ru'] body {
+  font-family: var(--cd-font--noto-sans);
+}
+
+/* Headings. */
+html[lang='ru'] h1,
+html[lang='ru'] h2,
+html[lang='ru'] h3,
+html[lang='ru'] h4,
+html[lang='ru'] h5,
+html[lang='ru'] h6 {
+  font-family: var(--cd-font--noto-sans);
+  font-weight: 400;
+}
+
+/* Header, footer. */
+html[lang='ru'] .cd-header,
+html[lang='ru'] .cd-footer {
+  font-family: var(--cd-font--noto-sans);
+}
