@@ -1,6 +1,8 @@
 # Contributing to the base theme or the Component library
 
-**Audience:** anyone using the Common Design
+| Audience           |
+| :----------------- |
+| Contributors to CD |
 
 Clone the `common_design` base theme repo and make a [Pull Request][pr] (PR)
 against `develop` branch for peer review. The PR should follow the [pull request template][pr-template]
@@ -40,7 +42,9 @@ properly."
 
 ## Releases
 
-**Audience:** anyone using the Common Design
+| Audience |
+| :------- |
+| Everyone |
 
 We use [standard-version][standard-version] which reads the commit history to choose the appropriate tag based on [semantic versioning][semver] rules and generates the [CHANGELOG][changelog]. We aim to facilitate an annual release accompanied by department-wide comms. Each annual release might contain zero or many breaking changes, which must be clearly documented.
 
@@ -56,7 +60,9 @@ There may be several breaking changes during the year which result in increments
 
 ### Creating a Release
 
-**Audience:** CD maintainers
+| Audience    |
+| :---------- |
+| Maintainers |
 
 Create a new branch from `develop` and run the release command to generate the new CHANGELOG and increment the version number in our `package.json` and other related files. There's a dry-run flag to preview what will happen:
 
@@ -96,7 +102,9 @@ Once the tagged Release has been created, [create a PR from `develop` to `main`]
 
 ### Release Notes Template
 
-**Audience:** CD maintainers
+| Audience    |
+| :---------- |
+| Maintainers |
 
 Below is a template to use for each Github Release, e.g. [v4.1.0 Release 2021-07-22](https://github.com/UN-OCHA/common_design/releases/tag/v4.1.0)
 
