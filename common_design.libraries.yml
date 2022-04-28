@@ -232,6 +232,11 @@ cd-link-list:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-nodes:
+  css:
+    component:
+      components/cd-nodes/cd-nodes.css: {}
+
 cd-page-title:
   css:
     component:
