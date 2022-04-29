@@ -39,7 +39,7 @@
 /* For buttons on dark backgrounds */
 .cd-button--light {
   color: var(--brand-primary--dark);
-  background-color: var(--brand-primary--lighter);
+  background-color: var(--brand-primary--light);
 }
 
 .cd-button--light:hover,
