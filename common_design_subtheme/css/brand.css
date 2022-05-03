@@ -7,7 +7,7 @@
    * In the future the Component library will adhere to these vars as well.
    */
   --brand-primary: var(--cd-ocha-blue);
-  --brand-primary--light: var(--cd-blue--bright);
+  --brand-primary--light: var(--cd-blue--brighter);
   --brand-primary--dark: var(--cd-blue--dark);
   --brand-highlight: var(--cd-highlight-red);
   --brand-grey: var(--cd-blue-grey);

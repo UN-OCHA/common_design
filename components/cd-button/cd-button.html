@@ -1,5 +1,18 @@
 <link rel=stylesheet href="../cd-base.css" type="text/css" media=screen>
 <link rel=stylesheet href="cd-button.css" type="text/css" media=screen>
+<style>
+  .cd-background--dark,
+  .cd-background--light {
+    margin-bottom: 3rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .cd-background--dark {
+    color: var(--cd-white);
+    background-color: var(--brand-primary);
+  }
+</style>
 
 <div class="cd-layout-container">
   <div class="cd-container">
@@ -173,6 +186,15 @@
 
       <a href="#" class="cd-button cd-button--light cd-button--bold">
         Anchor styled as a button
+      </a>
+
+      <p></p>
+
+      <a href="#" class="cd-button cd-button--light cd-button--bold cd-button--icon">
+        <svg class="cd-icon cd-icon--user" aria-hidden="true" focusable="false" width="16" height="16">
+          <use xlink:href="#cd-icon--user"></use>
+        </svg>
+        <span class="cd-button__text">Anchor with icon</span>
       </a>
 
       <p></p>
