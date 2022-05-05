@@ -6,7 +6,7 @@
 .cd-read-more svg {
   width: 0.5rem;
   height: 0.5rem;
-  fill: var(--cd-ocha-blue);
+  fill: var(--brand-primary);
 }
 
 [dir="rtl"] .cd-read-more svg {
