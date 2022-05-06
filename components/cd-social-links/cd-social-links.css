@@ -56,7 +56,7 @@ html[dir="rtl"] .cd-social-links li + li {
 }
 
 .cd-social-links svg {
-  fill: var(--cd-ocha-blue);
+  fill: var(--brand-primary--dark);
   width: 100%;
   height: 100%;
 }
