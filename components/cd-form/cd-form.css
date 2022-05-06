@@ -1,3 +1,10 @@
+/**
+ * CD Form component
+ *
+ * Some classes are sourced from Drupal 9 core. If you're not using Drupal, try
+ * either adding the classes to the markup using the CD Demo as your reference,
+ * or as a last resort modifying the selectors to match the markup of your form.
+ */
 input[type="text"],
 input[type="number"],
 input[type="password"],
@@ -14,7 +21,7 @@ textarea {
   max-width: 100%;
   padding: 0.5rem 0.75rem;
   color: var(--cd-grey--dark);
-  border: 2px solid var(--cd-blue-grey);
+  border: 2px solid var(--brand-grey);
   background: white;
   font-size: 1rem;
 }
@@ -71,8 +78,10 @@ select.error {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid var(--cd-blue--bright);
+  outline: 3px solid var(--brand-primary);
   outline-offset: -2px;
+  position: relative;
+  z-index: 10;
 }
 
 input::-webkit-input-placeholder {
