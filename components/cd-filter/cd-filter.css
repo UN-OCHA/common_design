@@ -295,7 +295,7 @@
   color: var(--cd-white);
   border: 2px solid transparent;
   border-radius: 3px;
-  background-color: var(--cd-primary-color);
+  background-color: var(--brand-primary);
   box-shadow: none;
   font-size: 1rem;
   font-weight: bold;
@@ -319,33 +319,14 @@
 
 .cd-filter__btn:hover {
   color: var(--cd-white);
-  background-color: var(--cd-primary-color--light);
+  background-color: var(--brand-primary--light);
 }
 
 .cd-filter__btn:focus {
-  border: 2px solid var(--cd-primary-color--dark);
+  border: 2px solid var(--brand-primary--dark);
   /* We remove the outline because we are adding a border. */
   /* so the rounded corners look nicer on hover */
-  outline: 0 solid var(--cd-primary-color--light);
-}
-
-/* For IE11 */
-@media all and (-ms-high-contrast: none) {
-  .cd-filter__btn {
-    background-color: var(--cd-ie-primary-color);
-  }
-
-  .cd-filter__btn:hover,
-  .cd-filter__btn:focus {
-    background-color: var(--cd-ie-primary-color--light);
-  }
-
-  .cd-filter__btn:focus {
-    border: 2px solid var(--cd-ie-primary-color--dark);
-    /* We remove the outline because we are adding a border. */
-    /* so the rounded corners look nicer on hover */
-    outline: 0 solid var(--cd-ie-primary-color--light);
-  }
+  outline: 0 solid var(--brand-primary--light);
 }
 
 @media (min-width: 1024px) {
