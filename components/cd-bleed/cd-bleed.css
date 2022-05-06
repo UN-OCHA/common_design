@@ -1,5 +1,5 @@
 /**
- * Class to allow the content to bleed to the edges of the body.
+ * CD Bleed component
  */
 :root {
   /* This will be set up by javascript after the document is loaded as we cannot
@@ -22,7 +22,7 @@
 .cd-bleed--background-only {
   position: relative;
   z-index: 1;
-  background-color: var(--cd-ocha-blue);
+  background-color: var(--brand-primary);
 }
 
 .cd-bleed--background-only:before {
