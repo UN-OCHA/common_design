@@ -78,10 +78,10 @@ select.error {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid var(--brand-primary);
-  outline-offset: -2px;
   position: relative;
   z-index: 10;
+  outline: 3px solid var(--brand-primary);
+  outline-offset: -2px;
 }
 
 input::-webkit-input-placeholder {
