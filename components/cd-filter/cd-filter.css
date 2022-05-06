@@ -330,9 +330,11 @@
 }
 
 @media (min-width: 1024px) {
-  /* This is to enable the cd-filter component collapse using cd-dropdown component
-  Set the breakpoint at which the filter should stop acting like a dropdown.
-  Adding `.cd-dropdown` class on `.cd-filter` means --dropdown defaults to true. */
+  /**
+   * Enable the cd-filter component collapse using cd-dropdown component.
+   * Set the breakpoint at which the filter should stop acting like a dropdown.
+   * Adding `.cd-dropdown` to `.cd-filter` means --dropdown defaults to true.
+   */
   .cd-filter[data-cd-toggable] {
     --dropdown: false;
   }
@@ -355,23 +357,27 @@
   }
 }
 
-/* This is needed for IE11
-No support for CSS custom properties means
---dropdown: false; property on filter container is not recognised
-so the cd-dropdown.js creates a toggler button on desktop
-This hides it when that happens. */
+/**
+ * IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on
+ * filter container is not recognised so the cd-dropdown.js creates a toggler
+ * button on desktop. This hides it when that happens.
+ */
 @media (min-width: 1024px) and (-ms-high-contrast: none) {
   .cd-filter__btn {
     display: none;
   }
 }
 
-/* This is needed for IE11
-No support for CSS custom properties means
---dropdown: false; property on the dropdown container is not recognised
-so the cd-dropdown.js does not run the updateToggler function
-which toggles the data-cd-hidden attribute.
-This displays the dropdown regardless of that attribute value. */
+/**
+ * IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on the
+ * dropdown container is not recognised so the cd-dropdown.js does not run the
+ * updateToggler function which toggles the data-cd-hidden attribute. This
+ * displays the dropdown regardless of that attribute value.
+ */
 @media all and (-ms-high-contrast: none) {
   .cd-filter[data-cd-toggable][data-cd-hidden="true"] {
     display: block;
