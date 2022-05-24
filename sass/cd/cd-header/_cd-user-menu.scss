@@ -185,6 +185,10 @@
   @extend .visually-hidden;
 }
 
+.no-js .cd-global-header .menu>li a::after {
+    background-color: transparent;
+}
+
 // Hides log out menu item when it is beside the expanded menu item.
 // When there are more than 3 menu items, the log out should also be in the dropdown.
 // This is content-specific. See CD-98 for specs.
