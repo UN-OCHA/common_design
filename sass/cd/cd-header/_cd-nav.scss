@@ -421,3 +421,31 @@
     }
   }
 }
+
+// Adjusts the active styles when javascript is disabled.
+@include desktop {
+  // Hide the active style from a parent item.
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item--expanded a::before,
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item--expanded button::before {
+    background: transparent;
+  }
+  // Hide the default active style for second level items.
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-left: 6px solid transparent;
+  }
+  // Use the same style as the first level menu items when active.
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail a {
+    position: relative;
+  }
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail a::after {
+    position: absolute;
+    right: -1px;
+    bottom: -6px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: 6px;
+    content: "";
+    transition: background 0.3s ease;
+    background: var(--brand-highlight);
+  }
+}
