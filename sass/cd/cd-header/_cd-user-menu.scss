@@ -185,8 +185,9 @@
   @extend .visually-hidden;
 }
 
-.no-js .cd-global-header .menu>li a::after {
-    background-color: transparent;
+// Hide separator.
+.no-js .cd-global-header .menu > li a::after {
+  background-color: transparent;
 }
 
 // Hides log out menu item when it is beside the expanded menu item.
