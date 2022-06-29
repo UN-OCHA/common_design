@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0](https://github.com/UN-OCHA/common_design/compare/v7.0.1...v7.1.0) (2022-06-29)
+
+
+### Features
+
+* Add theme settings to enable multilingual fonts via Drupal Libraries ([9080e25](https://github.com/UN-OCHA/common_design/commit/9080e25e107c70a444ec9a04cf535e1b4421eee3))
+* visual indicator for unpublished nodes ([9329a2f](https://github.com/UN-OCHA/common_design/commit/9329a2fa89f0c903a7d0295f0e4464983cd2b18a))
+
+
+### Bug Fixes
+
+* CD Button applies --brand colors as default ([c91bb03](https://github.com/UN-OCHA/common_design/commit/c91bb03b7549b97feeee5359a242dacb51da0673))
+* remove pesky dash that was causing errors ([d5742c4](https://github.com/UN-OCHA/common_design/commit/d5742c499be787df49b72df45cea6698adc29f55))
+* remove the new variable that was created in this branch ([478253b](https://github.com/UN-OCHA/common_design/commit/478253ba5fcddc6faba6e2653160906ef660c3a5))
+* update default --brand color in base-theme ([84021df](https://github.com/UN-OCHA/common_design/commit/84021df9e3114c3d0c44374ccb69eabcfb996852))
+
 ### [7.0.1](https://github.com/UN-OCHA/common_design/compare/v7.0.0...v7.0.1) (2022-04-26)
 
 
