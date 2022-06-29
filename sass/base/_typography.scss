@@ -136,43 +136,6 @@ h6 {
   line-height: 1.2;
 }
 
-[lang="ar"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--cd-font--noto-kufi-arabic);
-    font-weight: 400;
-  }
-}
-
-[lang="ru"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--cd-font--noto-sans);
-    font-weight: 400;
-  }
-}
-
-// @TODO ZH might need special attention.
-[lang="zh-hans"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--cd-font--noto-sans-sc);
-    font-weight: 400;
-  }
-}
-
 h1 {
   color: var(--cd-default-text-color);
   font-size: var(--cd-font-size--2xmedium);

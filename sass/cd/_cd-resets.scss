@@ -12,18 +12,6 @@
   font-size: var(--cd-font-size--tiny);
   font-weight: 300;
 
-  [lang="ar"] & {
-    font-family: var(--cd-font--noto-kufi-arabic);
-  }
-
-  [lang="ru"] & {
-    font-family: var(--cd-font--noto-sans);
-  }
-
-  [lang="zh-hans"] & {
-    font-family: var(--cd-font--noto-sans-sc);
-  }
-
   // box-sizing on all child elements
   *,
   *::before,
@@ -38,18 +26,6 @@
     font-size: var(--cd-font-size--tiny);
     font-weight: 300;
     -webkit-appearance: none;
-
-    [lang="ar"] & {
-      font-family: var(--cd-font--noto-kufi-arabic);
-    }
-
-    [lang="ru"] & {
-      font-family: var(--cd-font--noto-sans);
-    }
-
-    [lang="zh-hans"] & {
-      font-family: var(--cd-font--noto-sans-sc);
-    }
 
     &[data-cd-toggler] {
       background-color: transparent;

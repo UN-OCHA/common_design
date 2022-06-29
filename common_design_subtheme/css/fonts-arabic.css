@@ -1,0 +1,52 @@
+/**
+ * Arabic fonts.
+ *
+ * @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/arabic
+ *
+ * @todo Noto Kufi is missing some codepoints, see https://github.com/googlefonts/noto-fonts/issues/1870
+ *
+ * @todo the Dubai fonts come from https://reports.unocha.org, replace with
+ * more current version?
+ */
+
+/* Import the font(s). */
+@import url('//fonts.googleapis.com/earlyaccess/notokufiarabic.css');
+
+/* Dubai font face. */
+@font-face {
+  font-display: swap;
+  font-family: 'Dubai Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('DubaiW23 Regular'),
+       local('DubaiW23-Regular'),
+       url('fonts/dubaiw23-regular.woff2') format('woff2'),
+       url('fonts/dubaiw23-regular.woff') format('woff');
+}
+
+/* Set the css variable(s) for the font(s). */
+:root {
+  --cd-font--dubai-regular: 'Dubai Regular', sans-serif;
+  --cd-font--noto-kufi-arabic: 'Noto Kufi Arabic', sans-serif;
+}
+
+/* Body. */
+html[lang='ar'] body {
+  font-family: var(--cd-font--dubai-regular);
+}
+
+/* Headings. */
+html[lang='ar'] h1,
+html[lang='ar'] h2,
+html[lang='ar'] h3,
+html[lang='ar'] h4,
+html[lang='ar'] h5,
+html[lang='ar'] h6 {
+  font-family: var(--cd-font--noto-kufi-arabic);
+}
+
+/* Header, footer. */
+html[lang='ar'] .cd-header,
+html[lang='ar'] .cd-footer {
+  font-family: var(--cd-font--noto-kufi-arabic);
+}

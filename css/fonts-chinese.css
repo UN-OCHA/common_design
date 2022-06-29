@@ -1,0 +1,38 @@
+/**
+ * Chinese fonts.
+ *
+ * Note: this only handles Simplified Chinese (zh-hans) which is also the
+ * only "official" version supported by the UN.
+ *
+ * @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts-1/chinese
+ */
+
+/* Import the font(s). */
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400%3B700&display=swap');
+
+/* Set the css variable(s) for the font(s). */
+:root {
+  --cd-font--noto-sans-sc: 'Noto Sans SC', sans-serif;
+}
+
+/* Body. */
+html[lang='zh-hans'] body {
+  font-family: var(--cd-font--noto-sans-sc);
+}
+
+/* Headings. */
+html[lang='zh-hans'] h1,
+html[lang='zh-hans'] h2,
+html[lang='zh-hans'] h3,
+html[lang='zh-hans'] h4,
+html[lang='zh-hans'] h5,
+html[lang='zh-hans'] h6 {
+  font-family: var(--cd-font--noto-sans-sc);
+  font-weight: 400;
+}
+
+/* Header, footer. */
+html[lang='zh-hans'] .cd-header,
+html[lang='zh-hans'] .cd-footer {
+  font-family: var(--cd-font--noto-sans-sc);
+}

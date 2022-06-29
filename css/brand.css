@@ -6,6 +6,8 @@
   --cd-blue--dark: #144372;
   /* Bright blue is one colour ramp lighter than brand blue */
   --cd-blue--bright: #82b5e9;
+  /* Brighter blue is two colour ramps higher than brand blue */
+  --cd-blue--brighter: #d4e5f7;
   --cd-highlight-red: #e56a54;
   /* This has been selected based on WCAG AAA requirements for contrast. */
   --cd-contrast-red: #e00000;
@@ -103,7 +105,7 @@
    * @see common_design_subtheme/css/brand.css
    */
   --brand-primary: var(--cd-ocha-blue);
-  --brand-primary--light: var(--cd-blue--bright);
+  --brand-primary--light: var(--cd-blue--brighter);
   --brand-primary--dark: var(--cd-blue--dark);
   --brand-highlight: var(--cd-highlight-red);
   --brand-grey: var(--cd-blue-grey);
