@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.2.0](https://github.com/UN-OCHA/common_design/compare/v7.1.0...v7.2.0) (2022-07-04)
+
+
+### Features
+
+* **cd-article:** adopt --brand colors ([456b401](https://github.com/UN-OCHA/common_design/commit/456b4015a8d2ee7ab52accab7f6e266704eb737d))
+* **cd-bleed:** adopt --brand colors ([bc9dcf1](https://github.com/UN-OCHA/common_design/commit/bc9dcf146f150004be6cbf423c6eec789104fe29))
+* **cd-byline:** adopt --brand colors ([be9a448](https://github.com/UN-OCHA/common_design/commit/be9a4486ead810b6f70a4ddc2fab00400fa10498))
+* **cd-card:** adopt --brand colors ([94265de](https://github.com/UN-OCHA/common_design/commit/94265dec0fa3c01f6329e8bc3fcb9c1c4ff4bf4c))
+* **cd-date:** adopt --brand colors ([3b6e1be](https://github.com/UN-OCHA/common_design/commit/3b6e1be3c86a34d0df84b925e8e6301bcd4e28b4))
+* **cd-dropbutton:** adopt --brand colors ([204a3de](https://github.com/UN-OCHA/common_design/commit/204a3de37792d80c35e30688e8b2e7ea8fe2a557))
+* **cd-facets:** adopt --brand colors ([3b4a1b2](https://github.com/UN-OCHA/common_design/commit/3b4a1b225f06a5e2b97275e7c917730ae3879cc0))
+* **cd-figure-list:** adopt --brand colors ([393115e](https://github.com/UN-OCHA/common_design/commit/393115e5b2150fb16baf986cc61f9269939a9b88))
+* **cd-filter:** adopt --brand colors ([b744f94](https://github.com/UN-OCHA/common_design/commit/b744f94034e6586b148367cdbca2e3c2454b239a))
+* **cd-footer:** adopt --brand colors ([6bfb536](https://github.com/UN-OCHA/common_design/commit/6bfb536b0729cfb851c4b819ad3c92da7b29c11c))
+* **cd-form:** adopt --brand colors ([d3d0cd5](https://github.com/UN-OCHA/common_design/commit/d3d0cd5bb88c29323b2e5026f9bab22b1d4d41c6))
+* **cd-header:** adopt --brand colors ([3fea3aa](https://github.com/UN-OCHA/common_design/commit/3fea3aab772deb1b8ceff0cfd437bee277b47a5a))
+* **cd-layout:** adopt --brand colors ([fdc5e54](https://github.com/UN-OCHA/common_design/commit/fdc5e547b45e3897a4e693f1d4a3fcd373937d06))
+* **cd-link-list:** adopt --brand colors ([c0a16ce](https://github.com/UN-OCHA/common_design/commit/c0a16ce0adef2b95ff31aca7fc4dc42897d35795))
+* **cd-page-title:** adopt --brand colors ([a53a8c8](https://github.com/UN-OCHA/common_design/commit/a53a8c885e929e899a41b43a87ca29e39c5d442f))
+* **cd-pagination:** adopt --brand colors ([2dbc069](https://github.com/UN-OCHA/common_design/commit/2dbc0696a9071d9f8cb703f3052faaca343eced0))
+* **cd-read-more:** adopt --brand colors ([26a5729](https://github.com/UN-OCHA/common_design/commit/26a5729ce2c1922ed012e9d40fba8fe5458726cb))
+* **cd-social-links:** adopt --brand colors ([5950744](https://github.com/UN-OCHA/common_design/commit/5950744c79f141544ff563b3db8eca78ff6cf0e3))
+* **cd-styled-list:** adopt --brand colors ([2725ec2](https://github.com/UN-OCHA/common_design/commit/2725ec276e29299fc49281c190a6b4f6bddbaa52))
+* **cd-table:** adopt --brand colors ([f2e5e35](https://github.com/UN-OCHA/common_design/commit/f2e5e3516d3240e45aec1611b370e878339fb5c3))
+* **cd-teaser:** adopt --brand colors ([4ddd405](https://github.com/UN-OCHA/common_design/commit/4ddd405356dbc5ccb64af43c0de800d8d4ee7955))
+* **cd-title-list:** adopt --brand colors ([f7a6fcf](https://github.com/UN-OCHA/common_design/commit/f7a6fcf36b82c2c965161e3a8aaa2893753fe6d4))
+* **cd-toc:** adopt --brand colors ([ea9d241](https://github.com/UN-OCHA/common_design/commit/ea9d241b4f6754e8f8ce3763bf0ded3391477fac))
+* **styleguide:** adopt --brand colors ([94a9489](https://github.com/UN-OCHA/common_design/commit/94a94892835b085ac69567db73d9b78dbaa733c0))
+
+
+### Bug Fixes
+
+* **cd-form:** adopt --brand colors ([78a94c5](https://github.com/UN-OCHA/common_design/commit/78a94c5fb682fbceb41fde41640efcebabb6c416))
+* namespace the embeds so they do not conflict with sub theme overrides ([b79fc99](https://github.com/UN-OCHA/common_design/commit/b79fc99c703b80be7f273833fdf36c9df9c8c58d))
+* remove --cd-primary and --cd-primary--dark CSS Vars ([6476881](https://github.com/UN-OCHA/common_design/commit/6476881da7ecc50b94ded9d1cb11f9a9aac86803))
+
 ## [7.1.0](https://github.com/UN-OCHA/common_design/compare/v7.0.1...v7.1.0) (2022-06-29)
 
 
