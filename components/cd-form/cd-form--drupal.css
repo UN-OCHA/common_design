@@ -89,7 +89,7 @@ h4.label {
   margin-top: 0.5rem;
 }
 .paragraphs-dropdown-actions {
-  background-color: var(--cd-primary-color);
+  background-color: var(--brand-primary);
 }
 .form-wrapper .paragraphs-dropdown-action.cd-button {
   width: 100%;

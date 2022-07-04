@@ -1,15 +1,24 @@
+/**
+ * CD Dropbutton component
+ *
+ * Drupal 7+ provides a dropbutton component, i.e. a dropdown with a default
+ * action that can be clicked alongside a toggle that reveals secondary options.
+ * This component extends the default styles, for public use on websites of a
+ * more transactional nature.
+ */
+
 /* Revision table dropdown button and list */
 .js .dropbutton-multiple .dropbutton {
   padding: 0 1.5rem;
 }
 .js .dropbutton-multiple.open .dropbutton {
   padding: 0 1.5rem 1rem;
-  border: 2px solid var(--cd-blue-grey);
+  border: 2px solid var(--brand-grey);
   border-right: 0 none;
   background: white;
 }
 .js .dropbutton-multiple.open .dropbutton-toggle button {
-  border: 2px solid var(--cd-blue-grey);
+  border: 2px solid var(--brand-grey);
   border-left: 0 none;
   background: white;
 }
