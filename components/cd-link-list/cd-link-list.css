@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--cd-blue-grey);
+  border-bottom: 1px solid var(--brand-grey);
 }
 
 .cd-link-list__image {
@@ -35,7 +35,7 @@
   max-width: 3rem;
   min-height: 2rem;
   max-height: 3rem;
-  fill: var(--cd-ocha-blue);
+  fill: var(--brand-primary);
 }
 
 .cd-link-list__container {
@@ -64,7 +64,7 @@
 .cd-link-list__link .cd-icon {
   width: 0.75rem;
   height: 0.75rem;
-  fill: var(--cd-ocha-blue);
+  fill: var(--brand-primary);
 }
 
 [dir="rtl"] .cd-link-list__link .cd-icon {

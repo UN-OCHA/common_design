@@ -2,7 +2,7 @@
 form .js-media-library-widget .fieldset-wrapper {
   position: relative;
   padding: 1rem;
-  border: 2px solid var(--cd-blue-grey);
+  border: 2px solid var(--brand-grey);
 }
 
 form .js-media-library-widget .field-prefix,

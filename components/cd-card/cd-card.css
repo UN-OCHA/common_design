@@ -1,7 +1,7 @@
 .cd-card {
   display: flex;
   flex-direction: column;
-  border: 2px solid var(--cd-blue-grey);
+  border: 2px solid var(--brand-grey);
   /* Override grid background color from grid */
   background-color: var(--cd-white);
 }
@@ -57,5 +57,5 @@
 
 .cd-card__link {
   padding: 1rem 0 0;
-  border-top: 1px solid var(--cd-blue-grey);
+  border-top: 1px solid var(--brand-grey);
 }

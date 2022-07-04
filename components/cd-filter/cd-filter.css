@@ -295,7 +295,7 @@
   color: var(--cd-white);
   border: 2px solid transparent;
   border-radius: 3px;
-  background-color: var(--cd-primary-color);
+  background-color: var(--brand-primary);
   box-shadow: none;
   font-size: 1rem;
   font-weight: bold;
@@ -319,39 +319,22 @@
 
 .cd-filter__btn:hover {
   color: var(--cd-white);
-  background-color: var(--cd-primary-color--light);
+  background-color: var(--brand-primary--light);
 }
 
 .cd-filter__btn:focus {
-  border: 2px solid var(--cd-primary-color--dark);
+  border: 2px solid var(--brand-primary--dark);
   /* We remove the outline because we are adding a border. */
   /* so the rounded corners look nicer on hover */
-  outline: 0 solid var(--cd-primary-color--light);
-}
-
-/* For IE11 */
-@media all and (-ms-high-contrast: none) {
-  .cd-filter__btn {
-    background-color: var(--cd-ie-primary-color);
-  }
-
-  .cd-filter__btn:hover,
-  .cd-filter__btn:focus {
-    background-color: var(--cd-ie-primary-color--light);
-  }
-
-  .cd-filter__btn:focus {
-    border: 2px solid var(--cd-ie-primary-color--dark);
-    /* We remove the outline because we are adding a border. */
-    /* so the rounded corners look nicer on hover */
-    outline: 0 solid var(--cd-ie-primary-color--light);
-  }
+  outline: 0 solid var(--brand-primary--light);
 }
 
 @media (min-width: 1024px) {
-  /* This is to enable the cd-filter component collapse using cd-dropdown component
-  Set the breakpoint at which the filter should stop acting like a dropdown.
-  Adding `.cd-dropdown` class on `.cd-filter` means --dropdown defaults to true. */
+  /**
+   * Enable the cd-filter component collapse using cd-dropdown component.
+   * Set the breakpoint at which the filter should stop acting like a dropdown.
+   * Adding `.cd-dropdown` to `.cd-filter` means --dropdown defaults to true.
+   */
   .cd-filter[data-cd-toggable] {
     --dropdown: false;
   }
@@ -374,23 +357,27 @@
   }
 }
 
-/* This is needed for IE11
-No support for CSS custom properties means
---dropdown: false; property on filter container is not recognised
-so the cd-dropdown.js creates a toggler button on desktop
-This hides it when that happens. */
+/**
+ * IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on
+ * filter container is not recognised so the cd-dropdown.js creates a toggler
+ * button on desktop. This hides it when that happens.
+ */
 @media (min-width: 1024px) and (-ms-high-contrast: none) {
   .cd-filter__btn {
     display: none;
   }
 }
 
-/* This is needed for IE11
-No support for CSS custom properties means
---dropdown: false; property on the dropdown container is not recognised
-so the cd-dropdown.js does not run the updateToggler function
-which toggles the data-cd-hidden attribute.
-This displays the dropdown regardless of that attribute value. */
+/**
+ * IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on the
+ * dropdown container is not recognised so the cd-dropdown.js does not run the
+ * updateToggler function which toggles the data-cd-hidden attribute. This
+ * displays the dropdown regardless of that attribute value.
+ */
 @media all and (-ms-high-contrast: none) {
   .cd-filter[data-cd-toggable][data-cd-hidden="true"] {
     display: block;

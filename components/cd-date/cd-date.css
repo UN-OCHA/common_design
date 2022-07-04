@@ -1,16 +1,19 @@
+/**
+ * CD Date component.
+ */
 .cd-date {
   float: left;
   overflow: hidden;
   min-width: 5.5rem;
   text-align: center;
-  border: 1px solid var(--cd-blue-grey--light);
+  border: 1px solid var(--brand-grey);
   border-radius: 0.25rem;
   background-color: var(--cd-white);
 }
 
 .cd-date__wrapper {
   padding: 0 0.5rem;
-  background: var(--cd-ocha-blue);
+  background: var(--brand-primary);
 }
 
 .cd-date__day {
@@ -23,7 +26,7 @@
 .cd-date__month,
 .cd-date__year {
   text-transform: uppercase;
-  color: var(--cd-ocha-blue);
+  color: var(--brand-primary);
   font-size: 0.875rem;
   font-weight: 700;
 }

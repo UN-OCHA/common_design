@@ -38,7 +38,7 @@
 }
 .node-preview-form-select .node-preview-backlink:hover,
 .term-preview-form-select .term-preview-backlink:hover {
-  background: var(--cd-blue--dark);
+  background: var(--brand-primary--dark);
 }
 .node-preview-form-select .form-item-view-mode,
 .term-preview-form-select .form-item-view-mode {

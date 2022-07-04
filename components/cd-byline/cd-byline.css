@@ -1,14 +1,21 @@
+/**
+ * CD Byline component
+ */
 .cd-byline {
-  margin-top: 2rem;/* same as pseudo's padding-bottom */
+  --cd-byline-spacing: 2rem;
+
+  margin-top: var(--cd-byline-spacing);
 }
 
-/* The border is not on the container itself due to potential left/right padding
- * values that can interfere. Ex: when it has the `content-width` class. */
+/**
+ * The border is not on the container itself due to potential left/right padding
+ * values that can interfere. Ex: when it has the `content-width` class.
+ */
 .cd-byline::after {
   display: block;
-  padding-bottom: 2rem;
+  padding-bottom: var(--cd-byline-spacing);
   content: "";
-  border-bottom: 1px solid var(--cd-blue-grey);
+  border-bottom: 1px solid var(--brand-grey);
 }
 
 .cd-byline__wrapper {
