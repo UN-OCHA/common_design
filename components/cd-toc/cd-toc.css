@@ -1,3 +1,6 @@
+/**
+ * CD Table of Contents (ToC) component
+ */
 .cd-toc {
   position: relative;
   z-index: 1;
@@ -5,7 +8,7 @@
   min-width: 16rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: var(--cd-blue-grey);
+  background-color: var(--brand-grey);
 }
 
 .cd-toc__list,

@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--cd-blue-grey);
+  border-bottom: 1px solid var(--brand-grey);
 }
 
 .cd-styled-list__image {
@@ -50,7 +50,7 @@
   max-width: 4rem;
   min-height: 2rem;
   max-height: 4rem;
-  fill: var(--cd-ocha-blue);
+  fill: var(--brand-primary);
 }
 
 .cd-styled-list__container {

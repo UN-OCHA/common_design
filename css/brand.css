@@ -31,10 +31,6 @@
   --cd-rgb-highlight-red: 229, 106, 84;
   --cd-rgb-blue-grey--dark: 211, 221, 229;
 
-  /* Brand colors */
-  --cd-primary: var(--cd-ocha-blue);
-  --cd-primary--dark: var(--cd-blue--dark);
-
   /* Measurements */
   --cd-max-content-width: 820px;
   --cd-max-body-width: 1400px;

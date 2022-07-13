@@ -248,10 +248,8 @@ body {
 
   .cd-layout-sidebar-first {
     margin-top: 1rem;
-
-    // I've styled this as a block with padding and bg colour.
     padding: 1rem;
-    background-color: var(--cd-blue-grey--light);
+    background-color: var(--brand-grey);
 
     @include desktop {
       flex-basis: 285px;

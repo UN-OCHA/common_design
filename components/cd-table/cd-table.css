@@ -1,3 +1,6 @@
+/**
+ * CD Table component
+ */
 table {
   width: 100%;
   margin-bottom: 1rem;
@@ -29,7 +32,7 @@ table caption {
 
 .cd-table caption {
   padding: 0.25rem 0.5rem;
-  background: var(--cd-blue-grey);
+  background: var(--brand-grey);
 }
 
 .cd-table th,
@@ -44,9 +47,9 @@ table caption {
 }
 
 .cd-table th {
-  color: var(--cd-ocha-blue);
+  color: var(--brand-primary--dark);
   border-bottom: 1px solid white;
-  background: var(--cd-blue-grey);
+  background: var(--brand-grey);
 }
 
 .cd-table a {
@@ -140,7 +143,7 @@ table caption {
     white-space: normal !important;
     /* Behave  like a "row" */
     border: none;
-    border-bottom: 1px solid var(--cd-blue-grey);
+    border-bottom: 1px solid var(--brand-grey);
   }
 
   [dir="rtl"] .cd-table--responsive td {
@@ -158,7 +161,7 @@ table caption {
     /* Label the data */
     content: attr(data-content);
     text-align: left;
-    color: var(--cd-ocha-blue);
+    color: var(--brand-primary);
     font-size: 0.875rem;
     font-weight: bold;
   }

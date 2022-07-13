@@ -135,7 +135,7 @@ cd-date:
       components/cd-date/cd-date.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
-    -
+
 cd-dropbutton:
   css:
     component:

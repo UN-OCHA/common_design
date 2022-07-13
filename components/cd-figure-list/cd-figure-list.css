@@ -1,5 +1,5 @@
 /**
- * Figure list.
+ * CD Figure List component
  */
 .cd-figure-list {
   margin: 0;
@@ -44,7 +44,7 @@
   font-size: 1rem;
 }
 .cd-figure-list--large .cd-figure-list__value {
-  color: var(--cd-ocha-blue);
+  color: var(--brand-primary);
   font-size: 1.625rem;
   font-weight: 700;
 }
