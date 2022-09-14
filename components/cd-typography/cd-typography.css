@@ -1,3 +1,7 @@
+/**
+ * CD Typography
+ */
+
 .cd-max-width {
   max-width: var(--cd-max-content-width);
 }

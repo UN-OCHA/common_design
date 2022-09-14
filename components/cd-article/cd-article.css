@@ -1,6 +1,7 @@
 /**
  * CD Article component
  */
+
 .cd-article p {
   max-width: var(--cd-max-content-width);
 }

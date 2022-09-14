@@ -1,3 +1,7 @@
+/**
+ * CD Image Grid
+ */
+
 :root {
   --cd-image-grid--item-size: 4rem;
 }

@@ -1,10 +1,11 @@
 /**
- * CD Form component
+ * CD Form
  *
  * Some classes are sourced from Drupal 9 core. If you're not using Drupal, try
  * either adding the classes to the markup using the CD Demo as your reference,
  * or as a last resort modifying the selectors to match the markup of your form.
  */
+
 input[type="text"],
 input[type="number"],
 input[type="password"],

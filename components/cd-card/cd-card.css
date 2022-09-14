@@ -1,3 +1,7 @@
+/**
+ * CD Card
+ */
+
 .cd-card {
   display: flex;
   flex-direction: column;
