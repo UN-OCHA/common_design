@@ -1,0 +1,34 @@
+/**
+ * CD Card List
+ *
+ * Creates a grid-looking list with a variable number of columns. What you put
+ * inside is totally up to you.
+ *
+ * Override --cd-card-list-num-cols to control how the grid behaves. You can set
+ * any number of breakpoints using the examples below as your guide.
+ */
+
+.cd-card-list {
+  --cd-card-list-num-cols: 1;
+  --cd-card-list-gap-size: 1rem;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--cd-card-list-gap-size);
+}
+
+.cd-card-list > .field__item {
+  flex: 0 1 calc((100% / var(--cd-card-list-num-cols)) - var(--cd-card-list-gap-size) + var(--cd-card-list-gap-size) / var(--cd-card-list-num-cols));
+}
+
+@media screen and (min-width: 480px) {
+  .cd-card-list {
+    --cd-card-list-num-cols: 2;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .cd-card-list {
+    --cd-card-list-num-cols: 3;
+  }
+}
