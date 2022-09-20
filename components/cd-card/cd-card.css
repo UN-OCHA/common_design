@@ -1,15 +1,26 @@
 /**
  * CD Card
+ *
+ * Is capable of several variants:
+ *  - Optional image
+ *  - Image can be rectangular or rounded
+ *  - Optional footer
  */
 
+
+/**
+ * Card container
+ */
 .cd-card {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   border: 2px solid var(--brand-grey);
-  /* Override grid background color from grid */
   background-color: var(--cd-white);
 }
 
+/**
+ * Card image
+ */
 .cd-card__image img {
   width: 100%;
   height: 13rem;
@@ -24,28 +35,24 @@
 
 .cd-card__image--rounded {
   min-width: 7rem;
-  max-width: 13rem;
   min-height: 7rem;
+  max-width: 13rem;
   max-height: 13rem;
   margin-top: 1rem;
   margin-right: auto;
-  /* Rounded image centered horizontally in cards */
   margin-left: auto;
 }
 
 .cd-card__image + .cd-card__container {
-  flex-grow: 1;
   padding: 1rem 2rem;
 }
 
+/**
+ * Card contents
+ */
 .cd-card__container {
   flex-grow: 1;
   padding: 2rem 2rem 1rem;
-}
-
-.cd-card__footer {
-  flex-shrink: 0;
-  padding: 0 2rem 2rem;
 }
 
 .cd-card__title,
@@ -57,6 +64,14 @@
 
 .cd-card__description p:last-child {
   margin-bottom: 0;
+}
+
+/**
+ * Card footer
+ */
+.cd-card__footer {
+  flex-shrink: 0;
+  padding: 0 2rem 2rem;
 }
 
 .cd-card__link {
