@@ -34,8 +34,8 @@
 
 .cd-card__image--rounded {
   min-width: 7rem;
-  min-height: 7rem;
   max-width: 13rem;
+  min-height: 7rem;
   max-height: 13rem;
   margin-top: 1rem;
   margin-right: auto;
@@ -99,8 +99,8 @@
 }
 
 .cd-card--clickable .cd-card__title a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 .cd-card--clickable .cd-card__title a:hover {
@@ -114,12 +114,12 @@
 
 /* Create and style the clickable pseudo-element. */
 .cd-card--clickable .cd-card__title a::after {
-  content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  content: "";
 }
 
 /* Provide hover/focus styles on clickable pseudo-element. */
