@@ -129,11 +129,6 @@ cd-card:
     - common_design/css-vars-ponyfill
     - common_design/cd-object-fit
 
-cd-card-clickable:
-  css:
-    component:
-      components/cd-card-clickable/cd-card-clickable.css: {}
-
 cd-date:
   css:
     component:
