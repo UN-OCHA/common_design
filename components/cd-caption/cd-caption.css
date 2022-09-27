@@ -1,3 +1,7 @@
+/**
+ * CD Caption
+ */
+
 .cd-caption {
   max-width: var(--cd-max-width);
   margin: 0 auto;

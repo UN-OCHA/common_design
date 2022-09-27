@@ -1,6 +1,7 @@
 /**
- * CD Table of Contents (ToC) component
+ * CD Table of Contents (ToC)
  */
+
 .cd-toc {
   position: relative;
   z-index: 1;

@@ -1,6 +1,7 @@
 /**
  * CD enhancements for Drupal Nodes
  */
+
 .node--unpublished {
   background: #fdd;
 }

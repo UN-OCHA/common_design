@@ -1,11 +1,9 @@
 @charset "UTF-8";
-/* #0c0c0c */
-/* #4d4d4d */
-/* #737373 */
-/* #999999 */
-/* #bfbfbf */
-/* #e5e5e5 */
-/* #f2f2f2 */
+/**
+ * CD implementation of Select a11y
+ *
+ * @see http://pidila.gitlab.io/select-a11y/
+ */
 button,
 input,
 label,
