@@ -146,18 +146,6 @@ h1 {
   }
 }
 
-ol,
-dl {
-  margin-bottom: 1rem;
-}
-
-@include tablet {
-  ol,
-  dl {
-    margin-bottom: 1.5rem;
-  }
-}
-
 h2 {
   font-size: var(--cd-font-size--2xbase);
 
@@ -210,6 +198,18 @@ a {
 
 ol {
   list-style: decimal;
+}
+
+ol,
+dl {
+  margin-bottom: 1rem;
+}
+
+@include tablet {
+  ol,
+  dl {
+    margin-bottom: 1.5rem;
+  }
 }
 
 em {
