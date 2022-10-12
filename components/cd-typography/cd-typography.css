@@ -19,10 +19,10 @@ hr {
 }
 
 blockquote {
-  margin: 2rem 0;
+  margin: 2rem;
   color: var(--cd-grey--mid);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-size: var(--cd-font-size--medium);
+  line-height: 1.5;
 }
 
 /* Description list */
