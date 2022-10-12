@@ -160,6 +160,10 @@ h1 {
   font-size: var(--cd-font-size--2xbase);
   font-weight: 700;
 
+  @include desktop {
+    font-size: var(--cd-font-size--2xmedium);
+  }
+
   .cd-content--spacious & {
     font-size: var(--cd-font-size--2xmedium);
     margin: 1.5em 0 .75em 0;
