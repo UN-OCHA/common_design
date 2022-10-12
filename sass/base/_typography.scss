@@ -256,6 +256,11 @@ dl {
   }
 }
 
+.cd-content--spacious ol,
+.cd-content--spacious ul {
+  margin: 1.5em 0;
+}
+
 .cd-content--spacious {
   dl dt,
   dl dd,
@@ -266,7 +271,7 @@ dl {
 }
 
 .cd-content--spacious p {
-  line-height: 2;
+  line-height: 1.75;
 }
 
 em {
