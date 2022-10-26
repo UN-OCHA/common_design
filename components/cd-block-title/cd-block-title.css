@@ -13,3 +13,13 @@
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--brand-highlight);
 }
+
+.cd-content--compact.cd-block-title {
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 0 none;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.3;
+}

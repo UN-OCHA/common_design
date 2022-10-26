@@ -9,6 +9,6 @@ Note the font size is set so the Heading level has no effect on font size.
 ### Variants
 
 ```
-none
+.cd-content--compact.cd-block-title
 
 ```
