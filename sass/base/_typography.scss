@@ -278,6 +278,19 @@ dl {
   line-height: 1.75;
 }
 
+.cd-layout-sidebar-first {
+  ol,
+  ul {
+    margin: 1em 0;
+    padding-inline-start: 1rem;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.75rem;
+  }
+}
+
 em {
   font-style: italic;
 }
