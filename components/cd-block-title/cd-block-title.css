@@ -3,11 +3,11 @@
  */
 
 .cd-block-title {
+  margin: 0 0 1rem 0;
   letter-spacing: 0.5px;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.3;
-  margin: 0 0 1rem 0;
 }
 
 .cd-block-title--underline {
