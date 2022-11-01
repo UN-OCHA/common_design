@@ -48,3 +48,9 @@
   margin-left: 0.5rem;
   transform: scale(-1, 1);
 }
+
+/* Override the generic .cd-layout-sidebar-first ul */
+.cd-layout-sidebar-first .cd-bullet-list,
+.cd-layout-sidebar-second .cd-bullet-list {
+  padding-inline-start: 0;
+}
