@@ -29,7 +29,7 @@
   border-bottom: 1px solid var(--brand-primary);
 }
 
-.cd-content--compact.cd-block-title {
+.cd-content--compact .cd-block-title {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   border-bottom: 0 none;
