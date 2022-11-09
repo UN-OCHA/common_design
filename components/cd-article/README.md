@@ -16,6 +16,6 @@ theme. The parent container div requires class `cd-layout-with-sidebar`
 ### Variants
 
 ```
-none
+.cd-content--compact /* On the aside element for a compact sidebar */
 
 ```

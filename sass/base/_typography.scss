@@ -278,6 +278,7 @@ dl {
   line-height: 1.75;
 }
 
+/* Lists in sidebars */
 .cd-layout-sidebar-first,
 .cd-layout-sidebar-second {
   ol,
@@ -289,6 +290,22 @@ dl {
   ol li + li,
   ul li + li {
     margin-top: 0.75rem;
+  }
+}
+
+/* List in sidebars with compact content style */
+.cd-layout-sidebar-first.cd-content--compact,
+.cd-layout-sidebar-second.cd-content--compact {
+
+  ol,
+  ul {
+    margin: 0.5em 0 1rem;
+    padding-inline-start: 1rem;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.25rem;
   }
 }
 
