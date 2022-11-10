@@ -8,6 +8,13 @@
   list-style: none;
 }
 
+/* Override the generic .cd-layout-sidebar-first ul */
+.cd-layout-sidebar-first .cd-styled-list,
+.cd-layout-sidebar-second .cd-styled-list {
+  padding-inline-start: 0;
+  margin-bottom: 1rem;
+}
+
 .cd-styled-list > * {
   display: flex;
   flex-wrap: wrap;

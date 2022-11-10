@@ -8,6 +8,12 @@
   list-style: none;
 }
 
+/* Override the generic .cd-layout-sidebar-first ul */
+.cd-layout-sidebar-first .cd-bullet-list li,
+.cd-layout-sidebar-second .cd-bullet-list li {
+  margin: 0;
+}
+
 /* https://yoksel.github.io/url-encoder/ */
 [dir="ltr"] .cd-bullet-list li {
   padding: 0.25rem 0 0.25rem 1.5rem;
