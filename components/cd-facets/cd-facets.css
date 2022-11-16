@@ -97,8 +97,8 @@
 /* Override the generic .cd-layout-sidebar-first ul */
 .cd-layout-sidebar-first .block-facets-summary ul,
 .cd-layout-sidebar-second .block-facets-summary ul {
-  padding-inline-start: 0;
   margin: 0;
+  padding-inline-start: 0;
 }
 
 .block-facets-summary li {

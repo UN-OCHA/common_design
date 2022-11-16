@@ -33,7 +33,7 @@
  * Optional rules for Frontpage block titles using brand colours.
  * Copy into sub theme.
  */
- /*
+/*
 .path-frontpage .cd-block-title--underline {
   border-bottom: 1px solid var(--brand-highlight);
 }
