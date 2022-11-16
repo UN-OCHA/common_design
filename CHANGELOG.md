@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.3.0](https://github.com/UN-OCHA/common_design/compare/v7.2.1...v7.3.0) (2022-11-16)
+
+
+### Features
+
+* CD Clickable Card ([4467d04](https://github.com/UN-OCHA/common_design/commit/4467d04077602448d361dfa5899be3df02467ec8))
+* Clickable variant for CD Card ([e8a57de](https://github.com/UN-OCHA/common_design/commit/e8a57de7deaacf85c0aaedcf3d9b8b142ae53898))
+
+
+### Bug Fixes
+
+* avoid abbreviations in visually-hidden logo text ([8bb19fc](https://github.com/UN-OCHA/common_design/commit/8bb19fc0f657b501a2489b6dc6e250ac3a27cfd2))
+* update typography based on coordination with SCB and RW ([1fdf272](https://github.com/UN-OCHA/common_design/commit/1fdf2721381586008bbe749536ac91fe0ca08133)), [#341](https://github.com/UN-OCHA/common_design/issues/341) [#342](https://github.com/UN-OCHA/common_design/issues/342)
+
+## [7.2.1](https://github.com/UN-OCHA/common_design/compare/v7.2.0...v7.2.1) (2022-08-01)
+
+
+### Bug Fixes
+
+* comment out no-js rule with min-width on search form ([ce41fdf](https://github.com/UN-OCHA/common_design/commit/ce41fdf641f12262ff263986c8e39869ddf78a57))
+* comments and use transparent border ([d50dd0e](https://github.com/UN-OCHA/common_design/commit/d50dd0e8489d230204cb7742fa072ec125748ef2))
+* refine first and second level active menu item styles when javascript is disabled. ([959f31c](https://github.com/UN-OCHA/common_design/commit/959f31c4be07e951892a720c23145e0fbcd9f365))
+* remove min-width from search form, in favour of element size ([360878c](https://github.com/UN-OCHA/common_design/commit/360878c7325ab421ac0475a156f5fafeb750de9b))
+* remove separators from menu items for better visual cohesion when js is disabled ([7e7ebdf](https://github.com/UN-OCHA/common_design/commit/7e7ebdf173463abd365e9a705e03424ece00784e))
+
 ## [7.2.0](https://github.com/UN-OCHA/common_design/compare/v7.1.0...v7.2.0) (2022-07-04)
 
 
@@ -55,7 +80,7 @@ All notable changes to this project will be documented in this file. See [standa
 * remove the new variable that was created in this branch ([478253b](https://github.com/UN-OCHA/common_design/commit/478253ba5fcddc6faba6e2653160906ef660c3a5))
 * update default --brand color in base-theme ([84021df](https://github.com/UN-OCHA/common_design/commit/84021df9e3114c3d0c44374ccb69eabcfb996852))
 
-### [7.0.1](https://github.com/UN-OCHA/common_design/compare/v7.0.0...v7.0.1) (2022-04-26)
+## [7.0.1](https://github.com/UN-OCHA/common_design/compare/v7.0.0...v7.0.1) (2022-04-26)
 
 
 ### Bug Fixes

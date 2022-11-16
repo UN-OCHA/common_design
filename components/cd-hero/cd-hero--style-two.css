@@ -1,3 +1,7 @@
+/**
+ * CD Hero: Style two
+ */
+
 @media (min-width: 1024px) {
   .cd-hero--style-two .cd-hero__container {
     padding: 2rem 3.75rem;

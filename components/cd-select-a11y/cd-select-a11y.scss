@@ -1,12 +1,18 @@
+/**
+ * CD implementation of Select a11y
+ *
+ * @see http://pidila.gitlab.io/select-a11y/
+ */
+
 $gray-base:                   #262626;
-$gray-1:                      darken($gray-base, 10%) !default; /* #0c0c0c */
+$gray-1:                      darken($gray-base, 10%) !default; // #0c0c0c
 $gray-2:                      $gray-base !default;
-$gray-3:                      lighten($gray-base, 15%) !default; /* #4d4d4d */
-$gray-4:                      lighten($gray-base, 30%) !default; /* #737373 */
-$gray-5:                      lighten($gray-base, 45%) !default; /* #999999 */
-$gray-6:                      lighten($gray-base, 60%) !default; /* #bfbfbf */
-$gray-7:                      lighten($gray-base, 75%) !default; /* #e5e5e5 */
-$gray-8:                      lighten($gray-base, 80) !default; /* #f2f2f2 */
+$gray-3:                      lighten($gray-base, 15%) !default; // #4d4d4d
+$gray-4:                      lighten($gray-base, 30%) !default; // #737373
+$gray-5:                      lighten($gray-base, 45%) !default; // #999999
+$gray-6:                      lighten($gray-base, 60%) !default; // #bfbfbf
+$gray-7:                      lighten($gray-base, 75%) !default; // #e5e5e5
+$gray-8:                      lighten($gray-base, 80) !default;  // #f2f2f2
 
 button,
 input,

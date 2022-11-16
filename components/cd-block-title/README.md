@@ -4,11 +4,16 @@
 Title for content sections or to precede other components like lists and grids.
 
 ## Caveats
-None
+Note the font size is set so the Heading level has no effect on font size.
 
 ### Variants
 
 ```
-none
+.cd-block-title--underline
+
+/* uses brand--primary for underline */
+.path-frontpage .cd-block-title--underline
+
+.cd-content--compact .cd-block-title
 
 ```

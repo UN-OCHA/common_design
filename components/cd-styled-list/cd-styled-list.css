@@ -1,7 +1,18 @@
+/**
+ * CD Styled list
+ */
+
 .cd-styled-list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* Override the generic .cd-layout-sidebar-first ul */
+.cd-layout-sidebar-first .cd-styled-list,
+.cd-layout-sidebar-second .cd-styled-list {
+  margin-bottom: 1rem;
+  padding-inline-start: 0;
 }
 
 .cd-styled-list > * {

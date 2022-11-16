@@ -130,71 +130,107 @@ h3,
 h4,
 h5,
 h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
   color: var(--cd-default-text-color);
   font-family: var(--cd-font--roboto);
   font-weight: 500;
   line-height: 1.2;
+
+  .cd-content--spacious & {
+    margin: 2em 0 0.5em 0;
+  }
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+
+  .cd-content--spacious & {
+    margin-top: 0;
+  }
 }
 
 h1 {
   color: var(--cd-default-text-color);
-  font-size: var(--cd-font-size--2xmedium);
+  font-size: var(--cd-font-size--2xbase);
   font-weight: 700;
 
-  @include desktop {
-    font-size: var(--cd-font-size--2xlarge);
+  .cd-content--spacious & {
+    margin: 1.5em 0 0.75em 0;
+    font-size: var(--cd-font-size--2xmedium);
+
+    @include desktop {
+      font-size: var(--cd-font-size--2xlarge);
+    }
   }
-}
-
-ol,
-dl {
-  margin-bottom: 1rem;
-}
-
-@include tablet {
-  ol,
-  dl {
-    margin-bottom: 1.5rem;
-  }
-}
-
-h2 {
-  font-size: var(--cd-font-size--2xbase);
 
   @include desktop {
     font-size: var(--cd-font-size--2xmedium);
   }
 }
 
+h2 {
+  font-size: var(--cd-font-size--2xbase);
+
+  .cd-content--spacious & {
+    font-size: var(--cd-font-size--2xbase);
+
+    @include desktop {
+      font-size: var(--cd-font-size--2xmedium);
+    }
+  }
+}
+
 h3 {
   font-size: var(--cd-font-size--large);
 
-  @include desktop {
-    font-size: var(--cd-font-size--2xbase);
+  .cd-content--spacious & {
+    font-size: var(--cd-font-size--large);
+
+    @include desktop {
+      font-size: var(--cd-font-size--2xbase);
+    }
   }
 }
 
 h4 {
   font-size: var(--cd-font-size--medium);
 
-  @include desktop {
-    font-size: var(--cd-font-size--large);
+  .cd-content--spacious & {
+    font-size: var(--cd-font-size--medium);
+
+    @include desktop {
+      font-size: var(--cd-font-size--large);
+    }
   }
 }
 
 h5 {
   font-size: var(--cd-font-size--base);
 
-  @include desktop {
-    font-size: var(--cd-font-size--medium);
+  .cd-content--spacious & {
+    font-size: var(--cd-font-size--base);
+
+    @include desktop {
+      font-size: var(--cd-font-size--medium);
+    }
   }
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: var(--cd-font-size--ref);
 
-  @include desktop {
-    font-size: var(--cd-font-size--base);
+  .cd-content--spacious & {
+    font-size: var(--cd-font-size--ref);
+
+    @include desktop {
+      font-size: var(--cd-font-size--base);
+    }
   }
 }
 
@@ -212,8 +248,72 @@ ol {
   list-style: decimal;
 }
 
+ol,
+dl {
+  margin-bottom: 1rem;
+}
+
+@include tablet {
+  ol,
+  dl {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.cd-content--spacious ol,
+.cd-content--spacious ul {
+  margin: 1.5em 0;
+}
+
+.cd-content--spacious {
+  dl dt,
+  dl dd,
+  ol li + li,
+  ul li + li {
+    margin-top: calc(var(--cd-font-size--ref) / 2);
+  }
+}
+
+.cd-content--spacious p {
+  line-height: 1.75;
+}
+
+/* Lists in sidebars */
+.cd-layout-sidebar-first,
+.cd-layout-sidebar-second {
+  ol,
+  ul {
+    margin: 1em 0 2rem;
+    padding-inline-start: 1rem;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.75rem;
+  }
+}
+
+/* List in sidebars with compact content style */
+.cd-layout-sidebar-first.cd-content--compact,
+.cd-layout-sidebar-second.cd-content--compact {
+  ol,
+  ul {
+    margin: 0.5em 0 1.5rem;
+    padding-inline-start: 1rem;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.25rem;
+  }
+}
+
 em {
   font-style: italic;
+}
+
+.cd-content--spacious strong {
+  font-weight: 900;
 }
 
 // The Unarticulated Annotation.

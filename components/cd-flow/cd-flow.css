@@ -1,4 +1,8 @@
-/* @see https://cube.fyi */
+/**
+ * CD Utility: flow
+ *
+ * @see https://cube.fyi
+ */
 
 .cd-flow > * + * {
   margin-top: var(--cd-flow-space, 1rem);

@@ -144,6 +144,7 @@
   max-width: unset;
 }
 
+// Hide seperator.
 .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item li:first-child {
-  border-right: 1px solid var(--brand-grey);
+  border-right: 1px solid transparent;
 }
