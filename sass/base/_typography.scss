@@ -138,7 +138,7 @@ h6 {
   line-height: 1.2;
 
   .cd-content--spacious & {
-    margin: 2em 0 .5em 0;
+    margin: 2em 0 0.5em 0;
   }
 }
 
@@ -160,17 +160,17 @@ h1 {
   font-size: var(--cd-font-size--2xbase);
   font-weight: 700;
 
-  @include desktop {
-    font-size: var(--cd-font-size--2xmedium);
-  }
-
   .cd-content--spacious & {
+    margin: 1.5em 0 0.75em 0;
     font-size: var(--cd-font-size--2xmedium);
-    margin: 1.5em 0 .75em 0;
 
     @include desktop {
       font-size: var(--cd-font-size--2xlarge);
     }
+  }
+
+  @include desktop {
+    font-size: var(--cd-font-size--2xmedium);
   }
 }
 
@@ -276,6 +276,36 @@ dl {
 
 .cd-content--spacious p {
   line-height: 1.75;
+}
+
+/* Lists in sidebars */
+.cd-layout-sidebar-first,
+.cd-layout-sidebar-second {
+  ol,
+  ul {
+    margin: 1em 0 2rem;
+    padding-inline-start: 1rem;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.75rem;
+  }
+}
+
+/* List in sidebars with compact content style */
+.cd-layout-sidebar-first.cd-content--compact,
+.cd-layout-sidebar-second.cd-content--compact {
+  ol,
+  ul {
+    margin: 0.5em 0 1.5rem;
+    padding-inline-start: 1rem;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.25rem;
+  }
 }
 
 em {

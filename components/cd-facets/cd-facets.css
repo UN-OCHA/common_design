@@ -6,7 +6,7 @@
   margin-bottom: 2rem;
 }
 
-.block-facets h2,
+/* .block-facets h2,
 .block-facets-summary h2 {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -15,7 +15,7 @@
   border-bottom: 1px solid var(--brand-primary);
   font-size: 1.25rem;
   font-weight: 500;
-}
+} */
 
 .block-facets ul {
   margin: 0;
@@ -92,6 +92,13 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* Override the generic .cd-layout-sidebar-first ul */
+.cd-layout-sidebar-first .block-facets-summary ul,
+.cd-layout-sidebar-second .block-facets-summary ul {
+  margin: 0;
+  padding-inline-start: 0;
 }
 
 .block-facets-summary li {
