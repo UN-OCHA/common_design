@@ -16,13 +16,7 @@
   // Logo icon before the button/link label.
   // @todo add proper classes to make it more robust.
   svg + span {
-    [dir="ltr"] & {
-      margin-left: 10px;
-    }
-
-    [dir="rtl"] & {
-      margin-right: 10px;
-    }
+    margin-inline-start: 10px;
   }
 
   // Vertical centering fallback for when flex is not supported.
@@ -46,7 +40,7 @@
   &--no-language-switcher {
     li:last-child a,
     li:last-child button {
-      padding-right: 0;
+      padding-inline-end: 0;
 
       &::after {
         content: none;
@@ -59,7 +53,7 @@
   position: relative;
   display: block;
   height: var(--cd-global-header-height);
-  padding: 0 15px;
+  padding-inline: 15px;
   transition: background 0.3s ease;
   white-space: nowrap;
   text-decoration: none;
@@ -118,6 +112,8 @@
 
 .cd-user-menu__dropdown {
   min-width: 125px;
+  margin: 0;
+  padding: 12px 24px;
 }
 
 //——————————————————————————————————————————————————————————————————————————————
@@ -213,6 +209,23 @@
 
 .cd-global-header .menu > li li a::after {
   content: none;
+}
+
+// Last block in Global Header shouldn't have a separator or padding */
+.cd-global-header__user-menu:last-child .menu > li > a,
+.cd-global-header__user-menu:last-child .menu > li > button {
+  padding-inline-end: 0;
+}
+
+.cd-global-header__user-menu:last-child .menu > li > a::after,
+.cd-global-header__user-menu:last-child .menu > li > button::after {
+  display: none;
+}
+
+// Last block in Global Header should have its dropdown right aligned */
+.cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
+  right: 0;
+  left: initial;
 }
 
 .cd-global-header .menu > .menu-item:last-child > ul.menu {

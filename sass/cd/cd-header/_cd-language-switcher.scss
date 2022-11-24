@@ -4,6 +4,16 @@
 
 .cd-language-switcher {
   position: relative;
+
+  @include desktop {
+    --dropdown: false;
+  }
+}
+
+.cd-language-switcher.cd-dropdown {
+  @include desktop {
+    display: block;
+  }
 }
 
 // Language switcher button
@@ -13,6 +23,7 @@
   box-sizing: content-box;
   height: var(--cd-global-header-height);
   padding: 0 0 0 15px;
+  font-weight: bold;
   line-height: var(--cd-global-header-height);
 
   // Language switcher is always on the far edge of the global header.
@@ -36,82 +47,127 @@
   }
 }
 
-.cd-user-menu__dropdown {
+.cd-language-switcher__dropdown {
   margin: 0;
-  padding: 12px 24px;
+  padding: 0;
   list-style: none;
 
-  .cd-language-switcher & {
-    right: 0;
-    left: auto;
-    width: 125px;
+  @include desktop {
+    display: flex;
   }
+}
 
-  li {
-    display: block;
-    float: none;
-  }
-
-  li a {
-    @extend .cd-user-menu__dropdown-link;
-
+@include desktop {
+  .cd-language-switcher__dropdown li a {
+    margin-inline-start: 0.5rem;
+    padding-inline-start: 0.5rem;
+    text-decoration: none;
     color: var(--cd-white);
+    border-inline-start: 1px solid var(--cd-white);
+    line-height: var(--cd-global-header-height);
+  }
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+  .cd-language-switcher__dropdown li a.is-active {
+    font-weight: 700;
+  }
+
+  .cd-language-switcher__dropdown li:first-child a {
+    border-inline-start: 0 none;
+  }
+}
+
+@include max-width(lg) {
+  .cd-language-switcher__dropdown {
+    @include z-index(dropdown);
+
+    position: absolute;
+    left: 0;
+    color: var(--cd-white);
+    background-color: var(--brand-primary);
+    padding: 12px 24px;
+
+    .no-js & {
+      position: relative;
     }
 
-    &:focus {
-      outline: 3px solid var(--brand-primary--light);
+    .js & {
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .cd-language-switcher & {
+      right: 0;
+      left: auto;
+      width: 125px;
+    }
+
+    li {
+      display: block;
+      float: none;
+    }
+
+    li a {
+      @extend .cd-user-menu__dropdown-link;
+
+      color: var(--cd-white);
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 3px solid var(--brand-primary--light);
+      }
     }
   }
 }
 
-.cd-user-menu__dropdown-link {
-  display: block;
-  padding: 12px 0;
-  text-decoration: none;
+@include max-width(lg) {
+  .cd-user-menu__dropdown-link {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
 
-  &.is-active {
-    position: relative;
-    font-weight: 700;
+    &.is-active {
+      position: relative;
+      font-weight: 700;
 
-    [dir="ltr"] & {
-      padding-right: 12px;
-    }
+      // [dir="ltr"] & {
+      //   padding-right: 12px;
+      // }
 
-    [dir="rtl"] & {
-      padding-left: 12px;
-    }
+      // [dir="rtl"] & {
+      //   padding-left: 12px;
+      // }
 
-    &::after {
-      position: absolute;
-      right: 0;
-      width: 14px;
-      height: 14px;
-      content: "";
-      background-image: url("../img/icons/selected--highlighted.svg");
-      background-repeat: no-repeat;
-      background-position: 0 50%;
-      background-size: 14px 14px;
+      // &::after {
+      //   position: absolute;
+      //   right: 0;
+      //   width: 14px;
+      //   height: 14px;
+      //   content: "";
+      //   background-image: url("../img/icons/selected--highlighted.svg");
+      //   background-repeat: no-repeat;
+      //   background-position: 0 50%;
+      //   background-size: 14px 14px;
 
-      [dir="rtl"] & {
-        right: auto;
-        left: 0;
-      }
+      //   [dir="rtl"] & {
+      //     right: auto;
+      //     left: 0;
+      //   }
+      // }
     }
   }
 }
 
 .no-js .cd-user-menu__dropdown {
   width: unset;
-  margin-left: 12px;
+  margin-inline-start: 12px;
   padding: 0;
 
   li {
     display: inline-block;
-    padding: 0 12px;
+    padding-inline: 0 12px;
   }
 
   a {
@@ -126,3 +182,8 @@
     right: -6px;
   }
 }
+
+// If there are multiple menus, separate them with margins */
+// .cd-global-header__language-switcher + .cd-global-header__user-menu {
+//   margin-inline-start: 1rem;
+// }
