@@ -59,8 +59,8 @@
 
 @include desktop {
   .cd-language-switcher__dropdown li a {
-    margin-inline-start: 0.5rem;
-    padding-inline-start: 0.5rem;
+    margin-inline-start: 0.75rem;
+    padding-inline-start: 0.75rem;
     text-decoration: none;
     color: var(--cd-white);
     border-inline-start: 1px solid var(--cd-white);
@@ -187,3 +187,18 @@
 // .cd-global-header__language-switcher + .cd-global-header__user-menu {
 //   margin-inline-start: 1rem;
 // }
+
+.cd-global-header__language-switcher + .cd-global-header__user-menu {
+  margin-inline-start: 2rem;
+  position: relative;
+}
+.cd-global-header__language-switcher + .cd-global-header__user-menu::before {
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  width: 2px;
+  height: calc(var(--cd-global-header-height) / 3);
+  content: "";
+  transform: translateY(-50%);
+  background: var(--brand-grey);
+}
