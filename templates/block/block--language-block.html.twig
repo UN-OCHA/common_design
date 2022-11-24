@@ -26,6 +26,7 @@
  * @see template_preprocess_block()
  */
 #}
+{{ attach_library('common_design/cd-user-menu') }}
 
 {%
   set classes = [
@@ -33,7 +34,8 @@
   'block--' ~ configuration.provider|clean_class,
   'block--' ~ plugin_id|clean_class,
   'block--' ~ elements['#id']|clean_class,
-  'cd-global-header__language-switcher'
+  'cd-global-header__language-switcher',
+  'cd-global-header__user-menu'
 ]
 %}
 
@@ -42,7 +44,7 @@
     'class': ['cd-language-switcher', 'cd-dropdown'],
     'id': 'cd-language',
     'aria-labelledby': 'cd-language-switcher',
-    'data-cd-toggable': "#{language}",
+    'data-cd-toggable': "#{language_name}",
     'data-cd-icon': 'arrow-down',
     'data-cd-component': 'cd-language-switcher',
   }) }}>
@@ -52,6 +54,7 @@
     {% endif %}
     {{ title_prefix }}
     <h2{{ title_attributes.setAttribute('id', 'cd-language-switcher') }}>{{ configuration.label }}</h2>
+
     {{ title_suffix }}
 
     {% block content %}
