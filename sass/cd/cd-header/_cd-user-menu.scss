@@ -53,7 +53,7 @@
   position: relative;
   display: block;
   height: var(--cd-global-header-height);
-  padding-inline: 15px;
+  padding-inline: 1rem;
   transition: background 0.3s ease;
   white-space: nowrap;
   text-decoration: none;
@@ -62,16 +62,16 @@
   line-height: var(--cd-global-header-height);
 
   // Separator.
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: -1px;
-    width: 2px;
-    height: calc(var(--cd-global-header-height) / 3);
-    content: "";
-    transform: translateY(-50%);
-    background: var(--brand-grey);
-  }
+  // &::after {
+  //   position: absolute;
+  //   top: 50%;
+  //   right: -1px;
+  //   width: 2px;
+  //   height: calc(var(--cd-global-header-height) / 3);
+  //   content: "";
+  //   transform: translateY(-50%);
+  //   background: var(--brand-grey);
+  // }
 
   &:hover,
   &:focus {
@@ -95,10 +95,6 @@
     }
   }
 
-  @include tablet {
-    padding: 0 20px;
-  }
-
   @supports (display: flex) {
     display: flex;
     align-items: center;
@@ -106,7 +102,7 @@
 
   @include tablet {
     max-width: none;
-    padding: 0 20px;
+    padding-inline: 1.5rem;
   }
 }
 
@@ -212,15 +208,15 @@
 }
 
 // Last block in Global Header shouldn't have a separator or padding */
-.cd-global-header__user-menu:last-child .menu > li > a,
-.cd-global-header__user-menu:last-child .menu > li > button {
-  padding-inline-end: 0;
-}
+// .cd-global-header__user-menu:last-child .menu > li > a,
+// .cd-global-header__user-menu:last-child .menu > li > button {
+//   padding-inline-end: 0;
+// }
 
-.cd-global-header__user-menu:last-child .menu > li > a::after,
-.cd-global-header__user-menu:last-child .menu > li > button::after {
-  display: none;
-}
+// .cd-global-header__user-menu:last-child .menu > li > a::after,
+// .cd-global-header__user-menu:last-child .menu > li > button::after {
+//   display: none;
+// }
 
 // Last block in Global Header should have its dropdown right aligned */
 .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
