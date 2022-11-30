@@ -17,6 +17,7 @@
 }
 
 // If there are multiple menus, separate them with pipes and margins */
+/* This should correspond with the dropdown menu breakpoint */
 .cd-global-header__actions > * + nav {
   position: relative;
 }
