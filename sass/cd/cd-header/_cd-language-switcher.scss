@@ -4,25 +4,9 @@
 
 .cd-language-switcher {
   position: relative;
-
-  @include mobile {
-    --dropdown: false;
-  }
-  @include tablet {
-    --dropdown: false;
-  }
 }
 
-.cd-language-switcher.cd-dropdown {
-  @include mobile {
-    display: block;
-  }
-  @include tablet {
-    display: block;
-  }
-}
-
-// Language switcher button
+// Language Switcher button.
 .cd-language-switcher__btn {
   display: flex;
   align-items: center;
@@ -32,33 +16,25 @@
   padding-inline: 1rem;
   line-height: var(--cd-global-header-height);
 
-  // Place toggle indicator on edge of Global Header
-  .cd-icon--arrow-down {
-    min-height: 100%; // IE11 fix.
-    margin: auto; // Center vertically in macOS 10
-  }
-
   &:focus {
     outline: 3px solid var(--brand-primary--light);
   }
 }
 
+// Language Switcher list.
 .cd-language-switcher__dropdown {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  @include mobile {
-    display: flex;
-  }
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .cd-language-switcher__dropdown li a {
-  text-decoration: none;
-  color: var(--cd-white);
-  line-height: var(--cd-global-header-height);
   position: relative;
   display: block;
   height: var(--cd-global-header-height);
+  padding-inline: 0.75rem;
   text-decoration: none;
   color: var(--cd-white);
   line-height: var(--cd-global-header-height);
@@ -77,82 +53,36 @@
   }
 }
 
-@include mobile {
-  .cd-language-switcher__dropdown li a {
-    padding-inline: 0.75rem;
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: -1px;
-      width: 1px;
-      height: calc(var(--cd-global-header-height) / 3);
-      content: "";
-      transform: translateY(-50%);
-      background: var(--brand-grey);
-    }
-  }
-
-  .cd-language-switcher__dropdown li a.is-active {
-    font-weight: 700;
-  }
-
-  .cd-language-switcher__dropdown li:first-child a {
-    border-inline-start: 0 none;
-  }
-
-  .cd-language-switcher__dropdown li:first-child a::before {
-    background: transparent;
-  }
+// Pipe separator.
+.cd-language-switcher__dropdown li a::before {
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  width: 1px;
+  height: calc(var(--cd-global-header-height) / 3);
+  content: "";
+  transform: translateY(-50%);
+  background: var(--brand-grey);
+}
+// No pipe on first child.
+.cd-language-switcher__dropdown li:first-child a::before {
+  background: transparent;
 }
 
-@include max-width(sm) {
-  .cd-language-switcher__dropdown {
-    @include z-index(dropdown);
-    position: absolute;
-    left: 0;
-    color: var(--cd-white);
-    background-color: var(--brand-primary);
-    padding: 12px 24px;
-
-    .no-js & {
-      position: relative;
-    }
-
-    .js & {
-      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
-    }
-
-    .cd-language-switcher & {
-      right: 0;
-      left: auto;
-      width: 125px;
-    }
-  }
-}
-
-.no-js .cd-user-menu__dropdown {
-  width: unset;
-  margin-inline-start: 12px;
-  padding: 0;
-
-  li {
-    display: inline-block;
-    padding-inline: 0 12px;
-  }
-
-  a {
-    height: var(--cd-global-header-height);
-    padding: 0;
-    line-height: var(--cd-global-header-height);
-  }
-}
-
-// If there are multiple menus, separate them with pipes and margins */
+// If there are menus in the Global Header
+// and the Language Switcher is displayed in full,
+// separate with pipes and margins.
 .cd-global-header__language-switcher + .cd-global-header__user-menu {
-  margin-inline-start: 1rem;
   position: relative;
+  // Margin value matches the padding of the other buttons in the Global Header
+  // and takes into account the right padding from the last Language Item.
+  margin-inline-start: 0.5rem;
+
+  @include tablet {
+    margin-inline-start: 1rem;
+  }
 }
+// Pipe separator between Language Switcher and following menu.
 .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
   position: absolute;
   top: 50%;
@@ -162,4 +92,56 @@
   content: "";
   transform: translateY(-50%);
   background: var(--brand-grey);
+}
+
+// Adjust breakpoints for when the Language Switcher displays as a dropdown.
+// This depends on other elements present in the .cd-global-header__actions.
+//
+// Copy the following rules into the sub theme and override breakpoint value.
+@include max-width(sm) {
+  .js {
+    .cd-language-switcher__dropdown {
+      @include z-index(dropdown);
+
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      left: auto;
+      min-width: 125px;
+      padding: 12px 24px;
+      color: var(--cd-white);
+      background-color: var(--brand-primary);
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+
+      a::before {
+        content: none;
+      }
+    }
+
+    // No horizontal separation when Language Switcher displays in a dropdown.
+    .cd-global-header__language-switcher + .cd-global-header__user-menu {
+      margin-inline-start: 0;
+    }
+  }
+}
+
+// Display the full Language Switcher on > mobile.
+.cd-language-switcher {
+  @include mobile {
+    --dropdown: false;
+  }
+  @include tablet {
+    --dropdown: false;
+  }
+}
+
+// Override the .cd-dropdown display rules to correspond with breakpoints above.
+.cd-language-switcher.cd-dropdown {
+  @include mobile {
+    display: block;
+  }
+  @include tablet {
+    display: block;
+  }
 }

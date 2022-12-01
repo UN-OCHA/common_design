@@ -228,3 +228,20 @@
   right: -1px;
   left: auto;
 }
+
+.no-js .cd-user-menu__dropdown {
+  width: unset;
+  margin-inline-start: 12px;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding-inline: 0 12px;
+  }
+
+  a {
+    height: var(--cd-global-header-height);
+    padding: 0;
+    line-height: var(--cd-global-header-height);
+  }
+}
