@@ -88,17 +88,19 @@
   }
 }
 // Pipe separator between Language Switcher and following menu.
-.cd-global-header__language-switcher + .cd-global-header__user-menu::before {
-  position: absolute;
-  top: 50%;
-  left: -1px;
-  width: 2px;
-  height: calc(var(--cd-global-header-height) / 3);
-  content: "";
-  transform: translateY(-50%);
-  background: var(--brand-grey);
+.js {
+  .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    width: 2px;
+    height: calc(var(--cd-global-header-height) / 3);
+    content: "";
+    transform: translateY(-50%);
+    background: var(--brand-grey);
+  }
 
-  [dir="rtl"] & {
+  &[dir="rtl"] .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
     right: -1px;
     left: auto;
   }
@@ -132,10 +134,8 @@
     .cd-global-header__language-switcher + .cd-global-header__user-menu {
       margin-inline-start: 0;
     }
-  }
 
-  [dir="rtl"] {
-    .cd-language-switcher__dropdown {
+    &[dir="rtl"] .cd-language-switcher__dropdown {
       right: auto;
       left: 0;
     }

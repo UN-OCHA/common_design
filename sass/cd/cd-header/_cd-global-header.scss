@@ -30,21 +30,23 @@
 
 // If there are multiple menus, separate them with pipes and margins */
 /* This should correspond with the dropdown menu breakpoint */
-.cd-global-header__actions > * + nav {
-  position: relative;
-}
+.js {
+  .cd-global-header__actions > * + nav {
+    position: relative;
+  }
 
-.cd-global-header__actions > * + nav::before {
-  position: absolute;
-  top: 50%;
-  left: -1px;
-  width: 2px;
-  height: calc(var(--cd-global-header-height) / 3);
-  content: "";
-  transform: translateY(-50%);
-  background: var(--brand-grey);
+  .cd-global-header__actions > * + nav::before {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    width: 2px;
+    height: calc(var(--cd-global-header-height) / 3);
+    content: "";
+    transform: translateY(-50%);
+    background: var(--brand-grey);
+  }
 
-  [dir="rtl"] & {
+  &[dir="rtl"] .cd-global-header__actions > * + nav::before {
     right: -1px;
     left: auto;
   }
