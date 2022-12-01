@@ -5,14 +5,26 @@
 .cd-global-header {
   .cd-global-header__actions {
     float: right;
+
+    [dir="rtl"] & {
+      float: left;
+    }
   }
 
   &__language-switcher {
     float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 
   &__user-menu {
     float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 }
 
@@ -31,4 +43,9 @@
   content: "";
   transform: translateY(-50%);
   background: var(--brand-grey);
+
+  [dir="rtl"] & {
+    right: -1px;
+    left: auto;
+  }
 }

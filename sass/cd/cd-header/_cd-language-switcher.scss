@@ -23,11 +23,11 @@
 
 // Language Switcher list.
 .cd-language-switcher__dropdown {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .cd-language-switcher__dropdown li a {
@@ -63,6 +63,11 @@
   content: "";
   transform: translateY(-50%);
   background: var(--brand-grey);
+
+  [dir="rtl"] & {
+    right: -1px;
+    left: auto;
+  }
 }
 // No pipe on first child.
 .cd-language-switcher__dropdown li:first-child a::before {
@@ -92,6 +97,11 @@
   content: "";
   transform: translateY(-50%);
   background: var(--brand-grey);
+
+  [dir="rtl"] & {
+    right: -1px;
+    left: auto;
+  }
 }
 
 // Adjust breakpoints for when the Language Switcher displays as a dropdown.
@@ -103,13 +113,12 @@
     .cd-language-switcher__dropdown {
       @include z-index(dropdown);
 
-      display: block;
       position: absolute;
-      left: 0;
       right: 0;
       left: auto;
+      display: block;
       min-width: 125px;
-      padding: 12px 24px;
+      padding: 12px;
       color: var(--cd-white);
       background-color: var(--brand-primary);
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
@@ -124,6 +133,13 @@
       margin-inline-start: 0;
     }
   }
+
+  [dir="rtl"] {
+    .cd-language-switcher__dropdown {
+      right: auto;
+      left: 0;
+    }
+  }
 }
 
 // Display the full Language Switcher on > mobile.
@@ -131,6 +147,7 @@
   @include mobile {
     --dropdown: false;
   }
+
   @include tablet {
     --dropdown: false;
   }
@@ -141,6 +158,7 @@
   @include mobile {
     display: block;
   }
+
   @include tablet {
     display: block;
   }

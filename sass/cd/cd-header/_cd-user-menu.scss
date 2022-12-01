@@ -222,6 +222,11 @@
 .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
   right: 0;
   left: initial;
+
+  [dir="rtl"] & {
+    right: initial;
+    left: 0;
+  }
 }
 
 .cd-global-header .menu > .menu-item:last-child > ul.menu {
