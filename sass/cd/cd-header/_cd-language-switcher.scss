@@ -42,6 +42,11 @@
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
+.js[dir="rtl"] .cd-language-switcher__dropdown {
+  right: auto;
+  left: 0;
+}
+
 .cd-language-switcher__dropdown li a {
   position: relative;
   display: block;
@@ -63,49 +68,6 @@
   &.is-active {
     font-weight: 700;
   }
-}
-
-// If there are menus in the Global Header
-// and the Language Switcher is displayed in full,
-// separate with pipes and margins.
-.cd-global-header__language-switcher + .cd-global-header__user-menu {
-  position: relative;
-  // Margin value matches the padding of the other buttons in the Global Header
-  // and takes into account the right padding from the last Language Item.
-  margin-inline-start: 0.5rem;
-
-  @include tablet {
-    margin-inline-start: 1rem;
-  }
-}
-
-// Pipe separator between Language Switcher and following menu.
-.js {
-  .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    width: 2px;
-    height: calc(var(--cd-global-header-height) / 3);
-    content: "";
-    transform: translateY(-50%);
-    background: var(--brand-grey);
-  }
-
-  &[dir="rtl"] .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
-    right: -1px;
-    left: auto;
-  }
-}
-
-/* No horizontal separation when Language Switcher displays in a dropdown. */
-.cd-global-header__language-switcher + .cd-global-header__user-menu {
-  margin-inline-start: 0;
-}
-
-.js[dir="rtl"] .cd-language-switcher__dropdown {
-  right: auto;
-  left: 0;
 }
 
 // JS disabled.
@@ -142,6 +104,37 @@
 // No pipe on first child.
 .no-js .cd-language-switcher__dropdown li:first-child a::before {
   background: transparent;
+}
+
+// If there are menus in the Global Header
+// and the Language Switcher is displayed in full,
+// separate with pipes and margins.
+.cd-global-header__language-switcher + .cd-global-header__user-menu {
+  position: relative;
+  // Margin value matches the padding of the other buttons in the Global Header
+  // and takes into account the right padding from the last Language Item.
+  @include desktop {
+    margin-inline-start: 1rem;
+  }
+}
+
+// Pipe separator between Language Switcher and following menu.
+.js {
+  .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    width: 2px;
+    height: calc(var(--cd-global-header-height) / 3);
+    content: "";
+    transform: translateY(-50%);
+    background: var(--brand-grey);
+  }
+
+  &[dir="rtl"] .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
+    right: -1px;
+    left: auto;
+  }
 }
 
 // Adjust breakpoints for when the Language Switcher displays as a dropdown.
@@ -184,7 +177,25 @@
   .cd-language-switcher__dropdown li:first-child a::before {
     background: transparent;
   }
+
+  /**
+   * If there are menus in the Global Header
+   * and the Language Switcher is displayed in full,
+   * separate blocks with pipes and margins.
+   */
+  .cd-global-header__language-switcher + .cd-global-header__user-menu {
+    /* Margin value matches the padding of the other buttons in the Global Header
+     * and takes into account the right padding from the last Language Item.
+     */
+    margin-inline-start: 1rem;
+  }
 }
+
+/**
+ * Breakpoint when the Language Switcher becomes a dropdown.
+ * If overriding this to use a smaller breakpoint,
+ * all breakpoints in between also need to be defined.
+ */
 
 @media (min-width: 1024px) {
   .cd-language-switcher {
