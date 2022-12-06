@@ -110,56 +110,41 @@
 // This depends on other elements present in the .cd-global-header__actions.
 //
 // Copy the following rules into the sub theme and override breakpoint value.
-@include max-width(sm) {
-  .js {
-    .cd-language-switcher__dropdown {
-      @include z-index(dropdown);
-
-      position: absolute;
-      right: 0;
-      left: auto;
-      display: block;
-      min-width: 125px;
-      padding: 12px;
-      color: var(--cd-white);
-      background-color: var(--brand-primary);
-      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
-
-      a::before {
-        content: none;
-      }
-    }
-
-    // No horizontal separation when Language Switcher displays in a dropdown.
-    .cd-global-header__language-switcher + .cd-global-header__user-menu {
-      margin-inline-start: 0;
-    }
-
-    &[dir="rtl"] .cd-language-switcher__dropdown {
-      right: auto;
-      left: 0;
-    }
-  }
-}
-
-// Display the full Language Switcher on > mobile.
-.cd-language-switcher {
-  @include mobile {
-    --dropdown: false;
-  }
-
-  @include tablet {
-    --dropdown: false;
-  }
-}
-
-// Override the .cd-dropdown display rules to correspond with breakpoints above.
-.cd-language-switcher.cd-dropdown {
-  @include mobile {
+@media (max-width: 1023px) {
+  .js .cd-language-switcher__dropdown {
+    position: absolute;
+    z-index: 201;
+    right: 0;
+    left: auto;
     display: block;
+    min-width: 125px;
+    padding: 12px;
+    color: var(--cd-white);
+    background-color: var(--brand-primary);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
   }
 
-  @include tablet {
+  .js .cd-language-switcher__dropdown a::before {
+    content: none;
+  }
+
+  /* No horizontal separation when Language Switcher displays in a dropdown. */
+  .js .cd-global-header__language-switcher + .cd-global-header__user-menu {
+    margin-inline-start: 0;
+  }
+
+  .js[dir="rtl"] .cd-language-switcher__dropdown {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-language-switcher {
+    --dropdown: false;
+  }
+
+  .cd-language-switcher.cd-dropdown {
     display: block;
   }
 }
