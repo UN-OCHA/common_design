@@ -19,25 +19,37 @@
   &:focus {
     outline: 3px solid var(--brand-primary--light);
   }
+
+  @include tablet {
+    padding-inline: 1.5rem;
+  }
 }
 
 // Language Switcher list.
 .cd-language-switcher__dropdown {
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  z-index: 201;
+  right: 0;
+  left: auto;
+  display: block;
+  min-width: 125px;
   margin: 0;
   padding: 0;
+  padding: 12px;
   list-style: none;
+  color: var(--cd-white);
+  background-color: var(--brand-primary);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
 .cd-language-switcher__dropdown li a {
   position: relative;
   display: block;
   height: var(--cd-global-header-height);
-  padding-inline: 0.75rem;
   text-decoration: none;
   color: var(--cd-white);
   line-height: var(--cd-global-header-height);
+  padding-inline: 0.75rem;
 
   &:hover,
   &:focus {
@@ -53,27 +65,6 @@
   }
 }
 
-// Pipe separator.
-.cd-language-switcher__dropdown li a::before {
-  position: absolute;
-  top: 50%;
-  left: -1px;
-  width: 1px;
-  height: calc(var(--cd-global-header-height) / 3);
-  content: "";
-  transform: translateY(-50%);
-  background: var(--brand-grey);
-
-  [dir="rtl"] & {
-    right: -1px;
-    left: auto;
-  }
-}
-// No pipe on first child.
-.cd-language-switcher__dropdown li:first-child a::before {
-  background: transparent;
-}
-
 // If there are menus in the Global Header
 // and the Language Switcher is displayed in full,
 // separate with pipes and margins.
@@ -87,6 +78,7 @@
     margin-inline-start: 1rem;
   }
 }
+
 // Pipe separator between Language Switcher and following menu.
 .js {
   .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
@@ -106,36 +98,91 @@
   }
 }
 
+/* No horizontal separation when Language Switcher displays in a dropdown. */
+.cd-global-header__language-switcher + .cd-global-header__user-menu {
+  margin-inline-start: 0;
+}
+
+.js[dir="rtl"] .cd-language-switcher__dropdown {
+  right: auto;
+  left: 0;
+}
+
+// JS disabled.
+// Language Switcher list.
+.no-js .cd-language-switcher__dropdown {
+  /* Unset the dropdown styles */
+  position: relative;
+  right: unset;
+  left: unset;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+// Pipe separator.
+.no-js .cd-language-switcher__dropdown li a::before {
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  width: 1px;
+  height: calc(var(--cd-global-header-height) / 3);
+  content: "";
+  transform: translateY(-50%);
+  background: var(--brand-grey);
+
+  [dir="rtl"] & {
+    right: -1px;
+    left: auto;
+  }
+}
+
+// No pipe on first child.
+.no-js .cd-language-switcher__dropdown li:first-child a::before {
+  background: transparent;
+}
+
 // Adjust breakpoints for when the Language Switcher displays as a dropdown.
 // This depends on other elements present in the .cd-global-header__actions.
 //
-// Copy the following rules into the sub theme and override breakpoint value.
-@media (max-width: 1023px) {
-  .js .cd-language-switcher__dropdown {
+// Copy the following rules into the sub theme and override breakpoint values.
+@media (min-width: 1024px) {
+
+  /* Language Switcher list. */
+  .cd-language-switcher__dropdown {
+    /* Unset the dropdown styles */
+    position: relative;
+    right: unset;
+    left: unset;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Pipe separator. */
+  .cd-language-switcher__dropdown li a::before {
     position: absolute;
-    z-index: 201;
-    right: 0;
+    top: 50%;
+    left: -1px;
+    width: 1px;
+    height: calc(var(--cd-global-header-height) / 3);
+    content: "";
+    transform: translateY(-50%);
+    background: var(--brand-grey);
+  }
+
+  [dir="rtl"] .cd-language-switcher__dropdown li a::before {
+    right: -1px;
     left: auto;
-    display: block;
-    min-width: 125px;
-    padding: 12px;
-    color: var(--cd-white);
-    background-color: var(--brand-primary);
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
   }
 
-  .js .cd-language-switcher__dropdown a::before {
-    content: none;
-  }
-
-  /* No horizontal separation when Language Switcher displays in a dropdown. */
-  .js .cd-global-header__language-switcher + .cd-global-header__user-menu {
-    margin-inline-start: 0;
-  }
-
-  .js[dir="rtl"] .cd-language-switcher__dropdown {
-    right: auto;
-    left: 0;
+  /* No pipe on first child. */
+  .cd-language-switcher__dropdown li:first-child a::before {
+    background: transparent;
   }
 }
 
