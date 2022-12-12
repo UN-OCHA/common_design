@@ -49,6 +49,8 @@
   color: var(--cd-white);
   background: transparent;
   line-height: var(--cd-global-header-height);
+  display: flex;
+  align-items: center;
 
   &:hover,
   &:focus {
@@ -70,11 +72,6 @@
     @include tablet {
       max-width: unset;
     }
-  }
-
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
   }
 
   @include tablet {
@@ -118,18 +115,9 @@
   @extend .visually-hidden;
 }
 
-// Hide separator.
-.no-js .cd-global-header .menu > li a::after {
-  background-color: transparent;
-}
-
 // Hides the Log out menu item from the Drupal User module, when it is beside the expanded menu item.
 .cd-global-header__user-menu .menu-item--expanded + .menu-item {
   display: none;
-
-  .no-js & {
-    display: block;
-  }
 }
 
 // Second level reset.
@@ -140,10 +128,6 @@
 .cd-global-header .menu > li li a,
 .cd-global-header .menu > li li button {
   padding: 0 !important;
-}
-
-.cd-global-header .menu > li li a::after {
-  content: none;
 }
 
 // Last block in Global Header should have its dropdown right aligned */
