@@ -79,8 +79,6 @@ select.error {
 input:focus,
 select:focus,
 textarea:focus {
-  position: relative;
-  z-index: 10;
   outline: 3px solid var(--brand-primary);
   outline-offset: -2px;
 }
