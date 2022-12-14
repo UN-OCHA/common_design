@@ -547,6 +547,11 @@ function common_design_preprocess_block__language_block(&$vars) {
  */
 function common_design_preprocess_menu(&$variables, $hook) {
   if ($hook == 'menu__account') {
+    // Rename 'My account'.
+    if (isset($variables['items']['user.page'])) {
+      $variables['items']['user.page']['title'] = t('Edit my account');
+    }
+  
     // Add username.
     $user = User::load(\Drupal::currentUser()->id());
     $variables['username'] = $user->getDisplayName();
