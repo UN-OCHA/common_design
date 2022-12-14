@@ -547,6 +547,14 @@ function common_design_preprocess_menu(&$variables, $hook) {
     if (isset($variables['items']['user.page'])) {
       $variables['items']['user.page']['title'] = t('Edit my account');
     }
+    else {
+      // Might be nested.
+      foreach ($variables['items'] as &$parent) {
+        if (isset($parent['below']['user.page'])) {
+          $parent['below']['user.page']['title'] = t('Edit my account');
+        }
+      }
+    }
   
     // Add username.
     $user = User::load(\Drupal::currentUser()->id());
