@@ -3,18 +3,6 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .cd-ocha {
-  float: left;
-  text-align: left;
-
-  [dir="rtl"] & {
-    float: right;
-    text-align: right;
-  }
-
-  .no-js & {
-    float: none;
-  }
-
   h2 {
     color: var(--cd-white);
   }

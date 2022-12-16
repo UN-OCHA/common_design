@@ -2,34 +2,30 @@
 // Common Design: Global Header
 //——————————————————————————————————————————————————————————————————————————————
 
-.cd-global-header {
-  .cd-global-header__actions {
-    float: right;
+.cd-global-header__inner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 8px;
 
-    [dir="rtl"] & {
-      float: left;
-    }
+  & .cd-ocha {
+    order: -1;
   }
 
-  &__language-switcher {
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
-  }
-
-  &__user-menu {
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
+  // Remove the clearfix applied by `cd-container` on this element.
+  &::after {
+    content: unset;
   }
 }
 
-// If there are multiple menus, separate them with pipes and margins */
-/* This should correspond with the dropdown menu breakpoint */
+.cd-global-header__actions {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0;
+}
+
+// If there are multiple menus, separate them with pipes and margins.
+// This should correspond with the dropdown menu breakpoint.
 .js {
   .cd-global-header__actions > * + nav {
     position: relative;
