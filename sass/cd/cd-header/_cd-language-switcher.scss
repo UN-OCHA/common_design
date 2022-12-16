@@ -157,28 +157,6 @@
     box-shadow: none;
   }
 
-  /* Pipe separator. */
-  .cd-language-switcher__dropdown li a::before {
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    width: 1px;
-    height: calc(var(--cd-global-header-height) / 3);
-    content: "";
-    transform: translateY(-50%);
-    background: var(--brand-grey);
-  }
-
-  [dir="rtl"] .cd-language-switcher__dropdown li a::before {
-    right: -1px;
-    left: auto;
-  }
-
-  /* No pipe on first child. */
-  .cd-language-switcher__dropdown li:first-child a::before {
-    background: transparent;
-  }
-
   /**
    * If there are menus in the Global Header
    * and the Language Switcher is displayed in full,
