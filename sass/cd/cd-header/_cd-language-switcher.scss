@@ -141,9 +141,8 @@
   }
 
   /**
-   * If there are menus in the Global Header
-   * and the Language Switcher is displayed in full,
-   * separate blocks with pipes and margins.
+   * If there are menus in the Global Header and the Language Switcher is
+   * displayed in full, separate blocks with pipes and margins.
    */
   .cd-global-header__language-switcher + .cd-global-header__user-menu {
     /* Margin value matches the padding of the other buttons in the Global Header
