@@ -89,25 +89,6 @@
   position: relative;
 }
 
-// Pipe separator between Language Switcher and following menu.
-.js {
-  .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    width: 2px;
-    height: calc(var(--cd-global-header-height) / 3);
-    content: "";
-    transform: translateY(-50%);
-    background: var(--brand-grey);
-  }
-
-  &[dir="rtl"] .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
-    right: -1px;
-    left: auto;
-  }
-}
-
 // Adjust breakpoints for when the Language Switcher displays as a dropdown.
 // This depends on other elements present in the .cd-global-header__actions.
 //
