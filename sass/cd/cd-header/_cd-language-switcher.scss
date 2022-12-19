@@ -9,6 +9,7 @@
 // Language Switcher button.
 .cd-language-switcher__btn {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   box-sizing: content-box;
   height: var(--cd-global-header-height);
@@ -54,7 +55,7 @@
   text-decoration: none;
   color: var(--cd-white);
   line-height: var(--cd-global-header-height);
-  padding-inline: 0.75rem;
+  padding-inline: 0.5rem;
 
   &:hover,
   &:focus {
@@ -154,28 +155,6 @@
     padding: 0;
     background: transparent;
     box-shadow: none;
-  }
-
-  /* Pipe separator. */
-  .cd-language-switcher__dropdown li a::before {
-    position: absolute;
-    top: 50%;
-    left: -1px;
-    width: 1px;
-    height: calc(var(--cd-global-header-height) / 3);
-    content: "";
-    transform: translateY(-50%);
-    background: var(--brand-grey);
-  }
-
-  [dir="rtl"] .cd-language-switcher__dropdown li a::before {
-    right: -1px;
-    left: auto;
-  }
-
-  /* No pipe on first child. */
-  .cd-language-switcher__dropdown li:first-child a::before {
-    background: transparent;
   }
 
   /**
