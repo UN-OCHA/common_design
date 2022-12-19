@@ -35,7 +35,6 @@
   display: block;
   min-width: 125px;
   margin: 0;
-  padding: 0;
   padding: 12px;
   list-style: none;
   color: var(--cd-white);
@@ -85,34 +84,12 @@
   box-shadow: none;
 }
 
-// Pipe separator.
-.no-js .cd-language-switcher__dropdown li a::before {
-  position: absolute;
-  top: 50%;
-  left: -1px;
-  width: 1px;
-  height: calc(var(--cd-global-header-height) / 3);
-  content: "";
-  transform: translateY(-50%);
-  background: var(--brand-grey);
-
-  [dir="rtl"] & {
-    right: -1px;
-    left: auto;
-  }
-}
-
-// No pipe on first child.
-.no-js .cd-language-switcher__dropdown li:first-child a::before {
-  background: transparent;
-}
-
-// If there are menus in the Global Header
-// and the Language Switcher is displayed in full,
-// separate with pipes and margins.
+// If there are menus in the Global Header and the Language Switcher is
+// displayed in full, separate with pipes and margins.
 .cd-global-header__language-switcher + .cd-global-header__user-menu {
   position: relative;
-  // Margin value matches the padding of the other buttons in the Global Header
+
+  // Margin value matches the padding of other buttons in the Global Header
   // and takes into account the right padding from the last Language Item.
   @include desktop {
     margin-inline-start: 1rem;
@@ -141,10 +118,16 @@
 // Adjust breakpoints for when the Language Switcher displays as a dropdown.
 // This depends on other elements present in the .cd-global-header__actions.
 //
-// Copy the following rules into the sub theme and override breakpoint values.
+// The sub-theme contains an override component specifically to apply these
+// rules to a smaller breakpoint should your website need it. Do NOT adjust
+// here, only in the sub-theme.
+//
+// @see common_design_subtheme/components/cd-language-switcher/cd-language-switcher.css
 @media (min-width: 1024px) {
 
-  /* Language Switcher list. */
+  /**
+   * Expand the Language Switcher from dropdown to a list.
+   */
   .cd-language-switcher__dropdown {
     /* Unset the dropdown styles */
     position: relative;
@@ -168,15 +151,13 @@
      */
     margin-inline-start: 1rem;
   }
-}
 
-/**
- * Breakpoint when the Language Switcher becomes a dropdown.
- * If overriding this to use a smaller breakpoint,
- * all breakpoints in between also need to be defined.
- */
-
-@media (min-width: 1024px) {
+  /**
+   * Breakpoint when the Language Switcher becomes a dropdown.
+   *
+   * If overriding this to use a smaller breakpoint, all breakpoints in between
+   * also need to be defined.
+   */
   .cd-language-switcher {
     --dropdown: false;
   }
