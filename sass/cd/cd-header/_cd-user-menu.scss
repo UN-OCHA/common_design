@@ -61,18 +61,6 @@
   background: transparent;
   line-height: var(--cd-global-header-height);
 
-  // Separator.
-  // &::after {
-  //   position: absolute;
-  //   top: 50%;
-  //   right: -1px;
-  //   width: 2px;
-  //   height: calc(var(--cd-global-header-height) / 3);
-  //   content: "";
-  //   transform: translateY(-50%);
-  //   background: var(--brand-grey);
-  // }
-
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -182,8 +170,8 @@
   background-color: transparent;
 }
 
-// Hides log out menu item when it is beside the expanded menu item.
-// When there are more than 3 menu items, the log out should also be in the dropdown.
+// Hides logout menu item when it is beside the expanded menu item. When there
+// are more than 3 menu items, the log out should also be in the dropdown.
 // This is content-specific. See CD-98 for specs.
 .cd-global-header__user-menu .menu-item--expanded + .menu-item {
   display: none;
@@ -207,18 +195,7 @@
   content: none;
 }
 
-// Last block in Global Header shouldn't have a separator or padding */
-// .cd-global-header__user-menu:last-child .menu > li > a,
-// .cd-global-header__user-menu:last-child .menu > li > button {
-//   padding-inline-end: 0;
-// }
-
-// .cd-global-header__user-menu:last-child .menu > li > a::after,
-// .cd-global-header__user-menu:last-child .menu > li > button::after {
-//   display: none;
-// }
-
-// Last block in Global Header should have its dropdown right aligned */
+/* Last block in Global Header should have its dropdown right aligned */
 .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
   right: 0;
   left: initial;

@@ -15,21 +15,9 @@
     left: unset;
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
+    padding: 0 1rem;
     background: transparent;
     box-shadow: none;
-  }
-
-  /**
-   * If there are menus in the Global Header and the Language Switcher is
-   * displayed in full, separate blocks with pipes and margins.
-   */
-  .cd-global-header__language-switcher + .cd-global-header__user-menu {
-    /**
-     * Margin value matches the padding of other buttons in the Global Header
-     * and takes into account the right padding from the last Language Item.
-     */
-    margin-inline-start: 1rem;
   }
 
   /**

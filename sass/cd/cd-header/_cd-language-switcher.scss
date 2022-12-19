@@ -9,8 +9,8 @@
 // Language Switcher button.
 .cd-language-switcher__btn {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
   box-sizing: content-box;
   height: var(--cd-global-header-height);
   padding: 0;
@@ -70,8 +70,7 @@
   }
 }
 
-// JS disabled.
-// Language Switcher list.
+// JS disabled: Expand Language Switcher list by default.
 .no-js .cd-language-switcher__dropdown {
   /* Unset the dropdown styles */
   position: relative;
@@ -79,21 +78,15 @@
   left: unset;
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
+  padding: 0 1rem;
   background: transparent;
   box-shadow: none;
 }
 
 // If there are menus in the Global Header and the Language Switcher is
-// displayed in full, separate with pipes and margins.
+// displayed in full, separate with pipes.
 .cd-global-header__language-switcher + .cd-global-header__user-menu {
   position: relative;
-
-  // Margin value matches the padding of other buttons in the Global Header
-  // and takes into account the right padding from the last Language Item.
-  @include desktop {
-    margin-inline-start: 1rem;
-  }
 }
 
 // Pipe separator between Language Switcher and following menu.
@@ -135,20 +128,9 @@
     left: unset;
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
+    padding: 0 1rem;
     background: transparent;
     box-shadow: none;
-  }
-
-  /**
-   * If there are menus in the Global Header and the Language Switcher is
-   * displayed in full, separate blocks with pipes and margins.
-   */
-  .cd-global-header__language-switcher + .cd-global-header__user-menu {
-    /* Margin value matches the padding of the other buttons in the Global Header
-     * and takes into account the right padding from the last Language Item.
-     */
-    margin-inline-start: 1rem;
   }
 
   /**

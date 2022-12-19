@@ -19,9 +19,18 @@
 }
 
 .cd-global-header__actions {
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   gap: 0;
+
+  // Visually align button contents with main nav
+  [dir="ltr"] & {
+    right: -10px;
+  }
+  [dir="rtl"] & {
+    left: -10px;
+  }
 }
 
 // If there are multiple menus, separate them with pipes and margins.
