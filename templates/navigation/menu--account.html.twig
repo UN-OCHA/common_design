@@ -61,7 +61,7 @@
           If the menu item has children and javascript is enabled then this will
           be replaced with a button to show the child menu.
         #}
-        {% spaceless %}
+        {% apply spaceless %}
         <a href="{{ item.url }}" id="{{ id }}">
           {# Add the user icon for the first menu item of the root element. #}
           {% if menu_level == 0 and loop.index == 1 %}
@@ -71,7 +71,7 @@
           {% endif %}
           <span>{{ title }}</span>
         </a>
-        {% endspaceless %}
+        {% endapply %}
 
         {#
           If the menu item has children then we mark the sub-menu as toggable
