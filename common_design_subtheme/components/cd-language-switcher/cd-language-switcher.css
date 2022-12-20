@@ -1,0 +1,36 @@
+/**
+ * CD Language Switcher sub-theme override.
+ *
+ * - Breakpoint when the Language Switcher becomes a dropdown.
+ * - If overriding this to use a smaller breakpoint, all breakpoints in between
+ *   also need to be defined.
+ */
+
+@media (min-width: 800px) {
+  /* Language Switcher list. */
+  .cd-language-switcher__dropdown {
+    /* Unset the dropdown styles */
+    position: relative;
+    right: unset;
+    left: unset;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /**
+   * Expand the Language Switcher from a dropdown to a list.
+   *
+   * If overriding this to use a smaller breakpoint, all breakpoints in between
+   * also need to be defined.
+   */
+  .cd-language-switcher {
+    --dropdown: false;
+  }
+
+  .cd-language-switcher.cd-dropdown {
+    display: block;
+  }
+}
