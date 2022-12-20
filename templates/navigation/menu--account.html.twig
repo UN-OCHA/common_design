@@ -24,8 +24,8 @@
   We call a macro which calls itself to render the full tree.
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, username) }}
-{% macro menu_links(items, attributes, menu_level, username) %}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -51,7 +51,6 @@
         ]
       %}
 
-      {% set title = item.title == '%username%' ? username : item.title %}
       {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
       <li{{ item.attributes.addClass(classes) }}>
@@ -69,7 +68,7 @@
               <use xlink:href="#cd-icon--user"></use>
             </svg>
           {% endif %}
-          <span>{{ title }}</span>
+          <span>{{ item.title }}</span>
         </a>
         {% endspaceless %}
 
@@ -81,7 +80,7 @@
 
           {%
             set attributes =  create_attribute({
-              'data-cd-toggable': title,
+              'data-cd-toggable': item.title,
               'data-cd-icon': 'arrow-down',
               'data-cd-component': 'cd-user-menu',
               'data-cd-replace': id,
@@ -94,7 +93,7 @@
           {% do attributes.setAttribute('data-cd-logo', 'user') %}
           {% endif %}
 
-          {{ menus.menu_links(item.below, attributes, menu_level + 1, username) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
 
         {% endif %}
 
@@ -104,3 +103,5 @@
     </ul>
   {% endif %}
 {% endmacro %}
+
+
