@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.4.0](https://github.com/UN-OCHA/common_design/compare/v7.3.0...v7.4.0) (2022-12-21)
+
+
+### Features
+
+* Language Switcher conforms to UN Multilingual guidelines ([bd4a2e1](https://github.com/UN-OCHA/common_design/commit/bd4a2e10d8df08488904a2e2f923fd809e5f6bce))
+
+
+### Bug Fixes
+
+* clean up User menu inside new Global Header ([fbfcd5b](https://github.com/UN-OCHA/common_design/commit/fbfcd5b1ce75a3558feacf6509f1f16afba6b57c))
+
 ## [7.3.0](https://github.com/UN-OCHA/common_design/compare/v7.2.1...v7.3.0) (2022-11-16)
 
 
