@@ -410,7 +410,7 @@
 }
 
 // Style all menu items the same, regardless of their level.
-.no-js .menu-item--expanded li {
+.no-js .cd-nav .menu-item--expanded li {
   @include desktop {
     height: var(--cd-site-header-height);
 

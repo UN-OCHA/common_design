@@ -8,7 +8,6 @@
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\user\Entity\User;
 
 /**
  * Implements hook_form_system_theme_settings_alter().
@@ -536,6 +535,9 @@ function common_design_preprocess_block__language_block(&$vars) {
   // Current language available in template override.
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $vars['language'] = $language;
+
+  $language_name = \Drupal::languageManager()->getCurrentLanguage()->getName();
+  $vars['language_name'] = $language_name;
 }
 
 /**
@@ -543,10 +545,18 @@ function common_design_preprocess_block__language_block(&$vars) {
  */
 function common_design_preprocess_menu(&$variables, $hook) {
   if ($hook == 'menu__account') {
-    // Add username.
-    $user = User::load(\Drupal::currentUser()->id());
-    $variables['username'] = $user->getDisplayName();
-    $variables['#cache']['contexts'][] = 'user';
+    // Rename 'My account'.
+    if (isset($variables['items']['user.page'])) {
+      $variables['items']['user.page']['title'] = t('Edit my account');
+    }
+    else {
+      // Might be nested.
+      foreach ($variables['items'] as &$parent) {
+        if (isset($parent['below']['user.page'])) {
+          $parent['below']['user.page']['title'] = t('Edit my account');
+        }
+      }
+    }
   }
 }
 
