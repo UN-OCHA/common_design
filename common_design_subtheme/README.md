@@ -1,4 +1,4 @@
-# OCHA Common Design sub-theme for Drupal 8/9
+# OCHA Common Design sub-theme for Drupal 9+
 
 A boilerplate for implementing the [OCHA Common Design](https://github.com/UN-OCHA/common_design) base-theme in a way that allows for "upstream" changes such as security updates, new features, and so forth. The sub-theme is ready to help you implement the following types of customizations:
 

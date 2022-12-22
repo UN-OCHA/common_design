@@ -1,7 +1,7 @@
 {
   "name": "common-design-subtheme",
   "version": "7.0.0",
-  "description": "OCHA Common Design sub theme for Drupal 8+",
+  "description": "OCHA Common Design sub theme for Drupal 9+",
   "repository": "git@github.com:UN-OCHA/common_design.git",
   "author": "UN OCHA",
   "license": "GPL-2.0",
