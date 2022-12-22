@@ -1,12 +1,60 @@
-# Contributing to the base theme or the Component library
+# Contributing to the base-theme or the Component library
+
+| Audience |
+| :------- |
+| Everyone |
+
+There are various audiences marked in this document. Mind the table at the top of each section to see if the docs are meant for your situation.
+
+# Contributing code
+
+| Audience           |
+| :----------------- |
+| Contributors to CD |
+
+## Contributing CSS or Sass
+
+This project uses [Sass][sass]. To make changes edit the `.scss` files in the `sass/` folder. Do not edit the files in the `css` directory. Here is how to set your environment up to edit Sass:
+
+1. Run `nvm use` in theme folder to ensure the correct node version.
+2. Install the dependencies: `npm install`
+3. Run the command that best suits your purpose:
+
+- `npm run sass:build` — compile production-ready CSS.
+- `npm run sass:watch` — watch for changes and automatically rebuild the CSS during local development.
+- `npm run sass:lint` — linting report only.
+- `npm run sass:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely handle.
+
+Follow [Drupal CSS coding standards and best practices][css-standards].
+
+For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
+
+The `stylelintrc.json` config file extends Drupal core stylelint config. Run `yarn install` in your site's `html/core` directory to install the stylelint plugins if there are errors indicating missing packages.
+
+  [sass]: http://sass-lang.com/
+  [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
+  [css-standards]: https://www.drupal.org/docs/develop/standards/css
+  [drupal-caching]: https://www.drupal.org/node/2598914
+
+
+## Accessibility of contributions
+
+We strive to adhere to [INSERT SPEC HERE][a11y-standards] and will work to achieve that level of adherence when accepting any contribution to the theme.
+
+For example, Drupal provides utility classes to [hide content accessibly][a11y-help]. Any solution that doesn't follow the guidelines would have to be adjusted.
+
+  [a11y-standards]: https://example.com/#TBD
+  [a11y-help]: https://www.drupal.org/docs/accessibility/hide-content-properly
+
+
+# Creating a PR
 
 | Audience           |
 | :----------------- |
 | Contributors to CD |
 
 Clone the `common_design` base theme repo and make a [Pull Request][pr] (PR)
-against `develop` branch for peer review. The PR should follow the [pull request template][pr-template]
-as appropriate.
+against `develop` branch for peer review. The PR should follow the [pull request template][pr-template] as appropriate.
 
 Commits in your branch (or at the very least the PR merge commit) should follow the [Conventional Commits guidelines][cc-guidelines], so that our CHANGELOG can be automatically generated with appropriate notes during each release. A few examples:
 
@@ -40,7 +88,7 @@ properly."
 
 ```
 
-## Releases
+# Releases
 
 | Audience |
 | :------- |
@@ -58,7 +106,7 @@ There may be several breaking changes during the year which result in increments
   [standard-version]: https://github.com/conventional-changelog/standard-version
 
 
-### Creating a Release
+## Creating a Release
 
 | Audience    |
 | :---------- |
@@ -100,7 +148,7 @@ Once the tagged Release has been created, [create a PR from `develop` to `main`]
   [develop-package]: https://github.com/UN-OCHA/common_design/blob/develop/package.json#L3
 
 
-### Release Notes Template
+## Release Notes Template
 
 | Audience    |
 | :---------- |

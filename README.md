@@ -1,107 +1,61 @@
-# OCHA Common Design System
+# OCHA Common Design for Drupal 9+
 
-- Full-width header and footer
-- Full-width components
+This theme provides a starting point for OCHA's Drupal websites. By installing the base theme you get the following standardized features that must be common to all the websites in our network:
 
----
+* **Common Header:** OCHA Services menu, Language switcher, User menu, Main nav, site search.
+* **Common Footer:** Navigation, social links, legal info.
+* **Common SVG Icons:** a subset of [OCHA Humanitarian Icons][ocha-icons]
 
-# Common Design base theme for Drupal 8/9
+It provides the following theming tools that you should leverage in order to maintain the high standards for accessibility that our organization strives to meet:
 
-* Common Header
-* Common Footer
-* Common SVG Icons (a web-specific subset of [OCHA humanitarian icons][icons])
-* Variables for breakpoints, colours, font sizes, fonts, and z-index
-* Mixins for clearfix and media queries
-* Custom javascript for dropdown behaviour
-* See [v3.0.0 Release notes][v3] and [common_design implementation notes for v2][v2] for more detailed documentation
+* Sass variables for breakpoints, colours, font sizes, fonts, and z-index
+* Sass mixins for clearfix and media queries
+* JavaScript dropdowns which do not require jQuery or any framework.
+* Common Design frontend components
 
-There is a sub theme included in this repo.
-   * This can be used as a starting point for implementations. Add components,
-   override and extend the base theme as needed. Copy the common_design_subtheme
-   directory to `/themes/custom/` and refer to its [README][readme].
-   All the implementation-specific work should happen in the sub theme.
+  [ocha-icons]: https://brand.unocha.org/d/xEPytAUjC3sH/icons
 
-  [icons]: https://brand.unocha.org/d/xEPytAUjC3sH/icons
-  [v3]: https://github.com/UN-OCHA/common_design/releases/tag/v3.0.0
-  [v2]: https://docs.google.com/document/d/1GpTtCWNQvGiPDfZmhFvaKGvU9hbOG0HedFTYgo3nvd4
-  [readme]: https://github.com/UN-OCHA/common_design/blob/main/common_design_subtheme/README.md
+## Drupal utilities
 
-**Drupal components:**
+* normalize-css library is included in [Drupal core][normalize] and we depend on it.
+* jQuery is [included in Drupal core][core] but the Common Design does not depend on it. It gets loaded only once it is needed.
+* [hidden.module.css][hidden] is included in Drupal core to provide utility classes that hide content in an accessible manner.
 
-* normalize-css library is included in [Drupal core][normalize]
-* jQuery is [included in Drupal core][core] but is not loaded globally. We
-include it as a library only when we need it.
-* [hidden.module.css][hidden] is included in Drupal core for display-related
-utility classes
+  [normalize]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/assets/vendor/normalize-css/normalize.css
+  [core]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/core.libraries.yml
+  [hidden]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/modules/system/css/components/hidden.module.css
 
-  [normalize]: https://github.com/UN-OCHA/common-design-site/tree/develop/html/core/assets/vendor/normalize-css
-  [core]: https://github.com/UN-OCHA/common-design-site/blob/develop/html/core/core.libraries.yml#L362
-  [hidden]: https://github.com/UN-OCHA/common-design-site/blob/develop/html/core/modules/system/css/components/hidden.module.css
+## Additional components
 
-**Additional components:**
-
-* Typography
-* Component library
-   * HTML/CSS/JS components that can be attached as Drupal libraries to twig templates, or copied into sass partials.
-   * Requires Drupal [Components module][components].
-   * See [Common Design demo][demo] for Component examples.
-   * Refer to [Components README][components-readme] and the [components used][components-used]
-   in the theme.
+* Typography defaults
+* Component library. See [Common Design demo][cd-demo] for live examples.
+  * Components that can be attached as Drupal libraries to twig templates.
+  * Component namespacing by way of [Components module][components-module].
+  * Docs available in [Components README][components-readme] and [each component][components-used] has some docs in the base theme.
 * Favicons and OCHA branded assets based on https://brand.unocha.org
-* Node workflow for frontend development
-  * SASS
-  * Sourcemaps (to show which specific Sass file contains styles during local development)
-  * Autoprefixer
-  * Sass and JS linting
-  * SVG sprite
-  * E2E tests
 
-  [components]: https://www.drupal.org/project/components
-  [demo]: https://web.brand.unocha.org/demo
+  [cd-demo]: https://web.brand.unocha.org/demo
+  [components-module]: https://www.drupal.org/project/components
   [components-readme]: https://github.com/UN-OCHA/common_design/blob/main/components/README.md
   [components-used]: https://github.com/UN-OCHA/common_design/blob/main/components/
 
 ## Getting started
 
-1. Clone this repo to `/themes/contrib/` or install using `composer require unocha/common_design`.
-2. Copy the `common_design_subtheme` directory to `/themes/custom/`.
-3. In the Drupal Admin, go to Appearance, find 'OCHA Common Design sub theme' and select **Enable and set default**.
+1. Follow the setup guide in the [sub-theme README][subtheme-readme].
+2. For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
 
-**To contribute to `common_design` base theme or sub theme development and/or to customise the sub theme**
-
-1. Run `nvm use` in theme folder to ensure the correct node version.
-2. Install the dependencies: `npm install`
-3. For development, run `npm run sass:watch` (this includes an initial linting and sourcemaps) or run `npm run sass:compile-dev` to compile.
-4. Run `npm run sass:build` for final CSS generation.
-5. For twig debug and local development see [Disable Drupal 8/9 caching during development][drupal-caching].
-
-Drupal 8/9 core have helper classes for accessibility. [Hide content properly][a11y-help] using official drupal.org docs.
-
+  [subtheme-readme]: https://github.com/UN-OCHA/common_design/blob/main/common_design_subtheme/README.md
   [drupal-caching]: https://www.drupal.org/node/2598914
-  [a11y-help]: https://www.drupal.org/docs/8/accessibility/hide-content-properly
 
 ## CSS
 
-This project uses [Sass][sass]. To make changes edit the `.scss` files in the `sass/` folder, do NOT edit the files in `css/` directly.
+The base-theme still uses Sass, but we no longer require that you use it. Instead, the recommended approach is to use [Drupal Libraries][drupal-libraries] to create components made of CSS/JS files, and attach them to the appropriate Twig template so that they only appear on pages where needed.
 
-- `npm run sass:build` — compile production-ready CSS.
-- `npm run sass:watch` — watch for changes and automatically rebuild the CSS during local development.
-- `npm run sass:lint` — linting report only.
-- `npm run sass:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely handle.
-
-The `stylelintrc.json` config file extends Drupal core stylelint config. Run `npm install` in your site's `html/core` directory to install the stylelint plugins if there are errors indicating missing packages.
-
-When possible, use Jenkins to run the `sass:build` task on build to generate the CSS within your website's deploy job.
-
-Follow [Drupal CSS coding standards and best practices][css-standards]
-
-  [sass]: http://sass-lang.com/
-  [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
-  [css-standards]: https://www.drupal.org/docs/develop/standards/css
+  [drupal-libraries]: https://www.drupal.org/docs/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml
 
 ## JS
 
-Javascript files should be added to `js/` and defined as a library in `common_design.ibraries.yml`
+Javascript files should be added to a component-specific folder and defined as part of a library in `common_design.ibraries.yml`
 
 Instead of grouping all JS in one file, each component has its own JS file associated with it. They have been built to be reused, allowing you to mix and match any combination of JS files and use each as a dependency without altering the original file. The general pattern to reference the method of a behavior is:
 
@@ -154,6 +108,13 @@ Follow [Drupal JS coding standards and best practices][js-standards]
   [js-standards]: https://www.drupal.org/docs/develop/standards/javascript
 
 
+## Accessibility
+
+Drupal 9+ core have helper classes for accessibility. [Hide content properly][a11y-help] using official drupal.org docs.
+
+  [a11y-help]: https://www.drupal.org/docs/accessibility/hide-content-properly
+
+
 ## Fonts
 
 This projects defines a few CSS Vars for font-families that use Google Fonts. The actual fonts must be loaded by enabling them individually (see below). You can read official guidance on [OCHA's visual identity website][brand-fonts].
@@ -188,11 +149,9 @@ Second, you can also enable them in the Drupal Admin UI under the sub-theme them
 
 ## Task management
 
-This project uses some Node packages for Sass compilation, watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][scripts].
+This project uses some Node packages for Sass compilation, watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][pkg-scripts]. To get a list of commands, do `npm run` and it will output all possible options.
 
-To get a list of commands, do `npm run` and it will output all possible options.
-
-  [scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L8-L21
+  [pkg-scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L8-L21
 
 ## Icons
 
@@ -214,35 +173,59 @@ Each icon should have the class `cd-icon` and a BEM selector if needed e.g. `cd-
 
 Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load. If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
 
-We're using https://github.com/jkphl/svg-sprite node package. See https://una.im/svg-icons for more details.
+We're using the [SVG sprite][svg-sprite] node package. [Read here for more details][una-svg].
+
+  [svg-sprite]: https://github.com/jkphl/svg-sprite
+  [una-svg]: https://una.im/svg-icons
 
 ### 2. SVG background-image
 
 SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG file. The icons are black by default. If you need another color, it's best to copy the icon and manually adjust the fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
 
 ### Generating the icons sprite
+
 As defined in the node scripts, all new icons should be placed in the `img/icons` directory. Run `npm run svg:sprite` to generate a new sprite. This generates the sprite SVG `img/icons/cd-icons-sprite.svg` and it creates an html page with all SVGs for reference `img/icons/sprite.symbol.html`.
 
-## Browser support
-Progressive enhancement approach to layout, using Feature Queries to detect support for flexbox and grid.
-
 ## Favicons
+
 OCHA default favicons are provided. Update these with your logo.
 
 http://realfavicongenerator.net/ is a good tool for generating favicons.
 
+## Browser support
+
+Based on continuous monitoring of OCHA's traffic patterns combined with corporate policy for standard-issue laptops, we assume a modern browser is being used. We no longer guarantee 100% feature parity for browsers such as IE11, or older mobile browsers.
+
+The theme is built using Progressive Enhancement, providing widely available CSS techniques first, and using feature queries to enable more advanced features on a case-by-case basis for each visitor.
+
+We assume the presence of `addEventListener` and support for CSS Flexbox as our baseline.
+
+### What browsers we test
+
+See [Browsers to test][browsers-to-test] and [Draft - Supporting a global audience][support-global-audience].
+
+We use [browserstack][browserstack] for browser and device testing. During development we can test continuously using our local development environments, select specific browsers for manual testing, and generate screenshots of many browsers at once. Join the OCHA Slack [#developers][channel-developers] channel for access.
+
+  [browsers-to-test]: https://docs.google.com/document/d/1lN0kLOkgfEAmdGODZ0PzLxiAr0Z-87C4ytet6F4GIuw
+  [support-global-audience]: https://docs.google.com/document/d/1AjKtlwUuJhZpbSrPs-nku3ECnMyZ67m9A1Lh05w7xM4/
+  [browserstack]: https://www.browserstack.com/
+  [channel-developers]: https://app.slack.com/client/T03HVR4QD8R/C03L72QQFCP
+
 ## Testing
-### What we test
-See [Browsers to test](https://docs.google.com/document/d/1lN0kLOkgfEAmdGODZ0PzLxiAr0Z-87C4ytet6F4GIuw) and [Draft - Supporting a global audience](https://docs.google.com/document/d/1AjKtlwUuJhZpbSrPs-nku3ECnMyZ67m9A1Lh05w7xM4/).
 
-We use [browserstack](https://www.browserstack.com/) for browser and device testing. We can test using our [local development environments](https://www.browserstack.com/docs/live/local-testing), select specific browsers for manual testing, and generate screenshots of many browsers at once. Join the Flowdock [Developers](https://www.flowdock.com/app/unocha/developers) channel for access.
+There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the base and sub theme. There is a [repo for Visual Regression testing][ocha-vrt] using [backstopjs][backstopjs] and a Jenkins Job to run VRT on the server. Depending on the JSON configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
 
-### How we test
-There are e2e test using [Jest](https://github.com/facebook/jest) and [Puppeteer](https://github.com/puppeteer/puppeteer) in the base and sub theme. There is a [repo for Visual Regression testing](https://github.com/UN-OCHA/ocha_vrt/) using [backstopjs](https://github.com/garris/BackstopJS) and a [Jenkins Job](https://github.com/UN-OCHA/ocha_vrt/) to run VRT on the server. Depending on the json configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
+Depending on the project, we run tests via [Travis CI][travis-ci]. For the [common-design-site repo][cds-travis] we run PHP lint and Drupal coding standards checks, and compile the theme's sass files. These are common among most projects. Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then run the e2e tests.
 
-Depending on the project, we run tests via [Travis CI](https://travis-ci.org/). For the [common-design-site repo](https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45) we run PHP lint and Drupal coding standards checks, and compile the theme's sass files. These are common among most projects. Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then run the e2e tests.
+There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526][ops-7526]
 
-There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526](https://humanitarian.atlassian.net/browse/OPS-7526)
+  [jest]: https://github.com/facebook/jest
+  [puppeteer]: https://github.com/puppeteer/puppeteer
+  [ocha-vrt]: https://github.com/UN-OCHA/ocha_vrt
+  [backstopjs]: https://github.com/garris/BackstopJS
+  [travis-ci]: https://travis-ci.org
+  [cds-travis]: https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45
+  [ops-7526]: https://humanitarian.atlassian.net/browse/OPS-7526
 
 ### E2E testing
 
@@ -284,4 +267,7 @@ There is a `site.webmanifest` file available in the sub theme as an alternative 
   [manifest-docs]: https://developer.mozilla.org/en-US/docs/Web/Manifest
 
 ## Translations
-Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user interface, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in the `translations` directory and the [README](https://github.com/UN-OCHA/common_design/translations/README.md).
+
+Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user interface, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in the `translations` directory and the [README][translations].
+
+  [translations]: https://github.com/UN-OCHA/common_design/translations/README.md
