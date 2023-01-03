@@ -551,7 +551,7 @@ function common_design_preprocess_block__language_block(&$vars) {
  *
  * My account
  *   Edit my account
- *   ... (potential other meny items)
+ *   ... (potential other menu items)
  *   Log out
  */
 function common_design_preprocess_menu__account(&$variables) {
