@@ -51,10 +51,6 @@
   background: transparent;
   line-height: var(--cd-global-header-height);
 
-  @include tablet {
-    max-width: none;
-  }
-
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -77,6 +73,9 @@
     }
   }
 
+  @include tablet {
+    max-width: none;
+  }
 }
 
 .cd-user-menu__dropdown {
@@ -131,17 +130,6 @@
 }
 
 // Last block in Global Header should have its dropdown right aligned
-.cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
-  right: 0;
-  left: initial;
-
-  [dir="rtl"] & {
-    right: initial;
-    left: 0;
-  }
-}
-
-/* Last block in Global Header should have its dropdown right aligned */
 .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
   right: 0;
   left: initial;
