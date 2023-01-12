@@ -2,8 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [7.4.0](https://github.com/UN-OCHA/common_design/compare/v7.3.0...v7.4.0) (2022-12-21)
+## [7.4.1](https://github.com/UN-OCHA/common_design/compare/v7.4.0...v7.4.1) (2023-01-10)
 
+### Bug Fixes
+
+* User menu works automatically now (compare to upgrade instructions for `v7.4.0`) ([7272ab0](https://github.com/UN-OCHA/common_design/commit/7272ab0792a8e69f91b2668bb7320988e980d421))
+
+## [7.4.0](https://github.com/UN-OCHA/common_design/compare/v7.3.0...v7.4.0) (2022-12-21)
 
 ### Features
 
