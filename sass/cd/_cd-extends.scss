@@ -1,7 +1,9 @@
 //——————————————————————————————————————————————————————————————————————————————
 // Common Design: Extends
 //
-// All classes are copied directly from D8 core: v8.6.2 — hidden.module.css
+// All classes are copied directly from D9 core: v9.4.9 — hidden.module.css
+//
+// @see https://git.drupalcode.org/project/drupal/-/blob/9.4.9/core/modules/system/css/components/hidden.module.css
 //——————————————————————————————————————————————————————————————————————————————
 
 /**
@@ -17,8 +19,7 @@
  * from a user. The effect of this class can be toggled with the jQuery show()
  * and hide() functions.
  */
-.hidden,
-[hidden] {
+.hidden {
   display: none;
 }
 
