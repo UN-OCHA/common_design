@@ -1,25 +1,15 @@
 /**
  * Common Design: Header
+ *
+ * Styles that apply to the entire CD Header. It encompasses the following:
+ *  - Resets
+ *  - Global Header
+ *  - Site Header
  */
 
 /* We want uniform focus styles on the whole Header */
 .cd-header button:focus {
   outline: 3px solid var(--brand-primary--light);
-}
-
-/**
- * Global Header.
- * Top header bar, contains Sites Menu ('OCHA Services') and User Menu.
- */
-.cd-global-header {
-  position: relative;
-  height: var(--cd-global-header-height);
-  color: var(--cd-white);
-  background: var(--brand-primary);
-}
-
-.cd-global-header button {
-  border: 0;
 }
 
 /**
@@ -94,11 +84,6 @@ now that we layout with flex. */
  * JS fails to load, or times out, these styles will NOT apply, because our
  * inline script will have taken this classname off the <html> element.
  */
-
-.no-js .cd-global-header {
-  height: auto;
-}
-
 .no-js .cd-site-header__inner {
   display: block;
   height: unset;

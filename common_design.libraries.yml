@@ -73,6 +73,7 @@ cd-header:
   css:
     component:
       components/cd-header/cd-header.css: {}
+      components/cd-header/cd-global-header.css: {}
 
 cd-core:
   dependencies:
