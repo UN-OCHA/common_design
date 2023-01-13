@@ -67,6 +67,33 @@
 }
 
 /**
+ * Drupal selectors
+ *
+ * TODO: this came from _cd-user-menu.scss but they all have global header
+ * prefixes so they're moved here now.
+ */
+.cd-global-header .block h2 {
+  color: var(--cd-white);
+}
+
+.cd-global-header .menu > li li a,
+.cd-global-header .menu > li li button {
+  padding: 0 !important;
+}
+
+/* Last block in Global Header should have its dropdown right-aligned on LTR */
+.cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
+  right: 0;
+  left: initial;
+}
+
+/* Last block in Global Header should have its dropdown left-aligned on RTL */
+[dir="rtl"] .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
+  right: initial;
+  left: 0;
+}
+
+/**
  * No-JS styles
  */
 .no-js .cd-global-header {

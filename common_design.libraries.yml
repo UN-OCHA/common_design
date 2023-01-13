@@ -76,7 +76,10 @@ cd-header:
       components/cd-header/cd-header.css: {}
       components/cd-header/cd-global-header.css: {}
       components/cd-header/cd-language-switcher.css: {}
+      components/cd-header/cd-user-menu.css: {}
       components/cd-header/cd-site-header.css: {}
+  dependencies:
+    - common_design/cd-user-menu
 
 cd-core:
   dependencies:
