@@ -233,7 +233,7 @@ cd-filter:
 
 cd-flow:
   css:
-    component:
+    base:
       components/cd-flow/cd-flow.css: {}
 
 cd-form:
