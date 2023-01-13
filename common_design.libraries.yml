@@ -74,6 +74,7 @@ cd-header:
     component:
       components/cd-header/cd-header.css: {}
       components/cd-header/cd-global-header.css: {}
+      components/cd-header/cd-language-switcher.css: {}
 
 cd-core:
   dependencies:
