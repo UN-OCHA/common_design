@@ -1,3 +1,13 @@
+# Global Styling is enabled by default.
+#
+# If you want some styles to be included on every page load, eitherplace them in
+# css/styles.css or add your own files to the list under "theme"
+global-styling:
+  css:
+    theme:
+      css/brand.css: {}
+      css/styles.css: {}
+
 # Roboto Condensed and Slab.
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
 fonts-advanced:
@@ -29,12 +39,12 @@ fonts-russian:
     theme:
       css/fonts-russian.css: {}
 
-global-styling:
-  css:
-    theme:
-      css/brand.css: {}
-      css/styles.css: {}
-
+#
+# CD Components: Core
+#
+# These components drive the function of the CD Header/Footer and are required
+# for CD to function as intended.
+#
 cd-dropdown:
   js:
     js/cd-dropdown.js: {}
@@ -57,7 +67,48 @@ cd-ocha-services:
   js:
     js/cd-ocha-services.js: {}
 
-# CD components
+#
+# CD Compatibility
+#
+# These are providing legacy browsers with modern features. They allow the CD to
+# function on old browsers.
+#
+
+# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
+cd-object-fit:
+  header: true
+  js:
+    js/cd-object-fit.js: { attributes: { nomodule: true } }
+  dependencies:
+    - core/drupal
+    - core/modernizr
+
+# The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
+cd-polyfill:
+  js:
+    js/cd-polyfill.js: { attributes: { nomodule: true } }
+
+# CSS custom properties polyfill for IE11.
+# https://jhildenbiddle.github.io/css-vars-ponyfill
+css-vars-ponyfill:
+  js:
+    js/vendor/css-vars-ponyfill.js: { attributes: { nomodule: true } }
+    js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
+
+# Array.from polyfill for IE11.
+# https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
+array-from-polyfill:
+  js:
+    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
+
+
+#
+# CD Components: Design System
+#
+# These are meant to be included conditionally, i.e. only on pages where they're
+# actually being used. They are self contained and most often correspond to a
+# template in this theme's `templates` directory.
+#
 cd-alert:
   css:
     component:
@@ -340,31 +391,3 @@ cd-utilities:
       components/cd-utilities/cd-utilities.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
-
-# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
-cd-object-fit:
-  header: true
-  js:
-    js/cd-object-fit.js: { attributes: { nomodule: true } }
-  dependencies:
-    - core/drupal
-    - core/modernizr
-
-# The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
-cd-polyfill:
-  js:
-    js/cd-polyfill.js: { attributes: { nomodule: true } }
-
-# CSS custom properties polyfill for IE11.
-# https://jhildenbiddle.github.io/css-vars-ponyfill
-css-vars-ponyfill:
-  js:
-    js/vendor/css-vars-ponyfill.js: { attributes: { nomodule: true } }
-    js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
-
-# Array.from polyfill for IE11.
-# https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
-array-from-polyfill:
-  js:
-    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
-
