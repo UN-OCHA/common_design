@@ -10,11 +10,11 @@
 }
 
 .cd-site-header__inner {
-  height: var(--cd-site-header-height);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   gap: 1rem;
+  height: var(--cd-site-header-height);
 }
 
 /* Unset the generic cd-container clearfix. Its presence causes an extra gap
@@ -33,15 +33,17 @@ now that we layout with flex. */
   }
 }
 
+/* stylelint-disable order/properties-order -- group by container then item */
 .cd-site-header__actions {
-  flex: 1 1 auto;
-}
-
-.cd-site-header__actions {
+  /* Define behavior as CONTAINER containing flex-items */
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+
+  /* Define behavior as FLEX-ITEM inside a container */
+  flex: 1 1 auto;
 }
+/* stylelint-enable order/properties-order */
 
 @media (min-width: 1024px) {
   .cd-site-header__nav-holder nav > ul {

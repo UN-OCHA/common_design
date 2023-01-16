@@ -4,7 +4,6 @@
 
 .cd-search {
   z-index: var(--cd-z-search);
-
   float: left;
 
   @supports (display: flex) {

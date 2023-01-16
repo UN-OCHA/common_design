@@ -6,9 +6,8 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .skip-link {
-  z-index: var(--cd-z-skip-link);
-
   position: absolute;
+  z-index: var(--cd-z-skip-link);
   top: 0;
   left: 50%;
   transform: translateX(-50%);

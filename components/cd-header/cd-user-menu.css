@@ -4,8 +4,8 @@
 
 .cd-user-menu {
   margin: 0;
-  list-style: none;
   padding-inline-start: 0;
+  list-style: none;
 }
 
 .cd-user-menu ul {
@@ -96,7 +96,6 @@
   right: -1px;
   left: auto;
 }
-
 
 /**
  * No-JS styles.

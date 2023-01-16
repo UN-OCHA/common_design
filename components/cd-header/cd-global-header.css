@@ -98,8 +98,8 @@
  */
 .cd-global-header__dropdown {
   position: absolute;
-  left: 0;
   z-index: var(--cd-z-dropdown);
+  left: 0;
   color: var(--cd-white);
   background: var(--brand-primary);
 }
@@ -111,7 +111,6 @@
 .js .cd-global-header__dropdown {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 }
-
 
 /* Triangle on toggle when active. */
 .cd-global-header button[aria-expanded="true"] {
@@ -135,9 +134,6 @@ button[aria-expanded] .cd-icon--arrow-down {
   fill: var(--cd-white);
   width: 9px;
   height: 9px;
-}
-
-button[aria-expanded] .cd-icon--arrow-down {
   margin-inline-start: 4px;
 }
 
@@ -145,8 +141,6 @@ button[aria-expanded] .cd-icon--arrow-down {
 button[aria-expanded="true"] .cd-icon--arrow-down {
   transform: rotate(180deg);
 }
-
-
 
 /**
  * No-JS styles

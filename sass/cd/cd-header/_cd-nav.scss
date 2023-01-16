@@ -184,9 +184,8 @@
     background: var(--cd-white);
 
     @include desktop {
-      z-index: var(--cd-z-dropdown);
-
       position: absolute;
+      z-index: var(--cd-z-dropdown);
       top: calc(var(--cd-site-header-height) + 6px); // border-bottom height
       min-width: 200px;
       max-width: 300px;
