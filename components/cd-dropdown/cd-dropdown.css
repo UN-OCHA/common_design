@@ -1,5 +1,36 @@
 /**
- * CD Dropdown
- *
- * @see https://github.com/UN-OCHA/common_design/blob/main/sass/cd/cd-header/_cd-dropdowns.scss
+ * Common Design: Dropdowns
  */
+[data-cd-toggable] {
+  --dropdown: true;
+}
+
+/**
+ * Initial hidden state used to prevent flash of content. Once processed by
+ * the cd-dropdown.js script, the visibility will be controlled by the
+ * data-cd-hidden attribute.
+ */
+.js [data-cd-toggable]:not([data-cd-processed]) {
+  display: none;
+}
+
+[data-cd-hidden="false"] {
+  display: block;
+}
+
+[data-cd-hidden="true"] {
+  display: none;
+}
+
+.cd-dropdown {
+  display: none;
+}
+
+.cd-dropdown[data-cd-hidden="false"] {
+  display: block;
+}
+
+.no-js .cd-dropdown {
+  position: relative;
+  display: block;
+}

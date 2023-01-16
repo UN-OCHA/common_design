@@ -49,6 +49,9 @@ fonts-russian:
 # for CD to function as intended.
 #
 cd-dropdown:
+  css:
+    component:
+      components/cd-dropdown/cd-dropdown.css: {}
   js:
     js/cd-dropdown.js: {}
   dependencies:
