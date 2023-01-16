@@ -139,31 +139,3 @@ $grid-breakpoints: (
     @content;
   }
 }
-
-//——————————————————————————————————————————————————————————————————————————————
-// Common Design: z-index
-//
-// Provides syntactic sugar for common z-index values.
-//
-// Usage: @include z-index(dropdown);
-//——————————————————————————————————————————————————————————————————————————————
-$zindex: (
-  default: 1,
-  hidden: -1,
-  sidebar: 110,
-  sidebar-underlay: 100,
-  main-menu: 199,
-  search: 200,
-  dropdown: 201,
-  skip-link: 1000
-);
-
-@mixin z-index($value: 0) {
-  @if map-has-key($zindex, $value) {
-    z-index: #{map-get($zindex, $value)};
-  }
-
-  @else {
-    @warn "`#{$value}` not found in `$zindex` map.";
-  }
-}

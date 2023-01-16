@@ -37,9 +37,8 @@
  * Global header specific dropdown styles.
  */
 .cd-global-header__dropdown {
-  @include z-index(dropdown);
-
   position: absolute;
+  z-index: var(--cd-z-dropdown);
   left: 0;
   color: var(--cd-white);
   background: var(--brand-primary);

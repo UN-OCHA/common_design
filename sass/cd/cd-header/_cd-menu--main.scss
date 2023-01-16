@@ -14,7 +14,7 @@
 }
 
 ul[data-cd-hidden="true"] > ul {
-  @include z-index(dropdown);
+  z-index: var(--cd-z-dropdown);
 
   display: block;
 }

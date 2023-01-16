@@ -71,7 +71,7 @@
   float: left;
 
   .cd-nav {
-    @include z-index(main-menu); // zindex may need adjusting depending on other site content.
+    z-index: var(--cd-z-main-menu); // zindex may need adjusting depending on other site content.
 
     > ul {
       display: none;
@@ -184,7 +184,7 @@
     background: var(--cd-white);
 
     @include desktop {
-      @include z-index(dropdown);
+      z-index: var(--cd-z-dropdown);
 
       position: absolute;
       top: calc(var(--cd-site-header-height) + 6px); // border-bottom height

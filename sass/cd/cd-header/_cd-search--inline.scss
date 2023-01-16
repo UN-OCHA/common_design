@@ -3,7 +3,7 @@
  */
 
 .cd-search--inline {
-  @include z-index(search);
+  z-index: var(--cd-z-search);
 
   float: left;
 

@@ -6,7 +6,7 @@
 //——————————————————————————————————————————————————————————————————————————————
 
 .skip-link {
-  @include z-index(skip-link);
+  z-index: var(--cd-z-skip-link);
 
   position: absolute;
   top: 0;
