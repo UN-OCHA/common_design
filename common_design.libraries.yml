@@ -83,6 +83,7 @@ cd-header:
       components/cd-header/cd-site-header.css: {}
       components/cd-header/cd-logo.css: {}
       components/cd-header/cd-nav.css: {}
+      components/cd-header/cd-search.css: {}
   dependencies:
     - common_design/cd-user-menu
 
