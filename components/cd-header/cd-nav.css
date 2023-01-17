@@ -2,6 +2,44 @@
  * Common Design: Main Navigation
  */
 
+/**
+ * Original file: cd-menu--main
+ */
+.menu-item--expanded [aria-expanded=false] + ul {
+  display: none;
+}
+.menu-item--expanded [aria-expanded=true] + ul {
+  display: block;
+}
+
+ul[data-cd-hidden=true] > ul {
+  z-index: var(--cd-z-dropdown);
+  display: block;
+}
+
+.menu--main button[aria-expanded] .cd-icon--arrow-down {
+  fill: var(--brand-highlight);
+  margin-top: 4px;
+}
+[dir=ltr] .menu--main button[aria-expanded] .cd-icon--arrow-down {
+  margin-left: 4px;
+}
+[dir=rtl] .menu--main button[aria-expanded] .cd-icon--arrow-down {
+  margin-right: 4px;
+}
+@media (min-width: 1024px) {
+  .menu--main button[aria-expanded] .cd-icon--arrow-down {
+    margin-top: -2px;
+  }
+}
+
+.no-js .menu-item--expanded > [aria-expanded=false] + ul {
+  display: block;
+}
+
+/**
+ * Original file: cd-nav
+ */
 .cd-nav__btn {
   height: var(--cd-site-header-height);
   padding: 0 20px;
