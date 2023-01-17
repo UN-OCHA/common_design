@@ -82,6 +82,7 @@ cd-header:
       components/cd-header/cd-user-menu.css: {}
       components/cd-header/cd-site-header.css: {}
       components/cd-header/cd-logo.css: {}
+      components/cd-header/cd-nav.css: {}
   dependencies:
     - common_design/cd-user-menu
 

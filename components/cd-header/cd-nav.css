@@ -1,0 +1,449 @@
+/**
+ * Common Design: Main Navigation
+ */
+
+.cd-nav__btn {
+  height: var(--cd-site-header-height);
+  padding: 0 20px;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+  color: var(--cd-default-text-color);
+  border: 0 none var(--brand-grey);
+  background: transparent;
+  font-size: var(--cd-font-size--small);
+}
+
+.cd-nav__btn .cd-nav__btn-label {
+  font-weight: 700;
+}
+
+.cd-nav__btn[aria-expanded] .cd-icon--arrow-down {
+  margin-left: 4px;
+  fill: var(--brand-highlight);
+}
+
+.cd-nav__btn[aria-expanded=true] {
+  position: relative;
+  z-index: 101;
+  color: var(--cd-black);
+}
+
+.cd-nav__btn[aria-expanded=true]::before {
+  position: absolute;
+  right: -1px;
+  bottom: -6px;
+  left: -1px;
+  width: calc(100% + 1px);
+  height: 6px;
+  content: "";
+  transition: background 0.3s ease;
+  background: var(--brand-highlight);
+}
+
+.cd-nav__btn[aria-expanded=true]:focus {
+  background: var(--cd-white);
+}
+
+.cd-nav__btn:hover,
+.cd-nav__btn:focus {
+  color: var(--cd-black);
+  outline: none; /* default browser outline is replaced by background colour change. */
+  background: var(--brand-grey);
+}
+
+/**
+ * @IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on nav
+ * container is not recognised so the cd-dropdown.js creates a toggler button on
+ * desktop. This hides the button when that happens.
+ */
+@media (min-width: 1024px) and (-ms-high-contrast: none) {
+  .cd-nav__btn {
+    display: none;
+  }
+}
+
+.cd-site-header__nav-holder {
+  float: left;
+}
+
+.cd-site-header__nav-holder .cd-nav {
+  z-index: var(--cd-z-main-menu); /* may need adjusting depending on site-specific styles. */
+}
+
+.cd-site-header__nav-holder .cd-nav > ul {
+  display: none;
+  background: var(--cd-white);
+}
+
+@media (min-width: 1024px) {
+  .cd-site-header__nav-holder .cd-nav > ul {
+    display: flex;
+    background: transparent;
+  }
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > ul {
+  display: block;
+}
+
+.cd-site-header__nav-holder .cd-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cd-site-header__nav-holder .cd-nav a,
+.cd-site-header__nav-holder .cd-nav button {
+  display: block;
+  padding: 15px 30px;
+  text-align: left;
+  text-decoration: none;
+  color: var(--cd-default-text-color);
+}
+
+html[dir="rtl"] .cd-site-header__nav-holder .cd-nav a,
+html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
+  text-align: right;
+}
+
+.cd-site-header__nav-holder .cd-nav a:hover,
+.cd-site-header__nav-holder .cd-nav a:focus,
+.cd-site-header__nav-holder .cd-nav button:hover,
+.cd-site-header__nav-holder .cd-nav button:focus {
+  color: var(--cd-black);
+  outline: none; /* default browser outline is replaced by background colour change. */
+  background: var(--brand-grey);
+}
+
+.cd-site-header__nav-holder .cd-nav a,
+.cd-site-header__nav-holder .cd-nav button {
+  display: flex;
+}
+
+.cd-site-header__nav-holder .cd-nav button {
+  width: 100%;
+  border: 0 none;
+  background: transparent;
+}
+
+/**
+ * First level
+ */
+.cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a,
+.cd-site-header__nav-holder .cd-nav > .menu > .menu-item > button {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media (max-width: 1023px) {
+  .cd-site-header__nav-holder .cd-nav[data-cd-hidden=false] {
+    position: absolute;
+    top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px);
+    right: 0;
+    left: 0;
+    height: calc(100vh - (var(--cd-global-header-height) + var(--cd-site-header-height) + 6px));
+    padding: 20px 0 36px;
+    background: var(--cd-white);
+  }
+
+  .cd-site-header__nav-holder .cd-nav[data-cd-hidden=false] > ul {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-site-header__nav-holder .cd-nav {
+    --dropdown: false;
+
+    position: relative;
+    top: auto;
+    right: auto;
+    left: 0;
+    width: auto;
+    max-width: none;
+    height: var(--cd-site-header-height);
+    padding: 0;
+  }
+}
+
+/**
+ * @IE11
+ * No support for CSS custom props means --dropdown: false; property on nav
+ * container is not recognised so the cd-dropdown.js does not run the
+ * updateToggler function which toggles the data-cd-hidden attribute. This
+ * displays the nav regardless of that attribute value.
+ */
+@media (min-width: 1024px) and (-ms-high-contrast: none) {
+  .cd-site-header__nav-holder .cd-nav[data-cd-hidden=true] {
+    display: block;
+  }
+}
+
+.cd-site-header__nav-holder .menu-item > a::before,
+.cd-site-header__nav-holder .menu-item > button::before {
+  background: var(--brand-highlight);
+}
+
+/**
+ * Second level
+ */
+.cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+  background: var(--cd-white);
+}
+
+@media (min-width: 1024px) {
+  .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+    position: absolute;
+    z-index: var(--cd-z-dropdown);
+    top: calc(var(--cd-site-header-height) + 6px); /* border-bottom height */
+    min-width: 200px;
+    max-width: 300px;
+    margin: 0;
+    padding: 20px 0;
+    box-shadow: 0 1px 8px rgba(var(--cd-rgb-blue-grey--dark), 0.8);
+  }
+}
+
+.cd-site-header__nav-holder .menu .menu a {
+  display: flex;
+  color: var(--cd-black);
+  font-weight: 700;
+}
+
+.cd-site-header__nav-holder .menu .menu a:hover {
+  background: var(--brand-grey);
+}
+
+/**
+ * Active trail for mobile menu.
+ */
+@media (max-width: 1023px) {
+  .cd-site-header__nav-holder .cd-nav > ul > li a,
+  .cd-site-header__nav-holder .cd-nav > ul > li button {
+    position: relative;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li a::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li button::before {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 6px;
+    height: 48px;
+    content: "";
+    background: transparent;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li > a.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li > button.is-active::before {
+    background: var(--brand-highlight);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--collapsed > a.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--collapsed > button.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--expanded > a.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--expanded > button.is-active::before {
+    opacity: 0.2;
+    background: var(--brand-highlight);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a,
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button {
+    position: relative;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button::before {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 6px;
+    height: 48px;
+    content: "";
+    opacity: 0.2;
+    background: var(--brand-highlight);
+  }
+
+  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a::before,
+  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button::before {
+    right: 15px;
+    left: auto;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button.is-active::before {
+    background: var(--brand-highlight);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail a::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail button::before {
+    opacity: 0.6;
+    background: var(--brand-highlight);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail a.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail button.is-active::before {
+    background: var(--brand-highlight);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item:last-child > ul.menu {
+    right: -1px;
+    left: auto;
+  }
+
+  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > .menu-item:last-child > ul.menu {
+    right: auto;
+    left: -1px;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item.menu-item--active-trail a::before,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item.menu-item--active-trail button::before {
+    background: var(--brand-highlight);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: var(--cd-site-header-height);
+    padding: 0 14px;
+    transition: background 0.3s ease;
+    background: transparent;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a::before,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button::before {
+    position: absolute;
+    right: -1px;
+    bottom: -6px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: 6px;
+    content: "";
+    transition: background 0.3s ease;
+    background: transparent;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a:hover,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button:hover {
+    background: var(--brand-grey);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a:focus,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button:focus {
+    background: var(--cd-white);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a:focus::before,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button.is-active::before,
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button:focus::before {
+    background: var(--brand-highlight);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item svg {
+    flex: 1 0 auto;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > li > ul a:hover,
+  .cd-site-header__nav-holder .cd-nav > .menu > li > ul button:hover {
+    background: var(--brand-grey);
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > li > ul a.menu-item--active-trail,
+  .cd-site-header__nav-holder .cd-nav > .menu > li > ul button.menu-item--active-trail {
+    border-left: 6px solid var(--brand-highlight);
+  }
+
+  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > li > ul a.menu-item--active-trail,
+  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > li > ul button.menu-item--active-trail {
+    border-right: 6px solid var(--brand-highlight);
+    border-left-width: 0;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-left: 6px solid var(--brand-highlight);
+  }
+
+  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-right: 6px solid var(--brand-highlight);
+    border-left-width: 0;
+  }
+
+  .cd-site-header__nav-holder .cd-nav > .menu {
+    flex: 1 0 auto;
+  }
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav {
+  position: relative;
+  top: auto;
+  right: 0;
+  left: 0;
+  display: block;
+  padding: 0;
+  background: var(--cd-white);
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+  position: relative;
+  top: 0;
+  min-width: unset;
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+  box-shadow: unset;
+}
+
+.no-js .cd-site-header__nav-holder .cd-nav > .menu > li.menu-item--expanded button {
+  display: none;
+}
+
+/* Style all menu items the same, regardless of their level. */
+@media (min-width: 1024px) {
+  .no-js .cd-nav .menu-item--expanded li {
+    height: var(--cd-site-header-height);
+  }
+
+  .no-js .cd-nav .menu-item--expanded li a {
+    align-items: center;
+    height: var(--cd-site-header-height);
+    padding: 0 14px;
+  }
+}
+
+/* Adjusts the active styles when javascript is disabled. */
+@media (min-width: 1024px) {
+  /* Hide the active style from a parent item. */
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item--expanded a::before,
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item--expanded button::before {
+    background: transparent;
+  }
+
+  /* Hide the default active style for second level items. */
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-left: 6px solid transparent;
+  }
+
+  /* Use the same style as the first level menu items when active. */
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail a {
+    position: relative;
+  }
+
+  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail a::after {
+    position: absolute;
+    right: -1px;
+    bottom: -6px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: 6px;
+    content: "";
+    transition: background 0.3s ease;
+    background: var(--brand-highlight);
+  }
+}
