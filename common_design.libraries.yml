@@ -92,6 +92,7 @@ cd-footer:
   css:
     component:
       components/cd-footer/cd-footer.css: {}
+      components/cd-footer/cd-footer-copyright.css: {}
 
 cd-core:
   dependencies:
