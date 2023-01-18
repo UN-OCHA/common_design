@@ -275,3 +275,21 @@
     left: var(--cd-container-padding-xlarge);
   }
 }
+
+/**
+ * Drupal selectors
+ *
+ * Originally inside _cd-search-drupal.scss
+ */
+.cd-search .form-item,
+.cd-search .form-actions,
+.cd-search--inline .form-item,
+.cd-search--inline .form-actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cd-search--inline .form-item,
+.cd-search--inline .form-actions {
+  display: flex;
+}
