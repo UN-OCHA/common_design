@@ -88,9 +88,15 @@ cd-header:
   dependencies:
     - common_design/cd-user-menu
 
+cd-footer:
+  css:
+    component:
+      components/cd-footer/cd-footer.css: {}
+
 cd-core:
   dependencies:
     - common_design/cd-header
+    - common_design/cd-footer
 
 ###
 # CD Compatibility
