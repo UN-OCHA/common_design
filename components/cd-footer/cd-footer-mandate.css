@@ -1,0 +1,74 @@
+/**
+ * Common Design: OCHA mandate
+ */
+.cd-mandate {
+  width: 100%;
+}
+
+.cd-mandate__logo {
+  display: block;
+  width: calc(149px + var(--cd-container-padding));
+  height: 37px;
+  margin: 0 auto 16px;
+  background: url("../../img/logos/ocha-lockup.svg") 0 center no-repeat;
+}
+
+[dir=rtl] .cd-mandate__logo {
+  background-position: 100% 0;
+}
+
+.no-svg .cd-mandate__logo {
+  background: url("../../img/logos/ocha-lockup@149x37.png") 0 center no-repeat;
+}
+
+.cd-mandate__heading {
+  display: block;
+  margin-bottom: 16px;
+  padding: 0 var(--cd-container-padding);
+}
+
+.cd-mandate__text {
+  display: block;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 var(--cd-container-padding);
+}
+
+@media (min-width: 1024px) {
+  .cd-mandate {
+    margin: 0;
+  }
+
+  .cd-mandate__logo {
+    float: left;
+    margin: -4px var(--cd-container-padding) 0 auto;
+    border-inline-end: 1px solid var(--brand-grey);
+  }
+
+  [dir=rtl] .cd-mandate__logo {
+    float: right;
+    margin: -4px auto 0 var(--cd-container-padding);
+  }
+
+  .cd-mandate__heading {
+    padding: 0;
+    text-align: left;
+  }
+
+  [dir=rtl] .cd-mandate__heading {
+    text-align: right;
+  }
+
+  .cd-mandate__text {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 173px; /* accomodate logo */
+    padding-inline-end: var(--cd-container-padding-xlarge);
+    text-align: left;
+  }
+
+  [dir=rtl] .cd-mandate__text {
+    text-align: right;
+  }
+}
