@@ -1,11 +1,9 @@
 ###
 # Global Styling is enabled by default.
 #
-# If you want some styles to be included on every page load, either add them in
-# css/styles.css or add your own files to the list under "theme"
 global-styling:
   css:
-    theme:
+    base:
       css/brand.css: {}
       css/styles.css: {}
   dependencies:
