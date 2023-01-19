@@ -94,6 +94,7 @@ cd-footer:
       components/cd-footer/cd-footer-menu.css: {}
       components/cd-footer/cd-footer-mandate.css: {}
       components/cd-footer/cd-footer-social.css: {}
+      components/cd-footer/cd-footer-soft.css: {}
 
 cd-core:
   dependencies:
