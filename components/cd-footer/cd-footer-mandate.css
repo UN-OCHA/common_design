@@ -7,7 +7,7 @@
 
 .cd-mandate__logo {
   display: block;
-  width: calc(149px + var(--cd-container-padding));
+  width: 149px;
   height: 37px;
   margin: 0 auto 16px;
   background: url("../../img/logos/ocha-lockup.svg") 0 center no-repeat;
@@ -41,6 +41,7 @@
 
   .cd-mandate__logo {
     float: left;
+    width: calc(149px + var(--cd-container-padding));
     margin: -4px var(--cd-container-padding) 0 auto;
     border-inline-end: 1px solid var(--brand-grey);
   }
