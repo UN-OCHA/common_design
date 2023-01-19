@@ -76,6 +76,7 @@ cd-header:
     component:
       components/cd-header/cd-header.css: {}
       components/cd-header/cd-global-header.css: {}
+      components/cd-header/cd-ocha.css: {}
       components/cd-header/cd-language-switcher.css: {}
       components/cd-header/cd-user-menu.css: {}
       components/cd-header/cd-site-header.css: {}
