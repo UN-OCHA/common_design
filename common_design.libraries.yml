@@ -74,28 +74,28 @@ cd-ocha-services:
 cd-header:
   css:
     component:
-      components/cd-header/cd-header.css: {}
-      components/cd-header/cd-global-header.css: {}
-      components/cd-header/cd-ocha.css: {}
-      components/cd-header/cd-language-switcher.css: {}
-      components/cd-header/cd-user-menu.css: {}
-      components/cd-header/cd-site-header.css: {}
-      components/cd-header/cd-logo.css: {}
-      components/cd-header/cd-nav.css: {}
-      components/cd-header/cd-search.css: {}
-      components/cd-header/cd-search--inline.css: {}
+      components/cd/cd-header/cd-header.css: {}
+      components/cd/cd-header/cd-global-header.css: {}
+      components/cd/cd-header/cd-ocha.css: {}
+      components/cd/cd-header/cd-language-switcher.css: {}
+      components/cd/cd-header/cd-user-menu.css: {}
+      components/cd/cd-header/cd-site-header.css: {}
+      components/cd/cd-header/cd-logo.css: {}
+      components/cd/cd-header/cd-nav.css: {}
+      components/cd/cd-header/cd-search.css: {}
+      components/cd/cd-header/cd-search--inline.css: {}
   dependencies:
     - common_design/cd-user-menu
 
 cd-footer:
   css:
     component:
-      components/cd-footer/cd-footer.css: {}
-      components/cd-footer/cd-footer-copyright.css: {}
-      components/cd-footer/cd-footer-menu.css: {}
-      components/cd-footer/cd-footer-mandate.css: {}
-      components/cd-footer/cd-footer-social.css: {}
-      components/cd-footer/cd-footer-soft.css: {}
+      components/cd/cd-footer/cd-footer.css: {}
+      components/cd/cd-footer/cd-footer-copyright.css: {}
+      components/cd/cd-footer/cd-footer-menu.css: {}
+      components/cd/cd-footer/cd-footer-mandate.css: {}
+      components/cd/cd-footer/cd-footer-social.css: {}
+      components/cd/cd-footer/cd-footer-soft.css: {}
 
 cd-core:
   dependencies:
