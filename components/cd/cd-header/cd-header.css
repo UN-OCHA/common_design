@@ -2,6 +2,29 @@
  * Common Design: Header
  */
 
+.cd-header {
+  /**
+   * Reset styles
+   */
+  box-sizing: border-box;
+  font-family: var(--cd-font);
+  font-size: var(--cd-font-size--tiny);
+  font-weight: 300;
+}
+
+/* Reset button styles. */
+.cd-header button {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: var(--cd-font-size--tiny);
+  font-weight: 300;
+  -webkit-appearance: none;
+}
+
+.cd-header button[data-cd-toggler] {
+  background-color: transparent;
+}
+
 /* We want uniform focus styles on the whole Header */
 .cd-header button:focus {
   outline: 3px solid var(--brand-primary--light);

@@ -1,8 +1,18 @@
 /**
  * Common Design: Footer
  */
+
+/* stylelint-disable order/properties-order -- two logical groups of styles */
 .cd-footer {
-  /*
+  /**
+   * Reset styles
+   */
+  box-sizing: border-box;
+  font-family: var(--cd-font);
+  font-size: var(--cd-font-size--tiny);
+  font-weight: 300;
+
+  /**
    * Position footer at the bottom of viewport. This might need adjusting based
    * on page layout.
    */
@@ -12,6 +22,20 @@
   color: var(--cd-white);
   background: var(--brand-primary);
   line-height: 1.5;
+}
+/* stylelint-enable order/properties-order */
+
+/* Reset button styles. */
+.cd-footer button {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: var(--cd-font-size--tiny);
+  font-weight: 300;
+  -webkit-appearance: none;
+}
+
+.cd-footer button[data-cd-toggler] {
+  background-color: transparent;
 }
 
 .cd-footer a {
