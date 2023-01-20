@@ -75,6 +75,8 @@ cd-layout:
   css:
     layout:
       components/cd/cd-layout/cd-layout.css: {}
+    component:
+      components/cd/cd-layout/cd-skip-link.css: {}
 
 cd-header:
   css:
