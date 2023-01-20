@@ -1,0 +1,312 @@
+/**
+ * Common Design: Layout
+ */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+/* Position footer at the bottom of viewport. This might need adjusting based
+on page layout. */
+body:not(.user-logged-in) {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.cd-layout-container {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.no-js .cd-layout-container {
+  display: block;
+}
+
+/**
+ * Grid is used to fix the footer to the bottom of the screen, regardless of
+ * page min-height. Header height is fixed. Highlighted should contain Drupal
+ * messages and will be present even if empty. Main should grow to fit the
+ * available space. Soft footer is optional. Footer sticks to the bottom of
+ * the viewport. If there are additional direct descendents of
+ * .cd-layout-container, grid-template-areas and rows can be adjusted.
+ */
+@media (min-width: 768px) {
+  .cd-layout-container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "highlighted"
+      "main"
+      "soft-footer"
+      "footer";
+    grid-template-rows: 101px auto 1fr auto;
+    grid-auto-rows: auto;
+  }
+}
+
+.cd-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--cd-max-width);
+  margin: 0 auto;
+  padding: 0 var(--cd-container-padding);
+}
+
+.cd-container::after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  content: ".";
+}
+
+@media (min-width: 768px) {
+  .cd-container {
+    padding: 0 var(--cd-container-padding-tablet);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cd-container {
+    padding: 0 var(--cd-container-padding-xlarge);
+  }
+}
+
+.cd-container[role=main] {
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .cd-container[role=main] {
+    padding-bottom: 4rem;
+  }
+}
+
+.cd-layout-container main {
+  padding-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-container main {
+    padding-top: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-container .cd-layout-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.cd-layout-container .cd-layout-content-wrapper aside {
+  /* This is to prevent sidebar region wrapper div displaying when region is
+  empty but still renders. */
+}
+
+.cd-layout-container .cd-layout-content-wrapper aside:empty {
+  display: none;
+}
+
+.cd-layout-sidebar-first .cd-layout-container .cd-layout-content-wrapper aside {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-sidebar-first .cd-layout-container .cd-layout-content-wrapper aside {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-container .cd-layout-content-wrapper aside {
+    flex-grow: 1;
+  }
+}
+
+/* One sidebar. */
+@media (min-width: 1024px) {
+
+  .cd-layout-with-sidebar-first .cd-layout-sidebar-first,
+  .cd-layout-with-sidebar-second .cd-layout-sidebar-second {
+    flex-basis: 285px;
+  }
+}
+
+.cd-layout-sidebar-first {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-sidebar-first {
+    margin-bottom: 0;
+  }
+}
+
+/* Both sidebars, individually control. */
+.cd-layout-with-sidebar-both .cd-layout-sidebar-first {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cd-layout-with-sidebar-both .cd-layout-sidebar-first {
+    flex-basis: 285px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-with-sidebar-both .cd-layout-sidebar-first {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .cd-layout-with-sidebar-both .cd-layout-sidebar-second {
+    /* Keep this number large so exceeds the available space and thus sits below. */
+    flex-basis: 550px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-with-sidebar-both .cd-layout-sidebar-second {
+    flex-basis: 285px;
+  }
+}
+
+.cd-layout-with-sidebar-both .cd-layout-content {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-with-sidebar-both .cd-layout-content {
+    margin-bottom: 0;
+  }
+
+  [dir=ltr] .cd-layout-with-sidebar-both .cd-layout-content {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+
+  [dir=rtl] .cd-layout-with-sidebar-both .cd-layout-content {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  [dir=ltr] .cd-layout-with-sidebar-first .cd-layout-content {
+    margin-right: 0;
+    margin-left: 3rem;
+  }
+
+  [dir=rtl] .cd-layout-with-sidebar-first .cd-layout-content {
+    margin-right: 3rem;
+    margin-left: 0;
+  }
+}
+
+.cd-layout-with-sidebar-second .cd-layout-content {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-with-sidebar-second .cd-layout-content {
+    margin-bottom: 0;
+  }
+
+  [dir=ltr] .cd-layout-with-sidebar-second .cd-layout-content {
+    margin-right: 3rem;
+    margin-left: 0;
+  }
+
+  [dir=rtl] .cd-layout-with-sidebar-second .cd-layout-content {
+    margin-right: 0;
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-content {
+    flex-basis: 0;
+    flex-grow: 999;
+  }
+}
+
+/**
+ * Faux sidebar in Node content.
+ * Requires markup in node-full.html.twig.
+ */
+.cd-layout-two-col .cd-layout-main-content {
+  /* These override the main layout rules based on which sidebar is enabled.
+  The status of those sidebars are not important to this inner layout. */
+  margin-left: 0;
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-two-col .cd-layout-main-content {
+    flex-basis: 0;
+    flex-grow: 999;
+  }
+
+  [dir=ltr] .cd-layout-two-col .cd-layout-main-content {
+    margin-right: 2rem;
+  }
+
+  [dir=rtl] .cd-layout-two-col .cd-layout-main-content {
+    margin-left: 2rem;
+  }
+}
+
+.cd-layout-two-col .cd-layout-sidebar-first {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--brand-grey);
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-two-col .cd-layout-sidebar-first {
+    flex-basis: 285px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-layout-two-col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.region-sidebar-first:empty,
+.region-facets:empty {
+  display: none;
+}
+
+.region-facets + .region-sidebar-first {
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .region-facets + .region-sidebar-first {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cd-page-title .cd-layout-with-sidebar {
+    /* --cd-max-width minus padding, minus --cd-max-content-width. */
+    padding-inline-end: 320px;
+  }
+
+  .cd-layout-with-sidebar-first .cd-page-title,
+  .cd-layout-with-sidebar-second .cd-page-title,
+  .cd-layout-with-sidebar-both .cd-page-title {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

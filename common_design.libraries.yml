@@ -71,6 +71,11 @@ cd-ocha-services:
   js:
     js/cd-ocha-services.js: {}
 
+cd-layout:
+  css:
+    layout:
+      components/cd/cd-layout/cd-layout.css: {}
+
 cd-header:
   css:
     component:
@@ -99,6 +104,7 @@ cd-footer:
 
 cd-core:
   dependencies:
+    - common_design/cd-layout
     - common_design/cd-header
     - common_design/cd-footer
 
