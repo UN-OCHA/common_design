@@ -71,13 +71,6 @@ cd-ocha-services:
   js:
     js/cd-ocha-services.js: {}
 
-cd-layout:
-  css:
-    layout:
-      components/cd/cd-layout/cd-layout.css: {}
-    component:
-      components/cd/cd-layout/cd-skip-link.css: {}
-
 cd-header:
   css:
     component:
@@ -104,19 +97,22 @@ cd-footer:
       components/cd/cd-footer/cd-footer-social.css: {}
       components/cd/cd-footer/cd-footer-soft.css: {}
 
-cd-extras:
+cd-other:
   css:
     base:
-      components/cd/cd-extras/cd-icons.css: {}
+      components/cd/cd-other/cd-icons.css: {}
+    layout:
+      components/cd/cd-other/cd-layout.css: {}
+    component:
+      components/cd/cd-other/cd-skip-link.css: {}
     theme:
-      components/cd/cd-extras/cd-print.css: {}
+      components/cd/cd-other/cd-print.css: {}
 
 cd-core:
   dependencies:
-    - common_design/cd-layout
     - common_design/cd-header
     - common_design/cd-footer
-    - common_design/cd-extras
+    - common_design/cd-other
 
 ###
 # CD Compatibility
