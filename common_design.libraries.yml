@@ -104,11 +104,17 @@ cd-footer:
       components/cd/cd-footer/cd-footer-social.css: {}
       components/cd/cd-footer/cd-footer-soft.css: {}
 
+cd-extras:
+  css:
+    theme:
+      components/cd/cd-extras/cd-print.css: {}
+
 cd-core:
   dependencies:
     - common_design/cd-layout
     - common_design/cd-header
     - common_design/cd-footer
+    - common_design/cd-extras
 
 ###
 # CD Compatibility
