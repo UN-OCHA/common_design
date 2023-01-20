@@ -106,6 +106,8 @@ cd-footer:
 
 cd-extras:
   css:
+    base:
+      components/cd/cd-extras/cd-icons.css: {}
     theme:
       components/cd/cd-extras/cd-print.css: {}
 
