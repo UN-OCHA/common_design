@@ -6,13 +6,8 @@
   "author": "UN OCHA",
   "license": "GPL-2.0",
   "scripts": {
-    "sass:compile": "sass sass/styles.scss css/styles.css --style=compressed --no-source-map",
-    "sass:compile-dev": "sass --embed-sources sass/styles.scss css/styles.css",
-    "sass:watch": "npm run sass:lint && npm run sass:compile-dev -- --watch",
-    "sass:lint": "stylelint '{sass,components}/**/*.{css,scss}'",
-    "sass:lint-fix": "stylelint '{sass,components}/**/*.{css,scss}' --fix",
-    "sass:postcss": "postcss --no-map css/styles.css --use autoprefixer -b 'last 3 versions' -r",
-    "sass:build": "npm run sass:lint && npm run sass:compile && npm run sass:postcss",
+    "css:lint": "stylelint 'components/**/*.css'",
+    "css:lint-fix": "stylelint 'components/**/*.css' --fix",
     "js:lint": "eslint js/*.js",
     "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
     "e2e": "jest _tests/*.test.js",
@@ -24,16 +19,9 @@
     "npm": "^8.1.2"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.9",
-    "postcss-cli": "^8.3.1",
-    "sass": "^1.43.4",
     "stylelint": "^14.16.1",
-    "stylelint-config-recommended-scss": "^8.0.0",
     "stylelint-config-standard": "^29.0.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-order": "^6.0.1",
-    "stylelint-scss": "^4.3.0"
+    "stylelint-order": "^6.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
