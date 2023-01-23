@@ -82,8 +82,7 @@
 }
 
 /**
- * Selector needs to override CD Button because of source order changing during
- * Sass removal.
+ * Selector needs to override CD Button because of source order.
  */
 .cd-button.cd-ocha-dropdown__see-all {
   display: inline-block;

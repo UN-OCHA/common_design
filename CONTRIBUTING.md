@@ -12,28 +12,19 @@ There are various audiences marked in this document. Mind the table at the top o
 | :----------------- |
 | Contributors to CD |
 
-## Contributing CSS or Sass
+## Contributing CSS
 
-This project uses [Sass][sass]. To make changes edit the `.scss` files in the `sass/` folder. Do not edit the files in the `css` directory. Here is how to set your environment up to edit Sass:
+All CSS is now managed by Drupal Library components. The best documentation to follow are the [official CSS guidelines on drupal.org][drupal-css]
 
-1. Run `nvm use` in theme folder to ensure the correct node version.
-2. Install the dependencies: `npm install`
-3. Run the command that best suits your purpose:
-
-- `npm run sass:build` — compile production-ready CSS.
-- `npm run sass:watch` — watch for changes and automatically rebuild the CSS during local development.
-- `npm run sass:lint` — linting report only.
-- `npm run sass:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely handle.
-
-Follow [Drupal CSS coding standards and best practices][css-standards].
+- `npm run css:lint` — linting report only.
+- `npm run css:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely adjust.
 
 For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
 
 The `stylelintrc.json` config file extends Drupal core stylelint config. Run `yarn install` in your site's `html/core` directory to install the stylelint plugins if there are errors indicating missing packages.
 
-  [sass]: http://sass-lang.com/
   [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
-  [css-standards]: https://www.drupal.org/docs/develop/standards/css
+  [drupal-css]: https://www.drupal.org/docs/develop/standards/css
   [drupal-caching]: https://www.drupal.org/node/2598914
 
 
