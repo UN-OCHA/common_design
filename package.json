@@ -6,7 +6,6 @@
   "author": "UN OCHA",
   "license": "GPL-2.0",
   "scripts": {
-    "sass:css-select-a11y-dev": "sass components/cd-select-a11y/cd-select-a11y.scss components/cd-select-a11y/cd-select-a11y.css",
     "sass:compile": "sass sass/styles.scss css/styles.css --style=compressed --no-source-map",
     "sass:compile-dev": "sass --embed-sources sass/styles.scss css/styles.css",
     "sass:watch": "npm run sass:compile-dev -- --watch",
