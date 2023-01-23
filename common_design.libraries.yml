@@ -75,6 +75,7 @@ cd-resets:
   css:
     base:
       components/cd/cd-resets/cd-resets.css: {}
+      components/cd/cd-resets/cd-typography.css: {}
 
 cd-header:
   css:
