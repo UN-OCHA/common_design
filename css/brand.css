@@ -41,6 +41,18 @@
   --cd-container-padding-tablet: 1.5rem; /* 24px */
   --cd-container-padding-xlarge: 2.5rem; /* 40px */
 
+  /**
+   * Breakpoints
+   *
+   * Mostly to document the old Sass vars, these values are used directly in CSS
+   * when needed for a media query, because custom props don't work in MQs.
+   */
+  --cd-bp--sm: 576px;
+  --cd-bp--md: 768px;
+  --cd-bp--lg: 1024px;
+  --cd-bp--xl: 1200px;
+  --cd-bp--xxl: 1400px;
+
   /* Vertical Rhythm */
   --cd-flow-space: 1rem;
   --cd-bumper-space: 1rem;
