@@ -35,28 +35,3 @@ body.no-scroll {
   width: 100%;
   height: 100%;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/**
- * SVG icon styles
- */
-
-/* SVG sprite placed before end of body in html.tpl.php */
-svg.icons-sprite {
-  display: none;
-  overflow: hidden;
-}
-
-svg.icon {
-  display: inline-block;
-  pointer-events: none;
-}
-
-.cd-icon {
-  width: 0.5rem;
-  height: 0.5rem;
-}

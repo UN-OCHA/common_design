@@ -104,6 +104,8 @@ cd-footer:
 
 cd-other:
   css:
+    base:
+      components/cd/cd-other/cd-icon.css: {}
     layout:
       components/cd/cd-other/cd-layout.css: {}
     component:

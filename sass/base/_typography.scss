@@ -194,8 +194,13 @@ em {
   font-weight: 900;
 }
 
-// The Unarticulated Annotation.
 u {
   text-decoration: none;
   font-weight: 700;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
