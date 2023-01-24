@@ -12,10 +12,6 @@
       this.handleResize = this.handleResize.bind(this);
       this.handleToggle = this.handleToggle.bind(this);
 
-      // Store context where all our private functions can access it.
-      // Leaving this here for posterity sake.
-      // this.context = context;
-
       // Initialize toggable dropdown.
       this.initializeToggables();
 
@@ -225,7 +221,7 @@
       // ID.
       button.setAttribute('id', id + '-toggler');
 
-      // @todo rename logo/icon to be more inclusive if needed.
+      // @TODO rename logo/icon to be more inclusive if needed.
       //  Eg. prefix/suffix or pre/post
       // Pre-label SVG icon.
       if (logo) {
