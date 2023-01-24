@@ -35,3 +35,16 @@ body.no-scroll {
   width: 100%;
   height: 100%;
 }
+
+/**
+ * Custom-styled lists
+ *
+ * When the attribute ARIA role "list" is applied to a <ul> tag, we can assume
+ * the intention is to have complete styling control over this list and remove
+ * all of the default typographic treatment: spacing / bullets
+ */
+[role=list] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
