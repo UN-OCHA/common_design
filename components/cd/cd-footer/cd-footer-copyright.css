@@ -27,18 +27,6 @@
   outline-offset: 1px;
 }
 
-@media (min-width: 1024px) {
-  .cd-footer-copyright__text {
-    /**
-     * @IE10
-     * Force the text to wrap.
-     */
-    display: inline-block;
-    flex-shrink: 1;
-    max-width: 100%;
-  }
-}
-
 .cd-footer-copyright svg {
   flex: 0 0 38px;
   width: 38px;
