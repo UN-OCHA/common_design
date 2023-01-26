@@ -16,8 +16,8 @@
     "release": "standard-version"
   },
   "engines": {
-    "node": "^16.13.2",
-    "npm": "^8.1.2"
+    "node": "^16.19.0",
+    "npm": "^8.19.3"
   },
   "dependencies": {
     "stylelint": "^14.16.1",
