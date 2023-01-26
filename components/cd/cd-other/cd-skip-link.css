@@ -32,11 +32,9 @@
  * Our styles are only visible when the element has focus, so the default
  * outline is not necessary. We are forcibly overriding it.
  */
-.skip-link.visually-hidden.focusable {
-  &:hover,
-  &:active,
-  &:focus {
-    position: absolute !important;
-    outline: 0;
-  }
+.skip-link.visually-hidden.focusable:hover,
+.skip-link.visually-hidden.focusable:active,
+.skip-link.visually-hidden.focusable:focus {
+  position: absolute !important;
+  outline: 0;
 }
