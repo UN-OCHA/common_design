@@ -1,0 +1,30 @@
+name: Run tests
+
+on:
+  push
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '^16.13.2'
+
+      - name: Get deps
+        run: |
+          npm install
+
+      - name: Run tests
+        run: |
+          npm run css:lint
