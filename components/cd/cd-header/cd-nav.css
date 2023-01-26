@@ -20,12 +20,7 @@ ul[data-cd-hidden=true] > ul {
 .menu--main button[aria-expanded] .cd-icon--arrow-down {
   fill: var(--brand-highlight);
   margin-top: 4px;
-}
-[dir=ltr] .menu--main button[aria-expanded] .cd-icon--arrow-down {
-  margin-left: 4px;
-}
-[dir=rtl] .menu--main button[aria-expanded] .cd-icon--arrow-down {
-  margin-right: 4px;
+  margin-inline-start: 4px;
 }
 
 @media (min-width: 1024px) {
@@ -34,14 +29,15 @@ ul[data-cd-hidden=true] > ul {
   }
 }
 
-.no-js .menu-item--expanded > [aria-expanded=false] + ul {
-  display: block;
-}
-
 /**
  * Original file: cd-nav
  */
-.cd-nav__btn {
+.cd-nav {
+  /* may need adjusting depending on site-specific styles. */
+  z-index: var(--cd-z-main-menu);
+}
+
+.cd-nav-level-0__btn {
   height: var(--cd-site-header-height);
   padding: 0 20px;
   transition: background 0.3s ease;
@@ -52,22 +48,29 @@ ul[data-cd-hidden=true] > ul {
   font-size: var(--cd-font-size--small);
 }
 
-.cd-nav__btn .cd-nav__btn-label {
+.cd-nav-level-0__btn:hover,
+.cd-nav-level-0__btn:focus {
+  color: var(--cd-black);
+  outline: none; /* default browser outline is replaced by background colour change. */
+  background: var(--brand-grey);
+}
+
+.cd-nav-level-0__btn-label {
   font-weight: 700;
 }
 
-.cd-nav__btn[aria-expanded] .cd-icon--arrow-down {
+.cd-nav-level-0__btn[aria-expanded] .cd-icon--arrow-down {
   margin-left: 4px;
   fill: var(--brand-highlight);
 }
 
-.cd-nav__btn[aria-expanded=true] {
+.cd-nav-level-0__btn[aria-expanded=true] {
   position: relative;
   z-index: 101;
   color: var(--cd-black);
 }
 
-.cd-nav__btn[aria-expanded=true]::before {
+.cd-nav-level-0__btn[aria-expanded=true]::before {
   position: absolute;
   right: -1px;
   bottom: -6px;
@@ -79,15 +82,8 @@ ul[data-cd-hidden=true] > ul {
   background: var(--brand-highlight);
 }
 
-.cd-nav__btn[aria-expanded=true]:focus {
+.cd-nav-level-0__btn[aria-expanded=true]:focus {
   background: var(--cd-white);
-}
-
-.cd-nav__btn:hover,
-.cd-nav__btn:focus {
-  color: var(--cd-black);
-  outline: none; /* default browser outline is replaced by background colour change. */
-  background: var(--brand-grey);
 }
 
 /**
@@ -103,76 +99,59 @@ ul[data-cd-hidden=true] > ul {
   }
 }
 
-.cd-site-header__nav-holder {
-  float: left;
-}
-
-.cd-site-header__nav-holder .cd-nav {
-  z-index: var(--cd-z-main-menu); /* may need adjusting depending on site-specific styles. */
-}
-
-.cd-site-header__nav-holder .cd-nav > ul {
+.cd-nav__menu--level-1 {
   display: none;
   background: var(--cd-white);
 }
 
 @media (min-width: 1024px) {
-  .cd-site-header__nav-holder .cd-nav > ul {
+  .cd-nav__menu--level-1 {
     display: flex;
     background: transparent;
   }
 }
 
-.no-js .cd-site-header__nav-holder .cd-nav > ul {
-  display: block;
-}
-
-.cd-site-header__nav-holder .cd-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.cd-site-header__nav-holder .cd-nav a,
-.cd-site-header__nav-holder .cd-nav button {
+.cd-nav a,
+.cd-nav button {
   display: flex;
   padding: 15px 30px;
   text-align: left;
   text-decoration: none;
   color: var(--cd-default-text-color);
+  position: relative;
 }
 
-.cd-site-header__nav-holder .cd-nav button {
+.cd-nav button {
   width: 100%;
   border: 0 none;
   background: transparent;
 }
 
-html[dir="rtl"] .cd-site-header__nav-holder .cd-nav a,
-html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
+html[dir="rtl"] .cd-nav a,
+html[dir="rtl"] .cd-nav button {
   text-align: right;
 }
 
-.cd-site-header__nav-holder .cd-nav a:hover,
-.cd-site-header__nav-holder .cd-nav a:focus,
-.cd-site-header__nav-holder .cd-nav button:hover,
-.cd-site-header__nav-holder .cd-nav button:focus {
+.cd-nav a:hover,
+.cd-nav a:focus,
+.cd-nav button:hover,
+.cd-nav button:focus {
   color: var(--cd-black);
-  outline: none; /* default browser outline is replaced by background colour change. */
+  outline: none;
   background: var(--brand-grey);
 }
 
 /**
  * First level
  */
-.cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a,
-.cd-site-header__nav-holder .cd-nav > .menu > .menu-item > button {
+.cd-nav-level-1__btn,
+.cd-nav-level-1__btn-label {
   text-transform: uppercase;
   font-weight: 700;
 }
 
 @media (max-width: 1023px) {
-  .cd-site-header__nav-holder .cd-nav[data-cd-hidden=false] {
+  .cd-nav[data-cd-hidden=false] {
     position: absolute;
     top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px);
     right: 0;
@@ -182,13 +161,13 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
     background: var(--cd-white);
   }
 
-  .cd-site-header__nav-holder .cd-nav[data-cd-hidden=false] > ul {
+  .cd-nav[data-cd-hidden=false] > ul {
     display: block;
   }
 }
 
 @media (min-width: 1024px) {
-  .cd-site-header__nav-holder .cd-nav {
+  .cd-nav {
     --dropdown: false;
 
     position: relative;
@@ -210,25 +189,24 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
  * displays the nav regardless of that attribute value.
  */
 @media (min-width: 1024px) and (-ms-high-contrast: none) {
-  .cd-site-header__nav-holder .cd-nav[data-cd-hidden=true] {
+  .cd-nav[data-cd-hidden=true] {
     display: block;
   }
 }
 
-.cd-site-header__nav-holder .menu-item > a::before,
-.cd-site-header__nav-holder .menu-item > button::before {
+.cd-nav__btn::before {
   background: var(--brand-highlight);
 }
 
 /**
  * Second level
  */
-.cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+.cd-nav__menu--level-2 {
   background: var(--cd-white);
 }
 
 @media (min-width: 1024px) {
-  .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+  .cd-nav__menu--level-2 {
     position: absolute;
     z-index: var(--cd-z-dropdown);
     top: calc(var(--cd-site-header-height) + 6px); /* border-bottom height */
@@ -240,13 +218,13 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
   }
 }
 
-.cd-site-header__nav-holder .menu .menu a {
+.cd-nav__menu--level-2 .cd-nav__btn {
   display: flex;
   color: var(--cd-black);
   font-weight: 700;
 }
 
-.cd-site-header__nav-holder .menu .menu a:hover {
+.cd-nav__menu--level-2 .cd-nav__btn:hover {
   background: var(--brand-grey);
 }
 
@@ -254,13 +232,11 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
  * Active trail for mobile menu.
  */
 @media (max-width: 1023px) {
-  .cd-site-header__nav-holder .cd-nav > ul > li a,
-  .cd-site-header__nav-holder .cd-nav > ul > li button {
+  .cd-nav-level-1__btn {
     position: relative;
   }
 
-  .cd-site-header__nav-holder .cd-nav > ul > li a::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li button::before {
+  .cd-nav-level-1__btn::before {
     position: absolute;
     top: 0;
     left: 15px;
@@ -270,26 +246,18 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
     background: transparent;
   }
 
-  .cd-site-header__nav-holder .cd-nav > ul > li > a.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li > button.is-active::before {
+  .cd-nav-level-1__btn.is-active::before {
     background: var(--brand-highlight);
   }
 
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--collapsed > a.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--collapsed > button.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--expanded > a.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--expanded > button.is-active::before {
+  .menu-item--collapsed .cd-nav-level-1__btn.is-active::before,
+  .menu-item--expanded .cd-nav-level-1__btn.is-active::before {
     opacity: 0.2;
     background: var(--brand-highlight);
   }
 
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a,
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button {
-    position: relative;
-  }
-
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button::before {
+  .cd-nav .menu-item--active-trail a::before,
+  .cd-nav .menu-item--active-trail button::before {
     position: absolute;
     top: 0;
     left: 15px;
@@ -300,47 +268,54 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
     background: var(--brand-highlight);
   }
 
-  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a::before,
-  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button::before {
+  [dir="rtl"] .cd-nav .menu-item--active-trail a::before,
+  [dir="rtl"] .cd-nav .menu-item--active-trail button::before {
     right: 15px;
     left: auto;
   }
 
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail a.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li.menu-item--active-trail button.is-active::before {
+  /**
+   * Any child of the active trail.
+   */
+  .cd-nav .menu-item--active-trail a.is-active::before,
+  .cd-nav .menu-item--active-trail button.is-active::before {
     background: var(--brand-highlight);
   }
 
-  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail a::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail button::before {
+  /**
+   * Second-level links
+   */
+  .cd-nav > ul ul > li.menu-item--active-trail a::before,
+  .cd-nav > ul ul > li.menu-item--active-trail button::before {
     opacity: 0.6;
-    background: var(--brand-highlight);
-  }
-
-  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail a.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > ul > li > ul > li.menu-item--active-trail button.is-active::before {
-    background: var(--brand-highlight);
   }
 }
 
+/**
+ * Desktop
+ */
 @media (min-width: 1024px) {
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item:last-child > ul.menu {
+  .cd-nav > .menu {
+    flex: 1 0 auto;
+  }
+
+  .cd-nav > .menu > .menu-item:last-child > ul.menu {
     right: -1px;
     left: auto;
   }
 
-  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > .menu-item:last-child > ul.menu {
+  [dir="rtl"] .cd-nav > .menu > .menu-item:last-child > ul.menu {
     right: auto;
     left: -1px;
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item.menu-item--active-trail a::before,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item.menu-item--active-trail button::before {
+  .cd-nav > .menu > .menu-item.menu-item--active-trail a::before,
+  .cd-nav > .menu > .menu-item.menu-item--active-trail button::before {
     background: var(--brand-highlight);
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button {
+  .cd-nav > .menu > .menu-item > a,
+  .cd-nav > .menu > .menu-item button {
     position: relative;
     display: flex;
     align-items: center;
@@ -350,8 +325,8 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
     background: transparent;
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a::before,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button::before {
+  .cd-nav > .menu > .menu-item > a::before,
+  .cd-nav > .menu > .menu-item button::before {
     position: absolute;
     right: -1px;
     bottom: -6px;
@@ -363,58 +338,50 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
     background: transparent;
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a:hover,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button:hover {
+  .cd-nav > .menu > .menu-item > a:hover,
+  .cd-nav > .menu > .menu-item button:hover {
     background: var(--brand-grey);
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a:focus,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button:focus {
+  .cd-nav > .menu > .menu-item > a:focus,
+  .cd-nav > .menu > .menu-item button:focus {
     background: var(--cd-white);
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item > a:focus::before,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button.is-active::before,
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item button:focus::before {
+  .cd-nav > .menu > .menu-item > a.is-active::before,
+  .cd-nav > .menu > .menu-item > a:focus::before,
+  .cd-nav > .menu > .menu-item button.is-active::before,
+  .cd-nav > .menu > .menu-item button:focus::before {
     background: var(--brand-highlight);
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > .menu-item svg {
+  .cd-nav > .menu > .menu-item svg {
     flex: 1 0 auto;
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > li > ul a:hover,
-  .cd-site-header__nav-holder .cd-nav > .menu > li > ul button:hover {
+  .cd-nav > .menu > li > ul a:hover,
+  .cd-nav > .menu > li > ul button:hover {
     background: var(--brand-grey);
   }
 
-  .cd-site-header__nav-holder .cd-nav > .menu > li > ul a.menu-item--active-trail,
-  .cd-site-header__nav-holder .cd-nav > .menu > li > ul button.menu-item--active-trail {
-    border-left: 6px solid var(--brand-highlight);
+  .cd-nav > .menu > li > ul a.menu-item--active-trail,
+  .cd-nav > .menu > li > ul button.menu-item--active-trail {
+    border-inline-start: 6px solid var(--brand-highlight);
   }
 
-  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > li > ul a.menu-item--active-trail,
-  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > li > ul button.menu-item--active-trail {
-    border-right: 6px solid var(--brand-highlight);
-    border-left-width: 0;
-  }
-
-  .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
-    border-left: 6px solid var(--brand-highlight);
-  }
-
-  [dir="rtl"] .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
-    border-right: 6px solid var(--brand-highlight);
-    border-left-width: 0;
-  }
-
-  .cd-site-header__nav-holder .cd-nav > .menu {
-    flex: 1 0 auto;
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-inline-start: 6px solid var(--brand-highlight);
   }
 }
 
-.no-js .cd-site-header__nav-holder .cd-nav {
+/**
+ * No-JS
+ */
+.no-js .menu-item--expanded > [aria-expanded=false] + ul {
+  display: block;
+}
+
+.no-js .cd-nav {
   position: relative;
   top: auto;
   right: 0;
@@ -424,7 +391,11 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
   background: var(--cd-white);
 }
 
-.no-js .cd-site-header__nav-holder .cd-nav > .menu > li > .menu {
+.no-js .cd-nav__menu--level-1 {
+  display: block;
+}
+
+.no-js .cd-nav > .menu > li > .menu {
   position: relative;
   top: 0;
   min-width: unset;
@@ -434,7 +405,7 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
   box-shadow: unset;
 }
 
-.no-js .cd-site-header__nav-holder .cd-nav > .menu > li.menu-item--expanded button {
+.no-js .cd-nav > .menu > li.menu-item--expanded button {
   display: none;
 }
 
@@ -454,22 +425,22 @@ html[dir="rtl"] .cd-site-header__nav-holder .cd-nav button {
 /* Adjusts the active styles when javascript is disabled. */
 @media (min-width: 1024px) {
   /* Hide the active style from a parent item. */
-  .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item--expanded a::before,
-  .no-js .cd-site-header__nav-holder .cd-nav > .menu > .menu-item--expanded button::before {
+  .no-js .cd-nav > .menu > .menu-item--expanded a::before,
+  .no-js .cd-nav > .menu > .menu-item--expanded button::before {
     background: transparent;
   }
 
   /* Hide the default active style for second level items. */
-  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+  .no-js .cd-nav > .menu > li > ul > li.menu-item--active-trail {
     border-left: 6px solid transparent;
   }
 
   /* Use the same style as the first level menu items when active. */
-  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail a {
+  .no-js .cd-nav > .menu > li > ul > li.menu-item--active-trail a {
     position: relative;
   }
 
-  .no-js .cd-site-header__nav-holder .cd-nav > .menu > li > ul > li.menu-item--active-trail a::after {
+  .no-js .cd-nav > .menu > li > ul > li.menu-item--active-trail a::after {
     position: absolute;
     right: -1px;
     bottom: -6px;
