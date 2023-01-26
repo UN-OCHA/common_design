@@ -34,9 +34,6 @@ How does the proposed change impact existing implementations? What action is nee
 ## PR Checklist
 <!--- Put an `x` in all the boxes that apply. -->
 - [ ] I have followed the Conventional Commits guidelines.
-- [ ] I have run local tests and the tests pass.
-- [ ] I have linted my code locally.
-- [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
 - [ ] I have updated the documentation accordingly.
 - [ ] I have made changes to the sub theme to reflect those in the base theme
