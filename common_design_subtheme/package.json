@@ -6,8 +6,8 @@
   "author": "UN OCHA",
   "license": "GPL-2.0",
   "scripts": {
-    "css:lint": "stylelint 'components/**/*.css'",
-    "css:lint-fix": "stylelint 'components/**/*.css' --fix",
+    "css:lint": "stylelint '{css,components}/**/*.css'",
+    "css:lint-fix": "stylelint '{css,components}/**/*.css' --fix",
     "js:lint": "eslint js/*.js",
     "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
     "e2e": "jest _tests/*.test.js",
