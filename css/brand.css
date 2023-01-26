@@ -44,8 +44,8 @@
   /**
    * Breakpoints
    *
-   * Mostly to document the old Sass vars, these values are used directly in CSS
-   * when needed for a media query, because custom props don't work in MQs.
+   * Mostly to document the old Sass vars, these values aren't used directly in
+   * CSS when needed for a media query, because custom props don't work in MQs.
    */
   --cd-bp--sm: 576px;
   --cd-bp--md: 768px;
