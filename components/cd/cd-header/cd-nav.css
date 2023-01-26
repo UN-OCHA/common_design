@@ -113,12 +113,12 @@ ul[data-cd-hidden=true] > ul {
 
 .cd-nav a,
 .cd-nav button {
+  position: relative;
   display: flex;
   padding: 15px 30px;
   text-align: left;
   text-decoration: none;
   color: var(--cd-default-text-color);
-  position: relative;
 }
 
 .cd-nav button {
