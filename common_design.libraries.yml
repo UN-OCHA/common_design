@@ -50,7 +50,7 @@ cd-dropdown:
     component:
       components/cd-dropdown/cd-dropdown.css: {}
   js:
-    js/cd-dropdown.js: {}
+    components/cd-dropdown/cd-dropdown.js: {}
   dependencies:
     - common_design/cd-polyfill
 
