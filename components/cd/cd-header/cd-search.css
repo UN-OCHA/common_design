@@ -26,7 +26,6 @@
   flex: none;
 }
 
-
 /**
  * @TODO: this is a manual @extend of the .visually-hidden class and should be
  * be dealt with somehow by our template override. During the migration away
@@ -96,10 +95,10 @@
   width: 0;
   height: 0;
   content: "";
+  transform: translateX(-6px);
   border-width: 0 6px 6px;
   border-style: solid;
   border-color: transparent transparent var(--brand-grey);
-  transform: translateX(-6px);
 }
 
 .cd-search__btn[aria-expanded=true] svg {
