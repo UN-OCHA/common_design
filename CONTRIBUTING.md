@@ -160,3 +160,17 @@ For each issue addressed, a short description of the bug or enhancement, and/or 
 ### Steps to Upgrade
 Detailed, step-by-step instructions for anything that users or administrators need to do in order to implement or upgrade to this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
 ```
+
+## Updating stylelint config
+
+| Audience    |
+| :---------- |
+| Maintainers |
+
+Every once in a while we should refresh our stylelint config to match the current version of Drupal core. Grab the file from Drupal's git repo and replace the contents of `.stylelintrc.core.json` in **both base/sub-themes**. Note the core version (or branch name) by adding one line to the top of the JSON file:
+
+```js
+{
+  "drupal-core": "10.1.x",
+  // ... rest of core stylelintrc ...
+```

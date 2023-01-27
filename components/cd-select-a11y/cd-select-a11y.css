@@ -1,3 +1,4 @@
+/* stylelint-disable color-hex-length */
 @charset "UTF-8";
 /**
  * CD implementation of Select a11y
@@ -131,7 +132,8 @@ select {
   text-align: left;
   color: #4c4c4c;
 }
-.select-a11y .a11y-suggestion:focus, .select-a11y .a11y-suggestion:hover {
+.select-a11y .a11y-suggestion:focus,
+.select-a11y .a11y-suggestion:hover {
   color: var(--cd-select-a11y-gray-1);
   background-color: var(--cd-select-a11y-gray-5);
 }
