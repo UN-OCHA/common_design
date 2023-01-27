@@ -30,12 +30,12 @@ The `stylelintrc.json` config file extends Drupal core stylelint config. Run `ya
 
 ## Accessibility of contributions
 
-We strive to adhere to [INSERT SPEC HERE][a11y-standards] and will work to achieve that level of adherence when accepting any contribution to the theme.
+We strive to adhere to [Web Content Accessibility Guidelines (WCAG) 2.1][a11y-standards] and will work to achieve that level of adherence when accepting any contribution to the theme.
 
-For example, Drupal provides utility classes to [hide content accessibly][a11y-help]. Any solution that doesn't follow the guidelines would have to be adjusted.
+For example, Drupal provides utility classes to [hide content accessibly][a11y-hide]. Any solution that doesn't use our existing tools, or in general doesn't attempt to follow the guidelines has to be adjusted before the contribution can be accepted.
 
-  [a11y-standards]: https://example.com/#TBD
-  [a11y-help]: https://www.drupal.org/docs/accessibility/hide-content-properly
+  [a11y-standards]: https://www.w3.org/TR/WCAG21/
+  [a11y-hide]: https://www.drupal.org/docs/accessibility/hide-content-properly
 
 
 # Creating a PR
