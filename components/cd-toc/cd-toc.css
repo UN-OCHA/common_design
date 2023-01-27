@@ -2,11 +2,14 @@
  * CD Table of Contents (ToC)
  */
 
+:root {
+  --cd-toc-cols: 1;
+}
+
 .cd-toc {
   position: relative;
   z-index: 1;
-  display: inline-block;
-  min-width: 16rem;
+  width: 100%;
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: var(--brand-grey);
@@ -16,6 +19,7 @@
 .cd-toc__list ol {
   margin-bottom: 0;
   padding: 0;
+  columns: var(--cd-toc-cols, 1);
 }
 
 .cd-toc ol {
@@ -57,30 +61,19 @@
 }
 
 @media (min-width: 576px) {
-  div[class*="cd-toc--float"] {
-    display: block;
-    max-width: 16rem;
-  }
-
-  .cd-toc--float-left {
-    margin: 0 1rem 1rem 0;
-  }
-
-  .cd-toc--float-right {
-    margin: 0 0 1rem 1rem;
-  }
-
-  [dir="rtl"] .cd-toc--float-left {
-    margin: 0 0 1rem 1rem;
-  }
-
-  [dir="rtl"] .cd-toc--float-right {
-    margin: 0 1rem 1rem 0;
+  .cd-toc__list {
+    --cd-toc-cols: 2;
   }
 }
 
-@media (min-width: 1024px) {
-  div[class*="cd-toc--float"] {
-    max-width: 24rem;
+@media (min-width: 820px) {
+  .cd-toc__list {
+    --cd-toc-cols: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cd-toc__list {
+    --cd-toc-cols: 4;
   }
 }
