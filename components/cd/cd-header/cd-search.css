@@ -6,6 +6,28 @@
 }
 
 /**
+ * Search form layout.
+ *
+ * The text input takes up all space aside from what the button needs, while the
+ * button always remains at its intrinsic size.
+ */
+.cd-search__form .form--inline {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: stretch;
+  gap: 0;
+}
+
+.cd-search__form .form-type-textfield {
+  flex: 1 0 auto;
+}
+
+.cd-search__form .form-actions {
+  flex: none;
+}
+
+
+/**
  * @TODO: this is a manual @extend of the .visually-hidden class and should be
  * be dealt with somehow by our template override. During the migration away
  * from Sass there was no easy way to re-apply an @extend, and the template
@@ -126,11 +148,12 @@
 
 .cd-search__input[type=search],
 .cd-search__input[type=text] {
-  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   height: calc(var(--cd-site-header-height) - 16px); /* padding */
-  padding: 0 45px 0 25px;
+  padding: 0;
+  padding-inline-start: 25px;
+  padding-inline-end: 45px;
   color: var(--cd-default-text-color);
   border: 0;
   border-radius: 0;
@@ -138,11 +161,6 @@
   box-shadow: none;
   font-size: var(--cd-font-size--base);
   -webkit-appearance: none;
-}
-
-[dir=rtl] .cd-search__input[type=search],
-[dir=rtl] .cd-search__input[type=text] {
-  padding: 0 25px 0 45px;
 }
 
 .cd-search__input[type=search]:focus,
@@ -182,8 +200,6 @@
 }
 
 .cd-search__submit {
-  position: absolute;
-  top: 8px;
   display: flex;
   align-items: center;
   width: 46px;
@@ -196,14 +212,6 @@
   background: var(--cd-grey--dark);
   font-size: var(--cd-font-size--base);
   font-weight: 700;
-}
-
-[dir=ltr] .cd-search__submit {
-  right: var(--cd-container-padding);
-}
-
-[dir=rtl] .cd-search__submit {
-  left: var(--cd-container-padding);
 }
 
 .cd-search__submit svg {
@@ -227,19 +235,8 @@
   }
 
   .cd-search__input {
-    padding: 0 44px 0 30px;
-  }
-
-  [dir=rtl] .cd-search__input {
-    padding: 0 30px 0 44px;
-  }
-
-  [dir=ltr] .cd-search__submit {
-    right: var(--cd-container-padding-tablet);
-  }
-
-  [dir=rtl] .cd-search__submit {
-    left: var(--cd-container-padding-tablet);
+    padding-inline-start: 30px;
+    padding-inline-end: 44px;
   }
 }
 
@@ -247,28 +244,13 @@
   .cd-search__btn svg {
     width: 22px;
     height: 22px;
-  }
-
-  [dir=ltr] .cd-search__btn svg {
-    padding-right: 4px;
-  }
-
-  [dir=rtl] .cd-search__btn svg {
-    padding-left: 4px;
+    padding-inline-end: 4px;
   }
 }
 
 @media (min-width: 1200px) {
   .cd-search__form form {
     padding: 8px var(--cd-container-padding-xlarge);
-  }
-
-  [dir=ltr] .cd-search__submit {
-    right: var(--cd-container-padding-xlarge);
-  }
-
-  [dir=rtl] .cd-search__submit {
-    left: var(--cd-container-padding-xlarge);
   }
 }
 
