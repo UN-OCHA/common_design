@@ -63,25 +63,21 @@
   color: var(--brand-highlight);
 }
 
+/**
+ * When form is visible, display an upwards-pointing chevron ^ to visually tie
+ * the form to the Search button.
+ */
 .cd-search__btn[aria-expanded=true]::before {
   position: absolute;
   bottom: 0;
+  left: 50%;
   width: 0;
   height: 0;
   content: "";
   border-width: 0 6px 6px;
   border-style: solid;
   border-color: transparent transparent var(--brand-grey);
-}
-
-[dir=ltr] .cd-search__btn[aria-expanded=true]::before {
-  left: 50%;
-  margin-left: -6px;
-}
-
-[dir=rtl] .cd-search__btn[aria-expanded=true]::before {
-  right: 50%;
-  margin-right: -6px;
+  transform: translateX(-6px);
 }
 
 .cd-search__btn[aria-expanded=true] svg {
