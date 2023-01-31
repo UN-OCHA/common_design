@@ -19,11 +19,6 @@
     "node": "^16.19.0",
     "npm": "^8.19.3"
   },
-  "dependencies": {
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-order": "^6.0.1"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
     "@xmldom/xmldom": "^0.8.4",
@@ -40,6 +35,9 @@
     "puppeteer": "^9.1.1",
     "set-value": ">=4.0.1",
     "standard-version": "^9.3.2",
+    "stylelint": "^14.16.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^6.0.1",
     "svg-sprite": "^2.0.2",
     "trim": ">=0.0.3",
     "trim-newlines": "^4.0.2",
