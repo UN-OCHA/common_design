@@ -12,39 +12,31 @@ There are various audiences marked in this document. Mind the table at the top o
 | :----------------- |
 | Contributors to CD |
 
-## Contributing CSS or Sass
+## Contributing CSS
 
-This project uses [Sass][sass]. To make changes edit the `.scss` files in the `sass/` folder. Do not edit the files in the `css` directory. Here is how to set your environment up to edit Sass:
+All CSS is now managed by Drupal Library components. The best documentation to follow are the [official CSS guidelines on drupal.org][drupal-css]
 
-1. Run `nvm use` in theme folder to ensure the correct node version.
-2. Install the dependencies: `npm install`
-3. Run the command that best suits your purpose:
-
-- `npm run sass:build` — compile production-ready CSS.
-- `npm run sass:watch` — watch for changes and automatically rebuild the CSS during local development.
-- `npm run sass:lint` — linting report only.
-- `npm run sass:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely handle.
-
-Follow [Drupal CSS coding standards and best practices][css-standards].
+- `npm run css:lint` — linting report only.
+- `npm run css:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely adjust.
 
 For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
 
 The `stylelintrc.json` config file extends Drupal core stylelint config. Run `yarn install` in your site's `html/core` directory to install the stylelint plugins if there are errors indicating missing packages.
 
-  [sass]: http://sass-lang.com/
   [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
-  [css-standards]: https://www.drupal.org/docs/develop/standards/css
+  [drupal-css]: https://www.drupal.org/docs/develop/standards/css
   [drupal-caching]: https://www.drupal.org/node/2598914
 
 
 ## Accessibility of contributions
 
-We strive to adhere to [INSERT SPEC HERE][a11y-standards] and will work to achieve that level of adherence when accepting any contribution to the theme.
+We strive to adhere to [Web Content Accessibility Guidelines (WCAG) 2.1, Level AA][a11y-standards] and will work to achieve that level of adherence when accepting any contribution to the theme. These guidelines are sourced from the [Official UN Web Accessibility Guidelines][a11y-un]
 
-For example, Drupal provides utility classes to [hide content accessibly][a11y-help]. Any solution that doesn't follow the guidelines would have to be adjusted.
+For example, Drupal provides utility classes to [hide content accessibly][a11y-hide]. Any solution that doesn't use our existing tools, or in general doesn't attempt to follow the guidelines has to be adjusted before the contribution can be accepted.
 
-  [a11y-standards]: https://example.com/#TBD
-  [a11y-help]: https://www.drupal.org/docs/accessibility/hide-content-properly
+  [a11y-standards]: https://www.w3.org/TR/WCAG21/
+  [a11y-un]: https://www.un.org/en/webaccessibility/index.shtml
+  [a11y-hide]: https://www.drupal.org/docs/accessibility/hide-content-properly
 
 
 # Creating a PR
@@ -168,4 +160,18 @@ For each issue addressed, a short description of the bug or enhancement, and/or 
 
 ### Steps to Upgrade
 Detailed, step-by-step instructions for anything that users or administrators need to do in order to implement or upgrade to this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
+```
+
+## Updating stylelint config
+
+| Audience    |
+| :---------- |
+| Maintainers |
+
+Every once in a while we should refresh our stylelint config to match the current version of Drupal core. Grab the file from Drupal's git repo and replace the contents of `.stylelintrc.core.json` in **both base/sub-themes**. Note the core version (or branch name) by adding one line to the top of the JSON file:
+
+```js
+{
+  "drupal-core": "10.1.x",
+  // ... rest of core stylelintrc ...
 ```

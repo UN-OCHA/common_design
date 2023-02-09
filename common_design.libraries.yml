@@ -1,3 +1,13 @@
+###
+# Global Styling is enabled by default.
+#
+global-styling:
+  css:
+    base:
+      css/brand.css: {}
+  dependencies:
+    - common_design/cd-core
+
 # Roboto Condensed and Slab.
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
 fonts-advanced:
@@ -29,15 +39,18 @@ fonts-russian:
     theme:
       css/fonts-russian.css: {}
 
-global-styling:
-  css:
-    theme:
-      css/brand.css: {}
-      css/styles.css: {}
-
+###
+# CD Components: Core
+#
+# These components drive the function of the CD Header/Footer and are required
+# for CD to function as intended.
+#
 cd-dropdown:
+  css:
+    component:
+      components/cd-dropdown/cd-dropdown.css: {}
   js:
-    js/cd-dropdown.js: {}
+    components/cd-dropdown/cd-dropdown.js: {}
   dependencies:
     - common_design/cd-polyfill
 
@@ -57,7 +70,98 @@ cd-ocha-services:
   js:
     js/cd-ocha-services.js: {}
 
-# CD components
+cd-resets:
+  css:
+    base:
+      components/cd/cd-resets/cd-resets.css: {}
+      components/cd/cd-resets/cd-typography.css: {}
+
+cd-header:
+  css:
+    component:
+      components/cd/cd-header/cd-header.css: {}
+      components/cd/cd-header/cd-global-header.css: {}
+      components/cd/cd-header/cd-ocha.css: {}
+      components/cd/cd-header/cd-language-switcher.css: {}
+      components/cd/cd-header/cd-user-menu.css: {}
+      components/cd/cd-header/cd-site-header.css: {}
+      components/cd/cd-header/cd-logo.css: {}
+      components/cd/cd-header/cd-nav.css: {}
+      components/cd/cd-header/cd-search.css: {}
+      components/cd/cd-header/cd-search--inline.css: {}
+  dependencies:
+    - common_design/cd-user-menu
+
+cd-footer:
+  css:
+    component:
+      components/cd/cd-footer/cd-footer.css: {}
+      components/cd/cd-footer/cd-footer-copyright.css: {}
+      components/cd/cd-footer/cd-footer-menu.css: {}
+      components/cd/cd-footer/cd-footer-mandate.css: {}
+      components/cd/cd-footer/cd-footer-social.css: {}
+      components/cd/cd-footer/cd-footer-soft.css: {}
+
+cd-other:
+  css:
+    base:
+      components/cd/cd-other/cd-icon.css: {}
+    layout:
+      components/cd/cd-other/cd-layout.css: {}
+    component:
+      components/cd/cd-other/cd-skip-link.css: {}
+    theme:
+      components/cd/cd-other/cd-print.css: {}
+
+cd-core:
+  dependencies:
+    - common_design/cd-resets
+    - common_design/cd-header
+    - common_design/cd-footer
+    - common_design/cd-other
+
+###
+# CD Compatibility
+#
+# These are providing legacy browsers with modern features. They allow the CD to
+# function on old browsers.
+#
+
+# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
+cd-object-fit:
+  header: true
+  js:
+    js/cd-object-fit.js: { attributes: { nomodule: true } }
+  dependencies:
+    - core/drupal
+    - core/modernizr
+
+# The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
+cd-polyfill:
+  js:
+    js/cd-polyfill.js: { attributes: { nomodule: true } }
+
+# CSS custom properties polyfill for IE11.
+# https://jhildenbiddle.github.io/css-vars-ponyfill
+css-vars-ponyfill:
+  js:
+    js/vendor/css-vars-ponyfill.js: { attributes: { nomodule: true } }
+    js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
+
+# Array.from polyfill for IE11.
+# https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
+array-from-polyfill:
+  js:
+    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
+
+
+###
+# CD Components: Design System
+#
+# These are meant to be included conditionally, i.e. only on pages where they're
+# actually being used. They are self contained and most often correspond to a
+# template in this theme's `templates` directory.
+#
 cd-alert:
   css:
     component:
@@ -169,7 +273,7 @@ cd-filter:
 
 cd-flow:
   css:
-    component:
+    base:
       components/cd-flow/cd-flow.css: {}
 
 cd-form:
@@ -340,31 +444,3 @@ cd-utilities:
       components/cd-utilities/cd-utilities.css: {}
   dependencies:
     - common_design/css-vars-ponyfill
-
-# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
-cd-object-fit:
-  header: true
-  js:
-    js/cd-object-fit.js: { attributes: { nomodule: true } }
-  dependencies:
-    - core/drupal
-    - core/modernizr
-
-# The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
-cd-polyfill:
-  js:
-    js/cd-polyfill.js: { attributes: { nomodule: true } }
-
-# CSS custom properties polyfill for IE11.
-# https://jhildenbiddle.github.io/css-vars-ponyfill
-css-vars-ponyfill:
-  js:
-    js/vendor/css-vars-ponyfill.js: { attributes: { nomodule: true } }
-    js/cd-css-vars-ponyfill.js: { attributes: { nomodule: true } }
-
-# Array.from polyfill for IE11.
-# https://stackoverflow.com/questions/55596968/ie-throws-expected-colon-error-works-in-chrome-object-array-with-object-litera
-array-from-polyfill:
-  js:
-    js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
-

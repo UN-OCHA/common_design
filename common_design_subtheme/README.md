@@ -35,7 +35,7 @@ Replace the favicon in the theme's root, and the homescreen icons in `img/` with
 
 ### Customise colours
 
-Change the CSS Vars in `css/brand.css` and save the file. Sass is no longer needed in CD v7.
+Change the CSS Vars in `css/brand.css` and save the file. Sass is no longer available in CD v8.
 
 
 ### Customise icons

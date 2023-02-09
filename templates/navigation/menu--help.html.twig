@@ -32,6 +32,7 @@
     {%
       set menu_classes = [
         'menu',
+        menu_level == 0 ? 'cd-user-menu',
         menu_level > 0 ? 'cd-global-header__dropdown',
         menu_level > 0 ? 'cd-user-menu__dropdown'
       ]

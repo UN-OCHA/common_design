@@ -8,8 +8,6 @@ This theme provides a starting point for OCHA's Drupal websites. By installing t
 
 It provides the following theming tools that you should leverage in order to maintain the high standards for accessibility that our organization strives to meet:
 
-* Sass variables for breakpoints, colours, font sizes, fonts, and z-index
-* Sass mixins for clearfix and media queries
 * JavaScript dropdowns which do not require jQuery or any framework.
 * Common Design frontend components
 
@@ -18,7 +16,7 @@ It provides the following theming tools that you should leverage in order to mai
 ## Drupal utilities
 
 * normalize-css library is included in [Drupal core][normalize] and we depend on it.
-* jQuery is [included in Drupal core][core] but the Common Design does not depend on it. It gets loaded only once it is needed.
+* jQuery is [available in Drupal core][core], but the Common Design does not depend on it. It gets loaded only once it is needed.
 * [hidden.module.css][hidden] is included in Drupal core to provide utility classes that hide content in an accessible manner.
 
   [normalize]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/assets/vendor/normalize-css/normalize.css
@@ -49,7 +47,7 @@ It provides the following theming tools that you should leverage in order to mai
 
 ## CSS
 
-The base-theme still uses Sass, but we no longer require that you use it. Instead, the recommended approach is to use [Drupal Libraries][drupal-libraries] to create components made of CSS/JS files, and attach them to the appropriate Twig template so that they only appear on pages where needed.
+For managing CSS, the recommended approach is to use [Drupal Libraries][drupal-libraries] to create components made of vanilla CSS/JS files, and attach them to the appropriate Twig template so that they only appear on pages where needed.
 
   [drupal-libraries]: https://www.drupal.org/docs/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml
 
@@ -121,7 +119,14 @@ This projects defines a few CSS Vars for font-families that use Google Fonts. Th
 
 Here are the technical details relating to the theme itself:
 
-- **Roboto** is included by default as a sass partial in `sass/base/_fonts.scss` and imported in `styles.scss`. This means Roboto font is compiled as part of `styles.css`
+- **Roboto** is included by default in the HTML response. If you implement the CD outside Drupal, the following HTML should be directly copied into the global page template:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300%3B0,400%3B0,500%3B0,700%3B0,900%3B1,400%3B1,700&amp;display=swap" />
+```
+
 - Additional fonts for advanced typography and other languages which don't use Latin character sets are available as Drupal Libraries. The list is defined in `common_design.libraries.yml`. For performance reasons, we do not include these by default. If your website must support character sets that are not included in the base-theme, refer to the sub-theme's Libraries file `common_design_subtheme.libraries.yml` to see a commented-out example helping you create your own Drupal Library.
 
 
@@ -149,19 +154,24 @@ Second, you can also enable them in the Drupal Admin UI under the sub-theme them
 
 ## Task management
 
-This project uses some Node packages for Sass compilation, watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][pkg-scripts]. To get a list of commands, do `npm run` and it will output all possible options.
+This project uses node.js for some development tasks: watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][pkg-scripts] for full config. To get a list of commands, do `npm run` and it will output all possible options.
 
-  [pkg-scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L8-L21
+  [pkg-scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L8-L17
 
 ## Icons
 
-The available icons can be found in `img/icons`
+The available icons can be found in `img/icons`.
 
-There are two techniques used, SVG symbol sprite with the `<use>` element, and SVG as a background-image, depending on context. The sprite technique is preferred. We only use svg as a background image when using the sprite isn't possible.
+There are two techniques used, depending on context:
+
+1. SVG sprite with the `<use>` element
+2. SVG as a background-image
+
+The sprite technique is preferred. We only use svg as a background image as a last resort when using the sprite isn't possible. Using a background image prevents use of many nice SVG features, such as recoloring dynamically.
 
 ### 1. SVG sprite
 
-SVG symbol sprite with the `<use>` element. The SVG sprite is loaded as a single asset in the `html.html.twig` before the closing body tag. Each icon within the sprite can be referenced by its ID eg.
+SVG symbol sprite with the `<use>` element. The sprite is loaded as a single inlined asset in the `html.html.twig` before the closing body tag. Each icon within the sprite can be referenced by its ID. For example:
 
 ```html
 <svg class="cd-icon cd-icon--arrow-down" width="16" height="16" aria-hidden="true" focusable="false">
@@ -169,7 +179,7 @@ SVG symbol sprite with the `<use>` element. The SVG sprite is loaded as a single
 </svg>
 ```
 
-Each icon should have the class `cd-icon` and a BEM selector if needed e.g. `cd-icon--arrow-down`. We can create associated CSS rules to control dimension and fill.
+Each icon should have the class `cd-icon` and a BEM selector in the format `cd-icon--SYMBOL-ID`. Now it's possible to write CSS that controls dimensions, fill color, and so forth.
 
 Each icon should have reasonable width and height attribute values. These control the SVG display when the CSS is slow or does not load. If the icon is decorative, add `aria-hidden="true" focusable="false"` to remove the element from the accessibility tree.
 
@@ -180,7 +190,7 @@ We're using the [SVG sprite][svg-sprite] node package. [Read here for more detai
 
 ### 2. SVG background-image
 
-SVG as a background-image value, usually on a pseudo element. The SVG fill colour is added as an attribute in the SVG file. The icons are black by default. If you need another color, it's best to copy the icon and manually adjust the fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
+SVG as a background-image value, usually on a pseudo element via CSS. The SVG fill colour is added as an attribute in the SVG file. The icons are black by default. If you need another color, it's best to copy the file and manually adjust the fill/stroke to suit your needs. Rename the copy to include the color in the filename eg. `arrow-down--white.svg`.
 
 ### Generating the icons sprite
 
@@ -215,7 +225,7 @@ We use [browserstack][browserstack] for browser and device testing. During devel
 
 There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the base and sub theme. There is a [repo for Visual Regression testing][ocha-vrt] using [backstopjs][backstopjs] and a Jenkins Job to run VRT on the server. Depending on the JSON configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
 
-Depending on the project, we run tests via [Travis CI][travis-ci]. For the [common-design-site repo][cds-travis] we run PHP lint and Drupal coding standards checks, and compile the theme's sass files. These are common among most projects. Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then run the e2e tests.
+Depending on the project, we run tests via [Travis CI][travis-ci]. For the [common-design-site repo][cds-travis] we run PHP lint and Drupal coding standards checks. These are common among most projects. Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then run the e2e tests.
 
 There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526][ops-7526]
 
@@ -270,4 +280,4 @@ There is a `site.webmanifest` file available in the sub theme as an alternative 
 
 Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user interface, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in the `translations` directory and the [README][translations].
 
-  [translations]: https://github.com/UN-OCHA/common_design/translations/README.md
+  [translations]: https://github.com/UN-OCHA/common_design/blob/main/translations/README.md

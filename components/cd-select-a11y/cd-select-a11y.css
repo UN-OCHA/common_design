@@ -1,9 +1,24 @@
+/* stylelint-disable color-hex-length */
 @charset "UTF-8";
 /**
  * CD implementation of Select a11y
  *
  * @see http://pidila.gitlab.io/select-a11y/
  */
+
+/**
+ * This CSS was originally output from Sass, but CD no longer uses Sass. The
+ * vars were converted to CSS Custom Properties, the unused values were dropped,
+ * and then the variables were re-numbered from 9 total to 1-5:
+ */
+:root {
+  --cd-select-a11y-gray-1: #0d0d0d;
+  --cd-select-a11y-gray-2: #737373;
+  --cd-select-a11y-gray-3: #999999;
+  --cd-select-a11y-gray-4: #e5e5e5;
+  --cd-select-a11y-gray-5: #f2f2f2;
+}
+
 button,
 input,
 label,
@@ -27,14 +42,14 @@ select {
 
 .select-a11y {
   position: relative;
-  background-color: #f2f2f2;
+  background-color: var(--cd-select-a11y-gray-5);
 }
 .select-a11y .btn-select-a11y {
   position: relative;
   width: 100%;
   padding: 9px 0.5rem;
   text-align: left;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--cd-select-a11y-gray-4);
   background-color: var(--cd-white);
 }
 .select-a11y .btn-select-a11y .icon-select {
@@ -46,7 +61,7 @@ select {
 }
 .select-a11y .btn-select-a11y .icon-select::before {
   content: "▼";
-  color: #737373;
+  color: var(--cd-select-a11y-gray-2);
 }
 .select-a11y .btn-select-a11y[aria-expanded=true] {
   border-bottom-right-radius: 0;
@@ -57,7 +72,7 @@ select {
 }
 .select-a11y .tag-item {
   padding: 0.2em 0.1em 0.2em 0.5em;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--cd-select-a11y-gray-4);
   background: var(--cd-white);
 }
 .select-a11y .tag-item-supp {
@@ -90,8 +105,8 @@ select {
   right: 0;
   left: 0;
   padding: 0.5em;
-  border: 1px solid #e5e5e5;
-  background: #e5e5e5;
+  border: 1px solid var(--cd-select-a11y-gray-4);
+  background: var(--cd-select-a11y-gray-4);
 }
 .select-a11y .a11y-container input {
   width: 100%;
@@ -108,7 +123,7 @@ select {
   overflow-y: auto;
   max-height: 10em;
   margin-top: 0.5em;
-  border: 1px solid #999999;
+  border: 1px solid var(--cd-select-a11y-gray-3);
   background-color: #fff;
 }
 .select-a11y .a11y-suggestion {
@@ -117,18 +132,19 @@ select {
   text-align: left;
   color: #4c4c4c;
 }
-.select-a11y .a11y-suggestion:focus, .select-a11y .a11y-suggestion:hover {
-  color: #0d0d0d;
-  background-color: #f2f2f2;
+.select-a11y .a11y-suggestion:focus,
+.select-a11y .a11y-suggestion:hover {
+  color: var(--cd-select-a11y-gray-1);
+  background-color: var(--cd-select-a11y-gray-5);
 }
 .select-a11y .a11y-suggestion:focus {
-  outline: 1px dotted #0d0d0d !important;
+  outline: 1px dotted var(--cd-select-a11y-gray-1) !important;
   outline-offset: -1px;
 }
 .select-a11y .a11y-suggestion[aria-selected=true] {
   position: relative;
-  color: #0d0d0d;
-  background-color: #e5e5e5;
+  color: var(--cd-select-a11y-gray-1);
+  background-color: var(--cd-select-a11y-gray-4);
 }
 .select-a11y .a11y-suggestion[aria-selected=true]::before {
   position: absolute;
@@ -147,7 +163,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  background: #f2f2f2;
+  background: var(--cd-select-a11y-gray-5);
 }
 .select-a11y .list-selected {
   margin: 0;
@@ -174,5 +190,3 @@ select {
   outline: 3px solid var(--cd-blue--bright);
   outline-offset: -3px;
 }
-
-/*# sourceMappingURL=cd-select-a11y.css.map */
