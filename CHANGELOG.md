@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+## [8.0.0](https://github.com/UN-OCHA/common_design/compare/v7.4.1...v8.0.0) (2023-02-16)
+
+### ⚠ BREAKING CHANGES
+
+* **sass:** Remove Sass from base/sub-themes ([27ada38](https://github.com/UN-OCHA/common_design/commit/27ada380a707e9007441e3a30d6460dda0b74c68))
+* **fonts:** removed system-ui font-family declarations and CSS Var `--cd-font--system` ([6837729](https://github.com/UN-OCHA/common_design/commit/68377295d8fb1ee08e0fe8a46d3ffc5726a73f1e))
+* **drupal:** Drupal 9.5 is new minimum supported version. Drupal 8 no longer supported. ([10b520e](https://github.com/UN-OCHA/common_design/commit/10b520eb34b1d3367fd2afc36ce9a7b7750518ee))
+* **ie:** remove IE10-specific fixes ([3bdf787](https://github.com/UN-OCHA/common_design/commit/3bdf7877a34ed429ccd49df5a1358bac837ab40f))
+* **security:** upgrade to node.js LTS 16.19.0 / npm 8.19.3 ([97cf22c](https://github.com/UN-OCHA/common_design/commit/97cf22c3e43b9566eebee64ef57a1b7eac31f8d8))
+
+### Bug Fixes
+
+* dir-agnostic positioning of Search button chevron ([6356a46](https://github.com/UN-OCHA/common_design/commit/6356a462616d363853f89e7af6a39dd82ecb059a))
+* implement Google Fonts Roboto in HTML ([64c7078](https://github.com/UN-OCHA/common_design/commit/64c7078474a6a31fd82bdd290fbb368e89cc2dc1))
+* layout bug in mandate ([bf12306](https://github.com/UN-OCHA/common_design/commit/bf1230696250ff1af92226d40ecdabf1756411ac))
+* remove float variant from ToC and increase columns ([2525297](https://github.com/UN-OCHA/common_design/commit/2525297b99cc2d171f9eda58836c62579da5b15b))
+* reset for lists we know will be styles ([d52c8c2](https://github.com/UN-OCHA/common_design/commit/d52c8c27704d7b00f334c908344023f595c2e720))
+* **tests:** remove sass-specific stylelint config from sub-theme ([a320c2b](https://github.com/UN-OCHA/common_design/commit/a320c2bcc424b539eac3cdcd5d1016c916d9886b))
+* simplify the component styling the Main Nav ([4be4d65](https://github.com/UN-OCHA/common_design/commit/4be4d659675f081d47c3416005a424157acfb8ca))
+* use flexbox for Search form layout ([749fe8a](https://github.com/UN-OCHA/common_design/commit/749fe8ab9a555599adfaaa748878240532728bf9))
+
+
 ## [7.4.1](https://github.com/UN-OCHA/common_design/compare/v7.4.0...v7.4.1) (2023-01-10)
 
 ### Bug Fixes
