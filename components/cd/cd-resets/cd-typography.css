@@ -143,8 +143,8 @@ img {
 
 .cd-content--spacious dl dt,
 .cd-content--spacious dl dd,
-.cd-content--spacious ol li + li,
-.cd-content--spacious ul li + li {
+.cd-content--spacious ol:not([role=list]) li + li,
+.cd-content--spacious ul:not([role=list], .tabs) li + li {
   margin-top: calc(var(--cd-font-size--ref) / 2);
 }
 
