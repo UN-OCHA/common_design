@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.1](https://github.com/UN-OCHA/common_design/compare/v8.0.0...v8.0.1) (2023-03-22)
+
+### Bug Fixes
+
+* **cd-tabs:** exclude tabs and styled lists from typography defaults ([61cb937](https://github.com/UN-OCHA/common_design/commit/61cb937fcae1d129056ed87958e3c355414857e8))
+* **cd-typography:** revert the disruptive display:block on img tags ([04d768d](https://github.com/UN-OCHA/common_design/commit/04d768dd8bd87e3d257d6ae5da00a5a7a459ba72))
+
 
 ## [8.0.0](https://github.com/UN-OCHA/common_design/compare/v7.4.1...v8.0.0) (2023-02-16)
 
