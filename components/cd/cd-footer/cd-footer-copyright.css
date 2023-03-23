@@ -4,7 +4,8 @@
 .cd-footer-copyright {
   display: flex;
   align-items: center;
-  max-width: 350px;
+  gap: 20px;
+  max-width: 390px;
   margin: 0 auto;
 }
 
@@ -21,6 +22,10 @@
   [dir=rtl] .cd-footer-copyright {
     text-align: left;
   }
+}
+
+.cd-footer-copyright__link {
+  line-height: 0; /* ensures flex centers it correctly */
 }
 
 .cd-footer-copyright svg {
