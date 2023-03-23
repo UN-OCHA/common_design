@@ -109,16 +109,12 @@
 @media (min-width: 1024px) {
   .cd-footer__section--menu {
     flex: 1 0 70%;
-    text-align: left;
-  }
-
-  [dir=rtl] .cd-footer__section--menu {
-    text-align: right;
+    text-align: start;
   }
 
   .cd-footer__section--social {
     flex: 0 1 30%;
-    text-align: right;
+    text-align: end;
   }
 
   .cd-footer__section--mandate {

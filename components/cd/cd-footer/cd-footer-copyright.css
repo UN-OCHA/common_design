@@ -16,11 +16,7 @@
     justify-content: flex-end;
     margin: 0;
     margin-top: 34px; /* Align with provide-by main text. */
-    text-align: right;
-  }
-
-  [dir=rtl] .cd-footer-copyright {
-    text-align: left;
+    text-align: end;
   }
 }
 
