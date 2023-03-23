@@ -61,13 +61,6 @@
   text-decoration: underline;
 }
 
-.cd-user-menu__item:focus,
-.cd-user-menu li a:focus,
-.cd-user-menu li button:focus {
-  outline: 3px solid var(--brand-primary--light);
-  outline-offset: -2px;
-}
-
 .cd-user-menu__item .cd-user-menu__btn-label,
 .cd-user-menu li a .cd-user-menu__btn-label,
 .cd-user-menu li button .cd-user-menu__btn-label {

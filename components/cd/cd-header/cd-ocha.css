@@ -10,11 +10,15 @@
   display: flex;
   align-items: center;
   height: var(--cd-global-header-height);
-  padding: 0;
+  padding: 0 var(--cd-outline-size);
   transition: background 0.3s ease;
   color: var(--cd-white);
   background: transparent;
   font-size: var(--cd-font-size--tiny);
+}
+
+.cd-ocha__btn:focus-visible {
+  outline-offset: calc(0px - var(--cd-outline-size));
 }
 
 .cd-ocha__btn .cd-icon--arrow-down {
@@ -70,16 +74,10 @@
   color: var(--cd-white);
 }
 
-.cd-ocha-dropdown__link a:hover,
-.cd-ocha-dropdown__link a:focus {
-  text-decoration: underline;
-  color: var(--cd-white);
-}
-
-.cd-ocha-dropdown__link a:focus {
-  outline: 3px solid var(--brand-primary--light);
+.cd-ocha-dropdown__link a:focus-visible {
   outline-offset: 8px;
 }
+
 
 /**
  * Selector needs to override CD Button because of source order.

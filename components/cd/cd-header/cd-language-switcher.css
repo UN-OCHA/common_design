@@ -19,7 +19,7 @@
 }
 
 .cd-language-switcher__btn:focus {
-  outline: 3px solid var(--brand-primary--light);
+  outline: var(--cd-outline-size) solid var(--brand-primary--light);
 }
 
 @media (min-width: 768px) {
@@ -57,10 +57,6 @@
 .cd-language-switcher__dropdown li a:hover,
 .cd-language-switcher__dropdown li a:focus {
   text-decoration: underline;
-}
-
-.cd-language-switcher__dropdown li a:focus {
-  outline: 3px solid var(--brand-primary--light);
 }
 
 .cd-language-switcher__dropdown li a.is-active {

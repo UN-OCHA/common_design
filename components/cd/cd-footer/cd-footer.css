@@ -48,18 +48,18 @@
 }
 
 .cd-footer a:hover,
-.cd-footer a:focus {
+.cd-footer a:focus-visible {
   text-decoration: underline;
   color: var(--cd-white);
 }
 
 .cd-footer a.cd-button:hover,
-.cd-footer a.cd-button:focus {
+.cd-footer a.cd-button:focus-visible {
   color: initial;
 }
 
-.cd-footer a:focus {
-  outline: 3px solid var(--brand-primary--light);
+.cd-footer a:focus-visible {
+  outline: var(--cd-outline-size) solid var(--brand-primary--light);
   outline-offset: 8px;
 }
 
