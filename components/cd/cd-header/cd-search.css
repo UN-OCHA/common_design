@@ -111,6 +111,15 @@
   background: var(--cd-white);
 }
 
+/* If a person uses keyboard nav to re-focus the search button, then we should
+show the outline, overriding the default focus styles for pointer events. */
+.cd-search__btn[aria-expanded=true]:focus-visible {
+  position: relative;
+  outline: var(--cd-outline-size) solid var(--brand-primary--light);
+  outline-offset: calc(0px - var(--cd-outline-size));
+  z-index: calc(var(--cd-z-dropdown) + 1);
+}
+
 .cd-search__btn-label {
   text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
