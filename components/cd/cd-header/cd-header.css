@@ -41,7 +41,7 @@
 .cd-header button:focus-visible,
 .cd-header a:focus-visible {
   position: relative;
+  z-index: calc(var(--cd-z-dropdown) + 1);
   outline: var(--cd-outline-size) solid var(--brand-primary--light);
   outline-offset: calc(0px - var(--cd-outline-size));
-  z-index: calc(var(--cd-z-dropdown) + 1);
 }

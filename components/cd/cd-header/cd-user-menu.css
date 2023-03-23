@@ -86,8 +86,8 @@
 }
 
 [data-cd-menu-level="1"] {
-  padding-inline: .5rem;
-  padding-block: .5rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
 }
 
 .cd-user-menu > .menu-item:last-child > ul.menu {
