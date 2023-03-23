@@ -23,10 +23,6 @@
   }
 }
 
-.cd-footer-copyright__text a:focus {
-  outline-offset: 1px;
-}
-
 .cd-footer-copyright svg {
   flex: 0 0 38px;
   width: 38px;
@@ -35,22 +31,18 @@
   fill: var(--cd-white);
 }
 
-@media (min-width: 1024px) {
-  .cd-footer-copyright svg {
-    margin: 0 0 0 20px;
-  }
-
-  [dir=rtl] .cd-footer-copyright svg {
-    margin: 0 20px 0 0;
-  }
-}
-
 /* To override `.cd-footer a` we must use tag in selector */
 a.cd-footer-copyright__link:hover {
   transition: opacity 0.1666s ease-in-out;
   opacity: 0.8;
 }
 
-a.cd-footer-copyright__link:focus {
-  outline-offset: 0;
+/* To override `.cd-footer a` we must use tag in selector */
+a.cd-footer-copyright__link:focus-visible {
+  outline-offset: 5px;
+}
+
+/* To override `.cd-footer a` we must use tag in selector */
+.cd-footer-copyright__text a:focus {
+  outline-offset: 1px;
 }
