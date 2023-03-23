@@ -76,11 +76,6 @@
   color: var(--cd-white);
 }
 
-.cd-global-header .menu > li li a,
-.cd-global-header .menu > li li button {
-  padding: 0 !important;
-}
-
 /* Last block in Global Header should have its dropdown right-aligned on LTR */
 .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
   right: 0;

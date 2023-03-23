@@ -134,6 +134,7 @@
 
   .cd-ocha-dropdown__inner {
     flex-flow: row nowrap;
+    align-items: flex-end;
     margin: 0 auto;
     padding: 0 var(--cd-container-padding-tablet);
   }
@@ -143,11 +144,9 @@
     margin-bottom: 0;
   }
 
-  .cd-ocha-dropdown__see-all {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  /* it's a cd-button-styled <a> so it has focus styles already */
+  .cd-header a.cd-ocha-dropdown__see-all:focus-visible {
+    outline: none;
   }
 }
 

@@ -82,7 +82,12 @@
 .cd-user-menu__dropdown {
   min-width: 125px;
   margin: 0;
-  padding: 12px 24px;
+  padding: 0;
+}
+
+[data-cd-menu-level="1"] {
+  padding-inline: .5rem;
+  padding-block: .5rem;
 }
 
 .cd-user-menu > .menu-item:last-child > ul.menu {
