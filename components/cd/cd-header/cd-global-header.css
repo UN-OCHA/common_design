@@ -112,24 +112,6 @@
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Triangle on toggle when active. */
-.cd-global-header button[aria-expanded="true"] {
-  position: relative;
-}
-
-.cd-global-header button[aria-expanded="true"]::before {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -6px;
-  content: "";
-  border-width: 0 6px 6px;
-  border-style: solid;
-  border-color: transparent transparent var(--brand-primary);
-}
-
 button[aria-expanded] .cd-icon--arrow-down {
   fill: var(--cd-white);
   width: 9px;
