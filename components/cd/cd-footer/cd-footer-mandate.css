@@ -3,28 +3,21 @@
  */
 .cd-mandate {
   width: 100%;
-}
-
-.cd-mandate__logo {
-  display: block;
-  width: 149px;
-  height: 37px;
-  margin: 0 auto 16px;
-  background: url("../../../img/logos/ocha-lockup.svg") 0 center no-repeat;
-}
-
-[dir=rtl] .cd-mandate__logo {
-  background-position: 100% 0;
-}
-
-.no-svg .cd-mandate__logo {
-  background: url("../../../img/logos/ocha-lockup@149x37.png") 0 center no-repeat;
+  text-align: center;
 }
 
 .cd-mandate__heading {
   display: block;
   margin-bottom: 16px;
   padding: 0 var(--cd-container-padding);
+}
+
+.cd-mandate__logo {
+  display: block;
+  width: 149px;
+  height: 37px;
+  margin-inline: auto;
+  margin-block-end: 1rem;
 }
 
 .cd-mandate__text {
@@ -36,40 +29,31 @@
 
 @media (min-width: 1024px) {
   .cd-mandate {
+    display: flex;
+    flex-flow: row wrap;
     margin: 0;
-  }
-
-  .cd-mandate__logo {
-    float: left;
-    width: calc(149px + var(--cd-container-padding));
-    margin: -4px var(--cd-container-padding) 0 auto;
-    border-inline-end: 1px solid var(--brand-grey);
-  }
-
-  [dir=rtl] .cd-mandate__logo {
-    float: right;
-    margin: -4px auto 0 var(--cd-container-padding);
+    column-gap: var(--cd-container-padding);
   }
 
   .cd-mandate__heading {
+    flex: 1 0 100%;
     padding: 0;
-    text-align: left;
+    text-align: initial;
   }
 
-  [dir=rtl] .cd-mandate__heading {
-    text-align: right;
+  .cd-mandate__logo {
+    flex: 0 0 calc(149px + var(--cd-container-padding));
+    height: auto;
+    margin: 0;
+    padding-inline-end: var(--cd-container-padding);
+    border-inline-end: 1px solid var(--brand-grey);
   }
 
   .cd-mandate__text {
-    max-width: 100%;
+    flex: 1 1 0;
     margin: 0;
     padding: 0;
-    padding-inline-start: 173px; /* accomodate logo */
     padding-inline-end: var(--cd-container-padding-xlarge);
-    text-align: left;
-  }
-
-  [dir=rtl] .cd-mandate__text {
-    text-align: right;
+    text-align: initial;
   }
 }
