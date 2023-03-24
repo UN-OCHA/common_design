@@ -233,9 +233,9 @@ ul[data-cd-hidden=true] > ul {
   .cd-nav-level-1__btn::before {
     position: absolute;
     top: 0;
-    margin-inline-start: -15px;
     width: 6px;
     height: 48px;
+    margin-inline-start: -15px;
     content: "";
     background: transparent;
   }
@@ -254,9 +254,9 @@ ul[data-cd-hidden=true] > ul {
   .cd-nav .menu-item--active-trail button::before {
     position: absolute;
     top: 0;
-    margin-inline-start: -15px;
     width: 6px;
     height: 48px;
+    margin-inline-start: -15px;
     content: "";
     opacity: 0.2;
     background: var(--brand-highlight);
