@@ -31,15 +31,11 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 0;
+
+  /* Visually align button contents with main nav */
+  margin-inline-end: -2px;
 }
 
-/* Visually align button contents with main nav */
-[dir="ltr"] .cd-global-header__actions {
-  right: -2px;
-}
-[dir="rtl"] .cd-global-header__actions {
-  left: -2px;
-}
 
 /*
  * If there are multiple Global Header actions, separate them with pipe-looking
@@ -77,7 +73,7 @@
 }
 
 /* Last block in Global Header should have its dropdown right-aligned on LTR */
-.cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
+[dir="ltr"] .cd-global-header .cd-global-header__user-menu:last-child .cd-global-header__dropdown {
   right: 0;
   left: initial;
 }
