@@ -287,8 +287,12 @@ ul[data-cd-hidden=true] > ul {
     flex: 1 0 auto;
   }
 
-  .cd-nav > .menu > .menu-item:last-child > ul.menu {
-    margin-inline-end: -1px;
+  [dir=ltr] .cd-nav > .menu > .menu-item:last-child > ul.menu {
+    right: 0;
+  }
+
+  [dir=rtl] .cd-nav > .menu > .menu-item:last-child > ul.menu {
+    left: 0;
   }
 
   .cd-nav > .menu > .menu-item.menu-item--active-trail a::before,
