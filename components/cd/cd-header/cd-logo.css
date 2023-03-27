@@ -18,8 +18,14 @@
   background: linear-gradient(transparent, transparent), url("../../../img/logos/ocha-logo-blue.svg") center no-repeat;
 }
 
-.cd-site-logo:focus {
-  outline: 3px solid var(--brand-primary--light);
+/**
+ * Override default focus z-index. If the default applies, the logo might appear
+ * on top of the opened OCHA Services menu. Alternative fix is ticketed:
+ *
+ * @see https://humanitarian.atlassian.net/browse/CD-173
+ */
+.cd-header a.cd-site-logo:focus-visible {
+  z-index: var(--cd-z-default);
 }
 
 /* Larger format logo once space permits */

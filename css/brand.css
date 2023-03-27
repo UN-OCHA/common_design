@@ -116,6 +116,11 @@
   --cd-z-skip-link: 1000;
 
   /**
+   * Accessibility-related properties
+   */
+  --cd-outline-size: 3px;
+
+  /**
    * Site-specific brand defaults
    *
    * You can override these defaults in the SUB-THEME. We provide default values

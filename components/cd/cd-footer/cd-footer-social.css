@@ -23,6 +23,7 @@
 a.cd-footer-social__link {
   display: inline-block;
   border: 0 none;
+  line-height: 0; /* cosmetic improvement to focus style */
 }
 
 a.cd-footer-social__link svg {

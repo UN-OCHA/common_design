@@ -10,11 +10,15 @@
   display: flex;
   align-items: center;
   height: var(--cd-global-header-height);
-  padding: 0;
+  padding: 0 var(--cd-outline-size);
   transition: background 0.3s ease;
   color: var(--cd-white);
   background: transparent;
   font-size: var(--cd-font-size--tiny);
+}
+
+.cd-ocha__btn:focus-visible {
+  outline-offset: calc(0px - var(--cd-outline-size));
 }
 
 .cd-ocha__btn .cd-icon--arrow-down {
@@ -70,14 +74,7 @@
   color: var(--cd-white);
 }
 
-.cd-ocha-dropdown__link a:hover,
-.cd-ocha-dropdown__link a:focus {
-  text-decoration: underline;
-  color: var(--cd-white);
-}
-
-.cd-ocha-dropdown__link a:focus {
-  outline: 3px solid var(--brand-primary--light);
+.cd-ocha-dropdown__link a:focus-visible {
   outline-offset: 8px;
 }
 
@@ -136,6 +133,7 @@
 
   .cd-ocha-dropdown__inner {
     flex-flow: row nowrap;
+    align-items: flex-end;
     margin: 0 auto;
     padding: 0 var(--cd-container-padding-tablet);
   }
@@ -145,11 +143,9 @@
     margin-bottom: 0;
   }
 
-  .cd-ocha-dropdown__see-all {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  /* it's a cd-button-styled <a> so it has focus styles already */
+  .cd-header a.cd-ocha-dropdown__see-all:focus-visible {
+    outline: none;
   }
 }
 
