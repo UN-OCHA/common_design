@@ -250,8 +250,8 @@ ul[data-cd-hidden=true] > ul {
     background: var(--brand-highlight);
   }
 
-  .cd-nav .menu-item--active-trail a::before,
-  .cd-nav .menu-item--active-trail button::before {
+  .cd-nav .menu-item--active-trail > a::before,
+  .cd-nav .menu-item--active-trail > button::before {
     position: absolute;
     top: 0;
     width: 6px;
@@ -297,6 +297,7 @@ ul[data-cd-hidden=true] > ul {
 
   .cd-nav > .menu > .menu-item.menu-item--active-trail a::before,
   .cd-nav > .menu > .menu-item.menu-item--active-trail button::before {
+    opacity: 0.2;
     background: var(--brand-highlight);
   }
 
