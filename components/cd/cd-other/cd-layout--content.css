@@ -14,7 +14,7 @@
   visibility: hidden;
   clear: both;
   height: 0;
-  content: ".";
+  content: "";
 }
 
 @media (min-width: 768px) {
