@@ -107,7 +107,8 @@ cd-other:
     base:
       components/cd/cd-other/cd-icon.css: {}
     layout:
-      components/cd/cd-other/cd-layout.css: {}
+      components/cd/cd-other/cd-layout--page.css: {}
+      components/cd/cd-other/cd-layout--content.css: {}
     component:
       components/cd/cd-other/cd-skip-link.css: {}
     theme:

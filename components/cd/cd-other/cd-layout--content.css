@@ -1,54 +1,6 @@
 /**
- * Common Design: Layout
+ * Common Design: Content Layouts
  */
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100%;
-}
-
-/* Position footer at the bottom of viewport. This might need adjusting based
-on page layout. */
-body:not(.user-logged-in) {
-  display: grid;
-  grid-template-rows: 1fr auto;
-}
-
-.cd-layout-container {
-  width: 100%;
-  min-height: 100%;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.no-js .cd-layout-container {
-  display: block;
-}
-
-/**
- * Grid is used to fix the footer to the bottom of the screen, regardless of
- * page min-height. Header height is fixed. Highlighted should contain Drupal
- * messages and will be present even if empty. Main should grow to fit the
- * available space. Soft footer is optional. Footer sticks to the bottom of
- * the viewport. If there are additional direct descendents of
- * .cd-layout-container, grid-template-areas and rows can be adjusted.
- */
-@media (min-width: 768px) {
-  .cd-layout-container {
-    display: grid;
-    grid-template-areas:
-      "header"
-      "highlighted"
-      "main"
-      "soft-footer"
-      "footer";
-    grid-template-rows: 101px auto 1fr auto;
-    grid-auto-rows: auto;
-  }
-}
-
 .cd-container {
   box-sizing: border-box;
   width: 100%;
