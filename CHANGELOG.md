@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.2](https://github.com/UN-OCHA/common_design/compare/v8.0.1...v8.0.2) (2023-04-12)
+
+
+### Bug Fixes
+
+* adjust appearance of active trail on mobile/desktop ([4296eb7](https://github.com/UN-OCHA/common_design/commit/4296eb72733085b8dbe0b16c3e95f37c911259f5))
+* adopt focus-visible state and restyle cosmetically ([48f4f25](https://github.com/UN-OCHA/common_design/commit/48f4f25ad1ccc1323d3a53d81553622865c097d3))
+* alignment issues for footer copyright ([1c98d48](https://github.com/UN-OCHA/common_design/commit/1c98d48257e54cb389317737a14fa8ab7fe1d3d3))
+* CD Footer mandate adjustments ([2aa69a1](https://github.com/UN-OCHA/common_design/commit/2aa69a148558a95786c53922744c5dbeaa043113))
+* clean up the footer focus styles ([d5002c0](https://github.com/UN-OCHA/common_design/commit/d5002c05c268127f4ec9bd8875d491101a438eae))
+* logical properties for text-align in footer ([7fbec82](https://github.com/UN-OCHA/common_design/commit/7fbec822086bae05f981b73add0d732893024f0f))
+* padding/position issues with various GH dropdowns ([bffca47](https://github.com/UN-OCHA/common_design/commit/bffca47ca1684f00ec5557e1d40e0a0b1029c6c7))
+* remove carets from Global Header dropdowns ([24c98d1](https://github.com/UN-OCHA/common_design/commit/24c98d1094362d6d84ce0c4f02ee6999f3a086f3))
+* remove most RTL selectors from Global Header ([9b808b0](https://github.com/UN-OCHA/common_design/commit/9b808b039a1dee237b336f36fed68eecfd78f7ab))
+* restore positioning of last-child nav dropdown ([24acf71](https://github.com/UN-OCHA/common_design/commit/24acf71d1e659f3a84d4195d7db4495b08dc4278))
+* RTL cleanup for inline search ([0229a3d](https://github.com/UN-OCHA/common_design/commit/0229a3d0cf047f254e8076979397da1e4c8dd0ed))
+* show focus styles when Search is expanded ([8251666](https://github.com/UN-OCHA/common_design/commit/8251666d1ca3fed3a0748c3c3eef266ae58817df))
+* update HR.info to be RWR ([179c86d](https://github.com/UN-OCHA/common_design/commit/179c86d4cd4634ff582e32df086eda1abdfa87fe))
+* use logical properties for CD Nav ([3e67b9e](https://github.com/UN-OCHA/common_design/commit/3e67b9ebf575ad92e79995c5aca73805ca265dc2))
+* use the intended color for focus styles in base-theme ([728fbe2](https://github.com/UN-OCHA/common_design/commit/728fbe2c8f2ea33e20050ab7bb64adb9ea0559ae))
+* z-index issue with Site Logo and OCHA Services dropdown ([0c26b0e](https://github.com/UN-OCHA/common_design/commit/0c26b0e4d2ea377800955ee300e8ad8490430245))
+
 ## [8.0.1](https://github.com/UN-OCHA/common_design/compare/v8.0.0...v8.0.1) (2023-03-22)
 
 ### Bug Fixes
