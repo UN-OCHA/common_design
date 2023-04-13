@@ -19,7 +19,7 @@
 }
 
 .cd-search__form .form-type-textfield {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 
 .cd-search__form .form-actions {
