@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [8.0.2](https://github.com/UN-OCHA/common_design/compare/v8.0.1...v8.0.2) (2023-04-12)
-
+## [8.0.2](https://github.com/UN-OCHA/common_design/compare/v8.0.1...v8.0.2) (2023-04-12)
 
 ### Bug Fixes
 
@@ -23,6 +22,7 @@ All notable changes to this project will be documented in this file. See [standa
 * use logical properties for CD Nav ([3e67b9e](https://github.com/UN-OCHA/common_design/commit/3e67b9ebf575ad92e79995c5aca73805ca265dc2))
 * use the intended color for focus styles in base-theme ([728fbe2](https://github.com/UN-OCHA/common_design/commit/728fbe2c8f2ea33e20050ab7bb64adb9ea0559ae))
 * z-index issue with Site Logo and OCHA Services dropdown ([0c26b0e](https://github.com/UN-OCHA/common_design/commit/0c26b0e4d2ea377800955ee300e8ad8490430245))
+
 
 ## [8.0.1](https://github.com/UN-OCHA/common_design/compare/v8.0.0...v8.0.1) (2023-03-22)
 
