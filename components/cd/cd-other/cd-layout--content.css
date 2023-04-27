@@ -96,6 +96,8 @@
     .cd-layout-with-sidebar-first .cd-layout-sidebar-first,
     .cd-layout-with-sidebar-second .cd-layout-sidebar-second {
       flex-basis: 285px;
+      background-color: var(--brand-grey);
+      padding: var(--cd-container-padding);
     }
   }
 
