@@ -1,7 +1,8 @@
 {%
   set facets_layout_classes = [
   'cd-container',
-  page.sidebar_first|render or page.facets|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
+  page.sidebar_first|render or page.facets|render and not page.sidebar_second|render ? 'cd-layout--sidebar-first',
+  page.sidebar_first|render or page.facets|render and page.sidebar_second|render ? 'cd-layout--sidebar-both',
 ]
 %}
 
@@ -13,15 +14,17 @@
 
       {{ page.page_title }}
 
-      <div class="cd-layout-content-wrapper">
+      <div class="cd-layout__content-wrapper">
 
       {% if page.facets|render or page.sidebar_first|render %}
-        {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
+        {#
+          We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
           This means we cannot have any white space between tags (as below).
-          Attn: Having the twig debug enabled means the div is no longer empty.
+
+          NOTE: Having the twig debug enabled means the div is no longer empty.
           See Drupal issues/953034 for description and current status.
         #}
-        <aside class="cd-layout-sidebar-first" role="complementary">{{ page.facets }}{{ page.sidebar_first }}</aside>
+        <aside class="cd-layout__sidebar--first" role="complementary">{{ page.facets }}{{ page.sidebar_first }}</aside>
       {% endif %}
 
       <div class="cd-layout-content">
