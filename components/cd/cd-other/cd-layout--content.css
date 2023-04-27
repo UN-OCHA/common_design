@@ -33,6 +33,14 @@
 }
 
 /**
+ * Since the universal layout is linear, add some space in between each section.
+ */
+.cd-layout__sidebar {
+  margin: 2rem 0;
+}
+
+
+/**
  * Modern layout
  *
  * The remainder of this CSS file uses modern CSS to provide a flexible, RTL
@@ -57,215 +65,120 @@
     }
   }
 
+  /**
+   * Use flex-box once window can accomodate columns.
+   */
   @media (min-width: 1024px) {
-    .cd-layout-container .cd-layout__content-wrapper {
+    .cd-layout__content-wrapper {
       display: flex;
       flex-flow: row nowrap;
+      gap: 2rem;
     }
   }
 
   /**
-   * This is to prevent sidebar region wrapper div displaying when region is
-   * empty but still renders.
+   * Remove margins from the universal layout since flex gap handles it now.
    */
-  .cd-layout-container .cd-layout__content-wrapper aside:empty {
+  .cd-layout__sidebar {
+    margin: 0;
+  }
+
+  /**
+   * Prevent sidebar from displaying when region is empty.
+   */
+  .cd-layout__sidebar:empty {
     display: none;
   }
 
-  .cd-layout__sidebar--first .cd-layout-container .cd-layout__content-wrapper aside {
-    margin-bottom: 2rem;
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout__sidebar--first .cd-layout-container .cd-layout__content-wrapper aside {
-      margin-bottom: 0;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout-container .cd-layout__content-wrapper aside {
-      flex-grow: 1;
-    }
-  }
-
+  /**
+   * Define sidebar styles
+   */
   @media (min-width: 1024px) {
     .cd-layout__sidebar {
-      flex-basis: 285px;
+      flex: 1 0 285px;
+      max-width: 400px;
       background-color: var(--brand-grey);
       padding: var(--cd-container-padding);
     }
   }
 
-  .cd-layout__sidebar--first {
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout__sidebar--first {
-      margin-bottom: 0;
-    }
-  }
-
-  /* Both sidebars, individually control. */
-  .cd-layout--sidebar-both .cd-layout__sidebar--first {
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .cd-layout--sidebar-both .cd-layout__sidebar--first {
-      flex-basis: 285px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout--sidebar-both .cd-layout__sidebar--first {
-      margin-bottom: 0;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .cd-layout--sidebar-both .cd-layout__sidebar--second {
-      /* Keep this number large so exceeds the available space and thus sits below. */
-      flex-basis: 550px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout--sidebar-both .cd-layout__sidebar--second {
-      flex-basis: 285px;
-    }
-  }
-
-  .cd-layout--sidebar-both .cd-layout-content {
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout--sidebar-both .cd-layout-content {
-      margin-bottom: 0;
-    }
-
-    [dir=ltr] .cd-layout--sidebar-both .cd-layout-content {
-      margin-right: 3rem;
-      margin-left: 3rem;
-    }
-
-    [dir=rtl] .cd-layout--sidebar-both .cd-layout-content {
-      margin-right: 3rem;
-      margin-left: 3rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    [dir=ltr] .cd-layout--sidebar-first .cd-layout-content {
-      margin-right: 0;
-      margin-left: 3rem;
-    }
-
-    [dir=rtl] .cd-layout--sidebar-first .cd-layout-content {
-      margin-right: 3rem;
-      margin-left: 0;
-    }
-  }
-
-  .cd-layout--sidebar-second .cd-layout-content {
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout--sidebar-second .cd-layout-content {
-      margin-bottom: 0;
-    }
-
-    [dir=ltr] .cd-layout--sidebar-second .cd-layout-content {
-      margin-right: 3rem;
-      margin-left: 0;
-    }
-
-    [dir=rtl] .cd-layout--sidebar-second .cd-layout-content {
-      margin-right: 0;
-      margin-left: 3rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .cd-layout-content {
-      flex-basis: 0;
-      flex-grow: 999;
-    }
-  }
-
   /**
-   * Faux sidebar in Node content.
-   * Requires markup in node-full.html.twig.
+   * Content area is intentionally undefined, so that it fills available space
+   * without enforcing any additional constraints on the layout.
    */
+  .cd-layout-content {}
+}
+
+/**
+ * Faux sidebar in Node content.
+ * Requires markup in node-full.html.twig.
+ */
+.cd-layout-two-col .cd-layout-main-content {
+  /* These override the main layout rules based on which sidebar is enabled.
+  The status of those sidebars are not important to this inner layout. */
+  margin-left: 0;
+}
+
+@media (min-width: 1024px) {
   .cd-layout-two-col .cd-layout-main-content {
-    /* These override the main layout rules based on which sidebar is enabled.
-    The status of those sidebars are not important to this inner layout. */
-    margin-left: 0;
+    flex-basis: 0;
+    flex-grow: 999;
   }
 
-  @media (min-width: 1024px) {
-    .cd-layout-two-col .cd-layout-main-content {
-      flex-basis: 0;
-      flex-grow: 999;
-    }
-
-    [dir=ltr] .cd-layout-two-col .cd-layout-main-content {
-      margin-right: 2rem;
-    }
-
-    [dir=rtl] .cd-layout-two-col .cd-layout-main-content {
-      margin-left: 2rem;
-    }
+  [dir=ltr] .cd-layout-two-col .cd-layout-main-content {
+    margin-right: 2rem;
   }
 
+  [dir=rtl] .cd-layout-two-col .cd-layout-main-content {
+    margin-left: 2rem;
+  }
+}
+
+.cd-layout-two-col .cd-layout__sidebar--first {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--brand-grey);
+}
+
+@media (min-width: 1024px) {
   .cd-layout-two-col .cd-layout__sidebar--first {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: var(--brand-grey);
+    flex-basis: 285px;
+    margin-top: 0;
   }
+}
 
-  @media (min-width: 1024px) {
-    .cd-layout-two-col .cd-layout__sidebar--first {
-      flex-basis: 285px;
-      margin-top: 0;
-    }
+@media (min-width: 1024px) {
+  .cd-layout-two-col {
+    display: flex;
+    flex-wrap: wrap;
   }
+}
 
-  @media (min-width: 1024px) {
-    .cd-layout-two-col {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
+.region-sidebar-first:empty,
+.region-facets:empty {
+  display: none;
+}
 
-  .region-sidebar-first:empty,
-  .region-facets:empty {
-    display: none;
-  }
+.region-facets + .region-sidebar-first {
+  margin-top: 2rem;
+}
 
+@media (min-width: 1024px) {
   .region-facets + .region-sidebar-first {
-    margin-top: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cd-page-title .cd-layout-with-sidebar {
+    /* --cd-max-width minus padding, minus --cd-max-content-width. */
+    padding-inline-end: 320px;
   }
 
-  @media (min-width: 1024px) {
-    .region-facets + .region-sidebar-first {
-      margin-top: 1rem;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .cd-page-title .cd-layout-with-sidebar {
-      /* --cd-max-width minus padding, minus --cd-max-content-width. */
-      padding-inline-end: 320px;
-    }
-
-    .cd-layout--sidebar-first .cd-page-title,
-    .cd-layout--sidebar-second .cd-page-title,
-    .cd-layout--sidebar-both .cd-page-title {
-      padding-right: 0;
-      padding-left: 0;
-    }
+  .cd-layout--sidebar-first .cd-page-title,
+  .cd-layout--sidebar-second .cd-page-title,
+  .cd-layout--sidebar-both .cd-page-title {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
