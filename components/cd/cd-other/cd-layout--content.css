@@ -5,35 +5,30 @@
 /**
  * Universal layout
  *
- * The rules in this section are designed for browsers that support CSS Level 2.
+ * This layout is designed for browsers that support CSS 2.1 and basic media
+ * queries as defined in https://www.w3.org/TR/mediaqueries-3/ which itself is
+ * totally optional to render content legibly.
+ *
  * Any advanced enhancements will be defined later in this file, but the rules
  * in this section suffice to create a minimal layout that any browser handles.
  */
 .cd-container {
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--cd-max-width);
+  max-width: 1220px; /* --cd-max-width */
   margin: 0 auto;
-  padding: 0 var(--cd-container-padding);
-}
-
-.cd-container::after {
-  display: block;
-  visibility: hidden;
-  clear: both;
-  height: 0;
-  content: "";
+  padding: 0 0.75rem; /* --cd-container-padding */
 }
 
 @media (min-width: 768px) {
   .cd-container {
-    padding: 0 var(--cd-container-padding-tablet);
+    padding: 0 1.5rem; /* --cd-container-padding-tablet */
   }
 }
 
 @media (min-width: 1200px) {
   .cd-container {
-    padding: 0 var(--cd-container-padding-xlarge);
+    padding: 0 2.5rem; /* --cd-container-padding-xlarge */
   }
 }
 
