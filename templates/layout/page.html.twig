@@ -85,10 +85,13 @@
       <div class="cd-layout__content-wrapper">
 
         {% if page.sidebar_first %}
-          {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
-            This means we cannot have any white space between tags (as below).
-            Attn: Having the twig debug enabled means the div is no longer empty.
-            See Drupal issues/953034 for description and current status.
+          {#
+            We are using CSS pseudo class :empty to hide these aside elements if
+            the region prints empty. That means we cannot have any white space
+            between tags (as below).
+
+            NOTE: Enabling Twig debug means the div is no longer empty.
+            @see https://www.drupal.org/project/drupal/issues/953034
           #}
           <aside class="cd-layout__sidebar cd-layout__sidebar--first" role="complementary">{{ page.sidebar_first }}</aside>
         {% endif %}
