@@ -27,12 +27,12 @@ body {
  * - .cd-footer has variable height, sticks to the bottom of the viewport.
  */
 .cd-page-layout-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%; /* @IE11 */
   margin: 0 auto;
   padding: 0;
-  display: flex;
-  flex-direction: column;
 }
 .cd-header {
   flex-shrink: 0;
