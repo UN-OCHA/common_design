@@ -84,7 +84,7 @@
     /**
      * Use flex-box once window can accomodate columns.
      */
-    .cd-layout__content-wrapper {
+    .cd-layout {
       display: flex;
       flex-flow: row nowrap;
       gap: 2rem;
