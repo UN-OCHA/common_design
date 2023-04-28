@@ -39,7 +39,6 @@
   margin: 2rem 0;
 }
 
-
 /**
  * Modern layout
  *
@@ -58,29 +57,12 @@
     padding-block-end: 2rem;
   }
 
-  @media (min-width: 1024px) {
-    .cd-container[role=main] {
-      padding-block-start: 3rem;
-      padding-block-end: 4rem;
-    }
-  }
-
   /**
-   * Use flex-box once window can accomodate columns.
+   * Content area's flex is the default for any flex-item, but we explicitly
+   * define it here to remove doubt as to how it functions.
    */
-  @media (min-width: 1024px) {
-    .cd-layout__content-wrapper {
-      display: flex;
-      flex-flow: row nowrap;
-      gap: 2rem;
-    }
-  }
-
-  /**
-   * Remove margins from the universal layout since flex gap handles it now.
-   */
-  .cd-layout__sidebar {
-    margin: 0;
+  .cd-layout-content: {
+    flex: 0 1 auto;
   }
 
   /**
@@ -91,14 +73,32 @@
   }
 
   /**
-   * Define sidebar styles
+   * Adopt column layout once space allows.
    */
   @media (min-width: 1024px) {
+    .cd-container[role=main] {
+      padding-block-start: 3rem;
+      padding-block-end: 4rem;
+    }
+
+    /**
+     * Use flex-box once window can accomodate columns.
+     */
+    .cd-layout__content-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 2rem;
+    }
+
+    /**
+     * Define sidebar styles
+     */
     .cd-layout__sidebar {
       flex: 1 0 285px;
       max-width: 400px;
-      background-color: var(--brand-grey);
+      margin: 0;
       padding: var(--cd-container-padding);
+      background-color: var(--brand-grey);
     }
 
     /**
@@ -109,10 +109,4 @@
       order: -1;
     }
   }
-
-  /**
-   * Content area is intentionally undefined, so that it fills available space
-   * without enforcing any additional constraints on the layout.
-   */
-  .cd-layout-content {}
 }
