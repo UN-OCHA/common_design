@@ -93,8 +93,8 @@ The layout styles are included in cd-base.css.
 Eg. Layout markup
 ```
 <div class="cd-page-layout-container">
-  <main role="main" id="main-content" class="cd-container">
-    <div class="cd-layout-content">
+  <main role="main" id="main-content" class="cd-layout cd-container">
+    <div class="cd-layout__content">
 ```
 
 ### CSS
