@@ -108,5 +108,13 @@
     .cd-layout__sidebar--first {
       order: -1;
     }
+
+    /**
+     * First sidebar might not be first in source order. Explicitly place it at
+     * the end of the flex container.
+     */
+    .cd-layout__sidebar--second {
+      order: 999;
+    }
   }
 }
