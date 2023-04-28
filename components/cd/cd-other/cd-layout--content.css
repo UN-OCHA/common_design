@@ -61,7 +61,7 @@
    * Content area's flex is the default for any flex-item, but we explicitly
    * define it here to remove doubt as to how it functions.
    */
-  .cd-layout-content: {
+  .cd-layout__content: {
     flex: 0 1 auto;
   }
 
