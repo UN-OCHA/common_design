@@ -121,23 +121,19 @@
   {% endif %}
 
   <div{{ content_attributes }}>
-
-    {{ content }}
-
 {#    {% block section %}#}
-{#      <div class="cd-layout-two-col">#}
+{#      <div class="cd-layout__content-wrapper cd-layout--sidebar-first">#}
 
-{#        <div class="cd-layout-main-content">#}
-{#          {{ content }}#}
+{#        <div class="cd-layout-content">#}
+          {{ content }}
 {#        </div>#}
 
-{#        <div class="cd-layout-sidebar-first" role="complementary">#}
+{#        <div class="cd-layout__sidebar cd-layout__sidebar--first" role="complementary">#}
 {#          Other fields on the node can be printed here to create a faux sidebar layout.#}
 {#        </div>#}
 
 {#      </div>#}
 {#    {% endblock %}#}
-
   </div>
 
 </article>

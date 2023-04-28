@@ -100,6 +100,14 @@
       background-color: var(--brand-grey);
       padding: var(--cd-container-padding);
     }
+
+    /**
+     * First sidebar might not be first in source order. Explicitly place it at
+     * the beginning of the flex container.
+     */
+    .cd-layout__sidebar--first {
+      order: -1;
+    }
   }
 
   /**
@@ -107,78 +115,4 @@
    * without enforcing any additional constraints on the layout.
    */
   .cd-layout-content {}
-}
-
-/**
- * Faux sidebar in Node content.
- * Requires markup in node-full.html.twig.
- */
-.cd-layout-two-col .cd-layout-main-content {
-  /* These override the main layout rules based on which sidebar is enabled.
-  The status of those sidebars are not important to this inner layout. */
-  margin-left: 0;
-}
-
-@media (min-width: 1024px) {
-  .cd-layout-two-col .cd-layout-main-content {
-    flex-basis: 0;
-    flex-grow: 999;
-  }
-
-  [dir=ltr] .cd-layout-two-col .cd-layout-main-content {
-    margin-right: 2rem;
-  }
-
-  [dir=rtl] .cd-layout-two-col .cd-layout-main-content {
-    margin-left: 2rem;
-  }
-}
-
-.cd-layout-two-col .cd-layout__sidebar--first {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: var(--brand-grey);
-}
-
-@media (min-width: 1024px) {
-  .cd-layout-two-col .cd-layout__sidebar--first {
-    flex-basis: 285px;
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .cd-layout-two-col {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.region-sidebar-first:empty,
-.region-facets:empty {
-  display: none;
-}
-
-.region-facets + .region-sidebar-first {
-  margin-top: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .region-facets + .region-sidebar-first {
-    margin-top: 1rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .cd-page-title .cd-layout-with-sidebar {
-    /* --cd-max-width minus padding, minus --cd-max-content-width. */
-    padding-inline-end: 320px;
-  }
-
-  .cd-layout--sidebar-first .cd-page-title,
-  .cd-layout--sidebar-second .cd-page-title,
-  .cd-layout--sidebar-both .cd-page-title {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
