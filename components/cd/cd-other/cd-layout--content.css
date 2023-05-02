@@ -110,7 +110,7 @@
     }
 
     /**
-     * First sidebar might not be first in source order. Explicitly place it at
+     * Second sidebar might not be last in source order. Explicitly place it at
      * the end of the flex container.
      */
     .cd-layout__sidebar--second {
