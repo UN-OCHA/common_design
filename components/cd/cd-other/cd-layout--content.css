@@ -94,11 +94,18 @@
      * Define sidebar styles
      */
     .cd-layout__sidebar {
-      flex: 1 0 285px;
-      max-width: 400px;
+      flex: 0 0 285px;
       margin: 0;
       padding: var(--cd-container-padding);
       background-color: var(--brand-grey);
+    }
+
+    /**
+     * Define the wide sidebar. This class isn't present in the default template
+     * and must be placed by overriding within a sub-theme.
+     */
+    .cd-layout__sidebar--wide {
+      flex-basis: 400px;
     }
 
     /**
