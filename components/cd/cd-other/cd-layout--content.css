@@ -58,11 +58,11 @@
   }
 
   /**
-   * Content area's flex is the default for any flex-item, but we explicitly
-   * define it here to remove doubt as to how it functions.
+   * Content area should grow to fill available space, but also can shrink to
+   * accomodate any columns that are present.
    */
   .cd-layout__content: {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
   }
 
   /**
