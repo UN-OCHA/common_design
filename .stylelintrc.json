@@ -7,6 +7,7 @@
     "color-function-notation": "legacy",
     "custom-property-pattern": "^(--)?[a-zA-Z0-9]+((-|--|__)?[a-zA-Z0-9]+)*$",
     "declaration-block-no-redundant-longhand-properties": null,
+    "media-feature-range-notation": "prefix",
     "max-line-length": 130,
     "no-descending-specificity": null,
     "property-no-vendor-prefix": null,
