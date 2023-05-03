@@ -1,9 +1,7 @@
 {%
   set facets_layout_classes = [
-  'cd-container',
-  page.sidebar_first|render or page.facets|render and not page.sidebar_second|render ? 'cd-layout--sidebar-first',
-  page.sidebar_first|render or page.facets|render and page.sidebar_second|render ? 'cd-layout--sidebar-both',
-]
+    'cd-container',
+  ]
 %}
 
 {% embed '@common_design/layout/page.html.twig' %}

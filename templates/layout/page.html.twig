@@ -45,11 +45,8 @@
 
 {%
   set layout_classes = [
-  'cd-container',
-  page.sidebar_first|render and not page.sidebar_second|render ? 'cd-layout--sidebar-first',
-  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout--sidebar-second',
-  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout--sidebar-both',
-]
+    'cd-container',
+  ]
 %}
 
 <div class="cd-page-layout-container">
