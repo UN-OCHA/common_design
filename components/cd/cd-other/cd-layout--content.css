@@ -91,7 +91,8 @@
     }
 
     /**
-     * Define sidebar styles
+     * Sidebar(s) should be fixed width. See modifier class if the wider sidebar
+     * is desired on a particular website.
      */
     .cd-layout__sidebar {
       flex: 0 0 285px;
