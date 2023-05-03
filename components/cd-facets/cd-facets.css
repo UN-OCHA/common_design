@@ -84,7 +84,7 @@
 .block-facets-summary {
   margin-bottom: 2rem;
   padding: 1rem 1rem 0.5rem;
-  background-color: var(--cd-grey--light);
+  background-color: var(--brand-grey);
   font-size: 0.875rem;
 }
 
