@@ -201,33 +201,25 @@ img {
 /**
  * Lists in sidebars
  */
-.cd-layout-sidebar-first ol,
-.cd-layout-sidebar-first ul,
-.cd-layout-sidebar-second ol,
-.cd-layout-sidebar-second ul {
+.cd-layout__sidebar ol,
+.cd-layout__sidebar ul {
   margin: 1em 0 2rem;
   padding-inline-start: 1rem;
 }
 
-.cd-layout-sidebar-first ol li + li,
-.cd-layout-sidebar-first ul li + li,
-.cd-layout-sidebar-second ol li + li,
-.cd-layout-sidebar-second ul li + li {
+.cd-layout__sidebar ol li + li,
+.cd-layout__sidebar ul li + li {
   margin-top: 0.75rem;
 }
 
 /* List in sidebars with compact content style */
-.cd-layout-sidebar-first.cd-content--compact ol,
-.cd-layout-sidebar-first.cd-content--compact ul,
-.cd-layout-sidebar-second.cd-content--compact ol,
-.cd-layout-sidebar-second.cd-content--compact ul {
+.cd-layout__sidebar.cd-content--compact ol,
+.cd-layout__sidebar.cd-content--compact ul {
   margin: 0.5em 0 1.5rem;
   padding-inline-start: 1rem;
 }
 
-.cd-layout-sidebar-first.cd-content--compact ol li + li,
-.cd-layout-sidebar-first.cd-content--compact ul li + li,
-.cd-layout-sidebar-second.cd-content--compact ol li + li,
-.cd-layout-sidebar-second.cd-content--compact ul li + li {
+.cd-layout__sidebar.cd-content--compact ol li + li,
+.cd-layout__sidebar.cd-content--compact ul li + li {
   margin-top: 0.25rem;
 }

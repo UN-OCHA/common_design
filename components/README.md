@@ -92,14 +92,14 @@ The layout styles are included in cd-base.css.
 
 Eg. Layout markup
 ```
-<div class="cd-layout-container">
-  <main role="main" id="main-content" class="cd-container">
-    <div class="cd-layout-content">
+<div class="cd-page-layout-container">
+  <main role="main" id="main-content" class="cd-layout cd-container">
+    <div class="cd-layout__content">
 ```
 
 ### CSS
 - A component will likely have its own CSS stylesheet. Some components might be CSS only.
-- There should be no hexidecimal colour values. We should use CSS custom properties for colour management.
+- There should be no hexidecimal colour values. We should use CSS custom properties for colour management, defaulting to `--brand-*` whenever possible.
 - If variants exist, multiple stylesheets can be used to distinguish and organise.
 - Variants should build on existing "base" rules. If that is not possible, it is likely not a good candidate for a variant.
 

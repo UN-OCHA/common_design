@@ -78,7 +78,7 @@
 
 </style>
 
-<div class="cd-layout-container">
+<div class="cd-page-layout-container">
 
   {% block header %}
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
@@ -110,7 +110,7 @@
   {# Link to skip to the main content is in html.html.twig #}
   <main role="main" id="main-content" class="cd-container">
 
-    <div class="cd-layout-content">
+    <div class="cd-demo-content">
 
       <div class="cd-toc [ cd-flow ]">
         <div class="cd-toc__title">Table of Contents</div>
@@ -326,7 +326,7 @@
 
       {% endif %}
 
-    </div>{# /.layout-content #}
+    </div>{# /.cd-demo-content #}
 
   </main>
 
@@ -339,4 +339,4 @@
   {% endblock %}
 
 
-</div>{# /.cd-layout-container #}
+</div>{# /.cd-page-layout-container #}
