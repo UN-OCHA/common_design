@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/UN-OCHA/common_design/compare/v8.0.2...v8.1.0) (2023-05-04)
+
+### Features
+
+* CD-462: add modern mustard cut to content layouts ([dcb3d43](https://github.com/UN-OCHA/common_design/commit/dcb3d439051b073c35aa08be9744b01f49e3db2c))
+
+### Bug Fixes
+
+* add BEM element class to facets sidebar ([6f6342a](https://github.com/UN-OCHA/common_design/commit/6f6342a654de21f4af52dfb5abb5a70a07b1a0ae))
+* adjust clearfix pseudo ([4b1d4f5](https://github.com/UN-OCHA/common_design/commit/4b1d4f5119c7acbc1906c6f385c00f404de7f545))
+* adopt BEM for all sidebar markup/styles ([6c35c88](https://github.com/UN-OCHA/common_design/commit/6c35c88e5e633bb618e6dd4362e08ab9382fd704))
+* adopt brand colors for filters/facets ([1eab45e](https://github.com/UN-OCHA/common_design/commit/1eab45ea39d87c0f3a70d2be06d242226a87b99d))
+* adopt new BEM classnames in CD Block Title ([e7c8404](https://github.com/UN-OCHA/common_design/commit/e7c8404763a922a2fa778eebcbde7c3f05fc1559))
+* apply bgcolor to sidebars ([c2e5760](https://github.com/UN-OCHA/common_design/commit/c2e57608c45d2427cdad5cf8e5c2cb473c83b7b8))
+* apply compact treatment to any heading in a sidebar ([c3be34d](https://github.com/UN-OCHA/common_design/commit/c3be34d64e163e8962efa889317be9f6ac2e508f))
+* BEN classname for CD Layout content area ([aa2801f](https://github.com/UN-OCHA/common_design/commit/aa2801feec383e6d2fdd699a0c389c38eb6e0074))
+* CD Layout content should grow to fill available space ([59778c5](https://github.com/UN-OCHA/common_design/commit/59778c5907517e7f8e77edeaf36762adf2bf94e7))
+* clean up code, consolidate MQs, run linter ([dc97159](https://github.com/UN-OCHA/common_design/commit/dc97159621262ac33fb5a22a5fcde8d23c8d55ea))
+* define CD Layout content flex-item after container ([8bc49fd](https://github.com/UN-OCHA/common_design/commit/8bc49fd637f8e38932d8f6f342ec9d8480ded62a))
+* enforce proper flex order for second sidebar ([420be92](https://github.com/UN-OCHA/common_design/commit/420be92f1d9944c0d6128312c2ff60361d9ea2b6))
+* further simplify universal layout by removing CSS Vars ([e8c71d2](https://github.com/UN-OCHA/common_design/commit/e8c71d2608b830f9d6317bfc127e396281e60270))
+* lock sidebars to 285px by default and add option for wider ones ([3751da9](https://github.com/UN-OCHA/common_design/commit/3751da999ee86224ec80a86a8edc54f7bebefd60))
+* prevent overflow on viewports 320 > 420 ([ea3be48](https://github.com/UN-OCHA/common_design/commit/ea3be48e2816ca9163c48fe205fc8bf64fa85e42))
+* reapply sidebar styles using new BEM classes ([ea9781e](https://github.com/UN-OCHA/common_design/commit/ea9781e95dcb4e0d163b9c61fed63cef6ff9091e))
+* remove cd-block-title compact styles ([7267212](https://github.com/UN-OCHA/common_design/commit/72672124fbc2dac07a0f3325030cb20d41bb90e4))
+* rename CD Page Layout container class ([799248a](https://github.com/UN-OCHA/common_design/commit/799248a2db774bd4a28789970964df62e417c8d2))
+* shorter, proper BEM class for cd-layout ([aaf24bc](https://github.com/UN-OCHA/common_design/commit/aaf24bc93f8ca64341d1bf5825278fc7da59fb77))
+* simplify flex layout for sidebars ([84fb4e4](https://github.com/UN-OCHA/common_design/commit/84fb4e409cd7449e921ba76f8e7467ee4d60e9a0))
+* split layouts into page/content and refactor page to flex ([6c84806](https://github.com/UN-OCHA/common_design/commit/6c8480651a91e5a0527f24dcf677a56c53286732))
+* update cd-article Twig/HTML with new BEM classnames ([716bd47](https://github.com/UN-OCHA/common_design/commit/716bd473c5ce96883573fc8c1a30ed3a98f4bdf7))
+* use new layout CSS for faux node columns as well ([1ebe1c1](https://github.com/UN-OCHA/common_design/commit/1ebe1c1999c9e66bc5d67411bce3d662276bbfc0))
+
+
 ## [8.0.2](https://github.com/UN-OCHA/common_design/compare/v8.0.1...v8.0.2) (2023-04-12)
 
 ### Bug Fixes
