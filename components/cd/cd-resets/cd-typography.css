@@ -212,7 +212,9 @@ img {
   margin-top: 0.75rem;
 }
 
-/* List in sidebars with compact content style */
+/**
+ * Compact: Lists in sidebars
+ */
 .cd-layout__sidebar.cd-content--compact ol,
 .cd-layout__sidebar.cd-content--compact ul {
   margin: 0.5em 0 1.5rem;
@@ -221,5 +223,21 @@ img {
 
 .cd-layout__sidebar.cd-content--compact ol li + li,
 .cd-layout__sidebar.cd-content--compact ul li + li {
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+/**
+ * Compact: Headings in sidebars
+ */
+.cd-layout__sidebar.cd-content--compact h2,
+.cd-layout__sidebar.cd-content--compact h3,
+.cd-layout__sidebar.cd-content--compact h4,
+.cd-layout__sidebar.cd-content--compact h5,
+.cd-layout__sidebar.cd-content--compact h6 {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
 }
