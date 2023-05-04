@@ -8,9 +8,8 @@
   list-style: none;
 }
 
-/* Override the generic .cd-layout-sidebar-first ul */
-.cd-layout-sidebar-first .cd-bullet-list li,
-.cd-layout-sidebar-second .cd-bullet-list li {
+/* Override the generic sidebar ul */
+.cd-layout__sidebar .cd-bullet-list li {
   margin: 0;
 }
 
@@ -55,8 +54,7 @@
   transform: scale(-1, 1);
 }
 
-/* Override the generic .cd-layout-sidebar-first ul */
-.cd-layout-sidebar-first .cd-bullet-list,
-.cd-layout-sidebar-second .cd-bullet-list {
+/* Override the generic sidebar ul */
+.cd-layout__sidebar .cd-bullet-list {
   padding-inline-start: 0;
 }

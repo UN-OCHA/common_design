@@ -94,9 +94,8 @@
   list-style: none;
 }
 
-/* Override the generic .cd-layout-sidebar-first ul */
-.cd-layout-sidebar-first .block-facets-summary ul,
-.cd-layout-sidebar-second .block-facets-summary ul {
+/* Override the generic sidebar ul */
+.cd-layout__sidebar .block-facets-summary ul {
   margin: 0;
   padding-inline-start: 0;
 }
