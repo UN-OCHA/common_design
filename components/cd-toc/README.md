@@ -9,6 +9,9 @@ Due to the use of the CSS counters, the list items do not indent when wrapped.
 ### Variants
 
 ```css
-/* On the ol element. */
+/* Allow content to expand into columns. */
+.cd-toc--with-cols
+
+/* Roman numeral bullets. */
 .cd-toc__list--roman
 ```
