@@ -715,7 +715,7 @@ function common_design_load_theme_blocks(array $ids) {
  *   before to avoid displaying the block several times.
  */
 function common_design_get_block_render_array($id) {
-  static $rendered = [];
+  $rendered = &drupal_static(__FUNCTION__, []);
 
   if (!isset($rendered[$id])) {
     // Prevent rendering the block several times.
