@@ -19,14 +19,7 @@ ul[data-cd-hidden=true] > ul {
 
 .menu--main button[aria-expanded] .cd-icon--arrow-down {
   fill: var(--brand-highlight);
-  margin-top: 4px;
   margin-inline-start: 4px;
-}
-
-@media (min-width: 1024px) {
-  .menu--main button[aria-expanded] .cd-icon--arrow-down {
-    margin-top: -2px;
-  }
 }
 
 /**
@@ -115,6 +108,7 @@ ul[data-cd-hidden=true] > ul {
 .cd-nav button {
   position: relative;
   display: flex;
+  align-items: center;
   padding: 15px 30px;
   text-decoration: none;
   color: var(--cd-default-text-color);
