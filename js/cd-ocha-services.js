@@ -9,7 +9,7 @@
 
     /**
      * Hide and move OCHA Services to the top of the header after the target.
-   */
+     */
     moveToHeader: function (id, target) {
       var section = document.getElementById(id);
       var sibling = document.getElementById(target);
