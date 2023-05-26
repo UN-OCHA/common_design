@@ -5,7 +5,7 @@
    * Set these variables and the CD Header/Footer will re-color to your brand.
    */
   --brand-primary: var(--cd-ocha-blue);
-  --brand-primary--light: var(--cd-blue--brighter);
+  --brand-primary--light: var(--cd-blue--bright);
   --brand-primary--dark: var(--cd-blue--dark);
   --brand-highlight: var(--cd-highlight-red);
   --brand-grey: var(--cd-blue-grey);
