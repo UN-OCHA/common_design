@@ -40,7 +40,10 @@
 
     {% set parent_id = attributes.id ?? ('cd-help-menu-' ~ menu_level) %}
 
-    <ul{{ attributes.addClass(menu_classes).setAttribute('data-cd-menu-level', menu_level) }}>
+    <ul{{ attributes
+      .addClass(menu_classes)
+      .setAttribute('data-cd-menu-level', menu_level)
+    }}>
 
     {% for item in items %}
       {%

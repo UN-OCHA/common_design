@@ -36,23 +36,17 @@
   'cd-global-header__language-switcher'
 ]
 %}
-
-<div{{ attributes.addClass(classes) }}>
+{% set aria_label = 'Language'|t %}
+<div{{ attributes.addClass(classes)|without('role') }}>
   <div{{ create_attribute({
     'class': ['cd-language-switcher', 'cd-dropdown'],
     'id': 'cd-language',
-    'aria-labelledby': 'cd-language-switcher',
     'data-cd-toggable': "#{language_name}",
     'data-cd-icon': 'arrow-down',
     'data-cd-component': 'cd-language-switcher',
+    'role': 'navigation',
+    'aria-label': aria_label,
   }) }}>
-    {# Label. If not displayed, we still provide it for screen readers. #}
-    {% if not configuration.label_display %}
-      {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-    {% endif %}
-    {{ title_prefix }}
-    <h2{{ title_attributes.setAttribute('id', 'cd-language-switcher').addClass('visually-hidden') }}>{{ configuration.label }}</h2>
-    {{ title_suffix }}
 
     {% block content %}
       {{ content }}
