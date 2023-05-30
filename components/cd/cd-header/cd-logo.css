@@ -4,7 +4,7 @@
  * Replace images with your site logo.
  */
 
-/* Wrap the logo in h1 if it's the main heading for the page (e.g. on homepage). */
+/* Logo is wrapped in H1 since it serves as top-level of outline. */
 .cd-site-header h1 {
   margin: 0;
 }
