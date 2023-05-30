@@ -24,8 +24,20 @@ Refer to [Drupal 9+ Theming documentation][theming-docs] for more information.
 
 ### Customise the logo
 
-- Set the logo `logo: 'img/logos/your-logo.svg'` in the `common_design_subtheme.info.yml` file.
-- Adjust `--brand-logo-width` inside `css/brand.css`
+The theme uses two logos: by default the UN emblem, and on wider screens the OCHA lockup (emblem plus "OCHA"). To configure both follow these steps:
+
+1. **Desktop:** Add your file to `img/logos` and set the **desktop logo** in the `common_design_subtheme.info.yml` file
+
+```
+logo: 'img/logos/your-desktop-logo.svg'
+```
+
+Adjust `--brand-logo-desktop-width` to match your logo's dimensions
+
+2. **Mobile:** Check your mobile logo into version control and adjust the following variables inside `css/brand.css` to match the file's location and dimensions:
+
+  - `--brand-logo-mobile-url`
+  - `--brand-logo-mobile-width`
 
 
 ### Customise the favicon and homescreen icons
