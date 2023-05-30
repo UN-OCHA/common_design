@@ -24,12 +24,12 @@ now that we layout with flex. */
 }
 
 .cd-site-header__inner .region-header-logo {
-  flex: 0 0 52px;
+  flex: 0 0 var(--brand-logo-mobile-width);
 }
 
 @media (min-width: 768px) {
   .cd-site-header__inner .region-header-logo {
-    flex: 0 0 var(--brand-logo-width);
+    flex: 0 0 var(--brand-logo-desktop-width);
   }
 }
 
