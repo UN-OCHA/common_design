@@ -11,7 +11,7 @@
 #}
 <div class="cd-page-layout-container">
 
-  <header class="cd-header">
+  <header role="banner" class="cd-header" aria-label="{{ 'Site header'|t }}">
 
     <div class="cd-global-header">
       <div class="cd-container cd-global-header__inner">
@@ -55,7 +55,7 @@
     </div>
   </main>
 
-  <footer class="cd-footer" role="contentinfo">
+  <footer class="cd-footer" role="contentinfo" aria-label="{{ 'Site footer'|t }}">
     <div class="cd-container cd-footer__inner">
 
       {% block mandate %}
