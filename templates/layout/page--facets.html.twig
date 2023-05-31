@@ -8,7 +8,7 @@
 
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(facets_layout_classes) }}>
+    <main role="main" aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(facets_layout_classes) }}>
 
       {{ page.page_title }}
 

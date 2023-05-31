@@ -41,16 +41,13 @@
   </header>
 
   {# Link to skip to the main content is in html.html.twig #}
-  <main role="main" id="main-content" class="cd-container">
+  <main role="main" aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
 
     <h1 class="cd-page-title">{{ title }}</h1>
 
     <div class="cd-layout">
-
       <div class="cd-layout__content">
-
-      {{ page.content }}
-
+        {{ page.content }}
       </div>{# /.layout-content #}
     </div>
   </main>
