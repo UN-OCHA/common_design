@@ -1,0 +1,12 @@
+/**
+ * Common Design: Logo
+ *
+ * Overrides the image path. All other rules are defined in CD Header itself.
+ * This rule exists so that the values in brand.css resolve relative to this
+ * sub-theme instead of the base-theme.
+ */
+.cd-site-logo {
+  background:
+    linear-gradient(transparent, transparent),
+    var(--brand-logo-mobile-url) center no-repeat;
+}

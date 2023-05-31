@@ -37,9 +37,9 @@ libraries:
 #
 # @see common_design_subtheme.libraries.yml
 #
-# libraries-extend:
-#   common_design/cd-teaser:
-#     - common_design_subtheme/custom-teaser
+libraries-extend:
+  common_design/cd-header:
+    - common_design_subtheme/cd-header
 
 ###
 # Override libraries to replace specific base-theme components. Now, when the
