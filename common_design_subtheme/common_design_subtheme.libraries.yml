@@ -11,7 +11,6 @@ global-styling:
     base:
       css/brand.css: {}
       css/styles.css: {}
-#     theme:
 #   dependencies:
 #     - common_design_subtheme/custom-teaser
 
@@ -31,7 +30,7 @@ global-styling:
 cd-header:
   css:
     theme:
-      components/cd/cd-header/cd-logo.css
+      components/cd/cd-header/cd-logo.css: {}
 
 ###
 # Define Drupal libraries for additional webfonts.
