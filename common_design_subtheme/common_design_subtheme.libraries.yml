@@ -31,7 +31,7 @@ global-styling:
 cd-header:
   css:
     theme:
-      components/cd/cd-header/cd-logo.css
+      components/cd/cd-header/cd-logo.css: {}
 
 ###
 # Define Drupal libraries for additional webfonts.
