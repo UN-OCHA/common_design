@@ -38,19 +38,16 @@
 %}
 {% set aria_label = 'Language'|t %}
 <div{{ attributes.addClass(classes)|without('role') }}>
-  <div{{ create_attribute({
+  <nav{{ create_attribute({
     'class': ['cd-language-switcher', 'cd-dropdown'],
     'id': 'cd-language',
     'data-cd-toggable': "#{language_name}",
     'data-cd-icon': 'arrow-down',
     'data-cd-component': 'cd-language-switcher',
-    'role': 'navigation',
     'aria-label': aria_label,
   }) }}>
-
     {% block content %}
       {{ content }}
     {% endblock %}
-
-  </div>
+  </nav>
 </div>
