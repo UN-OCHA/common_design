@@ -38,11 +38,11 @@
     'block-menu',
     'navigation',
     'menu--' ~ derivative_plugin_id|clean_class,
-    'cd-global-header__user-menu'
+    'cd-global-header__user-menu',
+    'cd-user-menu',
   ]
 %}
-{% set aria_label = 'Help'|t %}
-<nav{{ attributes.addClass(classes).setAttribute('aria-label', aria_label) }}>
+<nav{{ attributes.addClass(classes).setAttribute('aria-label', 'Help'|t) }}>
   {% block content %}
     {{ content }}
   {% endblock %}

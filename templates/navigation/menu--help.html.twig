@@ -40,10 +40,12 @@
 
     {% set parent_id = attributes.id ?? ('cd-help-menu-' ~ menu_level) %}
 
-    <ul{{ attributes
-      .addClass(menu_classes)
-      .setAttribute('data-cd-menu-level', menu_level)
-    }}>
+    {% if menu_level != 0 %}
+      <ul{{ attributes
+        .addClass(menu_classes)
+        .setAttribute('data-cd-menu-level', menu_level)
+      }}>
+    {% endif %}
 
     {% for item in items %}
       {%
@@ -58,7 +60,7 @@
       {% set title = item.title %}
       {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
-      <li{{ item.attributes.addClass(classes) }}>
+      {% if menu_level != 0 %}<li{{ item.attributes.addClass(classes) }}>{% endif %}
 
         {#
           Progressive enhancement: make sure there is always a menu entry.
@@ -103,10 +105,8 @@
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
 
         {% endif %}
-
-      </li>
-
-    {% endfor %}
-    </ul>
+        {% if menu_level != 0 %}</li>{% endif %}
+      {% endfor %}
+    {% if menu_level != 0 %}</ul>{% endif %}
   {% endif %}
 {% endmacro %}

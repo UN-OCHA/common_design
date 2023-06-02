@@ -10,6 +10,7 @@
   margin: 0;
   padding-inline-start: 0;
   list-style: none;
+  position: relative;
 }
 
 .cd-user-menu ul {
