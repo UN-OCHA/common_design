@@ -16,6 +16,17 @@
  *   - is_collapsed: TRUE if the link has children within the current menu tree
  *     that are not currently visible.
  *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * This template assumes that your Help nav uses one active top-level menu
+ * item with all other menu items nested flatly underneath. Your nav MUST look
+ * like this for the template to function:
+ *
+ * Help
+ *  ↳ Optional: site-specific user action(s)
+ *
+ * <ul>/<li> tags are commented out for menu_level 0. Omitting these tags is for
+ * the benefit of screen readers, who announce fewer items before landing on the
+ * toggle button.
  */
 #}
 {% import _self as menus %}
