@@ -1,8 +1,12 @@
-{# Displays the site footer #}
-
+{#
+/**
+ * @file
+ * Top-level template for CD Footer.
+ */
+#}
 {{ attach_library('common_design/cd-ocha-services') }}
 
-<footer class="cd-footer" role="contentinfo">
+<footer class="cd-footer" role="contentinfo" aria-label="{{ 'Site footer'|t }}">
   <div class="cd-container cd-footer__inner">
 
     {% block footer_menu %}
@@ -18,11 +22,10 @@
       {% include '@common_design/cd/cd-footer/cd-copyright.html.twig' %}
     {% endblock %}
 
-
+    {# JS will move this into the Global Header #}
     {% block ocha %}
       {% include '@common_design/cd/cd-header/cd-ocha.html.twig' %}
     {% endblock %}
 
   </div>
 </footer>
-

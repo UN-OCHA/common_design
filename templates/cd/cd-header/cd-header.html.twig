@@ -1,6 +1,10 @@
-{# Displays the site header #}
-
-<header class="cd-header">
+{#
+/**
+ * @file
+ * Top-level template for CD Header.
+ */
+#}
+<header role="banner" class="cd-header" aria-label="{{ 'Site header'|t }}">
 
   {% block header_content %}
     {% include '@common_design/cd/cd-header/cd-global-header.html.twig' %}
