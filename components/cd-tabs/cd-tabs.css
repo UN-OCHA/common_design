@@ -1,82 +1,76 @@
 /**
  * CD Tabs
+ *
+ * They form full-width buttons on mobile, and a wrappable row of auto-width
+ * buttons once space allows. They work with all reading directions.
  */
 
+:root {
+  --cd-tabs-border-width: 2px;
+}
+
+/**
+ * Mobile tabs (default)
+ */
 ul.tabs {
-  display: block;
+  display: flex;
+  flex-flow: row wrap;
   margin: 1rem 0 2rem;
   padding: 0;
   list-style: none;
-  border-bottom: 2px solid var(--brand-grey);
-}
-
-/* Clearfix */
-ul.tabs::after {
-  display: block;
-  visibility: hidden;
-  clear: both;
-  height: 0;
-  content: ".";
+  border-bottom: var(--cd-tabs-border-width) solid var(--brand-grey);
 }
 
 ul.tabs > li {
   display: block;
+  flex: 0 0 100%;
+  align-self: flex-end;
   margin: 0;
+  margin-bottom: calc(var(--cd-tabs-border-width) * -1);
 }
 
 ul.tabs > li > a {
-  position: relative;
   display: block;
   margin: 0;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: var(--brand-primary--dark);
   border: 0 none;
-  border-bottom: 2px solid var(--brand-grey);
+  border-bottom: var(--cd-tabs-border-width) solid var(--brand-grey);
   border-radius: 0;
   background: none;
   font-weight: 700;
 }
 
-@media (min-width: 576px) {
-  ul.tabs > li {
-    position: relative;
-    /* Height of border bottom. */
-    margin-bottom: -2px;
-  }
-
-  [dir="ltr"] ul.tabs > li {
-    float: left;
-    margin-right: 0.5rem;
-  }
-
-  [dir="rtl"] ul.tabs > li {
-    float: right;
-    margin-left: 0.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  ul.tabs > li > a {
-    min-width: 7rem; /* 112px */
-  }
-}
-
 ul.tabs > li > a.is-active,
 ul.tabs > li > a:hover {
   color: var(--brand-primary);
-  border: 0 none !important;
-  border-bottom: 2px solid var(--brand-grey) !important;
   background-color: var(--brand-grey);
 }
 
-ul.tabs > li > a.is-active {
-  background-color: var(--cd-grey--light);
+ul.tabs > li > a:focus {
+  color: var(--cd-white);
+  outline: 3px solid var(--brand-highlight);
+  background: var(--brand-primary--dark);
 }
 
-ul.tabs > li > a:focus {
-  outline: 3px solid var(--brand-primary--light);
-  background: var(--brand-grey);
+/**
+ * Standard tabs.
+ *
+ * Once we have enough room, expand tabs to a wrappable row and remove borders.
+ */
+@media (min-width: 576px) {
+  ul.tabs {
+    gap: 0.5rem;
+  }
+  ul.tabs > li {
+    flex-basis: auto;
+    margin-bottom: 0;
+  }
+  ul.tabs > li > a {
+    padding: 0.25rem 1rem;
+    border-bottom: 0;
+  }
 }
