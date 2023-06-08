@@ -14,9 +14,10 @@
   box-shadow: -8px 0 0 var(--cd-blue--bright);
 }
 
-.cd-alert > div {
+.cd-alert > div[role] {
   display: flex;
   align-items: flex-start;
+  gap: 1rem;
 }
 
 .cd-alert__title {
@@ -28,14 +29,6 @@
   width: 1.5rem;
   height: 1.5rem;
   fill: var(--cd-blue--bright);
-}
-
-[dir="ltr"] .cd-alert svg {
-  margin-right: 1rem;
-}
-
-[dir="rtl"] .cd-alert svg {
-  margin-left: 1rem;
 }
 
 .cd-alert a,

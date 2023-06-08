@@ -14,7 +14,7 @@
  *
  * Available variables:
  * - message_list: List of messages to be displayed, grouped by type.
- * - status_headings: List of all status types.
+ * - status_headings: List of all status types. Pre-translated, do not use |t
  * - attributes: HTML attributes for the element, including:
  *   - class: HTML classes.
  */
@@ -32,11 +32,11 @@
       'cd-alert cd-alert--' ~ type,
     ]
   %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-    {% if type == 'error' or type == 'warning' %}
-      <div role="alert">
+  <div{{ attributes.addClass(classes)|without('role', 'aria-label', 'aria-labelledby') }}>
+    {% if type == 'error' %}
+      <div role="alert" aria-label="{{ status_headings[type] }}">
     {% else %}
-      <div aria-live="polite">
+      <div role="status" aria-label="{{ status_headings[type] }}">
     {% endif %}
 
       {% if type == 'error' or type == 'warning' %}
@@ -53,17 +53,10 @@
         </svg>
       {% endif %}
 
-        <div class="cd-alert__container cd-max-width">
-
-          {% if status_headings[type] %}
-            <div class="cd-alert__title">
-              <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-            </div>
-          {% endif %}
-
-          <div class="cd-alert__message">
+      <div class="cd-alert__container cd-max-width">
+        <div class="cd-alert__message [ cd-flow ]">
           {% if messages|length > 1 %}
-            <ul class="messages__list">
+            <ul class="messages__list" role="list">
               {% for message in messages %}
                 <li class="messages__item">{{ message }}</li>
               {% endfor %}
@@ -71,12 +64,12 @@
           {% else %}
             {{ messages|first }}
           {% endif %}
-          </div>
-
         </div>
-      </div>
+
+      </div>{# .cd-alert__message #}
+    </div>{# div[role] #}
   </div>
-  {# Remove type specific classes. #}
+  {# Remove type-specific classes before looping again. #}
   {% set attributes = attributes.removeClass(classes) %}
 {% endfor %}
 {% endblock messages %}
