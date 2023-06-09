@@ -5,16 +5,21 @@
  *
  * Displays status, error, and warning messages, grouped by type.
  *
- * An invisible heading identifies the messages for assistive technology.
- * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
- * for info.
+ * An invisible heading identifies the message type for assistive technology.
+ * We also duplicate the message type as an ARIA label on the div with `role`.
+ * Sighted users see a colored box with unique icons to indicate message type.
  *
- * Add an ARIA label to the contentinfo area so that assistive technology
- * user agents will better describe this landmark.
+ * @see http://www.w3.org/TR/WCAG-TECHS/H69.html
+ *
+ * Drupal core 8-11 use role=contentinfo as the role for this template. It is
+ * agreed that this is wrong, because contentinfo is only for site footers.
+ * Instead we use alert/status roles depending on the message type.
+ *
+ * @see https://www.drupal.org/project/drupal/issues/2942404
  *
  * Available variables:
  * - message_list: List of messages to be displayed, grouped by type.
- * - status_headings: List of all status types.
+ * - status_headings: List of all status types. Output is translated already.
  * - attributes: HTML attributes for the element, including:
  *   - class: HTML classes.
  */
@@ -32,14 +37,18 @@
       'cd-alert cd-alert--' ~ type,
     ]
   %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-    {% if type == 'error' or type == 'warning' %}
-      <div role="alert">
+  <div{{ attributes.addClass(classes)|without('role', 'aria-label', 'aria-labelledby') }}>
+    {% if type == 'error' %}
+      <div role="alert" aria-label="{{ status_headings[type] }}">
     {% else %}
-      <div aria-live="polite">
+      <div role="status" aria-label="{{ status_headings[type] }}">
     {% endif %}
 
-      {% if type == 'error' or type == 'warning' %}
+      {% if type == 'error' %}
+        <svg class="cd-icon cd-icon--form-error" aria-hidden="true" focusable="false" width="24" height="24">
+          <use xlink:href="#cd-icon--form-error"></use>
+        </svg>
+      {% elseif type == 'warning' %}
         <svg class="cd-icon cd-icon--alert" aria-hidden="true" focusable="false" width="24" height="24">
           <use xlink:href="#cd-icon--alert"></use>
         </svg>
@@ -53,17 +62,13 @@
         </svg>
       {% endif %}
 
-        <div class="cd-alert__container cd-max-width">
-
-          {% if status_headings[type] %}
-            <div class="cd-alert__title">
-              <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-            </div>
-          {% endif %}
-
-          <div class="cd-alert__message">
+      <div class="cd-alert__container cd-max-width">
+        <div class="cd-alert__title">
+          <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        </div>
+        <div class="cd-alert__message [ cd-flow ]">
           {% if messages|length > 1 %}
-            <ul class="messages__list">
+            <ul class="messages__list" role="list">
               {% for message in messages %}
                 <li class="messages__item">{{ message }}</li>
               {% endfor %}
@@ -71,12 +76,12 @@
           {% else %}
             {{ messages|first }}
           {% endif %}
-          </div>
-
         </div>
-      </div>
+
+      </div>{# .cd-alert__message #}
+    </div>{# div[role] #}
   </div>
-  {# Remove type specific classes. #}
+  {# Remove type-specific classes before looping again. #}
   {% set attributes = attributes.removeClass(classes) %}
 {% endfor %}
 {% endblock messages %}
