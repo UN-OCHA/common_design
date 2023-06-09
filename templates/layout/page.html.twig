@@ -75,7 +75,7 @@
 
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(layout_classes) }}>
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(layout_classes) }}>
 
       {{ page.page_title }}
 
@@ -112,6 +112,5 @@
   {% block footer %}
     {% include '@common_design/cd/cd-footer/cd-footer.html.twig' %}
   {% endblock %}
-
 
 </div>{# /.cd-page-layout-container #}

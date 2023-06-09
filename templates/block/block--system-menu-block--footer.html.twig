@@ -34,7 +34,7 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-<nav aria-label="{{ 'Footer'|t }}"{{ attributes|without('role', 'aria-label', 'aria-labelledby') }}>
+<nav{{ attributes.setAttribute('aria-label','Footer'|t) }}>
   {% block content %}
     {{ content }}
   {% endblock %}

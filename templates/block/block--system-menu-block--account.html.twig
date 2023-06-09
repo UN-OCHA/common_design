@@ -42,7 +42,10 @@
     'cd-user-menu',
   ]
 %}
-<nav{{ attributes.addClass(classes).setAttribute('aria-label', 'Account'|t) }}>
+<nav{{ attributes
+  .setAttribute('aria-label', 'Account'|t)
+  .addClass(classes)
+}}>
   {% block content %}
     {{ content }}
   {% endblock %}

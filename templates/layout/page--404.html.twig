@@ -1,8 +1,7 @@
 {% embed '@common_design/layout/page.html.twig' %}
-
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
 
       {{ page.page_title }}
 
@@ -14,7 +13,6 @@
 
     </main>
   {% endblock %}
-
 {% endembed %}
 
 

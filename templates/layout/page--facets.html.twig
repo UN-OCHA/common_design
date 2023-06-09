@@ -5,10 +5,9 @@
 %}
 
 {% embed '@common_design/layout/page.html.twig' %}
-
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(facets_layout_classes) }}>
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(facets_layout_classes) }}>
 
       {{ page.page_title }}
 
@@ -34,5 +33,4 @@
 
     </main>
   {% endblock %}
-
 {% endembed %}

@@ -42,14 +42,13 @@
   ]
 %}
 
-{% set aria_label = 'Main'|t %}
 <nav{{ attributes
-  .setAttribute('aria-label', aria_label)
+  .setAttribute('aria-label', 'Main'|t)
   .setAttribute('data-cd-toggable', 'Menu'|t)
   .setAttribute('data-cd-component', 'cd-nav-level-0')
   .setAttribute('data-cd-icon', 'arrow-down')
-  .addClass(classes)|without('role', 'aria-labelledby') }}>
-  {# Menu. #}
+  .addClass(classes)
+}}>
   {% block content %}
     {{ content }}
   {% endblock %}
