@@ -41,7 +41,7 @@
 {% if links -%}
   <ul{{ attributes.addClass(classes) }}>
     {%- for item in links -%}
-      <li{{ item.attributes }}>
+      <li{{ item.attributes|without('hreflang') }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}
