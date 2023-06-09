@@ -5,16 +5,21 @@
  *
  * Displays status, error, and warning messages, grouped by type.
  *
- * An invisible heading identifies the messages for assistive technology.
- * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
- * for info.
+ * An invisible heading identifies the message type for assistive technology.
+ * We also duplicate the message type as an ARIA label on the div with `role`.
+ * Sighted users see a colored box.
  *
- * Add an ARIA label to the contentinfo area so that assistive technology
- * user agents will better describe this landmark.
+ * @see http://www.w3.org/TR/WCAG-TECHS/H69.html
+ *
+ * Drupal core 8-11 use role=contentinfo as the role for this template. It is
+ * agreed that this is wrong, because contentinfo is only for site footers.
+ * Instead we use alert/status roles depending on the message type.
+ *
+ * @see https://www.drupal.org/project/drupal/issues/2942404
  *
  * Available variables:
  * - message_list: List of messages to be displayed, grouped by type.
- * - status_headings: List of all status types. Pre-translated, do not use |t
+ * - status_headings: List of all status types. Output is translated already.
  * - attributes: HTML attributes for the element, including:
  *   - class: HTML classes.
  */
@@ -54,6 +59,9 @@
       {% endif %}
 
       <div class="cd-alert__container cd-max-width">
+        <div class="cd-alert__title">
+          <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        </div>
         <div class="cd-alert__message [ cd-flow ]">
           {% if messages|length > 1 %}
             <ul class="messages__list" role="list">

@@ -8,11 +8,14 @@
       <use xlink:href="#cd-icon--alert"></use>
     </svg>
     <div class="cd-alert__container cd-max-width">
+      <div class="cd-alert__title">
+        <h2 class="visually-hidden">{{ 'Error message'|t }}</h2>
+      </div>
       <div class="cd-alert__message [ cd-flow ]">
         <ul class="messages__list" role="list">
           <li>I am an error with a very important message and a link with <a href="#">more information</a>.</li>
-          <li>There may be many errors.</li>
-          <li>We can list them here.</li>
+          <li>There may be many errors. When there is more than one they appear as a list.</li>
+          <li>If there's only one, it will not be a list.</li>
         </ul>
       </div>
     </div>
@@ -25,6 +28,9 @@
       <use xlink:href="#cd-icon--alert"></use>
     </svg>
     <div class="cd-alert__container cd-max-width">
+      <div class="cd-alert__title">
+        <h2 class="visually-hidden">{{ 'Warning message'|t }}</h2>
+      </div>
       <div class="cd-alert__message [ cd-flow ]">
         <p>I am an alert that conveys a warning.</p>
       </div>
@@ -38,6 +44,9 @@
       <use xlink:href="#cd-icon--selected"></use>
     </svg>
     <div class="cd-alert__container cd-max-width">
+      <div class="cd-alert__title">
+        <h2 class="visually-hidden">{{ 'Status message'|t }}</h2>
+      </div>
       <div class="cd-alert__message [ cd-flow ]">
         <p>I am an alert that confirms a status, like when a page is saved successfully.</p>
       </div>
@@ -51,6 +60,9 @@
       <use xlink:href="#cd-icon--about"></use>
     </svg>
     <div class="cd-alert__container cd-max-width">
+      <div class="cd-alert__title">
+        <h2 class="visually-hidden">{{ 'Info message'|t }}</h2>
+      </div>
       <div class="cd-alert__message [ cd-flow ]">
         <p>I am the default alert with a low priority message and a link with <a href="#">more information</a>.</p>
       </div>
