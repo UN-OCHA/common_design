@@ -7,7 +7,7 @@
  *
  * An invisible heading identifies the message type for assistive technology.
  * We also duplicate the message type as an ARIA label on the div with `role`.
- * Sighted users see a colored box.
+ * Sighted users see a colored box with unique icons to indicate message type.
  *
  * @see http://www.w3.org/TR/WCAG-TECHS/H69.html
  *
@@ -44,7 +44,11 @@
       <div role="status" aria-label="{{ status_headings[type] }}">
     {% endif %}
 
-      {% if type == 'error' or type == 'warning' %}
+      {% if type == 'error' %}
+        <svg class="cd-icon cd-icon--form-error" aria-hidden="true" focusable="false" width="24" height="24">
+          <use xlink:href="#cd-icon--form-error"></use>
+        </svg>
+      {% elseif type == 'warning' %}
         <svg class="cd-icon cd-icon--alert" aria-hidden="true" focusable="false" width="24" height="24">
           <use xlink:href="#cd-icon--alert"></use>
         </svg>
