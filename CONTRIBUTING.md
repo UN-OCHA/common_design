@@ -6,11 +6,13 @@
 
 There are various audiences marked in this document. Mind the table at the top of each section to see if the docs are meant for your situation.
 
+
 # Contributing code
 
 | Audience           |
 | :----------------- |
 | Contributors to CD |
+
 
 ## Contributing CSS
 
@@ -20,8 +22,6 @@ All CSS is now managed by Drupal Library components. The best documentation to f
 - `npm run css:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely adjust.
 
 For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
-
-The `stylelintrc.json` config file extends Drupal core stylelint config. Run `yarn install` in your site's `html/core` directory to install the stylelint plugins if there are errors indicating missing packages.
 
   [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
   [drupal-css]: https://www.drupal.org/docs/develop/standards/css
@@ -77,8 +77,8 @@ has been swapped out. While the JS should be migrated automatically, any
 libraries that were overridden in subthemes, plus any templates using the old
 data-cd-toggable HTML attribute need to be re-inspected and verified to work
 properly."
-
 ```
+
 
 # Releases
 
