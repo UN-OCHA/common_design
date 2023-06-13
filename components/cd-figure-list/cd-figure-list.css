@@ -8,7 +8,7 @@
   list-style: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-color: var(--cd-grey--light);
+  border-color: var(--brand-grey);
 }
 .cd-figure-list + .cd-figure-list {
   border-width: 0 0 1px 0;
@@ -20,7 +20,7 @@
   list-style: none;
   border-width: 1px 0 0 0;
   border-style: solid;
-  border-color: var(--cd-grey--light);
+  border-color: var(--brand-grey);
 }
 .cd-figure-list__label {
   font-weight: 700;
