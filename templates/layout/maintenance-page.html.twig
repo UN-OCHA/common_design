@@ -11,7 +11,7 @@
 #}
 <div class="cd-page-layout-container">
 
-  <header role="banner" class="cd-header" aria-label="{{ 'Site header'|t }}">
+  <header class="cd-header" aria-label="{{ 'Site header'|t }}">
 
     <div class="cd-global-header">
       <div class="cd-container cd-global-header__inner">
@@ -25,7 +25,7 @@
         <div class="region region-header-logo">
           <h1>
             <a href="{{ path('<front>') }}" title="{{ 'Front page'|t }}" rel="home" class="cd-site-logo">
-              <img src="{{ logo }}" alt="{{ site_name }}" aria-hidden="true" width="100%" height="60px" />
+              <img src="{{ logo }}" alt="{{ site_name }}" aria-hidden="true">
               <span class="visually-hidden">{{ site_name }}</span>
             </a>
           </h1>
@@ -41,7 +41,7 @@
   </header>
 
   {# Link to skip to the main content is in html.html.twig #}
-  <main role="main" aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
+  <main aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
 
     <h1 class="cd-page-title">{{ title }}</h1>
 
@@ -52,7 +52,7 @@
     </div>
   </main>
 
-  <footer class="cd-footer" role="contentinfo" aria-label="{{ 'Site footer'|t }}">
+  <footer class="cd-footer" aria-label="{{ 'Site footer'|t }}">
     <div class="cd-container cd-footer__inner">
 
       {% block mandate %}
