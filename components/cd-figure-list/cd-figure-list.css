@@ -8,8 +8,9 @@
   list-style: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-color: var(--cd-grey--light);
+  border-color: var(--brand-grey);
 }
+
 .cd-figure-list + .cd-figure-list {
   border-width: 0 0 1px 0;
 }
@@ -20,11 +21,13 @@
   list-style: none;
   border-width: 1px 0 0 0;
   border-style: solid;
-  border-color: var(--cd-grey--light);
+  border-color: var(--brand-grey);
 }
+
 .cd-figure-list__label {
   font-weight: 700;
 }
+
 .cd-figure-list__label small {
   font-size: inherit;
   font-weight: normal;
@@ -37,13 +40,16 @@
   /* The top/bottom paddings come from the list items. */
   padding: 0;
 }
+
 .cd-figure-list--large .cd-figure-list__item {
   padding: 2rem 0;
   border-width: 1px 0 0 0;
 }
+
 .cd-figure-list--large .cd-figure-list__label {
   font-size: 1rem;
 }
+
 .cd-figure-list--large .cd-figure-list__value {
   color: var(--brand-primary);
   font-size: 1.625rem;
@@ -56,10 +62,12 @@
     padding: 2rem 0;
     border-width: 1px 0;
   }
+
   .cd-figure-list--large.cd-figure-list {
     display: flex;
     justify-content: space-between;
   }
+
   .cd-figure-list--large .cd-figure-list__item {
     display: inline-block;
     /* @todo use a quantity media query to adjust this? */
@@ -69,20 +77,25 @@
     padding: 0 1.5rem;
     border-width: 0 0 0 1px;
   }
+
   [dir="ltr"] .cd-figure-list--large .cd-figure-list__item:first-child {
     padding-left: 0;
     border-width: 0;
   }
+
   [dir="rtl"] .cd-figure-list--large .cd-figure-list__item:first-child {
     padding-right: 0;
     border-width: 0 0 0 1px;
   }
+
   [dir="rtl"] .cd-figure-list--large .cd-figure-list__item:last-child {
     border-width: 0;
   }
+
   .cd-figure-list--large .cd-figure-list__label {
     font-size: 1.125rem;
   }
+
   .cd-figure-list--large .cd-figure-list__value {
     font-size: 2rem;
   }
@@ -102,6 +115,7 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+
 .cd-figure-list--small.cd-figure-list {
   /* For the small variant of the figure list, we let the figures wrap to new
    * rows instead of displaying one per row on smaller screens. */
@@ -115,11 +129,13 @@
   /* Compensate for the margins of the figure items. */
   margin: -1rem 0 0 0;
 }
+
 .cd-figure-list--small .cd-figure-list__item {
   flex: 0 1 auto;
   min-width: 140px;
   margin: 1rem 0 0 0;
 }
+
 [dir="ltr"] .cd-figure-list--small .cd-figure-list__item {
   margin-right: 0;
   /* The left margin combined with the overflow-x: hidden of the parent
@@ -129,6 +145,7 @@
   padding: 0 2rem 0 1rem;
   border-width: 0 0 0 1px;
 }
+
 [dir="rtl"] .cd-figure-list--small .cd-figure-list__item {
   margin-right: calc(-1rem - 1px);
   /* The right margin combined with the overflow-x: hidden of the parent

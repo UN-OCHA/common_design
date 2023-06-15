@@ -6,9 +6,9 @@
 
 <div class="cd-layout">
   <div class="cd-layout__sidebar cd-layout__sidebar--first cd-layout__sidebar--wide">
-    <div class="cd-toc [ cd-flow ]">
-      <h3 class="cd-toc__title" id="table-of-contents-title">Table of Contents</h3>
-      <ol id="cd-toc" class="cd-toc__list" aria-labelledby="table-of-contents-title">
+    <nav class="cd-toc [ cd-flow ]" aria-label="{{ 'TOC'|t }}">
+      <h3 class="cd-toc__title" id="table-of-contents-title">{{ 'Table of Contents'|t }}</h3>
+      <ol id="cd-toc" class="cd-toc__list">
         <li><a href="#heading-one">Example heading one</a></li>
         <li><a href="#heading-two">Example heading two</a>
           <ol>
@@ -18,7 +18,7 @@
         </li>
         <li><a href="#heading-three">Example heading three</a></li>
       </ol>
-    </div>
+    </nav>
   </div>
 
   <div class="cd-layout__content">
