@@ -6,17 +6,17 @@
  * or as a last resort modifying the selectors to match the markup of your form.
  */
 
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
-input[type="date"],
-input[type="time"],
-input[type="file"],
-textarea {
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form input[type="email"],
+form input[type="search"],
+form input[type="tel"],
+form input[type="url"],
+form input[type="date"],
+form input[type="time"],
+form input[type="file"],
+form textarea {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -27,7 +27,7 @@ textarea {
   font-size: 1rem;
 }
 
-select {
+form select {
   width: 100%;
   max-width: 100%;
   padding: 0.5rem 0.75rem;
@@ -35,72 +35,31 @@ select {
   font-size: 1rem;
 }
 
-textarea {
+form textarea {
   resize: vertical;
   /* Better readability similar to paragraphs. */
   line-height: 1.5;
 }
 
 @media (min-width: 576px) {
-  input[type="date"],
-  input[type="time"],
-  select {
+  form input[type="date"],
+  form input[type="time"],
+  form select {
     width: auto;
   }
 }
 
 @media (min-width: 768px) {
-  input[type="text"],
-  input[type="number"],
-  input[type="password"],
-  input[type="email"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="file"] {
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="password"],
+  form input[type="email"],
+  form input[type="search"],
+  form input[type="tel"],
+  form input[type="url"],
+  form input[type="file"] {
     max-width: 50ch;
   }
-}
-
-label,
-fieldset legend,
-.label {
-  display: block;
-  color: var(--cd-black);
-  font-weight: 700;
-}
-
-input.error,
-textarea.error,
-select.error {
-  border-color: var(--cd-highlight-red);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid var(--brand-primary);
-  outline-offset: -2px;
-}
-
-input::-webkit-input-placeholder {
-  color: var(--cd-grey--dark);
-  font-style: italic;
-}
-
-input:-ms-input-placeholder {
-  color: var(--cd-grey--dark);
-  font-style: italic;
-}
-
-input::-webkit-search-cancel-button {
-  position: relative;
-  right: 10px;
-}
-
-/* Safari fix */
-input::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 form fieldset {
@@ -109,9 +68,51 @@ form fieldset {
   padding: 0;
   border: none;
 }
+
 form fieldset legend {
   margin: 0;
   padding: 0;
+}
+
+form label,
+form fieldset legend,
+form .label {
+  display: block;
+  color: var(--cd-black);
+  font-weight: 700;
+}
+
+form input.error,
+form textarea.error,
+form select.error {
+  border-color: var(--cd-highlight-red);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: -2px;
+}
+
+form input::-webkit-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+form input:-ms-input-placeholder {
+  color: var(--cd-grey--dark);
+  font-style: italic;
+}
+
+form input::-webkit-search-cancel-button {
+  position: relative;
+  right: 10px;
+}
+
+/* Safari fix */
+form input::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .cd-form {
