@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+## [8.2.0](https://github.com/UN-OCHA/common_design/compare/v8.1.0...v8.2.0) (2023-06-16)
+
+### Features
+
+* specify mobile logo via --brand variable ([2be5631](https://github.com/UN-OCHA/common_design/commit/2be56319b6aaa56f104307106d00a3ae53be304f))
+
+
+### Bug Fixes
+
+* **a11y:** add header to announce copyright notice ([9f5bbb9](https://github.com/UN-OCHA/common_design/commit/9f5bbb98a1667d17726e483a050235a7048cde61))
+* **a11y:** announce Footer nav in footer ([3a7f43f](https://github.com/UN-OCHA/common_design/commit/3a7f43fb13535a82d4d553b24a59ee2c278a97d4))
+* **a11y:** announce Header/Footer in same manner ([459a33c](https://github.com/UN-OCHA/common_design/commit/459a33c01b68d45e07af89418f5554c8e9e411b2))
+* **a11y:** announce Site Name and avoid announcing logo ([e517abb](https://github.com/UN-OCHA/common_design/commit/e517abb7a38e0a4800651e548f363c4c7aedab17))
+* **a11y:** announce Social nav in footer ([14e44e7](https://github.com/UN-OCHA/common_design/commit/14e44e738d745c32542b131d6d8d40f29f7926da))
+* **a11y:** announce ToC as navigation ([6a30be4](https://github.com/UN-OCHA/common_design/commit/6a30be4c5e0e30e295fa175c4cb50121ecb3b03f))
+* **a11y:** better roles/attrs for announcing messages ([b0e1e99](https://github.com/UN-OCHA/common_design/commit/b0e1e9958426a3bc2f3b6e23e8751eb2ae97be66))
+* **a11y:** ensure main elements have proper ARIA labels ([da79e7a](https://github.com/UN-OCHA/common_design/commit/da79e7aec20c09eb7e238586d94c8fc6482ad54e))
+* **a11y:** improve announcement of Help menu ([bf53ba0](https://github.com/UN-OCHA/common_design/commit/bf53ba04c51f4d0e2cb51561e19b46782a3bd15e))
+* **a11y:** improve screen reading of Account menu ([232d969](https://github.com/UN-OCHA/common_design/commit/232d969ec91b63106e983f71df1310cfbae973e6))
+* **a11y:** improve screen reading of language/help/user menus ([0140cf8](https://github.com/UN-OCHA/common_design/commit/0140cf85c590f559cf7860645a81f168e2cc4b88))
+* **a11y:** improve screen reading of main navigation ([06f4990](https://github.com/UN-OCHA/common_design/commit/06f49901a21b1fae63e5a65ec0eef829d29dd852))
+* **a11y:** restore visually-hidden heading on Drupal messages ([fc0be7f](https://github.com/UN-OCHA/common_design/commit/fc0be7f330238bc4e31c63c11ced6c86d7d9bf14))
+* **a11y:** screen reader announces website header now ([0dbbb6f](https://github.com/UN-OCHA/common_design/commit/0dbbb6f5f5e2e1dc340c38f66898e1a1ce115aa8))
+* **a11y:** screen reader improvements for pagination ([f542ed3](https://github.com/UN-OCHA/common_design/commit/f542ed3a60cf9bad303298af295e8fd3332f81c2))
+* **a11y:** stop announcing redundant SVG data ([3b07a5a](https://github.com/UN-OCHA/common_design/commit/3b07a5aea474ba76d610f095c25a51749d095183))
+* **a11y:** style tabs with improved a11y/RTL ([4b21cfa](https://github.com/UN-OCHA/common_design/commit/4b21cfaa03b7b58a775ed1ede70959b169d749e0))
+* **a11y:** unique icons for every message type ([637f1ff](https://github.com/UN-OCHA/common_design/commit/637f1ffa1c42ca779acd7c49c3e8f904d6fbba08))
+* avoid printing hreflang on `<li>` tags ([78d1ca6](https://github.com/UN-OCHA/common_design/commit/78d1ca6328e15890c931c41b8d15e6f687038731))
+* avoid printing XML processing instruction in HTML ([5182fba](https://github.com/UN-OCHA/common_design/commit/5182fba455ed88a537db7010b77f81d1eb1adebf))
+* CD ToC defaults to single-col with a new variant for columns ([7d9bf90](https://github.com/UN-OCHA/common_design/commit/7d9bf903df733ccc02ca38b0b11b09f79c55ec43))
+* CSS refactor for CD Alert ([79ce2c1](https://github.com/UN-OCHA/common_design/commit/79ce2c119f0b511054c53c8ae41a6c300200ab9f))
+* remove invalid attributes from site logo ([e968025](https://github.com/UN-OCHA/common_design/commit/e9680250b2d9b30903a2fd07da9213af65c96e39))
+* simplify how to override logo from sub-theme ([9f3dd4f](https://github.com/UN-OCHA/common_design/commit/9f3dd4fe0ffa0b472716c3d4d3a52af9c90b9b80))
+* use --brand colors in CD Figures ([8534794](https://github.com/UN-OCHA/common_design/commit/853479409444d7b00439079f6328fe3e3306f26a))
+* Use drupal_static() instead of PHPs static keyword ([d5fd880](https://github.com/UN-OCHA/common_design/commit/d5fd880386b19ca503cb1cb867ff00c86266b189)), closes [#395](https://github.com/UN-OCHA/common_design/issues/395)
+* use same color as base-theme for primary--light ([23b08c2](https://github.com/UN-OCHA/common_design/commit/23b08c2704c605a9a4c6904915bda0d6f6c6a405))
+* W3 validator errors about duplicate id attributes ([21b634c](https://github.com/UN-OCHA/common_design/commit/21b634cd046f1cc190ebb61d63d0a6ff58085245))
+
+
 ## [8.1.0](https://github.com/UN-OCHA/common_design/compare/v8.0.2...v8.1.0) (2023-05-04)
 
 ### Features
