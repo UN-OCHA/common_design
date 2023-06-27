@@ -5,6 +5,7 @@
   {% set shareMessage = 'Replace this with the share text: '|t ~ shareText %}
   {% set shareUrl = 'https://demo.commondesign-unocha-org.ahconu.org' ~ url %}
   <div class="cd-social-links__wrapper">
+    <span class="cd-social-links__label">{{ 'Share'|t }}</span>
     <ul>
       <li>
         <a class="cd-social-links__link cd-social-links__link--twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ shareMessage }}%0A%0A{{ shareUrl|url_encode }}">

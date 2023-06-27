@@ -8,7 +8,14 @@
 }
 
 .cd-social-links__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+}
+
+.cd-social-links__label {
   position: relative;
+  top: -2px;
 }
 
 .cd-social-links ul {
@@ -21,7 +28,6 @@
 
 @media (min-width: 576px) {
   .cd-social-links ul {
-    position: absolute;
     padding-right: inherit;
     padding-left: inherit;
   }
