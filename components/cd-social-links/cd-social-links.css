@@ -3,12 +3,21 @@
  */
 
 .cd-social-links {
-  z-index: 5; /* keep them clickable */
+  --cd-social-links-fill: var(--brand-primary--dark);
+  --cd-social-links-z: -1;
+
   width: 100%;
 }
 
 .cd-social-links__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+}
+
+.cd-social-links__label {
   position: relative;
+  top: -2px;
 }
 
 .cd-social-links ul {
@@ -17,42 +26,25 @@
   justify-content: flex-start;
   margin: 0;
   padding: 0;
-}
-
-@media (min-width: 576px) {
-  .cd-social-links ul {
-    position: absolute;
-    padding-right: inherit;
-    padding-left: inherit;
-  }
-  html[dir="ltr"] .cd-social-links ul {
-    right: 0;
-  }
-  html[dir="rtl"] .cd-social-links ul {
-    left: 0;
-  }
-}
-
-.cd-social-links li {
-  flex: 0 0 1rem;
-  margin: 0;
+  gap: .5rem;
   list-style-type: none;
 }
 
-html[dir="ltr"] .cd-social-links li + li {
-  margin-left: 0.5rem;
+.cd-social-links__item {
+  position: relative;
+  flex: 0 0 1rem;
+  margin: 0;
 }
 
-html[dir="rtl"] .cd-social-links li + li {
-  margin-right: 0.5rem;
-}
-
-.cd-social-links__link {
+.cd-social-links__link,
+.cd-social-links__button {
   display: block;
   width: 1rem;
   height: 1rem;
   margin: 0;
   padding: 0;
+  border: none;
+  background: none;
 }
 
 .cd-social-links__link--pdf {
@@ -60,7 +52,7 @@ html[dir="rtl"] .cd-social-links li + li {
 }
 
 .cd-social-links svg {
-  fill: var(--brand-primary--dark);
+  fill: var(--cd-social-links-fill);
   width: 100%;
   height: 100%;
 }
@@ -68,29 +60,24 @@ html[dir="rtl"] .cd-social-links li + li {
 /**
  * Copy URL to Clipboard
  *
- * When the button is used, it has a little tooltip for user feedback.
- *  - :before is the message bubble containing text
- *  - :after is the little triangle below the message bubble
+ * There's a div[role=status] to announce the feedback for SR when clicking
+ * the copy button. It's styled as a little tooltip for sighted visitors.
+ * The status is styled as a bubble and the :after is the triangle below.
  */
-.cd-social-links__link--copy {
-  position: relative;
-}
-
-.cd-social-links__link--copy::before,
-.cd-social-links__link--copy::after {
+.cd-social-links__status,
+.cd-social-links__status::after {
   position: absolute;
-  z-index: 4;
-  top: -27px;
   transition: 0.1666s ease-in-out;
   transition-property: opacity, transform;
   opacity: 0;
 }
 
-.cd-social-links__link--copy::before {
+.cd-social-links__status {
+  z-index: var(--cd-social-links-z);
+  top: -27px;
   display: inline-block;
   width: auto;
   padding: 0.2em 0.4em;
-  content: attr(data-message);
   white-space: nowrap;
   color: white;
   border-radius: 5px;
@@ -98,40 +85,16 @@ html[dir="rtl"] .cd-social-links li + li {
   font-size: 14px;
 }
 
-[dir="ltr"] .cd-social-links__link--copy::before {
-  left: 7px;
-  transform: translateX(-40%);
+[dir="ltr"] .cd-social-links__status {
+  right: -8px;
 }
 
-[dir="rtl"] .cd-social-links__link--copy::before {
-  right: 7px;
-  transform: translateX(40%);
+[dir="rtl"] .cd-social-links__status {
+  left: -8px;
 }
 
-@media screen and (min-width: 576px) {
-  [dir="ltr"] .cd-social-links__link--copy::before {
-    left: 7px;
-    transform: translateX(-89%);
-  }
-  [dir="rtl"] .cd-social-links__link--copy::before {
-    right: 7px;
-    transform: translateX(89%);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  [dir="ltr"] .cd-social-links__link--copy::before {
-    left: 16px;
-    transform: translateX(-89%);
-  }
-  [dir="rtl"] .cd-social-links__link--copy::before {
-    right: 16px;
-    transform: translateX(89%);
-  }
-}
-
-.cd-social-links__link--copy::after {
-  top: -2px;
+.cd-social-links__status::after {
+  top: 24px;
   display: block;
   width: 0;
   height: 0;
@@ -141,42 +104,40 @@ html[dir="rtl"] .cd-social-links li + li {
   border-left: 10px solid transparent;
 }
 
-[dir="ltr"] .cd-social-links__link--copy::after {
-  left: 7px;
-  transform: translateX(-50%);
+[dir="ltr"] .cd-social-links__status::after {
+  right: 5px;
 }
 
-[dir="rtl"] .cd-social-links__link--copy::after {
-  right: 7px;
-  transform: translateX(50%);
+[dir="rtl"] .cd-social-links__status::after {
+  left: 5px;
 }
 
-.cd-social-links__link--copy.is--showing-message::before,
-.cd-social-links__link--copy.is--showing-message::after {
+.is--showing-message .cd-social-links__status,
+.is--showing-message .cd-social-links__status::after {
   opacity: 1;
 }
 
-[dir="ltr"] .cd-social-links__link--copy.is--showing-message::before {
-  transform: translateX(-40%) translateY(-10px);
+[dir="ltr"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
 }
 
-[dir="rtl"] .cd-social-links__link--copy.is--showing-message::before {
-  transform: translateX(40%) translateY(-10px);
+[dir="rtl"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
 }
 
 @media screen and (min-width: 576px) {
-  [dir="ltr"] .cd-social-links__link--copy.is--showing-message::before {
-    transform: translateX(-89%) translateY(-10px);
+  [dir="ltr"] .is--showing-message .cd-social-links__status {
+    transform: translateY(-10px);
   }
-  [dir="rtl"] .cd-social-links__link--copy.is--showing-message::before {
-    transform: translateX(89%) translateY(-10px);
+  [dir="rtl"] .is--showing-message .cd-social-links__status {
+    transform: translateY(-10px);
   }
 }
 
-[dir="ltr"] .cd-social-links__link--copy.is--showing-message::after {
-  transform: translateX(-50%) translateY(-10px);
+[dir="ltr"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
 }
 
-[dir="rtl"] .cd-social-links__link--copy.is--showing-message::after {
-  transform: translateX(50%) translateY(-10px);
+[dir="rtl"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
 }

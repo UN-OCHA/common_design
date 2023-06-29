@@ -2,7 +2,7 @@
 
 ## Purpose and Usage
 
-Social links for social sharing.
+Social links for social sharing, plus a Copy to Clipboard button.
 
 ## Caveats
 
@@ -18,6 +18,12 @@ function common_design_preprocess_node(&$variables) {
     }
   }
 }
+```
+
+If you don't want to see the "Share" label, add the `visually-hidden` class to the label:
+
+```html
+<span class="cd-social-links__label visually-hidden">Share</span>
 ```
 
 ### Variants
