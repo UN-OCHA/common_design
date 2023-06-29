@@ -22,12 +22,7 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
-# custom-teaser:
-#   css:
-#     theme:
-#       components/custom-teaser/custom-teaser.css: {}
-
-cd-header:
+cds-header:
   css:
     theme:
       components/cd/cd-header/cd-logo.css: {}

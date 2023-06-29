@@ -39,7 +39,7 @@ libraries:
 #
 libraries-extend:
   common_design/cd-header:
-    - common_design_subtheme/cd-header
+    - common_design_subtheme/cds-header
 
 ###
 # Override libraries to replace specific base-theme components. Now, when the
