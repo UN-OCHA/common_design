@@ -16,10 +16,10 @@
   height: var(--cd-site-header-height);
   background:
     linear-gradient(transparent, transparent),
-    var(--brand-logo-mobile-url) center no-repeat;
+    url(../../../img/logos/ocha-logo-blue.svg) center no-repeat;
 }
 
-/* Hides logo set in info.yml on mobile, in favour of background image. */
+/* Mobile: Hides logo set in info.yml in favour of background image. */
 .cd-site-logo img {
   display: none;
 }
@@ -37,7 +37,7 @@
 /**
  * Desktop logo
  *
- * Larger format logo once space permits
+ * Unhide logo set in info.yml once space permits.
  */
 @media (min-width: 768px) {
   .cd-site-logo {

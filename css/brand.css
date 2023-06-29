@@ -138,7 +138,7 @@
   /**
    * Site logos
    *
-   * Specify the logo paths/dimentions here. The URL is relative to
+   * Specify the logo paths/dimensions here. The URL is relative to
    * common_design/components/cd/cd-header/cd-logo.css
    */
   --brand-logo-mobile-url: url("../../../img/logos/ocha-logo-blue.svg");
