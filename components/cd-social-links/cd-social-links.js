@@ -1,21 +1,26 @@
 (function () {
   "use strict";
 
-  // Collect all URL buttons.
-  var urlButtons = document.querySelectorAll('.cd-social-links__link--copy');
+  // Collect all "copy" URL buttons.
+  var urlButtons = document.querySelectorAll('.cd-social-links__button--copy');
 
   // Process links so they copy URL to clipboard.
   urlButtons.forEach(function (el) {
+    // First, define the status element for each button.
+    var status = el.parentNode.querySelector('[role=status]');
+
+    // Add our event listener so people can copy to clipboard.
     el.addEventListener('click', function (ev) {
       var tempInput = document.createElement('input');
-      var urlToCopy = el.href;
+      var urlToCopy = el.dataset.url;
 
       try {
         if (navigator.clipboard) {
+          // Easy way possible?
           navigator.clipboard.writeText(urlToCopy);
         }
         else {
-          // Copy URL in browser bar to clipboard.
+          // Legacy method
           document.body.appendChild(tempInput);
           tempInput.value = urlToCopy;
           tempInput.select();
@@ -28,10 +33,17 @@
         ev.stopPropagation();
 
         // Show user feedback and remove after some time.
-        el.classList.add('is--showing-message');
+        el.parentNode.classList.add('is--showing-message');
+        status.innerText = el.dataset.message;
+
+        // Hide message.
         setTimeout(function () {
-          el.classList.remove('is--showing-message');
+          el.parentNode.classList.remove('is--showing-message');
         }, 2500);
+        // After message is hidden, remove status contents.
+        setTimeout(function () {
+          status.innerText = '';
+        }, 3000);
       } catch (err) {
         // Log errors to console.
         console.error(err);
