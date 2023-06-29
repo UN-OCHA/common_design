@@ -34,10 +34,11 @@ logo: 'img/logos/your-desktop-logo.svg'
 
 Adjust `--brand-logo-desktop-width` to match your logo's dimensions
 
-2. **Mobile:** Check your mobile logo into version control and adjust the following variables inside `css/brand.css` to match the file's location and dimensions:
+2. **Mobile:** Check your mobile logo into version control and adjust `css/brand.css` to match the file's dimensions:
 
-  - `--brand-logo-mobile-url`
   - `--brand-logo-mobile-width`
+
+You must also update the `url()` within `components/cd/cd-header/cd-logo.css`
 
 
 ### Customise the favicon and homescreen icons
