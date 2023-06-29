@@ -2,7 +2,7 @@
 
 ## Purpose and Usage
 
-Social links for social sharing.
+Social links for social sharing, plus a Copy to Clipboard button.
 
 ## Caveats
 

@@ -31,9 +31,9 @@
 }
 
 .cd-social-links__item {
+  position: relative;
   flex: 0 0 1rem;
   margin: 0;
-  position: relative;
 }
 
 .cd-social-links__link,
@@ -73,6 +73,8 @@
 }
 
 .cd-social-links__status {
+  z-index: var(--cd-social-links-z);
+  top: -27px;
   display: inline-block;
   width: auto;
   padding: 0.2em 0.4em;
@@ -81,8 +83,6 @@
   border-radius: 5px;
   background: black;
   font-size: 14px;
-  top: -27px;
-  z-index: var(--cd-social-links-z);
 }
 
 [dir="ltr"] .cd-social-links__status {
