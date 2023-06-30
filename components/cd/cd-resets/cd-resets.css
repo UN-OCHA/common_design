@@ -61,21 +61,27 @@ body.no-scroll {
  * format without individual rules needing to be qualified.
  */
 @media (prefers-reduced-motion: no-preference) {
-  * {
+  *,
+  *::before,
+  *::after {
     /* turn animations on if user doesn't mind */
     animation-play-state: running;
   }
 }
 
 @media not (update: fast) {
-  * {
+  *,
+  *::before,
+  *::after {
     /* turn them off again if the browser can't draw them effectively */
     animation-play-state: paused;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     /* explicitly disable animations and transitions when requested */
     transition-duration: 0s !important;
     animation-play-state: paused;
