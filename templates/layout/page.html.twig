@@ -90,7 +90,7 @@
             NOTE: Enabling Twig debug means the div is no longer empty.
             @see https://www.drupal.org/project/drupal/issues/953034
           #}
-          <aside class="cd-layout__sidebar cd-layout__sidebar--first" role="complementary">{{ page.sidebar_first }}</aside>
+          <aside class="cd-layout__sidebar cd-layout__sidebar--first">{{ page.sidebar_first }}</aside>
         {% endif %}
 
         <div class="cd-layout__content">
@@ -98,7 +98,7 @@
         </div>{# /.cd-layout__content #}
 
         {% if page.sidebar_second %}
-          <aside class="cd-layout__sidebar cd-layout__sidebar--second" role="complementary">{{ page.sidebar_second }}</aside>
+          <aside class="cd-layout__sidebar cd-layout__sidebar--second">{{ page.sidebar_second }}</aside>
         {% endif %}
       </div>
 
