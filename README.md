@@ -156,13 +156,11 @@ Second, you can also enable them in the Drupal Admin UI under the sub-theme them
 
 This project uses node.js for some development tasks: watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][pkg-scripts] for full config. To get a list of commands, do `npm run` and it will output all possible options.
 
-  [pkg-scripts]: https://github.com/UN-OCHA/common_design/blob/main/package.json#L8-L17
+  [pkg-scripts]: https://github.com/UN-OCHA/common_design/blob/develop/package.json#L8-L17
 
 ## Icons
 
-The available icons can be found in `img/icons`.
-
-There are two techniques used, depending on context:
+The available icons can be found in `img/icons`. There are two techniques used, depending on context:
 
 1. SVG sprite with the `<use>` element
 2. SVG as a background-image
