@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/UN-OCHA/common_design/compare/v8.2.0...v9.0.0) (2023-07-03)
+
+### ⚠ BREAKING CHANGES
+
+* **security:** node.js minimum version has been raised from 16.x to 18.16.1 which is LTS at the time of commit. Node 16 will be EOL in a few months.
+* **a11y:** we have changed the markup required for the button that copies URLs to clipboard for social sharing. Both CSS and JS for the CD Social Links component have been changed to expect the new markup. See CD Demo for new markup.
+* remove `--brand-logo-mobile-url` due to complications with CSS aggregation and relative URLs ([df1976a](https://github.com/UN-OCHA/common_design/commit/df1976ada1353d77a8b910c0d4c87fa0e82e3a78))
+
+
+### Features
+
+* **a11y:** disable animations/transitions when unwanted ([1acbe62](https://github.com/UN-OCHA/common_design/commit/1acbe623a82799c057815ec042d592c8ade7de4f))
+* add label to CD Social Links ([9abe056](https://github.com/UN-OCHA/common_design/commit/9abe056eb4d46d77d5e143be089e5678aaafe969))
+
+
+### Bug Fixes
+
+* **security:** upgrade to node.js LTS 18.16.1 / npm 9.7.2 ([a19c523](https://github.com/UN-OCHA/common_design/commit/a19c52304e0f6f385174cd7d4cd2918cfa0f0990))
+* **a11y:** disable animations/transitions of pseudo-elements ([0372c84](https://github.com/UN-OCHA/common_design/commit/0372c84b3bbf8f67000b5d18632693ccc545faab))
+* **a11y:** improve SR of copy-to-clipboard ([261d6be](https://github.com/UN-OCHA/common_design/commit/261d6be64249bbda31a46b2fd89bed28496c9d3e))
+* **a11y:** remove redundant ARIA roles from sidebars ([2bd1c33](https://github.com/UN-OCHA/common_design/commit/2bd1c3358e02c2a2a94bf72e3ee536f5e46d0d30))
+* eliminate gap below card images ([d8a1039](https://github.com/UN-OCHA/common_design/commit/d8a10397a1a08b878cc49580a77e08cb59ba8d1f))
+* prevent CD Form from applying outside `<form>` elements ([017181d](https://github.com/UN-OCHA/common_design/commit/017181d700d04e93907df86e23fc74bc90c889b0))
+* remember to unset custom logo for desktop ([be4e0de](https://github.com/UN-OCHA/common_design/commit/be4e0ded842fb62af73a42acedf5962555933d01))
+
 
 ## [8.2.0](https://github.com/UN-OCHA/common_design/compare/v8.1.0...v8.2.0) (2023-06-16)
 
