@@ -16,7 +16,7 @@
       if (section && sibling) {
         // Ensure the element is hidden before moving it to avoid flickering.
         this.toggleVisibility(section, true);
-        sibling.parentNode.insertBefore(section, sibling.nextSibling);
+        sibling.parentNode.insertBefore(section, sibling);
       }
     },
 
