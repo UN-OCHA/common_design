@@ -66,10 +66,6 @@ cd-user-menu:
   dependencies:
     - common_design/cd-dropdown
 
-cd-ocha-services:
-  js:
-    js/cd-ocha-services.js: {}
-
 cd-resets:
   css:
     base:
@@ -89,6 +85,8 @@ cd-header:
       components/cd/cd-header/cd-nav.css: {}
       components/cd/cd-header/cd-search.css: {}
       components/cd/cd-header/cd-search--inline.css: {}
+  js:
+    components/cd/cd-header/cd-ocha-services.js: {}
   dependencies:
     - common_design/cd-user-menu
 
