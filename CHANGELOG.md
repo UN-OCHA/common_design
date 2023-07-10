@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.1](https://github.com/UN-OCHA/common_design/compare/v9.0.0...v9.0.1) (2023-07-10)
+
+### Bug Fixes
+
+* **a11y:** ensure tab order for OCHA Services matches visual order ([f75c659](https://github.com/UN-OCHA/common_design/commit/f75c65951eff83a45007b8ca3705cb34da7b6e67))
+* **security:** stylelint upgraded ([21ea859](https://github.com/UN-OCHA/common_design/commit/21ea8591b076e21433b5a94f94d8da0aee419cd4))
+
+
 ## [9.0.0](https://github.com/UN-OCHA/common_design/compare/v8.2.0...v9.0.0) (2023-07-03)
 
 ### ⚠ BREAKING CHANGES
