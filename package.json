@@ -35,7 +35,7 @@
     "puppeteer": "^9.1.1",
     "set-value": ">=4.0.1",
     "standard-version": "^9.3.2",
-    "stylelint": "^15.6.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-order": "^6.0.3",
     "svg-sprite": "^2.0.2",
