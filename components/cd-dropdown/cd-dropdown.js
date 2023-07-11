@@ -2,6 +2,9 @@
   'use strict';
 
   Drupal.behaviors.cdDropdown = {
+    idPrefix: 'cd-dropdown-toggable-',
+    idMax: 0,
+
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
 
@@ -20,10 +23,36 @@
     },
 
     /**
+     * Get the toggler element form the togglable element.
+     */
+    getTogglerElement: function (element) {
+      var id = this.getToggableId(element);
+      return document.querySelector('[data-cd-toggler][aria-controls="' + id + '"]');
+    },
+
+    /**
+     * Get the togglable element form the toggler element.
+     */
+    getTogglableElement: function (toggler) {
+      return document.getElementById(toggler.getAttribute('aria-controls'));
+    },
+
+    /**
+     * Get the toggable ID, generate it if doesn't have one.
+     */
+    getToggableId: function (element) {
+      if (!element.hasAttribute('id')) {
+        this.idMax++;
+        element.id = this.idPrefix + this.idMax;
+      }
+      return element.id;
+    },
+
+    /**
      * Toggle the visibility of a toggable element.
      */
     toggle: function (toggler, collapse) {
-      var element = toggler.nextElementSibling;
+      var element = this.getTogglableElement(toggler);
       if (element) {
         var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
 
@@ -79,8 +108,8 @@
           element = element.previousElementSibling;
         }
 
-        // Skip if the there was no previous sibling as that means there is no
-        // toggler for the toggable element.
+        // Skip if the there was no sibling as that means there is no toggler
+        // for the toggable element.
         if (!element) {
           break;
         }
@@ -126,7 +155,7 @@
         var target = event.currentTarget;
         // Toggable element, get the toggling button.
         if (!target.hasAttribute('data-cd-toggler')) {
-          target = target.previousElementSibling;
+          target = this.getTogglerElement(target);
         }
         // Focus the button and hide the content.
         if (target && target.hasAttribute('data-cd-toggler')) {
@@ -207,7 +236,7 @@
      * Create a button to toggle a dropdown.
      */
     createButton: function (element) {
-      var id = element.getAttribute('id');
+      var id = this.getToggableId(element);
       var label = element.getAttribute('data-cd-toggable');
       var logo = element.getAttribute('data-cd-logo');
       var logoOnly = element.hasAttribute('data-cd-logo-only');
@@ -221,7 +250,7 @@
       // ID.
       button.setAttribute('id', id + '-toggler');
 
-      // @TODO rename logo/icon to be more inclusive if needed.
+      // @todo rename logo/icon to be more inclusive if needed.
       //  Eg. prefix/suffix or pre/post
       // Pre-label SVG icon.
       if (logo) {
@@ -268,7 +297,7 @@
      * Transform the element into a dropdown menu.
      */
     setToggable: function (element) {
-      var toggler = element.previousElementSibling;
+      var toggler = this.getTogglerElement(element) || element.previousElementSibling;
 
       // Skip if the toggler is not a button or has already been processed.
       if (toggler) {
@@ -309,11 +338,7 @@
       // For better conformance with the aria specs though it doesn't do
       // much in most screen reader right now (2020/01), we had the
       // `aria-controls` attribute.
-      //
-      // @todo generate an id for the toggable element if it has none?
-      if (element.hasAttribute('id')) {
-        toggler.setAttribute('aria-controls', element.getAttribute('id'));
-      }
+      toggler.setAttribute('aria-controls', this.getToggableId(element));
 
       // Add toggling function.
       toggler.addEventListener('click', this.handleToggle);
@@ -350,7 +375,7 @@
      * Remove the element's toggler.
      */
     unsetToggable: function (element) {
-      var toggler = element.previousElementSibling;
+      var toggler = this.getTogglerElement(element);
       if (toggler && toggler.hasAttribute('data-cd-toggler')) {
         // Remove event handler to avoid leaking.
         toggler.addEventListener('click', this.handleToggle);
@@ -392,6 +417,19 @@
      * handling.
      */
     initializeToggables: function () {
+      // Retrieve the max ID for generated toggable IDs so we can generate new
+      // unique ones.
+      var toggables = document.querySelectorAll('[data-cd-toggable]');
+      for (var i = 0, l = toggables.length; i < l; i++) {
+        var toggable = toggables[i];
+        if (toggable.hasAttribute('id') && toggable.id.indexOf(this.idPrefix) === 0) {
+          var id = parseInt(toggable.id.slice(this.idPrefix.length - 1), 10);
+          if (id > this.idMax) {
+            this.idMax = id;
+          }
+        }
+      }
+
       // Collapse dropdowns when clicking outside of the toggable target.
       document.addEventListener('click', this.handleClickAway);
 
