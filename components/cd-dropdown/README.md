@@ -32,6 +32,8 @@ input field and it will have focus when the dropdown is expanded)
 - `data-cd-replace=”ID”` will replace the element with the given ID with a
 toggler. The element (ex:  a link) serves as a fallback element for progressive
 enhancement when the cd-dropdown script cannot run.
+- `data-cd-insert-after` will insert the button after the toggable element. This
+can be used for "show more" type buttons.
 
 
 ## Caveats
