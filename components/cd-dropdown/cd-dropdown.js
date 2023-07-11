@@ -105,7 +105,12 @@
       var elements = [];
       while (element && element !== document) {
         if (element.hasAttribute && element.hasAttribute('data-cd-toggable')) {
-          element = element.previousElementSibling;
+          if (element.hasAttribute('data-cd-insert-after')) {
+            element = element.nextElementSibling;
+          }
+          else {
+            element = element.previousElementSibling;
+          }
         }
 
         // Skip if the there was no sibling as that means there is no toggler
@@ -365,8 +370,13 @@
         element.removeAttribute('data-cd-replace');
       }
 
+      // Insert the toggler after the toggable element. For example for
+      // "Show more/Show less" togglers.
+      if (element.hasAttribute('data-cd-insert-after') && element.nextElementSibling !== toggler) {
+        element.parentNode.insertBefore(toggler, element.nextElementSibling);
+      }
       // Add the toggler before the toggable element if not already.
-      if (element.previousElementSibling !== toggler) {
+      else if (element.previousElementSibling !== toggler) {
         element.parentNode.insertBefore(toggler, element);
       }
     },
