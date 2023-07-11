@@ -2,7 +2,7 @@
  * Common Design: Skip to main content
  *
  * Style the `.skip-link` element. The a11y aspects are provided by standard
- * classes from D7: `.element-invisible` and `.element-focusable`
+ * classes from D10: `.visually-hidden` and `.focusable`
  */
 
 .skip-link {
