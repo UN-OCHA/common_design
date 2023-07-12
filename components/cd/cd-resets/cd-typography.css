@@ -246,8 +246,8 @@ img {
  * Code blocks in sidebars
  */
 .cd-layout__sidebar code {
-  white-space: nowrap;
-  background: rgba(0,0,0,.15);
-  border-radius: 3px;
   padding: .1em .2em;
+  white-space: nowrap;
+  border-radius: 3px;
+  background: rgba(0,0,0,.15);
 }
