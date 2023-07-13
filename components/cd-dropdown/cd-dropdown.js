@@ -335,10 +335,18 @@
       // Flag to indicate that the toggable element is initially expanded.
       var expand = element.hasAttribute('data-cd-toggable-expand') || false;
 
+      // Flag to indicate that the toggable element controls popup content.
+      //
+      // The definition is qualitative, but for our purposes we are generally
+      // working with popups such as OCHA Services, language switcher, etc.
+      // However, the use-case for data-cd-insert-after does NOT include popup
+      // content, so if we find that flag, we set this variable to false.
+      var hasPopup = !element.hasAttribute('data-cd-insert-after');
+
       // Set the toggling attributes of the toggler.
       toggler.setAttribute('data-cd-toggler', '');
       toggler.setAttribute('aria-expanded', expand !== false);
-      toggler.setAttribute('aria-haspopup', true);
+      toggler.setAttribute('aria-haspopup', hasPopup);
 
       // For better conformance with the aria specs though it doesn't do
       // much in most screen reader right now (2020/01), we had the
