@@ -1,8 +1,8 @@
 <div class="cd-layout cd-dropdown-showmore-example">
   <div class="cd-layout__content">
     <h3>CD Dropdown: Show More</h3>
-    <p>Lorem ipsum sit deserunt ut in qui consequat dolore labore exercitation. Ut quis incididunt in dolore pariatur aute adipisicing duis elit pariatur ut. Labore et sint elit enim ut ullamco ad magna ex qui nostrud officia sed aliquip sint do aliqua exercitation mollit nulla nostrud enim labore reprehenderit esse occaecat ea non ex.</p>
-    <p>Anim do laboris eu exercitation minim aliquip amet culpa in nisi et quis id ex consequat minim amet sed deserunt consectetur eu in cupidatat eiusmod pariatur eiusmod exercitation veniam sunt enim labore dolor ut reprehenderit quis elit non sit incididunt in incididunt velit aliqua est veniam do sint ad reprehenderit voluptate do aute aliquip veniam laborum ullamco elit</p>
+    <p>The first two paragraphs of content will always display, no matter the state of the button.</p>
+    <p>The remaining content below this paragraph tag is wrapped in an element with an ID, which acts as the togglable section of content. The data-attributes are configured to display the button <em>after</em> the content, with labels fully translatable by Twig and so forth.</p>
     <div id="cd-dropdown-showmore-example"
       data-cd-toggable="{{ 'Show full content'|t }}"
       data-cd-toggable-expanded="{{ 'Hide full content'|t }}"
@@ -12,7 +12,7 @@
       data-cd-component="cd-dropdown-showmore-example"
       data-cd-replace="keep"
     >
-      <p>Amet culpa in nisi et quis id ex consequat minim amet sed deserunt consectetur eu in cupidatat eiusmod pariatur eiusmod exercitation veniam sunt enim labore dolor ut reprehenderit quis elit non sit incididunt in incididunt velit aliqua est veniam do sint ad reprehenderit voluptate do aute aliquip veniam laborum ullamco elit</p>
+      <p>This is expanded content that was revealed by pressing the <strong>{{ 'Show full content'|t }}</strong> button.</p>
       <p>Exercitation consectetur irure ea et dolor id eiusmod nostrud fugiat in sit ex ea culpa magna sit excepteur ullamco duis voluptate ullamco sed do laborum ut exercitation laborum irure aliquip sunt ullamco reprehenderit commodo elit ea magna ex ea ut aliqua dolore incididunt dolore mollit labore amet laboris amet nulla ea sint amet do eiusmod do adipisicing voluptate proident ad magna qui in cupidatat ea incididunt anim pariatur eiusmod ut eu anim ad pariatur ex dolore ad dolor exercitation aliqua occaecat qui aute dolor excepteur non cupidatat et magna voluptate velit magna velit dolore enim duis ea occaecat dolore ut ea irure est anim fugiat enim commodo officia elit in voluptate ad quis officia ad cupidatat ut enim anim non anim nulla id anim in esse amet occaecat proident voluptate in adipisicing ullamco dolor culpa labore in eiusmod est adipisicing deserunt in eiusmod consequat officia labore ut dolor sint elit consectetur pariatur anim duis laborum sit est nulla in anim irure qui fugiat in eiusmod dolor sed est veniam officia enim dolore dolore sed sit aliqua voluptate ullamco dolore exercitation ea eu et sunt velit officia cillum velit ullamco anim sint et nisi.</p>
       <p>Aute cupidatat eu ullamco dolore ad nisi incididunt dolor in ut irure reprehenderit velit officia officia est est nostrud. In labore sunt aliqua dolor duis in laborum laborum ullamco proident anim est pariatur enim dolore veniam dolore non et commodo anim in amet aliqua ex laboris anim esse.</p>
     </div>
