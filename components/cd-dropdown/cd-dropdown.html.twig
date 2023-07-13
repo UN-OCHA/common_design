@@ -3,47 +3,19 @@
     <h3>CD Dropdown: Show More</h3>
     <p>Lorem ipsum sit deserunt ut in qui consequat dolore labore exercitation. Ut quis incididunt in dolore pariatur aute adipisicing duis elit pariatur ut. Labore et sint elit enim ut ullamco ad magna ex qui nostrud officia sed aliquip sint do aliqua exercitation mollit nulla nostrud enim labore reprehenderit esse occaecat ea non ex.</p>
     <p>Anim do laboris eu exercitation minim aliquip amet culpa in nisi et quis id ex consequat minim amet sed deserunt consectetur eu in cupidatat eiusmod pariatur eiusmod exercitation veniam sunt enim labore dolor ut reprehenderit quis elit non sit incididunt in incididunt velit aliqua est veniam do sint ad reprehenderit voluptate do aute aliquip veniam laborum ullamco elit</p>
-    <div id="cd-dropdown-showmore-example">
+    <div id="cd-dropdown-showmore-example"
+      data-cd-toggable="{{ 'Show full content'|t }}"
+      data-cd-toggable-expanded="{{ 'Hide full content'|t }}"
+      data-cd-toggable-keep=""
+      data-cd-insert-after=""
+      data-cd-icon="arrow-down"
+      data-cd-component="cd-dropdown-showmore-example"
+      data-cd-replace="keep"
+    >
       <p>Amet culpa in nisi et quis id ex consequat minim amet sed deserunt consectetur eu in cupidatat eiusmod pariatur eiusmod exercitation veniam sunt enim labore dolor ut reprehenderit quis elit non sit incididunt in incididunt velit aliqua est veniam do sint ad reprehenderit voluptate do aute aliquip veniam laborum ullamco elit</p>
       <p>Exercitation consectetur irure ea et dolor id eiusmod nostrud fugiat in sit ex ea culpa magna sit excepteur ullamco duis voluptate ullamco sed do laborum ut exercitation laborum irure aliquip sunt ullamco reprehenderit commodo elit ea magna ex ea ut aliqua dolore incididunt dolore mollit labore amet laboris amet nulla ea sint amet do eiusmod do adipisicing voluptate proident ad magna qui in cupidatat ea incididunt anim pariatur eiusmod ut eu anim ad pariatur ex dolore ad dolor exercitation aliqua occaecat qui aute dolor excepteur non cupidatat et magna voluptate velit magna velit dolore enim duis ea occaecat dolore ut ea irure est anim fugiat enim commodo officia elit in voluptate ad quis officia ad cupidatat ut enim anim non anim nulla id anim in esse amet occaecat proident voluptate in adipisicing ullamco dolor culpa labore in eiusmod est adipisicing deserunt in eiusmod consequat officia labore ut dolor sint elit consectetur pariatur anim duis laborum sit est nulla in anim irure qui fugiat in eiusmod dolor sed est veniam officia enim dolore dolore sed sit aliqua voluptate ullamco dolore exercitation ea eu et sunt velit officia cillum velit ullamco anim sint et nisi.</p>
       <p>Aute cupidatat eu ullamco dolore ad nisi incididunt dolor in ut irure reprehenderit velit officia officia est est nostrud. In labore sunt aliqua dolor duis in laborum laborum ullamco proident anim est pariatur enim dolore veniam dolore non et commodo anim in amet aliqua ex laboris anim esse.</p>
     </div>
-
-    <script>
-      (function iife() {
-        'use strict';
-
-        /**
-         * Hide long content.
-         *
-         * This script is inline, so that the attributes appear in the DOM
-         * before the CD Dropdown script runs during DOMContentLoaded. In doing
-         * so, we "dynamically" create the conditions for the dropdown on any
-         * length of content (which is unknown since it comes out of Drupal).
-         *
-         * If there are more elements than CONTENT_ELEMENT_LIMIT allows, we only
-         * display the first few, and add a toggling button to show the rest.
-         */
-        var content = document.getElementById('cd-dropdown-showmore-example');
-        var children = content.childNodes;
-        var count = 0;
-        for (var i = 0, l = children.length; i < l; i++) {
-          if (children[i].nodeType === 1) {
-            count++;
-          }
-        }
-
-        if (count) {
-          content.setAttribute('data-cd-toggable', 'Show full content');
-          content.setAttribute('data-cd-toggable-expanded', 'Hide full content');
-          content.setAttribute('data-cd-toggable-keep', '');
-          content.setAttribute('data-cd-insert-after', '');
-          content.setAttribute('data-cd-icon', 'arrow-down');
-          content.setAttribute('data-cd-component', 'cd-dropdown-showmore-example');
-          content.setAttribute('data-cd-replace', 'keep');
-        }
-      }());
-    </script>
   </div>
 
   <aside class="cd-layout__sidebar cd-layout__sidebar--wide">
