@@ -2,6 +2,9 @@
   'use strict';
 
   Drupal.behaviors.cdDropdown = {
+    idPrefix: 'cd-dropdown-toggable-',
+    idMax: 0,
+
     attach: function (context, settings) {
       document.documentElement.classList.remove('no-js');
 
@@ -13,17 +16,43 @@
       this.handleToggle = this.handleToggle.bind(this);
 
       // Initialize toggable dropdown.
-      this.initializeToggables();
+      this.initializeTogglables();
 
       // Update nested Drupal menus in the header.
       this.updateDrupalTogglableMenus();
     },
 
     /**
+     * Get the toggler element form the togglable element.
+     */
+    getTogglerElement: function (element) {
+      var id = this.getTogglableId(element);
+      return document.querySelector('[data-cd-toggler][aria-controls="' + id + '"]');
+    },
+
+    /**
+     * Get the togglable element form the toggler element.
+     */
+    getTogglableElement: function (toggler) {
+      return document.getElementById(toggler.getAttribute('aria-controls'));
+    },
+
+    /**
+     * Get the toggable ID, generate it if doesn't have one.
+     */
+    getTogglableId: function (element) {
+      if (!element.hasAttribute('id')) {
+        this.idMax++;
+        element.id = this.idPrefix + this.idMax;
+      }
+      return element.id;
+    },
+
+    /**
      * Toggle the visibility of a toggable element.
      */
     toggle: function (toggler, collapse) {
-      var element = toggler.nextElementSibling;
+      var element = this.getTogglableElement(toggler);
       if (element) {
         var expanded = collapse || toggler.getAttribute('aria-expanded') === 'true';
 
@@ -72,15 +101,20 @@
     /**
      * Get the togglable parents of the toggler element.
      */
-    getToggableParents: function (element) {
+    getTogglableParents: function (element) {
       var elements = [];
       while (element && element !== document) {
         if (element.hasAttribute && element.hasAttribute('data-cd-toggable')) {
-          element = element.previousElementSibling;
+          if (element.hasAttribute('data-cd-insert-after')) {
+            element = element.nextElementSibling;
+          }
+          else {
+            element = element.previousElementSibling;
+          }
         }
 
-        // Skip if the there was no previous sibling as that means there is no
-        // toggler for the toggable element.
+        // Skip if the there was no sibling as that means there is no toggler
+        // for the toggable element.
         if (!element) {
           break;
         }
@@ -101,7 +135,7 @@
     handleToggle: function (event) {
       var target = event.currentTarget;
       if (target) {
-        this.collapseAll(this.getToggableParents(target));
+        this.collapseAll(this.getTogglableParents(target));
         this.toggle(target);
       }
       event.preventDefault();
@@ -124,9 +158,9 @@
       // Escape.
       if (key === 27) {
         var target = event.currentTarget;
-        // Toggable element, get the toggling button.
+        // Togglable element, get the toggling button.
         if (!target.hasAttribute('data-cd-toggler')) {
-          target = target.previousElementSibling;
+          target = this.getTogglerElement(target);
         }
         // Focus the button and hide the content.
         if (target && target.hasAttribute('data-cd-toggler')) {
@@ -170,7 +204,7 @@
     handleResize: function (selector) {
       var elements = document.querySelectorAll('[data-cd-toggable]');
       for (var i = 0, l = elements.length; i < l; i++) {
-        this.updateToggable(elements[i]);
+        this.updateTogglable(elements[i]);
       }
     },
 
@@ -207,7 +241,7 @@
      * Create a button to toggle a dropdown.
      */
     createButton: function (element) {
-      var id = element.getAttribute('id');
+      var id = this.getTogglableId(element);
       var label = element.getAttribute('data-cd-toggable');
       var logo = element.getAttribute('data-cd-logo');
       var logoOnly = element.hasAttribute('data-cd-logo-only');
@@ -221,7 +255,7 @@
       // ID.
       button.setAttribute('id', id + '-toggler');
 
-      // @TODO rename logo/icon to be more inclusive if needed.
+      // @todo rename logo/icon to be more inclusive if needed.
       //  Eg. prefix/suffix or pre/post
       // Pre-label SVG icon.
       if (logo) {
@@ -267,8 +301,8 @@
     /**
      * Transform the element into a dropdown menu.
      */
-    setToggable: function (element) {
-      var toggler = element.previousElementSibling;
+    setTogglable: function (element) {
+      var toggler = this.getTogglerElement(element) || element.previousElementSibling;
 
       // Skip if the toggler is not a button or has already been processed.
       if (toggler) {
@@ -284,7 +318,7 @@
           }
         }
         // We assume that if a button has the "data-cd-toggler" attribute then
-        // it has been processed by the "setToggable" function. That means
+        // it has been processed by the "setTogglable" function. That means
         // this attribute should not be used directly in the markup otherwise
         // the toggable element will not be processed by this script and event
         // handlers will not be attached.
@@ -301,19 +335,23 @@
       // Flag to indicate that the toggable element is initially expanded.
       var expand = element.hasAttribute('data-cd-toggable-expand') || false;
 
+      // Flag to indicate that the toggable element controls popup content.
+      //
+      // The definition is qualitative, but for our purposes we are generally
+      // working with popups such as OCHA Services, language switcher, etc.
+      // However, the use-case for data-cd-insert-after does NOT include popup
+      // content, so if we find that flag, we set this variable to false.
+      var hasPopup = !element.hasAttribute('data-cd-insert-after');
+
       // Set the toggling attributes of the toggler.
       toggler.setAttribute('data-cd-toggler', '');
       toggler.setAttribute('aria-expanded', expand !== false);
-      toggler.setAttribute('aria-haspopup', true);
+      toggler.setAttribute('aria-haspopup', hasPopup);
 
       // For better conformance with the aria specs though it doesn't do
       // much in most screen reader right now (2020/01), we had the
       // `aria-controls` attribute.
-      //
-      // @todo generate an id for the toggable element if it has none?
-      if (element.hasAttribute('id')) {
-        toggler.setAttribute('aria-controls', element.getAttribute('id'));
-      }
+      toggler.setAttribute('aria-controls', this.getTogglableId(element));
 
       // Add toggling function.
       toggler.addEventListener('click', this.handleToggle);
@@ -340,8 +378,13 @@
         element.removeAttribute('data-cd-replace');
       }
 
+      // Insert the toggler after the toggable element. For example for
+      // "Show more/Show less" togglers.
+      if (element.hasAttribute('data-cd-insert-after') && element.nextElementSibling !== toggler) {
+        element.parentNode.insertBefore(toggler, element.nextElementSibling);
+      }
       // Add the toggler before the toggable element if not already.
-      if (element.previousElementSibling !== toggler) {
+      else if (element.previousElementSibling !== toggler) {
         element.parentNode.insertBefore(toggler, element);
       }
     },
@@ -349,8 +392,8 @@
     /**
      * Remove the element's toggler.
      */
-    unsetToggable: function (element) {
-      var toggler = element.previousElementSibling;
+    unsetTogglable: function (element) {
+      var toggler = this.getTogglerElement(element);
       if (toggler && toggler.hasAttribute('data-cd-toggler')) {
         // Remove event handler to avoid leaking.
         toggler.addEventListener('click', this.handleToggle);
@@ -372,12 +415,12 @@
      * we remove the toggler and reset the toggable attributes so that the HTML
      * markup reflects the current behavior of the element.
      */
-    updateToggable: function (element) {
+    updateTogglable: function (element) {
       if (window.getComputedStyle(element, null).getPropertyValue('--dropdown').trim() === 'false') {
-        this.unsetToggable(element);
+        this.unsetTogglable(element);
       }
       else {
-        this.setToggable(element);
+        this.setTogglable(element);
       }
 
       // Mark the element as processed. This is notably used to remove the
@@ -388,10 +431,23 @@
     },
 
     /**
-     * Initialize the toggable menus, adding a toggle button and event
+     * Initialize the togglable menus, adding a toggle button and event
      * handling.
      */
-    initializeToggables: function () {
+    initializeTogglables: function () {
+      // Retrieve the max ID for generated toggable IDs so we can generate new
+      // unique ones.
+      var toggables = document.querySelectorAll('[data-cd-toggable]');
+      for (var i = 0, l = toggables.length; i < l; i++) {
+        var toggable = toggables[i];
+        if (toggable.hasAttribute('id') && toggable.id.indexOf(this.idPrefix) === 0) {
+          var id = parseInt(toggable.id.slice(this.idPrefix.length - 1), 10);
+          if (id > this.idMax) {
+            this.idMax = id;
+          }
+        }
+      }
+
       // Collapse dropdowns when clicking outside of the toggable target.
       document.addEventListener('click', this.handleClickAway);
 
@@ -413,7 +469,7 @@
       // Nested drupal menus are always toggable.
       var elements = document.querySelectorAll(selector);
       for (var i = 0, l = elements.length; i < l; i++) {
-        this.setToggable(elements[i]);
+        this.setTogglable(elements[i]);
       }
     }
   };
