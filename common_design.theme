@@ -480,10 +480,10 @@ function common_design_preprocess_html(&$vars) {
   $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
 
   // Add body classes.
-  if ($status_code && $status_code->getStatusCode() == 404) {
+  if ($status_code && !is_a($status_code, 'ParamNotConvertedException') && $status_code->getStatusCode() == 404) {
     $vars['attributes']['class'][] = 'path-error path-error--404';
   }
-  if ($status_code && $status_code->getStatusCode() == 403) {
+  if ($status_code && !is_a($status_code, 'ParamNotConvertedException') && $status_code->getStatusCode() == 403) {
     $vars['attributes']['class'][] = 'path-error path-error--403';
   }
 
