@@ -6,8 +6,6 @@
     idMax: 0,
 
     attach: function (context, settings) {
-      document.documentElement.classList.remove('no-js');
-
       // Bind the event handlers so that `this` corresponds to the current
       // object and can be used inside the event handling functions.
       this.handleClickAway = this.handleClickAway.bind(this);
