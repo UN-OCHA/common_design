@@ -359,8 +359,11 @@
       element.addEventListener('keydown', this.handleEscape);
 
       // When keyboard focus leaves this menu, close it automatically.
-      element.addEventListener('focusout', (ev) => {
-        if (!element.contains(ev.relatedTarget)) {
+      //
+      // We listen to the document so that backward tabbing can still close the
+      // menu, but it will stay open if focus lands on the related toggler.
+      document.addEventListener('focusout', (ev) => {
+        if (!element.contains(ev.relatedTarget) && toggler !== ev.relatedTarget) {
           this.toggle(toggler, true);
         }
       });
