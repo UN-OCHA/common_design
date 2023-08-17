@@ -358,6 +358,13 @@
       toggler.addEventListener('keydown', this.handleEscape);
       element.addEventListener('keydown', this.handleEscape);
 
+      // When keyboard focus leaves this menu, close it automatically.
+      element.addEventListener('focusout', (ev) => {
+        if (!element.contains(ev.relatedTarget)) {
+          this.toggle(toggler, true);
+        }
+      });
+
       // Mark the element as toggable so that it can be handled properly
       // by the global click handler.
       if (!element.hasAttribute('data-cd-toggable')) {
