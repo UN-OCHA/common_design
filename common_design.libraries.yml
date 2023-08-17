@@ -62,7 +62,7 @@ cd-menu:
 
 cd-user-menu:
   js:
-    js/cd-user-menu.js: {}
+    components/cd-user-menu/cd-user-menu.js: {}
   dependencies:
     - common_design/cd-dropdown
 
