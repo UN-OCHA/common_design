@@ -354,16 +354,22 @@
       // Add toggling function.
       toggler.addEventListener('click', this.handleToggle);
 
-      // Collapse when pressing scape.
+      // Collapse when pressing escape.
       toggler.addEventListener('keydown', this.handleEscape);
       element.addEventListener('keydown', this.handleEscape);
 
-      // When keyboard focus leaves this menu, close it automatically.
-      //
-      // We listen to the document so that backward tabbing can still close the
-      // menu, but it will stay open if focus lands on the related toggler.
-      document.addEventListener('focusout', (ev) => {
-        if (!element.contains(ev.relatedTarget) && toggler !== ev.relatedTarget) {
+      // Hide the menu when the focus moves from inside the menu to
+      // an element outside the menu or its toggler.
+      element.addEventListener('focusout', (ev) => {
+        if (ev.relatedTarget && !element.contains(ev.relatedTarget) && toggler !== ev.relatedTarget) {
+          this.toggle(toggler, true);
+        }
+      });
+
+      // Hide the menu when the focus moves from the toggler to
+      // an element outside the menu.
+      toggler.addEventListener('focusout', (ev) => {
+        if (ev.relatedTarget && !element.contains(ev.relatedTarget) && element !== ev.relatedTarget) {
           this.toggle(toggler, true);
         }
       });
