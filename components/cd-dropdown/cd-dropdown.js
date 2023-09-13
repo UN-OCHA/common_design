@@ -6,8 +6,6 @@
     idMax: 0,
 
     attach: function (context, settings) {
-      document.documentElement.classList.remove('no-js');
-
       // Bind the event handlers so that `this` corresponds to the current
       // object and can be used inside the event handling functions.
       this.handleClickAway = this.handleClickAway.bind(this);
@@ -356,10 +354,31 @@
       // Add toggling function.
       toggler.addEventListener('click', this.handleToggle);
 
-      // Collapse when pressing scape.
+      // Collapse when pressing escape.
       toggler.addEventListener('keydown', this.handleEscape);
       element.addEventListener('keydown', this.handleEscape);
 
+      // Hide the dropdown menu when focus changes.
+      // Do not apply when the menu is not a dropdown which is currently the
+      // case, in practice, when using the 'data-cd-insert-after' attribute.
+      // @todo remove when we introduce the Disclosure component.
+      if (!element.hasAttribute('data-cd-insert-after')) {
+        // Hide the menu when the focus moves from inside the menu to
+        // an element outside the menu or its toggler.
+        element.addEventListener('focusout', (ev) => {
+          if (ev.relatedTarget && !element.contains(ev.relatedTarget) && toggler !== ev.relatedTarget) {
+            this.toggle(toggler, true);
+          }
+        });
+
+        // Hide the menu when the focus moves from the toggler to
+        // an element outside the menu.
+        toggler.addEventListener('focusout', (ev) => {
+          if (ev.relatedTarget && !element.contains(ev.relatedTarget) && element !== ev.relatedTarget) {
+            this.toggle(toggler, true);
+          }
+        });
+      }
       // Mark the element as toggable so that it can be handled properly
       // by the global click handler.
       if (!element.hasAttribute('data-cd-toggable')) {
