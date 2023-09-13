@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+## [9.1.0](https://github.com/UN-OCHA/common_design/compare/v9.0.1...v9.1.0) (2023-09-13)
+
+
+### Features
+
+* allow to insert the toggler button after the toggable element ([018a236](https://github.com/UN-OCHA/common_design/commit/018a2366294b8d0182ba5ab58b550d5b78fae339))
+
+
+### Bug Fixes
+
+* **a11y:** avoid `aria-haspopup` when using `data-cd-insert-after` attr ([bdabca0](https://github.com/UN-OCHA/common_design/commit/bdabca0f0f46ac004b7d5e33211f4d6b0dfcde91))
+* auto-close dropdowns when they lose focus ([be95645](https://github.com/UN-OCHA/common_design/commit/be95645ba4fa3a9481ea57ac2cbcbf7e3b13e2f1))
+* avoid breaking change for Disclosure pattern ([4379567](https://github.com/UN-OCHA/common_design/commit/437956730dcccf534c00224c4d217f40f963c918))
+* change scope of auto-close listener to improve UX ([82fc78b](https://github.com/UN-OCHA/common_design/commit/82fc78bad7d67db7811b97583b612262948b0e82))
+* collapse mandate to two lines in EN ([6026098](https://github.com/UN-OCHA/common_design/commit/60260984cafcc11be2eb4daba44faf4dbb8e12f2))
+* D10 updates to our 404/403 detection ([5888b4d](https://github.com/UN-OCHA/common_design/commit/5888b4d3572f1608887355d131e1d9beec089d25))
+* encode all params in CD Social Link URLs ([994ee68](https://github.com/UN-OCHA/common_design/commit/994ee68f37cadf1bcd6758ed19d5f9c8bba55351))
+* reduce number of bubbled events ([2873c02](https://github.com/UN-OCHA/common_design/commit/2873c025318f6d13a117bc2a47ac5dff1ac32571))
+* remove duplicate no-js class removal ([701beb5](https://github.com/UN-OCHA/common_design/commit/701beb533c75bb78982980bc6ac0e16b3ed4939b))
+
+
 ## [9.0.1](https://github.com/UN-OCHA/common_design/compare/v9.0.0...v9.0.1) (2023-07-10)
 
 ### Bug Fixes
