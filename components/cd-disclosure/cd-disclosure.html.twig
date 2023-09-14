@@ -1,0 +1,25 @@
+{{ attach_library('common_design/cd-disclosure') }}
+
+<div class="cd-layout cd-disclosure-example">
+  <div class="cd-layout__content">
+    <h3>CD Disclosure: Show/Hide content</h3>
+    <p>The first two paragraphs of content will always display, no matter the state of the button.</p>
+    <p>The remaining content below this paragraph tag is wrapped in the CD Disclosure markup, which acts as the togglable section of content.</p>
+    <div
+      class="cd-disclosure"
+      data-cd-disclosure-label="{{ 'Toggle content'|t }}"
+      {# data-cd-disclosure-insert="after" #}
+      {# data-cd-disclosure-show-by-default="true" #}
+    >
+      <p>This is expanded content that was revealed by pressing the <strong>{{ 'Toggle content'|t }}</strong> button.</p>
+      <p>Exercitation consectetur irure ea et dolor id eiusmod nostrud fugiat in sit ex ea culpa magna sit excepteur ullamco duis voluptate ullamco sed do laborum ut exercitation laborum irure aliquip sunt ullamco reprehenderit commodo elit ea magna ex ea ut aliqua dolore incididunt dolore mollit labore amet laboris amet nulla ea sint amet do eiusmod do adipisicing voluptate proident ad magna qui in cupidatat ea incididunt anim pariatur eiusmod ut eu anim ad pariatur ex dolore ad dolor exercitation aliqua occaecat qui aute dolor excepteur non cupidatat et magna voluptate velit magna velit dolore enim duis ea occaecat dolore ut ea irure est anim fugiat enim commodo officia elit in voluptate ad quis officia ad cupidatat ut enim anim non anim nulla id anim in esse amet occaecat proident voluptate in adipisicing ullamco dolor culpa labore in eiusmod est adipisicing deserunt in eiusmod consequat officia labore ut dolor sint elit consectetur pariatur anim duis laborum sit est nulla in anim irure qui fugiat in eiusmod dolor sed est veniam officia enim dolore dolore sed sit aliqua voluptate ullamco dolore exercitation ea eu et sunt velit officia cillum velit ullamco anim sint et nisi.</p>
+      <p>Aute cupidatat eu ullamco dolore ad nisi incididunt dolor in ut irure reprehenderit velit officia officia est est nostrud. In labore sunt aliqua dolor duis in laborum laborum ullamco proident anim est pariatur enim dolore veniam dolore non et commodo anim in amet aliqua ex laboris anim esse.</p>
+    </div>
+  </div>
+
+  <aside class="cd-layout__sidebar cd-layout__sidebar--wide">
+    <h2>Revealing hidden content</h2>
+    <p>You can use the CD disclosure to reveal truncated content. See the script in the HTML which detects the content as it gets output, and preps the DOM for when CD disclosure executes.</p>
+    <p>Look in the CD disclosure README for the <code>data-cd-insert-after</code> attribute.</p>
+  </aside>
+</div>

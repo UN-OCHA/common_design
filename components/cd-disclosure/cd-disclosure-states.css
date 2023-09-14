@@ -1,0 +1,22 @@
+/**
+ * CD Disclosure states
+ *
+ * These are all controlled by JS.
+ */
+
+/* Initially, we want to show the content before JS executes. So we honore the
+data-attribute that JS will eventually read and react to. */
+.cd-disclosure[data-cd-disclosure-show-by-default="true"] {
+  display: block;
+}
+
+/* Always display content with the expanded class */
+.cd-disclosure.cd-disclosure--is-expanded {
+  display: block;
+}
+
+/* Once JS is working, we want to forcibly shut the content after the button is
+pressed, even if it was initially visible. */
+.cd-disclosure[data-cd-disclosure-show-by-default="true"].cd-disclosure--is-collapsed {
+  display: none;
+}
