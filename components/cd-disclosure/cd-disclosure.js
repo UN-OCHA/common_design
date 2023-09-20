@@ -62,8 +62,8 @@
           let wasExpanded = disclosureButton.getAttribute('aria-expanded') === 'true';
 
           // Invert state of button.
-          disclosureButton.setAttribute('aria-expanded', !wasExpanded);
           let isExpanded = !wasExpanded;
+          disclosureButton.setAttribute('aria-expanded', isExpanded);
 
           // Adjust content according to new button state
           if (isExpanded) {
