@@ -19,7 +19,7 @@
      * and the button to toggle it is generated automatically by this script.
      */
     initializeDisclosures: function () {
-      let disclosures = document.querySelectorAll('.cd-disclosure');
+      let disclosures = document.querySelectorAll('[data-cd-disclosure]');
 
       // All behavior is controlled by data attributes.
       disclosures.forEach((disclosure) => {
