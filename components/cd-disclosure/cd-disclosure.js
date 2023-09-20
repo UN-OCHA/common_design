@@ -39,7 +39,7 @@
         let contentVisible = disclosure.dataset.cdDisclosureShowByDefault === 'true' || false;
 
         // Extract button label
-        let buttonText = disclosure.dataset.cdDisclosureLabel || 'Toggle content';
+        let buttonText = disclosure.dataset.cdDisclosureLabel || Drupal.t('Toggle content');
 
         // Create the toggler button.
         let disclosureButton = document.createElement('button');
