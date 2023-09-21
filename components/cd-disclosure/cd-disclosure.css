@@ -7,6 +7,10 @@
  *
  * @see https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
  */
-.cd-disclosure {
+.js [data-cd-disclosure]:not([data-cd-disclosure-show-by-default="true"], .cd-disclosure--is-expanded) {
+  display: none;
+}
+
+.js .cd-disclosure--is-collapsed {
   display: none;
 }

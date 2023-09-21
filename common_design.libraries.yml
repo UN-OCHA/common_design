@@ -243,8 +243,6 @@ cd-disclosure:
   css:
     component:
       components/cd-disclosure/cd-disclosure.css: {}
-    state:
-      components/cd-disclosure/cd-disclosure-states.css: {}
   js:
     components/cd-disclosure/cd-disclosure.js: {}
 
