@@ -50,6 +50,7 @@
 
         // Create the toggler button.
         let disclosureButton = document.createElement('button');
+        disclosureButton.setAttribute('id', 'cd-for--' + disclosureId);
         disclosureButton.setAttribute('aria-controls', disclosureId);
         disclosureButton.setAttribute('aria-expanded', contentVisible);
         disclosureButton.innerText = buttonText;
