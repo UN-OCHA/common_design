@@ -40,15 +40,22 @@
         // edge-case so omitting the attribute assumes it is hidden.
         let contentVisible = disclosure.dataset.cdDisclosureShowByDefault === 'true' || false;
 
-        // Extract button label
+        // Extract button label.
         let buttonText = disclosure.dataset.cdDisclosureLabel || Drupal.t('Toggle content');
+
+        // Determine button classnames.
+        let buttonClassnames = disclosure.dataset.cdDisclosureClassnames
+          ? disclosure.dataset.cdDisclosureClassnames.split(' ')
+          : ['cd-button'];
 
         // Create the toggler button.
         let disclosureButton = document.createElement('button');
         disclosureButton.setAttribute('aria-controls', disclosureId);
         disclosureButton.setAttribute('aria-expanded', contentVisible);
         disclosureButton.innerText = buttonText;
-        disclosureButton.classList.add('cd-button');
+        if (disclosure.dataset.cdDisclosureClassnames !== '') {
+          disclosureButton.classList.add(...buttonClassnames);
+        }
 
         // Based on position determined earlier, insert button.
         if (positionAfter) {
