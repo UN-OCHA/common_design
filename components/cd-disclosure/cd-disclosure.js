@@ -19,7 +19,9 @@
      * and the button to toggle it is generated automatically by this script.
      */
     initializeDisclosures: function () {
-      let disclosures = document.querySelectorAll('[data-cd-disclosure]');
+      // Find all the unprocessed Disclosures. See the end of this function
+      // where this attribute gets set on each `disclosure` element.
+      let disclosures = document.querySelectorAll('[data-cd-disclosure]:not([data-cd-processed="true"])');
 
       // All behavior is controlled by data attributes.
       disclosures.forEach((disclosure) => {
@@ -75,6 +77,10 @@
             disclosure.classList.add('cd-disclosure--is-collapsed');
           }
         });
+
+        // Mark this Disclosure as processed, to avoid double initialization in
+        // case this function runs a second time.
+        disclosure.setAttribute('data-cd-processed', true);
       });
     },
   };
