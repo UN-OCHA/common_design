@@ -57,6 +57,13 @@
         if (disclosure.dataset.cdDisclosureClassnames !== '') {
           disclosureButton.classList.add(...buttonClassnames);
         }
+        if (contentVisible) {
+          disclosure.removeAttribute('cd-disclosure-show-by-default');
+          disclosure.classList.add('cd-disclosure--is-expanded');
+        }
+        else {
+          disclosure.classList.add('cd-disclosure--is-collapsed');
+        }
 
         // Based on position determined earlier, insert button.
         if (positionAfter) {
