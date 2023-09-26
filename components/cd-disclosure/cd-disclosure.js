@@ -23,7 +23,7 @@
       // where this attribute gets set on each `disclosure` element.
       let disclosures = document.querySelectorAll('[data-cd-disclosure]:not([data-cd-processed="true"])');
 
-      // All behavior is controlled by data attributes.
+      // Loop through each Disclosure and prepare them for user interaction.
       disclosures.forEach((disclosure) => {
         // Set a random ID if none is found.
         let disclosureId = disclosure.getAttribute('id') || this.idPrefix + (Math.floor(Math.random(1) * 1000000000000)).toString(16);
