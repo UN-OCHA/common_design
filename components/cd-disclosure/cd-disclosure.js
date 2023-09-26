@@ -58,7 +58,7 @@
           disclosureButton.classList.add(...buttonClassnames);
         }
         if (contentVisible) {
-          disclosure.removeAttribute('cd-disclosure-show-by-default');
+          disclosure.removeAttribute('data-cd-disclosure-show-by-default');
           disclosure.classList.add('cd-disclosure--is-expanded');
         }
         else {
