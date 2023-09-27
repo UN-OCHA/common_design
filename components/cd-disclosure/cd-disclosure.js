@@ -85,13 +85,12 @@
           disclosureButton.setAttribute('aria-expanded', isExpanded);
 
           // Adjust the Disclosure according to new button state.
+          disclosure.setAttribute('data-cd-disclosure-expanded', isExpanded);
           if (isExpanded) {
             disclosure.classList.remove('cd-disclosure--is-collapsed');
-            disclosure.setAttribute('data-cd-disclosure-expanded', 'true');
           }
           else {
             disclosure.classList.add('cd-disclosure--is-collapsed');
-            disclosure.setAttribute('data-cd-disclosure-expanded', 'false');
           }
         });
 
