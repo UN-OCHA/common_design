@@ -38,7 +38,7 @@
 
         // Determine whether content is shown by default. We consider this the
         // edge-case so omitting the attribute assumes it is hidden.
-        let contentVisible = disclosure.dataset.cdDisclosureShowByDefault === 'true' || false;
+        let contentVisible = disclosure.dataset.cdDisclosureExpanded === 'true' || false;
 
         // Extract button label.
         let buttonText = disclosure.dataset.cdDisclosureLabel || Drupal.t('Toggle content');
@@ -57,11 +57,13 @@
         if (disclosure.dataset.cdDisclosureClassnames !== '') {
           disclosureButton.classList.add(...buttonClassnames);
         }
+
+        // Set the state of the Disclosure itself.
         if (contentVisible) {
-          disclosure.removeAttribute('data-cd-disclosure-show-by-default');
-          disclosure.classList.add('cd-disclosure--is-expanded');
+          disclosure.setAttribute('data-cd-disclosure-expanded', 'true');
         }
         else {
+          disclosure.setAttribute('data-cd-disclosure-expanded', 'false');
           disclosure.classList.add('cd-disclosure--is-collapsed');
         }
 
@@ -82,14 +84,14 @@
           let isExpanded = !wasExpanded;
           disclosureButton.setAttribute('aria-expanded', isExpanded);
 
-          // Adjust content according to new button state
+          // Adjust the Disclosure according to new button state.
           if (isExpanded) {
             disclosure.classList.remove('cd-disclosure--is-collapsed');
-            disclosure.classList.add('cd-disclosure--is-expanded');
+            disclosure.setAttribute('data-cd-disclosure-expanded', 'true');
           }
           else {
-            disclosure.classList.remove('cd-disclosure--is-expanded');
             disclosure.classList.add('cd-disclosure--is-collapsed');
+            disclosure.setAttribute('data-cd-disclosure-expanded', 'false');
           }
         });
 
