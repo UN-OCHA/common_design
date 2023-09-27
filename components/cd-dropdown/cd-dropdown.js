@@ -103,12 +103,7 @@
       var elements = [];
       while (element && element !== document) {
         if (element.hasAttribute && element.hasAttribute('data-cd-toggable')) {
-          if (element.hasAttribute('data-cd-insert-after')) {
-            element = element.nextElementSibling;
-          }
-          else {
-            element = element.previousElementSibling;
-          }
+          element = element.previousElementSibling;
         }
 
         // Skip if the there was no sibling as that means there is no toggler
@@ -333,20 +328,12 @@
       // Flag to indicate that the toggable element is initially expanded.
       var expand = element.hasAttribute('data-cd-toggable-expand') || false;
 
-      // Flag to indicate that the toggable element controls popup content.
-      //
-      // The definition is qualitative, but for our purposes we are generally
-      // working with popups such as OCHA Services, language switcher, etc.
-      // However, the use-case for data-cd-insert-after does NOT include popup
-      // content, so if we find that flag, we set this variable to false.
-      var hasPopup = !element.hasAttribute('data-cd-insert-after');
-
       // Set the toggling attributes of the toggler.
       toggler.setAttribute('data-cd-toggler', '');
       toggler.setAttribute('aria-expanded', expand !== false);
-      toggler.setAttribute('aria-haspopup', hasPopup);
+      toggler.setAttribute('aria-haspopup', 'menu');
 
-      // For better conformance with the aria specs though it doesn't do
+      // For better conformance with the ARIA specs though it doesn't do
       // much in most screen reader right now (2020/01), we had the
       // `aria-controls` attribute.
       toggler.setAttribute('aria-controls', this.getTogglableId(element));
@@ -358,27 +345,22 @@
       toggler.addEventListener('keydown', this.handleEscape);
       element.addEventListener('keydown', this.handleEscape);
 
-      // Hide the dropdown menu when focus changes.
-      // Do not apply when the menu is not a dropdown which is currently the
-      // case, in practice, when using the 'data-cd-insert-after' attribute.
-      // @todo remove when we introduce the Disclosure component.
-      if (!element.hasAttribute('data-cd-insert-after')) {
-        // Hide the menu when the focus moves from inside the menu to
-        // an element outside the menu or its toggler.
-        element.addEventListener('focusout', (ev) => {
-          if (ev.relatedTarget && !element.contains(ev.relatedTarget) && toggler !== ev.relatedTarget) {
-            this.toggle(toggler, true);
-          }
-        });
+      // Hide the menu when the focus moves from inside the menu to
+      // an element outside the menu or its toggler.
+      element.addEventListener('focusout', (ev) => {
+        if (ev.relatedTarget && !element.contains(ev.relatedTarget) && toggler !== ev.relatedTarget) {
+          this.toggle(toggler, true);
+        }
+      });
 
-        // Hide the menu when the focus moves from the toggler to
-        // an element outside the menu.
-        toggler.addEventListener('focusout', (ev) => {
-          if (ev.relatedTarget && !element.contains(ev.relatedTarget) && element !== ev.relatedTarget) {
-            this.toggle(toggler, true);
-          }
-        });
-      }
+      // Hide the menu when the focus moves from the toggler to
+      // an element outside the menu.
+      toggler.addEventListener('focusout', (ev) => {
+        if (ev.relatedTarget && !element.contains(ev.relatedTarget) && element !== ev.relatedTarget) {
+          this.toggle(toggler, true);
+        }
+      });
+
       // Mark the element as toggable so that it can be handled properly
       // by the global click handler.
       if (!element.hasAttribute('data-cd-toggable')) {
@@ -397,13 +379,8 @@
         element.removeAttribute('data-cd-replace');
       }
 
-      // Insert the toggler after the toggable element. For example for
-      // "Show more/Show less" togglers.
-      if (element.hasAttribute('data-cd-insert-after') && element.nextElementSibling !== toggler) {
-        element.parentNode.insertBefore(toggler, element.nextElementSibling);
-      }
-      // Add the toggler before the toggable element if not already.
-      else if (element.previousElementSibling !== toggler) {
+      // Add the toggler before the toggable element if not already present.
+      if (element.previousElementSibling !== toggler) {
         element.parentNode.insertBefore(toggler, element);
       }
     },

@@ -22,7 +22,6 @@ The following attributes should be added to the dropdown element’s markup:
 - `data-cd-label-switch` for different labels depending on open/closed state
 - `data-cd-focus-target` for adding focus to a specific element when dropdown is toggled (this works well with the Search component. Add the ID of the search input field and it will have focus when the dropdown is expanded)
 - `data-cd-replace=”ID”` will replace the element with the given ID with a toggler. The element (ex:  a link) serves as a fallback element for progressive enhancement when the cd-dropdown script cannot run.
-- `data-cd-insert-after` will insert the button after the toggable element. This can be used for "show more" type buttons.
 
 ## Caveats
 

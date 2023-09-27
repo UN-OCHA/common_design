@@ -239,6 +239,13 @@ cd-date:
   dependencies:
     - common_design/css-vars-ponyfill
 
+cd-disclosure:
+  css:
+    component:
+      components/cd-disclosure/cd-disclosure.css: {}
+  js:
+    components/cd-disclosure/cd-disclosure.js: {}
+
 cd-dropbutton:
   css:
     component:
