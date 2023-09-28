@@ -3,13 +3,18 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
-## [9.1.0](https://github.com/UN-OCHA/common_design/compare/v9.0.1...v9.1.0) (2023-09-13)
+## [9.2.0](https://github.com/UN-OCHA/common_design/compare/v9.1.0...v9.2.0) (2023-09-28)
 
+### Features
+
+* CD Disclosure component ([fb2ad8b](https://github.com/UN-OCHA/common_design/commit/fb2ad8b93e2afe28f1811f920eefdfb579bb375f))
+
+
+## [9.1.0](https://github.com/UN-OCHA/common_design/compare/v9.0.1...v9.1.0) (2023-09-13)
 
 ### Features
 
 * allow to insert the toggler button after the toggable element ([018a236](https://github.com/UN-OCHA/common_design/commit/018a2366294b8d0182ba5ab58b550d5b78fae339))
-
 
 ### Bug Fixes
 
