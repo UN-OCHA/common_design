@@ -3,7 +3,7 @@ const config = {
   browserContext: 'incognito',
   launch: {
     slowMo: 10,
-    headless: true,
+    headless: 'new',
     ignoreHTTPSErrors: true,
   },
   testTimeout: 10000,
