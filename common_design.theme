@@ -560,6 +560,11 @@ function common_design_preprocess_html(&$vars) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * - page--demo.html.twig
+ * - page--401.html.twig
+ * - page--403.html.twig
+ * - page--404.html.twig
  */
 function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $current_uri = \Drupal::request()->getRequestUri();
@@ -568,7 +573,7 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
     $suggestions[] = $hook . '__demo';
   }
 
-  // Error page template suggestions.
+  // Error page template suggestions.: 401, 403, 404, etc
   if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
     $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
     $suggestions[] = 'page__' . (string) $status_code;
