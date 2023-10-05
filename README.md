@@ -225,15 +225,12 @@ There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the base an
 
 Depending on the project, we run tests via [Travis CI][travis-ci]. For the [common-design-site repo][cds-travis] we run PHP lint and Drupal coding standards checks. These are common among most projects. Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then run the e2e tests.
 
-There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526][ops-7526]
-
   [jest]: https://github.com/facebook/jest
   [puppeteer]: https://github.com/puppeteer/puppeteer
   [ocha-vrt]: https://github.com/UN-OCHA/ocha_vrt
   [backstopjs]: https://github.com/garris/BackstopJS
   [travis-ci]: https://travis-ci.org
   [cds-travis]: https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45
-  [ops-7526]: https://humanitarian.atlassian.net/browse/OPS-7526
 
 ### E2E testing
 
