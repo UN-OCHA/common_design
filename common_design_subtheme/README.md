@@ -123,3 +123,13 @@ npm run e2e -- --debug
 npm run e2e -- -t 'OCHAServicesDropdown'
 
 ```
+
+### PHP CS
+If using PHPCS the following can be added to `phpcs.xml` to exclude the tests
+and related configuration.
+```
+  <exclude-pattern>jest*.js</exclude-pattern>
+  <exclude-pattern>_tests/*</exclude-pattern>
+```
+This will prevent the issue:
+`TRUE, FALSE and NULL must be uppercase; expected "TRUE" but found "true"`
