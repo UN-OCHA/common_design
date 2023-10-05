@@ -100,8 +100,23 @@ general details about base-theme and instructions for compilation. There should 
   [cd-readme]: https://github.com/UN-OCHA/common_design/blob/main/README.md#ocha-common-design-for-drupal-9
 
 
-## Tests
+### Tests
 
-Refer to [common_design README E2E testing][cd-testing] for information about running tests.
+```sh
+# Install dependencies for your host machine.
+npm i
 
-  [cd-testing]: https://github.com/UN-OCHA/common_design/blob/main/README.md#e2e-testing
+# Run all E2E tests in headless mode. The console will output the results.
+npm run e2e
+
+# See the tests run in a visible browser window with --debug
+npm run e2e -- --debug
+
+# If you want to run a limited number of tests, specify a string with the -t
+# argument. It will parse all of the describe() blocks and only run tests when
+# it matches the string you supply.
+
+# All tests that include 'OCHAServicesDropdown'.
+npm run e2e -- -t 'OCHAServicesDropdown'
+
+```
