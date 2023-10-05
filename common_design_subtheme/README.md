@@ -102,6 +102,9 @@ general details about base-theme and instructions for compilation. There should 
 
 ### Tests
 
+To run E2E tests in the sub theme, adjust the Base URLs in the
+`common_design_subtheme/_tests/_env/index.js` file.
+
 ```sh
 # Install dependencies for your host machine.
 npm i
