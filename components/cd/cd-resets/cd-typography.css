@@ -63,10 +63,6 @@ a:focus {
   color: var(--brand-primary);
 }
 
-ol {
-  list-style: decimal;
-}
-
 ol,
 dl {
   margin-bottom: 1rem;
