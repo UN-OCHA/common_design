@@ -54,3 +54,6 @@ msgstr "خدمات مكتب تنسيق الشؤون الإنسانية"
 
 msgid "Creative Commons BY 4.0"
 msgstr "Creative Commons BY 4.0"
+
+msgid "logo"
+msgstr ""
