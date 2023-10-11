@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
+## [9.2.1](https://github.com/UN-OCHA/common_design/compare/v9.2.0...v9.2.1) (2023-10-11)
+
+### Bug Fixes
+
+* **accessibility:** append logo to site name for image alt to avoid redundant alt ([f204bde](https://github.com/UN-OCHA/common_design/commit/f204bde538d0836a095edca31b8f03c3c552ebf0))
+* **dx:** offer more template suggestions for Paragraphs fields ([33e645b](https://github.com/UN-OCHA/common_design/commit/33e645bd3dcbe5a7f2e29b64a57ef0cd1ae96a10))
+* **tests:** E2E tests updated and reorganized to improve use on individual websites ([71132a6](https://github.com/UN-OCHA/common_design/commit/71132a6d934f5ab7773f596ddf1ad3ec80630f90))
+* remove decimal list style for ol types to work for nested lists ([e05d10f](https://github.com/UN-OCHA/common_design/commit/e05d10f85e9add17f116f795c98de5ed3c2fac15))
+
 ## [9.2.0](https://github.com/UN-OCHA/common_design/compare/v9.1.0...v9.2.0) (2023-09-28)
 
 ### Features
