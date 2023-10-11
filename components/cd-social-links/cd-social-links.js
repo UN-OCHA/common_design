@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  'use strict';
 
   // Collect all "copy" URL buttons.
   var urlButtons = document.querySelectorAll('.cd-social-links__button--copy');
@@ -44,10 +44,11 @@
         setTimeout(function () {
           status.innerText = '';
         }, 3000);
-      } catch (err) {
+      }
+      catch (err) {
         // Log errors to console.
         console.error(err);
       }
-    })
+    });
   });
 })();
