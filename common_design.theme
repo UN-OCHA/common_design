@@ -349,6 +349,25 @@ function common_design_theme_suggestions_form_element_alter(array &$suggestions,
 }
 
 /**
+ * Implements hook_theme_suggestions_paragraph_alter().
+ *
+ * - paragraph--PARENT-ENTITY--PARAGRAPH.html.twig
+ * - paragraph--PARENT-ENTITY--PARENT-FIELD--PARAGRAPH.html.twig
+ */
+function common_design_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent_entity = $paragraph->getParentEntity();
+  $parent_field_name = $paragraph->parent_field_name->value;
+
+  if ($parent_entity) {
+    $suggestions[] = 'paragraph__' . $parent_entity->bundle() . '__' . $paragraph->bundle();
+  }
+  if ($parent_entity && $parent_field_name) {
+    $suggestions[] = 'paragraph__' . $parent_entity->bundle() . '__' . $parent_field_name . '__' . $paragraph->bundle();
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function common_design_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -541,6 +560,11 @@ function common_design_preprocess_html(&$vars) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * - page--demo.html.twig
+ * - page--401.html.twig
+ * - page--403.html.twig
+ * - page--404.html.twig
  */
 function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $current_uri = \Drupal::request()->getRequestUri();
@@ -549,7 +573,7 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
     $suggestions[] = $hook . '__demo';
   }
 
-  // Error page template suggestions.
+  // Error page template suggestions.: 401, 403, 404, etc
   if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
     $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
     $suggestions[] = 'page__' . (string) $status_code;
