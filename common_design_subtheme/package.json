@@ -8,7 +8,7 @@
   "scripts": {
     "css:lint": "stylelint '{css,components}/**/*.css'",
     "css:lint-fix": "stylelint '{css,components}/**/*.css' --fix",
-    "js:lint": "eslint js/*.js",
+    "js:lint": "eslint '{js,components}/**/*.js' --no-error-on-unmatched-pattern",
     "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
     "e2e": "jest _tests/*.test.js",
     "ci": "jest --maxWorkers=2 _tests/*.test.js",
