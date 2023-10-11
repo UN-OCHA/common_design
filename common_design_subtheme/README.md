@@ -100,8 +100,36 @@ general details about base-theme and instructions for compilation. There should 
   [cd-readme]: https://github.com/UN-OCHA/common_design/blob/main/README.md#ocha-common-design-for-drupal-9
 
 
-## Tests
+### Tests
 
-Refer to [common_design README E2E testing][cd-testing] for information about running tests.
+To run E2E tests in the sub theme, adjust the Base URLs in the
+`common_design_subtheme/_tests/_env/index.js` file.
 
-  [cd-testing]: https://github.com/UN-OCHA/common_design/blob/main/README.md#e2e-testing
+```sh
+# Install dependencies for your host machine.
+npm i
+
+# Run all E2E tests in headless mode. The console will output the results.
+npm run e2e
+
+# See the tests run in a visible browser window with --debug
+npm run e2e -- --debug
+
+# If you want to run a limited number of tests, specify a string with the -t
+# argument. It will parse all of the describe() blocks and only run tests when
+# it matches the string you supply.
+
+# All tests that include 'OCHAServicesDropdown'.
+npm run e2e -- -t 'OCHAServicesDropdown'
+
+```
+
+### PHP CS
+If using PHPCS the following can be added to `phpcs.xml` to exclude the tests
+and related configuration.
+```
+  <exclude-pattern>jest*.js</exclude-pattern>
+  <exclude-pattern>_tests/*</exclude-pattern>
+```
+This will prevent the issue:
+`TRUE, FALSE and NULL must be uppercase; expected "TRUE" but found "true"`

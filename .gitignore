@@ -1,5 +1,9 @@
 # dev files
 **/node_modules/
 
+# puppeteer
+.cache
+**/coverage
+
 # mac stuff
 **/.DS_Store

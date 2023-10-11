@@ -221,48 +221,19 @@ We use [browserstack][browserstack] for browser and device testing. During devel
 
 ## Testing
 
-There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the base and sub theme. There is a [repo for Visual Regression testing][ocha-vrt] using [backstopjs][backstopjs] and a Jenkins Job to run VRT on the server. Depending on the JSON configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
-
-Depending on the project, we run tests via [Travis CI][travis-ci]. For the [common-design-site repo][cds-travis] we run PHP lint and Drupal coding standards checks. These are common among most projects. Additionally, we install Drupal, import the config, import a database of sample data and run a web server so we can then run the e2e tests.
-
-There is an open issue to integrate Lighthouse performance and accessibility testing [OPS-7526][ops-7526]
+There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the sub theme. There is a [repo for Visual Regression testing][tools-vrt] using [backstopjs][backstopjs] and a Jenkins Job to run VRT on the server. Depending on the JSON configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
 
   [jest]: https://github.com/facebook/jest
   [puppeteer]: https://github.com/puppeteer/puppeteer
-  [ocha-vrt]: https://github.com/UN-OCHA/ocha_vrt
+  [tools-vrt]: https://github.com/UN-OCHA/tools-vrt/
   [backstopjs]: https://github.com/garris/BackstopJS
-  [travis-ci]: https://travis-ci.org
-  [cds-travis]: https://github.com/UN-OCHA/common-design-site/blob/develop/.travis.yml#L45
-  [ops-7526]: https://humanitarian.atlassian.net/browse/OPS-7526
 
-### E2E testing
+## E2E Testing
 
-```sh
-# Install dependencies for your host machine.
-npm i
+Refer to [common_design_subtheme README E2E testing][cd-testing] for information about running tests.
 
-# Run all E2E tests in headless mode. The console will output the results.
-npm run e2e
+  [cd-testing]: https://github.com/UN-OCHA/common_design/tree/develop/common_design_subtheme#tests
 
-# See the tests run in a visible browser window with --debug
-npm run e2e -- --debug
-
-# If you want to run a limited number of tests, specify a string with the -t
-# argument. It will parse all of the describe() blocks and only run tests when
-# it matches the string you supply.
-
-# All tests that include 'OCHAServicesDropdown'.
-npm run e2e -- -t 'OCHAServicesDropdown'
-
-# Only tests in 'Subtheme: OCHAServicesDropdown' block.
-npm run e2e -- -t 'Subtheme: OCHAServicesDropdown'
-
-# All 'OCHAServicesDropdown' test except blocks including 'Subtheme'.
-npm run e2e -- -t '^(?!.*Subtheme).*$OCHAServicesDropdown'
-
-# All tests except blocks including 'Subtheme'.
-npm run e2e -- -t '^(?!.*Subtheme).*$'
-```
 
 ## Progressive Web App
 
