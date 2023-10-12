@@ -26,7 +26,7 @@
       // Loop through each Disclosure and prepare them for user interaction.
       disclosures.forEach((disclosure) => {
         // Set a random ID if none is found.
-        let disclosureId = disclosure.getAttribute('id') || this.idPrefix + (Math.floor(Math.random(1) * 1000000000000)).toString(16);
+        let disclosureId = disclosure.getAttribute('id') || this.idPrefix + Math.floor(Math.random(1) * 1000000000000).toString(16);
 
         // Apply ID if it wasn't there already.
         if (!disclosure.getAttribute('id')) {

@@ -2,10 +2,10 @@
  * Update the --cd-bleed-scrollbar-width css variable when the <html> element
  * is resized, including when the scrollbar is initially added.
  */
-(function iife() {
+(function () {
   'use strict';
 
-  function updateScrollBarWidth (event) {
+  function updateScrollBarWidth(event) {
     var width = window.innerWidth - document.documentElement.clientWidth;
     document.documentElement.style.setProperty('--cd-bleed-scrollbar-width', width + 'px');
   }
@@ -21,7 +21,7 @@
     iframe.onload = function () {
       iframe.contentWindow.onresize = updateScrollBarWidth;
       updateScrollBarWidth();
-    }
+    };
     document.documentElement.appendChild(iframe);
   }
 })();

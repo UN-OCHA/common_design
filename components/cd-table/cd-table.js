@@ -1,5 +1,6 @@
-// Table headings added as data-content to table cells for cards on mobile
-function cdResponsiveTables() {
+(function () {
+  'use strict';
+
   var table = document.querySelector('.cd-table--responsive');
   if (!table) {
     return;
@@ -21,6 +22,4 @@ function cdResponsiveTables() {
       tableCellsCollection[j].setAttribute('data-content', tableHeadingLabel);
     }
   }
-};
-
-cdResponsiveTables();
+})();
