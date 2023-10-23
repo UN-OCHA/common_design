@@ -254,7 +254,6 @@ ul[data-cd-hidden=true] > ul {
 
   .menu-item--collapsed .cd-nav-level-1__btn.is-active::before,
   .menu-item--expanded .cd-nav-level-1__btn.is-active::before {
-    /* opacity: 0.2; */
     background: var(--brand-highlight);
   }
 
@@ -266,7 +265,6 @@ ul[data-cd-hidden=true] > ul {
     height: 48px;
     margin-inline-start: -15px;
     content: "";
-    /* opacity: 0.2; */
     background: var(--brand-highlight);
   }
 
@@ -305,7 +303,6 @@ ul[data-cd-hidden=true] > ul {
 
   .cd-nav > .menu > .menu-item.menu-item--active-trail a::before,
   .cd-nav > .menu > .menu-item.menu-item--active-trail button::before {
-    /* opacity: 0.2; */
     background: var(--brand-highlight);
   }
 
