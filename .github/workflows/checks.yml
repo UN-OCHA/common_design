@@ -34,4 +34,4 @@ jobs:
 
       - name: Run tests on sub-theme
         run: |
-          npm run css:lint && npm run js:lint
+          cd common_design_subtheme && pwd && npm run css:lint && npm run js:lint
