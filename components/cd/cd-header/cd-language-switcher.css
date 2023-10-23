@@ -18,10 +18,6 @@
   line-height: var(--cd-global-header-height);
 }
 
-.cd-language-switcher__btn:focus {
-  outline: var(--cd-outline-size) solid var(--brand-primary--light);
-}
-
 @media (min-width: 768px) {
   .cd-language-switcher__btn {
     padding-inline: 1.5rem;
