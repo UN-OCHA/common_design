@@ -20,10 +20,18 @@ jobs:
         with:
           node-version: '^18.16.1'
 
-      - name: Get deps
+      - name: Get deps for base-theme
         run: |
           npm install
 
-      - name: Run tests
+      - name: Run tests on base-theme
         run: |
           npm run css:lint && npm run js:lint
+
+      - name: Get deps for sub-theme
+        run: |
+          cd common_design_subtheme && npm install
+
+      - name: Run tests on sub-theme
+        run: |
+          cd common_design_subtheme && pwd && npm run css:lint && npm run js:lint
