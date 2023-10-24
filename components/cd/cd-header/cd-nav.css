@@ -347,6 +347,11 @@ ul[data-cd-hidden=true] > ul {
     background: var(--brand-highlight);
   }
 
+  .cd-nav > .menu > .menu-item:not(.menu-item--active-trail) > a:focus-visible::before,
+  .cd-nav > .menu > .menu-item:not(.menu-item--active-trail) button:focus-visible::before {
+    background: transparent;
+  }
+
   .cd-nav > .menu > .menu-item svg {
     flex: 1 0 auto;
   }
