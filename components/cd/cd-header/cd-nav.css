@@ -265,6 +265,7 @@ ul[data-cd-hidden=true] > ul {
     height: 48px;
     margin-inline-start: -15px;
     content: "";
+    opacity: 0.6;
     background: var(--brand-highlight);
   }
 
@@ -281,7 +282,7 @@ ul[data-cd-hidden=true] > ul {
    */
   .cd-nav > ul ul > li.menu-item--active-trail a::before,
   .cd-nav > ul ul > li.menu-item--active-trail button::before {
-    opacity: 0.6;
+    opacity: 1;
   }
 }
 
