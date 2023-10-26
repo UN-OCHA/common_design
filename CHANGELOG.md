@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.2.2](https://github.com/UN-OCHA/common_design/compare/v9.2.1...v9.2.2) (2023-10-26)
+
+### Bug Fixes
+
+* Focus styles for main navigation #441 CD-500
+* Twitter icon updated for CD Social Links #438 CD-502
+* remove duplicate announcement element from CD Social links #442
+* **ci:** run JS linter on base-theme PRs #437 CD-507
+* **ci:** run tests on sub-theme during PRs #440 CD-508
+
 
 ## [9.2.1](https://github.com/UN-OCHA/common_design/compare/v9.2.0...v9.2.1) (2023-10-11)
 
