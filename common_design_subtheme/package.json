@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
     "@xmldom/xmldom": "^0.8.4",
-    "axios": ">=0.21.2",
+    "axios": ">=1.6.0",
     "babel-jest": "^29.3.1",
     "core-js": "^3.20.0",
     "css-what": ">=5.0.1",
