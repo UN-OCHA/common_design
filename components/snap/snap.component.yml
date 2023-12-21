@@ -1,0 +1,26 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Snap
+status: experimental
+props:
+  type: object
+  required:
+    - snap_url
+    - label
+  properties:
+    snap_classes:
+      title: Extra classnames
+      type: array
+      items:
+          type: string
+    snap_url:
+      title: Snap URL
+      type: string
+      description: The URL to be snapped. Accepts any path so that sites have flexibility in implementation.
+      examples:
+        - /node/123/pdf
+    label:
+      title: Button label. Text is NOT translated inside component, you have control over that when passing it in.
+      type: string
+      description: The visually-hidden text of the Snap button.
+      examples:
+        - Create PDF
