@@ -56,7 +56,7 @@ cd-dropdown:
 
 cd-menu:
   js:
-    js/cd-menu.js: {}
+    libraries/cd-menu/cd-menu.js: {}
   dependencies:
     - common_design/cd-dropdown
 
