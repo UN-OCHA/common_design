@@ -8,7 +8,7 @@
   "scripts": {
     "css:lint": "stylelint '{css,components,libraries}/**/*.css'",
     "css:lint-fix": "stylelint '{css,components,libraries}/**/*.css' --fix",
-    "js:lint": "eslint '{js,components}/**/*.js'",
+    "js:lint": "eslint '{js,components,libraries}/**/*.js'",
     "svg:sprite": "svg-sprite --svg-xmldecl=false --svg-doctype=false --svg-rootattrs=_config/svg-sprite.config.json --log=info --symbol --symbol-prefix='%s' --symbol-example=true --shape-id-generator='cd-icon--' --symbol-dest=img/icons --symbol-sprite=cd-icons-sprite.svg img/icons/*.svg",
     "release": "standard-version"
   },
