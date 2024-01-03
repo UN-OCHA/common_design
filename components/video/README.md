@@ -41,3 +41,7 @@ function THEME_preprocess_paragraph__video(&$variables) {
   }
 }
 ```
+
+## Future TODOs
+
+- Once `sizes="auto"` is supported in evergreen browsers, we should use it. For the time being, we used some simple defaults that match the CD layout container.
