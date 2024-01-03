@@ -1,0 +1,33 @@
+<article{{ attributes.addClass(classes) }} aria-label="{{ 'Video'|t }}">
+  <h3 class="visually-hidden">{{ title }}</h3>
+  <div class="video"
+    data-video-slug="{{ video_slug }}"
+    data-video-button-label="{{ 'Load video'|t }}"
+    data-video-origin="{{ url('<front>')|render|trim('/') }}">
+    <a href="{{ video_url }}"
+      target="_blank"
+      rel="noopener"
+      class="video__link">
+      <img
+        class="video__img"
+        loading="lazy"
+        src="https://img.youtube.com/vi/{{ video_slug }}/maxresdefault.jpg"
+        srcset="https://img.youtube.com/vi/{{ video_slug }}/mqdefault.jpg 320w,
+                https://img.youtube.com/vi/{{ video_slug }}/hqdefault.jpg 480w,
+                https://img.youtube.com/vi/{{ video_slug }}/sddefault.jpg 640w,
+                https://img.youtube.com/vi/{{ video_slug }}/maxresdefault.jpg 1280w"
+        sizes="(min-width: 1220px) 1200px,
+               calc(100% - 1.5rem)"
+        alt="{{ 'Preview of the video from YouTube'|t }}">
+    </a>
+  </div>
+
+  {% if video_transcript is not empty %}
+    <details class="video__transcript">
+      <summary class="video__transcript-label">{{ 'Video transcript'|t }}</summary>
+      <div class="video__transcript-text">
+        {{ video_transcript }}
+      </div>
+    </details>
+  {% endif %}
+</article>
