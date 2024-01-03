@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.2.3](https://github.com/UN-OCHA/common_design/compare/v9.2.2...v9.2.3) (2024-01-02)
+
+
+### Bug Fixes
+
+* **admin:** nicer-looking unpublished styles ([1bdb363](https://github.com/UN-OCHA/common_design/commit/1bdb36373bf82120fead784abacbece00bc37b9b))
+* load primary font in a non-blocking manner ([25775b7](https://github.com/UN-OCHA/common_design/commit/25775b781dd1b18c701e0093ceea74b3e7f61063))
+
 ## [9.2.2](https://github.com/UN-OCHA/common_design/compare/v9.2.1...v9.2.2) (2023-10-26)
 
 ### Bug Fixes
