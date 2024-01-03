@@ -40,20 +40,30 @@ It provides the following theming tools that you should leverage in order to mai
 ## Getting started
 
 1. Follow the setup guide in the [sub-theme README][subtheme-readme].
-2. For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
+2. For Twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
 
   [subtheme-readme]: https://github.com/UN-OCHA/common_design/blob/main/common_design_subtheme/README.md
   [drupal-caching]: https://www.drupal.org/node/2598914
 
+## Single Directory Components
+
+The preferred way of encapsulating components in Drupal 10+ is using [Single Directory Components][sdc]. SDCs contain all elements of a component inside one directory: HTML (Twig), CSS, JS, and images. You don't have to maintain an entry in the theme's Libraries YML, nor do you have to manually call `attach_library` to ensure the markup gets styled. It's really nice.
+
+Read more details in the `components` subdirectory. Each component also has its own README.
+
+If you can't or don't want to use SDC, read the [CSS](#css) and [JS](#js) sections below for guidance on using Drupal Libraries, which was the preferred way to manage frontend assets in Drupal 8/9, and still works the same in Drupal 10.
+
+  [sdc]: https://www.drupal.org/project/sdc
+
 ## CSS
 
-For managing CSS, the recommended approach is to use [Drupal Libraries][drupal-libraries] to create components made of vanilla CSS/JS files, and attach them to the appropriate Twig template so that they only appear on pages where needed.
+For managing CSS, use [Drupal Libraries][drupal-libraries] to create components made of vanilla CSS/JS files, store them in a component-specific folder inside `libraries`, and attach them to the appropriate Twig template so that they only appear on pages where needed.
 
   [drupal-libraries]: https://www.drupal.org/docs/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml
 
 ## JS
 
-Javascript files should be added to a component-specific folder and defined as part of a library in `common_design.ibraries.yml`
+JavaScript files should be added to a component-specific folder inside `libraries` and defined as part of a [Drupal Library][drupal-libraries] in `common_design.libraries.yml`
 
 Instead of grouping all JS in one file, each component has its own JS file associated with it. They have been built to be reused, allowing you to mix and match any combination of JS files and use each as a dependency without altering the original file. The general pattern to reference the method of a behavior is:
 
@@ -101,16 +111,20 @@ Using `this` works for most functions except ones which are assigned to event li
 })(Drupal);
 ```
 
-Follow [Drupal JS coding standards and best practices][js-standards]
+Follow [Drupal JS coding standards and best practices][js-standards].
 
   [js-standards]: https://www.drupal.org/docs/develop/standards/javascript
 
 
 ## Accessibility
 
-Drupal 9+ core have helper classes for accessibility. [Hide content properly][a11y-help] using official drupal.org docs.
+Drupal 9+ core have helper classes for accessibility. [Hide content properly][hide-content] using official drupal.org docs.
 
-  [a11y-help]: https://www.drupal.org/docs/accessibility/hide-content-properly
+Our base-theme templates have been vetted for accessibility by automated tools and manual verification of screen-reading UX. If you override a template, try not to disrupt the ARIA roles and labels that were already put into place.
+
+If you do create a new template, use one from the base-theme as a guide. They have many mechanisms taken care of, such as translated ARIA labels, landmark roles, and properly-hidden labels. If you author JavaScript, use existing components as a guide to create valid screen-reader announcements in response to user interactions.
+
+  [hide-content]: https://www.drupal.org/docs/accessibility/hide-content-properly
 
 
 ## Fonts
@@ -127,7 +141,7 @@ Here are the technical details relating to the theme itself:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300%3B0,400%3B0,500%3B0,700%3B0,900%3B1,400%3B1,700&amp;display=swap" />
 ```
 
-- Additional fonts for advanced typography and other languages which don't use Latin character sets are available as Drupal Libraries. The list is defined in `common_design.libraries.yml`. For performance reasons, we do not include these by default. If your website must support character sets that are not included in the base-theme, refer to the sub-theme's Libraries file `common_design_subtheme.libraries.yml` to see a commented-out example helping you create your own Drupal Library.
+- Additional fonts for advanced typography and other languages which don't use Latin character sets are available as [Drupal Libraries][drupal-libraries]. The list is defined in `common_design.libraries.yml`. For performance reasons, we do not include these by default. If your website must support character sets that are not included in the base-theme, refer to the sub-theme's Libraries file `common_design_subtheme.libraries.yml` to see a commented-out example helping you create your own Drupal Library.
 
 
 ### Enabling individual fonts
@@ -154,7 +168,7 @@ Second, you can also enable them in the Drupal Admin UI under the sub-theme them
 
 ## Task management
 
-This project uses node.js for some development tasks: watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][pkg-scripts] for full config. To get a list of commands, do `npm run` and it will output all possible options.
+This project uses node.js for some development tasks: watching and linting, JS linting and SVG icon sprite generation. See [scripts in package.json][pkg-scripts] for full config. To get a list of commands, do `npm run` inside the base-theme to have it output all possible options.
 
   [pkg-scripts]: https://github.com/UN-OCHA/common_design/blob/develop/package.json#L8-L17
 
@@ -221,7 +235,7 @@ We use [browserstack][browserstack] for browser and device testing. During devel
 
 ## Testing
 
-There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the sub theme. There is a [repo for Visual Regression testing][tools-vrt] using [backstopjs][backstopjs] and a Jenkins Job to run VRT on the server. Depending on the JSON configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
+There are E2E tests using [Jest][jest] and [Puppeteer][puppeteer] in the sub-theme. There is a [repo for Visual Regression testing][tools-vrt] using [backstopjs][backstopjs] and a Jenkins Job to run VRT on the server. Depending on the JSON configuration files, we can generate screenshots from lists of URLs (including authenticated user pages), of multiple viewport dimensions, and capture keypress, hover and click actions.
 
   [jest]: https://github.com/facebook/jest
   [puppeteer]: https://github.com/puppeteer/puppeteer
@@ -247,6 +261,6 @@ There is a `site.webmanifest` file available in the sub theme as an alternative 
 
 ## Translations
 
-Arabic, French and Spanish string translation files are available for the Common Design Header and Footer user interface, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in the `translations` directory and the [README][translations].
+Arabic, French and Spanish string translation files are available for the Common Design, for example the OCHA Services in the header and the OCHA mandate in the footer. Refer to the `.po` files in the `translations` directory and the [README][translations].
 
-  [translations]: https://github.com/UN-OCHA/common_design/blob/main/translations/README.md
+  [translations]: https://github.com/UN-OCHA/common_design/blob/develop/translations/README.md
