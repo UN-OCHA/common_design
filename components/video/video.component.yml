@@ -1,0 +1,53 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Video
+status: experimental
+props:
+  type: object
+  required:
+    - attributes
+    - title
+    - video_url
+    - video_slug
+  properties:
+    attributes:
+      title: Drupal attributes
+      type: Drupal\Core\Template\Attribute
+    classes:
+      title: Extra classnames
+      type: array
+      items:
+        type: string
+    title:
+      title: Title
+      type: string
+      description: The title of the Video.
+      examples:
+        - Humanitarians are \#NotATarget
+    video_url:
+      title: Video URL
+      type: string
+      description: The publicly-viewable canonical URL of the Video.
+      examples:
+        - https://www.youtube.com/watch?v=p5zzrlNtmLo
+    video_slug:
+      title: Video Slug
+      type: string
+      description: The unique identifier extracted from the Video URL. Look in the README to see how this is provided to the Drupal template which implements this component. Compare example slug value to the `video_url` example.
+      examples:
+        - p5zzrlNtmLo
+    video_transcript:
+      title: Video transcript
+      type: string
+      description: A plaintext transcript of the video, or including a written description of any critical content within the video. If you send HTML, the tags will be visible in the output.
+      examples:
+        - |
+          A man is shown handing out supplies to a group of children. The camera zooms in towards his face.
+
+          Narrator: While bringing food, relief supplies, and medicine, we are at risk of being looted, harassed and even killed.
+
+          Humanitarian workers are never the enemy.
+          Face world leaders to say civilians are \#NotATarget
+          World Humanitarian Day
+          19. August 2018
+          WorldHumanitarianDay.org
+
