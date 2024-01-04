@@ -149,6 +149,7 @@
           <li><a href="#cd-title-list">Title List</a></li>
           <li><a href="#cd-toc">Table of contents</a></li>
           <li><a href="#cd-typography">Typography</a></li>
+          <li><a href="#cd-video">Video</a></li>
         </ol>
       </div>
 
@@ -329,6 +330,26 @@
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
         {% include '@cd-components/cd-typography/cd-typography.html.twig' %}
+
+        <h3 class="cd-styleguide"><a id="cd-video">cd-video</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {{ include('common_design:video', {
+          attributes: create_attribute(),
+          classes: ['video--youtube'],
+          title: 'Demo Video Title',
+          video_slug: 'p5zzrlNtmLo',
+          video_url: 'https://www.youtube.com/watch?v=p5zzrlNtmLo',
+          video_transcript: 'A man is shown handing out supplies to a group of children. The camera zooms in towards his face.
+
+Narrator: While bringing food, relief supplies, and medicine, we are at risk of being looted, harassed and even killed.
+
+Humanitarian workers are never the enemy.
+Face world leaders to say civilians are \#NotATarget
+World Humanitarian Day
+19. August 2018
+https://www.WorldHumanitarianDay.org',
+        }) }}</h3>
 
       {% endif %}
 

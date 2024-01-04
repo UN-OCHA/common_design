@@ -57,4 +57,4 @@ libraries-override:
 # Requires Components module
 components:
   namespaces:
-    cd-components: components
+    cd-components: libraries

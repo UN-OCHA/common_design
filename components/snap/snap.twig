@@ -1,0 +1,6 @@
+{% set snap_attributes = create_attribute() %}
+<div{{ snap_attributes.addClass('snap').addClass(snap_classes) }}>
+  <a class="btn--pdf" href="{{ snap_url }}">
+    <span class="visually-hidden">{{ label }}</span>
+  </a>
+</div>
