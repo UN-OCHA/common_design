@@ -250,13 +250,8 @@ Refer to [common_design_subtheme README E2E testing][cd-testing] for information
 
 
 ## Progressive Web App
+There is a `site.webmanifest` file available in the sub theme for the Web Manifest. The manifest file should be adjusted per implementation, and added using a `<link>` element in the `<head>`, with additional configuration needed. See the [Manifest documentation][manifest-docs] for implementation details.
 
-[web.brand.unocha.org][brand] website uses the Drupal [PWA module][pwa]
-
-There is a `site.webmanifest` file available in the sub theme as an alternative to the module, if all you want is the Web Manifest, and you don't want offline capability. The manifest file should be adjusted per implementation, and added using a `<link>` element in the `<head>`, with additional configuration needed. See the [Manifest documentation][manifest-docs] for implementation details.
-
-  [brand]: https://web.brand.unocha.org
-  [pwa]: https://www.drupal.org/project/pwa
   [manifest-docs]: https://developer.mozilla.org/en-US/docs/Web/Manifest
 
 ## Translations
