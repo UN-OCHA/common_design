@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+## [9.3.0](https://github.com/UN-OCHA/common_design/compare/v9.2.3...v9.3.0) (2024-01-04)
+
+### Features
+
+* **sdc:** Snap SDC ([4406afd](https://github.com/UN-OCHA/common_design/commit/4406afd55ff353ef96d505942c71dbba34e11b37))
+* **sdc:** Video SDC ([c741003](https://github.com/UN-OCHA/common_design/commit/c7410038765895b57afee15c4a586f0476080490))
+
+### Bug Fixes
+
+* allow multiple versions of composer installers  ([2f0ca65](https://github.com/UN-OCHA/common_design/commit/2f0ca65ef9b3400861c9c96b928785b64ef1297f))
+
+
 ### [9.2.3](https://github.com/UN-OCHA/common_design/compare/v9.2.2...v9.2.3) (2024-01-02)
 
 

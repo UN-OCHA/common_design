@@ -4,7 +4,7 @@
     "type": "drupal-theme",
     "license": "GPL-2.0-only",
     "require": {
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.2 || ^2",
         "drupal/stable": "^2.0"
     }
 }
