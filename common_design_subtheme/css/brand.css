@@ -15,7 +15,7 @@
    *
    * Specify the logo dimensions here. To change the image URL, edit this file:
    *
-   * @see common_design_subtheme/components/cd/cd-header/cd-logo.css
+   * @see common_design_subtheme/libraries/cd/cd-header/cd-logo.css
    */
   --brand-logo-mobile-width: 52px;
   --brand-logo-desktop-width: 186px;

@@ -139,7 +139,7 @@
    * Site logos
    *
    * Specify the logo paths/dimensions here. The URL is relative to
-   * common_design/components/cd/cd-header/cd-logo.css
+   * common_design/libraries/cd/cd-header/cd-logo.css
    */
   --brand-logo-mobile-width: 52px;
   --brand-logo-desktop-width: 186px;
