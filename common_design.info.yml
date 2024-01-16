@@ -46,12 +46,12 @@ libraries-override:
   select_a11y/select_a11y_facets.widget:
     css:
       theme:
-        css/style.css: components/cd-select-a11y/cd-select-a11y.css
+        css/style.css: libraries/cd-select-a11y/cd-select-a11y.css
 
   select_a11y/select_a11y.widget:
     css:
       theme:
-        css/style.css: components/cd-select-a11y/cd-select-a11y.css
+        css/style.css: libraries/cd-select-a11y/cd-select-a11y.css
 
 # CD components
 # Requires Components module
