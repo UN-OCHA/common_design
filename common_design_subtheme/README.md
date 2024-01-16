@@ -38,7 +38,7 @@ Adjust `--brand-logo-desktop-width` to match your logo's dimensions
 
   - `--brand-logo-mobile-width`
 
-You must also update the `url()` within `components/cd/cd-header/cd-logo.css`
+You must also update the `url()` within `libraries/cd/cd-header/cd-logo.css`
 
 
 ### Customise the favicon and homescreen icons
