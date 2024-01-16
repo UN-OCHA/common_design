@@ -3,8 +3,8 @@
 
   Drupal.behaviors.cdOchaServices = {
     attach: function (context, settings) {
-      // Move the OCHA services section to the header.
-      this.moveToHeader('cd-ocha-services', 'cd-global-header__actions');
+      // Move the OCHA Services section to the header.
+      this.moveToHeader('cd-ocha-services', 'cd-ocha-services-container');
     },
 
     /**
@@ -12,11 +12,12 @@
      */
     moveToHeader: function (id, target) {
       var section = document.getElementById(id);
-      var sibling = document.getElementById(target);
-      if (section && sibling) {
+      var container = document.getElementById(target);
+
+      if (section && container) {
         // Ensure the element is hidden before moving it to avoid flickering.
         this.toggleVisibility(section, true);
-        sibling.parentNode.insertBefore(section, sibling);
+        container.appendChild(section);
       }
     },
 

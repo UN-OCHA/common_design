@@ -17,7 +17,7 @@
   gap: 8px;
 }
 
-.cd-global-header__inner .cd-ocha {
+.cd-global-header__inner #cd-ocha-services-container {
   order: -1;
 }
 
