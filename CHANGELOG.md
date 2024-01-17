@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.3.1](https://github.com/UN-OCHA/common_design/compare/v9.3.0...v9.3.1) (2024-01-17)
+
+### Bug Fixes
+
+* **perf:** reduce CLS in Global Header ([32f2323](https://github.com/UN-OCHA/common_design/commit/32f2323bf467ecc64c22a8ff9d8c34460bf08dcf))
+* Change directory for select_a11y css after SDC reshuffle ([1276855](https://github.com/UN-OCHA/common_design/pull/459/commits/12768555a708cfb6cf8692506b12d6ddf4d0200a))
+
 
 ## [9.3.0](https://github.com/UN-OCHA/common_design/compare/v9.2.3...v9.3.0) (2024-01-04)
 
