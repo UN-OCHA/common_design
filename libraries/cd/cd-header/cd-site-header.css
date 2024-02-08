@@ -64,6 +64,11 @@ now that we layout with flex. */
   .cd-site-header__nav-holder nav > ul > .cd-nav__item {
     flex: 1 1 auto;
   }
+
+  .cd-site-header__nav-holder nav > ul > li:last-child,
+  .cd-site-header__nav-holder nav > ul > .cd-nav__item:last-child {
+    flex: 0 1 auto;
+  }
 }
 
 /**
