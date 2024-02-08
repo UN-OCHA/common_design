@@ -1,8 +1,14 @@
 /**
  * Common Design: Sites Menu ('OCHA Services')
  */
+.cd-ocha {
+  text-align: start;
+}
+
 .cd-ocha h2 {
   color: var(--cd-white);
+  font-size: var(--cd-font-size--medium);
+  margin-block-end: 0;
 }
 
 .cd-ocha__btn {
@@ -43,7 +49,7 @@
   flex-flow: column nowrap;
   gap: 0 12px;
   max-width: var(--cd-max-width);
-  padding: 0 var(--cd-container-padding);
+  padding: 0;
 }
 
 .cd-ocha-dropdown__section {
@@ -135,7 +141,6 @@
     flex-flow: row nowrap;
     align-items: flex-end;
     margin: 0 auto;
-    padding: 0 var(--cd-container-padding-tablet);
   }
 
   .cd-ocha-dropdown__section {
@@ -156,7 +161,6 @@
 
   .cd-ocha-dropdown__inner {
     gap: 0 32px;
-    padding: 0 var(--cd-container-padding-xlarge);
   }
 }
 

@@ -85,8 +85,6 @@ cd-header:
       libraries/cd/cd-header/cd-nav.css: {}
       libraries/cd/cd-header/cd-search.css: {}
       libraries/cd/cd-header/cd-search--inline.css: {}
-  js:
-    libraries/cd/cd-header/cd-ocha-services.js: {}
   dependencies:
     - common_design/cd-user-menu
 

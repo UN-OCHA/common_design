@@ -66,7 +66,7 @@
 .cd-footer__section {
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 3rem;
+  padding-block-end: 2rem;
 }
 
 /**
@@ -102,6 +102,10 @@
   }
 
   .cd-footer__section--copyright {
+    flex: 1 0 100%;
+  }
+
+  .cd-footer__section--ocha-services {
     flex: 1 0 100%;
   }
 }
