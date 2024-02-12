@@ -10,9 +10,9 @@
 }
 
 .cd-ocha h2 {
+  margin-block-end: 0;
   color: var(--cd-white);
   font-size: var(--cd-font-size--medium);
-  margin-block-end: 0;
 }
 
 .cd-ocha__btn {
