@@ -2,7 +2,11 @@
  * Common Design: Sites Menu ('OCHA Services')
  */
 .cd-ocha {
-  text-align: start;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    text-align: start;
+  }
 }
 
 .cd-ocha h2 {
@@ -90,6 +94,7 @@
 .cd-button.cd-ocha-dropdown__see-all {
   display: inline-block;
   width: 100%;
+  max-width: 240px;
   padding: 10px;
   font-size: var(--cd-font-size--small);
 }
