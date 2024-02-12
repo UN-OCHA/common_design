@@ -77,7 +77,6 @@ cd-header:
     component:
       libraries/cd/cd-header/cd-header.css: {}
       libraries/cd/cd-header/cd-global-header.css: {}
-      libraries/cd/cd-header/cd-ocha.css: {}
       libraries/cd/cd-header/cd-language-switcher.css: {}
       libraries/cd/cd-header/cd-user-menu.css: {}
       libraries/cd/cd-header/cd-site-header.css: {}
@@ -97,6 +96,7 @@ cd-footer:
       libraries/cd/cd-footer/cd-footer-mandate.css: {}
       libraries/cd/cd-footer/cd-footer-social.css: {}
       libraries/cd/cd-footer/cd-footer-soft.css: {}
+      libraries/cd/cd-footer/cd-ocha.css: {}
 
 cd-other:
   css:
