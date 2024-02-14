@@ -87,26 +87,19 @@
   .cd-footer__inner {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  .cd-footer__section--menu {
-    flex: 1 0 100%;
-  }
-
-  .cd-footer__section--social {
-    flex: 1 0 100%;
-  }
-
-  .cd-footer__section--mandate {
-    flex: 1 0 100%;
-  }
-
-  .cd-footer__section--copyright {
+  .cd-footer__section--menu,
+  .cd-footer__section--social,
+  .cd-footer__section--mandate,
+  .cd-footer__section--copyright,
+  .cd-footer__section--ocha-services {
     flex: 1 0 100%;
   }
 
   .cd-footer__section--ocha-services {
-    flex: 1 0 100%;
+    text-align: start;
   }
 }
 
