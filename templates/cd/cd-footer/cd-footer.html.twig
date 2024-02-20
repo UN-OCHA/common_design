@@ -7,13 +7,6 @@
 <footer class="cd-footer" aria-label="{{ 'Site footer'|t }}">
   <div class="cd-container cd-footer__inner">
 
-    {% block mandate %}
-      {% include '@common_design/cd/cd-footer/cd-mandate.html.twig' %}
-    {% endblock %}
-    {% block copyright %}
-      {% include '@common_design/cd/cd-footer/cd-copyright.html.twig' %}
-    {% endblock %}
-
     {% block footer_menu %}
       {% include '@common_design/cd/cd-footer/cd-footer-menu.html.twig' %}
     {% endblock %}
@@ -23,6 +16,13 @@
 
     {% block ocha %}
       {% include '@common_design/cd/cd-footer/cd-ocha.html.twig' %}
+    {% endblock %}
+
+    {% block mandate %}
+      {% include '@common_design/cd/cd-footer/cd-mandate.html.twig' %}
+    {% endblock %}
+    {% block copyright %}
+      {% include '@common_design/cd/cd-footer/cd-copyright.html.twig' %}
     {% endblock %}
 
   </div>

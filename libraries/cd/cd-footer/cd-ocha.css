@@ -4,12 +4,13 @@
 .cd-ocha-services {
   @media screen and (min-width: 768px) {
     position: relative;
-    padding-block-start: 2rem;
+    margin-block-end: 2rem;
+    padding-block-end: 1rem;
 
     /* Add a horizontal separator once layout expands */
     &::before {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       display: block;
       width: 100%;
@@ -118,18 +119,13 @@
 @media (min-width: 768px) {
   .cd-ocha-services__inner {
     flex-flow: row nowrap;
-    align-items: flex-end;
+    align-items: flex-start;
     margin: 0 auto;
   }
 
   .cd-ocha-services__section {
     flex: 0 1 25%;
     margin-bottom: 0;
-  }
-
-  /* it's a cd-button-styled <a> so it has focus styles already */
-  .cd-header a.cd-ocha-services__see-all:focus-visible {
-    outline: none;
   }
 }
 
