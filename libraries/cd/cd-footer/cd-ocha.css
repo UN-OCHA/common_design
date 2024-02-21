@@ -81,17 +81,6 @@
   outline-offset: 8px;
 }
 
-/**
- * Selector needs to override CD Button because of source order.
- */
-.cd-button.cd-ocha-services__see-all {
-  display: inline-block;
-  width: 100%;
-  max-width: 240px;
-  padding: 10px;
-  font-size: var(--cd-font-size--small);
-}
-
 @media (max-width: 767px) {
   /* On mobile, the two middle columns should look like one list. */
   .cd-ocha-services__section:nth-child(2) {
@@ -104,15 +93,6 @@
     display: none;
     margin: 0;
     padding: 0;
-  }
-
-  .cd-ocha__btn-label {
-    position: absolute !important;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-    width: 1px;
-    height: 1px;
-    word-wrap: normal;
   }
 }
 
