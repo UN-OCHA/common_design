@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.3.2](https://github.com/UN-OCHA/common_design/compare/v9.3.1...v9.3.2) (2024-02-12)
+
+### Bug Fixes
+
+* set flex grow on last child to 0 to prevent full width when wrapping ([6ab5675](https://github.com/UN-OCHA/common_design/commit/6ab5675381e428a42647ed4bf103a3327ae70d3f))
+
+
 ## [9.3.1](https://github.com/UN-OCHA/common_design/compare/v9.3.0...v9.3.1) (2024-01-17)
 
 ### Bug Fixes
