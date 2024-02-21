@@ -81,6 +81,14 @@
   outline-offset: 8px;
 }
 
+.cd-ocha-services__see-all svg {
+  position: relative;
+  top: 0.5px;
+  width: 10px;
+  height: 10px;
+  fill: var(--cd-white);
+}
+
 @media (max-width: 767px) {
   /* On mobile, the two middle columns should look like one list. */
   .cd-ocha-services__section:nth-child(2) {

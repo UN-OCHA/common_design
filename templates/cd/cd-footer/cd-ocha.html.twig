@@ -39,7 +39,15 @@
       <div class="cd-ocha-services__section">
         <p class="cd-ocha-services__heading" aria-hidden="true">&nbsp;</p>
         <ul class="cd-ocha-services__list">
-          <li class="cd-ocha-services__link"><a class="cd-ocha-services__see-all" href="https://www.unocha.org/ocha-digital-services" target="_blank" rel="noopener">{{ 'More OCHA Services'|t }}</a></li>
+          <li class="cd-ocha-services__link">
+            <a class="cd-ocha-services__see-all" href="https://www.unocha.org/ocha-digital-services" target="_blank" rel="noopener">
+              {{ 'More OCHA Services'|t }}
+              <span class="visually-hidden">Opens in a new window</span>
+              <svg class="cd-icon cd-icon--external-link" width="16" height="16" aria-hidden="true" focusable="false">
+                <use xlink:href="#cd-icon--external-link"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
