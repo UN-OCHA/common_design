@@ -4,7 +4,7 @@
 .cd-ocha-services {
   @media screen and (min-width: 768px) {
     position: relative;
-    margin-block-end: 2rem;
+    margin-block-end: 3rem;
     padding-block-end: 1rem;
 
     /* Add a horizontal separator once layout expands */
