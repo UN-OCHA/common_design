@@ -2,14 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [9.3.2](https://github.com/UN-OCHA/common_design/compare/v9.3.1...v9.3.2) (2024-02-12)
+### [9.3.3](https://github.com/UN-OCHA/common_design/compare/v9.3.2...v9.3.3) (2024-02-22)
+
+### Bug Fixes
+
+* OCHA Services moved permanently to the footer - #463
+* **security:** jest-puppeteer@10 - #466
+* **security:** other npm updates
+
+
+### [9.3.2](https://github.com/UN-OCHA/common_design/compare/v9.3.1...v9.3.2) (2024-02-12)
 
 ### Bug Fixes
 
 * set flex grow on last child to 0 to prevent full width when wrapping ([6ab5675](https://github.com/UN-OCHA/common_design/commit/6ab5675381e428a42647ed4bf103a3327ae70d3f))
 
 
-## [9.3.1](https://github.com/UN-OCHA/common_design/compare/v9.3.0...v9.3.1) (2024-01-17)
+### [9.3.1](https://github.com/UN-OCHA/common_design/compare/v9.3.0...v9.3.1) (2024-01-17)
 
 ### Bug Fixes
 
@@ -17,7 +26,7 @@ All notable changes to this project will be documented in this file. See [standa
 * Change directory for select_a11y css after SDC reshuffle ([1276855](https://github.com/UN-OCHA/common_design/pull/459/commits/12768555a708cfb6cf8692506b12d6ddf4d0200a))
 
 
-## [9.3.0](https://github.com/UN-OCHA/common_design/compare/v9.2.3...v9.3.0) (2024-01-04)
+### [9.3.0](https://github.com/UN-OCHA/common_design/compare/v9.2.3...v9.3.0) (2024-01-04)
 
 ### Features
 
@@ -37,7 +46,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **admin:** nicer-looking unpublished styles ([1bdb363](https://github.com/UN-OCHA/common_design/commit/1bdb36373bf82120fead784abacbece00bc37b9b))
 * load primary font in a non-blocking manner ([25775b7](https://github.com/UN-OCHA/common_design/commit/25775b781dd1b18c701e0093ceea74b3e7f61063))
 
-## [9.2.2](https://github.com/UN-OCHA/common_design/compare/v9.2.1...v9.2.2) (2023-10-26)
+### [9.2.2](https://github.com/UN-OCHA/common_design/compare/v9.2.1...v9.2.2) (2023-10-26)
 
 ### Bug Fixes
 
@@ -48,7 +57,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **ci:** run tests on sub-theme during PRs #440 CD-508
 
 
-## [9.2.1](https://github.com/UN-OCHA/common_design/compare/v9.2.0...v9.2.1) (2023-10-11)
+### [9.2.1](https://github.com/UN-OCHA/common_design/compare/v9.2.0...v9.2.1) (2023-10-11)
 
 ### Bug Fixes
 
@@ -57,14 +66,14 @@ All notable changes to this project will be documented in this file. See [standa
 * **tests:** E2E tests updated and reorganized to improve use on individual websites ([71132a6](https://github.com/UN-OCHA/common_design/commit/71132a6d934f5ab7773f596ddf1ad3ec80630f90))
 * remove decimal list style for ol types to work for nested lists ([e05d10f](https://github.com/UN-OCHA/common_design/commit/e05d10f85e9add17f116f795c98de5ed3c2fac15))
 
-## [9.2.0](https://github.com/UN-OCHA/common_design/compare/v9.1.0...v9.2.0) (2023-09-28)
+### [9.2.0](https://github.com/UN-OCHA/common_design/compare/v9.1.0...v9.2.0) (2023-09-28)
 
 ### Features
 
 * CD Disclosure component ([fb2ad8b](https://github.com/UN-OCHA/common_design/commit/fb2ad8b93e2afe28f1811f920eefdfb579bb375f))
 
 
-## [9.1.0](https://github.com/UN-OCHA/common_design/compare/v9.0.1...v9.1.0) (2023-09-13)
+### [9.1.0](https://github.com/UN-OCHA/common_design/compare/v9.0.1...v9.1.0) (2023-09-13)
 
 ### Features
 
@@ -83,7 +92,7 @@ All notable changes to this project will be documented in this file. See [standa
 * remove duplicate no-js class removal ([701beb5](https://github.com/UN-OCHA/common_design/commit/701beb533c75bb78982980bc6ac0e16b3ed4939b))
 
 
-## [9.0.1](https://github.com/UN-OCHA/common_design/compare/v9.0.0...v9.0.1) (2023-07-10)
+### [9.0.1](https://github.com/UN-OCHA/common_design/compare/v9.0.0...v9.0.1) (2023-07-10)
 
 ### Bug Fixes
 
