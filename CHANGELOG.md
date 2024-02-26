@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.3.4](https://github.com/UN-OCHA/common_design/compare/v9.3.3...v9.3.4) (2024-02-26)
+
+### Bug Fixes
+
+* retain OCHA Services border on mobile ([02f1f3b](https://github.com/UN-OCHA/common_design/commit/02f1f3b7632e2d0becaeba0e526cd92110037bf7))
+* update example markup for fonts in README ([d59c9e1](https://github.com/UN-OCHA/common_design/commit/d59c9e1a17620b20602e3b6e5c6bfba8ff9fb876))
+
+
 ### [9.3.3](https://github.com/UN-OCHA/common_design/compare/v9.3.2...v9.3.3) (2024-02-22)
 
 ### Bug Fixes
