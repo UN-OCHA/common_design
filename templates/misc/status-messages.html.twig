@@ -27,7 +27,7 @@
 
 {{ attach_library('common_design/cd-alert') }}
 
-<div data-drupal-messages>
+<div id="messages" data-drupal-messages>
 {% block messages %}
 {% for type, messages in message_list %}
   {%
