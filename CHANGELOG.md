@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.4.0](https://github.com/UN-OCHA/common_design/compare/v9.3.4...v9.4.0) (2024-03-19)
+
+### Features
+
+* Non blocking font ([3f58c71](https://github.com/UN-OCHA/common_design/commit/3f58c7150f655c102ff728832fc2ea5d00569ae6), RWR-416, CD-514)
+
+### Bug Fixes
+
+* Add an element id to the outer status messages wrapper div, so backstop can target it. ([70427b3](https://github.com/UN-OCHA/common_design/commit/70427b3262cf6e81b311f51ee32dc640f9fda4aa))
+* Mimic Drupal core themes on the status messges wrapper. ([7a4f890](https://github.com/UN-OCHA/common_design/commit/7a4f8903dde890c433d962df1542887d35598196))
+
 ### [9.3.4](https://github.com/UN-OCHA/common_design/compare/v9.3.3...v9.3.4) (2024-02-26)
 
 ### Bug Fixes
