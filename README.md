@@ -138,7 +138,7 @@ Here are the technical details relating to the theme itself:
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300%3B0,400%3B0,500%3B0,700%3B0,900%3B1,400%3B1,700&amp;display=swap" media="print" onload="this.onload=null;this.removeAttribute(`media`);" />
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,300%3B0,400%3B0,500%3B0,700%3B0,900%3B1,400%3B1,700&amp;display=swap" onload="this.onload=null;this.setAttribute(`rel`, `stylesheet`);" />
 ```
 
 - Additional fonts for advanced typography and other languages which don't use Latin character sets are available as [Drupal Libraries][drupal-libraries]. The list is defined in `common_design.libraries.yml`. For performance reasons, we do not include these by default. If your website must support character sets that are not included in the base-theme, refer to the sub-theme's Libraries file `common_design_subtheme.libraries.yml` to see a commented-out example helping you create your own Drupal Library.
