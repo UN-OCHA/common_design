@@ -13,11 +13,13 @@
 }
 
 .cd-mandate__logo {
+  position: relative;
+  top: -3px;
   display: block;
   width: 149px;
   height: 37px;
-  margin-inline: auto;
   margin-block-end: 1rem;
+  margin-inline: auto;
 }
 
 .cd-mandate__text {
