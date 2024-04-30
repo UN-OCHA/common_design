@@ -16,7 +16,7 @@
     height: 1px;
     content: '';
     opacity: 0.6;
-    background: var(--cd-white);
+    background: currentColor;
 
   }
 
