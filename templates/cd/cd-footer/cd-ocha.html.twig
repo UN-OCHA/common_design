@@ -1,0 +1,55 @@
+<section id="cd-ocha-services" class="cd-ocha-services cd-footer__section cd-footer__section--ocha-services" aria-label="{{ 'OCHA Services'|t }}">
+  <h2 id="cd-ocha-services-title">{{ 'OCHA Services'|t }}</h2>
+
+  <div class="cd-ocha-services__content">
+    <div class="cd-ocha-services__inner">
+      <div class="cd-ocha-services__section">
+        <p class="cd-ocha-services__heading">{{ 'Related Platforms'|t }}</p>
+        <ul class="cd-ocha-services__list">
+          {% block related_platforms %}
+          <li class="cd-ocha-services__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://example.com">{{ 'Customizable'|t }}</a></li>
+          {% endblock %}
+        </ul>
+      </div>
+      <div class="cd-ocha-services__section">
+        <p class="cd-ocha-services__heading">{{ 'Other OCHA Services'|t }}</p>
+        <ul class="cd-ocha-services__list">
+          {% block other_services_first %}
+          <li class="cd-ocha-services__link"><a href="https://fts.unocha.org/">{{ 'Financial Tracking Service'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://data.humdata.org/">{{ 'Humanitarian Data Exchange'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://auth.humanitarian.id/">{{ 'Humanitarian ID'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://response.reliefweb.int/">{{ 'ReliefWeb Response'|t }}</a></li>
+          {% endblock %}
+        </ul>
+      </div>
+      <div class="cd-ocha-services__section">
+        <p class="cd-ocha-services__heading" aria-hidden="true">&nbsp;</p>
+        <ul class="cd-ocha-services__list">
+          {% block other_services_second %}
+          <li class="cd-ocha-services__link"><a href="https://interagencystandingcommittee.org">{{ 'Inter-Agency Standing Committee'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://unocha.org/">{{ 'OCHA website'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://reliefweb.int/">{{ 'ReliefWeb'|t }}</a></li>
+          <li class="cd-ocha-services__link"><a href="https://vosocc.unocha.org/">{{ 'Virtual OSOCC'|t }}</a></li>
+          {% endblock %}
+        </ul>
+      </div>
+      <div class="cd-ocha-services__section">
+        <p class="cd-ocha-services__heading" aria-hidden="true">&nbsp;</p>
+        <ul class="cd-ocha-services__list">
+          <li class="cd-ocha-services__link">
+            <a class="cd-ocha-services__see-all" href="https://www.unocha.org/ocha-digital-services" target="_blank" rel="noopener">
+              {{ 'More OCHA Services'|t }}
+              <span class="visually-hidden">Opens in a new window</span>
+              <svg class="cd-icon cd-icon--external-link" width="16" height="16" aria-hidden="true" focusable="false">
+                <use xlink:href="#cd-icon--external-link"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

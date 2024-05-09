@@ -1,22 +1,18 @@
 {% embed '@common_design/layout/page.html.twig' %}
-
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" id="main-content" class="cd-container">
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
 
       {{ page.page_title }}
 
-      <div class="cd-layout-content-wrapper">
-
-        <div class="cd-layout-content">
+      <div class="cd-layout">
+        <div class="cd-layout__content">
           {{ page.content }}
-        </div>{# /.layout-content #}
-
+        </div>{# /.cd-layout__content #}
       </div>
 
     </main>
   {% endblock %}
-
 {% endembed %}
 
 

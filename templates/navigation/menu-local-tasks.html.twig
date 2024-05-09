@@ -5,19 +5,20 @@
  *
  * Available variables:
  * - primary: HTML list items representing primary tasks.
- * - secondary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing secondary tasks.
  *
  * Each item in these variables (primary and secondary) can be individually
  * themed in menu-local-task.html.twig.
  */
 #}
-
 {{ attach_library('common_design/cd-tabs') }}
-{% if primary %}
-  <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="tabs primary">{{ primary }}</ul>
-{% endif %}
-{% if secondary %}
-  <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
-  <ul class="tabs secondary">{{ secondary }}</ul>
-{% endif %}
+{% set aria_label = primary ? 'Primary actions'|t : 'Secondary actions'|t %}
+
+<nav aria-label="{{ aria_label }}">
+  {% if primary %}
+    <ul class="tabs primary" role="list">{{ primary }}</ul>
+  {% endif %}
+  {% if secondary %}
+    <ul class="tabs secondary" role="list">{{ secondary }}</ul>
+  {% endif %}
+</nav>

@@ -1,0 +1,11 @@
+/**
+ * CD enhancements for Drupal Nodes
+ */
+
+.node--unpublished {
+  margin: -1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  outline: 3px solid #f33a;
+  background: #fdd;
+}

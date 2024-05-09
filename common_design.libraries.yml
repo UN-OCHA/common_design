@@ -1,3 +1,13 @@
+###
+# Global Styling is enabled by default.
+#
+global-styling:
+  css:
+    base:
+      css/brand.css: {}
+  dependencies:
+    - common_design/cd-core
+
 # Roboto Condensed and Slab.
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
 fonts-advanced:
@@ -29,317 +39,90 @@ fonts-russian:
     theme:
       css/fonts-russian.css: {}
 
-global-styling:
-  css:
-    theme:
-      css/brand.css: {}
-      css/styles.css: {}
-
+###
+# CD Components: Core
+#
+# These components drive the function of the CD Header/Footer and are required
+# for CD to function as intended.
+#
 cd-dropdown:
+  css:
+    component:
+      libraries/cd-dropdown/cd-dropdown.css: {}
   js:
-    js/cd-dropdown.js: {}
+    libraries/cd-dropdown/cd-dropdown.js: {}
   dependencies:
     - common_design/cd-polyfill
 
 cd-menu:
   js:
-    js/cd-menu.js: {}
+    libraries/cd-menu/cd-menu.js: {}
   dependencies:
     - common_design/cd-dropdown
 
 cd-user-menu:
   js:
-    js/cd-user-menu.js: {}
+    libraries/cd-user-menu/cd-user-menu.js: {}
   dependencies:
     - common_design/cd-dropdown
 
-cd-ocha-services:
-  js:
-    js/cd-ocha-services.js: {}
+cd-resets:
+  css:
+    base:
+      libraries/cd/cd-resets/cd-resets.css: {}
+      libraries/cd/cd-resets/cd-typography.css: {}
 
-# CD components
-cd-alert:
+cd-header:
   css:
     component:
-      components/cd-alert/cd-alert.css: {}
+      libraries/cd/cd-header/cd-header.css: {}
+      libraries/cd/cd-header/cd-global-header.css: {}
+      libraries/cd/cd-header/cd-language-switcher.css: {}
+      libraries/cd/cd-header/cd-user-menu.css: {}
+      libraries/cd/cd-header/cd-site-header.css: {}
+      libraries/cd/cd-header/cd-logo.css: {}
+      libraries/cd/cd-header/cd-nav.css: {}
+      libraries/cd/cd-header/cd-search.css: {}
+      libraries/cd/cd-header/cd-search--inline.css: {}
   dependencies:
-    - common_design/css-vars-ponyfill
+    - common_design/cd-user-menu
 
-cd-article:
+cd-footer:
   css:
     component:
-      components/cd-article/cd-article.css: {}
+      libraries/cd/cd-footer/cd-footer.css: {}
+      libraries/cd/cd-footer/cd-footer-copyright.css: {}
+      libraries/cd/cd-footer/cd-footer-menu.css: {}
+      libraries/cd/cd-footer/cd-footer-mandate.css: {}
+      libraries/cd/cd-footer/cd-footer-social.css: {}
+      libraries/cd/cd-footer/cd-footer-soft.css: {}
+      libraries/cd/cd-footer/cd-ocha.css: {}
 
-cd-author:
+cd-other:
   css:
+    base:
+      libraries/cd/cd-other/cd-icon.css: {}
+    layout:
+      libraries/cd/cd-other/cd-layout--page.css: {}
+      libraries/cd/cd-other/cd-layout--content.css: {}
     component:
-      components/cd-author/cd-author.css: {}
-
-cd-banner:
-  css:
-    component:
-      components/cd-banner/cd-banner.css: {}
-
-cd-bleed:
-  header: true
-  js:
-    components/cd-bleed/cd-bleed.js: {}
-  css:
-    component:
-      components/cd-bleed/cd-bleed.css: { weight: 1 }
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-block-title:
-  css:
-    component:
-      components/cd-block-title/cd-block-title.css: {}
-
-cd-bullet-list:
-  css:
-    component:
-      components/cd-bullet-list/cd-bullet-list.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-button:
-  css:
-    component:
-      components/cd-button/cd-button.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-byline:
-  css:
-    component:
-      components/cd-byline/cd-byline.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-caption:
-  css:
-    component:
-      components/cd-caption/cd-caption.css: {}
-
-cd-card:
-  css:
-    component:
-      components/cd-card/cd-card.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-    - common_design/cd-object-fit
-
-cd-date:
-  css:
-    component:
-      components/cd-date/cd-date.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-dropbutton:
-  css:
-    component:
-      components/cd-dropbutton/cd-dropbutton.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-event:
-  css:
-    component:
-      components/cd-event/cd-event.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-facets:
-  css:
-    component:
-      components/cd-facets/cd-facets.css: {}
-
-cd-figure-list:
-  css:
-    component:
-      components/cd-figure-list/cd-figure-list.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-filter:
-  css:
-    component:
-      components/cd-filter/cd-filter.css: {}
-
-cd-flow:
-  css:
-    component:
-      components/cd-flow/cd-flow.css: {}
-
-cd-form:
-  css:
-    component:
-      components/cd-form/cd-form.css: {}
-      components/cd-form/cd-form--drupal.css: {}
-      components/cd-form/cd-form--drupal-widget.css: {}
-  dependencies:
-    - common_design/cd-button
-    - common_design/cd-flow
-
-cd-form--preview:
-  css:
-    component:
-      components/cd-form/cd-form--preview.css: {}
-
-cd-grid:
-  css:
-    component:
-      components/cd-grid/cd-grid.css: {}
-
-cd-hero:
-  css:
-    component:
-      components/cd-hero/cd-hero.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-hero--style-one:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-one.css: {}
-  dependencies:
-    - common_design/cd-hero
-
-cd-hero--style-two:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-two.css: {}
-  dependencies:
-    - common_design/cd-hero
-
-cd-hero--style-three:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-three.css: {}
-  dependencies:
-    - common_design/cd-hero
-
-cd-image-grid:
-  css:
-    component:
-      components/cd-image-grid/cd-image-grid.css: {}
-
-cd-link-list:
-  css:
-    component:
-      components/cd-link-list/cd-link-list.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-nodes:
-  css:
-    component:
-      components/cd-nodes/cd-nodes.css: {}
-
-cd-page-title:
-  css:
-    component:
-      components/cd-page-title/cd-page-title.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-pagination:
-  css:
-    component:
-      components/cd-pagination/cd-pagination.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-read-more:
-  css:
-    component:
-      components/cd-read-more/cd-read-more.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-select-a11y:
-  css:
+      libraries/cd/cd-other/cd-skip-link.css: {}
     theme:
-      components/cd-select-a11y/cd-select-a11y.css: {}
+      libraries/cd/cd-other/cd-print.css: {}
 
-cd-social-links:
-  js:
-    components/cd-social-links/cd-social-links.js: {}
-  css:
-    component:
-      components/cd-social-links/cd-social-links.css: {}
+cd-core:
   dependencies:
-    - common_design/css-vars-ponyfill
+    - common_design/cd-resets
+    - common_design/cd-header
+    - common_design/cd-footer
+    - common_design/cd-other
 
-cd-styled-list:
-  css:
-    component:
-      components/cd-styled-list/cd-styled-list.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-table:
-  css:
-    component:
-      components/cd-table/cd-table.css: {}
-  js:
-    components/cd-table/cd-table.js: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-    - common_design/array-from-polyfill
-
-cd-tag:
-  css:
-    component:
-      components/cd-tag/cd-tag.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-tabs:
-  css:
-    component:
-      components/cd-tabs/cd-tabs.css: {}
-  dependencies:
-    - common_design/css-vars-polyfill
-
-cd-teaser:
-  css:
-    component:
-      components/cd-teaser/cd-teaser.css: {}
-
-cd-title-list:
-  css:
-    component:
-      components/cd-title-list/cd-title-list.css: {}
-
-cd-toc:
-  css:
-    component:
-      components/cd-toc/cd-toc.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-user-list:
-  css:
-    component:
-      components/cd-user-list/cd-user-list.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-typography:
-  css:
-    component:
-      components/cd-typography/cd-typography.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
-
-cd-utilities:
-  css:
-    component:
-      components/cd-utilities/cd-utilities.css: {}
-  dependencies:
-    - common_design/css-vars-ponyfill
+###
+# CD Compatibility
+#
+# These are providing legacy browsers with modern features. They allow the CD to
+# function on old browsers.
+#
 
 # Custom library to set img as background img when object-fit is not supported (IE 11, 15)
 cd-object-fit:
@@ -368,3 +151,300 @@ array-from-polyfill:
   js:
     js/vendor/array-from-polyfill.js: { attributes: { nomodule: true } }
 
+
+###
+# CD Components: Design System
+#
+# These are meant to be included conditionally, i.e. only on pages where they're
+# actually being used. They are self contained and most often correspond to a
+# template in this theme's `templates` directory.
+#
+cd-alert:
+  css:
+    component:
+      libraries/cd-alert/cd-alert.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-article:
+  css:
+    component:
+      libraries/cd-article/cd-article.css: {}
+
+cd-author:
+  css:
+    component:
+      libraries/cd-author/cd-author.css: {}
+
+cd-banner:
+  css:
+    component:
+      libraries/cd-banner/cd-banner.css: {}
+
+cd-bleed:
+  header: true
+  js:
+    libraries/cd-bleed/cd-bleed.js: {}
+  css:
+    component:
+      libraries/cd-bleed/cd-bleed.css: { weight: 1 }
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-block-title:
+  css:
+    component:
+      libraries/cd-block-title/cd-block-title.css: {}
+
+cd-bullet-list:
+  css:
+    component:
+      libraries/cd-bullet-list/cd-bullet-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-button:
+  css:
+    component:
+      libraries/cd-button/cd-button.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-byline:
+  css:
+    component:
+      libraries/cd-byline/cd-byline.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-caption:
+  css:
+    component:
+      libraries/cd-caption/cd-caption.css: {}
+
+cd-card:
+  css:
+    component:
+      libraries/cd-card/cd-card.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+    - common_design/cd-object-fit
+
+cd-date:
+  css:
+    component:
+      libraries/cd-date/cd-date.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-disclosure:
+  css:
+    component:
+      libraries/cd-disclosure/cd-disclosure.css: {}
+  js:
+    libraries/cd-disclosure/cd-disclosure.js: {}
+
+cd-dropbutton:
+  css:
+    component:
+      libraries/cd-dropbutton/cd-dropbutton.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-event:
+  css:
+    component:
+      libraries/cd-event/cd-event.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-facets:
+  css:
+    component:
+      libraries/cd-facets/cd-facets.css: {}
+
+cd-figure-list:
+  css:
+    component:
+      libraries/cd-figure-list/cd-figure-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-filter:
+  css:
+    component:
+      libraries/cd-filter/cd-filter.css: {}
+
+cd-flow:
+  css:
+    base:
+      libraries/cd-flow/cd-flow.css: {}
+
+cd-form:
+  css:
+    component:
+      libraries/cd-form/cd-form.css: {}
+      libraries/cd-form/cd-form--drupal.css: {}
+      libraries/cd-form/cd-form--drupal-widget.css: {}
+  dependencies:
+    - common_design/cd-button
+    - common_design/cd-flow
+
+cd-form--preview:
+  css:
+    component:
+      libraries/cd-form/cd-form--preview.css: {}
+
+cd-grid:
+  css:
+    component:
+      libraries/cd-grid/cd-grid.css: {}
+
+cd-hero:
+  css:
+    component:
+      libraries/cd-hero/cd-hero.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-hero--style-one:
+  css:
+    component:
+      libraries/cd-hero/cd-hero--style-one.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-hero--style-two:
+  css:
+    component:
+      libraries/cd-hero/cd-hero--style-two.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-hero--style-three:
+  css:
+    component:
+      libraries/cd-hero/cd-hero--style-three.css: {}
+  dependencies:
+    - common_design/cd-hero
+
+cd-image-grid:
+  css:
+    component:
+      libraries/cd-image-grid/cd-image-grid.css: {}
+
+cd-link-list:
+  css:
+    component:
+      libraries/cd-link-list/cd-link-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-nodes:
+  css:
+    component:
+      libraries/cd-nodes/cd-nodes.css: {}
+
+cd-page-title:
+  css:
+    component:
+      libraries/cd-page-title/cd-page-title.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-pagination:
+  css:
+    component:
+      libraries/cd-pagination/cd-pagination.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-read-more:
+  css:
+    component:
+      libraries/cd-read-more/cd-read-more.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-select-a11y:
+  css:
+    theme:
+      libraries/cd-select-a11y/cd-select-a11y.css: {}
+
+cd-social-links:
+  js:
+    libraries/cd-social-links/cd-social-links.js: {}
+  css:
+    component:
+      libraries/cd-social-links/cd-social-links.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-styled-list:
+  css:
+    component:
+      libraries/cd-styled-list/cd-styled-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-table:
+  css:
+    component:
+      libraries/cd-table/cd-table.css: {}
+  js:
+    libraries/cd-table/cd-table.js: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+    - common_design/array-from-polyfill
+
+cd-tag:
+  css:
+    component:
+      libraries/cd-tag/cd-tag.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-tabs:
+  css:
+    component:
+      libraries/cd-tabs/cd-tabs.css: {}
+  dependencies:
+    - common_design/css-vars-polyfill
+
+cd-teaser:
+  css:
+    component:
+      libraries/cd-teaser/cd-teaser.css: {}
+
+cd-title-list:
+  css:
+    component:
+      libraries/cd-title-list/cd-title-list.css: {}
+
+cd-toc:
+  css:
+    component:
+      libraries/cd-toc/cd-toc.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-user-list:
+  css:
+    component:
+      libraries/cd-user-list/cd-user-list.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-typography:
+  css:
+    component:
+      libraries/cd-typography/cd-typography.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill
+
+cd-utilities:
+  css:
+    component:
+      libraries/cd-utilities/cd-utilities.css: {}
+  dependencies:
+    - common_design/css-vars-ponyfill

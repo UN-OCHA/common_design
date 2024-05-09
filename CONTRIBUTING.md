@@ -1,12 +1,52 @@
-# Contributing to the base theme or the Component library
+# Contributing to the base-theme or the Component library
+
+| Audience |
+| :------- |
+| Everyone |
+
+There are various audiences marked in this document. Mind the table at the top of each section to see if the docs are meant for your situation.
+
+
+# Contributing code
+
+| Audience           |
+| :----------------- |
+| Contributors to CD |
+
+
+## Contributing CSS
+
+All CSS is now managed by Drupal Library components. The best documentation to follow are the [official CSS guidelines on drupal.org][drupal-css]
+
+- `npm run css:lint` — linting report only.
+- `npm run css:lint-fix` — linting report, plus [automatically fix][lint-fix] any errors that the tool can safely adjust.
+
+For twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
+
+  [lint-fix]: https://stylelint.io/user-guide/usage/options#fix
+  [drupal-css]: https://www.drupal.org/docs/develop/standards/css
+  [drupal-caching]: https://www.drupal.org/node/2598914
+
+
+## Accessibility of contributions
+
+We strive to adhere to [Web Content Accessibility Guidelines (WCAG) 2.1, Level AA][a11y-standards] and will work to achieve that level of adherence when accepting any contribution to the theme. These guidelines are sourced from the [Official UN Web Accessibility Guidelines][a11y-un]
+
+For example, Drupal provides utility classes to [hide content accessibly][a11y-hide]. Any solution that doesn't use our existing tools, or in general doesn't attempt to follow the guidelines has to be adjusted before the contribution can be accepted.
+
+  [a11y-standards]: https://www.w3.org/TR/WCAG21/
+  [a11y-un]: https://www.un.org/en/webaccessibility/index.shtml
+  [a11y-hide]: https://www.drupal.org/docs/accessibility/hide-content-properly
+
+
+# Creating a PR
 
 | Audience           |
 | :----------------- |
 | Contributors to CD |
 
 Clone the `common_design` base theme repo and make a [Pull Request][pr] (PR)
-against `develop` branch for peer review. The PR should follow the [pull request template][pr-template]
-as appropriate.
+against `develop` branch for peer review. The PR should follow the [pull request template][pr-template] as appropriate.
 
 Commits in your branch (or at the very least the PR merge commit) should follow the [Conventional Commits guidelines][cc-guidelines], so that our CHANGELOG can be automatically generated with appropriate notes during each release. A few examples:
 
@@ -37,10 +77,10 @@ has been swapped out. While the JS should be migrated automatically, any
 libraries that were overridden in subthemes, plus any templates using the old
 data-cd-toggable HTML attribute need to be re-inspected and verified to work
 properly."
-
 ```
 
-## Releases
+
+# Releases
 
 | Audience |
 | :------- |
@@ -58,7 +98,7 @@ There may be several breaking changes during the year which result in increments
   [standard-version]: https://github.com/conventional-changelog/standard-version
 
 
-### Creating a Release
+## Creating a Release
 
 | Audience    |
 | :---------- |
@@ -100,7 +140,7 @@ Once the tagged Release has been created, [create a PR from `develop` to `main`]
   [develop-package]: https://github.com/UN-OCHA/common_design/blob/develop/package.json#L3
 
 
-### Release Notes Template
+## Release Notes Template
 
 | Audience    |
 | :---------- |
@@ -120,4 +160,18 @@ For each issue addressed, a short description of the bug or enhancement, and/or 
 
 ### Steps to Upgrade
 Detailed, step-by-step instructions for anything that users or administrators need to do in order to implement or upgrade to this release. These could include configuration changes, prerequisites, hardware, or more. If no action is needed, say so.
+```
+
+## Updating stylelint config
+
+| Audience    |
+| :---------- |
+| Maintainers |
+
+Every once in a while we should refresh our stylelint config to match the current version of Drupal core. Grab the file from Drupal's git repo and replace the contents of `.stylelintrc.core.json` in **both base/sub-themes**. Note the core version (or branch name) by adding one line to the top of the JSON file:
+
+```js
+{
+  "drupal-core": "10.1.x",
+  // ... rest of core stylelintrc ...
 ```

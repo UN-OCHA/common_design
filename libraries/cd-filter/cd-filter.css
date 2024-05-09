@@ -1,0 +1,393 @@
+/**
+ * CD Filter
+ */
+
+.cd-filter {
+  margin-bottom: 1rem;
+}
+
+/* Light grey background to visually distinguish container on mobile. */
+.cd-filter[data-cd-hidden="false"] {
+  background: var(--brand-grey);
+}
+
+.cd-filter:empty {
+  display: none;
+}
+
+.cd-filter__container {
+  width: 100%;
+  padding: 1rem;
+  background: var(--brand-grey);
+}
+
+@media (min-width: 576px) {
+  .cd-filter__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  [dir="ltr"] .cd-filter__group,
+  [dir="ltr"] .cd-filter__form > .block {
+    padding-right: 1rem;
+  }
+
+  [dir="rtl"] .cd-filter__group,
+  [dir="rtl"] .cd-filter__form > .block {
+    padding-left: 1rem;
+  }
+
+  .cd-filter__group,
+  .cd-export,
+  .cd-filter__form > .block {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  /* Reset flow for alignment */
+  .cd-filter__group:first-child,
+  .cd-filter__form > .block:first-child {
+    margin-top: 1rem;
+  }
+
+  [dir="ltr"] .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter__form > .block:nth-child(even),
+  [dir="ltr"] .cd-filter__form > .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir="rtl"] .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter__form > .block:nth-child(even),
+  [dir="rtl"] .cd-filter__form > .block:last-child {
+    padding-left: 0;
+  }
+
+  /* If only one element */
+  .cd-filter__group:only-of-type,
+  .cd-filter__form > .block:only-of-type {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-export {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-export {
+    margin-right: auto;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .cd-filter--horizontal {
+    margin-bottom: 2rem;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block {
+    padding-right: 1rem;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block {
+    padding-left: 1rem;
+  }
+
+  .cd-filter__group {
+    width: 100%;
+  }
+
+  /* Quantity queries */
+  /* https://alistapart.com/article/quantity-queries-for-css */
+
+  /* If one element */
+  .cd-filter--horizontal .cd-filter__group:only-of-type,
+  .cd-filter--horizontal .cd-filter__form > .block:only-of-type,
+    /* If two elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .cd-export,
+    /* If three elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .cd-export {
+    flex: 1 0 33%;
+    max-width: 33%;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(2):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(3):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(2):first-child ~ .block:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(3):first-child ~ .block:last-child {
+    padding-left: 0;
+  }
+
+  /* If four elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .cd-export {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+    padding-left: 0;
+  }
+
+  /* If five elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .cd-export {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-filter__form {
+    display: block;
+  }
+
+  .cd-filter__group,
+  .cd-export,
+  .cd-filter__form > .block {
+    max-width: 100%;
+  }
+
+  /* Reset flow for alignment */
+  .cd-filter__group:first-child,
+  .cd-filter__form > .block:first-child {
+    margin-top: 0;
+  }
+
+  .cd-filter--horizontal .cd-filter__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .cd-filter--horizontal .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__form > .block {
+    /* Reset flow for alignment */
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* If four elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .cd-export {
+    flex: 1 0 25%;
+    max-width: 25%;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
+    padding-right: 1rem;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:nth-child(even) {
+    padding-left: 1rem;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(4):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(4):first-child ~ .block:last-child {
+    padding-left: 0;
+  }
+
+  /* If five elements */
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group,
+  .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-export,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block,
+  .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .cd-export {
+    flex: 1 0 20%;
+    max-width: 20%;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
+    padding-right: 1rem;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:nth-child(even),
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:nth-child(even) {
+    padding-left: 1rem;
+  }
+
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="ltr"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+    padding-right: 0;
+  }
+
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__group:nth-last-child(5):first-child ~ .cd-filter__group:last-child,
+  [dir="rtl"] .cd-filter--horizontal .cd-filter__form > .block:nth-last-child(5):first-child ~ .block:last-child {
+    padding-left: 0;
+  }
+}
+
+/* Dropdown button, duplication of .cd-button rules */
+.cd-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.6s ease-out,
+    color 0.6s ease-out;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--cd-white);
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background-color: var(--brand-primary);
+  box-shadow: none;
+  font-size: 1rem;
+  font-weight: bold;
+  -webkit-appearance: none;
+}
+
+[dir="ltr"] .cd-filter__btn svg {
+  margin-right: 0;
+  margin-left: 2rem;
+}
+
+[dir="rtl"] .cd-filter__btn svg {
+  margin-right: 2rem;
+  margin-left: 0;
+}
+
+.cd-filter__btn[aria-expanded] .cd-icon--arrow-down {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cd-filter__btn:hover {
+  color: var(--cd-white);
+  background-color: var(--brand-primary--light);
+}
+
+.cd-filter__btn:focus {
+  border: 2px solid var(--brand-primary--dark);
+  /* We remove the outline because we are adding a border. */
+  /* so the rounded corners look nicer on hover */
+  outline: 0 solid var(--brand-primary--light);
+}
+
+@media (min-width: 1024px) {
+  /**
+   * Enable the cd-filter component collapse using cd-dropdown component.
+   * Set the breakpoint at which the filter should stop acting like a dropdown.
+   * Adding `.cd-dropdown` to `.cd-filter` means --dropdown defaults to true.
+   */
+  .cd-filter[data-cd-toggable] {
+    --dropdown: false;
+  }
+
+  .cd-filter__btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  [dir="ltr"] .cd-filter__btn svg {
+    padding: 0 0 0 4px;
+  }
+
+  [dir="rtl"] .cd-filter__btn svg {
+    padding: 0 4px 0 0;
+  }
+
+  .cd-filter__btn-text {
+    display: block;
+  }
+}
+
+/**
+ * IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on
+ * filter container is not recognised so the cd-dropdown.js creates a toggler
+ * button on desktop. This hides it when that happens.
+ */
+@media (min-width: 1024px) and (-ms-high-contrast: none) {
+  .cd-filter__btn {
+    display: none;
+  }
+}
+
+/**
+ * IE11
+ *
+ * No support for CSS custom properties means --dropdown: false; property on the
+ * dropdown container is not recognised so the cd-dropdown.js does not run the
+ * updateToggler function which toggles the data-cd-hidden attribute. This
+ * displays the dropdown regardless of that attribute value.
+ */
+@media all and (-ms-high-contrast: none) {
+  .cd-filter[data-cd-toggable][data-cd-hidden="true"] {
+    display: block;
+  }
+}
+
+.no-js .cd-filter__form {
+  display: block;
+}

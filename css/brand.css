@@ -41,6 +41,18 @@
   --cd-container-padding-tablet: 1.5rem; /* 24px */
   --cd-container-padding-xlarge: 2.5rem; /* 40px */
 
+  /**
+   * Breakpoints
+   *
+   * Mostly to document the old Sass vars, these values are used directly in CSS
+   * when needed for a media query, because custom props don't work in MQs.
+   */
+  --cd-bp--sm: 576px;
+  --cd-bp--md: 768px;
+  --cd-bp--lg: 1024px;
+  --cd-bp--xl: 1200px;
+  --cd-bp--xxl: 1400px;
+
   /* Vertical Rhythm */
   --cd-flow-space: 1rem;
   --cd-bumper-space: 1rem;
@@ -74,7 +86,6 @@
 
   /* Fonts */
   --cd-font: helvetica, arial, sans-serif;
-  --cd-font--system: system-ui;
 
   /**
    * Roboto
@@ -93,6 +104,23 @@
   --cd-font--noto-sans-sc: "Noto Sans SC", sans-serif;
 
   /**
+   * z-index reference values
+   */
+  --cd-z-default: 1;
+  --cd-z-hidden: -1;
+  --cd-z-sidebar: 110;
+  --cd-z-sidebar-underlay: 100;
+  --cd-z-main-menu: 199;
+  --cd-z-search: 200;
+  --cd-z-dropdown: 201;
+  --cd-z-skip-link: 1000;
+
+  /**
+   * Accessibility-related properties
+   */
+  --cd-outline-size: 3px;
+
+  /**
    * Site-specific brand defaults
    *
    * You can override these defaults in the SUB-THEME. We provide default values
@@ -102,9 +130,20 @@
    * @see common_design_subtheme/css/brand.css
    */
   --brand-primary: var(--cd-ocha-blue);
-  --brand-primary--light: var(--cd-blue--brighter);
+  --brand-primary--light: var(--cd-blue--bright);
   --brand-primary--dark: var(--cd-blue--dark);
   --brand-highlight: var(--cd-highlight-red);
   --brand-grey: var(--cd-blue-grey);
-  --brand-logo-width: 186px;
+
+  /**
+   * Site logos
+   *
+   * Specify the logo paths/dimensions here. The URL is relative to
+   * common_design/libraries/cd/cd-header/cd-logo.css
+   */
+  --brand-logo-mobile-width: 52px;
+  --brand-logo-desktop-width: 186px;
+
+  /* DEPRECATED: this variable will be removed in the future */
+  --brand-logo-width: var(--brand-logo-desktop-width);
 }

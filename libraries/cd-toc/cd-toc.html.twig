@@ -1,0 +1,60 @@
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-utilities') }}
+{{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design/cd-button') }}
+{{ attach_library('common_design/cd-toc') }}
+
+<div class="cd-layout">
+  <div class="cd-layout__sidebar cd-layout__sidebar--first cd-layout__sidebar--wide">
+    <nav class="cd-toc [ cd-flow ]" aria-label="{{ 'TOC'|t }}">
+      <h3 class="cd-toc__title" id="table-of-contents-title">{{ 'Table of Contents'|t }}</h3>
+      <ol id="cd-toc" class="cd-toc__list">
+        <li><a href="#heading-one">Example heading one</a></li>
+        <li><a href="#heading-two">Example heading two</a>
+          <ol>
+            <li><a href="#heading-two-point-one">Example heading two point one</a></li>
+            <li><a href="#heading-two-point-two">Example heading two point two</a></li>
+          </ol>
+        </li>
+        <li><a href="#heading-three">Example heading three</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="cd-layout__content">
+    <article class="cd-article">
+      <h2>This is an example article with a table of contents</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue a arcu sed aliquet. Vestibulum pretium lacus dolor, vitae luctus magna rhoncus eget. Fusce suscipit porttitor euismod. Vivamus turpis augue, sagittis ac risus in, dignissim posuere velit. Duis vestibulum dui non tellus luctus dignissim. Cras semper vitae magna vitae egestas. Aliquam erat volutpat. Ut neque arcu, euismod nec laoreet et, scelerisque vel tortor. Integer ut ligula eros. Sed in enim bibendum, dictum metus et, vehicula ante. Aliquam vitae vulputate odio, vel pretium mi. Integer dapibus pharetra eros, at placerat ante bibendum in.</p>
+
+      <h3 id="heading-one">This is an example heading</h3>
+      <p>Etiam fermentum sit amet metus sed hendrerit. Aenean quis hendrerit augue, in congue enim. Aenean at nisi nec tortor mollis vehicula et at nulla. Pellentesque sodales, sapien a congue placerat, enim purus blandit neque, non mattis ex magna eu enim. Maecenas sed lobortis tortor, ut tristique libero. Fusce laoreet eros et tristique hendrerit. Fusce non augue ac libero consequat molestie ac sed diam. Ut sed sodales orci. In hac habitasse platea dictumst. Ut ut justo eget lectus bibendum viverra eu sit amet velit. Vivamus non diam nec lorem pulvinar tempor. Cras non ante libero.</p>
+
+      <h3 id="heading-two">This is an example heading</h3>
+      <p>In hac habitasse platea dictumst. Sed semper metus erat, vel consectetur nisi fermentum sed. Nulla vulputate, ipsum in auctor ullamcorper, sapien erat sollicitudin purus, quis pellentesque magna tortor ac magna. Vivamus massa diam, sollicitudin id fermentum ut, pretium eu tortor. Praesent in tortor velit. Ut a leo quis tortor dignissim ultricies ut vel lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin auctor, mauris eu ultrices porttitor, enim ex ultricies quam, sed lobortis dolor ligula vel lectus. Duis commodo neque a molestie aliquam.</p>
+
+      <h4 id="heading-two-point-one">This is an example heading</h4>
+      <p>Cras venenatis erat eu congue cursus. Sed suscipit elementum volutpat. Mauris velit lacus, malesuada consectetur tortor quis, scelerisque mattis elit. Pellentesque ipsum purus, malesuada sit amet purus non, posuere maximus ligula. Integer eu est a leo egestas scelerisque nec ut lacus. Proin lectus risus, sagittis ac accumsan semper, condimentum id ligula. Suspendisse potenti. Mauris dictum placerat dignissim. Cras tortor nulla, sodales quis urna ac, blandit ultrices urna. Donec lectus nisl, molestie ut vulputate rutrum, sollicitudin molestie lectus.</p>
+
+      <h4 id="heading-two-point-two">This is an example heading</h4>
+      <p>Cras venenatis erat eu congue cursus. Sed suscipit elementum volutpat. Mauris velit lacus, malesuada consectetur tortor quis, scelerisque mattis elit. Pellentesque ipsum purus, malesuada sit amet purus non, posuere maximus ligula. Integer eu est a leo egestas scelerisque nec ut lacus. Proin lectus risus, sagittis ac accumsan semper, condimentum id ligula. Suspendisse potenti. Mauris dictum placerat dignissim. Cras tortor nulla, sodales quis urna ac, blandit ultrices urna. Donec lectus nisl, molestie ut vulputate rutrum, sollicitudin molestie lectus.</p>
+
+      <ol>
+        <li>Example point one</li>
+        <li>Example point two</li>
+        <li>Example point three</li>
+      </ol>
+
+      <h3 id="heading-three">This is an example heading</h3>
+      <p>Donec porttitor maximus ligula. Quisque id gravida ante. Praesent nec leo ac nibh condimentum aliquet. Duis accumsan accumsan sagittis. Maecenas fermentum nulla et purus scelerisque finibus. Pellentesque egestas dignissim hendrerit. Sed pulvinar viverra libero ac rhoncus. Nunc pretium semper nisi, a viverra quam pulvinar non. Integer laoreet malesuada rhoncus. Aenean quis gravida justo. Proin faucibus mi justo, eget auctor nisi dapibus ac. Donec congue lorem quis odio venenatis ultrices.</p>
+
+      <div class="cd-toc__back-to-toc">
+        <a href="#cd-toc" class="cd-button cd-button--bold cd-button--uppercase cd-button--small cd-button--icon">
+          <span class="cd-button__text">Back to TOC</span>
+          <svg class="cd-icon cd-icon--arrow-up">
+            <use xlink:href="#cd-icon--arrow-up"></use>
+          </svg>
+        </a>
+      </div>
+    </article>
+  </div>
+</div>

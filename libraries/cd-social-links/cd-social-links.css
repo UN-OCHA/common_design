@@ -1,0 +1,143 @@
+/**
+ * CD Social Links
+ */
+
+.cd-social-links {
+  --cd-social-links-fill: var(--brand-primary--dark);
+  --cd-social-links-z: -1;
+
+  width: 100%;
+}
+
+.cd-social-links__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+}
+
+.cd-social-links__label {
+  position: relative;
+  top: -2px;
+}
+
+.cd-social-links ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  gap: .5rem;
+  list-style-type: none;
+}
+
+.cd-social-links__item {
+  position: relative;
+  flex: 0 0 1rem;
+  margin: 0;
+}
+
+.cd-social-links__link,
+.cd-social-links__button {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.cd-social-links__link--pdf {
+  width: 1.25rem;
+}
+
+.cd-social-links svg {
+  fill: var(--cd-social-links-fill);
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * Copy URL to Clipboard
+ *
+ * There's a div[role=status] to announce the feedback for SR when clicking
+ * the copy button. It's styled as a little tooltip for sighted visitors.
+ * The status is styled as a bubble and the :after is the triangle below.
+ */
+.cd-social-links__status,
+.cd-social-links__status::after {
+  position: absolute;
+  transition: 0.1666s ease-in-out;
+  transition-property: opacity, transform;
+  opacity: 0;
+}
+
+.cd-social-links__status {
+  z-index: var(--cd-social-links-z);
+  top: -27px;
+  display: inline-block;
+  width: auto;
+  padding: 0.2em 0.4em;
+  white-space: nowrap;
+  color: white;
+  border-radius: 5px;
+  background: black;
+  font-size: 14px;
+}
+
+[dir="ltr"] .cd-social-links__status {
+  right: -8px;
+}
+
+[dir="rtl"] .cd-social-links__status {
+  left: -8px;
+}
+
+.cd-social-links__status::after {
+  top: 24px;
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  border-top: 10px solid black;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+[dir="ltr"] .cd-social-links__status::after {
+  right: 5px;
+}
+
+[dir="rtl"] .cd-social-links__status::after {
+  left: 5px;
+}
+
+.is--showing-message .cd-social-links__status,
+.is--showing-message .cd-social-links__status::after {
+  opacity: 1;
+}
+
+[dir="ltr"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
+}
+
+[dir="rtl"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
+}
+
+@media screen and (min-width: 576px) {
+  [dir="ltr"] .is--showing-message .cd-social-links__status {
+    transform: translateY(-10px);
+  }
+  [dir="rtl"] .is--showing-message .cd-social-links__status {
+    transform: translateY(-10px);
+  }
+}
+
+[dir="ltr"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
+}
+
+[dir="rtl"] .is--showing-message .cd-social-links__status {
+  transform: translateY(-10px);
+}

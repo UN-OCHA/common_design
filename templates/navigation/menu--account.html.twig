@@ -16,6 +16,20 @@
  *   - is_collapsed: TRUE if the link has children within the current menu tree
  *     that are not currently visible.
  *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * This template assumes that your Account nav uses one active top-level menu
+ * item with all other menu items nested flatly underneath. In practice, we use
+ * two mutually-exclusive top-level menu items based on whether the person is
+ * logged in out out. Your nav MUST look like this for the template to function:
+ *
+ * My Account (logged-in)
+ *  ↳ Optional: site-specific user action(s)
+ *  ↳ Log out
+ * Log in (logged-out)
+ *
+ * <ul>/<li> tags are commented out for menu_level 0. Omitting these tags is for
+ * the benefit of screen readers, who announce fewer items before landing on the
+ * toggle button.
  */
 #}
 {% import _self as menus %}
@@ -24,14 +38,15 @@
   We call a macro which calls itself to render the full tree.
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, username) }}
-{% macro menu_links(items, attributes, menu_level, username) %}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
 
     {%
       set menu_classes = [
         'menu',
+        menu_level == 0 ? 'cd-user-menu',
         menu_level > 0 ? 'cd-global-header__dropdown',
         menu_level > 0 ? 'cd-user-menu__dropdown'
       ]
@@ -39,7 +54,12 @@
 
     {% set parent_id = attributes.id ?? ('cd-user-menu-' ~ menu_level) %}
 
-    <ul{{ attributes.addClass(menu_classes) }}>
+    {% if menu_level != 0 %}
+      <ul{{ attributes
+        .addClass(menu_classes)
+        .setAttribute('data-cd-menu-level', menu_level)
+      }}>
+    {% endif %}
 
     {% for item in items %}
       {%
@@ -51,17 +71,16 @@
         ]
       %}
 
-      {% set title = item.title == '%username%' ? username : item.title %}
       {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
-      <li{{ item.attributes.addClass(classes) }}>
+      {% if menu_level != 0 %}<li{{ item.attributes.addClass(classes) }}>{% endif %}
 
         {#
           Progressive enhancement: make sure there is always a menu entry.
           If the menu item has children and javascript is enabled then this will
           be replaced with a button to show the child menu.
         #}
-        {% spaceless %}
+        {% apply spaceless %}
         <a href="{{ item.url }}" id="{{ id }}">
           {# Add the user icon for the first menu item of the root element. #}
           {% if menu_level == 0 and loop.index == 1 %}
@@ -69,9 +88,9 @@
               <use xlink:href="#cd-icon--user"></use>
             </svg>
           {% endif %}
-          <span>{{ title }}</span>
+          <span>{{ item.title }}</span>
         </a>
-        {% endspaceless %}
+        {% endapply %}
 
         {#
           If the menu item has children then we mark the sub-menu as toggable
@@ -81,7 +100,7 @@
 
           {%
             set attributes =  create_attribute({
-              'data-cd-toggable': title,
+              'data-cd-toggable': item.title,
               'data-cd-icon': 'arrow-down',
               'data-cd-component': 'cd-user-menu',
               'data-cd-replace': id,
@@ -94,13 +113,13 @@
           {% do attributes.setAttribute('data-cd-logo', 'user') %}
           {% endif %}
 
-          {{ menus.menu_links(item.below, attributes, menu_level + 1, username) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
 
         {% endif %}
-
-      </li>
-
-    {% endfor %}
-    </ul>
+        {% if menu_level != 0 %}</li>{% endif %}
+      {% endfor %}
+    {% if menu_level != 0 %}</ul>{% endif %}
   {% endif %}
 {% endmacro %}
+
+

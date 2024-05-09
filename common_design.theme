@@ -8,7 +8,8 @@
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\user\Entity\User;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_form_system_theme_settings_alter().
@@ -340,10 +341,31 @@ function common_design_theme_suggestions_form_alter(array &$suggestions, array $
   $suggestions[] = 'form__' . $variables['element']['#form_id'];
 }
 
+/**
+ * Impements hook_theme_suggestions_form_element_alter().
+ */
 function common_design_theme_suggestions_form_element_alter(array &$suggestions, array $variables, $hook) {
   $suggestions[] = $hook . '__' . $variables['element']['#type'];
 }
 
+/**
+ * Implements hook_theme_suggestions_paragraph_alter().
+ *
+ * - paragraph--PARENT-ENTITY--PARAGRAPH.html.twig
+ * - paragraph--PARENT-ENTITY--PARENT-FIELD--PARAGRAPH.html.twig
+ */
+function common_design_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent_entity = $paragraph->getParentEntity();
+  $parent_field_name = $paragraph->parent_field_name->value;
+
+  if ($parent_entity) {
+    $suggestions[] = 'paragraph__' . $parent_entity->bundle() . '__' . $paragraph->bundle();
+  }
+  if ($parent_entity && $parent_field_name) {
+    $suggestions[] = 'paragraph__' . $parent_entity->bundle() . '__' . $parent_field_name . '__' . $paragraph->bundle();
+  }
+}
 
 /**
  * Implements hook_form_alter().
@@ -477,27 +499,78 @@ function common_design_preprocess_html(&$vars) {
   $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
 
   // Add body classes.
-  if ($status_code && $status_code->getStatusCode() == 404) {
+  if ($status_code && !is_a($status_code, 'ParamNotConvertedException') && $status_code->getStatusCode() == 404) {
     $vars['attributes']['class'][] = 'path-error path-error--404';
   }
-  if ($status_code && $status_code->getStatusCode() == 403) {
+  if ($status_code && !is_a($status_code, 'ParamNotConvertedException') && $status_code->getStatusCode() == 403) {
     $vars['attributes']['class'][] = 'path-error path-error--403';
   }
 
   // Add a script to detect whether javascript is enabled or not and then
   // replace the `no-js` class with the `js` one.
+  //
   // Drupal.js does this but way too late on first load causing issues with
   // css rules that rely on the `js` class being defined or not.
+  //
+  // @TODO: we end up with duplicate `js` classes when both this and Drupal.js
+  //        execute their code. It's also possible to see both `no-js` and `js`
+  //        in old browsers like IE11.
   $js_detection = [
     '#tag' => 'script',
     '#value' => "document.documentElement.className = document.documentElement.className.replace('no-js', typeof document.addEventListener !== 'undefined' ? 'js' : 'no-js');",
     '#weight' => -1,
   ];
   $vars['page']['#attached']['html_head'][] = [$js_detection, 'js-detection'];
+
+  // Construct <link>s for Roboto: two that preconnect to Google Fonts, for a
+  // nominal performance improvement, and the link to the CSS file itself.
+  //
+  // To load the font in a totally non-blocking manner, we are using the media
+  // attribute to specify print until the fonts load, then we remove it with JS.
+  // There is no <noscript> in place, so the fonts won't load on non-JS browsers
+  // by design.
+  //
+  // To edit the font selection, visit the following URL:
+  //
+  // @see https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700
+  $preconnect_api = [
+    'rel' => 'preconnect',
+    'href' => 'https://fonts.googleapis.com',
+  ];
+  $preconnect_static = [
+    'rel' => 'preconnect',
+    'href' => 'https://fonts.gstatic.com',
+    'crossorigin' => TRUE,
+  ];
+  $roboto_default = [
+    'rel' => 'preload',
+    'href' => 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap',
+    'as' => 'style',
+    'onload' => 'this.onload=null;this.setAttribute(`rel`, `stylesheet`);',
+  ];
+
+  // Add <link>s to HTML response.
+  $vars['page']['#attached']['html_head_link'][] = [
+    $preconnect_api,
+    'preconnect-api',
+  ];
+  $vars['page']['#attached']['html_head_link'][] = [
+    $preconnect_static,
+    'preconnect-static',
+  ];
+  $vars['page']['#attached']['html_head_link'][] = [
+    $roboto_default,
+    'roboto-default',
+  ];
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * - page--demo.html.twig
+ * - page--401.html.twig
+ * - page--403.html.twig
+ * - page--404.html.twig
  */
 function common_design_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $current_uri = \Drupal::request()->getRequestUri();
@@ -506,7 +579,7 @@ function common_design_theme_suggestions_page_alter(array &$suggestions, array $
     $suggestions[] = $hook . '__demo';
   }
 
-  // Error page template suggestions.
+  // Error page template suggestions.: 401, 403, 404, etc
   if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
     $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
     $suggestions[] = 'page__' . (string) $status_code;
@@ -536,17 +609,105 @@ function common_design_preprocess_block__language_block(&$vars) {
   // Current language available in template override.
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $vars['language'] = $language;
+
+  $language_name = \Drupal::languageManager()->getCurrentLanguage()->getName();
+  $vars['language_name'] = $language_name;
 }
 
 /**
  * Implements hook_preprocess_menu().
+ *
+ * Ensure we have a user menu hierarchy in the form:
+ *
+ * My account
+ *   Edit my account
+ *   ... (potential other menu items)
+ *   Log out
  */
-function common_design_preprocess_menu(&$variables, $hook) {
-  if ($hook == 'menu__account') {
-    // Add username.
-    $user = User::load(\Drupal::currentUser()->id());
-    $variables['username'] = $user->getDisplayName();
-    $variables['#cache']['contexts'][] = 'user';
+function common_design_preprocess_menu__account(&$variables) {
+  $items = &$variables['items'] ?? [];
+
+  $base_child_menu_item = [
+    'is_expanded' => FALSE,
+    'is_collapsed' => FALSE,
+    'in_active_trail' => FALSE,
+    'attributes' => new Attribute(),
+    'below' => [],
+  ];
+
+  // Find the "My account" menu item. It may be the default system menu item
+  // from the core user module or a custom one added as per release instructions
+  // of the CD 7.4 version.
+  foreach ($items as &$item) {
+    if (isset($item['url']) && $item['url']->isRouted() && $item['url']->getRouteName() === 'user.page') {
+      $account_menu_item = &$item;
+      break;
+    }
+  }
+
+  // If there is a menu account, add a child link to the user edit form (or
+  // user page for Drupal < 9.5) and a child link to log out; and consolidate
+  // the labels.
+  if (isset($account_menu_item)) {
+    $children = $account_menu_item['below'] ?? [];
+
+    // Retrieve or create a link to the user page. This is mostly for backward
+    // compatibility with the CD 7.4.
+    if (isset($children['user.page'])) {
+      $user_edit_menu_item = $children['user.page'];
+      unset($children['user.page']);
+    }
+    else {
+      $user_edit_menu_item = $base_child_menu_item;
+    }
+
+    // For Drupal 9.5+, we redirect to the user edit form.
+    if (!empty(\Drupal::service('router')->getRouteCollection()->get('user.edit'))) {
+      $user_edit_menu_item['url'] = Url::fromRoute('user.edit');
+    }
+    elseif (!isset($user_edit_menu_item['url'])) {
+      $user_edit_menu_item['url'] = Url::fromRoute('user.page');
+    }
+
+    // Ensure the title is consistent across sites using the CD.
+    $user_edit_menu_item['title'] = t('Edit my account');
+
+    // Add it as the first link.
+    $children = ['user.page' => $user_edit_menu_item] + $children;
+
+    // Retrieve any existing logout link. This is mostly for backward
+    // compatibility with the CD 7.4 and prevents multiple logout links.
+    foreach ($children as $key => $child) {
+      if (isset($child['url']) && $child['url']->isRouted() && $child['url']->getRouteName() === 'user.logout') {
+        $logout_menu_item = $child;
+        unset($children[$key]);
+      }
+    }
+
+    // Use the top logout link if it exists.
+    if (isset($items['user.logout'])) {
+      $logout_menu_item = $items['user.logout'];
+      unset($items['user.logout']);
+    }
+    // Otherwise create a new one if we didn't find one earlier.
+    elseif (!isset($logout_menu_item)) {
+      $logout_menu_item = $base_child_menu_item + [
+        'url' => Url::fromRoute('user.logout'),
+      ];
+    }
+
+    // Ensure the title is consistent across sites using the CD.
+    $logout_menu_item['title'] = t('Log out');
+
+    // Add the link at the bottom.
+    $children['user.logout'] = $logout_menu_item;
+
+    // Mark the menu item as expanded so it's converted to a button.
+    $account_menu_item['is_expanded'] = TRUE;
+    $account_menu_item['below'] = $children;
+
+    // Ensure the title is consistent across sites using the CD.
+    $account_menu_item['title'] = t('My account');
   }
 }
 
@@ -588,7 +749,7 @@ function common_design_load_theme_blocks(array $ids) {
  *   before to avoid displaying the block several times.
  */
 function common_design_get_block_render_array($id) {
-  static $rendered = [];
+  $rendered = &drupal_static(__FUNCTION__, []);
 
   if (!isset($rendered[$id])) {
     // Prevent rendering the block several times.
@@ -816,7 +977,6 @@ function common_design_form_user_form_alter(array &$form, FormStateInterface $fo
   common_design_add_entity_edit_form_theme($form, $form_state);
 }
 
-
 /**
  * Implemenents hook_preprocess_fieldset().
  */
@@ -839,4 +999,3 @@ function common_design_preprocess_datetime_wrapper(&$variables) {
     $variables['title_attributes']['class'][] = 'visually-hidden';
   }
 }
-

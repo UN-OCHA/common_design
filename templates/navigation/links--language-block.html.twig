@@ -34,15 +34,14 @@
 
 {%
   set classes = [
-    'cd-global-header__dropdown',
-    'cd-user-menu__dropdown'
+    'cd-language-switcher__dropdown'
   ]
 %}
 
 {% if links -%}
   <ul{{ attributes.addClass(classes) }}>
     {%- for item in links -%}
-      <li{{ item.attributes }}>
+      <li{{ item.attributes|without('hreflang') }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}

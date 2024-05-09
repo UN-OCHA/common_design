@@ -1,0 +1,16 @@
+/**
+ * Common Design: Logo
+ *
+ * Overrides the image path. Change it for your website.
+ */
+.cd-site-logo {
+  background:
+    linear-gradient(transparent, transparent),
+    url(../../../img/logos/ocha-logo-blue.svg) center no-repeat;
+}
+
+@media (min-width: 768px) {
+  .cd-site-logo {
+    background: none;
+  }
+}

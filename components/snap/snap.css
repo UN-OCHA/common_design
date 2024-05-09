@@ -1,0 +1,19 @@
+/* .snap {} */
+
+.snap .btn--pdf {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  background-color: transparent;
+  background-image: url('icon--pdf.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 15px 21px;
+}
+
+.snap .btn--pdf:focus {
+  outline: 3px solid var(--brand-highlight);
+}

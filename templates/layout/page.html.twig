@@ -45,14 +45,11 @@
 
 {%
   set layout_classes = [
-  'cd-container',
-  page.sidebar_first|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
-  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout-with-sidebar-second',
-  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout-with-sidebar-both',
-]
+    'cd-container',
+  ]
 %}
 
-<div class="cd-layout-container">
+<div class="cd-page-layout-container">
 
   {% block header %}
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
@@ -78,26 +75,30 @@
 
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(layout_classes) }}>
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(layout_classes) }}>
 
       {{ page.page_title }}
 
-      <div class="cd-layout-content-wrapper">
+      <div class="cd-layout">
 
         {% if page.sidebar_first %}
-          {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
-            This means we cannot have any white space between tags (as below).
-            Attn: Having the twig debug enabled means the div is no longer empty.
-            See Drupal issues/953034 for description and current status.
+          {#
+            We are using CSS pseudo class :empty to hide these aside elements if
+            the region prints empty. That means we cannot have any white space
+            between tags (as below).
+
+            NOTE: Enabling Twig debug means the div is no longer empty.
+            @see https://www.drupal.org/project/drupal/issues/953034
           #}
-          <aside class="cd-layout-sidebar-first" role="complementary">{{ page.sidebar_first }}</aside>
+          <aside class="cd-layout__sidebar cd-layout__sidebar--first">{{ page.sidebar_first }}</aside>
         {% endif %}
 
-        <div class="cd-layout-content">
+        <div class="cd-layout__content">
           {{ page.content }}
-        </div>{# /.cd-layout-content #}
+        </div>{# /.cd-layout__content #}
 
-        {% if page.sidebar_second %}<aside class="cd-layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>
+        {% if page.sidebar_second %}
+          <aside class="cd-layout__sidebar cd-layout__sidebar--second">{{ page.sidebar_second }}</aside>
         {% endif %}
       </div>
 
@@ -112,5 +113,4 @@
     {% include '@common_design/cd/cd-footer/cd-footer.html.twig' %}
   {% endblock %}
 
-
-</div>{# /.cd-layout-container #}
+</div>{# /.cd-page-layout-container #}

@@ -1,7 +1,9 @@
 # dev files
 **/node_modules/
-**/.sass-cache/
-**/*.css.map
+
+# puppeteer
+.cache
+**/coverage
 
 # mac stuff
 **/.DS_Store

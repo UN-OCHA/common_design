@@ -1,0 +1,44 @@
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design/cd-alert') }}
+
+{% set test_data = {
+  status_headings: {
+    error: 'Error message'|t,
+    warning: 'Warning message'|t,
+    status: 'Status message'|t,
+  },
+  message_list: {
+    'error': [
+      {'#markup': 'I am an error with a very important message and a link with <a href="###">more information</a>.'},
+      {'#markup': 'There may be many errors. When there is more than one they appear as a list.'},
+      {'#markup': 'If there\'s only one, it will not be a list.'},
+    ],
+    'warning': [
+      {'#markup': 'I am an alert that conveys a warning. <a href="###">Example link</a>'},
+    ],
+    'status': [
+      {'#markup': 'I am an alert that confirms a status, like when a page is saved successfully.'},
+    ],
+  },
+  attributes: create_attribute(),
+}
+%}
+
+{% include '@common_design/misc/status-messages.html.twig' with test_data %}
+
+<div class="cd-alert">
+  <div role="status" aria-label="{{ 'Info message'|t }}">
+    <svg class="cd-icon cd-icon--about" aria-hidden="true" focusable="false" width="16" height="16">
+      <use xlink:href="#cd-icon--about"></use>
+    </svg>
+    <div class="cd-alert__container cd-max-width">
+      <div class="cd-alert__title">
+        <h2 class="visually-hidden">{{ 'Info message'|t }}</h2>
+      </div>
+      <div class="cd-alert__message [ cd-flow ]">
+        <p>I am the default alert. Drupal cannot output this message type, but if you're implementing the CD on a different platform, this is how an unmodified alert appears.</p>
+      </div>
+    </div>
+  </div>
+</div>

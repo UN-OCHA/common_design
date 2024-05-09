@@ -32,9 +32,8 @@
 #}
 {{ attach_library('common_design/cd-pagination') }}
 {% if items %}
-  <nav class="pager" role="navigation" aria-labelledby="{{ heading_id }}">
-    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
-    <ul class="cd-pager__items js-pager__items">
+  <nav class="pager" aria-label="{{ 'Pagination'|t }}">
+    <ul class="cd-pager__items js-pager__items" role="list">
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
         <li class="cd-pager__item cd-pager__item--first">
@@ -44,6 +43,7 @@
           </a>
         </li>
       {% endif %}
+
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
         <li class="cd-pager__item cd-pager__item--previous">
@@ -53,30 +53,36 @@
           </a>
         </li>
       {% endif %}
+
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
         <li class="cd-pager__item cd-pager__item--ellipsis" role="presentation">&hellip;</li>
       {% endif %}
-      {# Now generate the actual pager piece. #}
+
+      {# Generate the visible pager items. #}
       {% for key, item in items.pages %}
         <li class="cd-pager__item{{ current == key ? ' is-active' : '' }}">
           {% if current == key %}
-            {% set title = 'Current page'|t %}
+            <a href="{{ item.href }}" title="{{ 'Current page'|t }}"{{ item.attributes|without('href', 'title') }} aria-current="page">
           {% else %}
-            {% set title = 'Go to page @key'|t({'@key': key}) %}
+            <a href="{{ item.href }}" title="{{ 'Go to page @key'|t({'@key': key}) }}"{{ item.attributes|without('href', 'title') }}>
           {% endif %}
-          <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} aria-current="page">
             <span class="visually-hidden">
-              {{ current == key ? 'Current page'|t : 'Page'|t }}
+              {{ 'Page'|t }}
             </span>
             {{- key -}}
           </a>
         </li>
       {% endfor %}
+
       {# Add an ellipsis if there are further next pages. #}
       {% if ellipses.next %}
-        <li class="cd-pager__item cd-pager__item--ellipsis" role="presentation">&hellip;</li>
+        <li class="cd-pager__item cd-pager__item--ellipsis" role="presentation">
+          <span class="visually-hidden">{{ 'More pages available if you advance the pagination.'|t }}</span>
+          <span aria-hidden="true">&hellip;</span>
+        </li>
       {% endif %}
+
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
         <li class="cd-pager__item cd-pager__item--next">

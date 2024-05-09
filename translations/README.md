@@ -1,9 +1,6 @@
-The included `.po` files contain strings for the Common Design Header and Footer user interface, in some (not all) of
-the UN official languages. These can be expanded upon as language requirements arise.
-
 # Translation files
 
-A few notes related to the translation of hardcoded strings in themes and modules.
+The included `.po` files contain strings for the Common Design Header and Footer user interface, in some (not all) of the UN official languages. These can be expanded upon as language requirements arise.
 
 ## Importing translations
 

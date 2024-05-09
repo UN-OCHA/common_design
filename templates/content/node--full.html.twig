@@ -86,7 +86,7 @@
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes)|without('role') }}>
 
   {{ title_prefix }}
   {% if page %}
@@ -121,23 +121,19 @@
   {% endif %}
 
   <div{{ content_attributes }}>
-
-    {{ content }}
-
 {#    {% block section %}#}
-{#      <div class="cd-layout-two-col">#}
+{#      <div class="cd-layout">#}
 
-{#        <div class="cd-layout-main-content">#}
-{#          {{ content }}#}
+{#        <div class="cd-layout__content">#}
+          {{ content }}
 {#        </div>#}
 
-{#        <div class="cd-layout-sidebar-first" role="complementary">#}
+{#        <aside class="cd-layout__sidebar cd-layout__sidebar--first">#}
 {#          Other fields on the node can be printed here to create a faux sidebar layout.#}
-{#        </div>#}
+{#        </aside>#}
 
 {#      </div>#}
 {#    {% endblock %}#}
-
   </div>
 
 </article>

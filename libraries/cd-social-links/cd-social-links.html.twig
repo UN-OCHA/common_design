@@ -1,0 +1,56 @@
+{{ attach_library('common_design/cd-social-links') }}
+
+{% set shareText = label|render|striptags|default(title|render|striptags) %}
+{% set shareMessage = 'Replace this with the share text: '|t ~ shareText %}
+{% set shareUrl = 'https://example.com/#share-url' %}
+
+<footer class="cd-social-links">
+  <div class="cd-social-links__wrapper">
+    <span class="cd-social-links__label">{{ 'Share'|t }}</span>
+    <ul class="cd-social-links__list" role="list">
+      <li class="cd-social-links__item">
+        <a class="cd-social-links__link cd-social-links__link--facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on Facebook'|t }}</span>
+          <svg class="cd-icon cd-icon--social-links--facebook" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--social-links--facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="cd-social-links__item">
+        <a class="cd-social-links__link cd-social-links__link--twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ shareMessage|url_encode }}%0A%0A{{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on Twitter'|t }}</span>
+          <svg class="cd-icon cd-icon--social-links--twitter" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--social-links--twitter"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="cd-social-links__item">
+        <a class="cd-social-links__link cd-social-links__link--linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&summary={{ shareMessage|url_encode }}&title={{ label|render|striptags|trim|url_encode }}&url={{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on LinkedIn'|t }}</span>
+          <svg class="cd-icon cd-icon--social-links--linkedin" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--social-links--linkedin"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="cd-social-links__item">
+        <button class="cd-social-links__button cd-social-links__button--copy" data-url="{{ shareUrl }}" data-message="{{ 'URL copied to clipboard'|t }}">
+          <span class="visually-hidden">{{ 'Copy URL to clipboard'|t }}</span>
+          <svg class="cd-icon cd-icon--copyurl" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--copyurl"></use>
+          </svg>
+        </button>
+        <div role="status" class="cd-social-links__status"></div>
+      </li>
+      {% if pdf_download_url %}
+      <li class="cd-social-links__item">
+        <a class="cd-social-links__link cd-social-links__link--pdf" href="{{ pdf_download_url }}">
+          <span class="visually-hidden">{{ 'Download PDF'|t }}</span>
+          <svg class="cd-icon cd-icon--pdf" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--pdf"></use>
+          </svg>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</footer>

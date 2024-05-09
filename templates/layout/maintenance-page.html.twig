@@ -9,9 +9,9 @@
  * @see template_preprocess_maintenance_page()
  */
 #}
-<div class="cd-layout-container">
+<div class="cd-page-layout-container">
 
-  <header class="cd-header">
+  <header class="cd-header" aria-label="{{ 'Site header'|t }}">
 
     <div class="cd-global-header">
       <div class="cd-container cd-global-header__inner">
@@ -24,9 +24,9 @@
 
         <div class="region region-header-logo">
           <h1>
-            <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="cd-site-logo">
+            <a href="{{ path('<front>') }}" title="{{ 'Front page'|t }}" rel="home" class="cd-site-logo">
+              <img src="{{ logo }}" alt="{{ site_name }}" aria-hidden="true">
               <span class="visually-hidden">{{ site_name }}</span>
-              <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
             </a>
           </h1>
         </div>
@@ -41,21 +41,18 @@
   </header>
 
   {# Link to skip to the main content is in html.html.twig #}
-  <main role="main" id="main-content" class="cd-container">
+  <main aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
 
     <h1 class="cd-page-title">{{ title }}</h1>
 
-    <div class="cd-layout-content-wrapper">
-
-      <div class="cd-layout-content">
-
-      {{ page.content }}
-
+    <div class="cd-layout">
+      <div class="cd-layout__content">
+        {{ page.content }}
       </div>{# /.layout-content #}
     </div>
   </main>
 
-  <footer class="cd-footer" role="contentinfo">
+  <footer class="cd-footer" aria-label="{{ 'Site footer'|t }}">
     <div class="cd-container cd-footer__inner">
 
       {% block mandate %}
@@ -68,4 +65,4 @@
     </div>
   </footer>
 
-</div>{# /.layout-container #}
+</div>{# /.cd-page-layout-container #}

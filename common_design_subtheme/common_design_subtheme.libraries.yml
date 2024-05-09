@@ -1,13 +1,16 @@
 ###
 # Default global styles for the sub-theme.
 #
+# If you want some styles to be included on every page load, either add them in
+# css/styles.css or add your own files to the list under "theme"
+#
 # If you want specific components to apply to your whole site, list them as
 # dependencies to this library. An example dependency appears here as a comment.
 global-styling:
   css:
-    theme:
-      css/styles.css: {}
+    base:
       css/brand.css: {}
+      css/styles.css: {}
 #   dependencies:
 #     - common_design_subtheme/custom-teaser
 
@@ -19,10 +22,10 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
-# custom-teaser:
-#   css:
-#     theme:
-#       components/custom-teaser/custom-teaser.css: {}
+cds-header:
+  css:
+    theme:
+      libraries/cd/cd-header/cd-logo.css: {}
 
 ###
 # Define Drupal libraries for additional webfonts.

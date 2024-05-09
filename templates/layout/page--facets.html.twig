@@ -1,36 +1,36 @@
 {%
   set facets_layout_classes = [
-  'cd-container',
-  page.sidebar_first|render or page.facets|render and not page.sidebar_second|render ? 'cd-layout-with-region-sidebar-first cd-layout-with-sidebar-first',
-]
+    'cd-container',
+  ]
 %}
 
 {% embed '@common_design/layout/page.html.twig' %}
-
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(facets_layout_classes) }}>
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(facets_layout_classes) }}>
 
       {{ page.page_title }}
 
-      <div class="cd-layout-content-wrapper">
+      <div class="cd-layout">
 
-      {% if page.facets|render or page.sidebar_first|render %}
-        {# We are using CSS pseudo class :empty to hide these aside elements if the region prints empty.
-          This means we cannot have any white space between tags (as below).
-          Attn: Having the twig debug enabled means the div is no longer empty.
-          See Drupal issues/953034 for description and current status.
-        #}
-        <aside class="cd-layout-sidebar-first" role="complementary">{{ page.facets }}{{ page.sidebar_first }}</aside>
-      {% endif %}
+        {% if page.facets|render or page.sidebar_first|render %}
+          {#
+            We are using CSS pseudo class :empty to hide these aside elements if
+            the region prints empty. That means we cannot have any white space
+            between tags (as below).
 
-      <div class="cd-layout-content">
-        {{ page.content }}
-      </div>{# /.cd-layout-content #}
+            NOTE: Enabling Twig debug means the div is no longer empty.
+            @see https://www.drupal.org/project/drupal/issues/953034
+          #}
+          <aside class="cd-layout__sidebar cd-layout__sidebar--first">{{ page.facets }}{{ page.sidebar_first }}</aside>
+        {% endif %}
+
+        <div class="cd-layout__content">
+          {{ page.content }}
+        </div>{# /.cd-layout__content #}
 
       </div>
 
     </main>
   {% endblock %}
-
 {% endembed %}

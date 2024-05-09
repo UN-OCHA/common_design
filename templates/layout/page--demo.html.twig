@@ -78,7 +78,7 @@
 
 </style>
 
-<div class="cd-layout-container">
+<div class="cd-page-layout-container">
 
   {% block header %}
     {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
@@ -108,11 +108,11 @@
   </div>
 
   {# Link to skip to the main content is in html.html.twig #}
-  <main role="main" id="main-content" class="cd-container">
+  <main aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
 
-    <div class="cd-layout-content">
+    <div class="cd-demo-content">
 
-      <div class="cd-toc [ cd-flow ]">
+      <div class="cd-toc cd-toc--with-cols [ cd-flow ]">
         <div class="cd-toc__title">Table of Contents</div>
         <ol id="cd-component-toc" class="cd-toc__list">
           <li><a href="#cd-alert">Alert</a></li>
@@ -126,6 +126,7 @@
           <li><a href="#cd-banner">Caption</a></li>
           <li><a href="#cd-card">Card</a></li>
           <li><a href="#cd-date">Date</a></li>
+          <li><a href="#cd-disclosure">Disclosure</a></li>
           <li><a href="#cd-event">Event</a></li>
           <li><a href="#cd-figure-list">Figure list</a></li>
           <li><a href="#cd-filter">Filter</a></li>
@@ -148,6 +149,7 @@
           <li><a href="#cd-title-list">Title List</a></li>
           <li><a href="#cd-toc">Table of contents</a></li>
           <li><a href="#cd-typography">Typography</a></li>
+          <li><a href="#cd-video">Video</a></li>
         </ol>
       </div>
 
@@ -314,6 +316,11 @@
 
         {% include '@cd-components/cd-figure-list/cd-figure-list.html.twig' %}
 
+        <h3 class="cd-styleguide"><a id="cd-disclosure">cd-disclosure</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {% include '@cd-components/cd-disclosure/cd-disclosure.html.twig' %}
+
         <h3 class="cd-styleguide"><a id="cd-article">cd-article</a>
           {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
 
@@ -324,9 +331,29 @@
 
         {% include '@cd-components/cd-typography/cd-typography.html.twig' %}
 
+        <h3 class="cd-styleguide"><a id="cd-video">cd-video</a>
+          {% include '@cd-components/cd-back-to-toc/cd-back-to-toc.html.twig' %}</h3>
+
+        {{ include('common_design:video', {
+          attributes: create_attribute(),
+          classes: ['video--youtube'],
+          title: 'Demo Video Title',
+          video_slug: 'p5zzrlNtmLo',
+          video_url: 'https://www.youtube.com/watch?v=p5zzrlNtmLo',
+          video_transcript: 'A man is shown handing out supplies to a group of children. The camera zooms in towards his face.
+
+Narrator: While bringing food, relief supplies, and medicine, we are at risk of being looted, harassed and even killed.
+
+Humanitarian workers are never the enemy.
+Face world leaders to say civilians are \#NotATarget
+World Humanitarian Day
+19. August 2018
+https://www.WorldHumanitarianDay.org',
+        }) }}</h3>
+
       {% endif %}
 
-    </div>{# /.layout-content #}
+    </div>{# /.cd-demo-content #}
 
   </main>
 
@@ -339,4 +366,4 @@
   {% endblock %}
 
 
-</div>{# /.cd-layout-container #}
+</div>{# /.cd-page-layout-container #}

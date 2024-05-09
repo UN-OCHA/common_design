@@ -1,0 +1,12 @@
+/**
+ * CD Disclosure
+ *
+ * This component allows you to implement a show/hide button for content while
+ * retaining a portion of it that is always visible. Typical use-cases are to
+ * show a "teaser" but allow the user to expand a longer-form piece of text.
+ *
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+ */
+.js .cd-disclosure--is-collapsed {
+  display: none;
+}

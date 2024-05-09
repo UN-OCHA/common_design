@@ -1,0 +1,82 @@
+/**
+ * CD Table of Contents (ToC)
+ */
+
+:root {
+  --cd-toc-cols: 1;
+}
+
+.cd-toc {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--brand-grey);
+}
+
+.cd-toc__title {
+  margin: 0;
+}
+
+.cd-toc__list,
+.cd-toc ol {
+  margin-bottom: 0;
+  padding: 0;
+  columns: var(--cd-toc-cols, 1);
+  counter-reset: item;
+}
+
+.cd-toc:not(.cd-toc--with-cols) ol {
+  padding-inline-start: 1rem;
+}
+
+.cd-toc__list li {
+  display: block;
+}
+
+/* Override new defaults for sidebar lists. */
+.cd-toc ol ol {
+  margin-block-start: 0;
+}
+
+/* Override new defaults for sidebar list items. */
+.cd-toc ol li + li {
+  margin-block-start: 0;
+}
+
+.cd-toc__list li:before {
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+}
+
+.cd-toc__list--roman li:before {
+  content: counters(item, ".", upper-roman) ". ";
+}
+
+.cd-toc li a {
+  text-decoration: none;
+}
+
+.cd-toc__back-to-toc {
+  padding: 1rem 0;
+  text-align: right;
+}
+
+@media (min-width: 576px) {
+  .cd-toc--with-cols ol {
+    --cd-toc-cols: 2;
+  }
+}
+
+@media (min-width: 820px) {
+  .cd-toc--with-cols ol {
+    --cd-toc-cols: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cd-toc--with-cols ol {
+    --cd-toc-cols: 4;
+  }
+}

@@ -2,6 +2,290 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.4.0](https://github.com/UN-OCHA/common_design/compare/v9.3.4...v9.4.0) (2024-03-19)
+
+### Features
+
+* Non blocking font ([3f58c71](https://github.com/UN-OCHA/common_design/commit/3f58c7150f655c102ff728832fc2ea5d00569ae6), RWR-416, CD-514)
+
+### Bug Fixes
+
+* Add an element id to the outer status messages wrapper div, so backstop can target it. ([70427b3](https://github.com/UN-OCHA/common_design/commit/70427b3262cf6e81b311f51ee32dc640f9fda4aa))
+* Mimic Drupal core themes on the status messges wrapper. ([7a4f890](https://github.com/UN-OCHA/common_design/commit/7a4f8903dde890c433d962df1542887d35598196))
+
+### [9.3.4](https://github.com/UN-OCHA/common_design/compare/v9.3.3...v9.3.4) (2024-02-26)
+
+### Bug Fixes
+
+* retain OCHA Services border on mobile ([02f1f3b](https://github.com/UN-OCHA/common_design/commit/02f1f3b7632e2d0becaeba0e526cd92110037bf7))
+* update example markup for fonts in README ([d59c9e1](https://github.com/UN-OCHA/common_design/commit/d59c9e1a17620b20602e3b6e5c6bfba8ff9fb876))
+
+
+### [9.3.3](https://github.com/UN-OCHA/common_design/compare/v9.3.2...v9.3.3) (2024-02-22)
+
+### Bug Fixes
+
+* OCHA Services moved permanently to the footer - #463
+* **security:** jest-puppeteer@10 - #466
+* **security:** other npm updates
+
+
+### [9.3.2](https://github.com/UN-OCHA/common_design/compare/v9.3.1...v9.3.2) (2024-02-12)
+
+### Bug Fixes
+
+* set flex grow on last child to 0 to prevent full width when wrapping ([6ab5675](https://github.com/UN-OCHA/common_design/commit/6ab5675381e428a42647ed4bf103a3327ae70d3f))
+
+
+### [9.3.1](https://github.com/UN-OCHA/common_design/compare/v9.3.0...v9.3.1) (2024-01-17)
+
+### Bug Fixes
+
+* **perf:** reduce CLS in Global Header ([32f2323](https://github.com/UN-OCHA/common_design/commit/32f2323bf467ecc64c22a8ff9d8c34460bf08dcf))
+* Change directory for select_a11y css after SDC reshuffle ([1276855](https://github.com/UN-OCHA/common_design/pull/459/commits/12768555a708cfb6cf8692506b12d6ddf4d0200a))
+
+
+### [9.3.0](https://github.com/UN-OCHA/common_design/compare/v9.2.3...v9.3.0) (2024-01-04)
+
+### Features
+
+* **sdc:** Snap SDC ([4406afd](https://github.com/UN-OCHA/common_design/commit/4406afd55ff353ef96d505942c71dbba34e11b37))
+* **sdc:** Video SDC ([c741003](https://github.com/UN-OCHA/common_design/commit/c7410038765895b57afee15c4a586f0476080490))
+
+### Bug Fixes
+
+* allow multiple versions of composer installers  ([2f0ca65](https://github.com/UN-OCHA/common_design/commit/2f0ca65ef9b3400861c9c96b928785b64ef1297f))
+
+
+### [9.2.3](https://github.com/UN-OCHA/common_design/compare/v9.2.2...v9.2.3) (2024-01-02)
+
+
+### Bug Fixes
+
+* **admin:** nicer-looking unpublished styles ([1bdb363](https://github.com/UN-OCHA/common_design/commit/1bdb36373bf82120fead784abacbece00bc37b9b))
+* load primary font in a non-blocking manner ([25775b7](https://github.com/UN-OCHA/common_design/commit/25775b781dd1b18c701e0093ceea74b3e7f61063))
+
+### [9.2.2](https://github.com/UN-OCHA/common_design/compare/v9.2.1...v9.2.2) (2023-10-26)
+
+### Bug Fixes
+
+* Focus styles for main navigation #441 CD-500
+* Twitter icon updated for CD Social Links #438 CD-502
+* remove duplicate announcement element from CD Social links #442
+* **ci:** run JS linter on base-theme PRs #437 CD-507
+* **ci:** run tests on sub-theme during PRs #440 CD-508
+
+
+### [9.2.1](https://github.com/UN-OCHA/common_design/compare/v9.2.0...v9.2.1) (2023-10-11)
+
+### Bug Fixes
+
+* **accessibility:** append logo to site name for image alt to avoid redundant alt ([f204bde](https://github.com/UN-OCHA/common_design/commit/f204bde538d0836a095edca31b8f03c3c552ebf0))
+* **dx:** offer more template suggestions for Paragraphs fields ([33e645b](https://github.com/UN-OCHA/common_design/commit/33e645bd3dcbe5a7f2e29b64a57ef0cd1ae96a10))
+* **tests:** E2E tests updated and reorganized to improve use on individual websites ([71132a6](https://github.com/UN-OCHA/common_design/commit/71132a6d934f5ab7773f596ddf1ad3ec80630f90))
+* remove decimal list style for ol types to work for nested lists ([e05d10f](https://github.com/UN-OCHA/common_design/commit/e05d10f85e9add17f116f795c98de5ed3c2fac15))
+
+### [9.2.0](https://github.com/UN-OCHA/common_design/compare/v9.1.0...v9.2.0) (2023-09-28)
+
+### Features
+
+* CD Disclosure component ([fb2ad8b](https://github.com/UN-OCHA/common_design/commit/fb2ad8b93e2afe28f1811f920eefdfb579bb375f))
+
+
+### [9.1.0](https://github.com/UN-OCHA/common_design/compare/v9.0.1...v9.1.0) (2023-09-13)
+
+### Features
+
+* allow to insert the toggler button after the toggable element ([018a236](https://github.com/UN-OCHA/common_design/commit/018a2366294b8d0182ba5ab58b550d5b78fae339))
+
+### Bug Fixes
+
+* **a11y:** avoid `aria-haspopup` when using `data-cd-insert-after` attr ([bdabca0](https://github.com/UN-OCHA/common_design/commit/bdabca0f0f46ac004b7d5e33211f4d6b0dfcde91))
+* auto-close dropdowns when they lose focus ([be95645](https://github.com/UN-OCHA/common_design/commit/be95645ba4fa3a9481ea57ac2cbcbf7e3b13e2f1))
+* avoid breaking change for Disclosure pattern ([4379567](https://github.com/UN-OCHA/common_design/commit/437956730dcccf534c00224c4d217f40f963c918))
+* change scope of auto-close listener to improve UX ([82fc78b](https://github.com/UN-OCHA/common_design/commit/82fc78bad7d67db7811b97583b612262948b0e82))
+* collapse mandate to two lines in EN ([6026098](https://github.com/UN-OCHA/common_design/commit/60260984cafcc11be2eb4daba44faf4dbb8e12f2))
+* D10 updates to our 404/403 detection ([5888b4d](https://github.com/UN-OCHA/common_design/commit/5888b4d3572f1608887355d131e1d9beec089d25))
+* encode all params in CD Social Link URLs ([994ee68](https://github.com/UN-OCHA/common_design/commit/994ee68f37cadf1bcd6758ed19d5f9c8bba55351))
+* reduce number of bubbled events ([2873c02](https://github.com/UN-OCHA/common_design/commit/2873c025318f6d13a117bc2a47ac5dff1ac32571))
+* remove duplicate no-js class removal ([701beb5](https://github.com/UN-OCHA/common_design/commit/701beb533c75bb78982980bc6ac0e16b3ed4939b))
+
+
+### [9.0.1](https://github.com/UN-OCHA/common_design/compare/v9.0.0...v9.0.1) (2023-07-10)
+
+### Bug Fixes
+
+* **a11y:** ensure tab order for OCHA Services matches visual order ([f75c659](https://github.com/UN-OCHA/common_design/commit/f75c65951eff83a45007b8ca3705cb34da7b6e67))
+* **security:** stylelint upgraded ([21ea859](https://github.com/UN-OCHA/common_design/commit/21ea8591b076e21433b5a94f94d8da0aee419cd4))
+
+
+## [9.0.0](https://github.com/UN-OCHA/common_design/compare/v8.2.0...v9.0.0) (2023-07-03)
+
+### ⚠ BREAKING CHANGES
+
+* **security:** node.js minimum version has been raised from 16.x to 18.16.1 which is LTS at the time of commit. Node 16 will be EOL in a few months.
+* **a11y:** we have changed the markup required for the button that copies URLs to clipboard for social sharing. Both CSS and JS for the CD Social Links component have been changed to expect the new markup. See CD Demo for new markup.
+* remove `--brand-logo-mobile-url` due to complications with CSS aggregation and relative URLs ([df1976a](https://github.com/UN-OCHA/common_design/commit/df1976ada1353d77a8b910c0d4c87fa0e82e3a78))
+
+
+### Features
+
+* **a11y:** disable animations/transitions when unwanted ([1acbe62](https://github.com/UN-OCHA/common_design/commit/1acbe623a82799c057815ec042d592c8ade7de4f))
+* add label to CD Social Links ([9abe056](https://github.com/UN-OCHA/common_design/commit/9abe056eb4d46d77d5e143be089e5678aaafe969))
+
+
+### Bug Fixes
+
+* **security:** upgrade to node.js LTS 18.16.1 / npm 9.7.2 ([a19c523](https://github.com/UN-OCHA/common_design/commit/a19c52304e0f6f385174cd7d4cd2918cfa0f0990))
+* **a11y:** disable animations/transitions of pseudo-elements ([0372c84](https://github.com/UN-OCHA/common_design/commit/0372c84b3bbf8f67000b5d18632693ccc545faab))
+* **a11y:** improve SR of copy-to-clipboard ([261d6be](https://github.com/UN-OCHA/common_design/commit/261d6be64249bbda31a46b2fd89bed28496c9d3e))
+* **a11y:** remove redundant ARIA roles from sidebars ([2bd1c33](https://github.com/UN-OCHA/common_design/commit/2bd1c3358e02c2a2a94bf72e3ee536f5e46d0d30))
+* eliminate gap below card images ([d8a1039](https://github.com/UN-OCHA/common_design/commit/d8a10397a1a08b878cc49580a77e08cb59ba8d1f))
+* prevent CD Form from applying outside `<form>` elements ([017181d](https://github.com/UN-OCHA/common_design/commit/017181d700d04e93907df86e23fc74bc90c889b0))
+* remember to unset custom logo for desktop ([be4e0de](https://github.com/UN-OCHA/common_design/commit/be4e0ded842fb62af73a42acedf5962555933d01))
+
+
+## [8.2.0](https://github.com/UN-OCHA/common_design/compare/v8.1.0...v8.2.0) (2023-06-16)
+
+### Features
+
+* specify mobile logo via --brand variable ([2be5631](https://github.com/UN-OCHA/common_design/commit/2be56319b6aaa56f104307106d00a3ae53be304f))
+
+
+### Bug Fixes
+
+* **a11y:** add header to announce copyright notice ([9f5bbb9](https://github.com/UN-OCHA/common_design/commit/9f5bbb98a1667d17726e483a050235a7048cde61))
+* **a11y:** announce Footer nav in footer ([3a7f43f](https://github.com/UN-OCHA/common_design/commit/3a7f43fb13535a82d4d553b24a59ee2c278a97d4))
+* **a11y:** announce Header/Footer in same manner ([459a33c](https://github.com/UN-OCHA/common_design/commit/459a33c01b68d45e07af89418f5554c8e9e411b2))
+* **a11y:** announce Site Name and avoid announcing logo ([e517abb](https://github.com/UN-OCHA/common_design/commit/e517abb7a38e0a4800651e548f363c4c7aedab17))
+* **a11y:** announce Social nav in footer ([14e44e7](https://github.com/UN-OCHA/common_design/commit/14e44e738d745c32542b131d6d8d40f29f7926da))
+* **a11y:** announce ToC as navigation ([6a30be4](https://github.com/UN-OCHA/common_design/commit/6a30be4c5e0e30e295fa175c4cb50121ecb3b03f))
+* **a11y:** better roles/attrs for announcing messages ([b0e1e99](https://github.com/UN-OCHA/common_design/commit/b0e1e9958426a3bc2f3b6e23e8751eb2ae97be66))
+* **a11y:** ensure main elements have proper ARIA labels ([da79e7a](https://github.com/UN-OCHA/common_design/commit/da79e7aec20c09eb7e238586d94c8fc6482ad54e))
+* **a11y:** improve announcement of Help menu ([bf53ba0](https://github.com/UN-OCHA/common_design/commit/bf53ba04c51f4d0e2cb51561e19b46782a3bd15e))
+* **a11y:** improve screen reading of Account menu ([232d969](https://github.com/UN-OCHA/common_design/commit/232d969ec91b63106e983f71df1310cfbae973e6))
+* **a11y:** improve screen reading of language/help/user menus ([0140cf8](https://github.com/UN-OCHA/common_design/commit/0140cf85c590f559cf7860645a81f168e2cc4b88))
+* **a11y:** improve screen reading of main navigation ([06f4990](https://github.com/UN-OCHA/common_design/commit/06f49901a21b1fae63e5a65ec0eef829d29dd852))
+* **a11y:** restore visually-hidden heading on Drupal messages ([fc0be7f](https://github.com/UN-OCHA/common_design/commit/fc0be7f330238bc4e31c63c11ced6c86d7d9bf14))
+* **a11y:** screen reader announces website header now ([0dbbb6f](https://github.com/UN-OCHA/common_design/commit/0dbbb6f5f5e2e1dc340c38f66898e1a1ce115aa8))
+* **a11y:** screen reader improvements for pagination ([f542ed3](https://github.com/UN-OCHA/common_design/commit/f542ed3a60cf9bad303298af295e8fd3332f81c2))
+* **a11y:** stop announcing redundant SVG data ([3b07a5a](https://github.com/UN-OCHA/common_design/commit/3b07a5aea474ba76d610f095c25a51749d095183))
+* **a11y:** style tabs with improved a11y/RTL ([4b21cfa](https://github.com/UN-OCHA/common_design/commit/4b21cfaa03b7b58a775ed1ede70959b169d749e0))
+* **a11y:** unique icons for every message type ([637f1ff](https://github.com/UN-OCHA/common_design/commit/637f1ffa1c42ca779acd7c49c3e8f904d6fbba08))
+* avoid printing hreflang on `<li>` tags ([78d1ca6](https://github.com/UN-OCHA/common_design/commit/78d1ca6328e15890c931c41b8d15e6f687038731))
+* avoid printing XML processing instruction in HTML ([5182fba](https://github.com/UN-OCHA/common_design/commit/5182fba455ed88a537db7010b77f81d1eb1adebf))
+* CD ToC defaults to single-col with a new variant for columns ([7d9bf90](https://github.com/UN-OCHA/common_design/commit/7d9bf903df733ccc02ca38b0b11b09f79c55ec43))
+* CSS refactor for CD Alert ([79ce2c1](https://github.com/UN-OCHA/common_design/commit/79ce2c119f0b511054c53c8ae41a6c300200ab9f))
+* remove invalid attributes from site logo ([e968025](https://github.com/UN-OCHA/common_design/commit/e9680250b2d9b30903a2fd07da9213af65c96e39))
+* simplify how to override logo from sub-theme ([9f3dd4f](https://github.com/UN-OCHA/common_design/commit/9f3dd4fe0ffa0b472716c3d4d3a52af9c90b9b80))
+* use --brand colors in CD Figures ([8534794](https://github.com/UN-OCHA/common_design/commit/853479409444d7b00439079f6328fe3e3306f26a))
+* Use drupal_static() instead of PHPs static keyword ([d5fd880](https://github.com/UN-OCHA/common_design/commit/d5fd880386b19ca503cb1cb867ff00c86266b189)), closes [#395](https://github.com/UN-OCHA/common_design/issues/395)
+* use same color as base-theme for primary--light ([23b08c2](https://github.com/UN-OCHA/common_design/commit/23b08c2704c605a9a4c6904915bda0d6f6c6a405))
+* W3 validator errors about duplicate id attributes ([21b634c](https://github.com/UN-OCHA/common_design/commit/21b634cd046f1cc190ebb61d63d0a6ff58085245))
+
+
+## [8.1.0](https://github.com/UN-OCHA/common_design/compare/v8.0.2...v8.1.0) (2023-05-04)
+
+### Features
+
+* CD-462: add modern mustard cut to content layouts ([dcb3d43](https://github.com/UN-OCHA/common_design/commit/dcb3d439051b073c35aa08be9744b01f49e3db2c))
+
+### Bug Fixes
+
+* add BEM element class to facets sidebar ([6f6342a](https://github.com/UN-OCHA/common_design/commit/6f6342a654de21f4af52dfb5abb5a70a07b1a0ae))
+* adjust clearfix pseudo ([4b1d4f5](https://github.com/UN-OCHA/common_design/commit/4b1d4f5119c7acbc1906c6f385c00f404de7f545))
+* adopt BEM for all sidebar markup/styles ([6c35c88](https://github.com/UN-OCHA/common_design/commit/6c35c88e5e633bb618e6dd4362e08ab9382fd704))
+* adopt brand colors for filters/facets ([1eab45e](https://github.com/UN-OCHA/common_design/commit/1eab45ea39d87c0f3a70d2be06d242226a87b99d))
+* adopt new BEM classnames in CD Block Title ([e7c8404](https://github.com/UN-OCHA/common_design/commit/e7c8404763a922a2fa778eebcbde7c3f05fc1559))
+* apply bgcolor to sidebars ([c2e5760](https://github.com/UN-OCHA/common_design/commit/c2e57608c45d2427cdad5cf8e5c2cb473c83b7b8))
+* apply compact treatment to any heading in a sidebar ([c3be34d](https://github.com/UN-OCHA/common_design/commit/c3be34d64e163e8962efa889317be9f6ac2e508f))
+* BEN classname for CD Layout content area ([aa2801f](https://github.com/UN-OCHA/common_design/commit/aa2801feec383e6d2fdd699a0c389c38eb6e0074))
+* CD Layout content should grow to fill available space ([59778c5](https://github.com/UN-OCHA/common_design/commit/59778c5907517e7f8e77edeaf36762adf2bf94e7))
+* clean up code, consolidate MQs, run linter ([dc97159](https://github.com/UN-OCHA/common_design/commit/dc97159621262ac33fb5a22a5fcde8d23c8d55ea))
+* define CD Layout content flex-item after container ([8bc49fd](https://github.com/UN-OCHA/common_design/commit/8bc49fd637f8e38932d8f6f342ec9d8480ded62a))
+* enforce proper flex order for second sidebar ([420be92](https://github.com/UN-OCHA/common_design/commit/420be92f1d9944c0d6128312c2ff60361d9ea2b6))
+* further simplify universal layout by removing CSS Vars ([e8c71d2](https://github.com/UN-OCHA/common_design/commit/e8c71d2608b830f9d6317bfc127e396281e60270))
+* lock sidebars to 285px by default and add option for wider ones ([3751da9](https://github.com/UN-OCHA/common_design/commit/3751da999ee86224ec80a86a8edc54f7bebefd60))
+* prevent overflow on viewports 320 > 420 ([ea3be48](https://github.com/UN-OCHA/common_design/commit/ea3be48e2816ca9163c48fe205fc8bf64fa85e42))
+* reapply sidebar styles using new BEM classes ([ea9781e](https://github.com/UN-OCHA/common_design/commit/ea9781e95dcb4e0d163b9c61fed63cef6ff9091e))
+* remove cd-block-title compact styles ([7267212](https://github.com/UN-OCHA/common_design/commit/72672124fbc2dac07a0f3325030cb20d41bb90e4))
+* rename CD Page Layout container class ([799248a](https://github.com/UN-OCHA/common_design/commit/799248a2db774bd4a28789970964df62e417c8d2))
+* shorter, proper BEM class for cd-layout ([aaf24bc](https://github.com/UN-OCHA/common_design/commit/aaf24bc93f8ca64341d1bf5825278fc7da59fb77))
+* simplify flex layout for sidebars ([84fb4e4](https://github.com/UN-OCHA/common_design/commit/84fb4e409cd7449e921ba76f8e7467ee4d60e9a0))
+* split layouts into page/content and refactor page to flex ([6c84806](https://github.com/UN-OCHA/common_design/commit/6c8480651a91e5a0527f24dcf677a56c53286732))
+* update cd-article Twig/HTML with new BEM classnames ([716bd47](https://github.com/UN-OCHA/common_design/commit/716bd473c5ce96883573fc8c1a30ed3a98f4bdf7))
+* use new layout CSS for faux node columns as well ([1ebe1c1](https://github.com/UN-OCHA/common_design/commit/1ebe1c1999c9e66bc5d67411bce3d662276bbfc0))
+
+
+## [8.0.2](https://github.com/UN-OCHA/common_design/compare/v8.0.1...v8.0.2) (2023-04-12)
+
+### Bug Fixes
+
+* adjust appearance of active trail on mobile/desktop ([4296eb7](https://github.com/UN-OCHA/common_design/commit/4296eb72733085b8dbe0b16c3e95f37c911259f5))
+* adopt focus-visible state and restyle cosmetically ([48f4f25](https://github.com/UN-OCHA/common_design/commit/48f4f25ad1ccc1323d3a53d81553622865c097d3))
+* alignment issues for footer copyright ([1c98d48](https://github.com/UN-OCHA/common_design/commit/1c98d48257e54cb389317737a14fa8ab7fe1d3d3))
+* CD Footer mandate adjustments ([2aa69a1](https://github.com/UN-OCHA/common_design/commit/2aa69a148558a95786c53922744c5dbeaa043113))
+* clean up the footer focus styles ([d5002c0](https://github.com/UN-OCHA/common_design/commit/d5002c05c268127f4ec9bd8875d491101a438eae))
+* logical properties for text-align in footer ([7fbec82](https://github.com/UN-OCHA/common_design/commit/7fbec822086bae05f981b73add0d732893024f0f))
+* padding/position issues with various GH dropdowns ([bffca47](https://github.com/UN-OCHA/common_design/commit/bffca47ca1684f00ec5557e1d40e0a0b1029c6c7))
+* remove carets from Global Header dropdowns ([24c98d1](https://github.com/UN-OCHA/common_design/commit/24c98d1094362d6d84ce0c4f02ee6999f3a086f3))
+* remove most RTL selectors from Global Header ([9b808b0](https://github.com/UN-OCHA/common_design/commit/9b808b039a1dee237b336f36fed68eecfd78f7ab))
+* restore positioning of last-child nav dropdown ([24acf71](https://github.com/UN-OCHA/common_design/commit/24acf71d1e659f3a84d4195d7db4495b08dc4278))
+* RTL cleanup for inline search ([0229a3d](https://github.com/UN-OCHA/common_design/commit/0229a3d0cf047f254e8076979397da1e4c8dd0ed))
+* show focus styles when Search is expanded ([8251666](https://github.com/UN-OCHA/common_design/commit/8251666d1ca3fed3a0748c3c3eef266ae58817df))
+* update HR.info to be RWR ([179c86d](https://github.com/UN-OCHA/common_design/commit/179c86d4cd4634ff582e32df086eda1abdfa87fe))
+* use logical properties for CD Nav ([3e67b9e](https://github.com/UN-OCHA/common_design/commit/3e67b9ebf575ad92e79995c5aca73805ca265dc2))
+* use the intended color for focus styles in base-theme ([728fbe2](https://github.com/UN-OCHA/common_design/commit/728fbe2c8f2ea33e20050ab7bb64adb9ea0559ae))
+* z-index issue with Site Logo and OCHA Services dropdown ([0c26b0e](https://github.com/UN-OCHA/common_design/commit/0c26b0e4d2ea377800955ee300e8ad8490430245))
+
+
+## [8.0.1](https://github.com/UN-OCHA/common_design/compare/v8.0.0...v8.0.1) (2023-03-22)
+
+### Bug Fixes
+
+* **cd-tabs:** exclude tabs and styled lists from typography defaults ([61cb937](https://github.com/UN-OCHA/common_design/commit/61cb937fcae1d129056ed87958e3c355414857e8))
+* **cd-typography:** revert the disruptive display:block on img tags ([04d768d](https://github.com/UN-OCHA/common_design/commit/04d768dd8bd87e3d257d6ae5da00a5a7a459ba72))
+
+
+## [8.0.0](https://github.com/UN-OCHA/common_design/compare/v7.4.1...v8.0.0) (2023-02-16)
+
+### ⚠ BREAKING CHANGES
+
+* **sass:** Remove Sass from base/sub-themes ([27ada38](https://github.com/UN-OCHA/common_design/commit/27ada380a707e9007441e3a30d6460dda0b74c68))
+* **fonts:** removed system-ui font-family declarations and CSS Var `--cd-font--system` ([6837729](https://github.com/UN-OCHA/common_design/commit/68377295d8fb1ee08e0fe8a46d3ffc5726a73f1e))
+* **drupal:** Drupal 9.5 is new minimum supported version. Drupal 8 no longer supported. ([10b520e](https://github.com/UN-OCHA/common_design/commit/10b520eb34b1d3367fd2afc36ce9a7b7750518ee))
+* **ie:** remove IE10-specific fixes ([3bdf787](https://github.com/UN-OCHA/common_design/commit/3bdf7877a34ed429ccd49df5a1358bac837ab40f))
+* **security:** upgrade to node.js LTS 16.19.0 / npm 8.19.3 ([97cf22c](https://github.com/UN-OCHA/common_design/commit/97cf22c3e43b9566eebee64ef57a1b7eac31f8d8))
+
+### Bug Fixes
+
+* dir-agnostic positioning of Search button chevron ([6356a46](https://github.com/UN-OCHA/common_design/commit/6356a462616d363853f89e7af6a39dd82ecb059a))
+* implement Google Fonts Roboto in HTML ([64c7078](https://github.com/UN-OCHA/common_design/commit/64c7078474a6a31fd82bdd290fbb368e89cc2dc1))
+* layout bug in mandate ([bf12306](https://github.com/UN-OCHA/common_design/commit/bf1230696250ff1af92226d40ecdabf1756411ac))
+* remove float variant from ToC and increase columns ([2525297](https://github.com/UN-OCHA/common_design/commit/2525297b99cc2d171f9eda58836c62579da5b15b))
+* reset for lists we know will be styles ([d52c8c2](https://github.com/UN-OCHA/common_design/commit/d52c8c27704d7b00f334c908344023f595c2e720))
+* **tests:** remove sass-specific stylelint config from sub-theme ([a320c2b](https://github.com/UN-OCHA/common_design/commit/a320c2bcc424b539eac3cdcd5d1016c916d9886b))
+* simplify the component styling the Main Nav ([4be4d65](https://github.com/UN-OCHA/common_design/commit/4be4d659675f081d47c3416005a424157acfb8ca))
+* use flexbox for Search form layout ([749fe8a](https://github.com/UN-OCHA/common_design/commit/749fe8ab9a555599adfaaa748878240532728bf9))
+
+
+## [7.4.1](https://github.com/UN-OCHA/common_design/compare/v7.4.0...v7.4.1) (2023-01-10)
+
+### Bug Fixes
+
+* User menu works automatically now (compare to upgrade instructions for `v7.4.0`) ([7272ab0](https://github.com/UN-OCHA/common_design/commit/7272ab0792a8e69f91b2668bb7320988e980d421))
+
+## [7.4.0](https://github.com/UN-OCHA/common_design/compare/v7.3.0...v7.4.0) (2022-12-21)
+
+### Features
+
+* Language Switcher conforms to UN Multilingual guidelines ([bd4a2e1](https://github.com/UN-OCHA/common_design/commit/bd4a2e10d8df08488904a2e2f923fd809e5f6bce))
+
+
+### Bug Fixes
+
+* clean up User menu inside new Global Header ([fbfcd5b](https://github.com/UN-OCHA/common_design/commit/fbfcd5b1ce75a3558feacf6509f1f16afba6b57c))
+
 ## [7.3.0](https://github.com/UN-OCHA/common_design/compare/v7.2.1...v7.3.0) (2022-11-16)
 
 
