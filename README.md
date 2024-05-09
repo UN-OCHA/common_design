@@ -6,12 +6,15 @@ This theme provides a starting point for OCHA's Drupal websites. By installing t
 * **Common Footer:** Navigation, social links, legal info.
 * **Common SVG Icons:** a subset of [OCHA Humanitarian Icons][ocha-icons]
 
-It provides the following theming tools that you should leverage in order to maintain the high standards for accessibility that our organization strives to meet:
-
-* JavaScript dropdowns which do not require jQuery or any framework.
-* Common Design frontend components
-
   [ocha-icons]: https://brand.unocha.org/d/xEPytAUjC3sH/icons
+
+## Getting started
+
+1. **Do not modify the base-theme.** Follow the setup guide in the [sub-theme README][subtheme-readme].
+2. For Twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
+
+  [subtheme-readme]: https://github.com/UN-OCHA/common_design/blob/develop/common_design_subtheme/README.md
+  [drupal-caching]: https://www.drupal.org/node/2598914
 
 ## Drupal utilities
 
@@ -19,31 +22,24 @@ It provides the following theming tools that you should leverage in order to mai
 * jQuery is [available in Drupal core][core], but the Common Design does not depend on it. It gets loaded only once it is needed.
 * [hidden.module.css][hidden] is included in Drupal core to provide utility classes that hide content in an accessible manner.
 
-  [normalize]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/assets/vendor/normalize-css/normalize.css
-  [core]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/core.libraries.yml
-  [hidden]: https://git.drupalcode.org/project/drupal/-/blob/9.5.x/core/modules/system/css/components/hidden.module.css
+  [normalize]: https://git.drupalcode.org/project/drupal/-/blob/10.4.x/core/assets/vendor/normalize-css/normalize.css
+  [core]: https://git.drupalcode.org/project/drupal/-/blob/10.4.x/core/core.libraries.yml
+  [hidden]: https://git.drupalcode.org/project/drupal/-/blob/10.4.x/core/modules/system/css/components/hidden.module.css
 
-## Additional components
+## Additional tools
 
 * Typography defaults
 * Component library. See [Common Design demo][cd-demo] for live examples.
-  * Components that can be attached as Drupal libraries to twig templates.
-  * Component namespacing by way of [Components module][components-module].
-  * Docs available in [Components README][components-readme] and [each component][components-used] has some docs in the base theme.
+  * Components that can be attached as [Drupal Libraries][drupal-libraries] to Twig templates.
+  * Namespacing by way of [Components module][components-module].
+  * Docs available in [Libraries README][libraries-readme] and [each Drupal Library][libraries-list] has some docs in the base theme.
 * Favicons and OCHA branded assets based on https://brand.unocha.org
 
   [cd-demo]: https://web.brand.unocha.org/demo
+  [drupal-libraries]: https://www.drupal.org/docs/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml
   [components-module]: https://www.drupal.org/project/components
-  [components-readme]: https://github.com/UN-OCHA/common_design/blob/main/components/README.md
-  [components-used]: https://github.com/UN-OCHA/common_design/blob/main/components/
-
-## Getting started
-
-1. Follow the setup guide in the [sub-theme README][subtheme-readme].
-2. For Twig debug and local development see [Disable Drupal 8+ caching during development][drupal-caching].
-
-  [subtheme-readme]: https://github.com/UN-OCHA/common_design/blob/main/common_design_subtheme/README.md
-  [drupal-caching]: https://www.drupal.org/node/2598914
+  [libraries-readme]: https://github.com/UN-OCHA/common_design/blob/develop/libraries/README.md
+  [libraries-list]: https://github.com/UN-OCHA/common_design/blob/develop/libraries/
 
 ## Single Directory Components
 
@@ -59,7 +55,6 @@ If you can't or don't want to use SDC, read the [CSS](#css) and [JS](#js) sectio
 
 For managing CSS, use [Drupal Libraries][drupal-libraries] to create components made of vanilla CSS/JS files, store them in a component-specific folder inside `libraries`, and attach them to the appropriate Twig template so that they only appear on pages where needed.
 
-  [drupal-libraries]: https://www.drupal.org/docs/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml
 
 ## JS
 
@@ -75,7 +70,11 @@ this.methodName();
 Drupal.behaviors.cdDropdown.methodName();
 ```
 
-Using `this` works for most functions except ones which are assigned to event listeners. For those, we have prefixed all of them with the word `handle` — and despite being contained within the same Behavior, you'll need to reference internal functions using the full Behavior name (see second example above, as if it were outside your Behavior).
+Using `this` works for most functions except ones which are assigned to event listeners. For those, we have prefixed all of them with the word `handle`. In order to easily use other methods defined in your Behavior, you'll need to bind `this` manually. [There are examples of the process in the CD Dropdown][bind-this].
+
+If you don't manually bind `this`, then you have to use the full object as if you were in the global global scope. See code:
+
+  [bind-this]: https://github.com/UN-OCHA/common_design/blob/8c7b648a86c2f7293d96f3fefbd9345c83d843aa/libraries/cd-dropdown/cd-dropdown.js#L9-L14
 
 ```js
 (function (Drupal) {
@@ -83,29 +82,29 @@ Using `this` works for most functions except ones which are assigned to event li
 
   Drupal.behaviors.exampleBehavior = {
     attach: function (context, settings) {
+      // ✅ Manually bind `this` before it gets used.
+      this.handleClick = this.handleClick.bind(this);
+
       // Assign handleClick as an event listener. When assigning the handler
       // it is correct to prefix the method name with `this`
       document.addEventListener('click', this.handleClick);
     },
 
-    sendAlert: function (message) {
+    showAlert: function (message) {
       window.alert(message);
     },
 
     handleClick: function (ev) {
-      // ❌ WRONG:
+      // ✅ after binding `this`
       //
-      // Inside this event listener handler, we do not have access to the
-      // Behavior object as `this` so this.sendAlert() will not be defined
-      // and the following error will occur:
-      //
-      // Uncaught TypeError: this.sendAlert is not a function
-      this.sendAlert(ev.target);
+      // Shorthand will work as long as the .bind(this) command was run inside
+      // the `attach` method.
+      this.showAlert(ev.target);
 
-      // ✅ CORRECT:
+      // ❌ without binding `this`
       //
-      // Referencing the Behavior as defined in Drupal object will work.
-      Drupal.behaviors.exampleBehavior.sendAlert(ev.target);
+      // If we hadn't bound `this` inside `attach` then it would be long-winded:
+      Drupal.behaviors.exampleBehavior.showAlert(ev.target);
     }
   };
 })(Drupal);
@@ -126,6 +125,11 @@ If you do create a new template, use one from the base-theme as a guide. They ha
 
   [hide-content]: https://www.drupal.org/docs/accessibility/hide-content-properly
 
+## Print
+
+Using `@media print` should be sufficient in most cases, unless there is a specific reason to have a specific print.css stylesheet (e.g. used by [Snap Service][snap-classes]). Refer to `_print.scss` for basic rules.
+
+  [snap-classes]: https://github.com/UN-OCHA/tools-snap-service?tab=readme-ov-file#using-snap-service-on-your-website
 
 ## Fonts
 
