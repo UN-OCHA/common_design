@@ -19,7 +19,7 @@ Refer to [Drupal 9+ Theming documentation][theming-docs] for more information.
 3. In the Drupal Admin, go to Appearance, find **OCHA Common Design sub theme** and select **Enable and set default**.
 4. Customize the `name`/`description` fields of the sub-theme's info file if you wish.
 5. Rebuild the cache.
-6. Edit the sub-theme's `css/brand.css` to pick your site's palette. No other modifications are necessary.
+6. Edit the sub-theme's `css/brand.css` to pick your site's palette. No other modifications are necessary. The header/footer plus all components will adopt your new colors.
 
 
 ### Customise the logo
@@ -48,7 +48,7 @@ Replace the favicon in the theme's root, and the homescreen icons in `img/` with
 
 ### Customise colours
 
-Change the CSS Vars in `css/brand.css` and save the file. Sass is no longer available in CD v8.
+Change the CSS Vars in `css/brand.css` and save the file. Sass is no longer available in CD v8 and newer.
 
 
 ### Customise icons
@@ -94,8 +94,7 @@ Core and CD base-theme libraries [can be extended with small customizations][lib
 
 Override theme preprocess functions by copying from `common_design.theme` and editing as needed. hen copying, the **function name will always need to be modified** from `common_design_` to `common_design_subtheme_`.
 
-Refer to [common_design README][cd-readme] for
-general details about base-theme and instructions for compilation. There should be no need to use Sass in the sub-theme anymore.
+Refer to [common_design README][cd-readme] for general details about base-theme and instructions for compilation. There should be no need to use Sass in the sub-theme anymore.
 
   [cd-readme]: https://github.com/UN-OCHA/common_design/blob/main/README.md#ocha-common-design-for-drupal-9
 
@@ -119,7 +118,7 @@ npm run e2e -- --debug
 # argument. It will parse all of the describe() blocks and only run tests when
 # it matches the string you supply.
 
-# All tests that include 'OCHAServicesDropdown'.
-npm run e2e -- -t 'OCHAServicesDropdown'
+# All tests that include 'OCHAServices'.
+npm run e2e -- -t 'OCHAServices'
 
 ```
