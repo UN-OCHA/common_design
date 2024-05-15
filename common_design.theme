@@ -499,11 +499,13 @@ function common_design_preprocess_html(&$vars) {
   $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
 
   // Add body classes.
-  if ($status_code && !is_a($status_code, 'ParamNotConvertedException') && $status_code->getStatusCode() == 404) {
-    $vars['attributes']['class'][] = 'path-error path-error--404';
-  }
-  if ($status_code && !is_a($status_code, 'ParamNotConvertedException') && $status_code->getStatusCode() == 403) {
-    $vars['attributes']['class'][] = 'path-error path-error--403';
+  if ($status_code && !is_a($status_code, 'ParamNotConvertedException')) {
+    if ($status_code->getStatusCode() == 404) {
+      $vars['attributes']['class'][] = 'path-error path-error--404';
+    }
+    if ($status_code->getStatusCode() == 403) {
+      $vars['attributes']['class'][] = 'path-error path-error--403';
+    }
   }
 
   // Add a script to detect whether javascript is enabled or not and then
