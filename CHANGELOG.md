@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.4.1](https://github.com/UN-OCHA/common_design/compare/v9.4.0...v9.4.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* **style:** apply some default styles to field_group details/summary elements ([6947971](https://github.com/UN-OCHA/common_design/commit/6947971342b897187d3319fd5060010f84df2e9c))
+* **style:** OCHA Services separator should inherit color ([4801b3e](https://github.com/UN-OCHA/common_design/commit/4801b3e455b4fbf6175b855e6180627702a0b2e4))
+* **style:** pixel push for mandate logo ([f9a4da5](https://github.com/UN-OCHA/common_design/commit/f9a4da588e3c72656c8f9160dc8bb25f8286d30d))
+
+
 ## [9.4.0](https://github.com/UN-OCHA/common_design/compare/v9.3.4...v9.4.0) (2024-03-19)
 
 ### Features
