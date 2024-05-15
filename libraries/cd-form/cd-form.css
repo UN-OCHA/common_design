@@ -188,3 +188,40 @@ form .form-type-checkbox > .cd-form__description {
 form .fieldset-wrapper > .form-type-checkbox + .form-type-checkbox {
   margin-top: 1rem;
 }
+
+/**
+ * Enhancements to widgets from field_group module
+ */
+
+form .field-group-details {
+  margin-block-start: 1rem;
+  padding-inline: 1rem;
+  border-radius: 5px;
+  background: var(--brand-grey);
+}
+
+form .field-group-details[open] {
+  padding-block: 1rem;
+}
+
+/* <summary> needs to cancel padding on <details> when open */
+form .field-group-details[open] summary {
+  margin-block-start: -1rem;
+}
+
+/* normalize.css removes built-in browser affordance for <summary> so we are
+resetting its display */
+form .field-group-details summary {
+  display: list-item;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-inline: -1rem; /* cancel padding on <details> */
+  padding-block: .25rem;
+  padding-inline: 1rem;
+  font-weight: 700;
+}
+
+form .field-group-details summary:focus-visible {
+  outline: 3px solid var(--cd-black);
+}
+
