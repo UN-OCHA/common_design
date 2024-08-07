@@ -36,6 +36,8 @@ regions:
 libraries-extend:
   core/drupal.dropbutton:
     - common_design/cd-dropbutton
+  core/drupal.message:
+    - common_design/messages
 
 libraries-override:
   core/modernizr:
