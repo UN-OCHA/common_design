@@ -29,9 +29,9 @@
     const messageWrapper = document.createElement('div');
 
     messageWrapper.setAttribute('class', `messages messages--${type} cd-alert cd-alert--${type}`);
-    messageWrapper.setAttribute('role', type === 'error' || type === 'warning' ? 'alert' : 'status',);
+    messageWrapper.setAttribute('role', type === 'error' || type === 'warning' ? 'alert' : 'status');
     var iconType = 'about';
-    var role='status';
+    var role = 'status';
     switch (type) {
       case 'error':
         iconType = 'error';
