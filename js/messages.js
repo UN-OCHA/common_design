@@ -4,6 +4,8 @@
  */
 
 ((Drupal) => {
+  'use strict';
+
   /**
    * Overrides message theme function.
    *
@@ -21,34 +23,33 @@
    * @return {HTMLElement}
    *   A DOM Node.
    */
-  Drupal.theme.message = ({ text }, { type, id }) => {
+
+  Drupal.theme.message = ({text}, {type, id}) => {
     const messagesTypes = Drupal.Message.getMessageTypeLabels();
     const messageWrapper = document.createElement('div');
 
     messageWrapper.setAttribute('class', `messages messages--${type} cd-alert cd-alert--${type}`);
-    messageWrapper.setAttribute(
-      'role',
-      type === 'error' || type === 'warning' ? 'alert' : 'status',
-    );
-    var icon_type = 'about', role='status';
+    messageWrapper.setAttribute('role', type === 'error' || type === 'warning' ? 'alert' : 'status',);
+    var iconType = 'about';
+    var role='status';
     switch (type) {
       case 'error':
-        icon_type = 'error';
+        iconType = 'error';
         role = 'alert';
         break;
       case 'warning':
-        icon_type = 'alert';
+        iconType = 'alert';
         break;
       case 'status':
-        icon_type = 'selected';
+        iconType = 'selected';
     }
     messageWrapper.setAttribute('data-drupal-message-id', id);
     messageWrapper.setAttribute('data-drupal-message-type', type);
 
     messageWrapper.innerHTML = `
     <div role="${role}" aria-label="${type}">
-      <svg class="cd-icon cd-icon--${icon_type}" aria-hidden="true" focusable="false" width="24" height="24">
-        <use xlink:href="#cd-icon--${icon_type}"></use>
+      <svg class="cd-icon cd-icon--${iconType}" aria-hidden="true" focusable="false" width="24" height="24">
+        <use xlink:href="#cd-icon--${iconType}"></use>
       </svg>
       <div class="cd-alert__container cd-max-width">
         <div class="cd-alert__title">
