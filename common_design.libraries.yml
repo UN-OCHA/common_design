@@ -8,6 +8,15 @@ global-styling:
   dependencies:
     - common_design/cd-core
 
+# Style status messages when they come via bigpipe.
+# @see https://www.drupal.org/project/drupal/issues/3456176
+messages:
+  css:
+    component:
+      libraries/cd-alert/cd-alert.css: {}
+  js:
+    js/messages.js: {}
+
 # Roboto Condensed and Slab.
 # @see https://brand.unocha.org/d/xEPytAUjC3sH/visual-identity#/basics/fonts/advanced-users
 fonts-advanced:

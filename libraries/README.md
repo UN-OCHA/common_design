@@ -98,6 +98,7 @@ Eg. Layout markup
 ```
 
 ### CSS
+
 - A component will likely have its own CSS stylesheet. Some components might be CSS only.
 - There should be no hexidecimal colour values. We should use CSS custom properties for colour management, defaulting to `--brand-*` whenever possible.
 - If variants exist, multiple stylesheets can be used to distinguish and organise.
@@ -112,6 +113,7 @@ Eg. For cd-hero component
 - Adopt a mobile-first approach by starting with generic rules and adding media queries with min-width values down the cascade.
 
 ### JS
+
 - Each component should be tested and have applicable cross-browser and device fixes or polyfills where required.
 - Adopt a content-first approach by ensuring all content is accessible and the site remains usable when JS is disabled.
 *There may be exceptions.
@@ -119,11 +121,13 @@ Eg. For cd-hero component
 
 
 ### Twig
+
 - Include the markup without the wrapper divs. The main purpose of the twig file is to include the component on the demo page.
 - Define and attach the relevant Drupal libraries instead of linking to the CSS files.
 As this will display on the demo page (a Drupal site), the cd-base.css is replaced with styles.css (already loaded)
 
 ### Add the component to the Demo page
+
 - Include the component in the list of Table of contents.
 - Include the twig template on the demo page with a back-to-toc link.
 
