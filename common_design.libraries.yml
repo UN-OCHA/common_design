@@ -13,7 +13,7 @@ global-styling:
 messages:
   css:
     component:
-      libraries/cd-alert/cd-alert.css: {}
+      components/cd-alert/cd-alert.css: {}
   js:
     js/messages.js: {}
 
