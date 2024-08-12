@@ -522,8 +522,13 @@ function common_design_preprocess_html(&$vars) {
   ];
   $vars['page']['#attached']['html_head'][] = [$js_detection, 'js-detection'];
 
-  // Construct a <link>s for Roboto: two that preconnect to Google Fonts, for a
+  // Construct <link>s for Roboto: two that preconnect to Google Fonts, for a
   // nominal performance improvement, and the link to the CSS file itself.
+  //
+  // To load the font in a totally non-blocking manner, we are using the media
+  // attribute to specify print until the fonts load, then we remove it with JS.
+  // There is no <noscript> in place, so the fonts won't load on non-JS browsers
+  // by design.
   //
   // To edit the font selection, visit the following URL:
   //
@@ -540,6 +545,8 @@ function common_design_preprocess_html(&$vars) {
   $roboto_default = [
     'rel' => 'stylesheet',
     'href' => 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap',
+    'media' => 'print',
+    'onload' => 'this.onload=null;this.removeAttribute(`media`);',
   ];
 
 

@@ -55,13 +55,13 @@ now that we layout with flex. */
 }
 
 .cd-site-header__nav-holder nav > ul > li,
-.cd-site-header__nav-holder nav > ul > .cd-nav__item, {
+.cd-site-header__nav-holder nav > ul > .cd-nav__item {
   flex: 1 0 100%;
 }
 
 @media (min-width: 1024px) {
   .cd-site-header__nav-holder nav > ul > li,
-  .cd-site-header__nav-holder nav > ul > .cd-nav__item, {
+  .cd-site-header__nav-holder nav > ul > .cd-nav__item {
     flex: 1 1 auto;
   }
 }
@@ -89,7 +89,7 @@ now that we layout with flex. */
 }
 
 .no-js .cd-site-header__nav-holder nav > ul > li,
-.no-js .cd-site-header__nav-holder nav > ul > .cd-nav__item, {
+.no-js .cd-site-header__nav-holder nav > ul > .cd-nav__item {
   float: left;
   max-width: unset;
 }
