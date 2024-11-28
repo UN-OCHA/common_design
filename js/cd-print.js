@@ -13,7 +13,7 @@
       $('img').each(() => {
         $(this).removeAttr('loading'));
       }
-    }
+    });
 
   };
 })(Drupal);
