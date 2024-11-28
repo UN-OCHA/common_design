@@ -7,13 +7,15 @@
   'use strict';
 
   Drupal.behaviors.cdPrint = {
+    attach: function (context, settings) {
 
-    // Remove lazy loading before printing.
-    window.addEventListener("beforeprint", (event) => {
-      $('img').each(() => {
-        $(this).removeAttr('loading'));
-      }
+      // Remove lazy loading before printing.
+      window.addEventListener('beforeprint', (event) => {
+        $('img').each(() => {
+          $(this).removeAttr('loading');
+        });
+      });
+
     }
-
   };
 })(Drupal);
