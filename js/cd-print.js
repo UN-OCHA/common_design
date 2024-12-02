@@ -11,8 +11,8 @@
 
       // Remove lazy loading before printing.
       window.addEventListener('beforeprint', (event) => {
-        $('img').each(() => {
-          $(this).removeAttr('loading');
+        document.querySelectorAll('[loading="lazy"]').forEach(element => {
+          element.removeAttr('loading');
         });
       });
 
