@@ -12,7 +12,7 @@
       // Remove lazy loading before printing.
       window.addEventListener('beforeprint', (event) => {
         document.querySelectorAll('[loading="lazy"]').forEach(element => {
-          element.removeAttr('loading');
+          element.removeAttribute('loading');
         });
       });
 
