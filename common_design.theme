@@ -32,6 +32,13 @@ function common_design_form_system_theme_settings_alter(&$form, FormStateInterfa
     ];
   }
 
+  // Add a setting to use light/dark favicons.
+  $form['common_design']['use_light_dark_favicon'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use light/dark favicon'),
+    '#default_value' => theme_get_setting('use_light_dark_favicon') ?? FALSE,
+  ];
+
   // Load the node view modes.
   $storage = \Drupal::entityTypeManager()->getStorage('entity_view_mode');
   $view_modes = $storage->loadByProperties([
@@ -999,5 +1006,65 @@ function common_design_preprocess_datetime_wrapper(&$variables) {
   // Ensure the title is not displayed when instructed to be hidden.
   if (isset($variables['element']['#title_display']) && $variables['element']['#title_display'] === 'invisible') {
     $variables['title_attributes']['class'][] = 'visually-hidden';
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function common_design_page_attachments_alter(array &$page) {
+  $active_theme = \Drupal::theme()->getActiveTheme();
+
+  if (!theme_get_setting('use_light_dark_favicon')) {
+    return;
+  }
+
+  // Attach blue favicon from active theme.
+  if (file_exists($active_theme->getPath() . '/img/favicons/blue/favicon.ico')) {
+    $page['#attached']['html_head_link'][][] = [
+      'rel' => 'icon',
+      'href' => '/' . $active_theme->getPath() . '/img/favicons/blue/favicon.ico',
+      'type' => 'image/x-icon',
+      'media' => '(prefers-color-scheme: light)',
+    ];
+  }
+  else {
+    // Attach favicon from parent theme.
+    foreach ($active_theme->getBaseThemeExtensions() as $base_theme) {
+      if (file_exists($base_theme->getPath() . '/img/favicons/blue/favicon.ico')) {
+        $page['#attached']['html_head_link'][][] = [
+          'rel' => 'icon',
+          'href' => '/' . $base_theme->getPath() . '/img/favicons/blue/favicon.ico',
+          'type' => 'image/x-icon',
+          'media' => '(prefers-color-scheme: light)',
+        ];
+        break;
+      }
+    }
+  }
+
+  // Attach white favicon from active theme.
+  if (file_exists($active_theme->getPath() . '/img/favicons/white/favicon.ico')) {
+    $page['#attached']['html_head_link'][][] = [
+      'rel' => 'icon',
+      'href' => '/' . $active_theme->getPath() . '/img/favicons/white/favicon.ico',
+      'type' => 'image/x-icon',
+      'media' => '(prefers-color-scheme: dark)',
+    ];
+  }
+  else {
+    // Attach favicon from parent theme.
+    foreach ($active_theme->getBaseThemeExtensions() as $base_theme) {
+      if (file_exists($base_theme->getPath() . '/img/favicons/white/favicon.ico')) {
+        $page['#attached']['html_head_link'][][] = [
+          'rel' => 'icon',
+          'href' => '/' . $base_theme->getPath() . '/img/favicons/white/favicon.ico',
+          'type' => 'image/x-icon',
+          'media' => '(prefers-color-scheme: dark)',
+        ];
+
+        break;
+      }
+    }
   }
 }
