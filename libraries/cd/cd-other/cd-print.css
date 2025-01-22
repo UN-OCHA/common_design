@@ -20,6 +20,7 @@
   a,
   a:visited {
     text-decoration: underline;
+    overflow-wrap: anywhere;
   }
 
   a[href]::after {

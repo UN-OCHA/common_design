@@ -1,6 +1,6 @@
 {
     "name": "unocha/common_design",
-    "description": "OCHA Common Design base theme for Drupal 9+",
+    "description": "OCHA Common Design base theme for Drupal",
     "type": "drupal-theme",
     "license": "GPL-2.0-only",
     "require": {

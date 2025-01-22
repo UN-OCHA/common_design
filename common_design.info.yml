@@ -1,7 +1,7 @@
 name: OCHA Common Design
 type: theme
 description: OCHA Common Design drupal theme. Use as a base theme, and extend.
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^9.5 || ^10 || ^11
 dependencies:
   - drupal:stable
 base theme: stable
@@ -40,10 +40,6 @@ libraries-extend:
     - common_design/messages
 
 libraries-override:
-  core/modernizr:
-    js:
-      assets/vendor/modernizr/modernizr.min.js: js/vendor/cd-modernizr.min.js
-
   # select_a11y module for Facets dropdowns.
   select_a11y/select_a11y_facets.widget:
     css:
