@@ -133,15 +133,6 @@ cd-core:
 # function on old browsers.
 #
 
-# Custom library to set img as background img when object-fit is not supported (IE 11, 15)
-cd-object-fit:
-  header: true
-  js:
-    js/cd-object-fit.js: { attributes: { nomodule: true } }
-  dependencies:
-    - core/drupal
-    - core/modernizr
-
 # The nomodule attribute means browsers who support ES6 modules will ignore this file but browsers like IE load it.
 cd-polyfill:
   js:
