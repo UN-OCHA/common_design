@@ -28,7 +28,6 @@ describe('OCHAServices', () => {
     const otherOchaServicesCorporate = [
       'Financial Tracking Service',
       'Humanitarian Data Exchange',
-      'Humanitarian ID',
       'ReliefWeb Response',
       'Inter-Agency Standing Committee',
       'OCHA website',
@@ -38,7 +37,6 @@ describe('OCHAServices', () => {
     const otherOchaServicesCorporateHref = [
       'https://fts.unocha.org/',
       'https://data.humdata.org/',
-      'https://auth.humanitarian.id/',
       'https://response.reliefweb.int/',
       'https://interagencystandingcommittee.org/',
       'https://unocha.org/',
