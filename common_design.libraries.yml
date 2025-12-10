@@ -118,6 +118,8 @@ cd-other:
       libraries/cd/cd-other/cd-skip-link.css: {}
     theme:
       libraries/cd/cd-other/cd-print.css: {}
+  js:
+    js/cd-print.js: {}
 
 cd-core:
   dependencies:
